@@ -23,6 +23,7 @@
         .nrp-orange { color: #FF6600; }
         .nrp-bg-orange { background-color: #FF6600; }
         
+        /* 내비게이션 바 스크롤바 숨기기 */
         .nav-container::-webkit-scrollbar { display: none; }
         .nav-container { -ms-overflow-style: none; scrollbar-width: none; }
 
@@ -166,10 +167,11 @@
             }
         }
 
+        /* 내비게이션 버튼 모바일 최적화 */
         .nav-btn {
-            padding: 0.5rem 1rem;
-            border-radius: 0.75rem;
-            font-size: 0.75rem;
+            padding: 0.5rem 0.4rem;
+            border-radius: 0.6rem;
+            font-size: 0.65rem;
             font-weight: 700;
             color: #4b5563;
             transition: all 0.2s ease-in-out;
@@ -200,23 +202,19 @@
         <!-- 상단 헤더 -->
         <header class="mb-10">
             <div class="flex justify-between items-start mb-10">
-                <!-- 좌상단 고정 개혁신당 로고 -->
                 <div class="flex flex-col items-start">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Logo_of_the_New_Reform_Party_%28South_Korea%29.svg/2560px-Logo_of_the_New_Reform_Party_%28South_Korea%29.svg.png" 
                          alt="개혁신당 로고" class="h-8 md:h-14 object-contain">
                 </div>
 
-                <!-- D-Day 배지 -->
                 <div id="d-day-badge" class="nrp-bg-orange text-white px-4 py-1.5 md:px-8 md:py-3 rounded-full text-base md:text-2xl font-black tracking-tighter shadow-lg">
                     D-000
                 </div>
             </div>
 
-            <!-- 메인 타이틀 -->
             <div class="text-center">
                 <h1 class="text-2xl md:text-5xl font-black mb-4 tracking-tighter text-gray-900 leading-tight md:leading-[1.1]">
                     <span class="block mb-2 md:mb-4">
-                        <!-- 자간을 -0.12em으로 미세 조정하여 균형을 맞춤 -->
                         <span class="tracking-[-0.12em]">6 · 3</span> 지방선거 · 재보궐선거
                     </span>
                     <span class="block">출마선언 현황</span>
@@ -227,22 +225,21 @@
 
         <!-- 내비게이션 바 -->
         <nav class="sticky top-4 z-50 mb-12 flex justify-center">
-            <div class="nav-container flex items-center bg-white/90 backdrop-blur-md shadow-lg border border-gray-100 rounded-2xl p-1 md:p-1.5 overflow-x-auto whitespace-nowrap gap-0.5">
+            <div class="nav-container flex items-center bg-white/90 backdrop-blur-md shadow-lg border border-gray-100 rounded-2xl p-1 md:p-1.5 overflow-x-auto whitespace-nowrap gap-0">
                 <button onclick="renderOriginalView()" class="nav-btn" id="btn-original">홈</button>
-                <div class="w-px h-4 bg-gray-200 mx-1 flex-shrink-0"></div>
+                <div class="w-px h-4 bg-gray-200 mx-0.5 flex-shrink-0"></div>
                 <button class="nav-btn" disabled>재보궐</button>
                 <button onclick="scrollToId('provincial-exec')" class="nav-btn">광역단체장</button>
                 <button onclick="scrollToId('local-exec')" class="nav-btn">기초단체장</button>
                 <button class="nav-btn" disabled>광역의원</button>
                 <button onclick="scrollToId('local-council')" class="nav-btn">기초의원</button>
-                <div class="w-px h-4 bg-gray-200 mx-1 flex-shrink-0"></div>
+                <div class="w-px h-4 bg-gray-200 mx-0.5 flex-shrink-0"></div>
                 <button onclick="renderRegionView()" class="nav-btn" id="btn-region">지역별보기</button>
             </div>
         </nav>
 
         <!-- 메인 콘텐츠 영역 -->
         <main id="content-area">
-            <!-- JavaScript가 이곳에 내용을 렌더링합니다 -->
         </main>
 
         <!-- 요약 현황 푸터 -->
@@ -255,32 +252,33 @@
                     </p>
                 </div>
                 
-                <div class="grid grid-cols-5 gap-2 md:gap-4 w-full lg:w-auto text-center">
+                <!-- 그리드를 6열로 수정하여 Total까지 한 줄에 배치 -->
+                <div class="grid grid-cols-6 gap-0.5 md:gap-4 w-full lg:w-auto text-center items-center">
                     <div>
-                        <p class="text-gray-500 text-[8px] md:text-xs font-bold uppercase mb-1">재보궐</p>
-                        <p class="text-lg md:text-3xl font-black nrp-orange">0</p>
+                        <p class="text-gray-500 text-[7px] md:text-xs font-bold uppercase mb-1">재보궐</p>
+                        <p class="text-base md:text-3xl font-black nrp-orange">0</p>
                     </div>
                     <div>
-                        <p class="text-gray-500 text-[8px] md:text-xs font-bold uppercase mb-1">광역단체</p>
-                        <p class="text-lg md:text-3xl font-black nrp-orange">4</p>
+                        <p class="text-gray-500 text-[7px] md:text-xs font-bold uppercase mb-1">광역단체</p>
+                        <p class="text-base md:text-3xl font-black nrp-orange">4</p>
                     </div>
                     <div>
-                        <p class="text-gray-500 text-[8px] md:text-xs font-bold uppercase mb-1">기초단체</p>
-                        <p class="text-lg md:text-3xl font-black nrp-orange">3</p>
+                        <p class="text-gray-500 text-[7px] md:text-xs font-bold uppercase mb-1">기초단체</p>
+                        <p class="text-base md:text-3xl font-black nrp-orange">3</p>
                     </div>
                     <div>
-                        <p class="text-gray-500 text-[8px] md:text-xs font-bold uppercase mb-1">광역의회</p>
-                        <p class="text-lg md:text-3xl font-black nrp-orange">0</p>
+                        <p class="text-gray-500 text-[7px] md:text-xs font-bold uppercase mb-1">광역의회</p>
+                        <p class="text-base md:text-3xl font-black nrp-orange">0</p>
                     </div>
                     <div>
-                        <p class="text-gray-500 text-[8px] md:text-xs font-bold uppercase mb-1">기초의회</p>
-                        <p class="text-lg md:text-3xl font-black nrp-orange">7</p>
+                        <p class="text-gray-500 text-[7px] md:text-xs font-bold uppercase mb-1">기초의원</p>
+                        <p class="text-base md:text-3xl font-black nrp-orange">7</p>
                     </div>
-                </div>
-
-                <div class="lg:border-l border-gray-700 lg:pl-10 text-center">
-                    <p class="text-gray-500 text-[10px] md:text-xs font-bold uppercase mb-1">Total</p>
-                    <p class="text-3xl md:text-6xl font-black text-white">14</p>
+                    <!-- Total 항목 -->
+                    <div class="lg:border-l border-gray-700 lg:pl-10">
+                        <p class="text-gray-500 text-[7px] md:text-xs font-bold uppercase mb-1">Total</p>
+                        <p class="text-base md:text-3xl font-black text-white">14</p>
+                    </div>
                 </div>
             </div>
         </footer>
