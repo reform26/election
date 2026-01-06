@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개혁신당 2026 지방선거 · 재보궐선거 출마선언 현황</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700;800;900&display=swap');
+        
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Pretendard', sans-serif;
+            background-color: #f8f9fa;
+            color: #1a1a1a;
+            letter-spacing: -0.025em;
+            word-break: keep-all;
+        }
+
+        .nrp-orange { color: #FF6600; }
+        .nrp-bg-orange { background-color: #FF6600; }
+        
+        .nav-container::-webkit-scrollbar { display: none; }
+        .nav-container { -ms-overflow-style: none; scrollbar-width: none; }
+
+        @media (min-width: 640px) {
+            .card-hover:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            }
+        }
+        
+        .region-tag {
+            position: absolute;
+            top: 8px;
+            left: 10px;
+            background-color: rgba(255, 102, 0, 0.9);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-size: 0.6rem;
+            font-weight: 700;
+            z-index: 10;
+            backdrop-filter: blur(4px);
+        }
+
+        .district-tag {
+            position: absolute;
+            top: 8px;
+            right: 10px;
+            background-color: white;
+            color: #FF6600;
+            border: 1.5px solid #FF6600;
+            width: 22px;
+            height: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 0.7rem;
+            font-weight: 800;
+            z-index: 10;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .grid-responsive {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+        }
+
+        @media (min-width: 640px) {
+            .grid-responsive {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 1.25rem;
+            }
+        }
+
+        .photo-frame {
+            height: 200px; 
+            background-color: #f1f3f5;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+        }
+
+        @media (min-width: 640px) {
+            .photo-frame {
+                height: 260px; 
+            }
+        }
+
+        .candidate-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .photo-align-top { object-position: center top !important; }
+        .photo-align-bottom-adj { object-position: center 60% !important; } 
+        .photo-face-focus { object-position: center 15% !important; }
+        
+        .focus-lee { 
+            object-fit: contain !important; 
+            background-color: #ffffff;
+            padding: 8px;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            font-size: 1.2rem;
+            font-weight: 800;
+            margin: 2rem 0 0.75rem 0;
+            color: #1a202c;
+        }
+
+        @media (min-width: 640px) {
+            .section-title {
+                font-size: 1.6rem;
+                margin: 3rem 0 1.25rem 0;
+            }
+        }
+
+        .section-title::before {
+            content: "";
+            width: 5px;
+            height: 22px;
+            background-color: #FF6600;
+            margin-right: 10px;
+            border-radius: 2px;
+        }
+
+        .sub-section-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #4a5568;
+            margin-bottom: 1rem;
+            padding-left: 4px;
+            border-left: 3px solid #cbd5e0;
+            margin-left: 2px;
+        }
+
+        .bio-text {
+            font-size: 0.65rem;
+            color: #718096;
+            margin-bottom: 0.5rem;
+            height: 3rem; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-weight: 600;
+            line-height: 1.3;
+            overflow: hidden;
+        }
+
+        @media (min-width: 640px) {
+            .bio-text {
+                font-size: 0.75rem;
+                height: 4.5rem;
+                margin-bottom: 0.75rem;
+            }
+        }
+
+        .nav-btn {
+            padding: 0.5rem 1rem;
+            border-radius: 0.75rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #4b5563;
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
+        }
+        @media (min-width: 768px) {
+            .nav-btn {
+                font-size: 0.875rem;
+                padding: 0.5rem 1.25rem;
+            }
+        }
+        .nav-btn:hover:not(:disabled) {
+            background-color: #fff7ed;
+            color: #FF6600;
+        }
+        .nav-btn.active {
+            background-color: #FF6600;
+            color: white;
+        }
+        .nav-btn:disabled {
+            color: #d1d5db;
+            cursor: default;
+        }
+    </style>
+</head>
+<body id="top" class="p-3 md:p-10">
+    <div class="max-w-6xl mx-auto">
+        <!-- 상단 헤더 -->
+        <header class="mb-10">
+            <div class="flex justify-between items-start mb-10">
+                <!-- 좌상단 고정 개혁신당 로고 -->
+                <div class="flex flex-col items-start">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Logo_of_the_New_Reform_Party_%28South_Korea%29.svg/2560px-Logo_of_the_New_Reform_Party_%28South_Korea%29.svg.png" 
+                         alt="개혁신당 로고" class="h-8 md:h-14 object-contain">
+                </div>
+
+                <!-- D-Day 배지 -->
+                <div id="d-day-badge" class="nrp-bg-orange text-white px-4 py-1.5 md:px-8 md:py-3 rounded-full text-base md:text-2xl font-black tracking-tighter shadow-lg">
+                    D-000
+                </div>
+            </div>
+
+            <!-- 메인 타이틀 -->
+            <div class="text-center">
+                <h1 class="text-2xl md:text-5xl font-black mb-4 tracking-tighter text-gray-900 leading-tight md:leading-[1.1]">
+                    <span class="block mb-2 md:mb-4">
+                        <!-- 자간을 -0.12em으로 미세 조정하여 균형을 맞춤 -->
+                        <span class="tracking-[-0.12em]">6 · 3</span> 지방선거 · 재보궐선거
+                    </span>
+                    <span class="block">출마선언 현황</span>
+                </h1>
+                <p class="text-gray-500 text-sm md:text-lg font-semibold mb-8 text-center">제9회 전국동시지방선거를 향한 개혁의 도전</p>
+            </div>
+        </header>
+
+        <!-- 내비게이션 바 -->
+        <nav class="sticky top-4 z-50 mb-12 flex justify-center">
+            <div class="nav-container flex items-center bg-white/90 backdrop-blur-md shadow-lg border border-gray-100 rounded-2xl p-1 md:p-1.5 overflow-x-auto whitespace-nowrap gap-0.5">
+                <button onclick="renderOriginalView()" class="nav-btn" id="btn-original">홈</button>
+                <div class="w-px h-4 bg-gray-200 mx-1 flex-shrink-0"></div>
+                <button class="nav-btn" disabled>재보궐</button>
+                <button onclick="scrollToId('provincial-exec')" class="nav-btn">광역단체장</button>
+                <button onclick="scrollToId('local-exec')" class="nav-btn">기초단체장</button>
+                <button class="nav-btn" disabled>광역의원</button>
+                <button onclick="scrollToId('local-council')" class="nav-btn">기초의원</button>
+                <div class="w-px h-4 bg-gray-200 mx-1 flex-shrink-0"></div>
+                <button onclick="renderRegionView()" class="nav-btn" id="btn-region">지역별보기</button>
+            </div>
+        </nav>
+
+        <!-- 메인 콘텐츠 영역 -->
+        <main id="content-area">
+            <!-- JavaScript가 이곳에 내용을 렌더링합니다 -->
+        </main>
+
+        <!-- 요약 현황 푸터 -->
+        <footer id="summary" class="mt-16 bg-gray-900 text-white rounded-[1.5rem] md:rounded-[2.5rem] p-6 md:p-10 shadow-2xl border-b-8 border-orange-500">
+            <div class="flex flex-col lg:flex-row justify-between items-center gap-8 w-full">
+                <div class="text-center lg:text-left">
+                    <h2 class="text-xl md:text-4xl font-black mb-2">출마 선언 총합</h2>
+                    <p class="text-gray-400 text-xs md:text-lg font-medium">
+                        개혁신당과 함께 지방 정치를 바꿀 주인공들입니다.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-5 gap-2 md:gap-4 w-full lg:w-auto text-center">
+                    <div>
+                        <p class="text-gray-500 text-[8px] md:text-xs font-bold uppercase mb-1">재보궐</p>
+                        <p class="text-lg md:text-3xl font-black nrp-orange">0</p>
+                    </div>
+                    <div>
+                        <p class="text-gray-500 text-[8px] md:text-xs font-bold uppercase mb-1">광역단체</p>
+                        <p class="text-lg md:text-3xl font-black nrp-orange">4</p>
+                    </div>
+                    <div>
+                        <p class="text-gray-500 text-[8px] md:text-xs font-bold uppercase mb-1">기초단체</p>
+                        <p class="text-lg md:text-3xl font-black nrp-orange">3</p>
+                    </div>
+                    <div>
+                        <p class="text-gray-500 text-[8px] md:text-xs font-bold uppercase mb-1">광역의회</p>
+                        <p class="text-lg md:text-3xl font-black nrp-orange">0</p>
+                    </div>
+                    <div>
+                        <p class="text-gray-500 text-[8px] md:text-xs font-bold uppercase mb-1">기초의회</p>
+                        <p class="text-lg md:text-3xl font-black nrp-orange">7</p>
+                    </div>
+                </div>
+
+                <div class="lg:border-l border-gray-700 lg:pl-10 text-center">
+                    <p class="text-gray-500 text-[10px] md:text-xs font-bold uppercase mb-1">Total</p>
+                    <p class="text-3xl md:text-6xl font-black text-white">14</p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- 푸터 외부 최하단 비공식 안내 문구 -->
+        <div class="mt-8 mb-12 text-center">
+            <p class="text-gray-400 text-[10px] md:text-xs font-medium">
+                이 사이트는 개혁신당의 공식 사이트가 아닙니다.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        const candidates = [
+            { name: "김정철", region: "서울특별시", category: "광역단체장", office: "서울특별시장", bio: ["개혁신당 최고위원", "개혁신당 윤리위원"], photo: "https://img1.newsis.com/2025/11/25/NISI20251125_0021074114_web.jpg", focus: "photo-face-focus" },
+            { name: "정이한", region: "부산광역시", category: "광역단체장", office: "부산광역시장", bio: ["개혁신당 대변인"], photo: "https://cdn.seoulfn.com/news/photo/202511/612324_411809_430.jpg", focus: "photo-face-focus" },
+            { name: "이기붕", region: "인천광역시", category: "광역단체장", office: "인천광역시장", bio: ["인천시당 위원장"], photo: "https://scontent-ssn1-1.xx.fbcdn.net/v/t39.30808-6/605095144_32020031264298727_8796627824335242342_n.jpg?_nc_cat=101&_nc_cb=99be929b-f3b7c874&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=gYMTplQ2u70Q7kNvwHukfd7&_nc_oc=AdlZLoEgnYdZ9cOWWRXQeRpPMYhAiS9jOxypNydh4a4vGoU1-bFdR8aGx-EHVTeY_Kg&_nc_zt=23&_nc_ht=scontent-ssn1-1.xx&_nc_gid=fiUoiU97wOX0hFfIfmS_Yw&oh=00_Afp5z5Qams6bAtstpZkwcAcBk4eujLNPsRz3CNlWdKHZZg&oe=69610B92", focus: "photo-face-focus" },
+            { name: "하헌휘", region: "세종특별자치시", category: "광역단체장", office: "세종특별자치시장", bio: ["세종시당 창준위원장", "세종시 갑 당협위원장"], photo: "https://image.dnews.co.kr/photo/photo/2024/11/21/202411211945335960037-2-565966.jpg", focus: "photo-face-focus" },
+            
+            { name: "이혜숙", region: "서울 관악구", metropolitan: "서울특별시", category: "기초단체장", office: "관악구청장", bio: ["관악구 갑 당협위원장"], photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQldYi95_jeH9ZscObQhU8SfeBkt7_id2CYecNX-bHuIl-NIOJ8r4XS_F4&s=10", focus: "focus-lee" },
+            { name: "전성균", region: "경기 화성시", metropolitan: "경기도", category: "기초단체장", office: "화성시장", bio: ["경기도당 위원장", "화성시의원", "전 개혁신당 최고위원"], photo: "https://www.sisaon.co.kr/news/photo/202405/160953_197996_2913.jpg", focus: "photo-face-focus" },
+            { name: "송창훈", region: "경기 용인시", metropolitan: "경기도", category: "기초단체장", office: "용인시장", bio: ["용인시 정 당협위원장"], photo: "https://scontent-icn2-1.xx.fbcdn.net/v/t39.30808-6/450437661_3450567868423286_2114641151397295712_n.jpg?_nc_cat=110&_nc_cb=99be929b-f3b7c874&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=GW6g57NW-Z4Q7kNvwGPxpwb&_nc_oc=Adm9iqhrJj34naztKhTgQ8oN1Usjm4sHvDzAdVq9qM-Qvng6C4Ns3HSj4dbp6FI3aQM&_nc_zt=23&_nc_ht=scontent-icn2-1.xx&_nc_gid=ULOdTdciwa2heiWdAgak9w&oh=00_Afqv6Se-HLPwyrBxY8wrMkHja5BgaLWKs7M9cf1V7QkhQw&oe=6962E15F", focus: "photo-face-focus" },
+
+            { name: "조동운", region: "대전 서구", metropolitan: "대전광역시", category: "기초의원", office: "서구의원", bio: ["서구 을 당협위원장"], photo: "https://i.imgur.com/q8Z5Mst.png", district: "다", focus: "photo-align-top" },
+            { name: "박현겸", region: "대전 동구", metropolitan: "대전광역시", category: "기초의원", office: "동구의원", bio: ["대전시당 미래희망위원장"], photo: "https://i.imgur.com/TVxC1Kl.jpeg", district: "가", focus: "photo-face-focus" },
+            { name: "윤서진", region: "대전 유성구", metropolitan: "대전광역시", category: "기초의원", office: "유성구의원", bio: ["중앙당 미래희망위원회 위원", "대전시당 부위원장", "제35대 KAIST 총학생회장"], photo: "https://i.imgur.com/N24OK0K.jpeg", district: "나", focus: "photo-face-focus" },
+            
+            { name: "최진형", region: "경기 안산시", metropolitan: "경기도", category: "기초의원", office: "안산시의원", bio: ["안산시 가선거구 출마"], photo: "https://www.notion.so/image/attachment%3A8b8ba3ac-4b70-4725-9d80-e79694a632b2%3A%EC%A6%9D%EB%AA%85%EC%82%AC%EC%A7%842.jpg?table=block&id=2b4a193a-42f1-81a1-bb53-f17592aee26f&spaceId=312b58e7-be17-4e3f-8977-ffc2191a7a05&width=460&userId=&cache=v2", district: "가", focus: "photo-face-focus" },
+            { name: "고재윤", region: "충남 당진시", metropolitan: "충청남도", category: "기초의원", office: "당진시의원", bio: ["당진시 라선거구 출마"], photo: "https://i.imgur.com/sJf2zpM.jpeg", district: "라", focus: "photo-face-focus" },
+            { name: "성진영", region: "경북 경산시", metropolitan: "경상북도", category: "기초의원", office: "경산시의원", bio: ["경산시 라선거구 출마"], photo: "https://i.imgur.com/fHwNOji.png", district: "라", focus: "photo-face-focus" },
+            { name: "신소일", region: "경북 경산시", metropolitan: "경상북도", category: "기초의원", office: "경산시의원", bio: ["경산시 라선거구 출마"], photo: "https://cdn.plus-gyeongbuk.kr/news/photo/202512/3890_4849_3034.jpg", district: "라", focus: "photo-align-bottom-adj" }
+        ];
+
+        function createCard(c) {
+            let bioHtml = c.bio.map(line => `<span>${line}</span>`).join('');
+            let districtTag = c.district ? `<div class="district-tag">${c.district}</div>` : "";
+            
+            return `
+                <div class="bg-white rounded-[1rem] md:rounded-[1.5rem] shadow-md border border-gray-100 card-hover transition-all duration-500 overflow-hidden flex flex-col h-full">
+                    <div class="photo-frame">
+                        <div class="region-tag">${c.region}</div>
+                        ${districtTag}
+                        <img src="${c.photo}" class="candidate-photo ${c.focus || ''}" alt="${c.name}" onerror="this.src='https://via.placeholder.com/400x500?text=Photo'">
+                    </div>
+                    <div class="pt-2 px-3 pb-4 md:pt-4 md:px-6 md:pb-6 text-center flex flex-col flex-grow">
+                        <h3 class="text-base md:text-xl font-bold mb-1">${c.name}</h3>
+                        <div class="bio-text">${bioHtml}</div>
+                        <div class="mt-auto nrp-bg-orange text-white py-2 rounded-xl font-bold text-[10px] md:text-sm leading-tight text-center">
+                            ${c.office} 출마선언
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderOriginalView() {
+            updateNavActive('btn-original');
+            const container = document.getElementById('content-area');
+            container.innerHTML = `
+                <section id="provincial-exec" class="scroll-mt-24">
+                    <h2 class="section-title">광역자치단체장</h2>
+                    <div class="grid-responsive">${candidates.filter(c => c.category === "광역단체장").map(createCard).join('')}</div>
+                </section>
+                <section id="local-exec" class="scroll-mt-24">
+                    <h2 class="section-title">기초자치단체장</h2>
+                    <div class="grid-responsive">${candidates.filter(c => c.category === "기초단체장").map(createCard).join('')}</div>
+                </section>
+                <section id="local-council" class="mb-16 scroll-mt-24">
+                    <h2 class="section-title">기초의회의원</h2>
+                    <div class="mb-10">
+                        <h3 class="sub-section-title">대전광역시</h3>
+                        <div class="grid-responsive">${candidates.filter(c => c.category === "기초의원" && c.metropolitan === "대전광역시").map(createCard).join('')}</div>
+                    </div>
+                    <div>
+                        <h3 class="sub-section-title">기타 지역</h3>
+                        <div class="grid-responsive">${candidates.filter(c => c.category === "기초의원" && c.metropolitan !== "대전광역시").map(createCard).join('')}</div>
+                    </div>
+                </section>
+            `;
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+
+        function renderRegionView() {
+            updateNavActive('btn-region');
+            const container = document.getElementById('content-area');
+            const metros = ["서울특별시", "부산광역시", "인천광역시", "대전광역시", "세종특별자치시", "경기도", "충청남도", "경상북도"];
+            let html = '<div class="mb-16">';
+            metros.forEach(m => {
+                const regionalCandidates = candidates.filter(c => 
+                    c.region.includes(m.substring(0,2)) || 
+                    c.metropolitan === m || 
+                    c.region === m
+                );
+                if(regionalCandidates.length > 0) {
+                    html += `
+                        <section class="mb-12 scroll-mt-24">
+                            <h2 class="section-title">${m}</h2>
+                            <div class="grid-responsive">${regionalCandidates.map(createCard).join('')}</div>
+                        </section>
+                    `;
+                }
+            });
+            html += '</div>';
+            container.innerHTML = html;
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+
+        function scrollToId(id) {
+            if (document.getElementById('btn-region').classList.contains('active')) {
+                renderOriginalView();
+                setTimeout(() => {
+                    const el = document.getElementById(id);
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                }, 100);
+            } else {
+                const el = document.getElementById(id);
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function updateNavActive(activeId) {
+            document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+            const target = document.getElementById(activeId);
+            if(target) target.classList.add('active');
+        }
+
+        function updateDDay() {
+            const targetDate = new Date('2026-06-03');
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+            targetDate.setHours(0, 0, 0, 0);
+            const diffTime = targetDate - today;
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+            const badge = document.getElementById('d-day-badge');
+            if (diffDays > 0) badge.innerText = `D-${diffDays}`;
+            else if (diffDays === 0) badge.innerText = 'D-Day';
+            else badge.innerText = `D+${Math.abs(diffDays)}`;
+        }
+
+        window.onload = function() {
+            updateDDay();
+            renderOriginalView();
+        };
+    </script>
+</body>
+</html>
