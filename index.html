@@ -284,7 +284,7 @@
                     </div>
                     <div>
                         <p class="text-gray-500 text-[7px] md:text-xs font-bold uppercase mb-1">기초단체</p>
-                        <p class="text-base md:text-3xl font-black nrp-orange">3</p>
+                        <p class="text-base md:text-3xl font-black nrp-orange">4</p>
                     </div>
                     <div>
                         <p class="text-gray-500 text-[7px] md:text-xs font-bold uppercase mb-1">광역의회</p>
@@ -296,7 +296,7 @@
                     </div>
                     <div class="lg:border-l border-gray-700 lg:pl-10">
                         <p class="text-gray-500 text-[7px] md:text-xs font-bold uppercase mb-1">Total</p>
-                        <p class="text-base md:text-3xl font-black text-white">16</p>
+                        <p class="text-base md:text-3xl font-black text-white">17</p>
                     </div>
                 </div>
             </div>
@@ -322,8 +322,22 @@
             
             // 기초단체장
             { name: "이혜숙", region: "서울 관악구", metropolitan: "서울특별시", category: "기초단체장", office: "관악구청장", bio: ["관악구 갑 당협위원장"], photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQldYi95_jeH9ZscObQhU8SfeBkt7_id2CYecNX-bHuIl-NIOJ8r4XS_F4&s=10", focus: "focus-lee" },
-            { name: "전성균", region: "경기 화성시", metropolitan: "경기도", category: "기초단체장", office: "화성시장", bio: ["제9대 화성시의원", "경기도당 위원장", "전 개혁신당 최고위원"], photo: "https://i.imgur.com/iK8aR6Y.jpeg", focus: "photo-face-focus" },
+            { name: "전성균", region: "경기 화성시", metropolitan: "경기도", category: "기초단체장", office: "화성시장", bio: ["제9대 화성시의원", "경기도당 위원장", "전) 개혁신당 최고위원"], photo: "https://i.imgur.com/iK8aR6Y.jpeg", focus: "photo-face-focus" },
             { name: "송창훈", region: "경기 용인시", metropolitan: "경기도", category: "기초단체장", office: "용인시장", bio: ["용인시 정 당협위원장"], photo: "https://scontent-icn2-1.xx.fbcdn.net/v/t39.30808-6/450437661_3450567868423286_2114641151397295712_n.jpg?_nc_cat=110&_nc_cb=99be929b-f3b7c874&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=GW6g57NW-Z4Q7kNvwGPxpwb&_nc_oc=Adm9iqhrJj34naztKhTgQ8oN1Usjm4sHvDzAdVq9qM-Qvng6C4Ns3HSj4dbp6FI3aQM&_nc_zt=23&_nc_ht=scontent-icn2-1.xx&_nc_gid=ULOdTdciwa2heiWdAgak9w&oh=00_Afqv6Se-HLPwyrBxY8wrMkHja5BgaLWKs7M9cf1V7QkhQw&oe=6962E15F", focus: "photo-face-focus" },
+            { 
+                name: "하대식", 
+                region: "전북 남원시", 
+                metropolitan: "전북특별자치도", 
+                category: "기초단체장", 
+                office: "남원시장", 
+                bio: [
+                    "전) 전라북도의회 의원 (7, 8, 9대)", 
+                    "전) 제8대 전라북도의회 부의장", 
+                    "21대 대선 임실·순창·장수·남원 선대본부장"
+                ], 
+                photo: "https://i.imgur.com/iQNAzbs.jpeg", 
+                focus: "photo-face-focus" 
+            },
 
             // 광역의원
             { 
@@ -334,7 +348,7 @@
                 category: "광역의원", 
                 office: "서울시의원", 
                 bio: [
-                    "부산시당 청소년참여위원회 수석부위원장 겸 직무대행", 
+                    "부산시당 청소년참여위 수석부위원장", 
                     "대한민국 청소년 의회 17대 부의장"
                 ], 
                 photo: "https://i.imgur.com/wX5wC2A.jpeg", 
@@ -413,7 +427,7 @@
         function renderRegionView() {
             updateNavActive('btn-region');
             const container = document.getElementById('content-area');
-            const metros = ["서울특별시", "부산광역시", "인천광역시", "광주광역시", "대전광역시", "세종특별자치시", "경기도", "충청남도", "경상북도"];
+            const metros = ["서울특별시", "부산광역시", "인천광역시", "광주광역시", "대전광역시", "세종특별자치시", "경기도", "충청남도", "경상북도", "전북특별자치도"];
             let html = '<div class="mb-16">';
             metros.forEach(m => {
                 const regionalCandidates = candidates.filter(c => 
