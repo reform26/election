@@ -50,12 +50,35 @@
             z-index: 10; box-shadow: 0 2px 4px rgba(0,0,0,0.05); white-space: nowrap;
         }
 
-        .grid-responsive { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
-        @media (min-width: 640px) { .grid-responsive { grid-template-columns: repeat(4, 1fr); gap: 1.25rem; } }
+        .grid-responsive { 
+            display: grid; 
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 0.75rem; 
+        }
+        @media (min-width: 640px) { 
+            .grid-responsive { 
+                grid-template-columns: repeat(4, 1fr); 
+                gap: 1.25rem; 
+            } 
+        }
 
-        .photo-frame { height: 200px; background-color: #f1f3f5; overflow: hidden; position: relative; width: 100%; }
-        @media (min-width: 640px) { .photo-frame { height: 260px; } }
-        .candidate-photo { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .photo-frame { 
+            height: 200px; 
+            background-color: #f1f3f5; 
+            overflow: hidden; 
+            position: relative; 
+            width: 100%; 
+        }
+        @media (min-width: 640px) { 
+            .photo-frame { height: 260px; } 
+        }
+        
+        .candidate-photo { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            display: block; 
+        }
         
         .photo-face-focus { object-position: center top !important; }
         
@@ -446,14 +469,16 @@
                 category: "기초의원", 
                 office: "천안시의원", 
                 bio: ["대전시당 자문위원", "충남개혁정책네트워크 대표"], 
-                photo: "https://i.imgur.com/1rRvGm5.jpeg", 
+                photo: "https://i.imgur.com/rpUTBbK.png", // 이미지 교체
                 district: "라", 
                 sns: { 
                     fb: "https://www.facebook.com/leekangmin4473", 
                     ig: "#", 
                     yt: "#" 
                 }, 
-                decl: "https://rallypoint.kr/board/politics-free/223549" 
+                decl: "https://rallypoint.kr/board/politics-free/223549",
+                cardFit: "cover", 
+                cardPos: "center 15%" 
             },
             { 
                 name: "고재윤", 
@@ -540,7 +565,7 @@
                         <h3 class="text-base md:text-xl font-bold mb-1 tracking-wider">${c.name}</h3>
                         <div class="bio-text">${bioHtml}</div>
                         <div class="mt-auto nrp-bg-orange text-white py-2 rounded-xl font-bold text-[10px] md:text-sm leading-tight text-center">
-                            ${c.office} 후보
+                            ${c.office} 출마선언
                         </div>
                     </div>
                 </div>
@@ -727,3 +752,4 @@
     </script>
 </body>
 </html>
+
