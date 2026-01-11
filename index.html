@@ -5,13 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>개혁신당 2026 지방선거 · 재보궐선거 출마선언 현황</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 아이콘 로드 (Lucide) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Firebase SDK 로드 -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, onAuthStateChanged, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, doc, setDoc, getDoc, updateDoc, increment, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // 시스템 제공 환경 변수 및 초기화
+        const firebaseConfig = JSON.parse(__firebase_config);
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'reform-party-map';
+        
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        // 일일 접속자 카운트 로직
+        const trackVisitor = async (user) => {
+            if (!user) return;
+
+            const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
+            const visitDocRef = doc(db, 'artifacts', appId, 'public', 'data', 'visitorStats', today);
+
+            try {
+                const docSnap = await getDoc(visitDocRef);
+                if (docSnap.exists()) {
+                    await updateDoc(visitDocRef, { count: increment(1) });
+                } else {
+                    await setDoc(visitDocRef, { count: 1 });
+                }
+            } catch (e) {
+                console.error("접속자 기록 실패:", e);
+            }
+
+            // 실시간 접속자 수 업데이트 리스너
+            onSnapshot(visitDocRef, (doc) => {
+                if (doc.exists()) {
+                    const display = document.getElementById('today-hits-count');
+                    if (display) display.innerText = doc.data().count.toLocaleString();
+                }
+            }, (err) => console.error("데이터 읽기 실패:", err));
+        };
+
+        // 인증 처리
+        const initAuth = async () => {
+            if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+                await signInWithCustomToken(auth, __initial_auth_token);
+            } else {
+                await signInAnonymously(auth);
+            }
+        };
+
+        onAuthStateChanged(auth, trackVisitor);
+        initAuth();
+    </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700;800;900&display=swap');
         
-        html {
-            scroll-behavior: smooth;
-        }
-
+        html { scroll-behavior: smooth; }
         body {
             font-family: 'Pretendard', sans-serif;
             background-color: #f8f9fa;
@@ -22,186 +74,104 @@
 
         .nrp-orange { color: #FF6600; }
         .nrp-bg-orange { background-color: #FF6600; }
-        
-        /* 헤더 그라데이션 배경 */
         .header-gradient {
             background: linear-gradient(to bottom, rgba(255, 102, 0, 0.12) 0%, rgba(255, 102, 0, 0.05) 50%, transparent 100%);
             border-radius: 0 0 3rem 3rem;
         }
 
-        /* 내비게이션 바 스크롤바 숨기기 */
         .nav-container::-webkit-scrollbar { display: none; }
         .nav-container { -ms-overflow-style: none; scrollbar-width: none; }
 
         @media (min-width: 640px) {
-            .card-hover:hover {
-                transform: translateY(-8px);
-                box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            }
+            .card-hover:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
         }
         
         .region-tag {
-            position: absolute;
-            top: 8px;
-            left: 10px;
+            position: absolute; top: 8px; left: 10px;
             background-color: rgba(255, 102, 0, 0.9);
-            color: white;
-            padding: 3px 8px;
-            border-radius: 5px;
-            font-size: 0.6rem;
-            font-weight: 700;
-            z-index: 10;
-            backdrop-filter: blur(4px);
+            color: white; padding: 3px 8px; border-radius: 5px;
+            font-size: 0.6rem; font-weight: 700; z-index: 10; backdrop-filter: blur(4px);
         }
 
         .district-tag {
-            position: absolute;
-            top: 8px;
-            right: 10px;
-            background-color: white;
-            color: #FF6600;
-            border: 1.5px solid #FF6600;
-            min-width: 22px;
-            height: 22px;
-            padding: 0 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 11px;
-            font-size: 0.65rem;
-            font-weight: 800;
-            z-index: 10;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            white-space: nowrap;
+            position: absolute; top: 8px; right: 10px;
+            background-color: white; color: #FF6600; border: 1.5px solid #FF6600;
+            min-width: 22px; height: 22px; padding: 0 6px;
+            display: flex; align-items: center; justify-content: center;
+            border-radius: 11px; font-size: 0.65rem; font-weight: 800;
+            z-index: 10; box-shadow: 0 2px 4px rgba(0,0,0,0.05); white-space: nowrap;
         }
 
-        .grid-responsive {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0.75rem;
-        }
+        .grid-responsive { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+        @media (min-width: 640px) { .grid-responsive { grid-template-columns: repeat(4, 1fr); gap: 1.25rem; } }
 
-        @media (min-width: 640px) {
-            .grid-responsive {
-                grid-template-columns: repeat(4, 1fr);
-                gap: 1.25rem;
-            }
-        }
-
-        .photo-frame {
-            height: 200px; 
-            background-color: #f1f3f5;
-            overflow: hidden;
-            position: relative;
-            width: 100%;
-        }
-
-        @media (min-width: 640px) {
-            .photo-frame {
-                height: 260px; 
-            }
-        }
-
-        .candidate-photo {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        .photo-align-top { object-position: center top !important; }
-        .photo-align-bottom-adj { object-position: center 60% !important; } 
-        .photo-face-focus { object-position: center 15% !important; }
+        .photo-frame { height: 200px; background-color: #f1f3f5; overflow: hidden; position: relative; width: 100%; }
+        @media (min-width: 640px) { .photo-frame { height: 260px; } }
+        .candidate-photo { width: 100%; height: 100%; object-fit: cover; display: block; }
         
-        .focus-lee { 
-            object-fit: contain !important; 
-            background-color: #ffffff;
-            padding: 8px;
-        }
-
+        .photo-face-focus { object-position: center top !important; }
+        
         .section-title {
-            display: flex;
-            align-items: center;
-            font-size: 1.2rem;
-            font-weight: 800;
-            margin: 2rem 0 0.75rem 0;
-            color: #1a202c;
+            display: flex; align-items: center; font-size: 1.2rem; font-weight: 800;
+            margin: 2rem 0 0.75rem 0; color: #1a202c;
         }
-
-        @media (min-width: 640px) {
-            .section-title {
-                font-size: 1.6rem;
-                margin: 3rem 0 1.25rem 0;
-            }
-        }
-
-        .section-title::before {
-            content: "";
-            width: 5px;
-            height: 22px;
-            background-color: #FF6600;
-            margin-right: 10px;
-            border-radius: 2px;
-        }
+        @media (min-width: 640px) { .section-title { font-size: 1.6rem; margin: 3rem 0 1.25rem 0; } }
+        .section-title::before { content: ""; width: 5px; height: 22px; background-color: #FF6600; margin-right: 10px; border-radius: 2px; }
 
         .sub-section-title {
-            font-size: 1rem;
-            font-weight: 700;
-            color: #4a5568;
-            margin-bottom: 1rem;
-            padding-left: 4px;
-            border-left: 3px solid #cbd5e0;
-            margin-left: 2px;
+            font-size: 1rem; font-weight: 700; color: #4a5568; margin-bottom: 1rem;
+            padding-left: 4px; border-left: 3px solid #cbd5e0; margin-left: 2px;
         }
 
         .bio-text {
-            font-size: 0.65rem;
-            color: #718096;
-            margin-bottom: 0.5rem;
-            height: 3.5rem; 
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            font-weight: 600;
-            line-height: 1.3;
-            overflow: hidden;
+            font-size: 0.65rem; color: #718096; margin-bottom: 0.5rem; height: 3.5rem; 
+            display: flex; flex-direction: column; justify-content: center;
+            font-weight: 600; line-height: 1.3; overflow: hidden;
         }
-
-        @media (min-width: 640px) {
-            .bio-text {
-                font-size: 0.75rem;
-                height: 4.8rem;
-                margin-bottom: 0.75rem;
-            }
-        }
+        @media (min-width: 640px) { .bio-text { font-size: 0.75rem; height: 4.8rem; margin-bottom: 0.75rem; } }
 
         .nav-btn {
-            padding: 0.5rem 0.4rem;
-            border-radius: 0.6rem;
-            font-size: 0.65rem;
-            font-weight: 700;
-            color: #4b5563;
-            transition: all 0.2s ease-in-out;
-            cursor: pointer;
+            padding: 0.5rem 0.4rem; border-radius: 0.6rem; font-size: 0.65rem; font-weight: 700;
+            color: #4b5563; transition: all 0.2s ease-in-out; cursor: pointer;
         }
-        @media (min-width: 768px) {
-            .nav-btn {
-                font-size: 0.875rem;
-                padding: 0.5rem 1.25rem;
-            }
+        @media (min-width: 768px) { .nav-btn { font-size: 0.875rem; padding: 0.5rem 1.25rem; } }
+        .nav-btn:hover:not(:disabled) { background-color: #fff7ed; color: #FF6600; }
+        .nav-btn.active { background-color: #FF6600; color: white; }
+        .nav-btn:disabled { color: #d1d5db; cursor: default; }
+
+        .no-photo-placeholder {
+            display: flex; align-items: center; justify-content: center;
+            height: 100%; width: 100%; background-color: #e9ecef;
+            color: #adb5bd; font-weight: 800; font-size: 0.85rem;
+            text-align: center; padding: 20px;
         }
-        .nav-btn:hover:not(:disabled) {
-            background-color: #fff7ed;
-            color: #FF6600;
+        @media (min-width: 640px) { .no-photo-placeholder { font-size: 1.1rem; } }
+
+        /* 상세 팝업 (모달) 스타일 */
+        #profile-modal-overlay {
+            display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(4px); z-index: 1000; align-items: center; justify-content: center;
+            padding: 20px;
         }
-        .nav-btn.active {
-            background-color: #FF6600;
-            color: white;
+        .modal-content {
+            background: white; width: 100%; max-width: 400px; border-radius: 1.5rem;
+            overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+            animation: modalFadeIn 0.3s ease-out;
         }
-        .nav-btn:disabled {
-            color: #d1d5db;
-            cursor: default;
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
+        #profile-modal-overlay.active { display: flex; }
+
+        .sns-btn {
+            width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            background: #f1f3f5; color: #495057; transition: all 0.2s;
+        }
+        .sns-btn:hover { background: #e9ecef; transform: translateY(-2px); }
+        .sns-btn.fb:hover { color: #1877F2; }
+        .sns-btn.ig:hover { color: #E4405F; }
+        .sns-btn.youtube:hover { color: #FF0000; }
     </style>
 </head>
 <body id="top" class="p-0">
@@ -209,20 +179,15 @@
     <header class="header-gradient pt-8 pb-10 px-4 md:pt-12 md:pb-12 md:px-10 mb-4">
         <div class="max-w-6xl mx-auto">
             <div class="flex justify-between items-center mb-10">
-                <!-- 좌상단: 최종 업데이트 날짜 배지 -->
                 <div class="bg-white border-2 border-[#FF6600] px-4 py-1.5 md:px-8 md:py-3 rounded-full shadow-sm">
                     <span id="last-update-date" class="nrp-orange font-black text-xs md:text-xl tracking-tighter whitespace-nowrap">
-                        최종 업데이트 : 2026. 01. 07
+                        최종 업데이트 : 2026. 01. 11
                     </span>
                 </div>
-
-                <!-- D-Day 배지 -->
                 <div id="d-day-badge" class="nrp-bg-orange text-white px-4 py-1.5 md:px-8 md:py-3 rounded-full text-sm md:text-2xl font-black tracking-tighter shadow-lg whitespace-nowrap">
                     D-000
                 </div>
             </div>
-
-            <!-- 메인 타이틀 -->
             <div class="text-center">
                 <h1 class="text-2xl md:text-5xl font-black mb-4 tracking-tighter text-gray-900 leading-tight md:leading-[1.1]">
                     <span class="block mb-2 md:mb-4">
@@ -231,8 +196,6 @@
                     <span class="block">출마선언 현황</span>
                 </h1>
                 <p class="text-gray-500 text-sm md:text-lg font-semibold mb-6 text-center">제9회 전국동시지방선거를 향한 개혁의 도전</p>
-                
-                <!-- 온라인 공천심사 시스템 링크 버튼 -->
                 <div class="mb-2 text-center">
                     <a href="https://apply.reformparty.kr/" target="_blank" 
                        class="inline-block bg-white border-2 border-[#FF6600] nrp-orange px-8 py-3 md:px-14 md:py-4 rounded-2xl text-sm md:text-xl font-black hover:bg-[#FF6600] hover:text-white transition-all duration-300 shadow-md hover:shadow-xl transform hover:-translate-y-1">
@@ -244,7 +207,6 @@
     </header>
 
     <div class="max-w-6xl mx-auto px-4 md:px-10">
-        <!-- 내비게이션 바 -->
         <nav class="sticky top-4 z-50 mb-12 flex justify-center">
             <div class="nav-container flex items-center bg-white/90 backdrop-blur-md shadow-lg border border-gray-100 rounded-2xl p-1 md:p-1.5 overflow-x-auto whitespace-nowrap gap-0">
                 <button onclick="renderOriginalView()" class="nav-btn" id="btn-original">홈</button>
@@ -259,139 +221,473 @@
             </div>
         </nav>
 
-        <!-- 메인 콘텐츠 영역 -->
-        <main id="content-area">
-        </main>
+        <main id="content-area"></main>
 
         <!-- 요약 현황 푸터 -->
         <footer id="summary" class="mt-16 bg-gray-900 text-white rounded-[1.5rem] md:rounded-[2.5rem] p-6 md:p-10 shadow-2xl border-b-8 border-orange-500">
             <div class="flex flex-col lg:flex-row justify-between items-center gap-8 w-full">
                 <div class="text-center lg:text-left">
                     <h2 class="text-xl md:text-4xl font-black mb-2">출마 선언 총합</h2>
-                    <p class="text-gray-400 text-xs md:text-lg font-medium">
-                        개혁신당과 함께 지방 정치를 바꿀 주인공들입니다.
-                    </p>
+                    <p class="text-gray-400 text-xs md:text-lg font-medium">개혁신당과 함께 지방 정치를 바꿀 주인공들입니다.</p>
                 </div>
                 
-                <div class="grid grid-cols-6 gap-0.5 md:gap-4 w-full lg:w-auto text-center items-center">
+                <div class="grid grid-cols-6 gap-2 md:gap-8 w-full lg:w-auto text-center items-center">
                     <div>
-                        <p class="text-gray-500 text-[7px] md:text-xs font-bold uppercase mb-1">재보궐</p>
-                        <p class="text-base md:text-3xl font-black nrp-orange">0</p>
+                        <p class="text-gray-500 text-[8px] md:text-xs font-bold uppercase mb-1">재보궐</p>
+                        <p class="text-lg md:text-3xl font-black nrp-orange">0</p>
                     </div>
                     <div>
                         <p class="text-gray-500 text-[7px] md:text-xs font-bold uppercase mb-1">광역단체</p>
-                        <p class="text-base md:text-3xl font-black nrp-orange">5</p>
+                        <p class="text-lg md:text-3xl font-black nrp-orange">5</p>
                     </div>
                     <div>
                         <p class="text-gray-500 text-[7px] md:text-xs font-bold uppercase mb-1">기초단체</p>
-                        <p class="text-base md:text-3xl font-black nrp-orange">4</p>
+                        <p class="text-lg md:text-3xl font-black nrp-orange">4</p>
                     </div>
                     <div>
                         <p class="text-gray-500 text-[7px] md:text-xs font-bold uppercase mb-1">광역의회</p>
-                        <p class="text-base md:text-3xl font-black nrp-orange">1</p>
+                        <p class="text-lg md:text-3xl font-black nrp-orange">2</p>
                     </div>
                     <div>
                         <p class="text-gray-500 text-[7px] md:text-xs font-bold uppercase mb-1">기초의회</p>
-                        <p class="text-base md:text-3xl font-black nrp-orange">7</p>
+                        <p class="text-lg md:text-3xl font-black nrp-orange">8</p>
                     </div>
                     <div class="lg:border-l border-gray-700 lg:pl-10">
-                        <p class="text-gray-500 text-[7px] md:text-xs font-bold uppercase mb-1">Total</p>
-                        <p class="text-base md:text-3xl font-black text-white">17</p>
+                        <p class="text-gray-500 text-[8px] md:text-xs font-bold uppercase mb-1">Total</p>
+                        <p class="text-lg md:text-3xl font-black text-white">19</p>
                     </div>
                 </div>
             </div>
         </footer>
 
-        <!-- 비공식 안내 및 문의처 -->
-        <div class="mt-12 mb-16 text-center">
-            <p class="text-gray-400 text-[10px] md:text-xs font-medium leading-relaxed">
-                <strong class="text-gray-500">이 사이트는 개혁신당의 공식 사이트가 아닙니다.</strong><br>
-                내용추가, 오류, 수정, 제거를 원하시면 당원게시판으로 문의주세요. (닉네임 : 이즌석)
-            </p>
+        <!-- 최하단 영역 -->
+        <div class="mt-12 mb-16 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="text-center md:text-left">
+                <p class="text-gray-400 text-[10px] md:text-xs font-medium leading-relaxed">
+                    <strong class="text-gray-500">이 사이트는 개혁신당의 공식 사이트가 아닙니다.</strong><br>
+                    내용추가, 오류, 수정, 제거를 원하시면 당원게시판으로 문의주세요. (닉네임 : 이즌석)
+                </p>
+            </div>
+            <div class="text-center md:text-right">
+                <p class="text-gray-400 text-[10px] md:text-xs font-bold uppercase tracking-widest">
+                    Today hits : <span id="today-hits-count" class="text-gray-500">0</span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 상세 팝업 (모달) -->
+    <div id="profile-modal-overlay" onclick="closeProfileModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="relative h-72 bg-gray-100 overflow-hidden" id="modal-photo-area"></div>
+            <div class="p-8 text-center">
+                <h2 class="text-2xl font-black mb-1 tracking-wider" id="modal-name">후보 이름</h2>
+                <p class="text-[#FF6600] font-bold text-sm mb-6 leading-tight" id="modal-office">출마선언</p>
+                <div class="flex justify-center gap-4 mb-8" id="modal-sns-container">
+                    <a id="modal-fb" href="#" target="_blank" class="sns-btn fb"><i data-lucide="facebook"></i></a>
+                    <a id="modal-ig" href="#" target="_blank" class="sns-btn ig"><i data-lucide="instagram"></i></a>
+                    <a id="modal-yt" href="#" target="_blank" class="sns-btn youtube"><i data-lucide="youtube"></i></a>
+                </div>
+                <a id="modal-declaration" href="#" target="_blank" 
+                   class="block w-full py-4 nrp-bg-orange text-white rounded-2xl font-black text-lg shadow-lg hover:shadow-orange-200 transition-all">
+                    출마선언 보기
+                </a>
+                <button onclick="closeProfileModal()" class="mt-6 text-gray-400 text-sm font-bold hover:text-gray-600 tracking-tight">창 닫기</button>
+            </div>
         </div>
     </div>
 
     <script>
         const candidates = [
             // 광역단체장
-            { name: "김정철", region: "서울특별시", category: "광역단체장", office: "서울특별시장", bio: ["개혁신당 최고위원", "개혁신당 윤리위원"], photo: "https://img1.newsis.com/2025/11/25/NISI20251125_0021074114_web.jpg", focus: "photo-face-focus" },
-            { name: "정이한", region: "부산광역시", category: "광역단체장", office: "부산광역시장", bio: ["개혁신당 대변인"], photo: "https://cdn.seoulfn.com/news/photo/202511/612324_411809_430.jpg", focus: "photo-face-focus" },
-            { name: "이기붕", region: "인천광역시", category: "광역단체장", office: "인천광역시장", bio: ["인천시당 위원장"], photo: "https://scontent-ssn1-1.xx.fbcdn.net/v/t39.30808-6/605095144_32020031264298727_8796627824335242342_n.jpg?_nc_cat=101&_nc_cb=99be929b-f3b7c874&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=gYMTplQ2u70Q7kNvwHukfd7&_nc_oc=AdlZLoEgnYdZ9cOWWRXQeRpPMYhAiS9jOxypNydh4a4vGoU1-bFdR8aGx-EHVTeY_Kg&_nc_zt=23&_nc_ht=scontent-ssn1-1.xx&_nc_gid=fiUoiU97wOX0hFfIfmS_Yw&oh=00_Afp5z5Qams6bAtstpZkwcAcBk4eujLNPsRz3CNlWdKHZZg&oe=69610B92", focus: "photo-face-focus" },
-            { name: "최현수", region: "광주광역시", category: "광역단체장", office: "광주광역시장", bio: ["광주시당 위원장", "서구 을 당협위원장"], photo: "https://i.imgur.com/mzd1dts.jpeg", focus: "photo-face-focus" },
-            { name: "하헌휘", region: "세종특별자치시", category: "광역단체장", office: "세종특별자치시장", bio: ["세종시당 창준위원장", "세종시 갑 당협위원장"], photo: "https://image.dnews.co.kr/photo/photo/2024/11/21/202411211945335960037-2-565966.jpg", focus: "photo-face-focus" },
+            { 
+                name: "김정철", 
+                region: "서울특별시", 
+                category: "광역단체장", 
+                office: "서울특별시장", 
+                bio: ["개혁신당 최고위원", "개혁신당 윤리위원"], 
+                photo: "https://img1.newsis.com/2025/11/25/NISI20251125_0021074114_web.jpg", 
+                sns: { fb: "https://www.facebook.com/gimjeongcheol.869066/", ig: "#", yt: "https://www.youtube.com/@%EA%B9%80%EC%A0%95%EC%B2%A0%EB%B3%80%ED%98%B8%EC%82%AC" }, 
+                decl: "https://daily.hankooki.com/news/articleView.html?idxno=1247318" 
+            },
+            { 
+                name: "정이한", 
+                region: "부산광역시", 
+                category: "광역단체장", 
+                office: "부산광역시장", 
+                bio: ["개혁신당 대변인"], 
+                photo: "https://cdn.seoulfn.com/news/photo/202511/612324_411809_430.jpg", 
+                sns: { 
+                    fb: "https://www.facebook.com/jeong21official", 
+                    ig: "https://www.instagram.com/jeong21_official", 
+                    yt: "https://www.youtube.com/@jeong21tv" 
+                }, 
+                decl: "https://www.youtube.com/watch?v=fezJMfId854" 
+            },
+            { 
+                name: "이기붕", 
+                region: "인천광역시", 
+                category: "광역단체장", 
+                office: "인천광역시장", 
+                bio: ["인천시당 위원장"], 
+                photo: "https://i.imgur.com/aNqvWiU.jpeg", 
+                sns: { 
+                    fb: "https://www.facebook.com/keebung", 
+                    ig: "https://www.instagram.com/kevin_keebung_rhee/", 
+                    yt: "#" 
+                }, 
+                decl: "https://www.youtube.com/watch?v=vB47J90zQ00" 
+            },
+            { 
+                name: "최현수", 
+                region: "광주광역시", 
+                category: "광역단체장", 
+                office: "광주광역시장", 
+                bio: ["광주시당 위원장", "서구 을 당협위원장"], 
+                photo: "https://i.imgur.com/mzd1dts.jpeg", 
+                sns: { 
+                    fb: "https://www.facebook.com/profile.php?id=100075888273756", 
+                    ig: "https://www.instagram.com/hyun_soo_ch9/", 
+                    yt: "https://www.youtube.com/@%EC%B5%9C%ED%98%84%EC%88%98TV" 
+                }, 
+                decl: "https://www.youtube.com/live/zNKugaDviEM" 
+            },
+            { 
+                name: "하헌휘", 
+                region: "세종특별자치시", 
+                category: "광역단체장", 
+                office: "세종특별자치시장", 
+                bio: ["세종시당 창준위원장", "세종시 갑 당협위원장"], 
+                photo: "https://image.dnews.co.kr/photo/photo/2024/11/21/202411211945335960037-2-565966.jpg", 
+                sns: { 
+                    fb: "https://www.facebook.com/profile.php?id=61562035792083", 
+                    ig: "https://www.instagram.com/reform_lawyer/", 
+                    yt: "https://www.youtube.com/@%EA%B0%9C%ED%98%81%EC%8B%A0%EB%8B%B9%EC%84%B8%EC%A2%85" 
+                }, 
+                decl: "https://youtu.be/m4DTvulTDFk" 
+            },
             
             // 기초단체장
-            { name: "이혜숙", region: "서울 관악구", metropolitan: "서울특별시", category: "기초단체장", office: "관악구청장", bio: ["관악구 갑 당협위원장"], photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQldYi95_jeH9ZscObQhU8SfeBkt7_id2CYecNX-bHuIl-NIOJ8r4XS_F4&s=10", focus: "focus-lee" },
-            { name: "전성균", region: "경기 화성시", metropolitan: "경기도", category: "기초단체장", office: "화성시장", bio: ["제9대 화성시의원", "경기도당 위원장", "전) 개혁신당 최고위원"], photo: "https://i.imgur.com/iK8aR6Y.jpeg", focus: "photo-face-focus" },
-            { name: "송창훈", region: "경기 용인시", metropolitan: "경기도", category: "기초단체장", office: "용인시장", bio: ["용인시 정 당협위원장"], photo: "https://scontent-icn2-1.xx.fbcdn.net/v/t39.30808-6/450437661_3450567868423286_2114641151397295712_n.jpg?_nc_cat=110&_nc_cb=99be929b-f3b7c874&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=GW6g57NW-Z4Q7kNvwGPxpwb&_nc_oc=Adm9iqhrJj34naztKhTgQ8oN1Usjm4sHvDzAdVq9qM-Qvng6C4Ns3HSj4dbp6FI3aQM&_nc_zt=23&_nc_ht=scontent-icn2-1.xx&_nc_gid=ULOdTdciwa2heiWdAgak9w&oh=00_Afqv6Se-HLPwyrBxY8wrMkHja5BgaLWKs7M9cf1V7QkhQw&oe=6962E15F", focus: "photo-face-focus" },
+            { 
+                name: "이혜숙", 
+                region: "서울 관악구", 
+                metropolitan: "서울특별시", 
+                category: "기초단체장", 
+                office: "관악구청장", 
+                bio: ["관악구 갑 당협위원장"], 
+                photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQldYi95_jeH9ZscObQhU8SfeBkt7_id2CYecNX-bHuIl-NIOJ8r4XS_F4&s=10", 
+                sns: { 
+                    fb: "https://www.facebook.com/yesleehaesuk", 
+                    ig: "https://www.instagram.com/hyeasooklee/", 
+                    yt: "#" 
+                }, 
+                decl: "https://www.facebook.com/share/r/17yQWaSxVz/" 
+            },
+            { 
+                name: "전성균", 
+                region: "경기 화성시", 
+                metropolitan: "경기도", 
+                category: "기초단체장", 
+                office: "화성시장", 
+                bio: ["제9대 화성시의원", "경기도당 위원장", "전) 개혁신당 최고위원"], 
+                photo: "https://i.imgur.com/iK8aR6Y.jpeg", 
+                sns: { 
+                    fb: "https://www.facebook.com/seonggyun.jeon.7", 
+                    ig: "https://www.instagram.com/jeonsk_reform/", 
+                    yt: "https://www.youtube.com/@resetkorea_revolution" 
+                }, 
+                decl: "https://www.youtube.com/watch?v=MZHron4TMO4" 
+            },
+            { 
+                name: "송창훈", 
+                region: "경기 용인시", 
+                metropolitan: "경기도", 
+                category: "기초단체장", 
+                office: "용인시장", 
+                bio: ["용인시 정 당협위원장"], 
+                photo: "https://i.imgur.com/xHTGUwg.jpeg", 
+                sns: { 
+                    fb: "https://www.facebook.com/profile.php?id=100004103197128", 
+                    ig: "https://www.instagram.com/song_c_h_/", 
+                    yt: "#" 
+                }, 
+                decl: "https://www.youtube.com/watch?v=MZHron4TMO4",
+                focus: "photo-face-focus"
+            },
             { 
                 name: "하대식", 
                 region: "전북 남원시", 
                 metropolitan: "전북특별자치도", 
                 category: "기초단체장", 
                 office: "남원시장", 
-                bio: [
-                    "전) 전라북도의회 의원 (7, 8, 9대)", 
-                    "전) 제8대 전라북도의회 부의장", 
-                    "21대 대선 임실·순창·장수·남원 선대본부장"
-                ], 
+                bio: ["전) 전라북도의회 의원 (7, 8, 9대)", "전) 제8대 전라북도의회 부의장", "21대 대선 임실·순창·장수·남원 선대본부장"], 
                 photo: "https://i.imgur.com/iQNAzbs.jpeg", 
-                focus: "photo-face-focus" 
+                sns: { fb: "#", ig: "#", yt: "#" }, 
+                decl: "https://rallypoint.kr/board/politics-free/223350"
             },
 
             // 광역의원
             { 
                 name: "이재원", 
-                region: "서울 서초구", 
+                region: "서울특별시", 
+                metropolitan: "서울특별시",
                 shortMetro: "서울", 
                 constituency: "서초 2", 
                 category: "광역의원", 
                 office: "서울시의원", 
-                bio: [
-                    "부산시당 청소년참여위 수석부위원장", 
-                    "대한민국 청소년 의회 17대 부의장"
-                ], 
+                bio: ["부산시당 청소년참여위 수석부위원장", "대한민국 청소년 의회 17대 부의장"], 
                 photo: "https://i.imgur.com/wX5wC2A.jpeg", 
-                focus: "photo-face-focus" 
+                sns: { fb: "#", ig: "https://www.instagram.com/jaewoncalelee/", yt: "#" }, 
+                decl: "#" 
+            },
+            { 
+                name: "이봄", 
+                region: "서울특별시", 
+                metropolitan: "서울특별시", 
+                shortMetro: "서울", 
+                constituency: "비례", 
+                category: "광역의원", 
+                office: "서울시의원", 
+                bio: ["민주평화통일자문회의 자문위원", "약사", "이화여자대학교 약학과 졸업"], 
+                photo: "", 
+                sns: { fb: "#", ig: "#", yt: "#" }, 
+                decl: "https://rallypoint.kr/board/politics-free/223537" 
             },
 
-            // 기초의원 - 대전
-            { name: "조동운", region: "대전 서구", metropolitan: "대전광역시", category: "기초의원", office: "서구의원", bio: ["서구 을 당협위원장"], photo: "https://i.imgur.com/q8Z5Mst.png", district: "다", focus: "photo-align-top" },
-            { name: "박현겸", region: "대전 동구", metropolitan: "대전광역시", category: "기초의원", office: "동구의원", bio: ["대전시당 미래희망위원장"], photo: "https://i.imgur.com/TVxC1Kl.jpeg", district: "가", focus: "photo-face-focus" },
-            { name: "윤서진", region: "대전 유성구", metropolitan: "대전광역시", category: "기초의원", office: "유성구의원", bio: ["중앙당 미래희망위원회 위원", "대전시당 부위원장", "제35대 KAIST 총학생회장"], photo: "https://i.imgur.com/N24OK0K.jpeg", district: "나", focus: "photo-face-focus" },
-            
-            // 기초의원 - 기타 지역
-            { name: "최진형", region: "경기 안산시", metropolitan: "경기도", category: "기초의원", office: "안산시의원", bio: ["안산시 가선거구 출마"], photo: "https://www.notion.so/image/attachment%3A8b8ba3ac-4b70-4725-9d80-e79694a632b2%3A%EC%A6%9D%EB%AA%85%EC%82%AC%EC%A7%842.jpg?table=block&id=2b4a193a-42f1-81a1-bb53-f17592aee26f&spaceId=312b58e7-be17-4e3f-8977-ffc2191a7a05&width=460&userId=&cache=v2", district: "가", focus: "photo-face-focus" },
-            { name: "고재윤", region: "충남 당진시", metropolitan: "충청남도", category: "기초의원", office: "당진시의원", bio: ["당진시 라선거구 출마"], photo: "https://i.imgur.com/sJf2zpM.jpeg", district: "라", focus: "photo-face-focus" },
-            { name: "성진영", region: "경북 경산시", metropolitan: "경상북도", category: "기초의원", office: "경산시의원", bio: ["경산시 라선거구 출마"], photo: "https://i.imgur.com/fHwNOji.png", district: "라", focus: "photo-face-focus" },
-            { name: "신소일", region: "경북 경산시", metropolitan: "경상북도", category: "기초의원", office: "경산시의원", bio: ["경산시 라선거구 출마"], photo: "https://cdn.plus-gyeongbuk.kr/news/photo/202512/3890_4849_3034.jpg", district: "라", focus: "photo-align-bottom-adj" }
+            // 기초의원
+            { 
+                name: "조동운", 
+                region: "대전 서구", 
+                metropolitan: "대전광역시", 
+                category: "기초의원", 
+                office: "서구의원", 
+                bio: ["서구 을 당협위원장"], 
+                photo: "https://i.imgur.com/q8Z5Mst.png", 
+                district: "다", 
+                sns: { 
+                    fb: "https://www.facebook.com/c2716898", 
+                    ig: "https://www.instagram.com/c2716898/", 
+                    yt: "#" 
+                }, 
+                decl: "https://www.youtube.com/watch?v=uyHmrX9hypw" 
+            },
+            { name: "박현겸", region: "대전 동구", metropolitan: "대전광역시", category: "기초의원", office: "동구의원", bio: ["대전시당 미래희망위원장"], photo: "https://i.imgur.com/TVxC1Kl.jpeg", district: "가", sns: { fb: "#", ig: "#", yt: "#" }, decl: "https://www.youtube.com/watch?v=uyHmrX9hypw" },
+            { 
+                name: "윤서진", 
+                region: "대전 유성구", 
+                metropolitan: "대전광역시", 
+                category: "기초의원", 
+                office: "유성구의원", 
+                bio: ["중앙당 미래희망위원회 위원", "대전시당 부위원장", "제35대 KAIST 총학생회장"], 
+                photo: "https://i.imgur.com/N24OK0K.jpeg", 
+                district: "나", 
+                sns: { fb: "#", ig: "https://www.instagram.com/seojin_ys/", yt: "#" }, 
+                decl: "#" 
+            },
+            { 
+                name: "최진형", 
+                region: "경기도 안산시", 
+                metropolitan: "경기도", 
+                category: "기초의원", 
+                office: "안산시의원", 
+                bio: ["안산시 가선거구 출마"], 
+                photo: "https://www.notion.so/image/attachment%3A8b8ba3ac-4b70-4725-9d80-e79694a632b2%3A%EC%A6%9D%EB%AA%85%EC%82%AC%EC%A7%842.jpg?table=block&id=2b4a193a-42f1-81a1-bb53-f17592aee26f&spaceId=312b58e7-be17-4e3f-8977-ffc2191a7a05&width=460&userId=&cache=v2", 
+                district: "가", 
+                sns: { fb: "#", ig: "https://www.instagram.com/realbro_22/", yt: "#" }, 
+                decl: "https://rallypoint.kr/board/politics-free/223063"
+            },
+            { 
+                name: "이강민", 
+                region: "충청남도 천안시", 
+                metropolitan: "충청남도", 
+                category: "기초의원", 
+                office: "천안시의원", 
+                bio: ["대전시당 자문위원", "충남개혁정책네트워크 대표"], 
+                photo: "https://i.imgur.com/1rRvGm5.jpeg", 
+                district: "라", 
+                sns: { 
+                    fb: "https://www.facebook.com/leekangmin4473", // 업데이트
+                    ig: "#", 
+                    yt: "#" 
+                }, 
+                decl: "https://rallypoint.kr/board/politics-free/223549" 
+            },
+            { 
+                name: "고재윤", 
+                region: "충청남도 당진시", 
+                metropolitan: "충청남도", 
+                category: "기초의원", 
+                office: "당진시의원", 
+                bio: ["당진시 라선거구 출마"], 
+                photo: "https://i.imgur.com/sJf2zpM.jpeg", 
+                district: "라", 
+                sns: { fb: "#", ig: "https://www.instagram.com/yn._.jae/", yt: "#" }, 
+                decl: "https://rallypoint.kr/board/politics-free/222868" 
+            },
+            { 
+                name: "성진영", 
+                region: "경상북도 경산시", 
+                metropolitan: "경상북도", 
+                category: "기초의원", 
+                office: "경산시의원", 
+                bio: ["경산시 라선거구 출마"], 
+                photo: "https://i.imgur.com/fHwNOji.png", 
+                district: "라", 
+                sns: { fb: "#", ig: "https://www.instagram.com/jyseong_gyeongsan/", yt: "#" }, 
+                decl: "https://rallypoint.kr/board/politics-free/222667" 
+            },
+            { 
+                name: "신소일", 
+                region: "경상북도 경산시", 
+                metropolitan: "경상북도", 
+                category: "기초의원", 
+                office: "경산시의원", 
+                bio: ["경산시 라선거구 출마"], 
+                photo: "https://i.imgur.com/DlwpsdL.jpeg", 
+                district: "라", 
+                sns: { fb: "https://www.facebook.com/sinsoil.2025", ig: "#", yt: "#" }, 
+                decl: "https://www.plus-gyeongbuk.kr/news/articleView.html?idxno=3890",
+                cardFit: "cover",
+                cardPos: "center 80%" 
+            }
         ];
 
         function createCard(c) {
             let bioHtml = c.bio.map(line => `<span>${line}</span>`).join('');
+            let leftTagText = c.region;
+            if (c.category === "기초의원") {
+                const isMetropolitan = c.metropolitan.endsWith('특별시') || c.metropolitan.endsWith('광역시') || c.metropolitan.endsWith('특별자치시');
+                if (isMetropolitan) {
+                    const parts = c.region.split(' ');
+                    leftTagText = parts.length > 1 ? parts.slice(1).join(' ') : c.region;
+                } else {
+                    leftTagText = c.region.replace("경기도", "경기")
+                                          .replace("충청남도", "충남")
+                                          .replace("경상북도", "경북")
+                                          .replace("전라북도", "전북")
+                                          .replace("전북특별자치도", "전북")
+                                          .replace("충청북도", "충북")
+                                          .replace("경상남도", "경남")
+                                          .replace("전라남도", "전남")
+                                          .replace("제주특별자치도", "제주");
+                }
+            } else if (c.category === "광역의원") {
+                leftTagText = c.shortMetro || c.region;
+            }
             
-            let leftTagText = c.category === "광역의원" ? (c.shortMetro || c.region) : c.region;
             let rightTagText = c.category === "광역의원" ? c.constituency : c.district;
-            
             let districtTag = rightTagText ? `<div class="district-tag">${rightTagText}</div>` : "";
             
+            const isNoPhoto = !c.photo || c.photo.trim() === "";
+            const fit = c.cardFit || "cover";
+            const pos = c.cardPos || "center top"; 
+            
+            const photoContent = isNoPhoto 
+                ? `<div class="no-photo-placeholder">준비중입니다</div>`
+                : `<img src="${c.photo}" class="candidate-photo ${!c.cardFit ? 'photo-face-focus' : ''}" style="object-fit: ${fit} !important; object-position: ${pos} !important;" alt="${c.name}" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=no-photo-placeholder>준비중입니다</div>';">`;
+
             return `
-                <div class="bg-white rounded-[1rem] md:rounded-[1.5rem] shadow-md border border-gray-100 card-hover transition-all duration-500 overflow-hidden flex flex-col h-full">
+                <div onclick="openProfileModal('${c.name}')" class="bg-white rounded-[1rem] md:rounded-[1.5rem] shadow-md border border-gray-100 card-hover transition-all duration-500 overflow-hidden flex flex-col h-full cursor-pointer">
                     <div class="photo-frame">
                         <div class="region-tag">${leftTagText}</div>
                         ${districtTag}
-                        <img src="${c.photo}" class="candidate-photo ${c.focus || ''}" alt="${c.name}" onerror="this.src='https://via.placeholder.com/400x500?text=Photo'">
+                        ${photoContent}
                     </div>
                     <div class="pt-2 px-3 pb-4 md:pt-4 md:px-6 md:pb-6 text-center flex flex-col flex-grow">
                         <h3 class="text-base md:text-xl font-bold mb-1 tracking-wider">${c.name}</h3>
                         <div class="bio-text">${bioHtml}</div>
                         <div class="mt-auto nrp-bg-orange text-white py-2 rounded-xl font-bold text-[10px] md:text-sm leading-tight text-center">
-                            ${c.office} 출마선언
+                            ${c.office} 후보
                         </div>
                     </div>
                 </div>
             `;
         }
+
+        window.openProfileModal = function(name) {
+            const c = candidates.find(cand => cand.name === name);
+            if (!c) return;
+
+            document.getElementById('modal-name').innerText = c.name;
+            
+            // 상세 팝업 직책 텍스트 설정 로직
+            let officeText = "";
+            if (c.category === "광역의원") {
+                if (c.constituency === "비례") {
+                    officeText = `${c.metropolitan || '서울특별시'}의회 비례대표 출마선언`;
+                } else {
+                    let formattedConst = c.constituency.replace(/(\d+)/, "제$1");
+                    officeText = `${c.metropolitan || '서울특별시'}의회 ${formattedConst}선거구`;
+                }
+            } else if (c.category === "기초의원") {
+                let displayRegion = c.region;
+                const isMetropolitan = c.metropolitan.endsWith('특별시') || c.metropolitan.endsWith('광역시') || c.metropolitan.endsWith('특별자치시');
+                if (!isMetropolitan) {
+                    const parts = c.region.split(' ');
+                    if (parts.length > 1) displayRegion = parts.slice(1).join(' '); 
+                }
+                officeText = `${displayRegion}의회 ${c.district}선거구`;
+            } else {
+                officeText = c.office + " 후보";
+            }
+            document.getElementById('modal-office').innerText = officeText;
+            
+            const photoArea = document.getElementById('modal-photo-area');
+            if (!c.photo || c.photo.trim() === "") {
+                photoArea.innerHTML = `<div class="no-photo-placeholder">준비중입니다</div>`;
+            } else {
+                // 상세 팝업에서는 전체가 보이도록 contain 유지
+                photoArea.innerHTML = `<img src="${c.photo}" class="w-full h-full object-contain" style="object-position: center top" alt="${c.name}">`;
+            }
+
+            const snsContainer = document.getElementById('modal-sns-container');
+            const fbBtn = document.getElementById('modal-fb');
+            const igBtn = document.getElementById('modal-ig');
+            const ytBtn = document.getElementById('modal-yt');
+
+            if (!c.sns) {
+                snsContainer.style.display = 'none';
+            } else {
+                snsContainer.style.display = 'flex';
+                const checkAndSet = (btn, link) => {
+                    if (link && link !== "" && link !== "#") {
+                        btn.style.display = 'flex';
+                        btn.href = link;
+                    } else {
+                        btn.style.display = 'none';
+                    }
+                };
+                checkAndSet(fbBtn, c.sns.fb);
+                checkAndSet(igBtn, c.sns.ig);
+                checkAndSet(ytBtn, c.sns.yt);
+                if (fbBtn.style.display === 'none' && igBtn.style.display === 'none' && ytBtn.style.display === 'none') {
+                    snsContainer.style.display = 'none';
+                }
+            }
+
+            // 출마선언 버튼 제어 (링크가 '#'인 경우 버튼 숨김)
+            const declBtn = document.getElementById('modal-declaration');
+            if (c.decl && c.decl !== "#") {
+                declBtn.style.display = 'block';
+                declBtn.href = c.decl;
+            } else {
+                declBtn.style.display = 'none';
+            }
+            
+            const overlay = document.getElementById('profile-modal-overlay');
+            overlay.style.display = 'flex';
+            setTimeout(() => overlay.classList.add('active'), 10);
+            document.body.style.overflow = 'hidden'; 
+        };
+
+        window.closeProfileModal = function(event) {
+            const overlay = document.getElementById('profile-modal-overlay');
+            overlay.classList.remove('active');
+            setTimeout(() => {
+                overlay.style.display = 'none';
+                document.body.style.overflow = '';
+            }, 300);
+        };
 
         function renderOriginalView() {
             updateNavActive('btn-original');
@@ -421,6 +717,7 @@
                     </div>
                 </section>
             `;
+            lucide.createIcons();
             window.scrollTo({top: 0, behavior: 'smooth'});
         }
 
@@ -431,9 +728,7 @@
             let html = '<div class="mb-16">';
             metros.forEach(m => {
                 const regionalCandidates = candidates.filter(c => 
-                    c.region.includes(m.substring(0,2)) || 
-                    c.metropolitan === m || 
-                    c.region === m
+                    c.region.includes(m.substring(0,2)) || c.metropolitan === m || c.region === m
                 );
                 if(regionalCandidates.length > 0) {
                     html += `
@@ -446,6 +741,7 @@
             });
             html += '</div>';
             container.innerHTML = html;
+            lucide.createIcons();
             window.scrollTo({top: 0, behavior: 'smooth'});
         }
 
