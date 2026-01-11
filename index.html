@@ -11,7 +11,7 @@
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
         import { getAuth, signInAnonymously, onAuthStateChanged, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-        import { getFirestore, doc, setDoc, getDoc, updateDoc, increment, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        import { getFirestore, doc, setDoc, updateDoc, increment, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
         // 시스템 제공 환경 변수 및 초기화
         const firebaseConfig = JSON.parse(__firebase_config);
@@ -21,20 +21,27 @@
         const auth = getAuth(app);
         const db = getFirestore(app);
 
+        let hasTracked = false; // 중복 카운트 방지 플래그
+
         // 일일 접속자 카운트 로직
         const trackVisitor = async (user) => {
-            if (!user) return;
+            if (!user || hasTracked) return;
+            hasTracked = true; // 세션 내 1회만 실행
 
-            const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
+            // 한국 시간 기준 YYYY-MM-DD 생성
+            const now = new Date();
+            const kstOffset = 9 * 60 * 60 * 1000;
+            const kstDate = new Date(now.getTime() + kstOffset);
+            const today = kstDate.toISOString().split('T')[0];
+
             const visitDocRef = doc(db, 'artifacts', appId, 'public', 'data', 'visitorStats', today);
 
             try {
-                const docSnap = await getDoc(visitDocRef);
-                if (docSnap.exists()) {
-                    await updateDoc(visitDocRef, { count: increment(1) });
-                } else {
-                    await setDoc(visitDocRef, { count: 1 });
-                }
+                // 문서가 없으면 생성(count:1), 있으면 increment(1)
+                await setDoc(visitDocRef, { 
+                    count: increment(1),
+                    lastUpdate: new Date().toISOString()
+                }, { merge: true });
             } catch (e) {
                 console.error("접속자 기록 실패:", e);
             }
@@ -506,7 +513,7 @@
                 photo: "https://i.imgur.com/1rRvGm5.jpeg", 
                 district: "라", 
                 sns: { 
-                    fb: "https://www.facebook.com/leekangmin4473", // 업데이트
+                    fb: "https://www.facebook.com/leekangmin4473", 
                     ig: "#", 
                     yt: "#" 
                 }, 
@@ -676,7 +683,10 @@
             
             const overlay = document.getElementById('profile-modal-overlay');
             overlay.style.display = 'flex';
-            setTimeout(() => overlay.classList.add('active'), 10);
+            setTimeout(() => {
+                overlay.classList.add('active');
+                lucide.createIcons(); // 모달 오픈 후 아이콘 생성
+            }, 10);
             document.body.style.overflow = 'hidden'; 
         };
 
@@ -782,5 +792,7 @@
             renderOriginalView();
         };
     </script>
+</body>
+</html>
 </body>
 </html>
