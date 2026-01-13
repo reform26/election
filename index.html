@@ -41,6 +41,25 @@
             font-size: 0.6rem; font-weight: 700; z-index: 10; backdrop-filter: blur(4px);
         }
 
+        /* 이름 옆 NEW 배지 스타일 */
+        .new-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #FF6600;
+            color: white;
+            padding: 1px 4px;
+            border-radius: 3px;
+            font-size: 0.55rem;
+            font-weight: 900;
+            margin-left: 5px;
+            vertical-align: middle;
+            line-height: 1;
+            transform: translateY(-1px);
+            box-shadow: 0 1px 2px rgba(255, 102, 0, 0.2);
+            white-space: nowrap;
+        }
+
         .district-tag {
             position: absolute; top: 8px; right: 10px;
             background-color: white; color: #FF6600; border: 1.5px solid #FF6600;
@@ -143,16 +162,17 @@
         .sns-btn.fb:hover { color: #1877F2; }
         .sns-btn.ig:hover { color: #E4405F; }
         .sns-btn.youtube:hover { color: #FF0000; }
+        .sns-btn.blog:hover { color: #03C75A; }
     </style>
 </head>
 <body id="top" class="p-0">
     <!-- 헤더 영역 -->
-    <header class="header-gradient pt-8 pb-10 px-4 md:pt-12 md:pb-12 md:px-10 mb-4">
+    <header class="header-gradient pt-8 pb-4 px-4 md:pt-12 md:pb-6 md:px-10 mb-0">
         <div class="max-w-6xl mx-auto">
             <div class="flex justify-between items-center mb-10">
                 <div class="bg-white border-2 border-[#FF6600] px-4 py-1.5 md:px-8 md:py-3 rounded-full shadow-sm">
                     <span id="last-update-date" class="nrp-orange font-black text-xs md:text-xl tracking-tighter whitespace-nowrap">
-                        최종 업데이트 : 2026. 01. 11
+                        최종 업데이트 : 2026. 01. 13
                     </span>
                 </div>
                 <div id="d-day-badge" class="nrp-bg-orange text-white px-4 py-1.5 md:px-8 md:py-3 rounded-full text-sm md:text-2xl font-black tracking-tighter shadow-lg whitespace-nowrap">
@@ -167,18 +187,25 @@
                     <span class="block">출마선언 현황</span>
                 </h1>
                 <p class="text-gray-500 text-sm md:text-lg font-semibold mb-6 text-center">제9회 전국동시지방선거를 향한 개혁의 도전</p>
-                <div class="mb-2 text-center">
+                <div class="text-center">
                     <a href="https://apply.reformparty.kr/" target="_blank" 
                        class="inline-block bg-white border-2 border-[#FF6600] nrp-orange px-8 py-3 md:px-14 md:py-4 rounded-2xl text-sm md:text-xl font-black hover:bg-[#FF6600] hover:text-white transition-all duration-300 shadow-md hover:shadow-xl transform hover:-translate-y-1">
                         개혁신당 온라인 공천심사 시스템 들어가기
                     </a>
+                    <!-- 버튼 하단 공지 문구 -->
+                    <div class="mt-4 space-y-0.5 text-gray-400 text-[10px] md:text-xs font-medium leading-relaxed opacity-80">
+                        <p>개혁신당의 공식 사이트가 아닌 비공식 아카이브입니다!</p>
+                        <p>해당 정보는 언제든 변경될 수 있습니다.</p>
+                        <p>해당 정보는 수동으로 수집하므로 부정확할 수 있습니다.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </header>
 
     <div class="max-w-6xl mx-auto px-4 md:px-10">
-        <nav class="sticky top-4 z-50 mb-12 flex justify-center">
+        <!-- 네비게이션 바 -->
+        <nav class="sticky top-4 z-50 mb-6 flex justify-center mt-2">
             <div class="nav-container flex items-center bg-white/90 backdrop-blur-md shadow-lg border border-gray-100 rounded-2xl p-1 md:p-1.5 overflow-x-auto whitespace-nowrap gap-0">
                 <button onclick="renderOriginalView()" class="nav-btn" id="btn-original">홈</button>
                 <div class="w-px h-4 bg-gray-200 mx-0.5 flex-shrink-0"></div>
@@ -221,22 +248,22 @@
                     </div>
                     <div>
                         <p class="text-gray-500 text-[7px] md:text-xs font-bold uppercase mb-1">기초의회</p>
-                        <p class="text-lg md:text-3xl font-black nrp-orange">8</p>
+                        <p class="text-lg md:text-3xl font-black nrp-orange">9</p>
                     </div>
                     <div class="lg:border-l border-gray-700 lg:pl-10">
                         <p class="text-gray-500 text-[8px] md:text-xs font-bold uppercase mb-1">Total</p>
-                        <p class="text-lg md:text-3xl font-black text-white">19</p>
+                        <p class="text-lg md:text-3xl font-black text-white">20</p>
                     </div>
                 </div>
             </div>
         </footer>
 
         <!-- 최하단 영역 -->
-        <div class="mt-12 mb-16 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="mt-12 mb-16 flex flex-col md:flex-row justify-between items-center gap-4 border-t border-gray-200 pt-8">
             <div class="text-center md:text-left">
                 <p class="text-gray-400 text-[10px] md:text-xs font-medium leading-relaxed">
                     <strong class="text-gray-500">이 사이트는 개혁신당의 공식 사이트가 아닙니다.</strong><br>
-                    내용추가, 오류, 수정, 제거를 원하시면 당원게시판으로 문의주세요. (닉네임 : 이즌석)
+                    내용 추가, 오류 수정, 정보 제거를 원하시면 <a href="https://rallypoint.kr" target="_blank" class="underline hover:text-gray-600 transition-colors">당원게시판</a>으로 문의주세요. (닉네임: 이즌석)
                 </p>
             </div>
         </div>
@@ -253,6 +280,7 @@
                     <a id="modal-fb" href="#" target="_blank" class="sns-btn fb"><i data-lucide="facebook"></i></a>
                     <a id="modal-ig" href="#" target="_blank" class="sns-btn ig"><i data-lucide="instagram"></i></a>
                     <a id="modal-yt" href="#" target="_blank" class="sns-btn youtube"><i data-lucide="youtube"></i></a>
+                    <a id="modal-blog" href="#" target="_blank" class="sns-btn blog"><i data-lucide="link-2"></i></a>
                 </div>
                 <a id="modal-declaration" href="#" target="_blank" 
                    class="block w-full py-4 nrp-bg-orange text-white rounded-2xl font-black text-lg shadow-lg hover:shadow-orange-200 transition-all">
@@ -267,277 +295,141 @@
         const candidates = [
             // 광역단체장
             { 
-                name: "김정철", 
-                region: "서울특별시", 
-                category: "광역단체장", 
-                office: "서울특별시장", 
-                bio: ["개혁신당 최고위원", "개혁신당 윤리위원"], 
-                photo: "https://img1.newsis.com/2025/11/25/NISI20251125_0021074114_web.jpg", 
-                sns: { fb: "https://www.facebook.com/gimjeongcheol.869066/", ig: "#", yt: "https://www.youtube.com/@%EA%B9%80%EC%A0%95%EC%B2%A0%EB%B3%80%ED%98%B8%EC%82%AC" }, 
-                decl: "https://daily.hankooki.com/news/articleView.html?idxno=1247318" 
+                name: "김정철", region: "서울특별시", category: "광역단체장", office: "서울특별시장", bio: ["개혁신당 최고위원", "개혁신당 윤리위원"], 
+                photo: "https://img1.newsis.com/2025/11/25/NISI20251125_0021074114_web.jpg", sns: { fb: "https://www.facebook.com/gimjeongcheol.869066/", ig: "#", yt: "https://www.youtube.com/@%EA%B9%80%EC%A0%95%EC%B2%A0%EB%B3%80%ED%98%B8%EC%82%AC" }, 
+                decl: "https://daily.hankooki.com/news/articleView.html?idxno=1247318", dateAdded: "2025-11-25"
             },
             { 
-                name: "정이한", 
-                region: "부산광역시", 
-                category: "광역단체장", 
-                office: "부산광역시장", 
-                bio: ["개혁신당 대변인"], 
-                photo: "https://cdn.seoulfn.com/news/photo/202511/612324_411809_430.jpg", 
-                sns: { 
-                    fb: "https://www.facebook.com/jeong21official", 
-                    ig: "https://www.instagram.com/jeong21_official", 
-                    yt: "https://www.youtube.com/@jeong21tv" 
-                }, 
-                decl: "https://www.youtube.com/watch?v=fezJMfId854" 
+                name: "정이한", region: "부산광역시", category: "광역단체장", office: "부산광역시장", bio: ["개혁신당 대변인"], 
+                photo: "https://cdn.seoulfn.com/news/photo/202511/612324_411809_430.jpg", sns: { fb: "https://www.facebook.com/jeong21official", ig: "https://www.instagram.com/jeong21_official", yt: "https://www.youtube.com/@jeong21tv" }, 
+                decl: "https://www.youtube.com/watch?v=fezJMfId854", dateAdded: "2025-11-25"
             },
             { 
-                name: "이기붕", 
-                region: "인천광역시", 
-                category: "광역단체장", 
-                office: "인천광역시장", 
-                bio: ["인천시당 위원장"], 
-                photo: "https://i.imgur.com/aNqvWiU.jpeg", 
-                sns: { 
-                    fb: "https://www.facebook.com/keebung", 
-                    ig: "https://www.instagram.com/kevin_keebung_rhee/", 
-                    yt: "#" 
-                }, 
-                decl: "https://www.youtube.com/watch?v=vB47J90zQ00" 
+                name: "이기붕", region: "인천광역시", category: "광역단체장", office: "인천광역시장", bio: ["인천시당 위원장"], 
+                photo: "https://i.imgur.com/aNqvWiU.jpeg", sns: { fb: "https://www.facebook.com/keebung", ig: "https://www.instagram.com/kevin_keebung_rhee/", yt: "#" }, 
+                decl: "https://www.youtube.com/watch?v=vB47J90zQ00", dateAdded: "2025-12-01"
             },
             { 
-                name: "최현수", 
-                region: "광주광역시", 
-                category: "광역단체장", 
-                office: "광주광역시장", 
-                bio: ["광주시당 위원장", "서구 을 당협위원장"], 
-                photo: "https://i.imgur.com/mzd1dts.jpeg", 
-                sns: { 
-                    fb: "https://www.facebook.com/profile.php?id=100075888273756", 
-                    ig: "https://www.instagram.com/hyun_soo_ch9/", 
-                    yt: "https://www.youtube.com/@%EC%B5%9C%ED%98%84%EC%88%98TV" 
-                }, 
-                decl: "https://www.youtube.com/live/zNKugaDviEM" 
+                name: "최현수", region: "광주광역시", category: "광역단체장", office: "광주광역시장", bio: ["광주시당 위원장", "서구 을 당협위원장"], 
+                photo: "https://i.imgur.com/mzd1dts.jpeg", sns: { fb: "https://www.facebook.com/profile.php?id=100075888273756", ig: "https://www.instagram.com/hyun_soo_ch9/", yt: "https://www.youtube.com/@%EC%B5%9C%ED%98%84%EC%88%98TV" }, 
+                decl: "https://www.youtube.com/live/zNKugaDviEM", dateAdded: "2025-12-01"
             },
             { 
-                name: "하헌휘", 
-                region: "세종특별자치시", 
-                category: "광역단체장", 
-                office: "세종특별자치시장", 
-                bio: ["세종시당 창준위원장", "세종시 갑 당협위원장"], 
-                photo: "https://image.dnews.co.kr/photo/photo/2024/11/21/202411211945335960037-2-565966.jpg", 
-                sns: { 
-                    fb: "https://www.facebook.com/profile.php?id=61562035792083", 
-                    ig: "https://www.instagram.com/reform_lawyer/", 
-                    yt: "https://www.youtube.com/@%EA%B0%9C%ED%98%81%EC%8B%A0%EB%8B%B9%EC%84%B8%EC%A2%85" 
-                }, 
-                decl: "https://youtu.be/m4DTvulTDFk" 
+                name: "하헌휘", region: "세종특별자치시", category: "광역단체장", office: "세종특별자치시장", bio: ["세종시당 창준위원장", "세종시 갑 당협위원장"], 
+                photo: "https://image.dnews.co.kr/photo/photo/2024/11/21/202411211945335960037-2-565966.jpg", sns: { fb: "https://www.facebook.com/profile.php?id=61562035792083", ig: "https://www.instagram.com/reform_lawyer/", yt: "https://www.youtube.com/@%EA%B0%9C%ED%98%81%EC%8B%A0%EB%8B%B9%EC%84%B8%EC%A2%85" }, 
+                decl: "https://youtu.be/m4DTvulTDFk", dateAdded: "2025-12-05"
             },
             
             // 기초단체장
             { 
-                name: "이혜숙", 
-                region: "서울 관악구", 
-                metropolitan: "서울특별시", 
-                category: "기초단체장", 
-                office: "관악구청장", 
-                bio: ["관악구 갑 당협위원장"], 
-                photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQldYi95_jeH9ZscObQhU8SfeBkt7_id2CYecNX-bHuIl-NIOJ8r4XS_F4&s=10", 
-                sns: { 
-                    fb: "https://www.facebook.com/yesleehaesuk", 
-                    ig: "https://www.instagram.com/hyeasooklee/", 
-                    yt: "#" 
-                }, 
-                decl: "https://www.facebook.com/share/r/17yQWaSxVz/" 
+                name: "이혜숙", region: "서울 관악구", metropolitan: "서울특별시", category: "기초단체장", office: "관악구청장", bio: ["관악구 갑 당협위원장"], 
+                photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQldYi95_jeH9ZscObQhU8SfeBkt7_id2CYecNX-bHuIl-NIOJ8r4XS_F4&s=10", sns: { fb: "https://www.facebook.com/yesleehaesuk", ig: "https://www.instagram.com/hyeasooklee/", yt: "#" }, 
+                decl: "https://www.facebook.com/share/r/17yQWaSxVz/", dateAdded: "2026-01-05"
             },
             { 
-                name: "전성균", 
-                region: "경기 화성시", 
-                metropolitan: "경기도", 
-                category: "기초단체장", 
-                office: "화성시장", 
-                bio: ["제9대 화성시의원", "경기도당 위원장", "전) 개혁신당 최고위원"], 
-                photo: "https://i.imgur.com/iK8aR6Y.jpeg", 
-                sns: { 
-                    fb: "https://www.facebook.com/seonggyun.jeon.7", 
-                    ig: "https://www.instagram.com/jeonsk_reform/", 
-                    yt: "https://www.youtube.com/@resetkorea_revolution" 
-                }, 
-                decl: "https://www.youtube.com/watch?v=MZHron4TMO4" 
+                name: "전성균", region: "경기 화성시", metropolitan: "경기도", category: "기초단체장", office: "화성시장", bio: ["제9대 화성시의원", "경기도당 위원장", "전) 개혁신당 최고위원"], 
+                photo: "https://i.imgur.com/iK8aR6Y.jpeg", sns: { fb: "https://www.facebook.com/seonggyun.jeon.7", ig: "https://www.instagram.com/jeonsk_reform/", yt: "https://www.youtube.com/@resetkorea_revolution" }, 
+                decl: "https://www.youtube.com/watch?v=MZHron4TMO4", dateAdded: "2026-01-05"
             },
             { 
-                name: "송창훈", 
-                region: "경기 용인시", 
-                metropolitan: "경기도", 
-                category: "기초단체장", 
-                office: "용인시장", 
-                bio: ["용인시 정 당협위원장"], 
-                photo: "https://i.imgur.com/xHTGUwg.jpeg", 
-                sns: { 
-                    fb: "https://www.facebook.com/profile.php?id=100004103197128", 
-                    ig: "https://www.instagram.com/song_c_h_/", 
-                    yt: "#" 
-                }, 
-                decl: "https://www.youtube.com/watch?v=MZHron4TMO4",
-                focus: "photo-face-focus"
+                name: "송창훈", region: "경기 용인시", metropolitan: "경기도", category: "기초단체장", office: "용인시장", bio: ["용인시 정 당협위원장"], 
+                photo: "https://i.imgur.com/xHTGUwg.jpeg", sns: { fb: "https://www.facebook.com/profile.php?id=100004103197128", ig: "https://www.instagram.com/song_c_h_/", yt: "#" }, 
+                decl: "https://www.youtube.com/watch?v=MZHron4TMO4", focus: "photo-face-focus", dateAdded: "2026-01-05"
             },
             { 
-                name: "하대식", 
-                region: "전북 남원시", 
-                metropolitan: "전북특별자치도", 
-                category: "기초단체장", 
-                office: "남원시장", 
-                bio: ["전) 전라북도의회 의원 (7, 8, 9대)", "전) 제8대 전라북도의회 부의장", "21대 대선 임실·순창·장수·남원 선대본부장"], 
-                photo: "https://i.imgur.com/iQNAzbs.jpeg", 
-                sns: { fb: "#", ig: "#", yt: "#" }, 
-                decl: "https://rallypoint.kr/board/politics-free/223350"
+                name: "하대식", region: "전북 남원시", metropolitan: "전북특별자치도", category: "기초단체장", office: "남원시장", bio: ["전) 전라북도의회 의원 (7, 8, 9대)", "전) 제8대 전라북도의회 부의장", "21대 대선 임실·순창·장수·남원 선대본부장"], 
+                photo: "https://i.imgur.com/iQNAzbs.jpeg", sns: { fb: "#", ig: "#", yt: "#" }, 
+                decl: "https://rallypoint.kr/board/politics-free/223350", dateAdded: "2025-12-10"
             },
 
             // 광역의원
             { 
-                name: "이재원", 
-                region: "서울특별시", 
-                metropolitan: "서울특별시",
-                shortMetro: "서울", 
-                constituency: "서초 2", 
-                category: "광역의원", 
-                office: "서울시의원", 
-                bio: ["부산시당 청소년참여위 수석부위원장", "대한민국 청소년 의회 17대 부의장"], 
-                photo: "https://i.imgur.com/wX5wC2A.jpeg", 
-                sns: { fb: "#", ig: "https://www.instagram.com/jaewoncalelee/", yt: "#" }, 
-                decl: "#" 
+                name: "이재원", region: "서울특별시", metropolitan: "서울특별시", shortMetro: "서울", constituency: "서초 2", category: "광역의원", office: "서울시의원", bio: ["부산시당 청소년참여위 수석부위원장", "대한민국 청소년 의회 17대 부의장"], 
+                photo: "https://i.imgur.com/wX5wC2A.jpeg", sns: { fb: "#", ig: "https://www.instagram.com/jaewoncalelee/", yt: "#" }, 
+                decl: "#", dateAdded: "2026-01-07"
             },
             { 
-                name: "이봄", 
-                region: "서울특별시", 
-                metropolitan: "서울특별시", 
-                shortMetro: "서울", 
-                constituency: "비례", 
-                category: "광역의원", 
-                office: "서울시의원", 
-                bio: ["민주평화통일자문회의 자문위원", "약사", "이화여자대학교 약학과 졸업"], 
-                photo: "", 
-                sns: { fb: "#", ig: "#", yt: "#" }, 
-                decl: "https://rallypoint.kr/board/politics-free/223537" 
+                name: "이봄", region: "서울특별시", metropolitan: "서울특별시", shortMetro: "서울", constituency: "비례", category: "광역의원", office: "서울시의원", bio: ["민주평화통일자문회의 자문위원", "약사", "이화여자대학교 약학과 졸업"], 
+                photo: "", sns: { fb: "#", ig: "#", yt: "#" }, 
+                decl: "https://rallypoint.kr/board/politics-free/223537", dateAdded: "2026-01-10"
             },
 
             // 기초의원
             { 
-                name: "조동운", 
-                region: "대전 서구", 
-                metropolitan: "대전광역시", 
-                category: "기초의원", 
-                office: "서구의원", 
-                bio: ["서구 을 당협위원장"], 
-                photo: "https://i.imgur.com/q8Z5Mst.png", 
-                district: "다", 
-                sns: { 
-                    fb: "https://www.facebook.com/c2716898", 
-                    ig: "https://www.instagram.com/c2716898/", 
-                    yt: "#" 
-                }, 
-                decl: "https://www.youtube.com/watch?v=uyHmrX9hypw" 
-            },
-            { name: "박현겸", region: "대전 동구", metropolitan: "대전광역시", category: "기초의원", office: "동구의원", bio: ["대전시당 미래희망위원장"], photo: "https://i.imgur.com/TVxC1Kl.jpeg", district: "가", sns: { fb: "#", ig: "#", yt: "#" }, decl: "https://www.youtube.com/watch?v=uyHmrX9hypw" },
-            { 
-                name: "윤서진", 
-                region: "대전 유성구", 
-                metropolitan: "대전광역시", 
-                category: "기초의원", 
-                office: "유성구의원", 
-                bio: ["중앙당 미래희망위원회 위원", "대전시당 부위원장", "제35대 KAIST 총학생회장"], 
-                photo: "https://i.imgur.com/N24OK0K.jpeg", 
-                district: "나", 
-                sns: { fb: "#", ig: "https://www.instagram.com/seojin_ys/", yt: "#" }, 
-                decl: "#" 
+                name: "조동운", region: "대전 서구", metropolitan: "대전광역시", category: "기초의원", office: "서구의원", bio: ["서구 을 당협위원장"], 
+                photo: "https://i.imgur.com/q8Z5Mst.png", district: "다", sns: { fb: "https://www.facebook.com/c2716898", ig: "https://www.instagram.com/c2716898/", yt: "#" }, 
+                decl: "https://www.youtube.com/watch?v=uyHmrX9hypw", dateAdded: "2026-01-01"
             },
             { 
-                name: "최진형", 
-                region: "경기도 안산시", 
-                metropolitan: "경기도", 
-                category: "기초의원", 
-                office: "안산시의원", 
-                bio: ["안산시 가선거구 출마"], 
-                photo: "https://www.notion.so/image/attachment%3A8b8ba3ac-4b70-4725-9d80-e79694a632b2%3A%EC%A6%9D%EB%AA%85%EC%82%AC%EC%A7%842.jpg?table=block&id=2b4a193a-42f1-81a1-bb53-f17592aee26f&spaceId=312b58e7-be17-4e3f-8977-ffc2191a7a05&width=460&userId=&cache=v2", 
-                district: "가", 
-                sns: { fb: "#", ig: "https://www.instagram.com/realbro_22/", yt: "#" }, 
-                decl: "https://rallypoint.kr/board/politics-free/223063"
+                name: "박현겸", region: "대전 동구", metropolitan: "대전광역시", category: "기초의원", office: "동구의원", bio: ["대전시당 미래희망위원장"], 
+                photo: "https://i.imgur.com/TVxC1Kl.jpeg", district: "가", sns: { fb: "#", ig: "#", yt: "#" }, 
+                decl: "https://www.youtube.com/watch?v=uyHmrX9hypw", dateAdded: "2026-01-01"
             },
             { 
-                name: "이강민", 
-                region: "충청남도 천안시", 
-                metropolitan: "충청남도", 
-                category: "기초의원", 
-                office: "천안시의원", 
-                bio: ["대전시당 자문위원", "충남개혁정책네트워크 대표"], 
-                photo: "https://i.imgur.com/rpUTBbK.png", // 이미지 교체
-                district: "라", 
-                sns: { 
-                    fb: "https://www.facebook.com/leekangmin4473", 
-                    ig: "#", 
-                    yt: "#" 
-                }, 
-                decl: "https://rallypoint.kr/board/politics-free/223549",
-                cardFit: "cover", 
-                cardPos: "center 15%" 
+                name: "윤서진", region: "대전 유성구", metropolitan: "대전광역시", category: "기초의원", office: "유성구의원", bio: ["중앙당 미래희망위원회 위원", "대전시당 부위원장", "제35대 KAIST 총학생회장"], 
+                photo: "https://i.imgur.com/N24OK0K.jpeg", district: "나", sns: { fb: "#", ig: "https://www.instagram.com/seojin_ys/", yt: "#" }, 
+                decl: "#", dateAdded: "2026-01-01"
             },
             { 
-                name: "고재윤", 
-                region: "충청남도 당진시", 
-                metropolitan: "충청남도", 
-                category: "기초의원", 
-                office: "당진시의원", 
-                bio: ["당진시 라선거구 출마"], 
-                photo: "https://i.imgur.com/sJf2zpM.jpeg", 
-                district: "라", 
-                sns: { fb: "#", ig: "https://www.instagram.com/yn._.jae/", yt: "#" }, 
-                decl: "https://rallypoint.kr/board/politics-free/222868" 
+                name: "최진형", region: "경기 안산시", metropolitan: "경기도", category: "기초의원", office: "안산시의원", bio: ["안산시 가선거구 출마"], 
+                photo: "https://www.notion.so/image/attachment%3A8b8ba3ac-4b70-4725-9d80-e79694a632b2%3A%EC%A6%9D%EB%AA%85%EC%82%AC%EC%A7%842.jpg?table=block&id=2b4a193a-42f1-81a1-bb53-f17592aee26f&spaceId=312b58e7-be17-4e3f-8977-ffc2191a7a05&width=460&userId=&cache=v2", district: "가", sns: { fb: "#", ig: "https://www.instagram.com/realbro_22/", yt: "#" }, 
+                decl: "https://rallypoint.kr/board/politics-free/223063", dateAdded: "2026-01-01"
             },
             { 
-                name: "성진영", 
-                region: "경상북도 경산시", 
-                metropolitan: "경상북도", 
-                category: "기초의원", 
-                office: "경산시의원", 
-                bio: ["경산시 라선거구 출마"], 
-                photo: "https://i.imgur.com/fHwNOji.png", 
-                district: "라", 
-                sns: { fb: "#", ig: "https://www.instagram.com/jyseong_gyeongsan/", yt: "#" }, 
-                decl: "https://rallypoint.kr/board/politics-free/222667" 
+                name: "이강민", region: "충청남도 천안시", metropolitan: "충청남도", category: "기초의원", office: "천안시의원", bio: ["대전시당 자문위원", "충남개혁정책네트워크 대표"], 
+                photo: "https://i.imgur.com/rpUTBbK.png", district: "라", sns: { fb: "https://www.facebook.com/leekangmin4473", ig: "#", yt: "#" }, 
+                decl: "https://rallypoint.kr/board/politics-free/223549", cardFit: "cover", cardPos: "center 15%", dateAdded: "2026-01-11"
             },
             { 
-                name: "신소일", 
-                region: "경상북도 경산시", 
-                metropolitan: "경상북도", 
-                category: "기초의원", 
-                office: "경산시의원", 
-                bio: ["경산시 라선거구 출마"], 
-                photo: "https://i.imgur.com/DlwpsdL.jpeg", 
-                district: "라", 
-                sns: { fb: "https://www.facebook.com/sinsoil.2025", ig: "#", yt: "#" }, 
-                decl: "https://www.plus-gyeongbuk.kr/news/articleView.html?idxno=3890",
-                cardFit: "cover",
-                cardPos: "center 80%" 
+                name: "고재윤", region: "충청남도 당진시", metropolitan: "충청남도", category: "기초의원", office: "당진시의원", bio: ["당진시 라선거구 출마"], 
+                photo: "https://i.imgur.com/sJf2zpM.jpeg", district: "라", sns: { fb: "#", ig: "https://www.instagram.com/yn._.jae/", yt: "#" }, 
+                decl: "https://rallypoint.kr/board/politics-free/222868", dateAdded: "2026-01-05"
+            },
+            { 
+                name: "성진영", region: "경상북도 경산시", metropolitan: "경상북도", category: "기초의원", office: "경산시의원", bio: ["경산시 라선거구 출마"], 
+                photo: "https://i.imgur.com/fHwNOji.png", district: "라", sns: { fb: "#", ig: "https://www.instagram.com/jyseong_gyeongsan/", yt: "#" }, 
+                decl: "https://rallypoint.kr/board/politics-free/222667", dateAdded: "2026-01-05"
+            },
+            { 
+                name: "신소일", region: "경상북도 경산시", metropolitan: "경상북도", category: "기초의원", office: "경산시의원", bio: ["경산시 라선거구 출마"], 
+                photo: "https://i.imgur.com/DlwpsdL.jpeg", district: "라", sns: { fb: "https://www.facebook.com/sinsoil.2025", ig: "#", yt: "#" }, 
+                decl: "https://www.plus-gyeongbuk.kr/news/articleView.html?idxno=3890", cardFit: "cover", cardPos: "center 80%", dateAdded: "2026-01-01"
+            },
+            {
+                name: "김동현", region: "서울 강남구", metropolitan: "서울특별시", category: "기초의원", office: "강남구의원", bio: ["개혁신당 건국대학교 캠퍼스 지부원"],
+                photo: "", district: "자", sns: { fb: "#", ig: "#", yt: "#", blog: "https://m.blog.naver.com/PostList.naver?blogId=uada5633" },
+                decl: "https://m.blog.naver.com/PostView.naver?blogId=uada5633&logNo=224121263655&navType=by", focus: "photo-face-focus", dateAdded: "2026-01-13"
             }
         ];
+
+        // 행정구역 정렬 순서 정의
+        const regionPriority = {
+            "서울특별시": 1, "부산광역시": 2, "대구광역시": 3, "인천광역시": 4, 
+            "광주광역시": 5, "대전광역시": 6, "울산광역시": 7, "세종특별자치시": 8, 
+            "경기도": 9, "강원특별자치도": 10, "충청북도": 11, "충청남도": 12, 
+            "전북특별자치도": 13, "전라남도": 14, "경상북도": 15, "경상남도": 16, 
+            "제주특별자치도": 17
+        };
+
+        function isNewCandidate(dateStr) {
+            if (!dateStr) return false;
+            const addedDate = new Date(dateStr);
+            const now = new Date();
+            const diffTime = now - addedDate;
+            const diffDays = diffTime / (1000 * 60 * 60 * 24);
+            return diffDays >= 0 && diffDays <= 7;
+        }
 
         function createCard(c) {
             let bioHtml = c.bio.map(line => `<span>${line}</span>`).join('');
             let leftTagText = c.region;
+            
             if (c.category === "기초의원") {
                 const isMetropolitan = c.metropolitan.endsWith('특별시') || c.metropolitan.endsWith('광역시') || c.metropolitan.endsWith('특별자치시');
                 if (isMetropolitan) {
-                    const parts = c.region.split(' ');
-                    leftTagText = parts.length > 1 ? parts.slice(1).join(' ') : c.region;
+                    leftTagText = c.region; 
                 } else {
-                    leftTagText = c.region.replace("경기도", "경기")
-                                          .replace("충청남도", "충남")
-                                          .replace("경상북도", "경북")
-                                          .replace("전라북도", "전북")
-                                          .replace("전북특별자치도", "전북")
-                                          .replace("충청북도", "충북")
-                                          .replace("경상남도", "경남")
-                                          .replace("전라남도", "전남")
-                                          .replace("제주특별자치도", "제주");
+                    leftTagText = c.region.replace("경기도", "경기").replace("충청남도", "충남").replace("경상북도", "경북").replace("전라북도", "전북").replace("전북특별자치도", "전북").replace("충청북도", "충북").replace("경상남도", "경남").replace("전라남도", "전남").replace("제주특별자치도", "제주");
                 }
             } else if (c.category === "광역의원") {
                 leftTagText = c.shortMetro || c.region;
@@ -554,6 +446,8 @@
                 ? `<div class="no-photo-placeholder">준비중입니다</div>`
                 : `<img src="${c.photo}" class="candidate-photo ${!c.cardFit ? 'photo-face-focus' : ''}" style="object-fit: ${fit} !important; object-position: ${pos} !important;" alt="${c.name}" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=no-photo-placeholder>준비중입니다</div>';">`;
 
+            const newBadge = isNewCandidate(c.dateAdded) ? `<span class="new-badge">NEW</span>` : "";
+
             return `
                 <div onclick="openProfileModal('${c.name}')" class="bg-white rounded-[1rem] md:rounded-[1.5rem] shadow-md border border-gray-100 card-hover transition-all duration-500 overflow-hidden flex flex-col h-full cursor-pointer">
                     <div class="photo-frame">
@@ -562,7 +456,9 @@
                         ${photoContent}
                     </div>
                     <div class="pt-2 px-3 pb-4 md:pt-4 md:px-6 md:pb-6 text-center flex flex-col flex-grow">
-                        <h3 class="text-base md:text-xl font-bold mb-1 tracking-wider">${c.name}</h3>
+                        <h3 class="text-base md:text-xl font-bold mb-1 tracking-wider flex items-center justify-center">
+                            ${c.name}${newBadge}
+                        </h3>
                         <div class="bio-text">${bioHtml}</div>
                         <div class="mt-auto nrp-bg-orange text-white py-2 rounded-xl font-bold text-[10px] md:text-sm leading-tight text-center">
                             ${c.office} 출마선언
@@ -610,6 +506,7 @@
             const fbBtn = document.getElementById('modal-fb');
             const igBtn = document.getElementById('modal-ig');
             const ytBtn = document.getElementById('modal-yt');
+            const blogBtn = document.getElementById('modal-blog');
 
             if (!c.sns) {
                 snsContainer.style.display = 'none';
@@ -626,7 +523,9 @@
                 checkAndSet(fbBtn, c.sns.fb);
                 checkAndSet(igBtn, c.sns.ig);
                 checkAndSet(ytBtn, c.sns.yt);
-                if (fbBtn.style.display === 'none' && igBtn.style.display === 'none' && ytBtn.style.display === 'none') {
+                checkAndSet(blogBtn, c.sns.blog);
+                
+                if (fbBtn.style.display === 'none' && igBtn.style.display === 'none' && ytBtn.style.display === 'none' && blogBtn.style.display === 'none') {
                     snsContainer.style.display = 'none';
                 }
             }
@@ -660,6 +559,11 @@
         function renderOriginalView() {
             updateNavActive('btn-original');
             const container = document.getElementById('content-area');
+            
+            const otherRegionCandidates = candidates
+                .filter(c => c.category === "기초의원" && c.metropolitan !== "대전광역시")
+                .sort((a, b) => (regionPriority[a.metropolitan] || 99) - (regionPriority[b.metropolitan] || 99));
+
             container.innerHTML = `
                 <section id="provincial-exec" class="scroll-mt-24">
                     <h2 class="section-title">광역자치단체장</h2>
@@ -681,7 +585,7 @@
                     </div>
                     <div>
                         <h3 class="sub-section-title">기타 지역</h3>
-                        <div class="grid-responsive">${candidates.filter(c => c.category === "기초의원" && c.metropolitan !== "대전광역시").map(createCard).join('')}</div>
+                        <div class="grid-responsive">${otherRegionCandidates.map(createCard).join('')}</div>
                     </div>
                 </section>
             `;
@@ -692,7 +596,7 @@
         function renderRegionView() {
             updateNavActive('btn-region');
             const container = document.getElementById('content-area');
-            const metros = ["서울특별시", "부산광역시", "인천광역시", "광주광역시", "대전광역시", "세종특별자치시", "경기도", "충청남도", "경상북도", "전북특별자치도"];
+            const metros = Object.keys(regionPriority);
             let html = '<div class="mb-16">';
             metros.forEach(m => {
                 const regionalCandidates = candidates.filter(c => 
