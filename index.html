@@ -192,7 +192,7 @@
                        class="inline-block bg-white border-2 border-[#FF6600] nrp-orange px-8 py-3 md:px-14 md:py-4 rounded-2xl text-sm md:text-xl font-black hover:bg-[#FF6600] hover:text-white transition-all duration-300 shadow-md hover:shadow-xl transform hover:-translate-y-1">
                         개혁신당 온라인 공천심사 시스템 들어가기
                     </a>
-                    <!-- 버튼 하단 공지 문구 -->
+                    <!-- 비공식 아카이브 안내 문구 -->
                     <div class="mt-4 space-y-0.5 text-gray-400 text-[10px] md:text-xs font-medium leading-relaxed opacity-80">
                         <p>개혁신당의 공식 사이트가 아닌 비공식 아카이브입니다!</p>
                         <p>해당 정보는 언제든 변경될 수 있습니다.</p>
@@ -471,9 +471,7 @@
         window.openProfileModal = function(name) {
             const c = candidates.find(cand => cand.name === name);
             if (!c) return;
-
             document.getElementById('modal-name').innerText = c.name;
-            
             let officeText = "";
             if (c.category === "광역의원") {
                 if (c.constituency === "비례") {
@@ -494,72 +492,51 @@
                 officeText = c.office + " 후보";
             }
             document.getElementById('modal-office').innerText = officeText;
-            
             const photoArea = document.getElementById('modal-photo-area');
             if (!c.photo || c.photo.trim() === "") {
                 photoArea.innerHTML = `<div class="no-photo-placeholder">준비중입니다</div>`;
             } else {
                 photoArea.innerHTML = `<img src="${c.photo}" class="w-full h-full object-contain" style="object-position: center top" alt="${c.name}">`;
             }
-
             const snsContainer = document.getElementById('modal-sns-container');
             const fbBtn = document.getElementById('modal-fb');
             const igBtn = document.getElementById('modal-ig');
             const ytBtn = document.getElementById('modal-yt');
             const blogBtn = document.getElementById('modal-blog');
-
             if (!c.sns) {
                 snsContainer.style.display = 'none';
             } else {
                 snsContainer.style.display = 'flex';
                 const checkAndSet = (btn, link) => {
-                    if (link && link !== "" && link !== "#") {
-                        btn.style.display = 'flex';
-                        btn.href = link;
-                    } else {
-                        btn.style.display = 'none';
-                    }
+                    if (link && link !== "" && link !== "#") { btn.style.display = 'flex'; btn.href = link; } 
+                    else { btn.style.display = 'none'; }
                 };
                 checkAndSet(fbBtn, c.sns.fb);
                 checkAndSet(igBtn, c.sns.ig);
                 checkAndSet(ytBtn, c.sns.yt);
                 checkAndSet(blogBtn, c.sns.blog);
-                
                 if (fbBtn.style.display === 'none' && igBtn.style.display === 'none' && ytBtn.style.display === 'none' && blogBtn.style.display === 'none') {
                     snsContainer.style.display = 'none';
                 }
             }
-
             const declBtn = document.getElementById('modal-declaration');
-            if (c.decl && c.decl !== "#") {
-                declBtn.style.display = 'block';
-                declBtn.href = c.decl;
-            } else {
-                declBtn.style.display = 'none';
-            }
-            
+            if (c.decl && c.decl !== "#") { declBtn.style.display = 'block'; declBtn.href = c.decl; } 
+            else { declBtn.style.display = 'none'; }
             const overlay = document.getElementById('profile-modal-overlay');
             overlay.style.display = 'flex';
-            setTimeout(() => {
-                overlay.classList.add('active');
-                lucide.createIcons();
-            }, 10);
+            setTimeout(() => { overlay.classList.add('active'); lucide.createIcons(); }, 10);
             document.body.style.overflow = 'hidden'; 
         };
 
         window.closeProfileModal = function(event) {
             const overlay = document.getElementById('profile-modal-overlay');
             overlay.classList.remove('active');
-            setTimeout(() => {
-                overlay.style.display = 'none';
-                document.body.style.overflow = '';
-            }, 300);
+            setTimeout(() => { overlay.style.display = 'none'; document.body.style.overflow = ''; }, 300);
         };
 
         function renderOriginalView() {
             updateNavActive('btn-original');
             const container = document.getElementById('content-area');
-            
             const otherRegionCandidates = candidates
                 .filter(c => c.category === "기초의원" && c.metropolitan !== "대전광역시")
                 .sort((a, b) => (regionPriority[a.metropolitan] || 99) - (regionPriority[b.metropolitan] || 99));
@@ -599,9 +576,12 @@
             const metros = Object.keys(regionPriority);
             let html = '<div class="mb-16">';
             metros.forEach(m => {
-                const regionalCandidates = candidates.filter(c => 
-                    c.region.includes(m.substring(0,2)) || c.metropolitan === m || c.region === m
-                );
+                // 중복 해결: metropolitan 필드가 존재하면 해당 값과 완전 일치하는지 확인
+                const regionalCandidates = candidates.filter(c => {
+                    if (c.metropolitan) return c.metropolitan === m;
+                    return c.region === m; // metropolitan 정보가 없는 광역단체장 등 대응
+                });
+                
                 if(regionalCandidates.length > 0) {
                     html += `
                         <section class="mb-12 scroll-mt-24">
