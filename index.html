@@ -172,7 +172,7 @@
             <div class="flex justify-between items-center mb-10">
                 <div class="bg-white border-2 border-[#FF6600] px-4 py-1.5 md:px-8 md:py-3 rounded-full shadow-sm">
                     <span id="last-update-date" class="nrp-orange font-black text-xs md:text-xl tracking-tighter whitespace-nowrap">
-                        최종 업데이트 : 2026. 01. 13
+                        최종 업데이트 : 2026. 01. 14
                     </span>
                 </div>
                 <div id="d-day-badge" class="nrp-bg-orange text-white px-4 py-1.5 md:px-8 md:py-3 rounded-full text-sm md:text-2xl font-black tracking-tighter shadow-lg whitespace-nowrap">
@@ -248,11 +248,11 @@
                     </div>
                     <div>
                         <p class="text-gray-500 text-[7px] md:text-xs font-bold uppercase mb-1">기초의회</p>
-                        <p class="text-lg md:text-3xl font-black nrp-orange">9</p>
+                        <p class="text-lg md:text-3xl font-black nrp-orange">10</p>
                     </div>
                     <div class="lg:border-l border-gray-700 lg:pl-10">
                         <p class="text-gray-500 text-[8px] md:text-xs font-bold uppercase mb-1">Total</p>
-                        <p class="text-lg md:text-3xl font-black text-white">20</p>
+                        <p class="text-lg md:text-3xl font-black text-white">21</p>
                     </div>
                 </div>
             </div>
@@ -349,7 +349,7 @@
                 decl: "#", dateAdded: "2026-01-07"
             },
             { 
-                name: "이봄", region: "서울특별시", metropolitan: "서울특별시", shortMetro: "서울", constituency: "비례", category: "광역의원", office: "서울시의원", bio: ["민주평화통일자문회의 자문위원", "약사", "이화여자대학교 약학과 졸업"], 
+                name: "이봄", region: "서울특별시", metropolitan: "서울특별시", shortMetro: "서울", constituency: "비례", category: "광역의원", office: "서울시의원", bio: ["약사", "민주평화통일자문회의 자문위원", "이화여자대학교 약학과 졸업"], 
                 photo: "", sns: { fb: "#", ig: "#", yt: "#" }, 
                 decl: "https://rallypoint.kr/board/politics-free/223537", dateAdded: "2026-01-10"
             },
@@ -381,7 +381,8 @@
                 decl: "https://rallypoint.kr/board/politics-free/223549", cardFit: "cover", cardPos: "center 15%", dateAdded: "2026-01-11"
             },
             { 
-                name: "고재윤", region: "충청남도 당진시", metropolitan: "충청남도", category: "기초의원", office: "당진시의원", bio: ["당진시 라선거구 출마"], 
+                name: "고재윤", region: "충청남도 당진시", metropolitan: "충청남도", category: "기초의원", office: "당진시의원", 
+                bio: ["대전시당 정책위원", "대전시당 자문위원", "개혁신당 캠퍼스지부 충남대학연합지부장"], 
                 photo: "https://i.imgur.com/sJf2zpM.jpeg", district: "라", sns: { fb: "#", ig: "https://www.instagram.com/yn._.jae/", yt: "#" }, 
                 decl: "https://rallypoint.kr/board/politics-free/222868", dateAdded: "2026-01-05"
             },
@@ -399,6 +400,11 @@
                 name: "김동현", region: "서울 강남구", metropolitan: "서울특별시", category: "기초의원", office: "강남구의원", bio: ["개혁신당 건국대학교 캠퍼스 지부원"],
                 photo: "", district: "자", sns: { fb: "#", ig: "#", yt: "#", blog: "https://m.blog.naver.com/PostList.naver?blogId=uada5633" },
                 decl: "https://m.blog.naver.com/PostView.naver?blogId=uada5633&logNo=224121263655&navType=by", focus: "photo-face-focus", dateAdded: "2026-01-13"
+            },
+            {
+                name: "이천은", region: "경기 안양시", metropolitan: "경기도", category: "기초의원", office: "안양시의원", bio: ["안양시 바선거구 출마"],
+                photo: "", district: "바", sns: { fb: "#", ig: "https://www.instagram.com/pyeongchonman?igsh=ZWY1dzBvZm1oYWVy", yt: "#" },
+                decl: "https://rallypoint.kr/board/politics-free/223845?searchType=0&currentPage=1", dateAdded: "2026-01-14"
             }
         ];
 
@@ -411,6 +417,7 @@
             "제주특별자치도": 17
         };
 
+        // 최초 등록일(dateAdded) 기준 7일 이내인지 판단하는 함수
         function isNewCandidate(dateStr) {
             if (!dateStr) return false;
             const addedDate = new Date(dateStr);
@@ -576,10 +583,9 @@
             const metros = Object.keys(regionPriority);
             let html = '<div class="mb-16">';
             metros.forEach(m => {
-                // 중복 해결: metropolitan 필드가 존재하면 해당 값과 완전 일치하는지 확인
                 const regionalCandidates = candidates.filter(c => {
                     if (c.metropolitan) return c.metropolitan === m;
-                    return c.region === m; // metropolitan 정보가 없는 광역단체장 등 대응
+                    return c.region === m; 
                 });
                 
                 if(regionalCandidates.length > 0) {
