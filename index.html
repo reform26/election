@@ -195,7 +195,7 @@
                 <i data-lucide="alert-circle" class="w-12 h-12"></i>
             </div>
             <h2 class="text-xl md:text-2xl font-black mb-4 tracking-tight leading-snug">
-                이 홈페이지는 개혁신당의<br>공식 사이트가 아닙니다.
+                이 홈페이지는 개혁신당의<br>공식 홈페이지가 아닙니다.
             </h2>
             <p class="text-gray-500 font-semibold mb-8 text-sm md:text-base leading-relaxed">
                 출마 선언한 사람들만 정리한<br>비공식 정보 사이트 입니다.
@@ -212,8 +212,9 @@
         <div class="max-w-6xl mx-auto">
             <div class="flex justify-between items-center mb-10">
                 <div class="bg-white border-2 border-[#FF6600] px-4 py-1.5 md:px-8 md:py-3 rounded-full shadow-sm">
+                    <!-- 날짜가 자바스크립트로 연동됨 -->
                     <span id="last-update-date" class="nrp-orange font-black text-xs md:text-xl tracking-tighter whitespace-nowrap">
-                        최종 업데이트 : 2026. 01. 14
+                        최종 업데이트 : 로딩 중...
                     </span>
                 </div>
                 <div id="d-day-badge" class="nrp-bg-orange text-white px-4 py-1.5 md:px-8 md:py-3 rounded-full text-sm md:text-2xl font-black tracking-tighter shadow-lg whitespace-nowrap">
@@ -475,6 +476,20 @@
             "제주특별자치도": 17
         };
 
+        // 최종 수정 날짜를 가져와서 화면에 출력하는 함수
+        function syncLastModified() {
+            const lastMod = new Date(document.lastModified);
+            const date = isNaN(lastMod.getTime()) ? new Date() : lastMod;
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            const day = String(date.getDate()).padStart(2, '0');
+            const formatted = `${year}. ${month}. ${day}`;
+            const element = document.getElementById('last-update-date');
+            if (element) {
+                element.innerText = `최종 업데이트 : ${formatted}`;
+            }
+        }
+
         function closeEntryPopup() {
             const overlay = document.getElementById('entry-popup-overlay');
             overlay.style.opacity = '0';
@@ -729,6 +744,7 @@
         }
 
         window.onload = function() {
+            syncLastModified(); // 페이지 로드 시 최종 수정 날짜 연동
             updateDDay();
             renderOriginalView();
             lucide.createIcons();
