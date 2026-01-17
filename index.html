@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <!-- Google Analytics (GA4) 추적 코드 적용 -->
+    <!-- Google Analytics (GA4) 추적 코드 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-9L6DLJ2XKB"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-9L6DLJ2XKB');
+    </script>
+
+    <!-- Microsoft Clarity 추적 코드 -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "v2ogrkuyk0");
     </script>
 
     <meta charset="UTF-8">
@@ -161,7 +169,7 @@
         @media (min-width: 640px) { .no-photo-placeholder { font-size: 1.1rem; } }
 
         #profile-modal-overlay {
-            display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6);
+            display: none; position: fixed; inset: 0; background: rgba(0, 0, 0, 0.6);
             backdrop-filter: blur(4px); z-index: 1000; align-items: center; justify-content: center;
             padding: 20px;
         }
@@ -212,9 +220,8 @@
         <div class="max-w-6xl mx-auto">
             <div class="flex justify-between items-center mb-10">
                 <div class="bg-white border-2 border-[#FF6600] px-4 py-1.5 md:px-8 md:py-3 rounded-full shadow-sm">
-                    <!-- 날짜가 자바스크립트로 연동됨 -->
                     <span id="last-update-date" class="nrp-orange font-black text-xs md:text-xl tracking-tighter whitespace-nowrap">
-                        최종 업데이트 : 로딩 중...
+                        최종 업데이트 : 2026. 01. 14
                     </span>
                 </div>
                 <div id="d-day-badge" class="nrp-bg-orange text-white px-4 py-1.5 md:px-8 md:py-3 rounded-full text-sm md:text-2xl font-black tracking-tighter shadow-lg whitespace-nowrap">
@@ -430,7 +437,8 @@
             { 
                 name: "고재윤", region: "충남 당진시", metropolitan: "충청남도", category: "기초의원", office: "당진시의원", 
                 bio: ["대전시당 정책위원", "대전시당 자문위원", "캠퍼스지부 충남대학연합지부장"], 
-                photo: "https://i.imgur.com/sJf2zpM.jpeg", district: "라", sns: { fb: "#", ig: "https://www.instagram.com/yn._.jae/", yt: "#" }, 
+                photo: "https://i.imgur.com/sJf2zpM.jpeg", district: "라", 
+                sns: { fb: "#", ig: "https://www.instagram.com/yn._.jae/", yt: "#", blog: "https://m.blog.naver.com/PostList.naver?blogId=kojy9402&tab=1&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPNTY3MDY3MzQzMzUyNDI3AAGnWo3pCWqJ198JeucHFkvwAXY35YKGt1-e_Z3W-B9yKVapbrTXwdOuUBMEfmA_aem_UM5dxYo2jYGbeVjISX2PsQ" }, 
                 decl: "https://rallypoint.kr/board/politics-free/222868", dateAdded: "2026-01-05"
             },
             { 
@@ -476,19 +484,15 @@
             "제주특별자치도": 17
         };
 
-        // 최종 수정 날짜를 가져와서 화면에 출력하는 함수
-        function syncLastModified() {
-            const lastMod = new Date(document.lastModified);
-            const date = isNaN(lastMod.getTime()) ? new Date() : lastMod;
-            const year = date.getFullYear();
-            const month = String(date.getMonth() + 1).padStart(2, '0');
-            const day = String(date.getDate()).padStart(2, '0');
-            const formatted = `${year}. ${month}. ${day}`;
-            const element = document.getElementById('last-update-date');
-            if (element) {
-                element.innerText = `최종 업데이트 : ${formatted}`;
-            }
-        }
+        const councilSort = (a, b) => {
+            const regionA = a.region || "";
+            const regionB = b.region || "";
+            if (regionA < regionB) return -1;
+            if (regionA > regionB) return 1;
+            const distA = a.district || "";
+            const distB = b.district || "";
+            return distA.localeCompare(distB);
+        };
 
         function closeEntryPopup() {
             const overlay = document.getElementById('entry-popup-overlay');
@@ -629,16 +633,6 @@
             updateNavActive('btn-original');
             const container = document.getElementById('content-area');
             
-            const councilSort = (a, b) => {
-                const regionA = a.region || "";
-                const regionB = b.region || "";
-                if (regionA < regionB) return -1;
-                if (regionA > regionB) return 1;
-                const distA = a.district || "";
-                const distB = b.district || "";
-                return distA.localeCompare(distB);
-            };
-
             const daejeonCands = candidates.filter(c => c.category === "기초의원" && c.metropolitan === "대전광역시").sort(councilSort);
             const chungnamCands = candidates.filter(c => c.category === "기초의원" && c.metropolitan === "충청남도").sort(councilSort);
             const otherRegionCandidates = candidates
@@ -647,9 +641,7 @@
                     const priA = regionPriority[a.metropolitan] || 99;
                     const priB = regionPriority[b.metropolitan] || 99;
                     if (priA !== priB) return priA - priB;
-                    if (a.region < b.region) return -1;
-                    if (a.region > b.region) return 1;
-                    return (a.district || "").localeCompare(b.district || "");
+                    return councilSort(a, b);
                 });
 
             container.innerHTML = `
@@ -694,6 +686,10 @@
                 const regionalCandidates = candidates.filter(c => {
                     if (c.metropolitan) return c.metropolitan === m;
                     return c.region === m; 
+                }).sort((a, b) => {
+                    const catOrder = {"광역단체장": 1, "기초단체장": 2, "광역의원": 3, "기초의원": 4};
+                    if (catOrder[a.category] !== catOrder[b.category]) return catOrder[a.category] - catOrder[b.category];
+                    return councilSort(a, b);
                 });
                 
                 if(regionalCandidates.length > 0) {
@@ -744,7 +740,6 @@
         }
 
         window.onload = function() {
-            syncLastModified(); // 페이지 로드 시 최종 수정 날짜 연동
             updateDDay();
             renderOriginalView();
             lucide.createIcons();
