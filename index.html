@@ -301,7 +301,7 @@
                     </div>
                     <div>
                         <p class="text-gray-500 text-[7px] md:text-xs font-bold uppercase mb-1">광역단체</p>
-                        <p class="text-lg md:text-3xl font-black nrp-orange">5</p>
+                        <p class="text-lg md:text-3xl font-black nrp-orange">6</p>
                     </div>
                     <div>
                         <p class="text-gray-500 text-[7px] md:text-xs font-bold uppercase mb-1">기초단체</p>
@@ -317,7 +317,7 @@
                     </div>
                     <div class="lg:border-l border-gray-700 lg:pl-10">
                         <p class="text-gray-500 text-[8px] md:text-xs font-bold uppercase mb-1">Total</p>
-                        <p class="text-lg md:text-3xl font-black text-white">22</p>
+                        <p class="text-lg md:text-3xl font-black text-white">23</p>
                     </div>
                 </div>
             </div>
@@ -377,8 +377,15 @@
             },
             { 
                 name: "이기붕", region: "인천광역시", category: "광역단체장", office: "인천광역시장", bio: ["인천시당 위원장"], 
-                photo: "https://i.imgur.com/aNqvWiU.jpeg", sns: { fb: "https://www.facebook.com/keebung", ig: "https://www.instagram.com/kevin_keebung_rhee/", yt: "#" }, 
+                photo: "https://i.imgur.com/aNqvWiU.jpeg", sns: { fb: "https://www.facebook.com/keebung", ig: "https://www.instagram.com/keebung_lee/", yt: "#" }, 
                 decl: "https://www.youtube.com/watch?v=vB47J90zQ00", dateAdded: "2025-12-01"
+            },
+            { 
+                name: "강희린", region: "대전광역시", category: "광역단체장", office: "대전광역시장", bio: ["대전시당 위원장"], 
+                photo: "https://blogpfthumb-phinf.pstatic.net/MjAyNTA5MTNfMTQ1/MDAxNzU3NzY0MDgxNDc5.IEipDTh5AjMTFhfsrSskYh6FF6kzZjp047NQlTSZNn8g.fB3O3eZkkbJSOvaq5TwkFy_wzv0cABwnZK9li7LdUxwg.JPEG/%EB%AA%85%ED%95%A8.jpg/%25EB%25AA%2585%25ED%2595%25A8.jpg?type=w3840", 
+                cardFit: "cover",
+                sns: { fb: "https://www.facebook.com/ganghuilin.2025/", ig: "https://www.instagram.com/korria1/", yt: "https://www.youtube.com/@%EA%B0%95%ED%9D%AC%EB%A6%B0-q8h", blog: "https://blog.naver.com/korria1/224142918612?fbclid=IwY2xjawPYNIRleHRuA2FlbQIxMABicmlkETFYTkhZVEJjdEt4eWxHQzU2c3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHgIl6Hm36PKqFLdzSbzuwmSRMzAEIdfi0p9mvG-iV0Qfel0yjClfF0bgQoE9_aem_KjUx13zQvrqxKbYLxMpQWg" }, 
+                decl: "#", dateAdded: "2026-01-17"
             },
             { 
                 name: "최현수", region: "광주광역시", category: "광역단체장", office: "광주광역시장", bio: ["광주시당 위원장", "서구 을 당협위원장"], 
@@ -543,7 +550,7 @@
             let leftTagText = c.region;
             
             if (c.category === "기초의원") {
-                const isMetropolitan = c.metropolitan.endsWith('특별시') || c.metropolitan.endsWith('광역시') || c.metropolitan.endsWith('특별자치시');
+                const isMetropolitan = c.metropolitan && (c.metropolitan.endsWith('특별시') || c.metropolitan.endsWith('광역시') || c.metropolitan.endsWith('특별자치시'));
                 if (isMetropolitan) {
                     leftTagText = c.region; 
                 } else {
@@ -600,8 +607,8 @@
                 }
             } else if (c.category === "기초의원") {
                 let displayRegion = c.region;
-                const isMetropolitan = c.metropolitan.endsWith('특별시') || c.metropolitan.endsWith('광역시') || c.metropolitan.endsWith('특별자치시');
-                if (!isMetropolitan) {
+                const isMetropolitan = c.metropolitan && (c.metropolitan.endsWith('특별시') || c.metropolitan.endsWith('광역시') || c.metropolitan.endsWith('특별자치시'));
+                if (!isMetropolitan && c.metropolitan) {
                     const parts = c.region.split(' ');
                     if (parts.length > 1) displayRegion = parts.slice(1).join(' '); 
                 }
