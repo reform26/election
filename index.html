@@ -21,7 +21,21 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO 및 오픈 그래프(공유 미리보기) 설정 -->
     <title>개혁신당 2026 지방선거 · 재보궐선거 출마선언 현황</title>
+    <meta name="description" content="제9회 전국동시지방선거 개혁신당 공개 출마 선언 및 후보자 제보 명단 아카이브">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="개혁신당 2026 지방선거 출마선언 현황">
+    <meta property="og:description" content="공개 출마 선언 및 후보자 직접 제보를 정리한 명단입니다.">
+    <meta property="og:image" content="https://i.imgur.com/UQcUqzo.jpeg">
+    <meta property="og:url" content="https://restep.cc/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://i.imgur.com/UQcUqzo.jpeg">
+
+    <!-- 파비콘 적용 -->
+    <link rel="icon" href="https://img.icons8.com/?size=100&id=hfNCM7e9VGca&format=png&color=000000" type="image/png">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- 아이콘 로드 (Lucide) -->
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -238,7 +252,7 @@
             <div class="flex justify-between items-center mb-10">
                 <div class="bg-white border-2 border-[#FF6600] px-4 py-1.5 md:px-8 md:py-3 rounded-full shadow-sm">
                     <span id="last-update-date" class="nrp-orange font-black text-xs md:text-xl tracking-tighter whitespace-nowrap">
-                        최종 업데이트 : 2026. 01. 18
+                        최종 업데이트 : 2026. 01. 19
                     </span>
                 </div>
                 <div id="d-day-badge" class="nrp-bg-orange text-white px-4 py-1.5 md:px-8 md:py-3 rounded-full text-sm md:text-2xl font-black tracking-tighter shadow-lg whitespace-nowrap">
@@ -258,10 +272,39 @@
                        class="inline-block bg-white border-2 border-[#FF6600] nrp-orange px-8 py-3 md:px-14 md:py-4 rounded-2xl text-sm md:text-xl font-black hover:bg-[#FF6600] hover:text-white transition-all duration-300 shadow-md hover:shadow-xl transform hover:-translate-y-1">
                         개혁신당 온라인 공천심사 시스템 들어가기
                     </a>
-                    <div class="mt-4 space-y-0.5 text-gray-400 text-[10px] md:text-xs font-medium leading-relaxed opacity-80">
-                        <p>개혁신당의 공식 사이트가 아닌 비공식 아카이브입니다!</p>
-                        <p>해당 정보는 언제든 변경될 수 있습니다.</p>
-                        <p>해당 정보는 수동으로 수집하므로 부정확할 수 있습니다.</p>
+                    
+                    <!-- 강조된 주의 문구 칸 -->
+                    <div class="mt-6 max-w-xl mx-auto bg-orange-50 border border-orange-200 rounded-2xl p-5 md:p-7 shadow-sm text-center">
+                        <div class="flex items-center justify-center gap-2 mb-4">
+                            <i data-lucide="alert-triangle" class="w-5 h-5 md:w-6 md:h-6 text-[#FF6600]"></i>
+                            <span class="text-[#FF6600] text-lg md:text-2xl font-black tracking-tight">주의!</span>
+                        </div>
+                        <div class="space-y-4 text-gray-600 text-xs md:text-sm font-bold leading-relaxed flex flex-col items-center">
+                            <!-- 이준석 대표 발언 내용 -->
+                            <p class="text-[#FF6600] bg-white border border-orange-100 rounded-lg py-2.5 px-4 inline-block shadow-sm">
+                                <span class="text-gray-500">참고사항 | </span>
+                                <span class="text-gray-700">'이미 수백명의 후보자들이 있다' : 이준석 대표(01.13.) | </span>
+                                <a href="https://www.youtube.com/live/9HRqgZ0Lghw?si=268vprQF1QLCHBoc&t=2065" target="_blank" class="underline hover:text-gray-900 transition-colors font-black">
+                                    영상보기
+                                </a>
+                            </p>
+                            
+                            <!-- 좌측 정렬 및 글머리 기호가 적용된 안내 문구 -->
+                            <div class="pt-1 text-left inline-block space-y-1.5">
+                                <p class="text-gray-700 flex items-start gap-1.5">
+                                    <span class="mt-1 flex-shrink-0 w-1 h-1 rounded-full bg-gray-400"></span>
+                                    <span>이 페이지는 개혁신당의 공식 사이트가 아닙니다.</span>
+                                </p>
+                                <p class="text-gray-700 flex items-start gap-1.5">
+                                    <span class="mt-1 flex-shrink-0 w-1 h-1 rounded-full bg-gray-400"></span>
+                                    <span>'공개 출마 선언' 혹은 '후보자 직접 제보'를 정리한 명단입니다!</span>
+                                </p>
+                                <p class="text-gray-700 flex items-start gap-1.5">
+                                    <span class="mt-1 flex-shrink-0 w-1 h-1 rounded-full bg-gray-400"></span>
+                                    <span>해당 정보는 언제든 변경될 수 있으며, 수동 수집으로 부정확할 수 있습니다.</span>
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -331,7 +374,7 @@
                     내용 추가, 오류 수정, 정보 제거를 원하시면 <a href="https://rallypoint.kr" target="_blank" class="underline hover:text-gray-600 transition-colors">당원게시판</a>으로 문의주세요. (닉네임: 이즌석)
                 </p>
             </div>
-            <!-- 방문자 카운터 배지 -->
+            <!-- 요청하신 HITS 카운터 배지 추가 -->
             <div class="visitor-badge-area">
                 <a href="https://myhits.vercel.app" target="_blank">
                     <img src="https://myhits.vercel.app/api/hit/https%3A%2F%2Frestep.cc%2F?color=gray&label=HITS%F0%9F%A7%A1&size=small" alt="HITS🧡" />
@@ -403,7 +446,7 @@
             { 
                 name: "이혜숙", region: "서울 관악구", metropolitan: "서울특별시", category: "기초단체장", office: "관악구청장", bio: ["관악구 갑 당협위원장"], 
                 photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQldYi95_jeH9ZscObQhU8SfeBkt7_id2CYecNX-bHuIl-NIOJ8r4XS_F4&s=10", sns: { fb: "https://www.facebook.com/yesleehaesuk", ig: "https://www.instagram.com/hyeasooklee/", yt: "#" }, 
-                decl: "https://www.facebook.com/share/r/17yQWaSxVz/", dateAdded: "2026-01-05"
+                decl: "https://youtu.be/b4ofl-SQGlU", dateAdded: "2026-01-19"
             },
             { 
                 name: "전성균", region: "경기 화성시", metropolitan: "경기도", category: "기초단체장", office: "화성시장", bio: ["제9대 화성시의원", "경기도당 위원장", "전) 개혁신당 최고위원"], 
