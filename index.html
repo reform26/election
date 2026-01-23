@@ -284,7 +284,7 @@
                             <!-- 참고사항 컨테이너 -->
                             <div class="flex flex-col gap-2 w-full items-center">
                                 <!-- 첫 번째 참고사항: 이준석 대표 -->
-                                <p class="text-[#FF6600] bg-white border border-orange-100 rounded-lg py-2.5 px-4 inline-block shadow-sm w-full max-w-lg">
+                                <p class="text-[#FF6600] bg-white border border-orange-100 rounded-lg py-2.5 px-4 inline-block shadow-sm w-full max-w-lg text-center text-[10px] md:text-sm">
                                     <span class="text-gray-500">참고사항 | </span>
                                     <span class="text-gray-700">'이미 수백명의 후보자들이 있다' : 이준석 대표(01.13.) | </span>
                                     <a href="https://www.youtube.com/live/9HRqgZ0Lghw?si=268vprQF1QLCHBoc&t=2065" target="_blank" class="underline hover:text-gray-900 transition-colors font-black">
@@ -292,7 +292,7 @@
                                     </a>
                                 </p>
                                 <!-- 두 번째 참고사항: 이기인 총장 -->
-                                <p class="text-[#FF6600] bg-white border border-orange-100 rounded-lg py-2.5 px-4 inline-block shadow-sm w-full max-w-lg">
+                                <p class="text-[#FF6600] bg-white border border-orange-100 rounded-lg py-2.5 px-4 inline-block shadow-sm w-full max-w-lg text-center text-[10px] md:text-sm">
                                     <span class="text-gray-500">참고사항 | </span>
                                     <span class="text-gray-700">'필수서류 제출완료 후보 총 131명' : 이기인 총장(01.22.) | </span>
                                     <a href="https://www.pennmike.com/news/articleView.html?idxno=114046" target="_blank" class="underline hover:text-gray-900 transition-colors font-black">
@@ -368,11 +368,11 @@
                     </div>
                     <div>
                         <p class="text-gray-500 text-[7px] md:text-xs font-bold uppercase mb-1">기초의회</p>
-                        <p class="text-lg md:text-3xl font-black nrp-orange">12</p>
+                        <p class="text-lg md:text-3xl font-black nrp-orange">13</p>
                     </div>
                     <div class="lg:border-l border-gray-700 lg:pl-10">
                         <p class="text-gray-500 text-[8px] md:text-xs font-bold uppercase mb-1">Total</p>
-                        <p class="text-lg md:text-3xl font-black text-white" id="summary-total">24</p>
+                        <p class="text-lg md:text-3xl font-black text-white" id="summary-total">25</p>
                     </div>
                 </div>
             </div>
@@ -492,6 +492,13 @@
             },
 
             // 기초의원
+            { 
+                name: "박윤옥", region: "경기 남양주시", metropolitan: "경기도", category: "기초의원", office: "남양주시의원",
+                bio: ["제9대 남양주시의원", "남양주시의회 복지환경부위원장"],
+                photo: "https://i.imgur.com/HgnuJAp.png", district: "가",
+                sns: { fb: "https://www.facebook.com/profile.php?id=100009520359078", ig: "#", yt: "#" },
+                decl: "https://www.gnnews.org/news/articleView.html?idxno=11383", dateAdded: "2026-01-23"
+            },
             { 
                 name: "조동운", region: "대전 서구", metropolitan: "대전광역시", category: "기초의원", office: "서구의원", 
                 bio: ["서구 을 당협위원장", "전) 경찰대학 경찰학과 교수", "한국경찰연구원 원장", "법학박사"], 
@@ -738,11 +745,15 @@
                 .filter(c => c.category === "기초단체장" && c.metropolitan !== "경기도")
                 .sort((a, b) => a.region.localeCompare(b.region));
 
-            // 기초의원 구분
+            // 기초의원 데이터 필터링 및 정렬
             const daejeonCands = candidates.filter(c => c.category === "기초의원" && c.metropolitan === "대전광역시").sort(councilSort);
+            const gyeonggiCands = candidates.filter(c => c.category === "기초의원" && c.metropolitan === "경기도").sort(councilSort);
             const chungnamCands = candidates.filter(c => c.category === "기초의원" && c.metropolitan === "충청남도").sort(councilSort);
-            const otherRegionCandidates = candidates
-                .filter(c => c.category === "기초의원" && c.metropolitan !== "대전광역시" && c.metropolitan !== "충청남도")
+            const otherCands = candidates
+                .filter(c => c.category === "기초의원" && 
+                    c.metropolitan !== "대전광역시" && 
+                    c.metropolitan !== "경기도" && 
+                    c.metropolitan !== "충청남도")
                 .sort((a, b) => {
                     const priA = regionPriority[a.metropolitan] || 99;
                     const priB = regionPriority[b.metropolitan] || 99;
@@ -772,17 +783,25 @@
                 </section>
                 <section id="local-council" class="mb-16 scroll-mt-24">
                     <h2 class="section-title">기초의회의원</h2>
+                    
                     <div class="mb-10">
                         <h3 class="sub-section-title">대전광역시</h3>
                         <div class="grid-responsive">${daejeonCands.map(createCard).join('')}</div>
                     </div>
+
+                    <div class="mb-10">
+                        <h3 class="sub-section-title">경기도</h3>
+                        <div class="grid-responsive">${gyeonggiCands.map(createCard).join('')}</div>
+                    </div>
+
                     <div class="mb-10">
                         <h3 class="sub-section-title">충청남도</h3>
                         <div class="grid-responsive">${chungnamCands.map(createCard).join('')}</div>
                     </div>
+
                     <div>
                         <h3 class="sub-section-title">기타 지역</h3>
-                        <div class="grid-responsive">${otherRegionCandidates.map(createCard).join('')}</div>
+                        <div class="grid-responsive">${otherCands.map(createCard).join('')}</div>
                     </div>
                 </section>
             `;
