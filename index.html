@@ -253,7 +253,7 @@
             <div class="flex justify-between items-center mb-10">
                 <div class="bg-white border-2 border-[#FF6600] px-4 py-1.5 md:px-8 md:py-3 rounded-full shadow-sm">
                     <span id="last-update-date" class="nrp-orange font-black text-xs md:text-xl tracking-tighter whitespace-nowrap">
-                        최종 업데이트 : 2026. 01. 19
+                        최종 업데이트 : 2026. 01. 23
                     </span>
                 </div>
                 <div id="d-day-badge" class="nrp-bg-orange text-white px-4 py-1.5 md:px-8 md:py-3 rounded-full text-sm md:text-2xl font-black tracking-tighter shadow-lg whitespace-nowrap">
@@ -281,14 +281,25 @@
                             <span class="text-[#FF6600] text-lg md:text-2xl font-black tracking-tight">주의!</span>
                         </div>
                         <div class="space-y-4 text-gray-600 text-xs md:text-sm font-bold leading-relaxed flex flex-col items-center">
-                            <!-- 이준석 대표 발언 내용 -->
-                            <p class="text-[#FF6600] bg-white border border-orange-100 rounded-lg py-2.5 px-4 inline-block shadow-sm">
-                                <span class="text-gray-500">참고사항 | </span>
-                                <span class="text-gray-700">'이미 수백명의 후보자들이 있다' : 이준석 대표(01.13.) | </span>
-                                <a href="https://www.youtube.com/live/9HRqgZ0Lghw?si=268vprQF1QLCHBoc&t=2065" target="_blank" class="underline hover:text-gray-900 transition-colors font-black">
-                                    영상보기
-                                </a>
-                            </p>
+                            <!-- 참고사항 컨테이너 -->
+                            <div class="flex flex-col gap-2 w-full items-center">
+                                <!-- 첫 번째 참고사항: 이준석 대표 -->
+                                <p class="text-[#FF6600] bg-white border border-orange-100 rounded-lg py-2.5 px-4 inline-block shadow-sm w-full max-w-lg">
+                                    <span class="text-gray-500">참고사항 | </span>
+                                    <span class="text-gray-700">'이미 수백명의 후보자들이 있다' : 이준석 대표(01.13.) | </span>
+                                    <a href="https://www.youtube.com/live/9HRqgZ0Lghw?si=268vprQF1QLCHBoc&t=2065" target="_blank" class="underline hover:text-gray-900 transition-colors font-black">
+                                        영상보기
+                                    </a>
+                                </p>
+                                <!-- 두 번째 참고사항: 이기인 총장 -->
+                                <p class="text-[#FF6600] bg-white border border-orange-100 rounded-lg py-2.5 px-4 inline-block shadow-sm w-full max-w-lg">
+                                    <span class="text-gray-500">참고사항 | </span>
+                                    <span class="text-gray-700">'필수서류 제출완료 후보 총 131명' : 이기인 총장(01.22.) | </span>
+                                    <a href="https://www.pennmike.com/news/articleView.html?idxno=114046" target="_blank" class="underline hover:text-gray-900 transition-colors font-black">
+                                        기사보기
+                                    </a>
+                                </p>
+                            </div>
                             
                             <!-- 좌측 정렬 및 글머리 기호가 적용된 안내 문구 -->
                             <div class="pt-1 text-left inline-block space-y-1.5">
@@ -349,7 +360,7 @@
                     </div>
                     <div>
                         <p class="text-gray-500 text-[7px] md:text-xs font-bold uppercase mb-1">기초단체</p>
-                        <p class="text-lg md:text-3xl font-black nrp-orange">4</p>
+                        <p class="text-lg md:text-3xl font-black nrp-orange" id="summary-local-exec">5</p>
                     </div>
                     <div>
                         <p class="text-gray-500 text-[7px] md:text-xs font-bold uppercase mb-1">광역의회</p>
@@ -361,7 +372,7 @@
                     </div>
                     <div class="lg:border-l border-gray-700 lg:pl-10">
                         <p class="text-gray-500 text-[8px] md:text-xs font-bold uppercase mb-1">Total</p>
-                        <p class="text-lg md:text-3xl font-black text-white">23</p>
+                        <p class="text-lg md:text-3xl font-black text-white" id="summary-total">24</p>
                     </div>
                 </div>
             </div>
@@ -444,6 +455,14 @@
             },
             
             // 기초단체장
+            { 
+                name: "송진영", region: "경기 오산시", metropolitan: "경기도", category: "기초단체장", office: "오산시장", 
+                status: "출마예정",
+                bio: ["제9대 오산시의원", "민주평화통일자문회의 자문위원"], 
+                photo: "https://www.osancouncil.go.kr/attach/member/CT_9/172376d6ff7bcbc7a6a038add9585f95.jpg", 
+                sns: { fb: "https://www.facebook.com/osminjun/about/?_rdr", ig: "#", yt: "#" }, 
+                decl: "https://www.youtube.com/live/MMpZKb1X3_o?si=CbCZu59sVX-e6r-o&t=1009", cardFit: "cover", cardPos: "center 0%", dateAdded: "2026-01-23"
+            },
             { 
                 name: "이혜숙", region: "서울 관악구", metropolitan: "서울특별시", category: "기초단체장", office: "관악구청장", bio: ["관악구 갑 당협위원장"], 
                 photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQldYi95_jeH9ZscObQhU8SfeBkt7_id2CYecNX-bHuIl-NIOJ8r4XS_F4&s=10", sns: { fb: "https://www.facebook.com/yesleehaesuk", ig: "https://www.instagram.com/hyeasooklee/", yt: "#" }, 
@@ -616,6 +635,7 @@
                 : `<img src="${c.photo}" class="candidate-photo ${!c.cardFit ? 'photo-face-focus' : ''}" style="object-fit: ${fit} !important; object-position: ${pos} !important;" alt="${c.name}" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=no-photo-placeholder>준비중입니다</div>';">`;
 
             const newBadge = isNewCandidate(c.dateAdded) ? `<span class="new-badge">NEW</span>` : "";
+            const statusLabel = c.status || "출마선언";
 
             return `
                 <div onclick="openProfileModal('${c.name}')" class="bg-white rounded-[1rem] md:rounded-[1.5rem] shadow-md border border-gray-100 card-hover transition-all duration-500 overflow-hidden flex flex-col h-full cursor-pointer">
@@ -630,7 +650,7 @@
                         </h3>
                         <div class="bio-text">${bioHtml}</div>
                         <div class="mt-auto nrp-bg-orange text-white py-2 rounded-xl font-bold text-[10px] md:text-sm leading-tight text-center">
-                            ${c.office} 출마선언
+                            ${c.office} ${statusLabel}
                         </div>
                     </div>
                 </div>
@@ -642,6 +662,8 @@
             if (!c) return;
             document.getElementById('modal-name').innerText = c.name;
             let officeText = "";
+            const statusLabel = c.status || "후보";
+
             if (c.category === "광역의원") {
                 if (c.constituency === "비례") {
                     officeText = `${c.metropolitan || '서울특별시'}의회 비례대표 출마선언`;
@@ -658,7 +680,7 @@
                 }
                 officeText = `${displayRegion}의회 ${c.district}선거구`;
             } else {
-                officeText = c.office + " 후보";
+                officeText = `${c.office} ${statusLabel}`;
             }
             document.getElementById('modal-office').innerText = officeText;
             const photoArea = document.getElementById('modal-photo-area');
@@ -707,6 +729,16 @@
             updateNavActive('btn-original');
             const container = document.getElementById('content-area');
             
+            // 기초단체장 구분 및 시군 가나다(ㄱㄴㅅ) 정렬
+            const localExecGyeonggi = candidates
+                .filter(c => c.category === "기초단체장" && c.metropolitan === "경기도")
+                .sort((a, b) => a.region.localeCompare(b.region));
+            
+            const localExecOthers = candidates
+                .filter(c => c.category === "기초단체장" && c.metropolitan !== "경기도")
+                .sort((a, b) => a.region.localeCompare(b.region));
+
+            // 기초의원 구분
             const daejeonCands = candidates.filter(c => c.category === "기초의원" && c.metropolitan === "대전광역시").sort(councilSort);
             const chungnamCands = candidates.filter(c => c.category === "기초의원" && c.metropolitan === "충청남도").sort(councilSort);
             const otherRegionCandidates = candidates
@@ -725,7 +757,14 @@
                 </section>
                 <section id="local-exec" class="scroll-mt-24">
                     <h2 class="section-title">기초자치단체장</h2>
-                    <div class="grid-responsive">${candidates.filter(c => c.category === "기초단체장").map(createCard).join('')}</div>
+                    <div class="mb-10">
+                        <h3 class="sub-section-title">경기도</h3>
+                        <div class="grid-responsive">${localExecGyeonggi.map(createCard).join('')}</div>
+                    </div>
+                    <div>
+                        <h3 class="sub-section-title">기타 지역</h3>
+                        <div class="grid-responsive">${localExecOthers.map(createCard).join('')}</div>
+                    </div>
                 </section>
                 <section id="provincial-council" class="scroll-mt-24">
                     <h2 class="section-title">광역의회의원</h2>
