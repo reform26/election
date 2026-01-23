@@ -253,7 +253,7 @@
             <div class="flex justify-between items-center mb-10">
                 <div class="bg-white border-2 border-[#FF6600] px-4 py-1.5 md:px-8 md:py-3 rounded-full shadow-sm">
                     <span id="last-update-date" class="nrp-orange font-black text-xs md:text-xl tracking-tighter whitespace-nowrap">
-                        최종 업데이트 : 2026. 01. 23
+                        최종 업데이트 : 2026. 01. 24
                     </span>
                 </div>
                 <div id="d-day-badge" class="nrp-bg-orange text-white px-4 py-1.5 md:px-8 md:py-3 rounded-full text-sm md:text-2xl font-black tracking-tighter shadow-lg whitespace-nowrap">
@@ -364,7 +364,7 @@
                     </div>
                     <div>
                         <p class="text-gray-500 text-[7px] md:text-xs font-bold uppercase mb-1">광역의회</p>
-                        <p class="text-lg md:text-3xl font-black nrp-orange">1</p>
+                        <p class="text-lg md:text-3xl font-black nrp-orange">2</p>
                     </div>
                     <div>
                         <p class="text-gray-500 text-[7px] md:text-xs font-bold uppercase mb-1">기초의회</p>
@@ -372,7 +372,7 @@
                     </div>
                     <div class="lg:border-l border-gray-700 lg:pl-10">
                         <p class="text-gray-500 text-[8px] md:text-xs font-bold uppercase mb-1">Total</p>
-                        <p class="text-lg md:text-3xl font-black text-white" id="summary-total">25</p>
+                        <p class="text-lg md:text-3xl font-black text-white" id="summary-total">26</p>
                     </div>
                 </div>
             </div>
@@ -418,6 +418,14 @@
     </div>
 
     <script>
+        const regionPriority = {
+            "서울특별시": 1, "부산광역시": 2, "대구광역시": 3, "인천광역시": 4, 
+            "광주광역시": 5, "대전광역시": 6, "울산광역시": 7, "세종특별자치시": 8, 
+            "경기도": 9, "강원특별자치도": 10, "충청북도": 11, "충청남도": 12, 
+            "전북특별자치도": 13, "전라남도": 14, "경상북도": 15, "경상남도": 16, 
+            "제주특별자치도": 17
+        };
+
         const candidates = [
             // 광역단체장
             { 
@@ -486,9 +494,18 @@
 
             // 광역의원
             { 
-                name: "이재원", region: "서울특별시", metropolitan: "서울특별시", shortMetro: "서울", constituency: "비례", category: "광역의원", office: "서울시의원", bio: ["부산시당 청소년참여위 수석부위원장", "대한민국 청소년 의회 17대 부의장"], 
+                name: "권형준", region: "경기도", metropolitan: "경기도", shortMetro: "경기", constituency: "비례", category: "광역의원", office: "경기도의원", 
+                status: "출마예정",
+                bio: ["부산시당 청소년참여위 부위원장"], 
+                photo: "https://i.imgur.com/9G83dSe.jpeg", sns: { fb: "#", ig: "#", yt: "#" }, 
+                decl: "#", dateAdded: "2026-01-24"
+            },
+            { 
+                name: "이재원", region: "서울특별시", metropolitan: "서울특별시", shortMetro: "서울", constituency: "비례", category: "광역의원", office: "서울시의원", 
+                status: "출마예정",
+                bio: ["부산시당 청소년참여위 수석부위원장", "대한민국 청소년 의회 17대 부의장"], 
                 photo: "https://i.imgur.com/wX5wC2A.jpeg", sns: { fb: "#", ig: "https://www.instagram.com/jaewoncalelee/", yt: "#" }, 
-                decl: "#", dateAdded: "2026-01-18"
+                decl: "#", dateAdded: "2026-01-01"
             },
 
             // 기초의원
@@ -575,24 +592,6 @@
                 decl: "https://rallypoint.kr/board/politics-free/223910?searchType=0&currentPage=1", dateAdded: "2026-01-15"
             }
         ];
-
-        const regionPriority = {
-            "서울특별시": 1, "부산광역시": 2, "대구광역시": 3, "인천광역시": 4, 
-            "광주광역시": 5, "대전광역시": 6, "울산광역시": 7, "세종특별자치시": 8, 
-            "경기도": 9, "강원특별자치도": 10, "충청북도": 11, "충청남도": 12, 
-            "전북특별자치도": 13, "전라남도": 14, "경상북도": 15, "경상남도": 16, 
-            "제주특별자치도": 17
-        };
-
-        const councilSort = (a, b) => {
-            const regionA = a.region || "";
-            const regionB = b.region || "";
-            if (regionA < regionB) return -1;
-            if (regionA > regionB) return 1;
-            const distA = a.district || "";
-            const distB = b.district || "";
-            return distA.localeCompare(distB);
-        };
 
         function closeEntryPopup() {
             const overlay = document.getElementById('entry-popup-overlay');
@@ -732,10 +731,30 @@
             setTimeout(() => { overlay.style.display = 'none'; document.body.style.overflow = ''; }, 300);
         };
 
+        const councilSort = (a, b) => {
+            const regionA = a.region || "";
+            const regionB = b.region || "";
+            if (regionA < regionB) return -1;
+            if (regionA > regionB) return 1;
+            const distA = a.district || "";
+            const distB = b.district || "";
+            return distA.localeCompare(distB);
+        };
+
         function renderOriginalView() {
             updateNavActive('btn-original');
             const container = document.getElementById('content-area');
             
+            // 광역의원 정렬 (지역 우선순위 적용)
+            const provincialCouncilCands = candidates
+                .filter(c => c.category === "광역의원")
+                .sort((a, b) => {
+                    const priA = regionPriority[a.metropolitan] || 99;
+                    const priB = regionPriority[b.metropolitan] || 99;
+                    if (priA !== priB) return priA - priB;
+                    return a.name.localeCompare(b.name);
+                });
+
             // 기초단체장 구분 및 시군 가나다(ㄱㄴㅅ) 정렬
             const localExecGyeonggi = candidates
                 .filter(c => c.category === "기초단체장" && c.metropolitan === "경기도")
@@ -745,7 +764,7 @@
                 .filter(c => c.category === "기초단체장" && c.metropolitan !== "경기도")
                 .sort((a, b) => a.region.localeCompare(b.region));
 
-            // 기초의원 데이터 필터링 및 정렬
+            // 기초의원 데이터 필터링 및 정렬 (대전 -> 경기 -> 충남 -> 기타 순)
             const daejeonCands = candidates.filter(c => c.category === "기초의원" && c.metropolitan === "대전광역시").sort(councilSort);
             const gyeonggiCands = candidates.filter(c => c.category === "기초의원" && c.metropolitan === "경기도").sort(councilSort);
             const chungnamCands = candidates.filter(c => c.category === "기초의원" && c.metropolitan === "충청남도").sort(councilSort);
@@ -779,7 +798,7 @@
                 </section>
                 <section id="provincial-council" class="scroll-mt-24">
                     <h2 class="section-title">광역의회의원</h2>
-                    <div class="grid-responsive">${candidates.filter(c => c.category === "광역의원").map(createCard).join('')}</div>
+                    <div class="grid-responsive">${provincialCouncilCands.map(createCard).join('')}</div>
                 </section>
                 <section id="local-council" class="mb-16 scroll-mt-24">
                     <h2 class="section-title">기초의회의원</h2>
