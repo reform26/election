@@ -364,7 +364,7 @@
                     </div>
                     <div>
                         <p class="text-gray-500 text-[7px] md:text-xs font-bold uppercase mb-1">광역의회</p>
-                        <p class="text-lg md:text-3xl font-black nrp-orange">2</p>
+                        <p class="text-lg md:text-3xl font-black nrp-orange">1</p>
                     </div>
                     <div>
                         <p class="text-gray-500 text-[7px] md:text-xs font-bold uppercase mb-1">기초의회</p>
@@ -372,7 +372,7 @@
                     </div>
                     <div class="lg:border-l border-gray-700 lg:pl-10">
                         <p class="text-gray-500 text-[8px] md:text-xs font-bold uppercase mb-1">Total</p>
-                        <p class="text-lg md:text-3xl font-black text-white" id="summary-total">26</p>
+                        <p class="text-lg md:text-3xl font-black text-white" id="summary-total">25</p>
                     </div>
                 </div>
             </div>
@@ -493,13 +493,6 @@
             },
 
             // 광역의원
-            { 
-                name: "권형준", region: "경기도", metropolitan: "경기도", shortMetro: "경기", constituency: "비례", category: "광역의원", office: "경기도의원", 
-                status: "출마예정",
-                bio: ["부산시당 청소년참여위 부위원장"], 
-                photo: "https://i.imgur.com/9G83dSe.jpeg", sns: { fb: "#", ig: "#", yt: "#" }, 
-                decl: "#", dateAdded: "2026-01-24"
-            },
             { 
                 name: "이재원", region: "서울특별시", metropolitan: "서울특별시", shortMetro: "서울", constituency: "비례", category: "광역의원", office: "서울시의원", 
                 status: "출마예정",
@@ -672,7 +665,7 @@
 
             if (c.category === "광역의원") {
                 if (c.constituency === "비례") {
-                    officeText = `${c.metropolitan || '서울특별시'}의회 비례대표 출마선언`;
+                    officeText = `${c.metropolitan || '서울특별시'}의회 비례대표 ${statusLabel}`;
                 } else {
                     let formattedConst = c.constituency.replace(/(\d+)/, "제$1");
                     officeText = `${c.metropolitan || '서울특별시'}의회 ${formattedConst}선거구`;
@@ -745,7 +738,7 @@
             updateNavActive('btn-original');
             const container = document.getElementById('content-area');
             
-            // 광역의원 정렬 (지역 우선순위 적용)
+            // 광역의원 정렬 (서울~경기~제주 순)
             const provincialCouncilCands = candidates
                 .filter(c => c.category === "광역의원")
                 .sort((a, b) => {
@@ -898,3 +891,4 @@
     </script>
 </body>
 </html>
+
