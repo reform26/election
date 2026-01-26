@@ -23,12 +23,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO 및 오픈 그래프(공유 미리보기) 설정 -->
-    <title>개혁신당 2026 지방선거 · 재보궐선거 출마선언 현황</title>
-    <meta name="description" content="제9회 전국동시지방선거 개혁신당 공개 출마 선언 및 후보자 제보 명단 아카이브">
+    <title>개혁신당 2026 지방선거 · 재보궐선거 출마 · 공천 현황</title>
+    <meta name="description" content="제9회 전국동시지방선거 개혁신당 후보자 명단 아카이브">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="[비공식] 개혁신당 2026 지방선거 아카이브">
+    <meta property="og:title" content="[비공식] 개혁신당 2026 지방선거 출마 · 공천 아카이브">
     <meta property="og:site_name" content="비공식 선거 아카이브">
-    <meta property="og:description" content="공개 출마 선언 및 후보자 제보를 정리한 페이지입니다.[비공식]">
+    <meta property="og:description" content="2026 지선 후보자들을 정리한 페이지입니다.[비공식]">
     <meta property="og:image" content="https://i.imgur.com/z0Ly5fh.png">
     <meta property="og:url" content="https://restep.cc/">
     <meta name="twitter:card" content="summary_large_image">
@@ -106,6 +106,7 @@
             white-space: nowrap;
         }
 
+        /* 선거구 뱃지 스타일 */
         .district-tag {
             position: absolute; top: 8px; right: 10px;
             background-color: white; color: #FF6600; border: 1.5px solid #FF6600;
@@ -113,6 +114,24 @@
             display: flex; align-items: center; justify-content: center;
             border-radius: 11px; font-size: 0.65rem; font-weight: 800;
             z-index: 10; box-shadow: 0 2px 4px rgba(0,0,0,0.05); white-space: nowrap;
+        }
+
+        /* 공천 확정 뱃지 스타일 */
+        .confirmed-badge {
+            position: absolute; bottom: 8px; right: 10px;
+            background-color: #FF6600; 
+            color: white; 
+            padding: 3px 8px; 
+            border-radius: 8px;
+            font-size: 0.7rem; 
+            font-weight: 900; 
+            z-index: 10;
+            box-shadow: 0 4px 10px rgba(255, 102, 0, 0.4);
+            letter-spacing: -0.02em;
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         .grid-responsive { 
@@ -164,7 +183,7 @@
             display: flex; flex-direction: column; justify-content: center;
             font-weight: 600; line-height: 1.3; overflow: hidden;
         }
-        @media (min-width: 640px) { .bio-text { font-size: 0.75rem; height: 4.8rem; margin-bottom: 0.75rem; } }
+        @media (min-width: 640px) { .bio-text { font-size: 0.75rem; height: 3.5rem; margin-bottom: 0.75rem; } }
 
         .nav-btn {
             padding: 0.5rem 0.4rem; border-radius: 0.6rem; font-size: 0.65rem; font-weight: 700;
@@ -209,7 +228,6 @@
         .sns-btn.youtube:hover { color: #FF0000; }
         .sns-btn.blog:hover { color: #03C75A; }
 
-        /* 방문자 배지 하단 배치 스타일 */
         .visitor-badge-area {
             display: flex;
             align-items: center;
@@ -253,7 +271,7 @@
             <div class="flex justify-between items-center mb-10">
                 <div class="bg-white border-2 border-[#FF6600] px-4 py-1.5 md:px-8 md:py-3 rounded-full shadow-sm">
                     <span id="last-update-date" class="nrp-orange font-black text-xs md:text-xl tracking-tighter whitespace-nowrap">
-                        최종 업데이트 : 2026. 01. 24
+                        최종 업데이트 : 2026. 01. 26
                     </span>
                 </div>
                 <div id="d-day-badge" class="nrp-bg-orange text-white px-4 py-1.5 md:px-8 md:py-3 rounded-full text-sm md:text-2xl font-black tracking-tighter shadow-lg whitespace-nowrap">
@@ -265,7 +283,7 @@
                     <span class="block mb-2 md:mb-4">
                         <span class="tracking-[-0.12em]">6 · 3</span> 지방선거 · 재보궐선거
                     </span>
-                    <span class="block">출마선언 현황</span>
+                    <span class="block">출마 · 공천 현황</span>
                 </h1>
                 <p class="text-gray-500 text-sm md:text-lg font-semibold mb-6 text-center">제9회 전국동시지방선거를 향한 개혁의 도전</p>
                 <div class="text-center">
@@ -274,46 +292,54 @@
                         개혁신당 온라인 공천심사 시스템 들어가기
                     </a>
                     
-                    <!-- 강조된 주의 문구 칸 -->
-                    <div class="mt-6 max-w-xl mx-auto bg-orange-50 border border-orange-200 rounded-2xl p-5 md:p-7 shadow-sm text-center border-orange-200">
-                        <div class="flex items-center justify-center gap-2 mb-4">
-                            <i data-lucide="alert-triangle" class="w-5 h-5 md:w-6 md:h-6 text-[#FF6600]"></i>
-                            <span class="text-[#FF6600] text-lg md:text-2xl font-black tracking-tight">주의!</span>
+                    <!-- 분리된 정보 박스 영역 -->
+                    <div class="mt-8 space-y-4">
+                        <!-- 1. 주의사항 박스 -->
+                        <div class="max-w-2xl mx-auto bg-white border border-orange-200 rounded-[2rem] p-6 md:p-8 shadow-sm">
+                            <div class="flex items-center justify-center gap-2 mb-4">
+                                <i data-lucide="alert-triangle" class="w-5 h-5 md:w-6 md:h-6 text-[#FF6600]"></i>
+                                <span class="text-[#FF6600] text-lg md:text-2xl font-black tracking-tight">주의사항</span>
+                            </div>
+                            <div class="inline-block text-left space-y-2 text-gray-700 text-xs md:text-sm font-bold leading-relaxed">
+                                <p class="flex items-start gap-1.5">
+                                    <span class="mt-1.5 flex-shrink-0 w-1 h-1 rounded-full bg-[#FF6600]"></span>
+                                    <span>이 페이지는 <strong class="underline font-black text-gray-900">개혁신당과 관련 없는 비공식 페이지</strong>입니다.</span>
+                                </p>
+                                <p class="flex items-start gap-1.5">
+                                    <span class="mt-1.5 flex-shrink-0 w-1 h-1 rounded-full bg-[#FF6600]"></span>
+                                    <span>'공개 출마 선언' 혹은 '후보자 직접 제보'를 정리한 명단입니다.</span>
+                                </p>
+                                <p class="flex items-start gap-1.5">
+                                    <span class="mt-1.5 flex-shrink-0 w-1 h-1 rounded-full bg-[#FF6600]"></span>
+                                    <span>해당 정보는 상시 변경될 수 있으며, 수동 수집으로 부정확할 수 있습니다.</span>
+                                </p>
+                            </div>
                         </div>
-                        <div class="space-y-4 text-gray-600 text-xs md:text-sm font-bold leading-relaxed flex flex-col items-center">
-                            <!-- 참고사항 컨테이너 -->
-                            <div class="flex flex-col gap-2 w-full items-center">
-                                <!-- 첫 번째 참고사항: 이준석 대표 -->
-                                <p class="text-[#FF6600] bg-white border border-orange-100 rounded-lg py-2.5 px-4 inline-block shadow-sm w-full max-w-lg text-center text-[10px] md:text-sm font-bold">
-                                    <span class="text-gray-500">참고사항 | </span>
-                                    <span class="text-gray-700">'이미 수백명의 후보자들이 있다' : 이준석 대표(01.13.) | </span>
-                                    <a href="https://www.youtube.com/live/9HRqgZ0Lghw?si=268vprQF1QLCHBoc&t=2065" target="_blank" class="underline hover:text-gray-900 transition-colors font-black">
-                                        영상보기
+
+                        <!-- 2. 참고사항 박스 -->
+                        <div class="max-w-2xl mx-auto bg-gray-50 border border-gray-100 rounded-[2rem] p-6 md:p-8 shadow-sm">
+                            <div class="flex items-center justify-center gap-2 mb-4">
+                                <i data-lucide="info" class="w-5 h-5 md:w-5 md:h-5 text-gray-400"></i>
+                                <span class="text-gray-800 text-md md:text-xl font-black tracking-tight">참고사항</span>
+                            </div>
+                            <div class="flex flex-col gap-2.5 items-center">
+                                <p class="text-gray-700 bg-white border border-orange-100 rounded-xl py-2.5 px-4 w-full max-w-lg text-center text-[10px] md:text-sm font-bold shadow-sm">
+                                    <span class="text-[#FF6600]">제1차 공천결과 : 29명</span> (01.26.) | 
+                                    <a href="https://rallypoint.kr/board/notice/224559" target="_blank" class="underline hover:text-gray-900 transition-colors font-black ml-1">
+                                        공고보기
                                     </a>
                                 </p>
-                                <!-- 두 번째 참고사항: 이기인 총장 -->
-                                <p class="text-[#FF6600] bg-white border border-orange-100 rounded-lg py-2.5 px-4 inline-block shadow-sm w-full max-w-lg text-center text-[10px] md:text-sm font-bold">
-                                    <span class="text-gray-500">참고사항 | </span>
-                                    <span class="text-gray-700">'필수서류 제출완료 후보 총 131명' : 이기인 총장(01.22.) | </span>
-                                    <a href="https://www.pennmike.com/news/articleView.html?idxno=114046" target="_blank" class="underline hover:text-gray-900 transition-colors font-black">
+                                <p class="text-gray-700 bg-white border border-gray-100 rounded-xl py-2.5 px-4 w-full max-w-lg text-center text-[10px] md:text-sm font-bold shadow-sm">
+                                    '필수서류 제출완료 후보 총 131명' : 이기인 총장 (01.22.) | 
+                                    <a href="https://www.pennmike.com/news/articleView.html?idxno=114046" target="_blank" class="underline hover:text-gray-900 transition-colors font-black ml-1">
                                         기사보기
                                     </a>
                                 </p>
-                            </div>
-                            
-                            <!-- 좌측 정렬 및 글머리 기호가 적용된 안내 문구 -->
-                            <div class="pt-1 text-left inline-block space-y-1.5">
-                                <p class="text-gray-700 flex items-start gap-1.5">
-                                    <span class="mt-1 flex-shrink-0 w-1 h-1 rounded-full bg-gray-400"></span>
-                                    <span>이 페이지는 <strong class="underline font-extrabold">개혁신당과 관련 없는 비공식 페이지</strong>입니다.</span>
-                                </p>
-                                <p class="text-gray-700 flex items-start gap-1.5">
-                                    <span class="mt-1 flex-shrink-0 w-1 h-1 rounded-full bg-gray-400"></span>
-                                    <span>'공개 출마 선언' 혹은 '후보자 직접 제보'를 정리한 명단입니다!</span>
-                                </p>
-                                <p class="text-gray-700 flex items-start gap-1.5">
-                                    <span class="mt-1 flex-shrink-0 w-1 h-1 rounded-full bg-gray-400"></span>
-                                    <span>해당 정보는 언제든 변경될 수 있으며, 수동 수집으로 부정확할 수 있습니다.</span>
+                                <p class="text-gray-700 bg-white border border-gray-100 rounded-xl py-2.5 px-4 w-full max-w-lg text-center text-[10px] md:text-sm font-bold shadow-sm">
+                                    '이미 수백명의 후보자들이 있다' : 이준석 대표 (01.13.) | 
+                                    <a href="https://www.youtube.com/live/9HRqgZ0Lghw?si=268vprQF1QLCHBoc&t=2065" target="_blank" class="underline hover:text-gray-900 transition-colors font-black ml-1">
+                                        영상보기
+                                    </a>
                                 </p>
                             </div>
                         </div>
@@ -360,19 +386,19 @@
                     </div>
                     <div>
                         <p class="text-gray-500 text-[7px] md:text-xs font-bold uppercase mb-1">기초단체</p>
-                        <p class="text-lg md:text-3xl font-black nrp-orange" id="summary-local-exec">5</p>
+                        <p class="text-lg md:text-3xl font-black nrp-orange" id="summary-local-exec">6</p>
                     </div>
                     <div>
                         <p class="text-gray-500 text-[7px] md:text-xs font-bold uppercase mb-1">광역의회</p>
-                        <p class="text-lg md:text-3xl font-black nrp-orange">1</p>
+                        <p class="text-lg md:text-3xl font-black nrp-orange">2</p>
                     </div>
                     <div>
                         <p class="text-gray-500 text-[7px] md:text-xs font-bold uppercase mb-1">기초의회</p>
-                        <p class="text-lg md:text-3xl font-black nrp-orange">14</p>
+                        <p class="text-lg md:text-3xl font-black nrp-orange" id="summary-local-council">34</p>
                     </div>
                     <div class="lg:border-l border-gray-700 lg:pl-10">
                         <p class="text-gray-500 text-[8px] md:text-xs font-bold uppercase mb-1">Total</p>
-                        <p class="text-lg md:text-3xl font-black text-white" id="summary-total">26</p>
+                        <p class="text-lg md:text-3xl font-black text-white" id="summary-total">48</p>
                     </div>
                 </div>
             </div>
@@ -464,6 +490,14 @@
             
             // 기초단체장
             { 
+                name: "이용우", region: "서울 강동구", metropolitan: "서울특별시", category: "기초단체장", office: "강동구청장", 
+                status: "후보",
+                bio: ["강동구 을 당협위원장", "서울시당 수석대변인", "제21대 대선 선대위 조직부본부장"], 
+                photo: "https://scontent-icn2-1.xx.fbcdn.net/v/t39.30808-6/464932549_122118559700525734_7297868353491449553_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=2vzM3Zg-WWAQ7kNvwHBXZxW&_nc_oc=AdlqZH2BvTBBdQfX_aggUQ2rB_vhAuT8t740wv-kYTGs53rzjVSD_7wQCJKuyzJxQJM&_nc_zt=23&_nc_ht=scontent-icn2-1.xx&_nc_gid=W8VCJCdUvopuUSafzvVcGQ&oh=00_Afq6GekCkNgvYkGv-6_xhqn560xUVfgiFiiOaMNZo1JJFQ&oe=697CFFBF", 
+                sns: { fb: "https://www.facebook.com/profile.php?id=61565772029621" }, 
+                decl: "#", dateAdded: "2026-01-26"
+            },
+            { 
                 name: "송진영", region: "경기 오산시", metropolitan: "경기도", category: "기초단체장", office: "오산시장", 
                 status: "출마예정",
                 bio: ["제9대 오산시의원", "민주평화통일자문회의 자문위원"], 
@@ -472,9 +506,11 @@
                 decl: "https://www.youtube.com/live/MMpZKb1X3_o?si=CbCZu59sVX-e6r-o&t=1009", cardFit: "cover", cardPos: "center 0%", dateAdded: "2026-01-23"
             },
             { 
-                name: "이혜숙", region: "서울 관악구", metropolitan: "서울특별시", category: "기초단체장", office: "관악구청장", bio: ["관악구 갑 당협위원장"], 
+                name: "이혜숙", region: "서울 관악구", metropolitan: "서울특별시", category: "기초단체장", office: "관악구청장", 
+                status: "후보",
+                bio: ["관악구 갑 당협위원장"], 
                 photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQldYi95_jeH9ZscObQhU8SfeBkt7_id2CYecNX-bHuIl-NIOJ8r4XS_F4&s=10", sns: { fb: "https://www.facebook.com/yesleehaesuk", ig: "https://www.instagram.com/hyeasooklee/", yt: "#" }, 
-                decl: "https://youtu.be/b4ofl-SQGlU", dateAdded: "2026-01-19"
+                decl: "https://youtu.be/b4ofl-SQGlU", dateAdded: "2026-01-01"
             },
             { 
                 name: "전성균", region: "경기 화성시", metropolitan: "경기도", category: "기초단체장", office: "화성시장", bio: ["제9대 화성시의원", "경기도당 위원장", "전) 개혁신당 최고위원"], 
@@ -500,8 +536,164 @@
                 photo: "https://i.imgur.com/wX5wC2A.jpeg", sns: { fb: "#", ig: "https://www.instagram.com/jaewoncalelee/", yt: "#" }, 
                 decl: "#", dateAdded: "2026-01-01"
             },
+            { 
+                name: "양해두", region: "제주특별자치도", metropolitan: "제주특별자치도", shortMetro: "제주", constituency: "제주 외도·이호·도두", category: "광역의원", office: "제주도의원", 
+                status: "후보",
+                bio: ["제주시 갑 당협위원장", "제21대 대선 선대위 홍보부본부장"], 
+                photo: "https://img2.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/202601/07/kbs/20260107150152592uwgk.jpg", 
+                sns: { fb: "https://www.facebook.com/profile.php?id=100007883867189#", ig: "https://www.instagram.com/haeduyang/" }, 
+                decl: "#", dateAdded: "2026-01-26"
+            },
 
             // 기초의원
+            { 
+                name: "오상균", region: "서울 성동구", metropolitan: "서울특별시", category: "기초의원", office: "성동구의원", 
+                status: "후보",
+                bio: ["성동구 다선거구 후보"], 
+                photo: "", district: "다", sns: { fb: "#" }, 
+                decl: "#", dateAdded: "2026-01-26"
+            },
+            { 
+                name: "박범근", region: "서울 관악구", metropolitan: "서울특별시", category: "기초의원", office: "관악구의원", 
+                status: "후보",
+                bio: ["관악구 마선거구 후보"], 
+                photo: "", district: "마", sns: { fb: "#" }, 
+                decl: "#", dateAdded: "2026-01-26"
+            },
+            { 
+                name: "원동철", region: "서울 관악구", metropolitan: "서울특별시", category: "기초의원", office: "관악구의원", 
+                status: "후보",
+                bio: ["관악구 아선거구 후보"], 
+                photo: "", district: "아", sns: { fb: "#", ig: "https://www.instagram.com/_oneofwon" }, 
+                decl: "#", dateAdded: "2026-01-26"
+            },
+            { 
+                name: "김주연", region: "서울 광진구", metropolitan: "서울특별시", category: "기초의원", office: "광진구의원", 
+                status: "후보",
+                bio: ["광진구 다선거구 후보"], 
+                photo: "", district: "다", sns: { fb: "#" }, 
+                decl: "#", dateAdded: "2026-01-26"
+            },
+            { 
+                name: "이진현", region: "서울 광진구", metropolitan: "서울특별시", category: "기초의원", office: "광진구의원", 
+                status: "후보",
+                bio: ["광진구 라선거구 후보"], 
+                photo: "", district: "라", sns: { fb: "#" }, 
+                decl: "#", dateAdded: "2026-01-26"
+            },
+            { 
+                name: "우영훈", region: "대구 달성군", metropolitan: "대구광역시", category: "기초의원", office: "달성군의원", 
+                status: "후보",
+                bio: ["달성군 가선거구 후보"], 
+                photo: "", district: "가", sns: { fb: "#" }, 
+                decl: "#", dateAdded: "2026-01-26"
+            },
+            { 
+                name: "우성원", region: "대구 달성군", metropolitan: "대구광역시", category: "기초의원", office: "달성군의원", 
+                status: "후보",
+                bio: ["달성군 당협위원장"], 
+                photo: "https://scontent-icn2-1.xx.fbcdn.net/v/t39.30808-6/492179267_9373348439443999_5825221846193482502_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=1n_dv49B5z0Q7kNvwFHT4Xm&_nc_oc=AdnstiIm5NLPeCsJjHfCHeISLukLEw9aSo5PMFzdYqaIaEJeW4j_M83quzZqnhNTAXw&_nc_zt=23&_nc_ht=scontent-icn2-1.xx&_nc_gid=OC-BXm3CUK-2zzF7vZeesA&oh=00_Afqq-1BRCZlzSNYgEV2BYCddb_v4NmJcplW3bQXDRevIog&oe=697D0F47", district: "다", 
+                sns: { fb: "https://www.facebook.com/seongwon.woo.3/" }, 
+                decl: "#", dateAdded: "2026-01-26"
+            },
+            { 
+                name: "박철현", region: "대구 동구", metropolitan: "대구광역시", category: "기초의원", office: "동구의원", 
+                status: "후보",
+                bio: ["동구 다선거구 후보"], 
+                photo: "", district: "다", sns: { fb: "#" }, 
+                decl: "#", dateAdded: "2026-01-26"
+            },
+            { 
+                name: "오태훈", region: "대구 수성구", metropolitan: "대구광역시", category: "기초의원", office: "수성구의원", 
+                status: "후보",
+                bio: ["수성구 라선거구 후보"], 
+                photo: "", district: "라", sns: { fb: "#" }, 
+                decl: "#", dateAdded: "2026-01-26"
+            },
+            { 
+                name: "강신학", region: "인천 연수구", metropolitan: "인천광역시", category: "기초의원", office: "연수구의원", 
+                status: "후보",
+                bio: ["연수구 마선거구 후보"], 
+                photo: "", district: "마", sns: { fb: "#" }, 
+                decl: "#", dateAdded: "2026-01-26"
+            },
+            { 
+                name: "박진우", region: "광주 동구", metropolitan: "광주광역시", category: "기초의원", office: "동구의원", 
+                status: "후보",
+                bio: ["동구·남구 을 당협위원장", "21대 대선 선대위 홍보부본부장"], 
+                photo: "https://scontent-icn2-1.xx.fbcdn.net/v/t39.30808-6/517810433_9570713686361362_4613803590695631149_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=C8pRu1W9aikQ7kNvwEZMRcE&_nc_oc=AdkdoijtlW8tYUw6eUvykZoPChSckbWg122FE3yJCdoUqtr5BZhia8gzLmB0CKEoiw8&_nc_zt=23&_nc_ht=scontent-icn2-1.xx&_nc_gid=_lN-ZMXHblA_vYeepOwK9Q&oh=00_AfrXgWIaz5QCsAVf3vmkstOZK9YSwMJ0ceqf1YWyQX8K6Q&oe=697D0A54", district: "가", sns: { fb: "https://www.facebook.com/jinu.park.77/about", ig: "https://www.instagram.com/1jwpark/", yt: "https://www.youtube.com/channel/UCcNTjccJrVitGy-GcD8GkpQ" }, 
+                decl: "#", dateAdded: "2026-01-26"
+            },
+            { 
+                name: "김태수", region: "경기 부천시", metropolitan: "경기도", category: "기초의원", office: "부천시의원", 
+                status: "후보",
+                bio: ["부천시 마선거구 후보"], 
+                photo: "", district: "마", sns: { fb: "#" }, 
+                decl: "#", dateAdded: "2026-01-26"
+            },
+            { 
+                name: "조병찬", region: "경기 부천시", metropolitan: "경기도", category: "기초의원", office: "부천시의원", 
+                status: "후보",
+                bio: ["부천시 아선거구 후보"], 
+                photo: "", district: "아", sns: { fb: "#" }, 
+                decl: "#", dateAdded: "2026-01-26"
+            },
+            { 
+                name: "이승도", region: "경기 용인시", metropolitan: "경기도", category: "기초의원", office: "용인시의원", 
+                status: "후보",
+                bio: ["용인시 사선거구 후보"], 
+                photo: "", district: "사", sns: { fb: "#" }, 
+                decl: "#", dateAdded: "2026-01-26"
+            },
+            { 
+                name: "황승빈", region: "경기 수원시", metropolitan: "경기도", category: "기초의원", office: "수원시의원", 
+                status: "후보",
+                bio: ["수원시 파선거구 후보"], 
+                photo: "", district: "파", sns: { fb: "#" }, 
+                decl: "#", dateAdded: "2026-01-26"
+            },
+            { 
+                name: "박원길", region: "경기 안양시", metropolitan: "경기도", category: "기초의원", office: "안양시의원", 
+                status: "후보",
+                bio: ["안양시 아선거구 후보"], 
+                photo: "", district: "아", sns: { fb: "#" }, 
+                decl: "#", dateAdded: "2026-01-26"
+            },
+            { 
+                name: "심용진", region: "경기 화성시", metropolitan: "경기도", category: "기초의원", office: "화성시의원", 
+                status: "후보",
+                bio: ["전) 매송면 원평1리 이장", "매송면 송전탑 지중화 추진위원장"], 
+                photo: "", district: "나", sns: { fb: "#" }, 
+                decl: "#", dateAdded: "2026-01-26"
+            },
+            { 
+                name: "오태석", region: "경기 화성시", metropolitan: "경기도", category: "기초의원", office: "화성시의원", 
+                status: "후보",
+                bio: ["화성시 바선거구 후보"], 
+                photo: "", district: "바", sns: { fb: "#" }, 
+                decl: "#", dateAdded: "2026-01-26"
+            },
+            { 
+                name: "윤효석", region: "경기 화성시", metropolitan: "경기도", category: "기초의원", office: "화성시의원", 
+                status: "후보",
+                bio: ["화성시 사선거구 후보"], 
+                photo: "", district: "사", sns: { fb: "#" }, 
+                decl: "#", dateAdded: "2026-01-26"
+            },
+            { 
+                name: "전상현", region: "강원 원주시", metropolitan: "강원특별자치도", category: "기초의원", office: "원주시의원", 
+                status: "후보",
+                bio: ["원주시 가선거구 후보"], 
+                photo: "", district: "가", sns: { fb: "#" }, 
+                decl: "#", dateAdded: "2026-01-26"
+            },
+            { 
+                name: "정진호", region: "경북 울진군", metropolitan: "경상북도", category: "기초의원", office: "울진군의원", 
+                status: "후보",
+                bio: ["울진군 나선거구 후보"], 
+                photo: "", district: "나", sns: { fb: "#" }, 
+                decl: "#", dateAdded: "2026-01-26"
+            },
             { 
                 name: "최성진", region: "서울 구로구", metropolitan: "서울특별시", category: "기초의원", office: "구로구의원", 
                 bio: ["서울시당 미래희망위원회 위원", "국제개발협력 NGO 근무", "WFK KOICA NGO 봉사단원 파견"], 
@@ -522,9 +714,11 @@
                 decl: "https://www.youtube.com/watch?v=uyHmrX9hypw", dateAdded: "2026-01-01"
             },
             { 
-                name: "박현겸", region: "대전 동구", metropolitan: "대전광역시", category: "기초의원", office: "동구의원", bio: ["대전시당 미래희망위원장"], 
+                name: "박현겸", region: "대전 동구", metropolitan: "대전광역시", category: "기초의원", office: "동구의원", 
+                status: "후보",
+                bio: ["대전시당 미래희망위원장"], 
                 photo: "https://i.imgur.com/TVxC1Kl.jpeg", district: "가", sns: { fb: "#", ig: "#", yt: "#" }, 
-                decl: "https://www.youtube.com/watch?v=uyHmrX9hypw", dateAdded: "2026-01-01"
+                decl: "https://www.youtube.com/watch?v=uyHmrX9hypw", dateAdded: "2026-01-26"
             },
             { 
                 name: "성진영", region: "대구 중구", metropolitan: "대구광역시", category: "기초의원", office: "중구의원", 
@@ -539,16 +733,19 @@
                 decl: "https://www.youtube.com/watch?v=YBVriZc5RQc", dateAdded: "2026-01-17"
             },
             { 
-                name: "최진형", region: "경기 안산시", metropolitan: "경기도", category: "기초의원", office: "안산시의원", bio: ["안산시 가선거구 출마"], 
+                name: "최진형", region: "경기 안산시", metropolitan: "경기도", category: "기초의원", office: "안산시의원", 
+                status: "후보",
+                bio: ["안산시 가선거구 후보"], 
                 photo: "https://www.notion.so/image/attachment%3A8b8ba3ac-4b70-4725-9d80-e79694a632b2%3A%EC%A6%9D%EB%AA%85%EC%82%AC%EC%A7%842.jpg?table=block&id=2b4a193a-42f1-81a1-bb53-f17592aee26f&spaceId=312b58e7-be17-4e3f-8977-ffc2191a7a05&width=460&userId=&cache=v2", district: "가", sns: { fb: "#", ig: "https://www.instagram.com/realbro_22/", yt: "#" }, 
-                decl: "https://rallypoint.kr/board/politics-free/223063", dateAdded: "2026-01-01"
+                decl: "https://rallypoint.kr/board/politics-free/223063", dateAdded: "2026-01-26"
             },
             { 
                 name: "이강민", region: "충남 천안시", metropolitan: "충청남도", category: "기초의원", office: "천안시의원", 
-                bio: ["대전시당 정책위원", "대전시당 자문위원", "21대 대선 충남 선대본부 위원", "충남개혁정책네트워크 대표"], 
+                status: "후보",
+                bio: ["천안시 라선거구 후보"], 
                 photo: "https://i.imgur.com/rpUTBbK.png", district: "라", 
                 sns: { fb: "https://www.facebook.com/leangmin4473", ig: "#", yt: "#", blog: "https://blog.naver.com/buldang_leekangmin" }, 
-                decl: "https://rallypoint.kr/board/politics-free/223549", cardFit: "cover", cardPos: "center 15%", dateAdded: "2026-01-11"
+                decl: "https://rallypoint.kr/board/politics-free/223549", cardFit: "cover", cardPos: "center 15%", dateAdded: "2026-01-26"
             },
             { 
                 name: "고재윤", region: "충남 당진시", metropolitan: "충청남도", category: "기초의원", office: "당진시의원", 
@@ -569,14 +766,18 @@
                 decl: "https://www.plus-gyeongbuk.kr/news/articleView.html?idxno=3890", cardFit: "cover", cardPos: "center 80%", dateAdded: "2026-01-01"
             },
             {
-                name: "김동현", region: "서울 강남구", metropolitan: "서울특별시", category: "기초의원", office: "강남구의원", bio: ["건국대학교 캠퍼스 지부원"], 
+                name: "김동현", region: "서울 강남구", metropolitan: "서울특별시", category: "기초의원", office: "강남구의원", 
+                status: "후보",
+                bio: ["강남구 자선거구 후보"], 
                 photo: "", district: "자", sns: { fb: "#", ig: "#", yt: "#", blog: "https://m.blog.naver.com/PostList.naver?blogId=uada5633" },
-                decl: "https://m.blog.naver.com/PostView.naver?blogId=uada5633&logNo=224121263655&navType=by", focus: "photo-face-focus", dateAdded: "2026-01-13"
+                decl: "https://m.blog.naver.com/PostView.naver?blogId=uada5633&logNo=224121263655&navType=by", focus: "photo-face-focus", dateAdded: "2026-01-26"
             },
             {
-                name: "이천은", region: "경기 안양시", metropolitan: "경기도", category: "기초의원", office: "안양시의원", bio: ["안양시 바선거구 출마"],
+                name: "이천은", region: "경기 안양시", metropolitan: "경기도", category: "기초의원", office: "안양시의원", 
+                status: "후보",
+                bio: ["안양시 바선거구 후보"],
                 photo: "", district: "바", sns: { fb: "#", ig: "https://www.instagram.com/pyeongchonman?igsh=ZWY1dzBvZm1oYWVy", yt: "#" },
-                decl: "https://rallypoint.kr/board/politics-free/223845?searchType=0&currentPage=1", dateAdded: "2026-01-14"
+                decl: "https://rallypoint.kr/board/politics-free/223845?searchType=0&currentPage=1", dateAdded: "2026-01-26"
             },
             {
                 name: "최태영", region: "강원 춘천시", metropolitan: "강원특별자치도", category: "기초의원", office: "춘천시의원", 
@@ -641,12 +842,15 @@
 
             const newBadge = isNewCandidate(c.dateAdded) ? `<span class="new-badge">NEW</span>` : "";
             const statusLabel = c.status || "출마선언";
+            
+            const confirmedBadge = statusLabel.includes("후보") ? `<div class="confirmed-badge"><i data-lucide="check-circle" style="width: 10px; height: 10px;"></i>공천 확정</div>` : "";
 
             return `
                 <div onclick="openProfileModal('${c.name}')" class="bg-white rounded-[1rem] md:rounded-[1.5rem] shadow-md border border-gray-100 card-hover transition-all duration-500 overflow-hidden flex flex-col h-full cursor-pointer">
                     <div class="photo-frame">
                         <div class="region-tag">${leftTagText}</div>
                         ${districtTag}
+                        ${confirmedBadge}
                         ${photoContent}
                     </div>
                     <div class="pt-2 px-3 pb-4 md:pt-4 md:px-6 md:pb-6 text-center flex flex-col flex-grow">
@@ -670,11 +874,11 @@
             const statusLabel = c.status || "후보";
 
             if (c.category === "광역의원") {
-                if (c.constituency === "비례") {
+                if (c.constituency.includes("비례")) {
                     officeText = `${c.metropolitan || '서울특별시'}의회 비례대표 ${statusLabel}`;
                 } else {
-                    let formattedConst = c.constituency.replace(/(\d+)/, "제$1");
-                    officeText = `${c.metropolitan || '서울특별시'}의회 ${formattedConst}선거구`;
+                    officeText = `${c.metropolitan || '제주특별자치도'}의회 ${c.constituency}`;
+                    if (!officeText.includes(statusLabel)) officeText += ` ${statusLabel}`;
                 }
             } else if (c.category === "기초의원") {
                 let displayRegion = c.region;
@@ -744,7 +948,6 @@
             updateNavActive('btn-original');
             const container = document.getElementById('content-area');
             
-            // 광역의원 정렬 (서울~경기~제주 순)
             const provincialCouncilCands = candidates
                 .filter(c => c.category === "광역의원")
                 .sort((a, b) => {
@@ -754,24 +957,28 @@
                     return a.name.localeCompare(b.name);
                 });
 
-            // 기초단체장 구분 및 시군 가나다(ㄱㄴㅅ) 정렬
             const localExecGyeonggi = candidates
                 .filter(c => c.category === "기초단체장" && c.metropolitan === "경기도")
                 .sort((a, b) => a.region.localeCompare(b.region));
             
             const localExecOthers = candidates
                 .filter(c => c.category === "기초단체장" && c.metropolitan !== "경기도")
-                .sort((a, b) => a.region.localeCompare(b.region));
+                .sort((a, b) => {
+                    const priA = regionPriority[a.metropolitan] || 99;
+                    const priB = regionPriority[b.metropolitan] || 99;
+                    if (priA !== priB) return priA - priB;
+                    return a.region.localeCompare(b.region);
+                });
 
-            // 기초의원 데이터 필터링 및 정렬 (대전 -> 경기 -> 충남 -> 기타 순)
+            const seoulCouncilCands = candidates.filter(c => c.category === "기초의원" && c.metropolitan === "서울특별시").sort(councilSort);
+            const daeguCouncilCands = candidates.filter(c => c.category === "기초의원" && c.metropolitan === "대구광역시").sort(councilSort);
             const daejeonCands = candidates.filter(c => c.category === "기초의원" && c.metropolitan === "대전광역시").sort(councilSort);
             const gyeonggiCands = candidates.filter(c => c.category === "기초의원" && c.metropolitan === "경기도").sort(councilSort);
             const chungnamCands = candidates.filter(c => c.category === "기초의원" && c.metropolitan === "충청남도").sort(councilSort);
+            
             const otherCands = candidates
                 .filter(c => c.category === "기초의원" && 
-                    c.metropolitan !== "대전광역시" && 
-                    c.metropolitan !== "경기도" && 
-                    c.metropolitan !== "충청남도")
+                    !["서울특별시", "대구광역시", "대전광역시", "경기도", "충청남도"].includes(c.metropolitan))
                 .sort((a, b) => {
                     const priA = regionPriority[a.metropolitan] || 99;
                     const priB = regionPriority[b.metropolitan] || 99;
@@ -802,6 +1009,16 @@
                 <section id="local-council" class="mb-16 scroll-mt-24">
                     <h2 class="section-title">기초의회의원</h2>
                     
+                    <div class="mb-10">
+                        <h3 class="sub-section-title">서울특별시</h3>
+                        <div class="grid-responsive">${seoulCouncilCands.map(createCard).join('')}</div>
+                    </div>
+
+                    <div class="mb-10">
+                        <h3 class="sub-section-title">대구광역시</h3>
+                        <div class="grid-responsive">${daeguCouncilCands.map(createCard).join('')}</div>
+                    </div>
+
                     <div class="mb-10">
                         <h3 class="sub-section-title">대전광역시</h3>
                         <div class="grid-responsive">${daejeonCands.map(createCard).join('')}</div>
