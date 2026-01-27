@@ -249,7 +249,7 @@
                 이 홈페이지는 개혁신당의<br>공식 홈페이지가 아닙니다.
             </h2>
             <p class="text-gray-500 font-semibold mb-8 text-sm md:text-base leading-relaxed">
-                출마 선언한 사람들만 정리한<br>비공식 정보 사이트 입니다.
+                출마 선언 및 공천 확정인 후보들만 정리한<br>비공식 정보 사이트 입니다.
             </p>
             <button onclick="closeEntryPopup()" 
                 class="w-full py-4 md:py-5 nrp-bg-orange text-white rounded-2xl font-black text-lg md:text-xl shadow-lg hover:shadow-orange-200 transition-all transform hover:-translate-y-1 active:scale-95">
@@ -830,6 +830,7 @@
 
             let bioHtml = c.bio.map((line, idx) => {
                 let lineStyle = "";
+                // 김태수와 우영훈의 첫째줄 약력 자간 줄이기
                 if ((c.name === "김태수" || c.name === "우영훈") && idx === 0) {
                     lineStyle = 'style="letter-spacing: -0.06em; font-size: 0.95em;"';
                 }
