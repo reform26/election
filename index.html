@@ -61,8 +61,7 @@
             backdrop-filter: blur(8px);
             z-index: 2000;
             display: flex;
-            align-items: center;
-            justify-content: center;
+            align-items: center; justify-content: center;
             padding: 20px;
             transition: opacity 0.3s ease-out;
         }
@@ -106,7 +105,6 @@
             white-space: nowrap;
         }
 
-        /* 선거구 뱃지 스타일 */
         .district-tag {
             position: absolute; top: 8px; right: 10px;
             background-color: white; color: #FF6600; border: 1.5px solid #FF6600;
@@ -116,7 +114,6 @@
             z-index: 10; box-shadow: 0 2px 4px rgba(0,0,0,0.05); white-space: nowrap;
         }
 
-        /* 공천 확정 뱃지 스타일 */
         .confirmed-badge {
             position: absolute; bottom: 8px; right: 10px;
             background-color: #FF6600; 
@@ -230,17 +227,13 @@
 
         .visitor-badge-area {
             display: flex;
-            align-items: center;
-            justify-content: center;
+            align-items: center; justify-content: center;
             margin-top: 1rem;
             opacity: 0.8;
             transition: opacity 0.3s;
         }
         @media (min-width: 768px) {
-            .visitor-badge-area {
-                justify-content: flex-end;
-                margin-top: 0;
-            }
+            .visitor-badge-area { justify-content: flex-end; margin-top: 0; }
         }
         .visitor-badge-area:hover { opacity: 1; }
     </style>
@@ -531,7 +524,7 @@
                 status: "출마예정",
                 bio: ["부산시당 청소년참여위 수석부위원장", "대한민국 청소년 의회 17대 부의장"], 
                 photo: "https://i.imgur.com/wX5wC2A.jpeg", sns: { fb: "#", ig: "https://www.instagram.com/jaewoncalelee/", yt: "#" }, 
-                decl: "#", dateAdded: "2026-01-01"
+                decl: "#", dateAdded: "2025-12-01"
             },
             { 
                 name: "양해두", region: "제주특별자치도", metropolitan: "제주특별자치도", shortMetro: "제주", constituency: "제주 외도·이호·도두", category: "광역의원", office: "제주도의원", 
@@ -560,7 +553,7 @@
             { 
                 name: "원동철", region: "서울 관악구", metropolitan: "서울특별시", category: "기초의원", office: "관악구의원", 
                 status: "후보",
-                bio: ["관악구 아선거구 후보"], 
+                bio: ["배우 및 사업가"], 
                 photo: "", district: "아", sns: { fb: "#", ig: "https://www.instagram.com/_oneofwon" }, 
                 decl: "#", dateAdded: "2026-01-26"
             },
@@ -575,15 +568,24 @@
                 name: "이진현", region: "서울 광진구", metropolitan: "서울특별시", category: "기초의원", office: "광진구의원", 
                 status: "후보",
                 bio: ["광진구 라선거구 후보"], 
-                photo: "", district: "라", sns: { fb: "#" }, 
+                photo: "", district: "라", 
+                sns: { 
+                    fb: "https://www.facebook.com/profile.php?id=100004762395806&comment_id=Y29tbWVudDoyNjA0NDM0MDc1ODUwNDY4OV84OTc5NzgzNjk0MjUyNjE%3D", 
+                    yt: "https://www.youtube.com/@different-politics" 
+                }, 
                 decl: "#", dateAdded: "2026-01-26"
             },
             { 
                 name: "우영훈", region: "대구 달성군", metropolitan: "대구광역시", category: "기초의원", office: "달성군의원", 
                 status: "후보",
-                bio: ["달성군 가선거구 후보"], 
-                photo: "", district: "가", sns: { fb: "#" }, 
-                decl: "#", dateAdded: "2026-01-26"
+                bio: ["개혁신당 지역발전특별위원회 부위원장"], 
+                photo: "https://i.imgur.com/amHTRAa.jpeg", 
+                district: "가", 
+                sns: { 
+                    fb: "https://www.facebook.com/wooyounghoon", 
+                    ig: "https://www.instagram.com/wooyounghoon" 
+                }, 
+                decl: "https://www.facebook.com/share/p/17tdaEkjL5/", dateAdded: "2026-01-26"
             },
             { 
                 name: "우성원", region: "대구 달성군", metropolitan: "대구광역시", category: "기초의원", office: "달성군의원", 
@@ -596,21 +598,25 @@
             { 
                 name: "박철현", region: "대구 동구", metropolitan: "대구광역시", category: "기초의원", office: "동구의원", 
                 status: "후보",
-                bio: ["동구 다선거구 후보"], 
-                photo: "", district: "다", sns: { fb: "#" }, 
+                bio: ["대구시당 인재위원장", "개혁신당 지역발전특별위 부위원장"], 
+                photo: "", district: "다", 
+                sns: { 
+                    fb: "#",
+                    ig: "https://www.instagram.com/park___cheol_hyeon/"
+                }, 
                 decl: "#", dateAdded: "2026-01-26"
             },
             { 
                 name: "오태훈", region: "대구 수성구", metropolitan: "대구광역시", category: "기초의원", office: "수성구의원", 
                 status: "후보",
-                bio: ["수성구 라선거구 후보"], 
+                bio: ["대구시당 대변인"], 
                 photo: "", district: "라", sns: { fb: "#" }, 
                 decl: "#", dateAdded: "2026-01-26"
             },
             { 
                 name: "강신학", region: "인천 연수구", metropolitan: "인천광역시", category: "기초의원", office: "연수구의원", 
                 status: "후보",
-                bio: ["연수구 마선거구 후보"], 
+                bio: ["인천시당 부위원장", "인천시당 소상공인·전략분과위원장"], 
                 photo: "", district: "마", sns: { fb: "#" }, 
                 decl: "#", dateAdded: "2026-01-26"
             },
@@ -624,8 +630,13 @@
             { 
                 name: "김태수", region: "경기 부천시", metropolitan: "경기도", category: "기초의원", office: "부천시의원", 
                 status: "후보",
-                bio: ["부천시 마선거구 후보"], 
-                photo: "", district: "마", sns: { fb: "#" }, 
+                bio: ["現) 현대흥립통합재건축추진준비위 위원장", "現) 흥립약대아파트 입대위 감사", "前) 에어아시아재팬 항공승무원"], 
+                photo: "https://i.imgur.com/JROiWlJ.png", district: "마", 
+                sns: { 
+                    fb: "https://www.facebook.com/share/1B6fqnbu3X/", 
+                    ig: "https://www.instagram.com/bucheon_tezz/",
+                    blog: "https://blog.naver.com/bucheon_tezz"
+                }, 
                 decl: "https://blog.naver.com/bucheon_tezz/224160408956", dateAdded: "2026-01-26"
             },
             { 
@@ -708,14 +719,14 @@
                 name: "조동운", region: "대전 서구", metropolitan: "대전광역시", category: "기초의원", office: "서구의원", 
                 bio: ["서구 을 당협위원장", "전) 경찰대학 경찰학과 교수", "한국경찰연구원 원장", "법학박사"], 
                 photo: "https://i.imgur.com/q8Z5Mst.png", district: "다", sns: { fb: "https://www.facebook.com/c2716898", ig: "https://www.instagram.com/c2716898/", yt: "#" }, 
-                decl: "https://www.youtube.com/watch?v=uyHmrX9hypw", dateAdded: "2026-01-01"
+                decl: "https://www.youtube.com/watch?v=uyHmrX9hypw", dateAdded: "2025-12-01"
             },
             { 
                 name: "박현겸", region: "대전 동구", metropolitan: "대전광역시", category: "기초의원", office: "동구의원", 
                 status: "후보",
                 bio: ["대전시당 미래희망위원장"], 
                 photo: "https://i.imgur.com/TVxC1Kl.jpeg", district: "가", sns: { fb: "#", ig: "#", yt: "#" }, 
-                decl: "https://www.youtube.com/watch?v=uyHmrX9hypw", dateAdded: "2026-01-26"
+                decl: "https://www.youtube.com/watch?v=uyHmrX9hypw", dateAdded: "2025-12-01"
             },
             { 
                 name: "성진영", region: "대구 중구", metropolitan: "대구광역시", category: "기초의원", office: "중구의원", 
@@ -750,7 +761,7 @@
                 photo: "https://i.imgur.com/sJf2zpM.jpeg", district: "라", 
                 sns: { fb: "#", ig: "https://www.instagram.com/yn._.jae/", yt: "#", blog: "https://m.blog.naver.com/PostList.naver?blogId=kojy9402&tab=1&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPNTY3MDY3MzQzMzUyNDI3AAGnWo3pCWqJ198JeucHFkvwAXY35YKGt1-e_Z3W-B9yKVapbrTXwdOuUBMEfmA_aem_UM5dxYo2jYGbeVjISX2PsQ" }, 
                 decl: "https://rallypoint.kr/board/politics-free/222868", dateAdded: "2026-01-05"
-            },
+                },
             { 
                 name: "황시현", region: "충남 천안시", metropolitan: "충청남도", category: "기초의원", office: "천안시의원", 
                 bio: ["21대 대선 충남 선대본 홍보위원", "충남개혁정책네트워크 조직국장", "청년 커뮤니티 '청연' 대표"], 
@@ -766,7 +777,7 @@
                 name: "김동현", region: "서울 강남구", metropolitan: "서울특별시", category: "기초의원", office: "강남구의원", 
                 status: "후보",
                 bio: ["건국대학교 캠퍼스 지부원"], 
-                photo: "", district: "자", sns: { fb: "#", ig: "#", yt: "#", blog: "https://m.blog.naver.com/PostList.naver?blogId=uada5633" },
+                photo: "https://i.imgur.com/uzVK2Vj.jpeg", district: "자", sns: { fb: "#", ig: "#", yt: "#", blog: "https://m.blog.naver.com/PostList.naver?blogId=uada5633" },
                 decl: "https://m.blog.naver.com/PostView.naver?blogId=uada5633&logNo=224121263655&navType=by", focus: "photo-face-focus", dateAdded: "2025-12-01"
             },
             {
@@ -774,7 +785,7 @@
                 status: "후보",
                 bio: ["안양시 바선거구 후보"],
                 photo: "https://i.imgur.com/D7HUg8p.jpeg", district: "바", sns: { fb: "#", ig: "https://www.instagram.com/pyeongchonman?igsh=ZWY1dzBvZm1oYWVy", yt: "#" },
-                decl: "https://www.instagram.com/p/DT9qrWckb3S/?igsh=MWtjcGlzOHk4MncxNg%3D%3D", dateAdded: "2026-01-01"
+                decl: "https://www.instagram.com/p/DT9qrWckb3S/?igsh=MWtjcGlzOHk4MncxNg%3D%3D", dateAdded: "2025-12-01"
             },
             {
                 name: "최태영", region: "강원 춘천시", metropolitan: "강원특별자치도", category: "기초의원", office: "춘천시의원", 
@@ -812,9 +823,20 @@
         }
 
         function createCard(c) {
-            let bioHtml = c.bio.map(line => `<span>${line}</span>`).join('');
-            let leftTagText = c.region;
+            let bioContainerStyle = "";
+            if (["하대식", "조동운", "이강민", "박철현"].includes(c.name)) {
+                bioContainerStyle = 'style="line-height: 1.15;"';
+            }
+
+            let bioHtml = c.bio.map((line, idx) => {
+                let lineStyle = "";
+                if ((c.name === "김태수" || c.name === "우영훈") && idx === 0) {
+                    lineStyle = 'style="letter-spacing: -0.06em; font-size: 0.95em;"';
+                }
+                return `<span ${lineStyle}>${line}</span>`;
+            }).join('');
             
+            let leftTagText = c.region;
             if (c.category === "기초의원") {
                 const isMetropolitan = c.metropolitan && (c.metropolitan.endsWith('특별시') || c.metropolitan.endsWith('광역시') || c.metropolitan.endsWith('특별자치시'));
                 if (isMetropolitan) {
@@ -854,7 +876,7 @@
                         <h3 class="text-base md:text-xl font-bold mb-1 tracking-wider flex items-center justify-center">
                             ${c.name}${newBadge}
                         </h3>
-                        <div class="bio-text">${bioHtml}</div>
+                        <div class="bio-text" ${bioContainerStyle}>${bioHtml}</div>
                         <div class="mt-auto nrp-bg-orange text-white py-2 rounded-xl font-bold text-[10px] md:text-sm leading-tight text-center">
                             ${c.office} ${statusLabel}
                         </div>
