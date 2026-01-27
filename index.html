@@ -285,6 +285,7 @@
                         개혁신당 온라인 공천심사 시스템 들어가기
                     </a>
                     
+                    <!-- 분리된 정보 박스 영역 -->
                     <div class="mt-8 space-y-4">
                         <!-- 1. 주의사항 박스 -->
                         <div class="max-w-2xl mx-auto bg-white border border-orange-200 rounded-[2rem] p-6 md:p-8 shadow-sm">
@@ -527,12 +528,12 @@
                 decl: "#", dateAdded: "2025-12-01"
             },
             { 
-                name: "양해두", region: "제주특별자치도", metropolitan: "제주특별자치도", shortMetro: "제주", constituency: "제주 외도·이호·도두", category: "광역의원", office: "제주도의원", 
+                name: "양해두", region: "제주특별자치도", metropolitan: "제주특별자치도", shortMetro: "제주", district: "제주 외도·이호·도두", constituency: "", constituencyFull: "제주시 외도동·이호동·도두동", category: "광역의원", office: "제주도의원", 
                 status: "후보",
                 bio: ["제주시 갑 당협위원장", "제21대 대선 선대위 홍보부본부장"], 
                 photo: "https://img2.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/202601/07/kbs/20260107150152592uwgk.jpg", 
                 sns: { fb: "https://www.facebook.com/profile.php?id=100007883867189#", ig: "https://www.instagram.com/haeduyang/" }, 
-                decl: "#", dateAdded: "2026-01-26"
+                decl: "https://www.facebook.com/share/p/17qQErhuYr/", dateAdded: "2026-01-26"
             },
 
             // 기초의원
@@ -578,7 +579,7 @@
             { 
                 name: "우영훈", region: "대구 달성군", metropolitan: "대구광역시", category: "기초의원", office: "달성군의원", 
                 status: "후보",
-                bio: ["개혁신당 지역발전특별위원회 부위원장"], 
+                bio: ["개혁신당 지역발전특별위원회 부위원장", "국제라이온스협회 특별위원장", "국제라이온스협회 분과위원장", "국제라이온스협회 영진L 14대 회장"], 
                 photo: "https://i.imgur.com/amHTRAa.jpeg", 
                 district: "가", 
                 sns: { 
@@ -824,7 +825,7 @@
 
         function createCard(c) {
             let bioContainerStyle = "";
-            if (["하대식", "조동운", "이강민", "박철현"].includes(c.name)) {
+            if (["하대식", "조동운", "이강민", "박철현", "우영훈"].includes(c.name)) {
                 bioContainerStyle = 'style="line-height: 1.15;"';
             }
 
@@ -846,10 +847,14 @@
                     leftTagText = c.region.replace("경기도", "경기").replace("충청남도", "충남").replace("경상북도", "경북").replace("전라북도", "전북").replace("전북특별자치도", "전북").replace("충청북도", "충북").replace("경상남도", "경남").replace("전라남도", "전남").replace("강원특별자치도", "강원").replace("제주특별자치도", "제주");
                 }
             } else if (c.category === "광역의원") {
-                leftTagText = c.shortMetro || c.region;
+                if (c.name === "양해두") {
+                    leftTagText = "제주";
+                } else {
+                    leftTagText = c.shortMetro || c.region;
+                }
             }
             
-            let rightTagText = c.category === "광역의원" ? c.constituency : c.district;
+            let rightTagText = c.district;
             let districtTag = rightTagText ? `<div class="district-tag">${rightTagText}</div>` : "";
             
             const isNoPhoto = !c.photo || c.photo.trim() === "";
@@ -897,7 +902,8 @@
                 if (c.constituency.includes("비례")) {
                     officeText = `${c.metropolitan || '서울특별시'}의회 비례대표 ${statusLabel}`;
                 } else {
-                    officeText = `${c.metropolitan || '제주특별자치도'}의회 ${c.constituency}`;
+                    const constName = c.constituencyFull || c.constituency;
+                    officeText = `${c.metropolitan || '제주특별자치도'}의회 ${constName}`;
                     if (!officeText.includes(statusLabel)) officeText += ` ${statusLabel}`;
                 }
             } else if (c.category === "기초의원") {
