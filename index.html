@@ -584,7 +584,7 @@
                 status: "출마선언",
                 bio: ["동대문구 마선거구 출마"], 
                 photo: "", district: "마", sns: { fb: "#" }, 
-                decl: "https://rallypoint.kr/board/politics-free/224812?searchType=0&currentPage=1", dateAdded: "2026-01-29"
+                decl: "https://rallypoint.kr/board/politics-free/224812?searchType=0&currentPage=1", dateAdded: "2026-01-30"
             },
             { 
                 name: "김영욱", region: "대전 서구", metropolitan: "대전광역시", category: "기초의원", office: "서구의원", 
@@ -879,10 +879,18 @@
 
         function isNewCandidate(dateStr) {
             if (!dateStr) return false;
-            const addedDate = new Date(dateStr);
+            // 로컬 시간 기준으로 날짜 객체 생성 (YYYY-MM-DD)
+            const parts = dateStr.split('-');
+            const addedDate = new Date(parts[0], parts[1] - 1, parts[2]);
+            addedDate.setHours(0, 0, 0, 0);
+            
             const now = new Date();
+            now.setHours(0, 0, 0, 0);
+            
             const diffTime = now - addedDate;
-            const diffDays = diffTime / (1000 * 60 * 60 * 24);
+            const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+            
+            // 등록된 지 7일 이내인 경우 (미래 날짜 포함 방지 위해 diffDays >= 0 추가)
             return diffDays >= 0 && diffDays <= 7;
         }
 
