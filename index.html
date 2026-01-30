@@ -664,7 +664,7 @@
                 decl: "#", dateAdded: "2026-01-26"
             },
             { 
-                name: "오태훈", region: "대구 수성구", metropolitan: "대구광역시", category: "기초의원", office: "수성구의원", 
+                name: "오태훈", region: "대구 수성구", metropolitan: "대전광역시", category: "기초의원", office: "수성구의원", 
                 status: "후보",
                 bio: ["대구시당 대변인"], 
                 photo: "", district: "라", sns: { fb: "#" }, 
@@ -683,6 +683,13 @@
                 bio: ["동구·남구 을 당협위원장", "21대 대선 선대위 홍보부본부장"], 
                 photo: "https://scontent-icn2-1.xx.fbcdn.net/v/t39.30808-6/517810433_9570713686361362_4613803590695631149_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=C8pRu1W9aikQ7kNvwEZMRcE&_nc_oc=AdkdoijtlW8tYUw6eUvykZoPChSckbWg122FE3yJCdoUqtr5BZhia8gzLmB0CKEoiw8&_nc_zt=23&_nc_ht=scontent-icn2-1.xx&_nc_gid=_lN-ZMXHblA_vYeepOwK9Q&oh=00_AfrXgWIaz5QCsAVf3vmkstOZK9YSwMJ0ceqf1YWyQX8K6Q&oe=697D0A54", district: "가", sns: { fb: "https://www.facebook.com/jinu.park.77/about", ig: "https://www.instagram.com/1jwpark/", yt: "https://www.youtube.com/channel/UCcNTjccJrVitGy-GcD8GkpQ" }, 
                 decl: "#", dateAdded: "2026-01-26"
+            },
+            { 
+                name: "오정대", region: "경기 성남시", metropolitan: "경기도", category: "기초의원", office: "성남시의원", 
+                status: "출마예정",
+                bio: ["도로교통사고감정사", "도로교통사고감정사 협회 정회원", "유튜브 '운전하는곰돌' 운영", "작가"], 
+                photo: "", district: "아", sns: { yt: "https://www.youtube.com/@d_gomdol/featured" }, 
+                decl: "#", dateAdded: "2026-01-30"
             },
             { 
                 name: "김태수", region: "경기 부천시", metropolitan: "경기도", category: "기초의원", office: "부천시의원", 
@@ -896,13 +903,17 @@
 
         function createCard(c) {
             let bioContainerStyle = "";
-            if (["하대식", "조동운", "이강민", "박철현", "우영훈", "김성민"].includes(c.name)) {
-                bioContainerStyle = 'style="line-height: 1.15;"';
+            // 오정대 후보자를 포함하여 약력이 긴 후보자들의 줄 간격을 더욱 좁게 설정 (1.05)
+            if (["하대식", "조동운", "이강민", "박철현", "우영훈", "김성민", "오정대"].includes(c.name)) {
+                bioContainerStyle = 'style="line-height: 1.05;"';
             }
 
             let bioHtml = c.bio.map((line, idx) => {
                 let lineStyle = "";
-                if ((c.name === "김태수" || c.name === "우영훈") && idx === 0) {
+                // 오정대 후보자를 포함하여 약력의 자간을 좁게 설정
+                if (["김태수", "우영훈", "오정대"].includes(c.name)) {
+                    lineStyle = 'style="letter-spacing: -0.05em; font-size: 0.95em;"';
+                } else if ((c.name === "김태수" || c.name === "우영훈") && idx === 0) {
                     lineStyle = 'style="letter-spacing: -0.06em; font-size: 0.95em;"';
                 }
                 return `<span ${lineStyle}>${line}</span>`;
