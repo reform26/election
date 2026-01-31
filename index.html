@@ -296,7 +296,7 @@
             <div class="flex justify-between items-center mb-10">
                 <div class="bg-white border-2 border-[#FF6600] px-4 py-1.5 md:px-8 md:py-3 rounded-full shadow-sm">
                     <span id="last-update-date" class="nrp-orange font-black text-xs md:text-xl tracking-tighter whitespace-nowrap">
-                        최종 업데이트 : 2026. 01. 31
+                        최종 업데이트 : 2026. 02. 01
                     </span>
                 </div>
                 <div id="d-day-badge" class="nrp-bg-orange text-white px-4 py-1.5 md:px-8 md:py-3 rounded-full text-sm md:text-2xl font-black tracking-tighter shadow-lg whitespace-nowrap">
@@ -648,7 +648,7 @@
                 name: "우성원", region: "대구 달성군", metropolitan: "대구광역시", category: "기초의원", office: "달성군의원", 
                 status: "후보",
                 bio: ["달성군 당협위원장"], 
-                photo: "https://scontent-icn2-1.xx.fbcdn.net/v/t39.30808-6/492179267_9373348439443999_5825221846193482502_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=1n_dv49B5z0Q7kNvwFHT4Xm&_nc_oc=AdnstiIm5NLPeCsJjHfCHeISLukLEw9aSo5PMFzdYqaIaEJeW4j_M83quzZqnhNTAXw&_nc_zt=23&_nc_ht=scontent-icn2-1.xx&_nc_gid=OC-BXm3CUK-2zzF7vZeesA&oh=00_Afqq-1BRCZlzSNYgEV2BYCddb_v4NmJcplW3bQXDRevIog&oe=697D0F47", district: "다", 
+                photo: "https://i.imgur.com/NNtiJ53.jpeg", district: "다", 
                 sns: { fb: "https://www.facebook.com/seongwon.woo.3/" }, 
                 decl: "https://www.facebook.com/share/p/1D9hTEiQjh/", dateAdded: "2026-01-26"
             },
@@ -904,20 +904,18 @@
             const diffTime = now - addedDate;
             const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
             
-            // 등록된 지 7일 이내인 경우 (미래 날짜 포함 방지 위해 diffDays >= 0 추가)
+            // 등록된 지 7일 이내인 경우
             return diffDays >= 0 && diffDays <= 7;
         }
 
         function createCard(c) {
             let bioContainerStyle = "";
-            // 오정대 후보자를 포함하여 약력이 긴 후보자들의 줄 간격을 더욱 좁게 설정 (1.05)
             if (["하대식", "조동운", "이강민", "박철현", "우영훈", "김성민", "오정대"].includes(c.name)) {
                 bioContainerStyle = 'style="line-height: 1.05;"';
             }
 
             let bioHtml = c.bio.map((line, idx) => {
                 let lineStyle = "";
-                // 오정대 후보자를 포함하여 약력의 자간을 좁게 설정
                 if (["김태수", "우영훈", "오정대"].includes(c.name)) {
                     lineStyle = 'style="letter-spacing: -0.05em; font-size: 0.95em;"';
                 } else if ((c.name === "김태수" || c.name === "우영훈") && idx === 0) {
@@ -942,7 +940,6 @@
                 }
             }
             
-            // 우측 상단 태그 (비례대표인 경우 '비례' 우선 표시)
             let rightTagText = c.district || (c.constituency === "비례" ? "비례" : "");
             let districtTag = rightTagText ? `<div class="district-tag">${rightTagText}</div>` : "";
             
