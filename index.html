@@ -678,7 +678,7 @@
                 decl: "https://rallypoint.kr/board/politics-free/224918?searchType=0&currentPage=1", dateAdded: "2026-01-31"
             },
             { 
-                name: "강신학", region: "인천 연수구", metropolitan: "인천광역시", category: "기초의원", office: "연수구의원", 
+                name: "강신학", region: "인천 연수구", metropolitan: "인천광역시", category: "기초의원", office: "인천시당 부위원장", 
                 status: "후보",
                 bio: ["인천시당 부위원장", "인천시당 소상공인·전략분과위원장"], 
                 photo: "", district: "마", sns: { fb: "#" }, 
@@ -1246,7 +1246,12 @@
             html += '</div>';
             container.innerHTML = html;
             lucide.createIcons();
-            window.scrollTo({top: 0, behavior: 'smooth'});
+            
+            // 페이지 상단으로 가는 대신 첫 번째 지역 섹션으로 부드럽게 이동
+            const firstSection = container.querySelector('section');
+            if (firstSection) {
+                firstSection.scrollIntoView({ behavior: 'smooth' });
+            }
         }
 
         function scrollToId(id) {
