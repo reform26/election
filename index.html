@@ -296,7 +296,7 @@
             <div class="flex justify-between items-center mb-10">
                 <div class="bg-white border-2 border-[#FF6600] px-4 py-1.5 md:px-8 md:py-3 rounded-full shadow-sm">
                     <span id="last-update-date" class="nrp-orange font-black text-xs md:text-xl tracking-tighter whitespace-nowrap">
-                        최종 업데이트 : 2026. 02. 01
+                        최종 업데이트 : 2026. 01. 31
                     </span>
                 </div>
                 <div id="d-day-badge" class="nrp-bg-orange text-white px-4 py-1.5 md:px-8 md:py-3 rounded-full text-sm md:text-2xl font-black tracking-tighter shadow-lg whitespace-nowrap">
@@ -459,7 +459,9 @@
             <div class="relative h-72 bg-gray-100 overflow-hidden" id="modal-photo-area"></div>
             <div class="p-8 text-center">
                 <h2 class="text-2xl font-black mb-1 tracking-wider" id="modal-name">후보 이름</h2>
-                <p class="text-[#FF6600] font-bold text-sm mb-6 leading-tight" id="modal-office">출마선언</p>
+                <p class="text-[#FF6600] font-bold text-sm mb-1 leading-tight" id="modal-office">출마선언</p>
+                <p class="text-gray-400 font-medium text-[11px] mb-6" id="modal-subregion"></p> <!-- 실제 지역(동) 표시 영역 -->
+                
                 <div class="flex justify-center gap-4 mb-8" id="modal-sns-container">
                     <a id="modal-fb" href="#" target="_blank" class="sns-btn fb"><i data-lucide="facebook"></i></a>
                     <a id="modal-ig" href="#" target="_blank" class="sns-btn ig"><i data-lucide="instagram"></i></a>
@@ -564,14 +566,14 @@
             // 광역의원
             { 
                 name: "이재원", region: "서울특별시", metropolitan: "서울특별시", shortMetro: "서울", constituency: "비례", category: "광역의원", office: "서울시의원", 
-                status: "출마예정",
+                status: "출마예정", subRegion: "서울특별시",
                 bio: ["부산시당 청소년참여위 수석부위원장", "대한민국 청소년 의회 17대 부의장"], 
                 photo: "https://i.imgur.com/wX5wC2A.jpeg", sns: { ig: "https://www.instagram.com/jaewoncalelee/" }, 
                 decl: "#", dateAdded: "2025-12-01"
             },
             { 
                 name: "양해두", region: "제주특별자치도", metropolitan: "제주특별자치도", shortMetro: "제주", district: "제주 외도·이호·도두", constituency: "", constituencyFull: "제주시 외도동·이호동·도두동", category: "광역의원", office: "제주도의원", 
-                status: "후보",
+                status: "후보", subRegion: "제주시 이호동, 외도동, 도두동",
                 bio: ["제주시 갑 당협위원장", "제21대 대선 선대위 홍보부본부장"], 
                 photo: "https://img2.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/202601/07/kbs/20260107150152592uwgk.jpg", 
                 sns: { fb: "https://www.facebook.com/profile.php?id=100007883867189#", ig: "https://www.instagram.com/haeduyang/" }, 
@@ -581,49 +583,49 @@
             // 기초의원
             { 
                 name: "이도윤", region: "서울 동대문구", metropolitan: "서울특별시", category: "기초의원", office: "동대문구의원", 
-                status: "출마선언",
+                status: "출마선언", subRegion: "전농제1동, 전농제2동, 답십리제1동",
                 bio: ["동대문구 마선거구 출마"], 
                 photo: "", district: "마", sns: { fb: "#" }, 
                 decl: "https://rallypoint.kr/board/politics-free/224812?searchType=0&currentPage=1", dateAdded: "2026-01-31"
             },
             { 
                 name: "김영욱", region: "대전 서구", metropolitan: "대전광역시", category: "기초의원", office: "서구의원", 
-                status: "출마선언",
+                status: "출마선언", subRegion: "복수동, 도마1동, 도마2동, 정림동",
                 bio: ["서구 가선거구 출마선언", "배재대학교 재학"], 
                 photo: "https://i.imgur.com/K0dT4FH.jpeg", district: "가", sns: { fb: "#", ig: "https://www.instagram.com/saveourdaejeon_97/" }, 
                 decl: "https://rallypoint.kr/board/politics-free/224817?searchType=0&currentPage=1", dateAdded: "2026-01-30"
             },
             { 
                 name: "오상균", region: "서울 성동구", metropolitan: "서울특별시", category: "기초의원", office: "성동구의원", 
-                status: "후보",
+                status: "후보", subRegion: "마장동, 사근동, 송정동, 용답동",
                 bio: ["성동구 다선거구 후보"], 
                 photo: "", district: "다", sns: { fb: "#" }, 
                 decl: "#", dateAdded: "2026-01-26"
             },
             { 
                 name: "박범근", region: "서울 관악구", metropolitan: "서울특별시", category: "기초의원", office: "관악구의원", 
-                status: "후보",
+                status: "후보", subRegion: "신사동, 조원동, 미성동",
                 bio: ["관악구 마선거구 후보"], 
                 photo: "", district: "마", sns: { fb: "#" }, 
                 decl: "#", dateAdded: "2026-01-26"
             },
             { 
                 name: "원동철", region: "서울 관악구", metropolitan: "서울특별시", category: "기초의원", office: "관악구의원", 
-                status: "후보",
+                status: "후보", subRegion: "삼성동, 대학동",
                 bio: ["배우 및 사업가"], 
                 photo: "", district: "아", sns: { fb: "#", ig: "https://www.instagram.com/_oneofwon" }, 
                 decl: "#", dateAdded: "2026-01-26"
             },
             { 
                 name: "김주연", region: "서울 광진구", metropolitan: "서울특별시", category: "기초의원", office: "광진구의원", 
-                status: "후보",
+                status: "후보", subRegion: "자양제1동, 자양제2동, 구의제1동, 구의제3동",
                 bio: ["광진구 다선거구 후보"], 
                 photo: "", district: "다", sns: { fb: "#" }, 
                 decl: "#", dateAdded: "2026-01-26"
             },
             { 
                 name: "이진현", region: "서울 광진구", metropolitan: "서울특별시", category: "기초의원", office: "광진구의원", 
-                status: "후보",
+                status: "후보", subRegion: "화양동, 자양제3동, 자양제4동",
                 bio: ["광진구 라선거구 후보"], 
                 photo: "", district: "라", 
                 sns: { 
@@ -634,7 +636,7 @@
             },
             { 
                 name: "우영훈", region: "대구 달성군", metropolitan: "대구광역시", category: "기초의원", office: "달성군의원", 
-                status: "후보",
+                status: "후보", subRegion: "화원읍, 가창면",
                 bio: ["개혁신당 지역발전특별위원회 부위원장", "국제라이온스협회 특별위원장", "국제라이온스협회 분과위원장", "국제라이온스협회 영진L 14대 회장"], 
                 photo: "https://i.imgur.com/amHTRAa.jpeg", 
                 district: "가", 
@@ -646,7 +648,7 @@
             },
             { 
                 name: "우성원", region: "대구 달성군", metropolitan: "대구광역시", category: "기초의원", office: "달성군의원", 
-                status: "후보",
+                status: "후보", subRegion: "유가읍, 현풍읍, 구지면",
                 bio: ["달성군 당협위원장"], 
                 photo: "https://i.imgur.com/NNtiJ53.jpeg", district: "다", 
                 sns: { fb: "https://www.facebook.com/seongwon.woo.3/" }, 
@@ -654,7 +656,7 @@
             },
             { 
                 name: "박철현", region: "대구 동구", metropolitan: "대구광역시", category: "기초의원", office: "동구의원", 
-                status: "후보",
+                status: "후보", subRegion: "신천1·2동, 신천3동, 신천4동, 효목1동, 효목2동",
                 bio: ["대구시당 인재위원장", "개혁신당 지역발전특별위 부위원장"], 
                 photo: "", district: "다", 
                 sns: { 
@@ -665,42 +667,42 @@
             },
             { 
                 name: "오태훈", region: "대구 수성구", metropolitan: "대구광역시", category: "기초의원", office: "수성구의원", 
-                status: "후보",
+                status: "후보", subRegion: "고산1동, 고산2동, 고산3동",
                 bio: ["대구시당 대변인"], 
                 photo: "", district: "라", sns: { fb: "#" }, 
                 decl: "#", dateAdded: "2026-01-26"
             },
             { 
                 name: "하용준", region: "대전 동구", metropolitan: "대전광역시", category: "기초의원", office: "동구의원", 
-                status: "출마선언",
+                status: "출마선언", subRegion: "가양1동, 가양2동, 용전동, 성남동",
                 bio: ["대전 동구 다선거구 출마"], 
                 photo: "https://i.imgur.com/MxyJ2sm.jpeg", district: "다", sns: { fb: "#" }, 
                 decl: "https://rallypoint.kr/board/politics-free/224918?searchType=0&currentPage=1", dateAdded: "2026-01-31"
             },
             { 
                 name: "강신학", region: "인천 연수구", metropolitan: "인천광역시", category: "기초의원", office: "인천시당 부위원장", 
-                status: "후보",
+                status: "후보", subRegion: "송도2동, 송도4동, 송도5동",
                 bio: ["인천시당 부위원장", "인천시당 소상공인·전략분과위원장"], 
                 photo: "", district: "마", sns: { fb: "#" }, 
                 decl: "#", dateAdded: "2026-01-26"
             },
             { 
                 name: "박진우", region: "광주 동구", metropolitan: "광주광역시", category: "기초의원", office: "동구의원", 
-                status: "후보",
+                status: "후보", subRegion: "충장동, 동명동, 계림1동, 계림2동, 산수1동, 산수2동",
                 bio: ["동구·남구 을 당협위원장", "21대 대선 선대위 홍보부본부장"], 
                 photo: "https://i.imgur.com/cah0vOW.png", district: "가", sns: { fb: "https://www.facebook.com/jinu.park.77/about", ig: "https://www.instagram.com/1jwpark/", yt: "https://www.youtube.com/channel/UCcNTjccJrVitGy-GcD8GkpQ" }, 
                 decl: "#", dateAdded: "2026-01-26"
             },
             { 
                 name: "오정대", region: "경기 성남시", metropolitan: "경기도", category: "기초의원", office: "성남시의원", 
-                status: "출마예정",
+                status: "출마예정", subRegion: "분당구: 이매1동, 이매2동, 삼평동",
                 bio: ["도로교통사고감정사", "도로교통사고감정사 협회 정회원", "유튜브 '운전하는곰돌' 운영", "작가"], 
                 photo: "", district: "아", sns: { yt: "https://www.youtube.com/@d_gomdol/featured" }, 
                 decl: "#", dateAdded: "2026-01-31"
             },
             { 
                 name: "김태수", region: "경기 부천시", metropolitan: "경기도", category: "기초의원", office: "부천시의원", 
-                status: "후보",
+                status: "후보", subRegion: "원미구: 중1동, 중2동, 중3동, 중4동, 약대동",
                 bio: ["현 현대흥립통합재건축추진준비위 위원장", "현 흥립약대아파트 입대위 감사", "전 에어아시아재팬 항공승무원"], 
                 photo: "https://i.imgur.com/JROiWlJ.png", district: "마", 
                 sns: { 
@@ -712,75 +714,77 @@
             },
             { 
                 name: "조병찬", region: "경기 부천시", metropolitan: "경기도", category: "기초의원", office: "부천시의원", 
-                status: "후보",
+                status: "후보", subRegion: "소사구: 범박동, 괴안동, 역곡3동, 옥길동",
                 bio: ["부천시 아선거구 후보"], 
                 photo: "", district: "아", sns: { fb: "#" }, 
                 decl: "#", dateAdded: "2026-01-26"
             },
             { 
                 name: "이승도", region: "경기 용인시", metropolitan: "경기도", category: "기초의원", office: "용인시의원", 
-                status: "후보",
+                status: "후보", subRegion: "수지구: 상현1동, 상현3동",
                 bio: ["용인시 사선거구 후보"], 
                 photo: "", district: "사", sns: { fb: "#" }, 
                 decl: "#", dateAdded: "2026-01-26"
             },
             { 
                 name: "황승빈", region: "경기 수원시", metropolitan: "경기도", category: "기초의원", office: "수원시의원", 
-                status: "후보",
+                status: "후보", subRegion: "영통구: 영통2동, 영통3동, 망포1동, 망포2동",
                 bio: ["수원시 파선거구 후보"], 
                 photo: "", district: "파", sns: { fb: "#" }, 
                 decl: "#", dateAdded: "2026-01-26"
             },
             { 
                 name: "박원길", region: "경기 안양시", metropolitan: "경기도", category: "기초의원", office: "안양시의원", 
-                status: "후보",
+                status: "후보", subRegion: "동안구: 호계1동, 호계2동, 호계3동, 신촌동",
                 bio: ["안양시 아선거구 후보"], 
                 photo: "", district: "아", sns: { fb: "#" }, 
                 decl: "#", dateAdded: "2026-01-26"
             },
             { 
                 name: "심용진", region: "경기 화성시", metropolitan: "경기도", category: "기초의원", office: "화성시의원", 
-                status: "후보",
+                status: "후보", subRegion: "만세구: 우정읍, 남양읍, 매송면, 비봉면, 마도면, 송산면, 서신면, 장안면, 새솔동",
                 bio: ["전) 매송면 원평1리 이장", "매송면 송전탑 지중화 추진위원장"], 
                 photo: "", district: "나", sns: { fb: "#" }, 
                 decl: "#", dateAdded: "2026-01-26"
             },
             { 
                 name: "오태석", region: "경기 화성시", metropolitan: "경기도", category: "기초의원", office: "화성시의원", 
-                status: "후보",
+                status: "후보", subRegion: "효행구: 봉담읍, 기배동, 화산동",
                 bio: ["화성시 바선거구 후보"], 
                 photo: "", district: "바", sns: { fb: "#" }, 
                 decl: "#", dateAdded: "2026-01-26"
             },
             { 
                 name: "윤효석", region: "경기 화성시", metropolitan: "경기도", category: "기초의원", office: "화성시의원", 
-                status: "후보",
+                status: "후보", subRegion: "병점구: 진안동, 병점1동, 병점2동",
                 bio: ["화성시 사선거구 후보"], 
                 photo: "", district: "사", sns: { fb: "#" }, 
                 decl: "#", dateAdded: "2026-01-26"
             },
             { 
                 name: "전상현", region: "강원 원주시", metropolitan: "강원특별자치도", category: "기초의원", office: "원주시의원", 
-                status: "후보",
+                status: "후보", subRegion: "문막읍, 지정면, 부론면, 귀래면",
                 bio: ["원주시 가선거구 후보"], 
                 photo: "", district: "가", sns: { fb: "#" }, 
                 decl: "#", dateAdded: "2026-01-26"
             },
             { 
                 name: "정진호", region: "경북 울진군", metropolitan: "경상북도", category: "기초의원", office: "울진군의원", 
-                status: "후보",
+                status: "후보", subRegion: "북면, 죽변면",
                 bio: ["울진군 나선거구 후보"], 
                 photo: "", district: "나", sns: { fb: "#" }, 
                 decl: "#", dateAdded: "2026-01-26"
             },
             { 
                 name: "최성진", region: "서울 구로구", metropolitan: "서울특별시", category: "기초의원", office: "구로구의원", 
+                subRegion: "구로제3동, 구로제4동, 가리봉동",
                 bio: ["서울시당 미래희망위원회 위원", "국제개발협력 NGO 근무", "WFK KOICA NGO 봉사단원 파견"], 
                 photo: "https://secondteam-newways-feed.s3.ap-northeast-2.amazonaws.com/politicians/profiles/reformguro.webp", district: "바", sns: { fb: "#", ig: "#", yt: "#" }, 
                 decl: "https://rallypoint.kr/board/politics-free/224459", dateAdded: "2026-01-24"
             },
             { 
                 name: "박윤옥", region: "경기 남양주시", metropolitan: "경기도", category: "기초의원", office: "남양주시의원",
+                subRegion: "화도읍, 수동면",
                 bio: ["제9대 남양주시의원", "남양주시의회 복지환경부위원장"],
                 photo: "https://i.imgur.com/HgnuJAp.png", district: "가",
                 sns: { fb: "https://www.facebook.com/profile.php?id=100009520359078", ig: "#", yt: "#" },
@@ -788,39 +792,43 @@
             },
             { 
                 name: "조동운", region: "대전 서구", metropolitan: "대전광역시", category: "기초의원", office: "서구의원", 
+                subRegion: "가수원동, 관저1동, 관저2동, 기성동",
                 bio: ["서구 을 당협위원장", "전) 경찰대학 경찰학과 교수", "한국경찰연구원 원장", "법학박사"], 
                 photo: "https://i.imgur.com/q8Z5Mst.png", district: "다", sns: { fb: "https://www.facebook.com/c2716898", ig: "https://www.instagram.com/c2716898/", yt: "#" }, 
                 decl: "https://www.youtube.com/watch?v=uyHmrX9hypw", dateAdded: "2025-12-01"
             },
             { 
                 name: "박현겸", region: "대전 동구", metropolitan: "대전광역시", category: "기초의원", office: "동구의원", 
-                status: "후보",
+                status: "후보", subRegion: "중앙동, 효동, 신인동, 홍도동, 삼성동, 산내동",
                 bio: ["대전시당 미래희망위원장"], 
                 photo: "https://i.imgur.com/TVxC1Kl.jpeg", district: "가", sns: { fb: "#", ig: "#", yt: "#" }, 
                 decl: "https://www.youtube.com/watch?v=uyHmrX9hypw", dateAdded: "2025-12-01"
             },
             { 
                 name: "성진영", region: "대구 중구", metropolitan: "대구광역시", category: "기초의원", office: "중구의원", 
+                subRegion: "동인동, 삼덕동, 성내1동, 남산1동, 대봉1동, 대봉2동",
                 bio: ["대구시당 미래희망위원회 위원", "캠퍼스지부 경북대학교 지부장"], 
                 photo: "https://i.imgur.com/fHwNOji.png", district: "가", 
                 sns: { fb: "#", ig: "https://www.instagram.com/jyseong_gyeongsan/", yt: "#" }, 
                 decl: "https://rallypoint.kr/board/politics-free/222667", dateAdded: "2026-01-15"
             },
             { 
-                name: "윤서진", region: "대전 유성구", metropolitan: "대전광역시", category: "기초의원", office: "유성구의원", bio: ["중앙당 미래희망위원회 위원", "대전시당 부위원장", "제35대 KAIST 총학생회장"], 
+                name: "윤서진", region: "대전 유성구", metropolitan: "대전광역시", category: "기초의원", office: "유성구의원", 
+                subRegion: "온천1동, 온천2동, 노은1동",
+                bio: ["중앙당 미래희망위원회 위원", "대전시당 부위원장", "제35대 KAIST 총학생회장"], 
                 photo: "https://i.imgur.com/N24OK0K.jpeg", district: "나", sns: { fb: "#", ig: "https://www.instagram.com/seojin_ys/", yt: "#" }, 
                 decl: "https://www.youtube.com/watch?v=YBVriZc5RQc", dateAdded: "2026-01-17"
             },
             { 
                 name: "최진형", region: "경기 안산시", metropolitan: "경기도", category: "기초의원", office: "안산시의원", 
-                status: "후보",
+                status: "후보", subRegion: "상록구: 사동, 사이동, 해양동, 본오3동",
                 bio: ["안산시 가선거구 후보"], 
                 photo: "https://www.notion.so/image/attachment%3A8b8ba3ac-4b70-4725-9d80-e79694a632b2%3A%EC%A6%9D%EB%AA%85%EC%82%AC%EC%A7%842.jpg?table=block&id=2b4a193a-42f1-81a1-bb53-f17592aee26f&spaceId=312b58e7-be17-4e3f-8977-ffc2191a7a05&width=460&userId=&cache=v2", district: "가", sns: { fb: "#", ig: "https://www.instagram.com/realbro_22/", yt: "#" }, 
                 decl: "https://rallypoint.kr/board/politics-free/223063", dateAdded: "2026-01-26"
             },
             { 
                 name: "이강민", region: "충남 천안시", metropolitan: "충청남도", category: "기초의원", office: "천안시의원", 
-                status: "후보",
+                status: "후보", subRegion: "서북구: 불당1동, 불당2동",
                 bio: ["대전시당 정책위원", "대전시당 자문위원", "21대 대선 충남 선대본부 위원", "충남개혁정책네트워크 대표"], 
                 photo: "https://i.imgur.com/rpUTBbK.png", district: "라", 
                 sns: { fb: "https://www.facebook.com/leangmin4473", ig: "#", yt: "#", blog: "https://blog.naver.com/buldang_leekangmin" }, 
@@ -828,45 +836,50 @@
             },
             { 
                 name: "고재윤", region: "충남 당진시", metropolitan: "충청남도", category: "기초의원", office: "당진시의원", 
-                bio: ["대전시당 정책위원", "대전시당 자문위원", "캠퍼스지부 충남대학연합지부장"], 
+                subRegion: "고대면, 석문면, 당진1동, 당진3동",
+                bio: ["대전시당 정책위원", "대전시당 자문위원", "캠퍼스지부 충남대학연합지지부장"], 
                 photo: "https://i.imgur.com/sJf2zpM.jpeg", district: "라", 
                 sns: { fb: "#", ig: "https://www.instagram.com/yn._.jae/", yt: "#", blog: "https://m.blog.naver.com/PostList.naver?blogId=kojy9402&tab=1&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPNTY3MDY3MzQzMzUyNDI3AAGnWo3pCWqJ198JeucHFkvwAXY35YKGt1-e_Z3W-B9yKVapbrTXwdOuUBMEfmA_aem_UM5dxYo2jYGbeVjISX2PsQ" }, 
                 decl: "https://rallypoint.kr/board/politics-free/222868", dateAdded: "2026-01-05"
                 },
             { 
                 name: "황시현", region: "충남 천안시", metropolitan: "충청남도", category: "기초의원", office: "천안시의원", 
+                subRegion: "서북구: 부성2동",
                 bio: ["21대 대선 충남 선대본 홍보위원", "충남개혁정책네트워크 조직국장", "청년 커뮤니티 '청연' 대표"], 
                 photo: "https://i.imgur.com/3yWK8BF_d.png?maxwidth=520&shape=thumb&fidelity=high", district: "사", sns: { fb: "#", ig: "#", yt: "#" }, 
                 decl: "https://rallypoint.kr/board/politics-free/223942?searchType=0&currentPage=1", dateAdded: "2026-01-15"
             },
             { 
-                name: "신소일", region: "경북 경산시", metropolitan: "경상북도", category: "기초의원", office: "경산시의원", bio: ["경산시 라선거구 출마"], 
+                name: "신소일", region: "경북 경산시", metropolitan: "경상북도", category: "기초의원", office: "경산시의원", 
+                subRegion: "중방동, 중앙동, 서부2동, 북부동",
+                bio: ["경산시 라선거구 출마"], 
                 photo: "https://i.imgur.com/DlwpsdL.jpeg", district: "라", sns: { fb: "https://www.facebook.com/sinsoil.2025", ig: "#", yt: "#" }, 
                 decl: "https://www.plus-gyeongbuk.kr/news/articleView.html?idxno=3890", cardFit: "cover", cardPos: "center 80%", dateAdded: "2026-01-01"
             },
             {
                 name: "김동현", region: "서울 강남구", metropolitan: "서울특별시", category: "기초의원", office: "강남구의원", 
-                status: "후보",
+                status: "후보", subRegion: "삼성1동, 삼성2동, 대치2동",
                 bio: ["건국대학교 캠퍼스 지부원"], 
                 photo: "https://i.imgur.com/uzVK2Vj.jpeg", district: "자", sns: { fb: "#", ig: "#", yt: "#", blog: "https://m.blog.naver.com/PostList.naver?blogId=uada5633" },
                 decl: "https://m.blog.naver.com/PostView.naver?blogId=uada5633&logNo=224121263655&navType=by", focus: "photo-face-focus", dateAdded: "2025-12-01"
             },
             {
                 name: "이천은", region: "경기 안양시", metropolitan: "경기도", category: "기초의원", office: "안양시의원", 
-                status: "후보",
+                status: "후보", subRegion: "동안구: 달안동, 관양1동, 관양2동, 부림동",
                 bio: ["안양시 바선거구 후보"],
                 photo: "https://i.imgur.com/D7HUg8p.jpeg", district: "바", sns: { fb: "#", ig: "https://www.instagram.com/pyeongchonman?igsh=ZWY1dzBvZm1oYWVy", yt: "#" },
                 decl: "https://www.instagram.com/p/DT9qrWckb3S/?igsh=MWtjcGlzOHk4MncxNg%3D%3D", dateAdded: "2025-12-01"
             },
             {
                 name: "김성민", region: "부산 사상구", metropolitan: "부산광역시", category: "기초의원", office: "사상구의원",
-                status: "출마예정",
+                status: "출마예정", subRegion: "삼락동, 덕포제1동, 덕포제2동, 괘법동, 감전동",
                 bio: ["사상구 가선거구 출마예정"],
                 photo: "", district: "가", sns: { fb: "#" },
                 decl: "https://rallypoint.kr/board/politics-free/224669?searchType=0&currentPage=2", dateAdded: "2026-01-28"
             },
             {
                 name: "최태영", region: "강원 춘천시", metropolitan: "강원특별자치도", category: "기초의원", office: "춘천시의원", 
+                subRegion: "효자2동, 석사동",
                 bio: ["캠퍼스지부 강원스테이션 리더장", "캠퍼스지부 강원대학교 지부장"], 
                 photo: "https://i.imgur.com/4n8c5Qi.jpeg", 
                 district: "라", 
@@ -893,18 +906,13 @@
 
         function isNewCandidate(dateStr) {
             if (!dateStr) return false;
-            // 로컬 시간 기준으로 날짜 객체 생성 (YYYY-MM-DD)
             const parts = dateStr.split('-');
             const addedDate = new Date(parts[0], parts[1] - 1, parts[2]);
             addedDate.setHours(0, 0, 0, 0);
-            
             const now = new Date();
             now.setHours(0, 0, 0, 0);
-            
             const diffTime = now - addedDate;
             const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
-            
-            // 등록된 지 7일 이내인 경우
             return diffDays >= 0 && diffDays <= 7;
         }
 
@@ -953,7 +961,6 @@
 
             const newBadge = isNewCandidate(c.dateAdded) ? `<span class="new-badge">NEW</span>` : "";
             const statusLabel = c.status || "출마선언";
-            
             const confirmedBadge = (statusLabel.includes("후보") && c.name !== "김성민") ? `<div class="confirmed-badge"><i data-lucide="check-circle" style="width: 10px; height: 10px;"></i>공천 확정</div>` : "";
 
             return `
@@ -1004,6 +1011,17 @@
                 officeText = `${c.office} ${statusLabel}`;
             }
             document.getElementById('modal-office').innerText = officeText;
+
+            // 실제 지역(동) 정보 표시: 광역의원과 기초의원에만 적용
+            const subRegionEl = document.getElementById('modal-subregion');
+            const isCouncil = (c.category === "광역의원" || c.category === "기초의원");
+            if (isCouncil && c.subRegion) {
+                subRegionEl.innerText = c.subRegion;
+                subRegionEl.style.display = 'block';
+            } else {
+                subRegionEl.style.display = 'none';
+            }
+
             const photoArea = document.getElementById('modal-photo-area');
             if (!c.photo || c.photo.trim() === "") {
                 photoArea.innerHTML = `<div class="no-photo-placeholder">준비중입니다</div>`;
@@ -1164,7 +1182,6 @@
                 ` : '<div id="by-election"></div>'}
             `;
 
-            // Update by-election button disabled state
             const byElectionBtn = document.getElementById('nav-by-election');
             if (byElectionBtn) {
                 byElectionBtn.disabled = (byElectionCands.length === 0);
@@ -1176,7 +1193,6 @@
         }
 
         function updateSummary() {
-            // 전체 현황 계산
             const countBy = candidates.filter(c => c.category === "재보궐선거").length;
             const countProvExec = candidates.filter(c => c.category === "광역단체장").length;
             const countLocalExec = candidates.filter(c => c.category === "기초단체장").length;
@@ -1191,7 +1207,6 @@
             document.getElementById('sum-local-council').innerText = countLocalCouncil;
             document.getElementById('sum-total').innerText = countTotal;
 
-            // 슬림화된 지역별 현황판 생성 로직 (2글자 축약 적용)
             const regionGrid = document.getElementById('region-status-grid');
             if (regionGrid) {
                 const sortedRegions = Object.keys(regionPriority);
@@ -1233,7 +1248,6 @@
                     if (catOrder[a.category] !== catOrder[b.category]) return catOrder[a.category] - catOrder[b.category];
                     return councilSort(a, b);
                 });
-                
                 if(regionalCandidates.length > 0) {
                     html += `
                         <section class="mb-12 scroll-mt-24">
@@ -1246,8 +1260,6 @@
             html += '</div>';
             container.innerHTML = html;
             lucide.createIcons();
-            
-            // 페이지 상단으로 가는 대신 첫 번째 지역 섹션으로 부드럽게 이동
             const firstSection = container.querySelector('section');
             if (firstSection) {
                 firstSection.scrollIntoView({ behavior: 'smooth' });
