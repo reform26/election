@@ -554,7 +554,7 @@
                 decl: "https://www.youtube.com/watch?v=MZHron4TMO4", dateAdded: "2026-01-05"
             },
             { 
-                name: "송창훈", region: "경기용인시", metropolitan: "경기도", category: "기초단체장", office: "용인시장", bio: ["용인시 정 당협위원장"], 
+                name: "송창훈", region: "경기 용인시", metropolitan: "경기도", category: "기초단체장", office: "용인시장", bio: ["용인시 정 당협위원장"], 
                 photo: "https://i.imgur.com/xHTGUwg.jpeg", sns: { fb: "https://www.facebook.com/profile.php?id=100004103197128", ig: "https://www.instagram.com/song_c_h_/" }, 
                 decl: "https://www.youtube.com/watch?v=MZHron4TMO4", focus: "photo-face-focus", dateAdded: "2026-01-05"
             },
@@ -574,7 +574,7 @@
             },
             { 
                 name: "양해두", region: "제주특별자치도", metropolitan: "제주특별자치도", shortMetro: "제주", district: "제주 외도·이호·도두", constituency: "", constituencyFull: "제주시 외도동·이호동·도두동", category: "광역의원", office: "제주도의원", 
-                status: "후보", subRegion: "제주시 이호동, 외도동, 도두동",
+                status: "후보", subRegion: "외도동, 이호동, 도두동",
                 bio: ["제주시 갑 당협위원장", "제21대 대선 선대위 홍보부본부장"], 
                 photo: "https://img2.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/202601/07/kbs/20260107150152592uwgk.jpg", 
                 sns: { fb: "https://www.facebook.com/profile.php?id=100007883867189#", ig: "https://www.instagram.com/haeduyang/" }, 
@@ -675,7 +675,7 @@
             },
             { 
                 name: "하용준", region: "대전 동구", metropolitan: "대전광역시", category: "기초의원", office: "동구의원", 
-                status: "출마선언", subRegion: "가양1동, 가양2동,용전동, 성남동",
+                status: "출마선언", subRegion: "가양1동, 가양2동, 용전동, 성남동",
                 bio: ["대전 동구 다선거구 출마"], 
                 photo: "https://i.imgur.com/MxyJ2sm.jpeg", district: "다", sns: { fb: "#" }, 
                 decl: "https://rallypoint.kr/board/politics-free/224918?searchType=0&currentPage=1", dateAdded: "2026-01-31"
@@ -1228,7 +1228,7 @@
                     const shortRegion = shortNameMap[region] || region.substring(0, 2);
                     
                     gridHtml += `
-                        <div class="region-box">
+                        <div class="region-box cursor-pointer" onclick="renderRegionView('${region}')">
                             <p class="text-gray-500 text-[9px] md:text-[10px] font-bold mb-0.5">${shortRegion}</p>
                             <p class="text-sm md:text-lg font-black ${regionCount > 0 ? 'text-[#FF6600]' : 'text-gray-700'}">${regionCount}</p>
                         </div>
@@ -1238,7 +1238,7 @@
             }
         }
 
-        function renderRegionView() {
+        function renderRegionView(targetRegion = null) {
             updateNavActive('btn-region');
             const container = document.getElementById('content-area');
             const metros = Object.keys(regionPriority);
@@ -1254,7 +1254,7 @@
                 });
                 if(regionalCandidates.length > 0) {
                     html += `
-                        <section class="mb-12 scroll-mt-24">
+                        <section id="region-${m}" class="mb-12 scroll-mt-24">
                             <h2 class="section-title">${m}</h2>
                             <div class="grid-responsive">${regionalCandidates.map(createCard).join('')}</div>
                         </section>
@@ -1264,9 +1264,19 @@
             html += '</div>';
             container.innerHTML = html;
             lucide.createIcons();
-            const firstSection = container.querySelector('section');
-            if (firstSection) {
-                firstSection.scrollIntoView({ behavior: 'smooth' });
+            
+            if (targetRegion) {
+                const el = document.getElementById(`region-${targetRegion}`);
+                if (el) {
+                    el.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    window.scrollTo({top: 0, behavior: 'smooth'});
+                }
+            } else {
+                const firstSection = container.querySelector('section');
+                if (firstSection) {
+                    firstSection.scrollIntoView({ behavior: 'smooth' });
+                }
             }
         }
 
