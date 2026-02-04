@@ -159,6 +159,7 @@
             height: 100%; 
             object-fit: cover; 
             display: block; 
+            transition: transform 0.3s ease;
         }
         
         .photo-face-focus { object-position: center top !important; }
@@ -674,7 +675,7 @@
             },
             { 
                 name: "하용준", region: "대전 동구", metropolitan: "대전광역시", category: "기초의원", office: "동구의원", 
-                status: "출마선언", subRegion: "가양1동, 가양2동, 용전동, 성남동",
+                status: "출마선언", subRegion: "가양1동, 가양2동,용전동, 성남동",
                 bio: ["대전 동구 다선거구 출마"], 
                 photo: "https://i.imgur.com/MxyJ2sm.jpeg", district: "다", sns: { fb: "#" }, 
                 decl: "https://rallypoint.kr/board/politics-free/224918?searchType=0&currentPage=1", dateAdded: "2026-01-31"
@@ -695,7 +696,7 @@
             },
             { 
                 name: "오정대", region: "경기 성남시", metropolitan: "경기도", category: "기초의원", office: "성남시의원", 
-                status: "출마예정", subRegion: "분당구 중 이매1동, 이매2동, 삼평동",
+                status: "출마예정", subRegion: "분당구 이매1동, 이매2동, 삼평동",
                 bio: ["도로교통사고감정사", "도로교통사고감정사 협회 정회원", "유튜브 '운전하는곰돌' 운영", "작가"], 
                 photo: "", district: "아", sns: { yt: "https://www.youtube.com/@d_gomdol/featured" }, 
                 decl: "#", dateAdded: "2026-01-31"
@@ -865,7 +866,7 @@
             },
             {
                 name: "이천은", region: "경기 안양시", metropolitan: "경기도", category: "기초의원", office: "안양시의원", 
-                status: "후보", subRegion: "달안동, 관양1동, 관양2동, 부림동",
+                status: "후보", subRegion: "비산1동, 비산2동, 비산3동, 부흥동",
                 bio: ["안양시 바선거구 후보"],
                 photo: "https://i.imgur.com/FJsBrQ1.png", district: "바", sns: { fb: "#", ig: "https://www.instagram.com/pyeongchonman?igsh=ZWY1dzBvZm1oYWVy", yt: "#" },
                 decl: "https://www.instagram.com/p/DT9qrWckb3S/?igsh=MWtjcGlzOHk4MncxNg%3D%3D", dateAdded: "2025-12-01"
@@ -881,7 +882,9 @@
                 name: "최태영", region: "강원 춘천시", metropolitan: "강원특별자치도", category: "기초의원", office: "춘천시의원", 
                 subRegion: "효자2동, 석사동",
                 bio: ["캠퍼스지부 강원스테이션 리더장", "캠퍼스지부 강원대학교 지부장"], 
-                photo: "https://i.imgur.com/4n8c5Qi.jpeg", 
+                photo: "https://i.imgur.com/eeRt5rd.jpeg", 
+                cardPos: "center 15%",
+                cardScale: "1.25",
                 district: "라", 
                 sns: { 
                     fb: "https://www.facebook.com/choetaeyeong.979932/", 
@@ -954,10 +957,11 @@
             const isNoPhoto = !c.photo || c.photo.trim() === "";
             const fit = c.cardFit || "cover";
             const pos = c.cardPos || "center top"; 
+            const scale = c.cardScale || "1";
             
             const photoContent = isNoPhoto 
                 ? `<div class="no-photo-placeholder">준비중입니다</div>`
-                : `<img src="${c.photo}" class="candidate-photo ${!c.cardFit ? 'photo-face-focus' : ''}" style="object-fit: ${fit} !important; object-position: ${pos} !important;" alt="${c.name}" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=no-photo-placeholder>준비중입니다</div>';">`;
+                : `<img src="${c.photo}" class="candidate-photo ${!c.cardFit ? 'photo-face-focus' : ''}" style="object-fit: ${fit} !important; object-position: ${pos} !important; transform: scale(${scale});" alt="${c.name}" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=no-photo-placeholder>준비중입니다</div>';">`;
 
             const newBadge = isNewCandidate(c.dateAdded) ? `<span class="new-badge">NEW</span>` : "";
             const statusLabel = c.status || "출마선언";
