@@ -297,7 +297,7 @@
         </div>
     </div>
 
-    <!-- 헤더 영역 -->
+    <!-- 헤더 영역 (너비 확장 적용) -->
     <header class="header-gradient pt-8 pb-4 px-4 md:pt-12 md:pb-6 md:px-10 mb-0">
         <div class="max-w-7xl mx-auto">
             <div class="flex justify-between items-center mb-10">
@@ -529,7 +529,7 @@
             },
             { 
                 name: "하헌휘", region: "세종특별자치시", category: "광역단체장", office: "세종특별자치시장", 
-                bio: ["세종시당 창준위원장", "세종시 갑 당협위원장"], 
+                bio: ["세종시당 창준위원장", "세종시 가 당협위원장"], 
                 photo: "https://image.dnews.co.kr/photo/photo/2024/11/21/202411211945335960037-2-565966.jpg", sns: { fb: "https://www.facebook.com/profile.php?id=61562035792083", ig: "https://www.instagram.com/reform_lawyer/", yt: "https://www.youtube.com/@%EA%B0%9C%ED%98%81%EC%8B%A0%EB%8B%B9%EC%84%B8%EC%A2%85" }, 
                 decl: "https://youtu.be/m4DTvulTDFk", dateAdded: "2025-12-05"
             },
@@ -1197,10 +1197,20 @@
             const provincialCouncilCands = candidates
                 .filter(c => c.category === "광역의원")
                 .sort((a, b) => {
+                    // 1. 광역지역별 우선순위
                     const priA = regionPriority[a.metropolitan] || 99;
                     const priB = regionPriority[b.metropolitan] || 99;
                     if (priA !== priB) return priA - priB;
-                    return a.name.localeCompare(b.name);
+
+                    // 2. 같은 지역 내 비례대표 여부 (지역구 0, 비례 1 -> 지역구가 앞)
+                    const isAProp = (a.constituency === "비례" || (a.constituencyFull && a.constituencyFull.includes("비례"))) ? 1 : 0;
+                    const isBProp = (b.constituency === "비례" || (b.constituencyFull && b.constituencyFull.includes("비례"))) ? 1 : 0;
+                    if (isAProp !== isBProp) return isAProp - isBProp;
+
+                    // 3. 지역구 후보자끼리는 선거구명(ㄱㄴㄷ) 정렬
+                    const nameA = a.constituencyFull || a.district || "";
+                    const nameB = b.constituencyFull || b.district || "";
+                    return nameA.localeCompare(nameB);
                 });
 
             const localExecGyeonggi = candidates
