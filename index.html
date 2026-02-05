@@ -611,6 +611,12 @@
                 photo: "", district: "마", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-05"
             },
             { 
+                name: "김성우", region: "서울 서대문구", metropolitan: "서울특별시", category: "기초의원", office: "서대문구의원", 
+                status: "후보", subRegion: "북아현동, 신촌동, 천연동, 충현동",
+                bio: ["서대문구 가선거구 후보"],
+                photo: "", district: "가", sns: { blog: "https://blog.naver.com/manksw" }, decl: "#", dateAdded: "2026-02-05"
+            },
+            { 
                 name: "김정훈", region: "서울 동대문구", metropolitan: "서울특별시", category: "기초의원", office: "동대문구의원", 
                 status: "후보", subRegion: "답십리2동, 장안1동, 장안2동",
                 bio: ["동대문구 바선거구 후보"],
@@ -1207,9 +1213,9 @@
 
             const seoulCouncilCands = candidates.filter(c => c.category === "기초의원" && c.metropolitan === "서울특별시").sort(councilSort);
             const daeguCouncilCands = candidates.filter(c => c.category === "기초의원" && c.metropolitan === "대구광역시").sort(councilSort);
+            const daejeonCands = candidates.filter(c => c.category === "기초의원" && c.metropolitan === "대전광역시").sort(councilSort);
             const gyeonggiCands = candidates.filter(c => c.category === "기초의원" && c.metropolitan === "경기도").sort(councilSort);
             const gyeongbukCouncilCands = candidates.filter(c => c.category === "기초의원" && c.metropolitan === "경상북도").sort(councilSort);
-            const daejeonCands = candidates.filter(c => c.category === "기초의원" && c.metropolitan === "대전광역시").sort(councilSort);
             const chungnamCands = candidates.filter(c => c.category === "기초의원" && c.metropolitan === "충청남도").sort(councilSort);
             
             const otherCands = candidates
