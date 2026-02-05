@@ -13,7 +13,7 @@
     <!-- Microsoft Clarity 추적 코드 -->
     <script type="text/javascript">
         (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            c[a]=c[l]||function(){(c[a].q=c[a].q||[]).push(arguments)};
             t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
             y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
         })(window, document, "clarity", "script", "v2ogrkuyk0");
@@ -131,7 +131,7 @@
             border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
-        /* 5열 배열 수정을 위한 그리드 스타일 */
+        /* 5열 배열 그리드 스타일 */
         .grid-responsive { 
             display: grid; 
             grid-template-columns: repeat(2, 1fr); 
@@ -150,7 +150,7 @@
         }
 
         .photo-frame { 
-            height: 180px; /* 5열 배치 시 카드 너비에 맞춰 높이 조정 */
+            height: 180px; 
             background-color: #f1f3f5; 
             overflow: hidden; 
             position: relative; 
@@ -297,7 +297,7 @@
         </div>
     </div>
 
-    <!-- 헤더 영역 (너비 확장 적용) -->
+    <!-- 헤더 영역 -->
     <header class="header-gradient pt-8 pb-4 px-4 md:pt-12 md:pb-6 md:px-10 mb-0">
         <div class="max-w-7xl mx-auto">
             <div class="flex justify-between items-center mb-10">
@@ -653,9 +653,15 @@
                 photo: "", district: "다", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-05"
             },
             { 
-                name: "이성실", region: "인천 연수구", metropolitan: "인천광역시", category: "기초의원", office: "인천시당 부위원장", 
-                status: "후보", subRegion: "송도1동, 송도3동",
+                name: "강신학", region: "인천 연수구", metropolitan: "인천광역시", category: "기초의원", office: "연수구의원", 
+                status: "후보", subRegion: "송도2동, 송도4동, 송도5동",
                 bio: ["인천시당 부위원장", "인천시당 소상공인·전략분과위원장"], 
+                photo: "", district: "마", sns: { fb: "#" }, decl: "#", dateAdded: "2026-01-26"
+            },
+            { 
+                name: "이성실", region: "인천 연수구", metropolitan: "인천광역시", category: "기초의원", office: "연수구의원", 
+                status: "후보", subRegion: "송도1동, 송도3동",
+                bio: ["연수구의회 라선거구 후보"],
                 photo: "", district: "라", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-05"
             },
             { 
@@ -748,7 +754,7 @@
             { 
                 name: "우영훈", region: "대구 달성군", metropolitan: "대구광역시", category: "기초의원", office: "달성군의원", 
                 status: "후보", subRegion: "화원읍, 가창면",
-                bio: ["개혁신당 지역발전특별위원회 부위원장", "국제라이온스협회 특별위원장", "국제라이온스협회 분과위원장", "국제라이온스협회 영진L 14대 회장"], 
+                bio: ["중앙당 지역발전특별위 부위원장", "국제라이온스협회 특별위원장", "국제라이온스협회 분과위원장", "국제라이온스협회 영진L 14대 회장"], 
                 photo: "https://i.imgur.com/amHTRAa.jpeg", 
                 district: "가", 
                 sns: { 
@@ -789,13 +795,6 @@
                 bio: ["대전 동구 다선거구 출마"], 
                 photo: "https://i.imgur.com/MxyJ2sm.jpeg", district: "다", sns: { fb: "#" }, 
                 decl: "https://rallypoint.kr/board/politics-free/224918?searchType=0&currentPage=1", dateAdded: "2026-01-31"
-            },
-            { 
-                name: "강신학", region: "인천 연수구", metropolitan: "인천광역시", category: "기초의원", office: "인천시당 부위원장", 
-                status: "후보", subRegion: "송도2동, 송도4동, 송도5동",
-                bio: ["인천시당 부위원장", "인천시당 소상공인·전략분과위원장"], 
-                photo: "", district: "마", sns: { fb: "#" }, 
-                decl: "#", dateAdded: "2026-01-26"
             },
             { 
                 name: "박진우", region: "광주 동구", metropolitan: "광주광역시", category: "기초의원", office: "동구의원", 
@@ -948,7 +947,7 @@
             { 
                 name: "고재윤", region: "충남 당진시", metropolitan: "충청남도", category: "기초의원", office: "당진시의원", 
                 status: "후보", subRegion: "고대면, 석문면, 당진1동, 당진3동",
-                bio: ["대전시당 정책위원", "대전시당 자문위원", "캠퍼스지부 충남대학연합지지부장"], 
+                bio: ["대전시당 정책위원", "대전시당 자문위원", "21대 대선 충남 선대본부 위원", "충남개혁정책네트워크 대표"], 
                 photo: "https://i.imgur.com/sJf2zpM.jpeg", district: "라", 
                 sns: { fb: "#", ig: "https://www.instagram.com/yn._.jae/", yt: "#", blog: "https://m.blog.naver.com/PostList.naver?blogId=kojy9402&tab=1&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPNTY3MDY3MzQzMzUyNDI3AAGnWo3pCWqJ198JeucHFkvwAXY35YKGt1-e_Z3W-B9yKVapbrTXwdOuUBMEfmA_aem_UM5dxYo2jYGbeVjISX2PsQ" }, 
                 decl: "https://rallypoint.kr/board/politics-free/225327?searchType=0&currentPage=1", dateAdded: "2026-02-05"
@@ -1031,7 +1030,7 @@
 
         function createCard(c) {
             let bioContainerStyle = "";
-            if (["하대식", "조동운", "이강민", "박철현", "우영훈", "김성민", "오정대"].includes(c.name)) {
+            if (["하대식", "조동운", "이강민", "박철현", "우영훈", "김성민", "오정대", "류태하", "이용우", "이재원", "고재윤"].includes(c.name)) {
                 bioContainerStyle = 'style="line-height: 1.05;"';
             }
 
