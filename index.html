@@ -131,6 +131,7 @@
             border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
+        /* 5열 배열 수정을 위한 그리드 스타일 */
         .grid-responsive { 
             display: grid; 
             grid-template-columns: repeat(2, 1fr); 
@@ -142,16 +143,21 @@
                 gap: 1.25rem; 
             } 
         }
+        @media (min-width: 1024px) { 
+            .grid-responsive { 
+                grid-template-columns: repeat(5, 1fr); 
+            } 
+        }
 
         .photo-frame { 
-            height: 200px; 
+            height: 180px; /* 5열 배치 시 카드 너비에 맞춰 높이 조정 */
             background-color: #f1f3f5; 
             overflow: hidden; 
             position: relative; 
             width: 100%; 
         }
         @media (min-width: 640px) { 
-            .photo-frame { height: 260px; } 
+            .photo-frame { height: 240px; } 
         }
         
         .candidate-photo { 
@@ -291,9 +297,9 @@
         </div>
     </div>
 
-    <!-- 헤더 영역 -->
+    <!-- 헤더 영역 (너비 확장 적용) -->
     <header class="header-gradient pt-8 pb-4 px-4 md:pt-12 md:pb-6 md:px-10 mb-0">
-        <div class="max-w-6xl mx-auto">
+        <div class="max-w-7xl mx-auto">
             <div class="flex justify-between items-center mb-10">
                 <div class="bg-white border-2 border-[#FF6600] px-4 py-1.5 md:px-8 md:py-3 rounded-full shadow-sm">
                     <span id="last-update-date" class="nrp-orange font-black text-xs md:text-xl tracking-tighter whitespace-nowrap">
@@ -372,7 +378,7 @@
         </div>
     </header>
 
-    <div class="max-w-6xl mx-auto px-4 md:px-10">
+    <div class="max-w-7xl mx-auto px-4 md:px-10">
         <!-- 네비게이션 바 -->
         <nav class="sticky top-4 z-50 mb-6 flex justify-center mt-2">
             <div class="nav-container flex items-center bg-white/90 backdrop-blur-md shadow-lg border border-gray-100 rounded-2xl p-1 md:p-1.5 overflow-x-auto whitespace-nowrap gap-0">
@@ -647,9 +653,9 @@
                 photo: "", district: "다", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-05"
             },
             { 
-                name: "이성실", region: "인천 연수구", metropolitan: "인천광역시", category: "기초의원", office: "연수구의원", 
+                name: "이성실", region: "인천 연수구", metropolitan: "인천광역시", category: "기초의원", office: "인천시당 부위원장", 
                 status: "후보", subRegion: "송도1동, 송도3동",
-                bio: ["연수구 라선거구 후보"],
+                bio: ["인천시당 부위원장", "인천시당 소상공인·전략분과위원장"], 
                 photo: "", district: "라", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-05"
             },
             { 
@@ -942,7 +948,7 @@
             { 
                 name: "고재윤", region: "충남 당진시", metropolitan: "충청남도", category: "기초의원", office: "당진시의원", 
                 status: "후보", subRegion: "고대면, 석문면, 당진1동, 당진3동",
-                bio: ["대전시당 정책위원", "대전시당 자문위원", "21대 대선 충남 선대본부 위원", "충남개혁정책네트워크 대표"], 
+                bio: ["대전시당 정책위원", "대전시당 자문위원", "캠퍼스지부 충남대학연합지지부장"], 
                 photo: "https://i.imgur.com/sJf2zpM.jpeg", district: "라", 
                 sns: { fb: "#", ig: "https://www.instagram.com/yn._.jae/", yt: "#", blog: "https://m.blog.naver.com/PostList.naver?blogId=kojy9402&tab=1&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPNTY3MDY3MzQzMzUyNDI3AAGnWo3pCWqJ198JeucHFkvwAXY35YKGt1-e_Z3W-B9yKVapbrTXwdOuUBMEfmA_aem_UM5dxYo2jYGbeVjISX2PsQ" }, 
                 decl: "https://rallypoint.kr/board/politics-free/225327?searchType=0&currentPage=1", dateAdded: "2026-02-05"
