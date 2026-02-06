@@ -250,6 +250,7 @@
         .sns-btn.youtube:hover { color: #FF0000; }
         .sns-btn.blog:hover { color: #03C75A; }
         .sns-btn.threads:hover { color: #000000; }
+        .sns-btn.site:hover { color: #FF6600; }
 
         .region-grid {
             display: grid;
@@ -331,7 +332,7 @@
                                 <i data-lucide="alert-triangle" class="w-5 h-5 md:w-6 md:h-6 text-[#FF6600]"></i>
                                 <span class="text-[#FF6600] text-lg md:text-2xl font-black tracking-tight">주의사항</span>
                             </div>
-                            <div class="inline-block text-left space-y-2 text-gray-700 text-xs md:text-sm font-bold leading-relaxed">
+                            <div class="inline-block text-left space-y-2 text-gray-700 text-xs md:text-sm font-bold 상세 정보 보기">
                                 <p class="flex items-start gap-1.5">
                                     <span class="mt-1.5 flex-shrink-0 w-1 h-1 rounded-full bg-[#FF6600]"></span>
                                     <span>이 페이지는 <strong class="underline font-black text-gray-900">개혁신당과 관련 없는 비공식 페이지</strong>입니다.</span>
@@ -475,6 +476,7 @@
                     <a id="modal-threads" href="#" target="_blank" class="sns-btn threads"><i data-lucide="at-sign"></i></a>
                     <a id="modal-yt" href="#" target="_blank" class="sns-btn youtube"><i data-lucide="youtube"></i></a>
                     <a id="modal-blog" href="#" target="_blank" class="sns-btn blog"><i data-lucide="link-2"></i></a>
+                    <a id="modal-site" href="#" target="_blank" class="sns-btn site"><i data-lucide="globe"></i></a>
                 </div>
                 <a id="modal-declaration" href="#" target="_blank" class="block w-full py-4 nrp-bg-orange text-white rounded-2xl font-black text-lg shadow-lg hover:shadow-orange-200 transition-all">출마선언 보기</a>
                 <button onclick="closeProfileModal()" class="mt-6 text-gray-400 text-sm font-bold hover:text-gray-600 tracking-tight">창 닫기</button>
@@ -545,8 +547,8 @@
             { name: "이도윤", region: "서울 동대문구", metropolitan: "서울특별시", category: "기초의원", office: "동대문구의원", status: "출마선언", subRegion: "전농제1동, 전농제2동, 답십리제1동", bio: ["동대문구 마선거구 출마"], photo: "", district: "마", sns: { fb: "#" }, decl: "https://rallypoint.kr/board/politics-free/224812", dateAdded: "2026-01-31" },
             { name: "김영욱", region: "대전 서구", metropolitan: "대전광역시", category: "기초의원", office: "서구의원", status: "출마선언", subRegion: "복수동, 도마1동, 도마2동, 정림동", bio: ["대전시당 자문위원"], photo: "https://i.imgur.com/K0dT4FH.jpeg", district: "가", sns: { fb: "#", ig: "https://www.instagram.com/saveourdaejeon_97/" }, decl: "https://rallypoint.kr/board/politics-free/224817", dateAdded: "2026-01-30" },
             { name: "오상균", region: "서울 성동구", metropolitan: "서울특별시", category: "기초의원", office: "성동구의원", status: "후보", subRegion: "마장동, 사근동, 송정동,용답동", bio: ["성동구 다선거구 후보"], photo: "", district: "다", sns: { fb: "#" }, decl: "#", dateAdded: "2026-01-26" },
-            { name: "박범근", region: "서울 관악구", metropolitan: "서울특별시", category: "기초의원", office: "관악구의원", status: "후보", subRegion: "신사동, 조원동, 미성동", bio: ["관악구 마선거구 후보"], photo: "", district: "마", sns: { fb: "#" }, decl: "#", dateAdded: "2026-01-26" },
-            { name: "원동철", region: "서울 관악구", metropolitan: "서울특별시", category: "기초의원", office: "관악구의원", status: "후보", subRegion: "삼성동, 대학동", bio: ["배우 및 사업가"], photo: "", district: "아", sns: { fb: "#", ig: "https://www.instagram.com/_oneofwon" }, decl: "#", dateAdded: "2026-01-26" },
+            { name: "박범근", region: "서울 관악구", metropolitan: "서울특별시", category: "기초의원", office: "기초의원", status: "후보", subRegion: "신사동, 조원동, 미성동", bio: ["관악구 마선거구 후보"], photo: "", district: "마", sns: { fb: "#" }, decl: "#", dateAdded: "2026-01-26" },
+            { name: "원동철", region: "서울 관악구", metropolitan: "서울특별시", category: "기초의원", office: "기초의원", status: "후보", subRegion: "삼성동, 대학동", bio: ["배우 및 사업가"], photo: "", district: "아", sns: { fb: "#", ig: "https://www.instagram.com/_oneofwon" }, decl: "#", dateAdded: "2026-01-26" },
             { name: "김주연", region: "서울 광진구", metropolitan: "서울특별시", category: "기초의원", office: "광진구의원", status: "후보", subRegion: "자양제1동, 자양제2동, 구의제1동, 구의제3동", bio: ["광진구 다선거구 후보"], photo: "", district: "다", sns: { fb: "#" }, decl: "#", dateAdded: "2026-01-26" },
             { name: "이진현", region: "서울 광진구", metropolitan: "서울특별시", category: "기초의원", office: "광진구의원", status: "후보", subRegion: "화양동, 자양제3동, 자양제4동", bio: ["광진구 라선거구 후보"], photo: "", district: "라", sns: { fb: "https://www.facebook.com/profile.php?id=100004762395806", yt: "https://www.youtube.com/@different-politics" }, decl: "#", dateAdded: "2026-01-26" },
             { name: "우영훈", region: "대구 달성군", metropolitan: "대구광역시", category: "기초의원", office: "달성군의원", status: "후보", subRegion: "화원읍, 가창면", bio: ["중앙당 지역발전특별위 부위원장", "국제라이온스협회 특별위원장", "국제라이온스협회 분과위원장", "국제라이온스협회 영진L 14대 회장"], photo: "https://i.imgur.com/amHTRAa.jpeg", district: "가", sns: { fb: "https://www.facebook.com/wooyounghoon", ig: "https://www.instagram.com/wooyounghoon" }, decl: "https://www.facebook.com/share/p/17tdaEkjL5/", dateAdded: "2026-01-26" },
@@ -561,9 +563,9 @@
             { name: "이승도", region: "경기 용인시", metropolitan: "경기도", category: "기초의원", office: "용인시의원", status: "후보", subRegion: "수지구 상현1동, 상현3동", bio: ["용인시 사선거구 후보"], photo: "", district: "사", sns: { fb: "#" }, decl: "#", dateAdded: "2026-01-26" },
             { name: "황승빈", region: "경기 수원시", metropolitan: "경기도", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "영통구 영통2동, 영통3동, 망포1동, 망포2동", bio: ["수원시 파선거구 후보"], photo: "https://i.imgur.com/kMbaiCJ.jpeg", district: "파", sns: { fb: "#" }, decl: "#", dateAdded: "2026-01-26" },
             { name: "박원길", region: "경기 안양시", metropolitan: "경기도", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "동안구 호계1동, 호계2동, 호계3동, 신촌동", bio: ["안양시 아선거구 후보"], photo: "", district: "아", sns: { fb: "#" }, decl: "#", dateAdded: "2026-01-26" },
-            { name: "심용진", region: "경기 화성시", metropolitan: "경기도", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "만세구 우정읍, 남양읍, 매송면, 비봉면, 마도면, 송산면, 서신면, 장안면, 새솔동", bio: ["전) 매송면 원평1리 이장", "매송면 송전탑 지중화 추진위원장"], photo: "", district: "나", sns: { fb: "#" }, decl: "#", dateAdded: "2026-01-26" },
-            { name: "오태석", region: "경기 화성시", metropolitan: "경기도", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "효행구 봉담읍, 기배동, 화산동", bio: ["화성시 바선거구 후보"], photo: "", district: "바", sns: { fb: "#" }, decl: "#", dateAdded: "2026-01-26" },
-            { name: "윤효석", region: "경기 화성시", metropolitan: "경기도", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "병점구 진안동, 병점1동, 병점2동", bio: ["화성시 사선거구 후보"], photo: "", district: "사", sns: { fb: "#" }, decl: "#", dateAdded: "2026-01-26" },
+            { name: "심용진", region: "경기 화성시", metropolitan: "경기도", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "우정읍, 남양읍, 매송면, 비봉면, 마도면, 송산면, 서신면, 장안면, 새솔동", bio: ["전) 매송면 원평1리 이장", "매송면 송전탑 지중화 추진위원장"], photo: "", district: "나", sns: { fb: "#" }, decl: "#", dateAdded: "2026-01-26" },
+            { name: "오태석", region: "경기 화성시", metropolitan: "경기도", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "봉담읍, 기배동, 화산동", bio: ["화성시 바선거구 후보"], photo: "", district: "바", sns: { fb: "#" }, decl: "#", dateAdded: "2026-01-26" },
+            { name: "윤효석", region: "경기 화성시", metropolitan: "경기도", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "진안동, 병점1동, 병점2동", bio: ["화성시 사선거구 후보"], photo: "", district: "사", sns: { fb: "#" }, decl: "#", dateAdded: "2026-01-26" },
             { name: "전상현", region: "강원 원주시", metropolitan: "강원특별자치도", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "문막읍, 지정면, 부론면, 귀래면", bio: ["원주시 가선거구 후보"], photo: "", district: "가", sns: { fb: "#" }, decl: "#", dateAdded: "2026-01-26" },
             { name: "정질호", region: "경북 울진군", metropolitan: "경상북도", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "북면, 죽변면", bio: ["울진군 나선거구 후보"], photo: "", district: "나", sns: { fb: "#" }, decl: "#", dateAdded: "2026-01-26" },
             { name: "최성진", region: "서울 구로구", metropolitan: "서울특별시", category: "기초의원", office: "기초의원 후보", subRegion: "구로제3동, 구로제4동, 가리봉동", bio: ["서울시당 미래희망위원회 위원", "국제개발협력 NGO 근무", "WFK KOICA NGO 봉사단원 파견"], photo: "https://secondteam-newways-feed.s3.ap-northeast-2.amazonaws.com/politicians/profiles/reformguro.webp", district: "바", sns: { fb: "#" }, decl: "https://rallypoint.kr/board/politics-free/224459", dateAdded: "2026-01-24" },
@@ -574,7 +576,7 @@
             { name: "윤서진", region: "대전 유성구", metropolitan: "대전광역시", category: "기초의원", office: "기초의원 후보", subRegion: "온천1동, 온천2동, 노은1동", bio: ["중앙당 미래희망위원회 위원", "대전시당 부위원장", "제35대 KAIST 총학생회장"], photo: "https://i.imgur.com/N24OK0K.jpeg", district: "나", sns: { ig: "https://www.instagram.com/seojin_ys/" }, decl: "https://www.youtube.com/watch?v=YBVriZc5RQc", dateAdded: "2026-01-17" },
             { name: "최진형", region: "경기 안산시", metropolitan: "경기도", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "사동, 사이동, 해양동, 본오3동", bio: ["안산시 가선거구 후보"], photo: "https://i.imgur.com/nihgF8a.png", district: "가", sns: { ig: "https://www.instagram.com/jhchoi_ansan4/" }, decl: "https://rallypoint.kr/board/politics-free/223063", dateAdded: "2026-01-26" },
             { name: "이강민", region: "충남 천안시", metropolitan: "충청남도", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "불당1동, 불당2동", bio: ["대전시당 정책위원", "대전시당 자문위원", "21대 대선 충남 선대본부 위원", "충남개혁정책네트워크 대표"], photo: "https://i.imgur.com/rpUTBbK.png", district: "라", cardFit: "cover", cardPos: "center 15%", sns: { fb: "https://www.facebook.com/leangmin4473", blog: "https://blog.naver.com/buldang_leekangmin" }, decl: "https://rallypoint.kr/board/politics-free/223549", dateAdded: "2025-12-01" },
-            { name: "고재윤", region: "충남 당진시", metropolitan: "충청남도", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "고대면, 석문면, 당진1동, 당진3동", bio: ["대전시당 정책위원", "대전시당 자문위원", "21대 대선 충남 선대본부 위원", "충남개혁정책네트워크 대표"], photo: "https://i.imgur.com/sJf2zpM.jpeg", district: "라", sns: { ig: "https://www.instagram.com/yn._.jae/", blog: "https://m.blog.naver.com/PostList.naver?blogId=kojy9402" }, decl: "https://rallypoint.kr/board/politics-free/225327", dateAdded: "2026-02-05" },
+            { name: "고재윤", region: "충남 당진시", metropolitan: "충청남도", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "고대면, 석문면, 당진1동, 당진3동", bio: ["대전시당 정책위원", "대전시당 자문위원", "21대 대선 충남 선대본부 위원", "충남개혁정책네트워크 대표"], photo: "https://i.imgur.com/sJf2zpM.jpeg", district: "라", sns: { fb: "https://www.facebook.com/profile.php?id=100075309062913", ig: "https://www.instagram.com/yn._.jae/", blog: "https://m.blog.naver.com/kojy9402?tab=1", site: "https://litt.ly/gojaeyun" }, decl: "https://www.instagram.com/reel/DUaehbcAUci/?igsh=M2Y5aWdreGsxM2Zi", dateAdded: "2026-02-05" },
             { name: "황시현", region: "충남 천안시", metropolitan: "충청남도", category: "기초의원", office: "기초의원 후보", subRegion: "부성2동", bio: ["21대 대선 충남 선대본 홍보위원", "충남개혁정책네트워크 조직국장", "청년 커뮤니티 '청연' 대표"], photo: "https://i.imgur.com/3yWK8BF.png", district: "사", sns: { fb: "#" }, decl: "https://rallypoint.kr/board/politics-free/223942", dateAdded: "2026-01-15" },
             { name: "신소일", region: "경북 경산시", metropolitan: "경상북도", category: "기초의원", office: "기초의원 후보", subRegion: "중방동, 중앙동, 서부2동, 북부동", bio: ["경산시 라선거구 출마"], photo: "https://i.imgur.com/DlwpsdL.jpeg", district: "라", cardFit: "cover", cardPos: "center 80%", sns: { fb: "https://www.facebook.com/sinsoil.2025" }, decl: "https://www.plus-gyeongbuk.kr/news/articleView.html?idxno=3890", dateAdded: "2026-01-01" },
             { name: "김동현", region: "서울 강남구", metropolitan: "서울특별시", category: "기초의원", office: "강남구의원", status: "후보", district: "자", subRegion: "삼성1동, 삼성2동, 대치2동", bio: ["건국대학교 캠퍼스 지부원"], photo: "https://i.imgur.com/uzVK2Vj.jpeg", sns: { blog: "https://m.blog.naver.com/PostList.naver?blogId=uada5633" }, decl: "https://m.blog.naver.com/PostView.naver?blogId=uada5633&logNo=224121263655", focus: "photo-face-focus", dateAdded: "2025-12-01" },
@@ -649,7 +651,14 @@
             subRegionEl.innerText = c.subRegion || "";
             document.getElementById('modal-photo-area').innerHTML = c.photo ? `<img src="${c.photo}" class="w-full h-full object-contain" style="object-position: center top">` : `<div class="no-photo-placeholder"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-round"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg><span>이미지 준비중</span></div>`;
             
-            const snsBtns = { fb: document.getElementById('modal-fb'), ig: document.getElementById('modal-ig'), threads: document.getElementById('modal-threads'), yt: document.getElementById('modal-yt'), blog: document.getElementById('modal-blog') };
+            const snsBtns = { 
+                fb: document.getElementById('modal-fb'), 
+                ig: document.getElementById('modal-ig'), 
+                threads: document.getElementById('modal-threads'), 
+                yt: document.getElementById('modal-yt'), 
+                blog: document.getElementById('modal-blog'),
+                site: document.getElementById('modal-site')
+            };
             for (let k in snsBtns) { if (c.sns && c.sns[k] && c.sns[k] !== "#") { snsBtns[k].style.display = 'flex'; snsBtns[k].href = c.sns[k]; } else { snsBtns[k].style.display = 'none'; } }
             
             const declBtn = document.getElementById('modal-declaration');
@@ -1130,6 +1139,7 @@
                                                                 {can.sns?.threads && can.sns.threads !== "#" && <a href={can.sns.threads} target="_blank" className="sns-btn threads w-10 h-10"><i data-lucide="at-sign" className="w-5 h-5"></i></a>}
                                                                 {can.sns?.yt && can.sns.yt !== "#" && <a href={can.sns.yt} target="_blank" className="sns-btn youtube w-10 h-10"><i data-lucide="youtube" className="w-5 h-5"></i></a>}
                                                                 {can.sns?.blog && can.sns.blog !== "#" && <a href={can.sns.blog} target="_blank" className="sns-btn blog w-10 h-10"><i data-lucide="link-2" className="w-5 h-5"></i></a>}
+                                                                {can.sns?.site && can.sns.site !== "#" && <a href={can.sns.site} target="_blank" className="sns-btn site w-10 h-10"><i data-lucide="globe" className="w-5 h-5"></i></a>}
                                                             </div>
 
                                                             {can.decl && can.decl !== "#" && (
