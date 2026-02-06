@@ -48,10 +48,11 @@
     
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700;800;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
         
         html { scroll-behavior: smooth; }
         body {
-            font-family: 'Pretendard', sans-serif;
+            font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
             background-color: #f8f9fa;
             color: #1a1a1a;
             letter-spacing: -0.025em;
@@ -277,6 +278,15 @@
         .custom-scrollbar::-webkit-scrollbar { width: 6px; height: 4px; }
         .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
         .custom-scrollbar::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 20px; }
+        
+        /* 경기도 지도용 스타일 */
+        .cursor-grab { cursor: grab; }
+        .cursor-grabbing { cursor: grabbing; }
+
+        .collapsible-container {
+            transition: all 0.5s ease-in-out;
+            overflow: hidden;
+        }
     </style>
 </head>
 <body id="top" class="p-0 overflow-hidden">
@@ -300,7 +310,7 @@
     </div>
 
     <!-- 헤더 영역 -->
-    <header class="header-gradient pt-8 pb-4 px-4 md:pt-12 md:pb-6 md:px-10 mb-0">
+    <header class="header-gradient pt-8 pb-2 px-4 md:pt-12 md:pb-3 md:px-10 mb-0">
         <div class="max-w-7xl mx-auto">
             <div class="flex justify-between items-center mb-10">
                 <div class="bg-white border-2 border-[#FF6600] px-4 py-1.5 md:px-8 md:py-3 rounded-full shadow-sm">
@@ -332,7 +342,7 @@
                                 <i data-lucide="alert-triangle" class="w-5 h-5 md:w-6 md:h-6 text-[#FF6600]"></i>
                                 <span class="text-[#FF6600] text-lg md:text-2xl font-black tracking-tight">주의사항</span>
                             </div>
-                            <div class="inline-block text-left space-y-2 text-gray-700 text-xs md:text-sm font-bold 상세 정보 보기">
+                            <div class="inline-block text-left space-y-2 text-gray-700 text-xs md:text-sm font-bold">
                                 <p class="flex items-start gap-1.5">
                                     <span class="mt-1.5 flex-shrink-0 w-1 h-1 rounded-full bg-[#FF6600]"></span>
                                     <span>이 페이지는 <strong class="underline font-black text-gray-900">개혁신당과 관련 없는 비공식 페이지</strong>입니다.</span>
@@ -348,28 +358,40 @@
                             </div>
                         </div>
 
-                        <div class="max-w-2xl mx-auto bg-gray-50 border border-gray-100 rounded-[2rem] p-6 md:p-8 shadow-sm">
-                            <div class="flex items-center justify-center gap-2 mb-4">
-                                <i data-lucide="info" class="w-5 h-5 md:w-5 md:h-5 text-gray-400"></i>
-                                <span class="text-gray-800 text-md md:text-xl font-black tracking-tight">참고사항</span>
+                        <!-- 참고사항 섹션 -->
+                        <div class="max-w-2xl mx-auto bg-gray-50 border border-gray-100 rounded-[2rem] shadow-sm overflow-hidden transition-all">
+                            <div onclick="toggleNoticeVisibility()" class="p-6 md:p-8 flex flex-col items-center justify-center cursor-pointer hover:bg-gray-100 transition-colors group">
+                                <div class="flex items-center justify-center gap-2 mb-2">
+                                    <i data-lucide="info" class="w-5 h-5 md:w-5 md:h-5 text-gray-400 group-hover:text-[#FF6600] transition-colors"></i>
+                                    <span class="text-gray-800 text-sm md:text-xl font-black tracking-tight">공천 심사 · 발표 관련 참고사항</span>
+                                </div>
+                                <div class="flex items-center gap-1.5 text-[10px] md:text-xs font-bold text-gray-400">
+                                    <span>[펼치기 · 닫기]</span>
+                                    <div id="notice-toggle-icon-wrapper" class="transition-transform duration-300">
+                                        <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="flex flex-col gap-2.5 items-center">
-                                <p class="text-gray-700 bg-white border border-orange-100 rounded-xl py-2.5 px-4 w-full max-w-lg text-center text-[10px] md:text-sm font-bold shadow-sm">
-                                    <span class="text-[#FF6600]">제2차 공천결과 : 18명</span> (02.05.) | 
-                                    <a href="https://rallypoint.kr/board/notice/225284" target="_blank" class="underline hover:text-gray-900 transition-colors font-black ml-1">공고보기</a>
-                                </p>
-                                <p class="text-gray-700 bg-white border border-orange-100 rounded-xl py-2.5 px-4 w-full max-w-lg text-center text-[10px] md:text-sm font-bold shadow-sm">
-                                    <span class="text-[#FF6600]">제1차 공천결과 : 29명</span> (01.26.) | 
-                                    <a href="https://rallypoint.kr/board/notice/224559" target="_blank" class="underline hover:text-gray-900 transition-colors font-black ml-1">공고보기</a>
-                                </p>
-                                <p class="text-gray-700 bg-white border border-gray-100 rounded-xl py-2.5 px-4 w-full max-w-lg text-center text-[10px] md:text-sm font-bold shadow-sm">
-                                    '필수서류 제출완료 후보 총 131명' : 이기인 총장 (01.22.) | 
-                                    <a href="https://www.pennmike.com/news/articleView.html?idxno=114046" target="_blank" class="underline hover:text-gray-900 transition-colors font-black ml-1">기사보기</a>
-                                </p>
-                                <p class="text-gray-700 bg-white border border-gray-100 rounded-xl py-2.5 px-4 w-full max-w-lg text-center text-[10px] md:text-sm font-bold shadow-sm">
-                                    '이미 수백명의 후보자들이 있다' : 이준석 대표 (01.13.) | 
-                                    <a href="https://www.youtube.com/live/9HRqgZ0Lghw?si=268vprQF1QLCHBoc&t=2065" target="_blank" class="underline hover:text-gray-900 transition-colors font-black ml-1">영상보기</a>
-                                </p>
+                            
+                            <div id="notice-collapsible-content" class="hidden opacity-0 h-0 collapsible-container px-6 pb-8 md:px-8 md:pb-10">
+                                <div class="flex flex-col gap-2.5 items-center">
+                                    <p class="text-gray-700 bg-white border border-orange-100 rounded-xl py-2.5 px-4 w-full max-w-lg text-center text-[10px] md:text-sm font-bold shadow-sm">
+                                        <span class="text-[#FF6600]">제2차 공천결과 : 18명</span> (02.05.) | 
+                                        <a href="https://rallypoint.kr/board/notice/225284" target="_blank" class="underline hover:text-gray-900 transition-colors font-black ml-1">공고보기</a>
+                                    </p>
+                                    <p class="text-gray-700 bg-white border border-orange-100 rounded-xl py-2.5 px-4 w-full max-w-lg text-center text-[10px] md:text-sm font-bold shadow-sm">
+                                        <span class="text-[#FF6600]">제1차 공천결과 : 29명</span> (01.26.) | 
+                                        <a href="https://rallypoint.kr/board/notice/224559" target="_blank" class="underline hover:text-gray-900 transition-colors font-black ml-1">공고보기</a>
+                                    </p>
+                                    <p class="text-gray-700 bg-white border border-gray-100 rounded-xl py-2.5 px-4 w-full max-w-lg text-center text-[10px] md:text-sm font-bold shadow-sm">
+                                        '필수서류 제출완료 후보 총 131명' : 이기인 총장 (01.22.) | 
+                                        <a href="https://www.pennmike.com/news/articleView.html?idxno=114046" target="_blank" class="underline hover:text-gray-900 transition-colors font-black ml-1">기사보기</a>
+                                    </p>
+                                    <p class="text-gray-700 bg-white border border-gray-100 rounded-xl py-2.5 px-4 w-full max-w-lg text-center text-[10px] md:text-sm font-bold shadow-sm">
+                                        '이미 수백명의 후보자들이 있다' : 이준석 대표 (01.13.) | 
+                                        <a href="https://www.youtube.com/live/9HRqgZ0Lghw?si=268vprQF1QLCHBoc&t=2065" target="_blank" class="underline hover:text-gray-900 transition-colors font-black ml-1">영상보기</a>
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -378,15 +400,14 @@
         </div>
     </header>
 
-    <!-- 서울 지도 대시보드 영역 (PC 전용 노출 및 토글 기능) -->
-    <div class="max-w-7xl mx-auto px-4 md:px-10 mt-12 mb-8 hidden lg:block">
-        <!-- 토글 버튼 헤더 -->
+    <!-- 서울 지도 대시보드 영역 -->
+    <div class="max-w-7xl mx-auto px-4 md:px-10 mt-6 mb-4 hidden lg:block">
         <div onclick="toggleMapVisibility()" class="flex justify-between items-center bg-white border border-orange-100 rounded-2xl p-5 mb-3 shadow-sm cursor-pointer hover:bg-orange-50 transition-all group">
             <div class="flex items-center gap-3">
                 <div class="bg-orange-100 p-2 rounded-xl group-hover:bg-[#FF6600] transition-colors">
                     <i data-lucide="map" class="w-5 h-5 text-[#FF6600] group-hover:text-white transition-colors"></i>
                 </div>
-                <span class="font-black text-gray-800 text-lg">'서울 기초의회 선거구 지도' (beta)</span>
+                <span class="font-black text-gray-800 text-lg">서울 기초의회 선거구 지도 (beta)<span id="seoul-map-new-badge" class="new-badge">NEW</span></span>
             </div>
             <div class="flex items-center gap-2 text-sm font-bold text-gray-400">
                 <span id="map-toggle-label">[펼치기 · 닫기]</span>
@@ -396,9 +417,30 @@
             </div>
         </div>
         
-        <!-- 접히는 지도 컨텐츠 영역 -->
-        <div id="map-collapsible-content" class="hidden opacity-0 transition-all duration-500 overflow-hidden h-0">
+        <div id="map-collapsible-content" class="hidden opacity-0 h-0 collapsible-container">
             <div id="map-dashboard-root"></div>
+        </div>
+    </div>
+
+    <!-- 경기 기초의회 선거구 지도 대시보드 영역 -->
+    <div class="max-w-7xl mx-auto px-4 md:px-10 mt-4 mb-8 hidden lg:block">
+        <div onclick="toggleGyeonggiMapVisibility()" class="flex justify-between items-center bg-white border border-orange-100 rounded-2xl p-5 mb-3 shadow-sm cursor-pointer hover:bg-orange-50 transition-all group">
+            <div class="flex items-center gap-3">
+                <div class="bg-orange-100 p-2 rounded-xl group-hover:bg-[#FF6600] transition-colors">
+                    <i data-lucide="map-pinned" class="w-5 h-5 text-[#FF6600] group-hover:text-white transition-colors"></i>
+                </div>
+                <span class="font-black text-gray-800 text-lg">경기 기초의회 선거구 지도 (beta)<span id="gyeonggi-map-new-badge" class="new-badge">NEW</span></span>
+            </div>
+            <div class="flex items-center gap-2 text-sm font-bold text-gray-400">
+                <span id="gyeonggi-map-toggle-label">[펼치기 · 닫기]</span>
+                <div id="gyeonggi-map-toggle-icon-wrapper" class="transition-transform duration-300">
+                    <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400"></i>
+                </div>
+            </div>
+        </div>
+        
+        <div id="gyeonggi-map-dashboard-root-content" class="hidden opacity-0 h-0 collapsible-container">
+            <div id="gyeonggi-map-dashboard-root-render"></div>
         </div>
     </div>
 
@@ -484,9 +526,48 @@
         </div>
     </div>
 
+    <!-- 기본 스크립트 -->
     <script>
-        /* * 지도 가시성 토글 함수 */
-        function toggleMapVisibility() {
+        /* * 전역 함수 - 외부에서 호출 가능하도록 정의 */
+        window.closeEntryPopup = function() {
+            const overlay = document.getElementById('entry-popup-overlay');
+            if (overlay) {
+                overlay.style.opacity = '0';
+                setTimeout(() => {
+                    overlay.style.display = 'none';
+                    document.body.classList.remove('overflow-hidden');
+                }, 300);
+            }
+        };
+
+        window.toggleNoticeVisibility = function() {
+            const content = document.getElementById('notice-collapsible-content');
+            const iconWrapper = document.getElementById('notice-toggle-icon-wrapper');
+            const isHidden = content.classList.contains('hidden');
+
+            if (isHidden) {
+                content.classList.remove('hidden');
+                setTimeout(() => {
+                    content.style.height = 'auto';
+                    const fullHeight = content.scrollHeight + 'px';
+                    content.style.height = '0';
+                    setTimeout(() => {
+                        content.style.height = fullHeight;
+                        content.style.opacity = '1';
+                        iconWrapper.style.transform = 'rotate(180deg)';
+                    }, 10);
+                }, 10);
+            } else {
+                content.style.height = '0';
+                content.style.opacity = '0';
+                iconWrapper.style.transform = 'rotate(0deg)';
+                setTimeout(() => {
+                    content.classList.add('hidden');
+                }, 500);
+            }
+        };
+
+        window.toggleMapVisibility = function() {
             const content = document.getElementById('map-collapsible-content');
             const iconWrapper = document.getElementById('map-toggle-icon-wrapper');
             const isHidden = content.classList.contains('hidden');
@@ -506,7 +587,29 @@
                     content.classList.add('hidden');
                 }, 500);
             }
-        }
+        };
+
+        window.toggleGyeonggiMapVisibility = function() {
+            const content = document.getElementById('gyeonggi-map-dashboard-root-content');
+            const iconWrapper = document.getElementById('gyeonggi-map-toggle-icon-wrapper');
+            const isHidden = content.classList.contains('hidden');
+
+            if (isHidden) {
+                content.classList.remove('hidden');
+                setTimeout(() => {
+                    content.style.height = '650px';
+                    content.style.opacity = '1';
+                    iconWrapper.style.transform = 'rotate(180deg)';
+                }, 10);
+            } else {
+                content.style.height = '0';
+                content.style.opacity = '0';
+                iconWrapper.style.transform = 'rotate(0deg)';
+                setTimeout(() => {
+                    content.classList.add('hidden');
+                }, 500);
+            }
+        };
 
         /* * GLOBAL DATA & UTILITY FUNCTIONS */
         const regionPriority = { "서울특별시": 1, "부산광역시": 2, "대구광역시": 3, "인천광역시": 4, "광주광역시": 5, "대전광역시": 6, "울산광역시": 7, "세종특별자치시": 8, "경기도": 9, "강원특별자치도": 10, "충청북도": 11, "충청남도": 12, "전북특별자치도": 13, "전라남도": 14, "경상북도": 15, "경상남도": 16, "제주특별자치도": 17 };
@@ -531,15 +634,15 @@
             { name: "이건우", region: "제주특별자치도", metropolitan: "제주특별자치도", shortMetro: "제주", district: "제주 노형", constituencyFull: "제주시 노형동 선거구", category: "광역의원", office: "제주도의원", status: "후보", subRegion: "제주시 노형동", bio: ["제주시 노형동 선거구 후보"], photo: "", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-05" },
             { name: "양해두", region: "제주특별자치도", metropolitan: "제주특별자치도", shortMetro: "제주", district: "제주 외도·이호·도두", category: "광역의원", office: "제주도의원", status: "후보", subRegion: "외도동, 이호동, 도두동", bio: ["제주시 갑 당협위원장", "제21대 대선 선대위 홍보부본부장"], photo: "https://img2.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/202601/07/kbs/20260107150152592uwgk.jpg", sns: { fb: "https://www.facebook.com/profile.php?id=100007883867189#", ig: "https://www.instagram.com/haeduyang/" }, decl: "https://www.facebook.com/share/p/17qQErhuYr/", dateAdded: "2026-01-26" },
             { name: "이규민", region: "서울 강남구", metropolitan: "서울특별시", category: "기초의원", office: "강남구의원", status: "후보", subRegion: "삼성1동, 삼성2동, 대치2동", bio: ["강남구 마선거구 후보"], photo: "", district: "마", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-05" },
-            { name: "김성우", region: "서울 서대문구", metropolitan: "서울특별시", category: "기초의원", office: "기초의원", status: "출마예정", subRegion: "북아현동, 신촌동, 천연동, 충현동", bio: ["우리부동산 공인중개사", "북아현살집연구소 소장"], photo: "https://i.imgur.com/uVeuzZN.png", district: "가", sns: { blog: "https://blog.naver.com/manksw" }, decl: "#", dateAdded: "2026-02-06" },
+            { name: "김성우", region: "서울 서대문구", metropolitan: "서울특별시", category: "기초의원", office: "기초의원", status: "출마예정", subRegion: "북아현동, 신촌동,천연동, 충현동", bio: ["우리부동산 공인중개사", "북아현살집연구소 소장"], photo: "https://i.imgur.com/uVeuzZN.png", district: "가", sns: { blog: "https://blog.naver.com/manksw" }, decl: "#", dateAdded: "2026-02-06" },
             { name: "김정훈", region: "서울 동대문구", metropolitan: "서울특별시", category: "기초의원", office: "동대문구의원", status: "후보", subRegion: "답십리2동, 장안1동, 장안2동", bio: ["동대문구 바선거구 후보"], photo: "", district: "바", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-05" },
             { name: "고길주", region: "서울 영등포구", metropolitan: "서울특별시", category: "기초의원", office: "영등포구의원", status: "후보", subRegion: "신길 6동, 대림1동, 대림2동, 대림3동", bio: ["영등포구 사선거구 후보"], photo: "", district: "사", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-05" },
             { name: "서준호", region: "서울 용산구", metropolitan: "서울특별시", category: "기초의원", office: "용산구의원", status: "후보", subRegion: "원효로제1동, 원효로제2동,용문동", bio: ["용산구 나선거구 후보"], photo: "", district: "나", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-05" },
-            { name: "정상필", region: "서울 중랑구", metropolitan: "서울특별시", category: "기초의원", office: "중랑구의원", status: "후보", subRegion: "면목4동, 면목7동", bio: ["중랑구 나선거구 후보"], photo: "", district: "나", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-05" },
-            { name: "조연우", region: "부산 기장군", metropolitan: "부산광역시", category: "기초의원", office: "기기장군의원", status: "후보", subRegion: "정관읍, 장안읍", bio: ["기장군 다선거구 후보"], photo: "", district: "다", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-05" },
-            { name: "강신학", region: "인천 연수구", metropolitan: "인천광역시", category: "기초의원", office: "연수구의원 후보", status: "후보", subRegion: "송도2동, 송도4동, 송도5동", bio: ["인천시당 부위원장", "인천시당 소상공인·전략분과위원장"], photo: "", district: "마", sns: { fb: "#" }, decl: "#", dateAdded: "2026-01-26" },
-            { name: "이성실", region: "인천 연수구", metropolitan: "인천광역시", category: "기초의원", office: "연수구의원 후보", status: "후보", subRegion: "송도1동, 송도3동", bio: ["연수구의회 라선거구 후보"], photo: "", district: "라", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-05" },
-            { name: "심재현", region: "경기 양주시", metropolitan: "경기도", category: "기초의원", office: "양주시의원", status: "후보", subRegion: "은현면, 남면, 옥정1동, 옥정2동, 회천1동, 회천2동, 회천3동", bio: ["양주시 다선거구 후보"], photo: "", district: "다", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-05" },
+            { name: "정상필", region: "서울 중랑구", metropolitan: "서울특별시", category: "기초의원", office: "기초의원", status: "후보", subRegion: "면목4동,면목7동", bio: ["중랑구 나선거구 후보"], photo: "", district: "나", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-05" },
+            { name: "조연우", region: "부산 기장군", metropolitan: "부산광역시", category: "기초의원", office: "기장군의원", status: "후보", subRegion: "정관읍, 장안읍", bio: ["기장군 다선거구 후보"], photo: "", district: "다", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-05" },
+            { name: "강신학", region: "인천 연수구", metropolitan: "인천광역시", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "송도2동, 송도4동, 송도5동", bio: ["인천시당 부위원장", "인천시당 소상공인·전략분과위원장"], photo: "", district: "마", sns: { fb: "#" }, decl: "#", dateAdded: "2026-01-26" },
+            { name: "이성실", region: "인천 연수구", metropolitan: "인천광역시", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "송도1동, 송도3동", bio: ["연수구의회 라선거구 후보"], photo: "", district: "라", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-05" },
+            { name: "심재현", region: "경기 양주시", metropolitan: "경기도", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "은현면, 남면, 옥정1동, 옥정2동, 은현면, 회천1동, 회천2동, 회천3동", bio: ["양주시 다선거구 후보"], photo: "", district: "다", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-05" },
             { name: "김동광", region: "경기 수원시", metropolitan: "경기도", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "매탄1동, 매탄2동, 매탄3동, 매탄4동", bio: ["수원시 아선거구 후보"], photo: "", district: "아", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-05" },
             { name: "류태하", region: "경북 구미시", metropolitan: "경상북도", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "인동동, 진미동", bio: ["구미시 을 당협위원장", "제21대 대선 선대위 홍보부본부장"], photo: "", district: "자", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-05" },
             { name: "송원근", region: "충남 예산군", metropolitan: "충청남도", category: "기초의원", office: "예산군의원", status: "후보", subRegion: "덕산면, 봉산면, 고덕면, 신암면", bio: ["예산군 라선거구 후보"], photo: "", district: "라", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-05" },
@@ -552,11 +655,11 @@
             { name: "김주연", region: "서울 광진구", metropolitan: "서울특별시", category: "기초의원", office: "광진구의원", status: "후보", subRegion: "자양제1동, 자양제2동, 구의제1동, 구의제3동", bio: ["광진구 다선거구 후보"], photo: "", district: "다", sns: { fb: "#" }, decl: "#", dateAdded: "2026-01-26" },
             { name: "이진현", region: "서울 광진구", metropolitan: "서울특별시", category: "기초의원", office: "광진구의원", status: "후보", subRegion: "화양동, 자양제3동, 자양제4동", bio: ["광진구 라선거구 후보"], photo: "", district: "라", sns: { fb: "https://www.facebook.com/profile.php?id=100004762395806", yt: "https://www.youtube.com/@different-politics" }, decl: "#", dateAdded: "2026-01-26" },
             { name: "우영훈", region: "대구 달성군", metropolitan: "대구광역시", category: "기초의원", office: "달성군의원", status: "후보", subRegion: "화원읍, 가창면", bio: ["중앙당 지역발전특별위 부위원장", "국제라이온스협회 특별위원장", "국제라이온스협회 분과위원장", "국제라이온스협회 영진L 14대 회장"], photo: "https://i.imgur.com/amHTRAa.jpeg", district: "가", sns: { fb: "https://www.facebook.com/wooyounghoon", ig: "https://www.instagram.com/wooyounghoon" }, decl: "https://www.facebook.com/share/p/17tdaEkjL5/", dateAdded: "2026-01-26" },
-            { name: "우성원", region: "대구 달성군", metropolitan: "대구광역시", category: "기초의원", office: "달성군의원", status: "후보", subRegion: "유가읍, 현풍읍, 구지면", bio: ["달성군 당협위원장"], photo: "https://i.imgur.com/NNtiJ53.jpeg", district: "다", sns: { fb: "https://www.facebook.com/seongwon.woo.3/" }, decl: "https://www.facebook.com/share/p/1D9hTEiQjh/", dateAdded: "2026-01-26" },
+            { name: "우성원", region: "대구 달성군", metropolitan: "대구광역시", category: "기초의원", office: "달성군의원", status: "후보", subRegion: "유가읍,현풍읍, 구지면", bio: ["달성군 당협위원장"], photo: "https://i.imgur.com/NNtiJ53.jpeg", district: "다", sns: { fb: "https://www.facebook.com/seongwon.woo.3/" }, decl: "https://www.facebook.com/share/p/1D9hTEiQjh/", dateAdded: "2026-01-26" },
             { name: "박철현", region: "대구 동구", metropolitan: "대구광역시", category: "기초의원", office: "동구의원", status: "후보", subRegion: "신천1·2동, 신천3동, 신천4동, 효목1동, 효목2동", bio: ["대구시당 인재위원장", "개혁신당 지역발전특별위 부위원장"], photo: "", district: "다", sns: { ig: "https://www.instagram.com/park___cheol_hyeon/" }, decl: "#", dateAdded: "2026-01-26" },
             { name: "오태훈", region: "대구 수성구", metropolitan: "대구광역시", category: "기초의원", office: "수성구의원", status: "후보", subRegion: "고산1동, 고산2동, 고산3동", bio: ["대구시당 대변인"], photo: "", district: "라", sns: { fb: "#" }, decl: "#", dateAdded: "2026-01-26" },
             { name: "하용준", region: "대전 동구", metropolitan: "대전광역시", category: "기초의원", office: "동구의원", status: "출마선언", subRegion: "가양1동, 가양2동,용전동, 성남동", bio: ["대전 동구 다선거구 출마"], photo: "https://i.imgur.com/MxyJ2sm.jpeg", district: "다", sns: { fb: "#" }, decl: "https://rallypoint.kr/board/politics-free/224918", dateAdded: "2026-01-31" },
-            { name: "박진우", region: "광주 동구", metropolitan: "광주광역시", category: "기초의원", office: "동구의원", status: "후보", subRegion: "충장동, 동명동, 계림1동, 계림2동, 산수1동, 산수2동", bio: ["동구·남구 을 당협위원장", "21대 대선 선대위 홍보부본부장"], photo: "https://i.imgur.com/cah0vOW.png", district: "가", sns: { fb: "https://www.facebook.com/jinu.park.77/about", ig: "https://www.instagram.com/1jwpark/", yt: "https://www.youtube.com/channel/UCcNTjccJrVitGy-GcD8GkpQ" }, decl: "#", dateAdded: "2026-01-26" },
+            { name: "박진우", region: "광주 동구", metropolitan: "광주광역시", category: "기초의원", office: "동구의원", status: "후보", subRegion: "충장동, 동명동, 계림1동, 계림2동, 산수1동, 산수2동", bio: ["동구·남구 을 당협위원장", "21대 대선 선대위 홍보부본부장"], photo: "https://i.imgur.com/cah0vOW.png", district: "가", sns: { fb: "https://www.facebook.com/jinu.park.77/about", ig: "https://www.instagram.com/1jwpark/", yt: "https://www.youtube.com/@jinu_park" }, decl: "#", dateAdded: "2026-01-26" },
             { name: "오정대", region: "경기 성남시", metropolitan: "경기도", category: "기초의원", office: "기초의원", status: "출마예정", subRegion: "분당구 이매1동, 이매2동, 삼평동", bio: ["도로교통사고감정사", "도로교통사고감정사 협회 정회원", "유튜브 '운전하는곰돌' 운영", "작가"], photo: "", district: "아", sns: { yt: "https://www.youtube.com/@d_gomdol/featured" }, decl: "#", dateAdded: "2026-01-31" },
             { name: "김태수", region: "경기 부천시", metropolitan: "경기도", category: "기초의원", office: "부천시의원", status: "후보", subRegion: "원미구 중1동, 중2동, 중3동, 중4동, 약대동", bio: ["현 현대흥립통합재건축추진준비위 위원장", "현 흥립약대아파트 입대위 감사", "전 에어아시아재팬 항공승무원"], photo: "https://i.imgur.com/JROiWlJ.png", district: "마", sns: { fb: "https://www.facebook.com/share/1B6fqnbu3X/", ig: "https://www.instagram.com/bucheon_tezz/", blog: "https://blog.naver.com/bucheon_tezz" }, decl: "https://blog.naver.com/bucheon_tezz/224160408956", dateAdded: "2026-01-26" },
             { name: "조병찬", region: "경기 부천시", metropolitan: "경기도", category: "기초의원", office: "부천시의원", status: "후보", subRegion: "소사구 범박동, 괴안동, 역곡3동, 옥길동", bio: ["부천시 아선거구 후보"], photo: "", district: "아", sns: { fb: "#" }, decl: "#", dateAdded: "2026-01-26" },
@@ -569,31 +672,31 @@
             { name: "전상현", region: "강원 원주시", metropolitan: "강원특별자치도", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "문막읍, 지정면, 부론면, 귀래면", bio: ["원주시 가선거구 후보"], photo: "", district: "가", sns: { fb: "#" }, decl: "#", dateAdded: "2026-01-26" },
             { name: "정질호", region: "경북 울진군", metropolitan: "경상북도", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "북면, 죽변면", bio: ["울진군 나선거구 후보"], photo: "", district: "나", sns: { fb: "#" }, decl: "#", dateAdded: "2026-01-26" },
             { name: "최성진", region: "서울 구로구", metropolitan: "서울특별시", category: "기초의원", office: "기초의원 후보", subRegion: "구로제3동, 구로제4동, 가리봉동", bio: ["서울시당 미래희망위원회 위원", "국제개발협력 NGO 근무", "WFK KOICA NGO 봉사단원 파견"], photo: "https://secondteam-newways-feed.s3.ap-northeast-2.amazonaws.com/politicians/profiles/reformguro.webp", district: "바", sns: { fb: "#" }, decl: "https://rallypoint.kr/board/politics-free/224459", dateAdded: "2026-01-24" },
-            { name: "박윤옥", region: "경기 남양주시", metropolitan: "경기도", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "와부읍, 조안면, 금곡동, 양정동, 다산2동", bio: ["제9대 남양주시의원", "남양주시의회 복지환경부위원장"], photo: "https://i.imgur.com/HgnuJAp.png", district: "가", sns: { fb: "https://www.facebook.com/profile.php?id=1000095203590359078" }, decl: "https://www.gnnews.org/news/articleView.html?idxno=11383", dateAdded: "2026-02-05" },
+            { name: "박윤옥", region: "경기 남양주시", metropolitan: "경기도", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "와부읍, 조안면, 금곡동, 양정동, 다산2동", bio: ["제9대 남양주시의원", "남양주시의회 복지환경부위원장"], photo: "https://i.imgur.com/HgnuJAp.png", district: "가", sns: { fb: "https://www.facebook.com/profile.php?id=100009520359078" }, decl: "https://www.gnnews.org/news/articleView.html?idxno=11383", dateAdded: "2026-02-05" },
             { name: "조동운", region: "대전 서구", metropolitan: "대전광역시", category: "기초의원", office: "서구의원", subRegion: "가수원동, 관저1동, 관저2동, 기성동", bio: ["서구 을 당협위원장", "전) 경찰대학 경찰학과 교수", "한국경찰연구원 원장", "법학박사"], photo: "https://i.imgur.com/q8Z5Mst.png", district: "다", sns: { fb: "https://www.facebook.com/c2716898", ig: "https://www.instagram.com/c2716898/" }, decl: "https://www.youtube.com/watch?v=uyHmrX9hypw", dateAdded: "2025-12-01" },
             { name: "박현겸", region: "대전 동구", metropolitan: "대전광역시", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "중앙동, 효동, 신인동, 홍도동, 삼성동, 산내동", bio: ["대전시당 미래희망위원장"], photo: "https://i.imgur.com/TVxC1Kl.jpeg", district: "가", sns: { ig: "https://www.instagram.com/white46ant/" }, decl: "https://www.youtube.com/watch?v=uyHmrX9hypw", dateAdded: "2025-12-01" },
             { name: "성진영", region: "대구 중구", metropolitan: "대구광역시", category: "기초의원", office: "기초의원 후보", subRegion: "동인동, 삼덕동, 성내1동, 남산1동, 대봉1동, 대봉2동", bio: ["대구시당 미래희망위원회 위원", "캠퍼스지부 경북대학교 지부장"], photo: "https://i.imgur.com/fHwNOji.png", district: "가", sns: { ig: "https://www.instagram.com/jyseong_gyeongsan/" }, decl: "https://rallypoint.kr/board/politics-free/222667", dateAdded: "2026-01-15" },
             { name: "윤서진", region: "대전 유성구", metropolitan: "대전광역시", category: "기초의원", office: "기초의원 후보", subRegion: "온천1동, 온천2동, 노은1동", bio: ["중앙당 미래희망위원회 위원", "대전시당 부위원장", "제35대 KAIST 총학생회장"], photo: "https://i.imgur.com/N24OK0K.jpeg", district: "나", sns: { ig: "https://www.instagram.com/seojin_ys/" }, decl: "https://www.youtube.com/watch?v=YBVriZc5RQc", dateAdded: "2026-01-17" },
             { name: "최진형", region: "경기 안산시", metropolitan: "경기도", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "사동, 사이동, 해양동, 본오3동", bio: ["안산시 가선거구 후보"], photo: "https://i.imgur.com/nihgF8a.png", district: "가", sns: { ig: "https://www.instagram.com/jhchoi_ansan4/" }, decl: "https://rallypoint.kr/board/politics-free/223063", dateAdded: "2026-01-26" },
             { name: "이강민", region: "충남 천안시", metropolitan: "충청남도", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "불당1동, 불당2동", bio: ["대전시당 정책위원", "대전시당 자문위원", "21대 대선 충남 선대본부 위원", "충남개혁정책네트워크 대표"], photo: "https://i.imgur.com/rpUTBbK.png", district: "라", cardFit: "cover", cardPos: "center 15%", sns: { fb: "https://www.facebook.com/leangmin4473", blog: "https://blog.naver.com/buldang_leekangmin" }, decl: "https://rallypoint.kr/board/politics-free/223549", dateAdded: "2025-12-01" },
-            { name: "고재윤", region: "충남 당진시", metropolitan: "충청남도", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "고대면, 석문면, 당진1동, 당진3동", bio: ["대전시당 정책위원", "대전시당 자문위원", "21대 대선 충남 선대본부 위원", "자원봉사단체 청춘 대표"], photo: "https://i.imgur.com/sJf2zpM.jpeg", district: "라", sns: { fb: "https://www.facebook.com/profile.php?id=100075309062913", ig: "https://www.instagram.com/yn._.jae/", blog: "https://m.blog.naver.com/kojy9402?tab=1", site: "https://litt.ly/gojaeyun" }, decl: "https://www.instagram.com/reel/DUaehbcAUci/?igsh=M2Y5aWdreGsxM2Zi", dateAdded: "2026-02-05" },
+            { name: "고재윤", region: "충남 당진시", metropolitan: "충청남도", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "고대면, 석문면, 당진1동, 당진3동", bio: ["대전시당 정책위원", "대전시당 자문위원", "21대 대선 충남 선대본부 위원", "자원봉사단체 청춘 대표"], photo: "https://i.imgur.com/sJf2zpM.jpeg", district: "라", sns: { fb: "https://www.facebook.com/profile.php?id=1000075309062913", ig: "https://www.instagram.com/yn._.jae/", blog: "https://m.blog.naver.com/kojy9402?tab=1", site: "https://litt.ly/gojaeyun" }, decl: "https://www.instagram.com/reel/DUaehbcAUci/?igsh=M2Y5aWdreGsxM2Zi", dateAdded: "2026-02-05" },
             { name: "황시현", region: "충남 천안시", metropolitan: "충청남도", category: "기초의원", office: "기초의원 후보", subRegion: "부성2동", bio: ["21대 대선 충남 선대본 홍보위원", "충남개혁정책네트워크 조직국장", "청년 커뮤니티 '청연' 대표"], photo: "https://i.imgur.com/3yWK8BF.png", district: "사", sns: { fb: "#" }, decl: "https://rallypoint.kr/board/politics-free/223942", dateAdded: "2026-01-15" },
             { name: "신소일", region: "경북 경산시", metropolitan: "경상북도", category: "기초의원", office: "기초의원 후보", subRegion: "중방동, 중앙동, 서부2동, 북부동", bio: ["경산시 라선거구 출마"], photo: "https://i.imgur.com/DlwpsdL.jpeg", district: "라", cardFit: "cover", cardPos: "center 80%", sns: { fb: "https://www.facebook.com/sinsoil.2025" }, decl: "https://www.plus-gyeongbuk.kr/news/articleView.html?idxno=3890", dateAdded: "2026-01-01" },
             { name: "김동현", region: "서울 강남구", metropolitan: "서울특별시", category: "기초의원", office: "강남구의원", status: "후보", district: "자", subRegion: "삼성1동, 삼성2동, 대치2동", bio: ["건국대학교 캠퍼스 지부원"], photo: "https://i.imgur.com/uzVK2Vj.jpeg", sns: { blog: "https://m.blog.naver.com/PostList.naver?blogId=uada5633" }, decl: "https://m.blog.naver.com/PostView.naver?blogId=uada5633&logNo=224121263655", focus: "photo-face-focus", dateAdded: "2025-12-01" },
             { name: "이천은", region: "경기 안양시", metropolitan: "경기도", category: "기초의원", office: "기초의원 후보", status: "후보", district: "바", subRegion: "비산1동, 비산2동, 비산3동, 부흥동", bio: ["안양시 바선거구 후보"], photo: "https://i.imgur.com/FJsBrQ1.png", sns: { ig: "https://www.instagram.com/pyeongchonman?igsh=ZWY1dzBvZm1oYWVy" }, decl: "https://www.instagram.com/p/DT9qrWckb3S/?igsh=MWtjcGlzOHk4MncxNg%3D%3D", dateAdded: "2025-12-01" },
-            { name: "김성민", region: "부산 사상구", metropolitan: "부산광역시", category: "기초의원", office: "기초의원", status: "출마예정", subRegion: "삼락동, 덕포제1동, 덕포제2동, 괘법동, 감전동", bio: ["사상구 가선거구 출마예정"], photo: "", district: "가", sns: { fb: "#" }, decl: "https://rallypoint.kr/board/politics-free/224669", dateAdded: "2026-01-28" },
+            { name: "김성민", region: "부산 사상구", metropolitan: "부산광역시", category: "기초의원", office: "기초의원", status: "출마예정", subRegion: "삼락동, 독포제1동, 독포제2동, 괘법동, 감전동", bio: ["사상구 가선거구 출마예정"], photo: "", district: "가", sns: { fb: "#" }, decl: "https://rallypoint.kr/board/politics-free/224669", dateAdded: "2026-01-28" },
             { name: "임서하", region: "서울 송파구", metropolitan: "서울특별시", category: "기초의원", office: "송파구의원", status: "출마선언", district: "자", subRegion: "오금동, 가락본동", bio: ["작가", "출판사 브릿지프레스 대표"], photo: "", sns: { fb: "#" }, decl: "https://rallypoint.kr/board/politics-free/225389?searchType=0&currentPage=1", dateAdded: "2026-02-06" },
-            { name: "최태영", region: "강원 춘천시", metropolitan: "강원특별자치도", category: "기초의원", office: "춘천시의원", status: "후보", subRegion: "효자2동, 석사동", bio: ["캠퍼스지부 강원스테이션 리더장", "캠퍼스지부 강원대학교 지부장"], photo: "https://i.imgur.com/eeRt5rd.jpeg", cardPos: "center 15%", cardScale: "1.25", district: "라", sns: { fb: "https://www.facebook.com/choetaeyeong.979932/", ig: "https://www.instagram.com/taeyoung_politics?igsh=OWtwaDcwejZzamth" }, decl: "https://rallypoint.kr/board/politics-free/223910", dateAdded: "2026-02-05" }
+            { name: "최태영", region: "강원 춘천시", metropolitan: "강원특별자치도", category: "기초의원", office: "춘천시의원", status: "후보", subRegion: "효자2동,석사동", bio: ["캠퍼스지부 강원스테이션 리더장", "캠퍼스지부 강원대학교 지부장"], photo: "https://i.imgur.com/eeRt5rd.jpeg", cardPos: "center 15%", cardScale: "1.25", district: "라", sns: { fb: "https://www.facebook.com/choetaeyeong.979932/", ig: "https://www.instagram.com/taeyoung_politics?igsh=OWtwaDcwejZzamth" }, decl: "https://rallypoint.kr/board/politics-free/223910", dateAdded: "2026-02-05" }
         ];
 
-        /* 핵심 유틸리티 함수 */
+        /* 유틸리티 함수 */
         function isNewCandidate(dateStr) {
             if (!dateStr) return false;
             const parts = dateStr.split('-');
             const addedDate = new Date(parts[0], parts[1] - 1, parts[2]);
             const now = new Date();
             now.setHours(0,0,0,0);
-            return Math.floor((now - addedDate) / (1000 * 60 * 60 * 24)) <= 7;
+            return Math.floor((now - addedDate) / (1000 * 60 * 60 * 24)) <= 14;
         }
 
         function getCleanOffice(c) {
@@ -601,9 +704,9 @@
             if (c.category === "기초의원") {
                 const parts = c.region.split(' ');
                 const cityOrGu = parts[parts.length - 1];
-                baseOffice = cityOrGu + "의원";
+                baseOffice = cityOrGu + "의회"; // '구의원' -> '구의회'로 변경
             }
-            return baseOffice.replace(/\s*후보\s*$/, "").replace(/\s*의원\s*$/, "의원");
+            return baseOffice.replace(/\s*후보\s*$/, "").replace(/의원$/, "의회");
         }
 
         const councilSort = (a, b) => (a.region || "").localeCompare(b.region || "") || (a.district || "").localeCompare(b.district || "");
@@ -624,32 +727,57 @@
             }
         }
 
-        function updateNavActive(id) { document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active')); const target = document.getElementById(id); if(target) target.classList.add('active'); }
-        function scrollToId(id) { const isRegionMode = document.getElementById('btn-region').classList.contains('active'); if (id === 'top') { if (isRegionMode) renderOriginalView(); window.scrollTo({ top: 0, behavior: 'smooth' }); return; } if (isRegionMode) { renderOriginalView(); setTimeout(() => { const el = document.getElementById(id); if (el) el.scrollIntoView({ behavior: 'smooth' }); }, 150); } else { const el = document.getElementById(id); if (el) el.scrollIntoView({ behavior: 'smooth' }); } }
-        function closeEntryPopup() { const overlay = document.getElementById('entry-popup-overlay'); overlay.style.opacity = '0'; setTimeout(() => { overlay.style.display = 'none'; document.body.classList.remove('overflow-hidden'); }, 300); }
-        
+        function updateNavActive(id) { 
+            document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active')); 
+            const target = document.getElementById(id); 
+            if(target) target.classList.add('active'); 
+        }
+
+        function scrollToId(id) { 
+            const isRegionMode = document.getElementById('btn-region').classList.contains('active'); 
+            if (id === 'top') { 
+                if (isRegionMode) renderOriginalView(); 
+                window.scrollTo({ top: 0, behavior: 'smooth' }); 
+                return; 
+            } 
+            if (isRegionMode) { 
+                renderOriginalView(); 
+                setTimeout(() => { 
+                    const el = document.getElementById(id); 
+                    if (el) el.scrollIntoView({ behavior: 'smooth' }); 
+                }, 150); 
+            } else { 
+                const el = document.getElementById(id); 
+                if (el) el.scrollIntoView({ behavior: 'smooth' }); 
+            } 
+        }
+
         function openProfileModal(name) {
             const c = candidates.find(cand => cand.name === name);
             if (!c) return;
             document.getElementById('modal-name').innerText = c.name;
-            const displayOffice = getCleanOffice(c);
             
             const isConfirmed = (c.status === "후보" && c.name !== "김성민" && c.name !== "이수찬");
-            let statusLabel = "";
-            if (isConfirmed) {
-                statusLabel = "후보";
-            } else {
-                if (c.name === "송진영") {
-                    statusLabel = "출마예정";
-                } else {
-                    statusLabel = (c.decl && c.decl !== "#") ? "출마선언" : "출마예정";
-                }
-            }
+            let statusLabel = isConfirmed ? "후보" : (c.name === "송진영" ? "출마예정" : ((c.decl && c.decl !== "#") ? "출마선언" : "출마예정"));
             
-            document.getElementById('modal-office').innerText = `${displayOffice} ${statusLabel}`;
+            // 상세 명칭 매핑 로직 (모달 전용)
+            let displayOfficeLabel = "";
+            if (c.name === "양해두") displayOfficeLabel = "제주특별자치도의회 제주시 외도동·이호동·도두동 선거구 후보";
+            else if (c.name === "이건우") displayOfficeLabel = "제주특별자치도의회 제주시 노형동 선거구 후보";
+            else if (c.name === "이동현") displayOfficeLabel = "경상북도의회 구미시 제4 선거구 후보";
+            else if (c.name === "최현석") displayOfficeLabel = "서울특별시의회 송파구 제2 선거구 후보";
+            else if (c.name === "이재원") displayOfficeLabel = "서울특별시의회 비례대표 출마예정";
+            else {
+                let districtLabel = c.district ? ` ${c.district}선거구` : "";
+                const displayOffice = getCleanOffice(c);
+                displayOfficeLabel = `${displayOffice}${districtLabel} ${statusLabel}`;
+            }
+
+            document.getElementById('modal-office').innerText = displayOfficeLabel;
+            
             const subRegionEl = document.getElementById('modal-subregion');
             subRegionEl.innerText = c.subRegion || "";
-            document.getElementById('modal-photo-area').innerHTML = c.photo ? `<img src="${c.photo}" class="w-full h-full object-contain" style="object-position: center top">` : `<div class="no-photo-placeholder"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-round"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg><span>이미지 준비중</span></div>`;
+            document.getElementById('modal-photo-area').innerHTML = c.photo ? `<img src="${c.photo}" class="w-full h-full object-contain" style="object-position: center top">` : `<div class="no-photo-placeholder"><i data-lucide="user-round" class="w-12 h-12"></i><span>이미지 준비중</span></div>`;
             
             const snsBtns = { 
                 fb: document.getElementById('modal-fb'), 
@@ -659,7 +787,14 @@
                 blog: document.getElementById('modal-blog'),
                 site: document.getElementById('modal-site')
             };
-            for (let k in snsBtns) { if (c.sns && c.sns[k] && c.sns[k] !== "#") { snsBtns[k].style.display = 'flex'; snsBtns[k].href = c.sns[k]; } else { snsBtns[k].style.display = 'none'; } }
+            for (let k in snsBtns) { 
+                if (c.sns && c.sns[k] && c.sns[k] !== "#") { 
+                    snsBtns[k].style.display = 'flex'; 
+                    snsBtns[k].href = c.sns[k]; 
+                } else { 
+                    snsBtns[k].style.display = 'none'; 
+                } 
+            }
             
             const declBtn = document.getElementById('modal-declaration');
             if (c.decl && c.decl !== "#") {
@@ -669,9 +804,20 @@
                 declBtn.style.display = 'none';
             }
 
-            const overlay = document.getElementById('profile-modal-overlay'); overlay.style.display = 'flex'; setTimeout(() => overlay.classList.add('active'), 10);
+            const overlay = document.getElementById('profile-modal-overlay'); 
+            overlay.style.display = 'flex'; 
+            setTimeout(() => overlay.classList.add('active'), 10);
+            lucide.createIcons();
         }
-        function closeProfileModal() { const overlay = document.getElementById('profile-modal-overlay'); overlay.classList.remove('active'); setTimeout(() => { overlay.style.display = 'none'; document.body.style.overflow = ''; }, 300); }
+
+        function closeProfileModal() { 
+            const overlay = document.getElementById('profile-modal-overlay'); 
+            overlay.classList.remove('active'); 
+            setTimeout(() => { 
+                overlay.style.display = 'none'; 
+                document.body.style.overflow = ''; 
+            }, 300); 
+        }
 
         function renderOriginalView() {
             updateNavActive('btn-original');
@@ -718,7 +864,8 @@
                     ${otherCands.length > 0 ? `<div><h3 class="sub-section-title">기타 지역</h3><div class="grid-responsive">${otherCands.map(createCard).join('')}</div></div>` : ''}
                 </section>
             `;
-            updateSummary(); lucide.createIcons();
+            updateSummary(); 
+            lucide.createIcons();
         }
 
         function renderRegionView(targetRegion = null) {
@@ -736,23 +883,98 @@
             });
             container.innerHTML = html + '</div>';
             lucide.createIcons();
-            if (targetRegion) { const el = document.getElementById(`region-${targetRegion}`); if (el) el.scrollIntoView({ behavior: 'smooth' }); }
-            else { const seoulEl = document.getElementById('region-서울특별시'); if (seoulEl) seoulEl.scrollIntoView({ behavior: 'smooth' }); }
+            if (targetRegion) { 
+                const el = document.getElementById(`region-${targetRegion}`); 
+                if (el) el.scrollIntoView({ behavior: 'smooth' }); 
+            }
+            else { 
+                const seoulEl = document.getElementById('region-서울특별시'); 
+                if (seoulEl) seoulEl.scrollIntoView({ behavior: 'smooth' }); 
+            }
         }
 
         window.onload = function() {
             const diff = Math.ceil((new Date('2026-06-03') - new Date().setHours(0,0,0,0)) / (1000*60*60*24));
             const badge = document.getElementById('d-day-badge');
             if (badge) badge.innerText = diff > 0 ? `D-${diff}` : (diff === 0 ? 'D-Day' : `D+${Math.abs(diff)}`);
+            
+            // 지도 NEW 뱃지 표시 제어 (2026-02-21까지 유지)
+            const expiryDate = new Date('2026-02-22'); 
+            const today = new Date();
+            if (today >= expiryDate) {
+                const sBadge = document.getElementById('seoul-map-new-badge');
+                const gBadge = document.getElementById('gyeonggi-map-new-badge');
+                if (sBadge) sBadge.style.display = 'none';
+                if (gBadge) gBadge.style.display = 'none';
+            }
+            
             renderOriginalView();
         };
+
+        function createCard(c) {
+            const isTightBio = ["김태수", "고재윤", "이강민", "오정대", "우영훈"].includes(c.name);
+            const isTightSpacing = ["우영훈", "김태수"].includes(c.name);
+            let styles = [];
+            if (isTightBio || ["하대식", "조동운", "박철현", "김성민", "류태하", "이용우", "이재원"].includes(c.name)) {
+                styles.push("line-height: 1.05");
+            }
+            if (isTightSpacing) { styles.push("letter-spacing: -0.08em"); }
+            const bioStyleAttr = styles.length > 0 ? `style="${styles.join('; ')};"` : "";
+
+            let bioHtml = c.bio.map((line, idx) => `<span>${line}</span>`).join('');
+            let leftTagText = c.region;
+            if (c.category === "기초의원") {
+                const isMetropolitan = c.metropolitan && (c.metropolitan.endsWith('특별시') || c.metropolitan.endsWith('광역시') || c.metropolitan.endsWith('특별자치시'));
+                if (isMetropolitan) { leftTagText = c.region; } 
+                else { leftTagText = c.region.replace("경기도", "경기").replace("충청남도", "충남").replace("경상북도", "경북").replace("전라북도", "전북").replace("충청북도", "충북").replace("경상남도", "경남").replace("전라남도", "전남").replace("강원특별자치도", "강원").replace("제주특별자치도", "제주"); }
+            } else if (c.category === "광역의원") {
+                leftTagText = (c.name === "양해두" || c.name === "이건우") ? "제주" : (c.shortMetro || c.region);
+            }
+            let rightTagText = c.district || (c.constituency === "비례" ? "비례" : "");
+            let districtTag = rightTagText ? `<div class="district-tag">${rightTagText}</div>` : "";
+            const isNoPhoto = !c.photo || c.photo.trim() === "";
+            const fit = c.cardFit || "cover";
+            const pos = c.cardPos || "center top"; 
+            const scale = c.cardScale || "1";
+            const photoContent = isNoPhoto 
+                ? `<div class="no-photo-placeholder"><i data-lucide="user-round" class="w-12 h-12"></i><span>이미지 준비중</span></div>`
+                : `<img src="${c.photo}" class="candidate-photo ${!c.cardFit ? 'photo-face-focus' : ''}" style="object-fit: ${fit} !important; object-position: ${pos} !important; transform: scale(${scale});" alt="${c.name}">`;
+            const newBadge = isNewCandidate(c.dateAdded) ? `<span class="new-badge">NEW</span>` : "";
+            
+            const displayOffice = getCleanOffice(c);
+            
+            const isConfirmed = (c.status === "후보" && c.name !== "김성민" && c.name !== "이수찬");
+            const confirmedBadge = isConfirmed ? `<div class="confirmed-badge"><i data-lucide="check-circle" style="width: 10px; height: 10px;"></i>공천 확정</div>` : "";
+
+            let statusLabel = "";
+            if (isConfirmed) statusLabel = "후보";
+            else if (c.name === "송진영") statusLabel = "출마예정";
+            else statusLabel = (c.decl && c.decl !== "#") ? "출마선언" : "출마예정";
+
+            return `
+                <div onclick="openProfileModal('${c.name}')" class="bg-white rounded-[1rem] md:rounded-[1.5rem] shadow-md border border-gray-100 card-hover transition-all duration-500 overflow-hidden flex flex-col h-full cursor-pointer">
+                    <div class="photo-frame">
+                        <div class="region-tag">${leftTagText}</div>
+                        ${districtTag}
+                        ${confirmedBadge}
+                        ${photoContent}
+                    </div>
+                    <div class="pt-2 px-3 pb-4 md:pt-4 md:px-6 md:pb-6 text-center flex flex-col flex-grow">
+                        <h3 class="text-base md:text-xl font-bold mb-1 tracking-wider flex items-center justify-center">${c.name}${newBadge}</h3>
+                        <div class="bio-text" ${bioStyleAttr}>${bioHtml}</div>
+                        <div class="mt-auto nrp-bg-orange text-white py-2 rounded-xl font-bold text-[10px] md:text-sm leading-tight text-center">${displayOffice} ${statusLabel}</div>
+                    </div>
+                </div>
+            `;
+        }
     </script>
 
-    <!-- [리액트] 서울 지도 대시보드 스크립트 -->
+    <!-- [리액트] 대시보드 스크립트 -->
     <script type="text/babel">
-        const { useState, useEffect, useMemo } = React;
+        const { useState, useEffect, useRef, useMemo } = React;
 
-        const INITIAL_DISTRICTS = {
+        // --- 서울 지도용 기초의원 선거구 데이터 ---
+        const SEOUL_INITIAL_DISTRICTS = {
             "종로구 가선거구": { dongs: ["청운효자동", "사직동", "무악동", "교남동"], seats: 2 },
             "종로구 나선거구": { dongs: ["삼청동", "부암동", "평창동", "가회동"], seats: 2 },
             "종로구 다선거구": { dongs: ["종로1·2·3·4가동", "이화동", "혜화동"], seats: 2 },
@@ -867,7 +1089,7 @@
             "동작구 다선거구": { dongs: ["상도제3동", "대방동"], seats: 2 },
             "동작구 라선거구": { dongs: ["신대방제1동", "신대방제2동"], seats: 2 },
             "동작구 마선거구": { dongs: ["상도제1동", "사당제5동"], seats: 2 },
-            "동작구 바선거구": { dongs: ["상당제3동", "사당제4동"], seats: 2 },
+            "동작구 바선거구": { dongs: ["사당제3동", "사당제4동"], seats: 2 },
             "동작구 사선거구": { dongs: ["흑석동", "사당제1동", "사당제2동"], seats: 3 },
             "관악구 가선거구": { dongs: ["보라매동", "은천동", "신림동"], seats: 3 },
             "관악구 나선거구": { dongs: ["중앙동", "청룡동"], seats: 2 },
@@ -910,6 +1132,251 @@
             "강동구 사선거구": { dongs: ["둔촌제1동", "둔촌제2동"], seats: 2 },
         };
 
+        const GYEONGGI_INITIAL_DISTRICTS = {
+            "가평군 가선거구": { dongs: ["가평읍", "북면"], seats: 2 },
+            "가평군 나선거구": { dongs: ["설악면", "청평면"], seats: 2 },
+            "가평군 다선거구": { dongs: ["상면", "조종면"], seats: 2 },
+            "고양시 가선거구": { dongs: ["성사1동", "성사2동", "주교동", "흥도동"], seats: 2 },
+            "고양시 나선거구": { dongs: ["고양동", "관산동", "원신동"], seats: 3 },
+            "고양시 다선거구": { dongs: ["화정1동", "화정2동"], seats: 2 },
+            "고양시 라선거구": { dongs: ["삼송1동", "삼송2동", "창릉동", "화전동", "효자동"], seats: 3 },
+            "고양시 마선거구": { dongs: ["대덕동", "행신1동", "행신2동", "행신3동", "행신4동", "행주동"], seats: 3 },
+            "고양시 바선거구": { dongs: ["능곡동", "백석1동", "백석2동"], seats: 2 },
+            "고양시 사선거구": { dongs: ["고봉동", "식사동", "풍산동"], seats: 2 },
+            "고양시 아선거구": { dongs: ["일산2동", "정발산동", "중산1동", "중산2동"], seats: 3 },
+            "고양시 자선거구": { dongs: ["마두1동", "마두2동", "장항1동", "장항2동"], seats: 2 },
+            "고양시 차선거구": { dongs: ["일산1동", "탄현1동", "탄현2동"], seats: 2 },
+            "고양시 카선거구": { dongs: ["주엽1동", "주엽2동"], seats: 2 },
+            "고양시 타선거구": { dongs: ["대화동", "일산3동"], seats: 2 },
+            "고양시 파선거구": { dongs: ["가좌동", "덕이동", "송포동"], seats: 2 },
+            "과천시 가선거구": { dongs: ["과천동", "별양동", "중앙동"], seats: 3 },
+            "과천시 나선거구": { dongs: ["갈현동", "문원동", "부림동", "원문동"], seats: 3 },
+            "광명시 가선거구": { dongs: ["광명1동", "광명2동", "광명3동", "철산1동", "철산2동", "철산3동"], seats: 2 },
+            "광명시 나선거구": { dongs: ["광명4동", "광명5동", "광명6동", "광명7동", "철산4동"], seats: 2 },
+            "광명시 다선거구": { dongs: ["하안1동", "하안2동", "하안3동", "하안4동", "학온동"], seats: 2 },
+            "광명시 라선거구": { dongs: ["소하1동", "소하2동", "일직동"], seats: 3 },
+            "광주시 가선거구": { dongs: ["남종면", "남한산성면", "송정동", "탄벌동", "퇴촌면"], seats: 2 },
+            "광주시 나선거구": { dongs: ["경안동", "광남1동", "광남2동", "쌍령동"], seats: 3 },
+            "광주시 다선거구": { dongs: ["오포1동", "오포2동"], seats: 2 },
+            "광주시 라선거구": { dongs: ["곤지암읍", "능평동", "도척면", "신현동", "초월읍"], seats: 2 },
+            "구리시 가선거구": { dongs: ["갈매동", "교문1동", "동구동", "인창동"], seats: 4 },
+            "구리시 나선거구": { dongs: ["교문2동", "수택1동", "수택2동", "수택3동"], seats: 3 },
+            "군포시 가선거구": { dongs: ["군포1동", "금정동", "산본1동"], seats: 2 },
+            "군포시 나선거구": { dongs: ["군포2동", "대야동", "송부동"], seats: 2 },
+            "군포시 다선거구": { dongs: ["광정동", "궁내동", "산본2동"], seats: 2 },
+            "군포시 라선거구": { dongs: ["수리동", "오금동", "재궁동"], seats: 2 },
+            "김포시 가선거구": { dongs: ["고촌읍", "사우동", "풍무동"], seats: 3 },
+            "김포시 나선거구": { dongs: ["김포본동", "장기동"], seats: 3 },
+            "김포시 다선거구": { dongs: ["구래동", "대곶면", "양촌읍", "월곶면", "통진읍", "하성면"], seats: 3 },
+            "김포시 라선거구": { dongs: ["마산동", "운양동", "장기본동"], seats: 3 },
+            "남양주시 가선거구": { dongs: ["수동면", "화도읍"], seats: 3 },
+            "남양주시 나선거구": { dongs: ["평내동", "호평동"], seats: 2 },
+            "남양주시 다선거구": { dongs: ["진접읍"], seats: 2 },
+            "남양주시 라선거구": { dongs: ["오남읍"], seats: 2 },
+            "남양주시 마선거구": { dongs: ["별내동", "별내면"], seats: 2 },
+            "남양주시 바선거구": { dongs: ["다산1동", "다산2동", "양정동"], seats: 3 },
+            "남양주시 사선거구": { dongs: ["금곡동", "와부읍", "조안면", "진건읍", "퇴계원읍"], seats: 5 },
+            "동두천시 가선거구": { dongs: ["상패동", "생연2동", "송내동"], seats: 3 },
+            "동두천시 나선거구": { dongs: ["보산동", "불현동", "생연1동", "소요동", "중앙동"], seats: 3 },
+            "부천시 가선거구": { dongs: ["도당동", "역곡1동", "역곡2동", "원미1동", "춘의동"], seats: 3 },
+            "부천시 나선거구": { dongs: ["소사동", "심곡1동", "심곡2동", "심곡3동", "원미2동"], seats: 2 },
+            "부천시 다선거구": { dongs: ["상동", "중동"], seats: 2 },
+            "부천시 라선거구": { dongs: ["상1동", "상2동", "상3동"], seats: 2 },
+            "부천시 마선거구": { dongs: ["약대동", "중1동", "중2동", "중3동", "중4동"], seats: 3 },
+            "부천시 바선거구": { dongs: ["송내1동", "송내2동", "심곡본1동", "심곡본동"], seats: 2 },
+            "부천시 사선거구": { dongs: ["소사본1동", "소사본동"], seats: 2 },
+            "부천시 아선거구": { dongs: ["괴안동", "범박동", "역곡3동", "옥길동"], seats: 3 },
+            "부천시 자선거구": { dongs: ["고강1동", "고강본동", "성곡동"], seats: 3 },
+            "부천시 차선거구": { dongs: ["신흥동", "오정동", "원종1동", "원종2동"], seats: 2 },
+            "성남시 가선거구": { dongs: ["고등동", "수진1동", "수진2동", "시흥동", "신촌동", "신흥1동"], seats: 2 },
+            "성남시 나선거구": { dongs: ["단대동", "신흥2동", "신흥3동"], seats: 2 },
+            "성남시 다선거구": { dongs: ["태평1동", "태평2동", "태평3동", "태평4동"], seats: 2 },
+            "성남시 라선거구": { dongs: ["복정동", "산성동", "양지동", "위례동"], seats: 2 },
+            "성남시 마선거구": { dongs: ["상대원1동", "상대원2동", "상대원3동"], seats: 2 },
+            "성남시 바선거구": { dongs: ["도촌동", "성남동", "하대원동"], seats: 2 },
+            "성남시 사선거구": { dongs: ["금광1동", "금광2동", "은행1동", "은행2동", "중앙동"], seats: 3 },
+            "성남시 아선거구": { dongs: ["삼평동", "이매1동", "이매2동"], seats: 2 },
+            "성남시 자선거구": { dongs: ["야탑1동", "야탑2동", "야탑3동"], seats: 2 },
+            "성남시 차선거구": { dongs: ["서현1동", "서현2동"], seats: 2 },
+            "성남시 카선거구": { dongs: ["백현동", "운중동", "판교동"], seats: 2 },
+            "성남시 타선거구": { dongs: ["구미동", "분당동", "수내3동", "정자2동", "정자3동"], seats: 3 },
+            "성남시 파선거구": { dongs: ["수내1동", "수내2동", "정자1동"], seats: 2 },
+            "성남시 하선거구": { dongs: ["구미1동", "금곡동", "정자동"], seats: 2 },
+            "수원시 가선거구": { dongs: ["연무동", "영화동", "조원1동"], seats: 2 },
+            "수원시 나선거구": { dongs: ["송죽동", "조원2동", "파장동"], seats: 2 },
+            "수원시 다선거구": { dongs: ["정자1동", "정자2동", "정자3동"], seats: 3 },
+            "수원시 라선거구": { dongs: ["구운동", "서둔동", "율천동", "입북동"], seats: 3 },
+            "수원시 마선거구": { dongs: ["금곡동", "평동", "호매실동"], seats: 4 },
+            "수원시 바선거구": { dongs: ["고등동", "매교동", "매산동", "화서1동", "화서2동"], seats: 2 },
+            "수원시 사선거구": { dongs: ["우만1동", "우만2동", "인계동", "지동", "행궁동"], seats: 3 },
+            "수원시 아선거구": { dongs: ["매탄1동", "매탄2동", "매탄3동", "매탄4동"], seats: 3 },
+            "수원시 자선거구": { dongs: ["영통1동", "원천동"], seats: 2 },
+            "수원시 차선거구": { dongs: ["광교1동", "광교2동"], seats: 2 },
+            "수원시 카선거구": { dongs: ["권선1동", "세류1동", "세류2동", "세류3동"], seats: 2 },
+            "수원시 타선거구": { dongs: ["곡선동", "권선2동"], seats: 2 },
+            "수원시 파선거구": { dongs: ["망포1동", "망포2동", "영통2동", "영통3동"], seats: 3 },
+            "시흥시 가선거구": { dongs: ["대야동", "신천동", "은행동"], seats: 4 },
+            "시흥시 나선거구": { dongs: ["과림동", "능곡동", "매화동", "목감동"], seats: 2 },
+            "시흥시 다선거구": { dongs: ["신현동", "연성동", "장곡동"], seats: 2 },
+            "시흥시 라선거구": { dongs: ["거북섬동", "군자동", "월곶동", "정왕1동", "정왕2동", "정왕본동"], seats: 3 },
+            "시흥시 마선거구": { dongs: ["배곧1동", "배곧2동", "정왕3동", "정왕4동"], seats: 3 },
+            "안산시 가선거구": { dongs: ["본오3동", "사동", "사이동", "해양동"], seats: 3 },
+            "안산시 나선거구": { dongs: ["반월동", "본오1동", "본오2동"], seats: 2 },
+            "안산시 다선거구": { dongs: ["성포동", "이동", "일동"], seats: 2 },
+            "안산시 라선거구": { dongs: ["부곡동", "안산동", "월피동"], seats: 2 },
+            "안산시 마선거구": { dongs: ["선부3동", "와동"], seats: 2 },
+            "안산시 바선거구": { dongs: ["백운동", "선부1동", "선부2동", "신길동", "원곡동"], seats: 3 },
+            "안산시 사선거구": { dongs: ["고잔동", "초지동"], seats: 2 },
+            "안산시 아선거구": { dongs: ["대부동", "중앙동", "호수동"], seats: 2 },
+            "안성시 가선거구": { dongs: ["공도읍", "양성면", "원곡면"], seats: 2 },
+            "안성시 나선거구": { dongs: ["고삼면", "대덕면", "미양면", "안성3동"], seats: 2 },
+            "안성시 다선거구": { dongs: ["금광면", "보개면", "삼죽면", "서운면", "안성1동", "안성2동", "일죽면", "죽산면"], seats: 3 },
+            "안양시 가선거구": { dongs: ["안양1동", "안양3동", "안양4동", "안양5동", "안양9동"], seats: 2 },
+            "안양시 나선거구": { dongs: ["안양6동", "안양7동", "안양8동"], seats: 2 },
+            "안양시 다선거구": { dongs: ["박달1동", "박달2동", "안양2동"], seats: 2 },
+            "안양시 라선거구": { dongs: ["석수1동", "석수2동", "충훈동"], seats: 2 },
+            "안양시 마선거구": { dongs: ["부흥동", "비산1동", "비산2동", "비산3동"], seats: 3 },
+            "안양시 바선거구": { dongs: ["관양동", "달안동", "부림동", "인덕원동"], seats: 3 },
+            "안양시 사선거구": { dongs: ["갈산동", "귀인동", "범계동", "평안동", "평촌동"], seats: 3 },
+            "안양시 아선거구": { dongs: ["신촌동", "호계1동", "호계2동", "호계3동"], seats: 2 },
+            "양주시 가선거구": { dongs: ["광적면", "백석읍", "장흥면"], seats: 2 },
+            "양주시 나선거구": { dongs: ["양주1동", "양주2동"], seats: 2 },
+            "양주시 다선거구": { dongs: ["남면", "옥정1동", "옥정2동", "은현면", "회천1동", "회천2동", "회천3동"], seats: 3 },
+            "양평군 가선거구": { dongs: ["서종면", "양서면", "양평읍", "옥천면"], seats: 3 },
+            "양평군 나선거구": { dongs: ["강상면", "강하면", "개군면", "단월면", "양동면", "용문면", "지평면", "청운면"], seats: 3 },
+            "여주시 가선거구": { dongs: ["가남읍", "강천면", "북내면", "세종대왕면", "여흥동", "점동면"], seats: 3 },
+            "여주시 나선거구": { dongs: ["금사면", "대신면", "산북면", "오학동", "중앙동", "흥천면"], seats: 3 },
+            "연천군 가선거구": { dongs: ["군남면", "미산면", "신서면", "연천읍", "왕징면", "중면"], seats: 3 },
+            "연천군 나선거구": { dongs: ["백학면", "장남면", "전곡읍", "청산면"], seats: 3 },
+            "오산시 가선거구": { dongs: ["세마동", "신장1동", "신장2동", "중앙동"], seats: 3 },
+            "오산시 나선거구": { dongs: ["남촌동", "대원1동", "대원2동", "초평동"], seats: 3 },
+            "용인시 가선거구": { dongs: ["모현읍", "삼가동", "역북동", "유림동", "포곡읍"], seats: 3 },
+            "용인시 나선거구": { dongs: ["남사읍", "이동읍", "중앙동"], seats: 2 },
+            "용인시 다선거구": { dongs: ["동부동", "백암면", "양지면", "원삼면"], seats: 2 },
+            "용인시 라선거구": { dongs: ["기흥동", "서농동", "신갈동", "영덕1동", "영덕2동"], seats: 3 },
+            "용인시 마선거구": { dongs: ["구갈동", "상갈동"], seats: 2 },
+            "용인시 바선거구": { dongs: ["동백3동", "보라동", "상하동"], seats: 2 },
+            "용인시 사선거구": { dongs: ["상현1동", "상현3동"], seats: 2 },
+            "용인시 아선거구": { dongs: ["죽전2동", "풍덕천1동", "풍덕천2동"], seats: 2 },
+            "용인시 자선거구": { dongs: ["동천동", "성복동", "신봉동"], seats: 3 },
+            "용인시 차선거구": { dongs: ["구성동", "동백1동", "동백2동", "마북동"], seats: 3 },
+            "용인시 카선거구": { dongs: ["보정동", "상현2동", "죽전1동", "죽전3동"], seats: 4 },
+            "의왕시 가선거구": { dongs: ["고천동", "부곡동", "오전동"], seats: 3 },
+            "의왕시 나선거구": { dongs: ["내손1동", "내손2동", "청계동"], seats: 3 },
+            "의정부시 가선거구": { dongs: ["가능동", "녹양동", "의정부1동", "흥선동"], seats: 2 },
+            "의정부시 나선거구": { dongs: ["의정부2동", "호원1동", "호원2동"], seats: 3 },
+            "의정부시 다선거구": { dongs: ["신곡1동", "신곡2동", "자금동", "장암동"], seats: 3 },
+            "의정부시 라선거구": { dongs: ["고산동", "송산1동", "송산2동", "송산3동"], seats: 3 },
+            "이천시 가선거구": { dongs: ["관고동", "백사면", "신둔면", "증포동"], seats: 3 },
+            "이천시 나선거구": { dongs: ["마장면", "중리동", "창전동"], seats: 2 },
+            "이천시 다선거구": { dongs: ["대월면", "모가면", "부발읍", "설성면", "율면", "장호원읍", "호법면"], seats: 3 },
+            "파주시 가선거구": { dongs: ["광탄면", "운정1동", "조리읍"], seats: 2 },
+            "파주시 나선거구": { dongs: ["교하동", "운정2동", "운정5동", "운정6동", "탄현면"], seats: 3 },
+            "파주시 다선거구": { dongs: ["운정3동", "운정4동"], seats: 2 },
+            "파주시 라선거구": { dongs: ["문산읍", "법원읍", "장단면", "적성면", "파평면"], seats: 3 },
+            "파주시 마선거구": { dongs: ["금촌1동", "금촌2동", "금촌3동", "월롱면", "파주읍"], seats: 3 },
+            "평택시 가선거구": { dongs: ["서탄면", "송북동", "신장1동", "신장2동", "지산동", "진위면"], seats: 2 },
+            "평택시 나선거구": { dongs: ["서정동", "중앙동"], seats: 2 },
+            "평택시 다선거구": { dongs: ["세교동", "송탄동", "통복동"], seats: 2 },
+            "평택시 라선거구": { dongs: ["동삭동", "비전1동"], seats: 2 },
+            "평택시 마선거구": { dongs: ["비전2동", "용이동"], seats: 2 },
+            "평택시 바선거구": { dongs: ["안중읍", "오성면", "청북읍", "포승읍", "현덕면"], seats: 3 },
+            "평택시 사선거구": { dongs: ["고덕동", "고덕면", "신평동", "원평동", "팽성읍"], seats: 3 },
+            "포천시 가선거구": { dongs: ["관인면", "군내면", "선단동", "신북면", "영북면", "영중면", "창수면", "포천동"], seats: 3 },
+            "포천시 나선거구": { dongs: ["가산면", "내촌면", "소흘읍", "이동면", "일동면", "화현면"], seats: 3 },
+            "하남시 가선거구": { dongs: ["감북동", "감일동", "신장1동", "신장2동", "위례동", "천현동", "초이동", "춘궁동"], seats: 4 },
+            "하남시 나선거구": { dongs: ["덕풍1동", "덕풍2동", "덕풍3동", "미사3동"], seats: 2 },
+            "하남시 다선거구": { dongs: ["미사1동", "미사2동"], seats: 3 },
+            "화성시 가선거구": { dongs: ["봉담읍", "양감면", "정남면", "팔탄면", "향남읍"], seats: 3 },
+            "화성시 나선거구": { dongs: ["남양읍", "마도면", "매송면", "비봉면", "새솔동", "서신면", "송산면", "우정읍", "장안면"], seats: 3 },
+            "화성시 다선거구": { dongs: ["동탄1동", "동탄2동"], seats: 2 },
+            "화성시 라선거구": { dongs: ["동탄4동", "동탄5동", "동탄6동"], seats: 3 },
+            "화성시 마선거구": { dongs: ["동탄7동", "동탄8동", "동탄9동"], seats: 3 },
+            "화성시 바선거구": { dongs: ["기배동", "봉담읍", "화산동"], seats: 3 },
+            "화성시 사선거구": { dongs: ["병점1동", "병점2동", "진안동"], seats: 3 },
+            "화성시 아선거구": { dongs: ["동탄3동", "반월동"], seats: 2 },
+        };
+
+        const EMPTY_GRAY_PALETTE = ["#cbd5e1", "#b1b9c6", "#94a3b8", "#a8b2c1", "#bdc6d4"];
+        const ACTIVE_ORANGE_PALETTE = ["#fb923c", "#f97316"]; 
+        const CITY_ORDER = ["가평군", "고양시", "과천시", "광명시", "광주시", "구리시", "군포시", "김포시", "남양주시", "동두천시", "부천시", "성남시", "수원시", "시흥시", "안산시", "안성시", "안양시", "양주시", "양평군", "여주시", "연천군", "오산시", "용인시", "의왕시", "의정부시", "이천시", "파주시", "평택시", "포천시", "하남시", "화성시"];
+
+        const normalizeFunc = (s) => String(s || "")
+            .replace(/[제·\s]/g, "")
+            .replace(/[ABC]$/, "")
+            .replace("中央", "중앙");
+
+        const IntegratedProfile = ({ can }) => {
+            const isValidLink = (link) => link && link !== "" && link !== "#";
+            
+            const getStatusLabel = (c) => {
+                const isConfirmed = (c.status === "후보" && c.name !== "김성민" && c.name !== "이수찬");
+                if (isConfirmed) return "후보";
+                if (c.name === "송진영") return "출마예정";
+                return (c.decl && c.decl !== "#") ? "출마선언" : "출마예정";
+            };
+
+            // 상세 명칭 매핑 로직 (지도 대시보드 전용)
+            let displayOfficeLabel = "";
+            if (can.name === "양해두") displayOfficeLabel = "제주특별자치도의회 제주시 외도동·이호동·도두동 선거구 후보";
+            else if (can.name === "이건우") displayOfficeLabel = "제주특별자치도의회 제주시 노형동 선거구 후보";
+            else if (can.name === "이동현") displayOfficeLabel = "경상북도의회 구미시 제4 선거구 후보";
+            else if (can.name === "최현석") displayOfficeLabel = "서울특별시의회 송파구 제2 선거구 후보";
+            else if (can.name === "이재원") displayOfficeLabel = "서울특별시의회 비례대표 출마예정";
+            else {
+                const regionParts = can.region.split(' ');
+                const cityName = regionParts[regionParts.length - 1]; 
+                const districtLabel = can.district ? ` ${can.district}선거구` : "";
+                displayOfficeLabel = `${cityName}의회${districtLabel} ${getStatusLabel(can)}`;
+            }
+
+            useEffect(() => {
+                if (typeof lucide !== 'undefined') lucide.createIcons();
+            }, [can]);
+
+            return (
+                <div className="h-full flex flex-col overflow-hidden text-slate-800">
+                    <div className="flex flex-col sm:flex-row h-auto sm:h-[45%] shrink-0 gap-6">
+                        <div className="w-full sm:w-[40%] aspect-square sm:aspect-auto bg-orange-50 border border-orange-100 rounded-2xl flex items-center justify-center shadow-inner overflow-hidden shrink-0">
+                            {can.photo ? (
+                                <img src={can.photo} className="w-full h-full object-cover" alt={can.name} />
+                            ) : (
+                                <div className="flex flex-col items-center justify-center text-orange-200">
+                                    <i data-lucide="user" className="w-16 h-16 opacity-30"></i>
+                                    <span className="text-[10px] font-black uppercase tracking-widest mt-2">No Profile</span>
+                                </div>
+                            )}
+                        </div>
+                        <div className="flex-1 flex flex-col items-center justify-center text-center py-2">
+                            <h3 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-wider mb-2">{can.name}</h3>
+                            <div className="px-3 py-1 bg-orange-100 text-orange-600 rounded-lg text-xs font-black uppercase mb-4">{displayOfficeLabel}</div>
+                            <div className="flex gap-2 mb-4">
+                                {isValidLink(can.sns?.fb) && <a href={can.sns.fb} target="_blank" className="p-2 bg-orange-50 text-orange-600 rounded-lg hover:bg-orange-500 hover:text-white transition-colors border border-orange-100 shadow-sm"><i data-lucide="facebook" className="w-4 h-4"></i></a>}
+                                {isValidLink(can.sns?.ig) && <a href={can.sns.ig} target="_blank" className="p-2 bg-orange-50 text-orange-600 rounded-lg hover:bg-orange-500 hover:text-white transition-colors border border-orange-100 shadow-sm"><i data-lucide="instagram" className="w-4 h-4"></i></a>}
+                                {isValidLink(can.sns?.blog) && <a href={can.sns.blog} target="_blank" className="p-2 bg-orange-50 text-orange-600 rounded-lg hover:bg-orange-500 hover:text-white transition-colors border border-orange-100 shadow-sm"><i data-lucide="link" className="w-4 h-4"></i></a>}
+                                {isValidLink(can.sns?.yt) && <a href={can.sns.yt} target="_blank" className="p-2 bg-orange-50 text-orange-600 rounded-lg hover:bg-orange-500 hover:text-white transition-colors border border-orange-100 shadow-sm"><i data-lucide="youtube" className="w-4 h-4"></i></a>}
+                            </div>
+                            {isValidLink(can.decl) && (
+                                <a href={can.decl} target="_blank" className="w-full py-2.5 bg-orange-500 text-white rounded-xl text-sm font-black text-center shadow-lg shadow-orange-200 hover:bg-orange-600 transition-all active:scale-95 flex items-center justify-center gap-2">
+                                    <i data-lucide="file-text" className="w-4 h-4"></i>출마선언문 보기
+                                </a>
+                            )}
+                        </div>
+                    </div>
+                    <div className="flex-1 mt-6 border-t border-orange-50 pt-6 overflow-y-auto custom-scrollbar font-bold text-slate-700 text-left text-sm">
+                        <div className="space-y-3">
+                            {can.bio.map((line, idx) => (
+                                <div key={idx} className="flex items-start gap-3">
+                                    <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mt-1.5 shrink-0"></div>
+                                    <span className="leading-relaxed">{line}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            );
+        };
+
         const MapDashboard = () => {
             const [geoData, setGeoData] = useState(null);
             const [guGeoData, setGuGeoData] = useState(null);
@@ -918,7 +1385,7 @@
 
             const findDistrictName = (guName, dongName) => {
                 const normalizedDong = dongName.replace(/제/g, '').trim();
-                for (const [distName, data] of Object.entries(INITIAL_DISTRICTS)) {
+                for (const [distName, data] of Object.entries(SEOUL_INITIAL_DISTRICTS)) {
                     if (distName.startsWith(guName)) {
                         if (data.dongs.some(d => d.replace(/제/g, '').trim() === normalizedDong)) {
                             return distName;
@@ -960,12 +1427,12 @@
 
             const currentDistrictDongs = useMemo(() => {
                 if (!selectedDistrictInfo || !selectedDistrictInfo.district) return "";
-                return INITIAL_DISTRICTS[selectedDistrictInfo.district]?.dongs.join(', ') || "";
+                return SEOUL_INITIAL_DISTRICTS[selectedDistrictInfo.district]?.dongs.join(', ') || "";
             }, [selectedDistrictInfo]);
 
             const currentDistrictSeats = useMemo(() => {
                 if (!selectedDistrictInfo || !selectedDistrictInfo.district) return 0;
-                return INITIAL_DISTRICTS[selectedDistrictInfo.district]?.seats || 0;
+                return SEOUL_INITIAL_DISTRICTS[selectedDistrictInfo.district]?.seats || 0;
             }, [selectedDistrictInfo]);
 
             useEffect(() => {
@@ -985,10 +1452,6 @@
                 Promise.all([dongPromise, guPromise]).finally(() => setLoading(false));
             }, []);
 
-            useEffect(() => {
-                if (window.lucide) window.lucide.createIcons();
-            }, [matchedCandidates]);
-
             const project = (coords) => {
                 const scale = 1800;
                 const center = [126.978, 37.566];
@@ -1002,15 +1465,6 @@
                     return f.geometry.coordinates.map(p => "M" + p[0].map(c => project(c).join(",")).join("L") + "Z").join(" ");
                 }
                 return "";
-            };
-
-            const isNewCandidate = (dateStr) => {
-                if (!dateStr) return false;
-                const parts = dateStr.split('-');
-                const addedDate = new Date(parts[0], parts[1] - 1, parts[2]);
-                const now = new Date();
-                now.setHours(0,0,0,0);
-                return Math.floor((now - addedDate) / (1000 * 60 * 60 * 24)) <= 7;
             };
 
             return (
@@ -1097,16 +1551,17 @@
                                     <div className="divide-y divide-gray-100">
                                         {matchedCandidates.map((can, idx) => {
                                             const parts = can.region.split(' ');
-                                            const displayOffice = parts[parts.length - 1] + "의원";
+                                            const displayOffice = parts[parts.length - 1] + "의회"; 
                                             const isConfirmed = (can.status === "후보" && can.name !== "김성민" && can.name !== "이수찬");
                                             
-                                            let statusText = " 후보";
-                                            if (!isConfirmed) {
-                                                if (can.name === "송진영") {
-                                                    statusText = " 출마예정";
-                                                } else {
-                                                    statusText = (can.decl && can.decl !== "#") ? " 출마선언" : " 출마예정";
-                                                }
+                                            let statusText = isConfirmed ? " 후보" : (can.name === "송진영" ? " 출마예정" : ((can.decl && can.decl !== "#") ? " 출마선언" : " 출마예정"));
+                                            
+                                            // 상세 명칭 매핑 로직 (서울 지도 리스트 전용)
+                                            let fullOfficeLabel = "";
+                                            if (can.name === "최현석") fullOfficeLabel = "서울특별시의회 송파구 제2 선거구 후보";
+                                            else if (can.name === "이재원") fullOfficeLabel = "서울특별시의회 비례대표 출마예정";
+                                            else {
+                                                fullOfficeLabel = `${displayOffice}${can.district ? ` ${can.district}선거구` : ""}${statusText}`;
                                             }
                                             
                                             const showNew = isNewCandidate(can.dateAdded);
@@ -1114,7 +1569,8 @@
                                             return (
                                                 <div key={idx} className="p-8 hover:bg-gray-50/50 transition-colors">
                                                     <div className="flex gap-6 items-start mb-6">
-                                                        <div className="w-28 h-36 bg-gray-50 rounded-2xl overflow-hidden shrink-0 border border-gray-100 shadow-sm">
+                                                        {/* 사진 크기를 w-32 h-44로 확장 */}
+                                                        <div className="w-32 h-44 bg-gray-50 rounded-2xl overflow-hidden shrink-0 border border-gray-100 shadow-sm">
                                                             {can.photo ? (
                                                                 <img src={can.photo} className="w-full h-full object-cover" alt={can.name} />
                                                             ) : (
@@ -1130,7 +1586,7 @@
                                                                 {showNew && <span className="new-badge">NEW</span>}
                                                             </h3>
                                                             <div className="inline-block px-3 py-1.5 bg-orange-50 text-orange-600 rounded-xl text-[12px] font-black mb-6 border border-orange-100/50">
-                                                                {displayOffice}{statusText}
+                                                                {fullOfficeLabel}
                                                             </div>
                                                             
                                                             <div className="flex gap-3 items-center mb-6">
@@ -1152,22 +1608,19 @@
                                                     </div>
                                                     <div className="pt-6 border-t border-gray-100">
                                                         <ul className="space-y-2.5">
-                                                            {can.bio.map((b, bIdx) => {
-                                                                const isLongText = b.includes("현 현대흥립통합재건축추진준비위 위원장") || b.includes("국제라이온스협회 영진L 14대 회장");
-                                                                return (
-                                                                    <li key={bIdx} className={`text-[13px] text-gray-600 flex items-start gap-2.5 font-semibold leading-relaxed ${isLongText ? 'tracking-[-0.08em]' : ''}`}>
-                                                                        <span className="mt-2 flex-shrink-0 w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
-                                                                        {b}
-                                                                    </li>
-                                                                );
-                                                            })}
+                                                            {can.bio.map((b, bIdx) => (
+                                                                <li key={bIdx} className="text-[13px] text-gray-600 flex items-start gap-2.5 font-semibold leading-relaxed">
+                                                                    <span className="mt-2 flex-shrink-0 w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
+                                                                    {b}
+                                                                </li>
+                                                            ))}
                                                         </ul>
                                                     </div>
                                                 </div>
                                             );
                                         })}
                                     </div>
-                                ) : <div className="h-full flex flex-col items-center justify-center opacity-30 text-center p-10"><p className="font-bold">해당 선거구에 등록된<br/>서울특별시 기초의원 후보가 없습니다.</p></div>
+                                ) : <div className="h-full flex flex-col items-center justify-center opacity-30 text-center p-10"><p className="font-bold">해당 선거구에 등록된<br/>서울특별시 기초의회 후보가 없습니다.</p></div>
                             ) : <div className="h-full flex flex-col items-center justify-center opacity-30 text-center p-10"><p className="font-bold">서울 지도의 행정동을 클릭하여<br/>선거구별 후보 정보를 확인하세요.</p></div>}
                         </div>
                     </div>
@@ -1175,74 +1628,197 @@
             );
         };
 
-        const root = ReactDOM.createRoot(document.getElementById('map-dashboard-root'));
-        root.render(<MapDashboard />);
-    </script>
+        const GyeonggiMapDashboard = () => {
+            const [geoData, setGeoData] = useState(null);
+            const [muniGeoData, setMuniGeoData] = useState(null);
+            const [loading, setLoading] = useState(true);
+            const [error, setError] = useState(null);
+            const [activeDistrict, setActiveDistrict] = useState(null); 
+            const [selectedDistrict, setSelectedDistrict] = useState(null);
+            const [selectedCandidateIdx, setSelectedCandidateIdx] = useState(0);
+            const [mapBounds, setMapBounds] = useState({ minX: 126.3, maxX: 127.8, minY: 36.8, maxY: 38.3 });
+            const [searchTerm, setSearchTerm] = useState('');
+            const [showSuggestions, setShowSuggestions] = useState(false);
+            const [zoomMultiplier, setZoomMultiplier] = useState(1.0);
+            const [panOffset, setPanOffset] = useState({ x: 130, y: 90 });
+            const [isDragging, setIsDragging] = useState(false);
+            const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
+            const svgRef = useRef(null);
 
-    <script>
-        /* [핵심 기능 함수] */
-        function createCard(c) {
-            const isTightBio = ["김태수", "고재윤", "이강민", "오정대", "우영훈"].includes(c.name);
-            const isTightSpacing = ["우영훈", "김태수"].includes(c.name);
-            let styles = [];
-            if (isTightBio || ["하대식", "조동운", "박철현", "김성민", "류태하", "이용우", "이재원"].includes(c.name)) {
-                styles.push("line-height: 1.05");
-            }
-            if (isTightSpacing) { styles.push("letter-spacing: -0.08em"); }
-            const bioStyleAttr = styles.length > 0 ? `style="${styles.join('; ')};"` : "";
+            const displayDistrictName = activeDistrict || selectedDistrict;
 
-            let bioHtml = c.bio.map((line, idx) => `<span>${line}</span>`).join('');
-            let leftTagText = c.region;
-            if (c.category === "기초의원") {
-                const isMetropolitan = c.metropolitan && (c.metropolitan.endsWith('특별시') || c.metropolitan.endsWith('광역시') || c.metropolitan.endsWith('특별자치시'));
-                if (isMetropolitan) { leftTagText = c.region; } 
-                else { leftTagText = c.region.replace("경기도", "경기").replace("충청남도", "충남").replace("경상북도", "경북").replace("전라북도", "전북").replace("충청북도", "충북").replace("경상남도", "경남").replace("전라남도", "전남").replace("강원특별자치도", "강원").replace("제주특별자치도", "제주"); }
-            } else if (c.category === "광역의원") {
-                leftTagText = (c.name === "양해두" || c.name === "이건우") ? "제주" : (c.shortMetro || c.region);
-            }
-            let rightTagText = c.district || (c.constituency === "비례" ? "비례" : "");
-            let districtTag = rightTagText ? `<div class="district-tag">${rightTagText}</div>` : "";
-            const isNoPhoto = !c.photo || c.photo.trim() === "";
-            const fit = c.cardFit || "cover";
-            const pos = c.cardPos || "center top"; 
-            const scale = c.cardScale || "1";
-            const photoContent = isNoPhoto 
-                ? `<div class="no-photo-placeholder"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-round"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg><span>이미지 준비중</span></div>`
-                : `<img src="${c.photo}" class="candidate-photo ${!c.cardFit ? 'photo-face-focus' : ''}" style="object-fit: ${fit} !important; object-position: ${pos} !important; transform: scale(${scale});" alt="${c.name}">`;
-            const newBadge = isNewCandidate(c.dateAdded) ? `<span class="new-badge">NEW</span>` : "";
-            
-            const displayOffice = getCleanOffice(c);
-            
-            const isConfirmed = (c.status === "후보" && c.name !== "김성민" && c.name !== "이수찬");
-            const confirmedBadge = isConfirmed ? `<div class="confirmed-badge"><i data-lucide="check-circle" style="width: 10px; height: 10px;"></i>공천 확정</div>` : "";
+            const allDongsList = useMemo(() => {
+                const list = [];
+                Object.entries(GYEONGGI_INITIAL_DISTRICTS).forEach(([distName, info]) => {
+                    info.dongs.forEach(dong => { list.push({ dong, district: distName }); });
+                });
+                return list;
+            }, []);
 
-            let statusLabel = "";
-            if (isConfirmed) {
-                statusLabel = "후보";
-            } else {
-                if (c.name === "송진영") {
-                    statusLabel = "출마예정";
-                } else {
-                    statusLabel = (c.decl && c.decl !== "#") ? "출마선언" : "출마예정";
+            useEffect(() => {
+                const fetchMapData = async () => {
+                    try {
+                        const DONG_URL = "https://raw.githubusercontent.com/vuski/admdongkor/master/ver20250401/HangJeongDong_ver20250401.geojson";
+                        const MUNI_URL = "https://raw.githubusercontent.com/southkorea/southkorea-maps/master/kostat/2013/json/skorea_municipalities_geo.json";
+                        const [resDong, resMuni] = await Promise.all([fetch(DONG_URL), fetch(MUNI_URL)]);
+                        const dataDong = await resDong.json();
+                        const dataMuni = await resMuni.json();
+                        const dongFeatures = dataDong.features.filter(f => String(f.properties.adm_cd2 || f.properties.adm_cd || f.properties.ADM_CD || f.properties.code || "").startsWith('41'));
+                        const muniFeatures = dataMuni.features.filter(f => {
+                            const code = String(f.properties.code || f.properties.SIG_CD || f.properties.sig_cd || f.properties.ADM_CD || "");
+                            return code.startsWith('41') || code.startsWith('31');
+                        });
+                        let minX = 180, maxX = 0, minY = 90, maxY = 0;
+                        dongFeatures.forEach(f => {
+                            const polygons = f.geometry.type === "Polygon" ? [f.geometry.coordinates] : f.geometry.coordinates;
+                            polygons.forEach(poly => (Array.isArray(poly[0][0]) ? poly : [poly]).forEach(ring => ring.forEach(c => {
+                                if (c[0] < minX) minX = c[0]; if (c[0] > maxX) maxX = c[0];
+                                if (c[1] < minY) minY = c[1]; if (c[1] > maxY) maxY = c[1];
+                            })));
+                        });
+                        setMapBounds({ minX, maxX, minY, maxY });
+                        setGeoData({ ...dataDong, features: dongFeatures });
+                        setMuniGeoData({ ...dataMuni, features: muniFeatures });
+                    } catch (err) { setError("Failed to load map."); } finally { setLoading(false); }
+                };
+                fetchMapData();
+            }, []);
+
+            const project = (coords) => {
+                const { minX, maxX, minY, maxY } = mapBounds;
+                const centerX = (minX + maxX) / 2;
+                const centerY = (minY + maxY) / 2;
+                const cosLat = Math.cos(centerY * Math.PI / 180);
+                const scale = Math.min(800 / ((maxX - minX) * cosLat), 600 / (maxY - minY)) * 2.1 * zoomMultiplier;
+                return [(coords[0] - centerX) * cosLat * scale + 400 + panOffset.x, 140 - (coords[1] - centerY) * scale + panOffset.y];
+            };
+
+            const generatePath = (f) => {
+                if (!f || !f.geometry) return "";
+                const { type, coordinates } = f.geometry;
+                if (type === "Polygon") return coordinates.map(ring => "M" + ring.map(c => project(c).join(",")).join("L") + "Z").join(" ");
+                if (type === "MultiPolygon") return coordinates.map(poly => poly.map(ring => "M" + ring.map(c => project(c).join(",")).join("L") + "Z").join(" ")).join(" ");
+                return "";
+            };
+
+            const getDistrictNameFromFeature = (f) => {
+                const fullAddr = normalizeFunc(f.properties.adm_nm || f.properties.ADM_NM || "");
+                for (const [distName, info] of Object.entries(GYEONGGI_INITIAL_DISTRICTS)) {
+                    const cityPartMatch = distName.match(/^[가-힣]+[시군]/);
+                    if (!cityPartMatch) continue;
+                    const cityPart = normalizeFunc(cityPartMatch[0]);
+                    if (fullAddr.includes(cityPart)) {
+                        if (info.dongs.some(d => {
+                            const target = normalizeFunc(d);
+                            return fullAddr.includes(target) || target.includes(fullAddr.slice(-target.length));
+                        })) return distName;
+                    }
                 }
-            }
+                return null;
+            };
 
-            return `
-                <div onclick="openProfileModal('${c.name}')" class="bg-white rounded-[1rem] md:rounded-[1.5rem] shadow-md border border-gray-100 card-hover transition-all duration-500 overflow-hidden flex flex-col h-full cursor-pointer">
-                    <div class="photo-frame">
-                        <div class="region-tag">${leftTagText}</div>
-                        ${districtTag}
-                        ${confirmedBadge}
-                        ${photoContent}
-                    </div>
-                    <div class="pt-2 px-3 pb-4 md:pt-4 md:px-6 md:pb-6 text-center flex flex-col flex-grow">
-                        <h3 class="text-base md:text-xl font-bold mb-1 tracking-wider flex items-center justify-center">${c.name}${newBadge}</h3>
-                        <div class="bio-text" ${bioStyleAttr}>${bioHtml}</div>
-                        <div class="mt-auto nrp-bg-orange text-white py-2 rounded-xl font-bold text-[10px] md:text-sm leading-tight text-center">${displayOffice} ${statusLabel}</div>
-                    </div>
+            const getDistColor = (dName) => {
+                if (!dName) return "#fcf9f6";
+                const hasCandidate = candidates.some(c => 
+                    c.category === "기초의원" && 
+                    c.metropolitan === "경기도" && 
+                    dName.startsWith(c.region.replace('경기 ', '')) && 
+                    dName.includes(c.district)
+                );
+                const city = dName.split(' ')[0] || "";
+                const distLetter = dName.split(' ')[1] || "";
+                const cityIdx = CITY_ORDER.indexOf(city);
+                const letterIdx = "가나다라마바사아자차카타파하".indexOf(distLetter[0]);
+                if (hasCandidate) return ACTIVE_ORANGE_PALETTE[(cityIdx * 2 + letterIdx) % 2];
+                return EMPTY_GRAY_PALETTE[(cityIdx * 2 + letterIdx) % 5];
+            };
+
+            const matchedCandidatesMap = useMemo(() => {
+                if (!selectedDistrict) return [];
+                const [selCity] = selectedDistrict.split(' ');
+                return candidates.filter(can => 
+                    can.category === "기초의원" && 
+                    can.metropolitan === "경기도" && 
+                    can.region.includes(selCity) && 
+                    selectedDistrict.includes(can.district)
+                );
+            }, [selectedDistrict]);
+
+            const onPointerDown = (e) => { setIsDragging(true); setDragStart({ x: e.clientX || (e.touches && e.touches[0].clientX), y: e.clientY || (e.touches && e.touches[0].clientY) }); };
+            const onPointerMove = (e) => {
+                if (!isDragging) return;
+                const currentX = e.clientX || (e.touches && e.touches[0].clientX);
+                const currentY = e.clientY || (e.touches && e.touches[0].clientY);
+                setPanOffset(prev => ({ x: prev.x + (currentX - dragStart.x), y: prev.y + (currentY - dragStart.y) }));
+                setDragStart({ x: currentX, y: currentY });
+            };
+
+            return (
+                <div className="flex flex-col bg-[#fffbf7] rounded-[2rem] border border-orange-100 overflow-hidden shadow-xl">
+                    <main className="flex flex-col lg:flex-row p-4 sm:p-6 gap-4 sm:gap-6 h-[600px]">
+                        <div className={`relative flex-[1.5] bg-white rounded-3xl border border-orange-50 overflow-hidden flex items-center justify-center ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}>
+                            {loading ? <div className="animate-spin-custom w-10 h-10 border-4 border-orange-200 border-t-orange-500 rounded-full"></div> : (
+                                <svg ref={svgRef} viewBox="0 0 800 600" className="w-full h-full drop-shadow-lg touch-none" onMouseDown={onPointerDown} onMouseMove={onPointerMove} onMouseUp={() => setIsDragging(false)} onMouseLeave={() => setIsDragging(false)} onTouchStart={onPointerDown} onTouchMove={onPointerMove} onTouchEnd={() => setIsDragging(false)}>
+                                    {geoData.features.map((f, i) => {
+                                        const dName = getDistrictNameFromFeature(f);
+                                        const isSelected = selectedDistrict === dName;
+                                        const baseFill = getDistColor(dName);
+                                        return <path key={i} d={generatePath(f)} fill={isSelected ? "#9a3412" : baseFill} fillOpacity={selectedDistrict && !isSelected ? 0.2 : (activeDistrict === dName ? 0.8 : 1)} stroke={isSelected ? "#000" : "#fff"} strokeWidth={isSelected ? "1" : "0.05"} className="map-path" onMouseEnter={() => !isDragging && dName && setActiveDistrict(dName)} onMouseLeave={() => setActiveDistrict(null)} onClick={() => dName && setSelectedDistrict(prev => prev === dName ? null : dName)} />;
+                                    })}
+                                    {muniGeoData.features.map((f, i) => <path key={i} d={generatePath(f)} fill="none" stroke="#000" strokeWidth="0.9" style={{ pointerEvents: 'none', opacity: selectedDistrict ? 0.1 : 1 }} />)}
+                                </svg>
+                            )}
+                            <div className="absolute top-4 left-4 w-64 z-10">
+                                <div className="bg-white/95 backdrop-blur p-3 rounded-2xl border border-orange-50 flex items-center gap-2 shadow-lg">
+                                    <i data-lucide="search" className="w-4 h-4 text-orange-400"></i>
+                                    <input type="text" placeholder="읍면동 검색 (예: 인창동)" className="bg-transparent outline-none w-full text-xs font-bold" value={searchTerm} onChange={(e) => { setSearchTerm(e.target.value); setShowSuggestions(true); }} />
+                                </div>
+                                {showSuggestions && searchTerm.length > 0 && (
+                                    <div className="mt-2 bg-white rounded-xl shadow-2xl max-h-40 overflow-y-auto custom-scrollbar border border-orange-50">
+                                        {allDongsList.filter(it => normalizeFunc(it.dong).includes(normalizeFunc(searchTerm))).map((it, idx) => (
+                                            <div key={idx} className="px-4 py-2 hover:bg-orange-50 cursor-pointer text-xs font-bold border-b border-orange-50" onClick={() => { setSelectedDistrict(it.district); setShowSuggestions(false); setSearchTerm(''); }}>{it.dong} ({it.district})</div>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
+                            <div className="absolute bottom-4 right-4 flex flex-col gap-2">
+                                <button onClick={() => setZoomMultiplier(p => p * 1.2)} className="w-10 h-10 bg-white rounded-xl shadow border border-orange-50 text-orange-500 hover:bg-orange-500 hover:text-white transition-colors"><i data-lucide="plus" className="w-5 h-5 mx-auto"></i></button>
+                                <button onClick={() => setZoomMultiplier(p => p / 1.2)} className="w-10 h-10 bg-white rounded-xl shadow border border-orange-50 text-slate-400 hover:bg-slate-500 hover:text-white transition-colors"><i data-lucide="minus" className="w-5 h-5 mx-auto"></i></button>
+                                <button onClick={() => { setZoomMultiplier(1); setPanOffset({x:130, y:90}); }} className="w-10 h-10 bg-white rounded-xl shadow border border-orange-100 transition-colors"><i data-lucide="refresh-cw" className="w-4 h-4 mx-auto text-slate-400"></i></button>
+                            </div>
+                        </div>
+                        <div className="flex-1 bg-white rounded-3xl border border-orange-50 shadow-xl flex flex-col overflow-hidden">
+                            <div className={`p-6 transition-colors duration-500 ${selectedDistrict ? 'bg-orange-500 text-white' : 'bg-orange-50 text-orange-200'}`}>
+                                <div className="flex justify-between items-start">
+                                    <div className="flex-1 overflow-hidden">
+                                        <h2 className="text-xl font-black truncate">{selectedDistrict || "지역을 선택하세요"}</h2>
+                                        {selectedDistrict && <div className="mt-2 text-[10px] font-bold opacity-80 leading-tight">{GYEONGGI_INITIAL_DISTRICTS[selectedDistrict].dongs.join(', ')}</div>}
+                                    </div>
+                                    {selectedDistrict && (
+                                        <div className="ml-4 bg-[#1e293b] px-3 py-1.5 rounded-xl border border-white/10 text-center shrink-0 shadow-lg">
+                                            <p className="text-[10px] font-black text-slate-200 leading-none mb-2">선거정수</p>
+                                            <p className="text-lg font-black text-white leading-none">{GYEONGGI_INITIAL_DISTRICTS[selectedDistrict].seats}명</p>
+                                        </div>
+                                    )}
+                                </div>
+                            </div>
+                            <div className="flex-1 p-6 overflow-y-auto custom-scrollbar">
+                                {selectedDistrict ? (
+                                    matchedCandidatesMap.length > 0 ? <IntegratedProfile can={matchedCandidatesMap[selectedCandidateIdx]} /> :
+                                    <div className="h-full flex flex-col items-center justify-center text-slate-300 opacity-50"><i data-lucide="users" className="w-12 h-12 mb-2"></i><p>등록된 후보자가 없습니다.</p></div>
+                                ) : <div className="h-full flex flex-col items-center justify-center text-orange-200 opacity-50"><i data-lucide="mouse-pointer-2" className="w-12 h-12 mb-2"></i><p>지도를 클릭해주세요!</p></div>}
+                            </div>
+                        </div>
+                    </main>
                 </div>
-            `;
-        }
+            );
+        };
+
+        const seoulRoot = ReactDOM.createRoot(document.getElementById('map-dashboard-root'));
+        seoulRoot.render(<MapDashboard />);
+
+        const gyeonggiRoot = ReactDOM.createRoot(document.getElementById('gyeonggi-map-dashboard-root-render'));
+        gyeonggiRoot.render(<GyeonggiMapDashboard />);
     </script>
 </body>
 </html>
