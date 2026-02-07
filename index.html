@@ -279,7 +279,7 @@
         .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
         .custom-scrollbar::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 20px; }
         
-        /* 경기도 지도용 스타일 */
+        /* 지도용 스타일 */
         .cursor-grab { cursor: grab; }
         .cursor-grabbing { cursor: grabbing; }
 
@@ -400,8 +400,8 @@
         </div>
     </header>
 
-    <!-- 서울 지도 대시보드 영역 -->
-    <div class="max-w-7xl mx-auto px-4 md:px-10 mt-6 mb-4 hidden lg:block">
+    <!-- 서울 지도 대시보드 영역 (모바일에서도 보이도록 hidden 제거) -->
+    <div class="max-w-7xl mx-auto px-4 md:px-10 mt-6 mb-4 block">
         <div onclick="toggleMapVisibility()" class="flex justify-between items-center bg-white border border-orange-100 rounded-2xl p-5 mb-3 shadow-sm cursor-pointer hover:bg-orange-50 transition-all group">
             <div class="flex items-center gap-3">
                 <div class="bg-orange-100 p-2 rounded-xl group-hover:bg-[#FF6600] transition-colors">
@@ -422,7 +422,7 @@
         </div>
     </div>
 
-    <!-- 경기 기초의회 선거구 지도 대시보드 영역 -->
+    <!-- 경기 기초의회 선거구 지도 대시보드 영역 (PC 전용 유지) -->
     <div class="max-w-7xl mx-auto px-4 md:px-10 mt-4 mb-8 hidden lg:block">
         <div onclick="toggleGyeonggiMapVisibility()" class="flex justify-between items-center bg-white border border-orange-100 rounded-2xl p-5 mb-3 shadow-sm cursor-pointer hover:bg-orange-50 transition-all group">
             <div class="flex items-center gap-3">
@@ -575,7 +575,9 @@
             if (isHidden) {
                 content.classList.remove('hidden');
                 setTimeout(() => {
-                    content.style.height = '550px';
+                    // 모바일 대응: 모바일은 세로로 길어지므로 높이값 조정
+                    const isMobile = window.innerWidth < 1024;
+                    content.style.height = isMobile ? '900px' : '550px';
                     content.style.opacity = '1';
                     iconWrapper.style.transform = 'rotate(180deg)';
                 }, 10);
@@ -1336,7 +1338,7 @@
 
             return (
                 <div className="h-full flex flex-col overflow-hidden text-slate-800">
-                    <div className="flex flex-col sm:flex-row h-auto sm:h-[45%] shrink-0 gap-6">
+                    <div className="flex flex-col sm:flex-row h-auto lg:h-[45%] shrink-0 gap-6">
                         <div className="w-full sm:w-[40%] aspect-square sm:aspect-auto bg-orange-50 border border-orange-100 rounded-2xl flex items-center justify-center shadow-inner overflow-hidden shrink-0">
                             {can.photo ? (
                                 <img src={can.photo} className="w-full h-full object-cover" alt={can.name} />
@@ -1363,7 +1365,7 @@
                             )}
                         </div>
                     </div>
-                    <div className="flex-1 mt-6 border-t border-orange-50 pt-6 overflow-y-auto custom-scrollbar font-bold text-slate-700 text-left text-sm">
+                    <div className="flex-1 mt-6 border-t border-orange-50 pt-6 lg:overflow-y-auto custom-scrollbar font-bold text-slate-700 text-left text-sm">
                         <div className="space-y-3">
                             {can.bio.map((line, idx) => (
                                 <div key={idx} className="flex items-start gap-3">
@@ -1472,8 +1474,8 @@
             };
 
             return (
-                <div className="bg-white rounded-[2rem] border border-orange-100 shadow-xl overflow-hidden flex flex-col lg:flex-row h-[550px]">
-                    <div className="lg:w-[55%] relative bg-slate-50 flex items-center justify-center p-4 border-r border-orange-50">
+                <div className="bg-white rounded-[2rem] border border-orange-100 shadow-xl overflow-hidden flex flex-col lg:flex-row h-[900px] lg:h-[550px]">
+                    <div className="h-[400px] lg:h-auto lg:w-[55%] relative bg-slate-50 flex items-center justify-center p-4 border-b lg:border-b-0 lg:border-r border-orange-50 shrink-0">
                         {loading ? (
                             <div className="animate-spin-custom w-10 h-10 border-4 border-orange-200 border-t-orange-500 rounded-full"></div>
                         ) : (
@@ -1530,11 +1532,11 @@
                             서울특별시 기초의회 선거구 지도 (beta)
                         </div>
                     </div>
-                    <div className="lg:w-[45%] flex flex-col bg-white text-slate-800">
+                    <div className="flex-1 lg:w-[45%] flex flex-col bg-white text-slate-800 overflow-hidden">
                         <div className={`p-6 transition-colors duration-300 ${selectedDistrictInfo ? 'bg-orange-500 text-white' : 'bg-gray-50 text-gray-400'}`}>
                             <div className="flex justify-between items-start">
                                 <div className="flex-1">
-                                    <h2 className="text-2xl font-black">{selectedDistrictInfo ? selectedDistrictInfo.district : "지도의 행정동을 선택하세요"}</h2>
+                                    <h2 className="text-xl lg:text-2xl font-black">{selectedDistrictInfo ? selectedDistrictInfo.district : "지도의 행정동을 선택하세요"}</h2>
                                     {selectedDistrictInfo && (
                                         <p className="mt-2 text-[11px] font-bold text-orange-50 leading-tight">
                                             {currentDistrictDongs}
@@ -1573,7 +1575,7 @@
                                             return (
                                                 <div key={idx} className="p-8 hover:bg-gray-50/50 transition-colors">
                                                     <div className="flex gap-6 items-start mb-6">
-                                                        <div className="w-32 h-44 bg-gray-50 rounded-2xl overflow-hidden shrink-0 border border-gray-100 shadow-sm">
+                                                        <div className="w-24 h-32 lg:w-32 lg:h-44 bg-gray-50 rounded-2xl overflow-hidden shrink-0 border border-gray-100 shadow-sm">
                                                             {can.photo ? (
                                                                 <img src={can.photo} className="w-full h-full object-cover" alt={can.name} />
                                                             ) : (
@@ -1584,50 +1586,50 @@
                                                             )}
                                                         </div>
                                                         <div className="flex-1 flex flex-col items-start pt-1">
-                                                            <h3 className="text-3xl font-black text-gray-900 mb-1 tracking-tight">
+                                                            <h3 className="text-2xl lg:text-3xl font-black text-gray-900 mb-1 tracking-tight">
                                                                 {can.name}
                                                                 {showNew && <span className="new-badge">NEW</span>}
                                                             </h3>
-                                                            <div className="inline-block px-3 py-1.5 bg-orange-50 text-orange-600 rounded-xl text-[12px] font-black mb-6 border border-orange-100/50">
+                                                            <div className="inline-block px-3 py-1.5 bg-orange-50 text-orange-600 rounded-xl text-[11px] lg:text-[12px] font-black mb-6 border border-orange-100/50">
                                                                 {fullOfficeLabel}
                                                             </div>
                                                             
                                                             <div className="flex gap-4 items-center mb-6">
                                                                 {can.sns?.fb && can.sns.fb !== "#" && (
-                                                                    <a href={can.sns.fb} target="_blank" className="sns-btn fb w-10 h-10 rounded-full border border-gray-100 shadow-sm flex items-center justify-center">
-                                                                        <i data-lucide="facebook" className="w-5 h-5"></i>
+                                                                    <a href={can.sns.fb} target="_blank" className="sns-btn fb w-8 h-8 lg:w-10 lg:h-10 rounded-full border border-gray-100 shadow-sm flex items-center justify-center">
+                                                                        <i data-lucide="facebook" className="w-4 h-4 lg:w-5 lg:h-5"></i>
                                                                     </a>
                                                                 )}
                                                                 {can.sns?.ig && can.sns.ig !== "#" && (
-                                                                    <a href={can.sns.ig} target="_blank" className="sns-btn ig w-10 h-10 rounded-full border border-gray-100 shadow-sm flex items-center justify-center">
-                                                                        <i data-lucide="instagram" className="w-5 h-5"></i>
+                                                                    <a href={can.sns.ig} target="_blank" className="sns-btn ig w-8 h-8 lg:w-10 lg:h-10 rounded-full border border-gray-100 shadow-sm flex items-center justify-center">
+                                                                        <i data-lucide="instagram" className="w-4 h-4 lg:w-5 lg:h-5"></i>
                                                                     </a>
                                                                 )}
                                                                 {can.sns?.threads && can.sns.threads !== "#" && (
-                                                                    <a href={can.sns.threads} target="_blank" className="sns-btn threads w-10 h-10 rounded-full border border-gray-100 shadow-sm flex items-center justify-center">
-                                                                        <i data-lucide="at-sign" className="w-5 h-5"></i>
+                                                                    <a href={can.sns.threads} target="_blank" className="sns-btn threads w-8 h-8 lg:w-10 lg:h-10 rounded-full border border-gray-100 shadow-sm flex items-center justify-center">
+                                                                        <i data-lucide="at-sign" className="w-4 h-4 lg:w-5 lg:h-5"></i>
                                                                     </a>
                                                                 )}
                                                                 {can.sns?.yt && can.sns.yt !== "#" && (
-                                                                    <a href={can.sns.yt} target="_blank" className="sns-btn youtube w-10 h-10 rounded-full border border-gray-100 shadow-sm flex items-center justify-center">
-                                                                        <i data-lucide="youtube" className="w-5 h-5"></i>
+                                                                    <a href={can.sns.yt} target="_blank" className="sns-btn youtube w-8 h-8 lg:w-10 lg:h-10 rounded-full border border-gray-100 shadow-sm flex items-center justify-center">
+                                                                        <i data-lucide="youtube" className="w-4 h-4 lg:w-5 lg:h-5"></i>
                                                                     </a>
                                                                 )}
                                                                 {can.sns?.blog && can.sns.blog !== "#" && (
-                                                                    <a href={can.sns.blog} target="_blank" className="sns-btn blog w-10 h-10 rounded-full border border-gray-100 shadow-sm flex items-center justify-center">
-                                                                        <i data-lucide="link-2" className="w-5 h-5"></i>
+                                                                    <a href={can.sns.blog} target="_blank" className="sns-btn blog w-8 h-8 lg:w-10 lg:h-10 rounded-full border border-gray-100 shadow-sm flex items-center justify-center">
+                                                                        <i data-lucide="link-2" className="w-4 h-4 lg:w-5 lg:h-5"></i>
                                                                     </a>
                                                                 )}
                                                                 {can.sns?.site && can.sns.site !== "#" && (
-                                                                    <a href={can.sns.site} target="_blank" className="sns-btn site w-10 h-10 rounded-full border border-gray-100 shadow-sm flex items-center justify-center">
-                                                                        <i data-lucide="globe" className="w-5 h-5"></i>
+                                                                    <a href={can.sns.site} target="_blank" className="sns-btn site w-8 h-8 lg:w-10 lg:h-10 rounded-full border border-gray-100 shadow-sm flex items-center justify-center">
+                                                                        <i data-lucide="globe" className="w-4 h-4 lg:w-5 lg:h-5"></i>
                                                                     </a>
                                                                 )}
                                                             </div>
 
                                                             {can.decl && can.decl !== "#" && (
-                                                                <a href={can.decl} target="_blank" className="flex items-center justify-center gap-2 px-6 py-3 nrp-bg-orange text-white rounded-2xl text-sm font-black shadow-lg shadow-orange-200 hover:-translate-y-0.5 transition-all active:scale-95">
-                                                                    <i data-lucide="file-text" className="w-4 h-4"></i>
+                                                                <a href={can.decl} target="_blank" className="flex items-center justify-center gap-2 px-4 py-2 lg:px-6 lg:py-3 nrp-bg-orange text-white rounded-2xl text-xs lg:text-sm font-black shadow-lg shadow-orange-200 hover:-translate-y-0.5 transition-all active:scale-95">
+                                                                    <i data-lucide="file-text" className="w-3 h-3 lg:w-4 lg:h-4"></i>
                                                                     출마선언 보기
                                                                 </a>
                                                             )}
@@ -1636,7 +1638,7 @@
                                                     <div className="pt-6 border-t border-gray-100">
                                                         <ul className="space-y-2.5">
                                                             {can.bio.map((b, bIdx) => (
-                                                                <li key={bIdx} className="text-[13px] text-gray-600 flex items-start gap-2.5 font-semibold leading-relaxed">
+                                                                <li key={bIdx} className="text-[12px] lg:text-[13px] text-gray-600 flex items-start gap-2.5 font-semibold leading-relaxed">
                                                                     <span className="mt-2 flex-shrink-0 w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
                                                                     {b}
                                                                 </li>
@@ -1833,7 +1835,7 @@
                                     )}
                                 </div>
                             </div>
-                            <div className="flex-1 p-6 overflow-y-auto custom-scrollbar">
+                            <div className="flex-1 p-6 lg:overflow-y-auto custom-scrollbar">
                                 {selectedDistrict ? (
                                     matchedCandidatesMap.length > 0 ? <IntegratedProfile can={matchedCandidatesMap[selectedCandidateIdx]} /> :
                                     <div className="h-full flex flex-col items-center justify-center text-slate-300 opacity-50"><i data-lucide="users" className="w-12 h-12 mb-2"></i><p>등록된 후보자가 없습니다.</p></div>
