@@ -679,9 +679,9 @@
                 content.classList.remove('hidden');
                 setTimeout(() => {
                     const isMobile = window.innerWidth < 1024;
-                    content.style.height = isMobile ? '900px' : '650px';
+                    content.style.height = isMobile ? '950px' : '650px'; // 모바일 높이 상향
                     content.style.opacity = '1';
-                    iconWrapper.style.transform = 'rotate(0deg)';
+                    iconWrapper.style.transform = 'rotate(180deg)';
                 }, 10);
             } else {
                 content.style.height = '0';
@@ -1416,35 +1416,38 @@
 
             return (
                 <div className="h-full flex flex-col overflow-hidden text-slate-800 dark:text-slate-200">
-                    <div className="flex flex-col sm:flex-row h-auto lg:h-[45%] shrink-0 gap-6">
-                        <div className="w-full sm:w-[40%] aspect-square sm:aspect-auto bg-orange-50 dark:bg-slate-700 border border-orange-100 dark:border-slate-600 rounded-2xl flex items-center justify-center shadow-inner overflow-hidden shrink-0">
+                    <div className="flex flex-row h-auto shrink-0 gap-4 sm:gap-6">
+                        {/* 모바일 사진 사이즈 최적화 */}
+                        <div className="w-1/4 aspect-square sm:w-[40%] sm:aspect-auto bg-orange-50 dark:bg-slate-700 border border-orange-100 dark:border-slate-600 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-inner overflow-hidden shrink-0">
                             {can.photo ? (
                                 <img src={can.photo} className="w-full h-full object-cover" alt={can.name} />
                             ) : (
                                 <div className="flex flex-col items-center justify-center text-orange-200 dark:text-slate-500">
-                                    <i data-lucide="user" className="w-16 h-16 opacity-30"></i>
-                                    <span className="text-[10px] font-black uppercase tracking-widest mt-2">No Profile</span>
+                                    <i data-lucide="user" className="w-8 h-8 sm:w-16 sm:h-16 opacity-30"></i>
+                                    <span className="text-[8px] font-black uppercase tracking-widest mt-1 hidden sm:block">No Profile</span>
                                 </div>
                             )}
                         </div>
-                        <div className="flex-1 flex flex-col items-center justify-center text-center py-2">
-                            <h3 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-wider mb-2">{can.name}</h3>
-                            <div className="px-3 py-1 bg-orange-100 dark:bg-orange-900/40 text-orange-600 dark:text-orange-400 rounded-lg text-xs font-black uppercase mb-4">{displayOfficeLabel}</div>
-                            <div className="flex gap-2 mb-4">
-                                {isValidLink(can.sns?.fb) && <a href={can.sns.fb} target="_blank" className="p-2 bg-orange-50 dark:bg-slate-800 text-orange-600 dark:text-orange-400 rounded-lg hover:bg-orange-500 hover:text-white transition-colors border border-orange-100 dark:border-slate-700 shadow-sm"><i data-lucide="facebook" className="w-4 h-4"></i></a>}
-                                {isValidLink(can.sns?.ig) && <a href={can.sns.ig} target="_blank" className="p-2 bg-orange-50 dark:bg-slate-800 text-orange-600 dark:text-orange-400 rounded-lg hover:bg-orange-500 hover:text-white transition-colors border border-orange-100 dark:border-slate-700 shadow-sm"><i data-lucide="instagram" className="w-4 h-4"></i></a>}
-                                {isValidLink(can.sns?.blog) && <a href={can.sns.blog} target="_blank" className="p-2 bg-orange-50 dark:bg-slate-800 text-orange-600 dark:text-orange-400 rounded-lg hover:bg-orange-500 hover:text-white transition-colors border border-orange-100 dark:border-slate-700 shadow-sm"><i data-lucide="link" className="w-4 h-4"></i></a>}
-                                {isValidLink(can.sns?.yt) && <a href={can.sns.yt} target="_blank" className="p-2 bg-orange-50 dark:bg-slate-800 text-orange-600 dark:text-orange-400 rounded-lg hover:bg-orange-500 hover:text-white transition-colors border border-orange-100 dark:border-slate-700 shadow-sm"><i data-lucide="youtube" className="w-4 h-4"></i></a>}
+                        {/* 텍스트 영역 우측 정렬 유지 */}
+                        <div className="flex-1 flex flex-col items-start justify-center py-1 sm:py-2">
+                            <h3 className="text-lg sm:text-3xl font-black text-slate-900 dark:text-white tracking-wider mb-1 sm:mb-2">{can.name}</h3>
+                            <div className="px-2 py-0.5 sm:px-3 sm:py-1 bg-orange-100 dark:bg-orange-900/40 text-orange-600 dark:text-orange-400 rounded-lg text-[9px] sm:text-xs font-black uppercase mb-2 sm:mb-4">{displayOfficeLabel}</div>
+                            <div className="flex gap-1.5 sm:gap-2 mb-2 sm:mb-4">
+                                {isValidLink(can.sns?.fb) && <a href={can.sns.fb} target="_blank" className="p-1.5 sm:p-2 bg-orange-50 dark:bg-slate-800 text-orange-600 dark:text-orange-400 rounded-lg hover:bg-orange-500 hover:text-white transition-colors border border-orange-100 dark:border-slate-700 shadow-sm"><i data-lucide="facebook" className="w-3.5 h-3.5 sm:w-4 sm:h-4"></i></a>}
+                                {isValidLink(can.sns?.ig) && <a href={can.sns.ig} target="_blank" className="p-1.5 sm:p-2 bg-orange-50 dark:bg-slate-800 text-orange-600 dark:text-orange-400 rounded-lg hover:bg-orange-500 hover:text-white transition-colors border border-orange-100 dark:border-slate-700 shadow-sm"><i data-lucide="instagram" className="w-3.5 h-3.5 sm:w-4 sm:h-4"></i></a>}
+                                {isValidLink(can.sns?.blog) && <a href={can.sns.blog} target="_blank" className="p-1.5 sm:p-2 bg-orange-50 dark:bg-slate-800 text-orange-600 dark:text-orange-400 rounded-lg hover:bg-orange-500 hover:text-white transition-colors border border-orange-100 dark:border-slate-700 shadow-sm"><i data-lucide="link" className="w-3.5 h-3.5 sm:w-4 sm:h-4"></i></a>}
+                                {isValidLink(can.sns?.yt) && <a href={can.sns.yt} target="_blank" className="p-1.5 sm:p-2 bg-orange-50 dark:bg-slate-800 text-orange-600 dark:text-orange-400 rounded-lg hover:bg-orange-500 hover:text-white transition-colors border border-orange-100 dark:border-slate-700 shadow-sm"><i data-lucide="youtube" className="w-3.5 h-3.5 sm:w-4 sm:h-4"></i></a>}
                             </div>
                             {isValidLink(can.decl) && (
-                                <a href={can.decl} target="_blank" className="w-full py-2.5 bg-orange-500 text-white rounded-xl text-sm font-black text-center shadow-lg shadow-orange-200 hover:bg-orange-600 transition-all active:scale-95 flex items-center justify-center gap-2">
-                                    <i data-lucide="file-text" className="w-4 h-4"></i>출마선언문 보기
+                                <a href={can.decl} target="_blank" className="w-full sm:w-auto px-3 py-1.5 sm:py-2.5 bg-orange-500 text-white rounded-lg sm:rounded-xl text-[10px] sm:text-sm font-black text-center shadow-lg shadow-orange-200 hover:bg-orange-600 transition-all active:scale-95 flex items-center justify-center gap-1.5">
+                                    <i data-lucide="file-text" className="w-3 h-3 sm:w-4 sm:h-4"></i><span className="whitespace-nowrap">출마선언문 보기</span>
                                 </a>
                             )}
                         </div>
                     </div>
-                    <div className="flex-1 mt-6 border-t border-orange-50 dark:border-slate-700 pt-6 lg:overflow-y-auto custom-scrollbar font-bold text-slate-700 dark:text-slate-300 text-left text-sm">
-                        <div className="space-y-3">
+                    {/* 모바일에서 프로필 텍스트를 위한 공간을 더 많이 할당함 */}
+                    <div className="flex-1 mt-4 sm:mt-6 border-t border-orange-50 dark:border-slate-700 pt-4 sm:pt-6 overflow-y-auto custom-scrollbar font-bold text-slate-700 dark:text-slate-300 text-left text-[13px] sm:text-sm">
+                        <div className="space-y-3 pb-4">
                             {can.bio.map((line, idx) => (
                                 <div key={idx} className="flex items-start gap-3">
                                     <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mt-1.5 shrink-0"></div>
@@ -1865,8 +1868,9 @@
 
             return (
                 <div className="flex flex-col bg-[#fffbf7] dark:bg-slate-950 rounded-[2rem] border border-orange-100 dark:border-slate-800 overflow-hidden shadow-xl">
-                    <main className="flex flex-col lg:flex-row p-4 sm:p-6 gap-4 sm:gap-6 h-[900px] lg:h-[600px]">
-                        <div className={`relative flex-[1.5] bg-white dark:bg-slate-900 rounded-3xl border border-orange-50 dark:border-slate-800 overflow-hidden flex items-center justify-center ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}>
+                    <main className="flex flex-col lg:flex-row p-4 sm:p-6 gap-4 sm:gap-6 h-[950px] lg:h-[600px]">
+                        {/* 지도 높이를 줄임 */}
+                        <div className={`relative h-[380px] lg:h-auto lg:flex-[1.5] bg-white dark:bg-slate-900 rounded-3xl border border-orange-50 dark:border-slate-800 overflow-hidden flex items-center justify-center ${isDragging ? 'cursor-grabbing' : 'cursor-grab'} shrink-0`}>
                             {loading ? <div className="animate-spin-custom w-10 h-10 border-4 border-orange-200 border-t-orange-500 rounded-full"></div> : (
                                 <svg ref={svgRef} viewBox="0 0 800 600" className="w-full h-full drop-shadow-lg touch-none" onMouseDown={onPointerDown} onMouseMove={onPointerMove} onMouseUp={() => setIsDragging(false)} onMouseLeave={() => setIsDragging(false)} onTouchStart={onPointerDown} onTouchMove={onPointerMove} onTouchEnd={() => setIsDragging(false)}>
                                     {geoData.features.map((f, i) => {
@@ -1897,8 +1901,9 @@
                                 <button onClick={() => { setZoomMultiplier(1); setPanOffset({x:130, y:90}); }} className="w-10 h-10 bg-white dark:bg-slate-800 rounded-xl shadow border border-orange-100 dark:border-slate-700 transition-colors"><i data-lucide="refresh-cw" className="w-4 h-4 mx-auto text-slate-400 dark:text-slate-500"></i></button>
                             </div>
                         </div>
+                        {/* 후보자 섹션 높이를 상대적으로 키움 */}
                         <div className="flex-1 bg-white dark:bg-slate-900 rounded-3xl border border-orange-50 dark:border-slate-800 shadow-xl flex flex-col overflow-hidden">
-                            <div className={`p-6 transition-colors duration-500 ${selectedDistrict ? 'bg-orange-500 text-white' : 'bg-orange-50 dark:bg-slate-800 text-orange-200 dark:text-slate-600'}`}>
+                            <div className={`p-5 sm:p-6 transition-colors duration-500 ${selectedDistrict ? 'bg-orange-500 text-white' : 'bg-orange-50 dark:bg-slate-800 text-orange-200 dark:text-slate-600'}`}>
                                 <div className="flex justify-between items-start">
                                     <div className="flex-1 overflow-hidden">
                                         <h2 className="text-xl font-black truncate dark:text-white">{selectedDistrict || "지역을 선택하세요"}</h2>
@@ -1912,7 +1917,7 @@
                                     )}
                                 </div>
                             </div>
-                            <div className="flex-1 p-6 lg:overflow-y-auto custom-scrollbar">
+                            <div className="flex-1 p-5 sm:p-6 lg:overflow-y-auto custom-scrollbar">
                                 {selectedDistrict ? (
                                     matchedCandidatesMap.length > 0 ? <IntegratedProfile can={matchedCandidatesMap[selectedCandidateIdx]} /> :
                                     <div className="h-full flex flex-col items-center justify-center text-slate-300 dark:text-slate-600 opacity-50"><i data-lucide="users" className="w-12 h-12 mb-2"></i><p>등록된 후보자가 없습니다.</p></div>
