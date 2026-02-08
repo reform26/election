@@ -38,6 +38,11 @@
     <link rel="icon" href="https://img.icons8.com/?size=100&id=hfNCM7e9VGca&format=png&color=000000" type="image/png">
     
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <!-- React & ReactDOM -->
@@ -50,13 +55,18 @@
         @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700;800;900&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
         
-        html { scroll-behavior: smooth; }
+        html { scroll-behavior: smooth; transition: background-color 0.3s ease; }
         body {
             font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
             background-color: #f8f9fa;
             color: #1a1a1a;
             letter-spacing: -0.025em;
             word-break: keep-all;
+        }
+
+        .dark body {
+            background-color: #0f172a;
+            color: #f1f5f9;
         }
 
         #entry-popup-overlay {
@@ -77,12 +87,16 @@
             background: linear-gradient(to bottom, rgba(255, 102, 0, 0.12) 0%, rgba(255, 102, 0, 0.05) 50%, transparent 100%);
             border-radius: 0 0 3rem 3rem;
         }
+        .dark .header-gradient {
+            background: linear-gradient(to bottom, rgba(255, 102, 0, 0.2) 0%, rgba(15, 23, 42, 0.5) 50%, #0f172a 100%);
+        }
 
         .nav-container::-webkit-scrollbar { display: none; }
         .nav-container { -ms-overflow-style: none; scrollbar-width: none; }
 
         @media (min-width: 640px) {
             .card-hover:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+            .dark .card-hover:hover { box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
         }
         
         .region-tag {
@@ -160,6 +174,7 @@
             position: relative; 
             width: 100%; 
         }
+        .dark .photo-frame { background-color: #1e293b; }
         @media (min-width: 640px) { 
             .photo-frame { height: 240px; } 
         }
@@ -178,6 +193,7 @@
             display: flex; align-items: center; font-size: 1.2rem; font-weight: 800;
             margin: 2rem 0 0.75rem 0; color: #1a202c;
         }
+        .dark .section-title { color: #f1f5f9; }
         @media (min-width: 640px) { .section-title { font-size: 1.6rem; margin: 3rem 0 1.25rem 0; } }
         .section-title::before { content: ""; width: 5px; height: 22px; background-color: #FF6600; margin-right: 10px; border-radius: 2px; }
 
@@ -185,21 +201,26 @@
             font-size: 1rem; font-weight: 700; color: #4a5568; margin-bottom: 1rem;
             padding-left: 4px; border-left: 3px solid #cbd5e0; margin-left: 2px;
         }
+        .dark .sub-section-title { color: #94a3b8; border-left-color: #475569; }
 
         .bio-text {
             font-size: 0.65rem; color: #718096; margin-bottom: 0.5rem; height: 3.5rem; 
             display: flex; flex-direction: column; justify-content: center;
             font-weight: 600; line-height: 1.3; overflow: hidden;
         }
+        .dark .bio-text { color: #94a3b8; }
         @media (min-width: 640px) { .bio-text { font-size: 0.75rem; height: 3.5rem; margin-bottom: 0.75rem; } }
 
         .nav-btn {
             padding: 0.5rem 0.4rem; border-radius: 0.6rem; font-size: 0.65rem; font-weight: 700;
             color: #4b5563; transition: all 0.2s ease-in-out; cursor: pointer;
         }
+        .dark .nav-btn { color: #94a3b8; }
         @media (min-width: 768px) { .nav-btn { font-size: 0.875rem; padding: 0.5rem 1.25rem; } }
         .nav-btn:hover:not(:disabled) { background-color: #fff7ed; color: #FF6600; }
+        .dark .nav-btn:hover:not(:disabled) { background-color: #1e293b; color: #fb923c; }
         .nav-btn.active { background-color: #FF6600; color: white; }
+        .dark .nav-btn.active { background-color: #FF6600; color: white; }
         .nav-btn:disabled { color: #d1d5db; cursor: default; }
 
         .map-path { transition: fill 0.2s ease-out, stroke 0.2s ease-out, opacity 0.3s ease-in-out; outline: none; }
@@ -219,6 +240,7 @@
             font-size: 0.75rem;
             gap: 8px;
         }
+        .dark .no-photo-placeholder { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); color: #475569; }
         .no-photo-placeholder svg {
             width: 48px;
             height: 48px;
@@ -235,6 +257,7 @@
             overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
             animation: modalFadeIn 0.3s ease-out;
         }
+        .dark .modal-content { background-color: #1e293b; color: #f1f5f9; }
         @keyframes modalFadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -245,7 +268,9 @@
             width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
             background: #f1f3f5; color: #495057; transition: all 0.2s;
         }
+        .dark .sns-btn { background: #334155; color: #cbd5e1; }
         .sns-btn:hover { background: #e9ecef; transform: translateY(-2px); }
+        .dark .sns-btn:hover { background: #475569; }
         .sns-btn.fb:hover { color: #1877F2; }
         .sns-btn.ig:hover { color: #E4405F; }
         .sns-btn.youtube:hover { color: #FF0000; }
@@ -272,12 +297,15 @@
             text-align: center;
             transition: all 0.2s;
         }
+        .dark .region-box { background: rgba(30, 41, 59, 0.5); border-color: rgba(255, 255, 255, 0.05); }
         .region-box:hover { background: rgba(255, 255, 255, 1); border-color: #FF6600; }
-        .visitor-badge-area { display: flex; align-items: center; justify-content: center; margin-top: 1rem; opacity: 0.8; }
+        .dark .region-box:hover { background: rgba(51, 65, 85, 1); border-color: #FF6600; }
+        .visitor-badge-area { display: flex; align-items: center; justify-content: center; opacity: 0.8; }
         @media (min-width: 768px) { .visitor-badge-area { justify-content: flex-end; margin-top: 0; } }
         .custom-scrollbar::-webkit-scrollbar { width: 6px; height: 4px; }
         .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
         .custom-scrollbar::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 20px; }
+        .dark .custom-scrollbar::-webkit-scrollbar-thumb { background: #334155; }
         
         /* 지도용 스타일 */
         .cursor-grab { cursor: grab; }
@@ -287,19 +315,38 @@
             transition: all 0.5s ease-in-out;
             overflow: hidden;
         }
+
+        .dark-mode-toggle {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            border-radius: 99px;
+            font-size: 12px;
+            font-weight: 800;
+            transition: all 0.2s;
+            background-color: #f1f5f9;
+            color: #475569;
+            border: 1px solid #e2e8f0;
+        }
+        .dark .dark-mode-toggle {
+            background-color: #1e293b;
+            color: #f1f5f9;
+            border-color: #334155;
+        }
     </style>
 </head>
 <body id="top" class="p-0 overflow-hidden">
     <!-- 입장 안내 팝업 -->
     <div id="entry-popup-overlay">
-        <div class="bg-white rounded-[2rem] p-8 md:p-12 max-w-md w-full text-center shadow-2xl border border-gray-100 scale-95 md:scale-100 transition-transform">
+        <div class="bg-white dark:bg-slate-800 rounded-[2rem] p-8 md:p-12 max-w-md w-full text-center shadow-2xl border border-gray-100 dark:border-slate-700 scale-95 md:scale-100 transition-transform">
             <div class="mb-6 flex justify-center text-[#FF6600]">
                 <i data-lucide="alert-circle" class="w-12 h-12"></i>
             </div>
-            <h2 class="text-xl md:text-2xl font-black mb-4 tracking-tight leading-snug">
+            <h2 class="text-xl md:text-2xl font-black mb-4 tracking-tight leading-snug dark:text-white">
                 이 홈페이지는 개혁신당의<br>공식 홈페이지가 아닙니다.
             </h2>
-            <p class="text-gray-500 font-semibold mb-8 text-sm md:text-base leading-relaxed">
+            <p class="text-gray-500 dark:text-slate-400 font-semibold mb-8 text-sm md:text-base leading-relaxed">
                 출마 선언 및 공천 확정인 후보들만 정리한<br>비공식 정보 사이트 입니다.
             </p>
             <button onclick="closeEntryPopup()" 
@@ -313,7 +360,7 @@
     <header class="header-gradient pt-8 pb-2 px-4 md:pt-12 md:pb-3 md:px-10 mb-0">
         <div class="max-w-7xl mx-auto">
             <div class="flex justify-between items-center mb-10">
-                <div class="bg-white border-2 border-[#FF6600] px-4 py-1.5 md:px-8 md:py-3 rounded-full shadow-sm">
+                <div class="bg-white dark:bg-slate-900 border-2 border-[#FF6600] px-4 py-1.5 md:px-8 md:py-3 rounded-full shadow-sm">
                     <span id="last-update-date" class="nrp-orange font-black text-xs md:text-xl tracking-tighter whitespace-nowrap">
                         최종 업데이트 : 2026. 02. 07
                     </span>
@@ -323,29 +370,29 @@
                 </div>
             </div>
             <div class="text-center">
-                <h1 class="text-2xl md:text-5xl font-black mb-4 tracking-tighter text-gray-900 leading-tight md:leading-[1.1]">
+                <h1 class="text-2xl md:text-5xl font-black mb-4 tracking-tighter text-gray-900 dark:text-white leading-tight md:leading-[1.1]">
                     <span class="block mb-2 md:mb-4">
                         <span class="tracking-[-0.12em]">6 · 3</span> 지방선거 · 재보궐선거
                     </span>
                     <span class="block">출마 · 공천 현황</span>
                 </h1>
-                <p class="text-gray-500 text-sm md:text-lg font-semibold mb-6 text-center">제9회 전국동시지방선거를 향한 개혁의 도전</p>
+                <p class="text-gray-500 dark:text-slate-400 text-sm md:text-lg font-semibold mb-6 text-center">제9회 전국동시지방선거를 향한 개혁의 도전</p>
                 <div class="text-center">
                     <a href="https://apply.reformparty.kr/" target="_blank" 
-                       class="inline-block bg-white border-2 border-[#FF6600] nrp-orange px-8 py-3 md:px-14 md:py-4 rounded-2xl text-sm md:text-xl font-black hover:bg-[#FF6600] hover:text-white transition-all duration-300 shadow-md hover:shadow-xl transform hover:-translate-y-1">
+                       class="inline-block bg-white dark:bg-slate-900 border-2 border-[#FF6600] nrp-orange px-8 py-3 md:px-14 md:py-4 rounded-2xl text-sm md:text-xl font-black hover:bg-[#FF6600] hover:text-white transition-all duration-300 shadow-md hover:shadow-xl transform hover:-translate-y-1">
                          개혁신당 온라인 공천심사 시스템 들어가기
                     </a>
                     
                     <div class="mt-8 space-y-4">
-                        <div class="max-w-2xl mx-auto bg-white border border-orange-200 rounded-[2rem] p-6 md:p-8 shadow-sm">
+                        <div class="max-w-2xl mx-auto bg-white dark:bg-slate-800 border border-orange-200 dark:border-orange-900/50 rounded-[2rem] p-6 md:p-8 shadow-sm">
                             <div class="flex items-center justify-center gap-2 mb-4">
                                 <i data-lucide="alert-triangle" class="w-5 h-5 md:w-6 md:h-6 text-[#FF6600]"></i>
                                 <span class="text-[#FF6600] text-lg md:text-2xl font-black tracking-tight">주의사항</span>
                             </div>
-                            <div class="inline-block text-left space-y-2 text-gray-700 text-xs md:text-sm font-bold 상세 정보 보기">
+                            <div class="inline-block text-left space-y-2 text-gray-700 dark:text-slate-300 text-xs md:text-sm font-bold">
                                 <p class="flex items-start gap-1.5">
                                     <span class="mt-1.5 flex-shrink-0 w-1 h-1 rounded-full bg-[#FF6600]"></span>
-                                    <span>이 페이지는 <strong class="underline font-black text-gray-900">개혁신당과 관련 없는 비공식 페이지</strong>입니다.</span>
+                                    <span>이 페이지는 <strong class="underline font-black text-gray-900 dark:text-white">개혁신당과 관련 없는 비공식 페이지</strong>입니다.</span>
                                 </p>
                                 <p class="flex items-start gap-1.5">
                                     <span class="mt-1.5 flex-shrink-0 w-1 h-1 rounded-full bg-[#FF6600]"></span>
@@ -359,11 +406,11 @@
                         </div>
 
                         <!-- 참고사항 섹션 -->
-                        <div class="max-w-2xl mx-auto bg-gray-50 border border-gray-100 rounded-[2rem] shadow-sm overflow-hidden transition-all">
-                            <div onclick="toggleNoticeVisibility()" class="p-6 md:p-8 flex flex-col items-center justify-center cursor-pointer hover:bg-gray-100 transition-colors group">
+                        <div class="max-w-2xl mx-auto bg-gray-50 dark:bg-slate-800/50 border border-gray-100 dark:border-slate-700 rounded-[2rem] shadow-sm overflow-hidden transition-all">
+                            <div onclick="toggleNoticeVisibility()" class="p-6 md:p-8 flex flex-col items-center justify-center cursor-pointer hover:bg-gray-100 dark:hover:bg-slate-700/50 transition-colors group">
                                 <div class="flex items-center justify-center gap-2 mb-2">
                                     <i data-lucide="info" class="w-5 h-5 md:w-5 md:h-5 text-gray-400 group-hover:text-[#FF6600] transition-colors"></i>
-                                    <span class="text-gray-800 text-sm md:text-xl font-black tracking-tight">공천 심사 · 발표 관련 참고사항</span>
+                                    <span class="text-gray-800 dark:text-slate-200 text-sm md:text-xl font-black tracking-tight">공천 심사 · 발표 관련 참고사항</span>
                                 </div>
                                 <div class="flex items-center gap-1.5 text-[10px] md:text-xs font-bold text-gray-400">
                                     <span>[펼치기 · 닫기]</span>
@@ -375,21 +422,21 @@
                             
                             <div id="notice-collapsible-content" class="hidden opacity-0 h-0 collapsible-container px-6 pb-8 md:px-8 md:pb-10">
                                 <div class="flex flex-col gap-2.5 items-center">
-                                    <p class="text-gray-700 bg-white border border-orange-100 rounded-xl py-2.5 px-4 w-full max-w-lg text-center text-[10px] md:text-sm font-bold shadow-sm">
+                                    <p class="text-gray-700 dark:text-slate-300 bg-white dark:bg-slate-900 border border-orange-100 dark:border-orange-900/30 rounded-xl py-2.5 px-4 w-full max-w-lg text-center text-[10px] md:text-sm font-bold shadow-sm">
                                         <span class="text-[#FF6600]">제2차 공천결과 : 18명</span> (02.05.) | 
-                                        <a href="https://rallypoint.kr/board/notice/225284" target="_blank" class="underline hover:text-gray-900 transition-colors font-black ml-1">공고보기</a>
+                                        <a href="https://rallypoint.kr/board/notice/225284" target="_blank" class="underline hover:text-gray-900 dark:hover:text-white transition-colors font-black ml-1">공고보기</a>
                                     </p>
-                                    <p class="text-gray-700 bg-white border border-orange-100 rounded-xl py-2.5 px-4 w-full max-w-lg text-center text-[10px] md:text-sm font-bold shadow-sm">
+                                    <p class="text-gray-700 dark:text-slate-300 bg-white dark:bg-slate-900 border border-orange-100 dark:border-orange-900/30 rounded-xl py-2.5 px-4 w-full max-w-lg text-center text-[10px] md:text-sm font-bold shadow-sm">
                                         <span class="text-[#FF6600]">제1차 공천결과 : 29명</span> (01.26.) | 
-                                        <a href="https://rallypoint.kr/board/notice/224559" target="_blank" class="underline hover:text-gray-900 transition-colors font-black ml-1">공고보기</a>
+                                        <a href="https://rallypoint.kr/board/notice/224559" target="_blank" class="underline hover:text-gray-900 dark:hover:text-white transition-colors font-black ml-1">공고보기</a>
                                     </p>
-                                    <p class="text-gray-700 bg-white border border-gray-100 rounded-xl py-2.5 px-4 w-full max-w-lg text-center text-[10px] md:text-sm font-bold shadow-sm">
+                                    <p class="text-gray-700 dark:text-slate-300 bg-white dark:bg-slate-900 border border-gray-100 dark:border-slate-800 rounded-xl py-2.5 px-4 w-full max-w-lg text-center text-[10px] md:text-sm font-bold shadow-sm">
                                         '필수서류 제출완료 후보 총 131명' : 이기인 총장 (01.22.) | 
-                                        <a href="https://www.pennmike.com/news/articleView.html?idxno=114046" target="_blank" class="underline hover:text-gray-900 transition-colors font-black ml-1">기사보기</a>
+                                        <a href="https://www.pennmike.com/news/articleView.html?idxno=114046" target="_blank" class="underline hover:text-gray-900 dark:hover:text-white transition-colors font-black ml-1">기사보기</a>
                                     </p>
-                                    <p class="text-gray-700 bg-white border border-gray-100 rounded-xl py-2.5 px-4 w-full max-w-lg text-center text-[10px] md:text-sm font-bold shadow-sm">
+                                    <p class="text-gray-700 dark:text-slate-300 bg-white dark:bg-slate-900 border border-gray-100 dark:border-slate-800 rounded-xl py-2.5 px-4 w-full max-w-lg text-center text-[10px] md:text-sm font-bold shadow-sm">
                                         '이미 수백명의 후보자들이 있다' : 이준석 대표 (01.13.) | 
-                                        <a href="https://www.youtube.com/live/9HRqgZ0Lghw?si=268vprQF1QLCHBoc&t=2065" target="_blank" class="underline hover:text-gray-900 transition-colors font-black ml-1">영상보기</a>
+                                        <a href="https://www.youtube.com/live/9HRqgZ0Lghw?si=268vprQF1QLCHBoc&t=2065" target="_blank" class="underline hover:text-gray-900 dark:hover:text-white transition-colors font-black ml-1">영상보기</a>
                                     </p>
                                 </div>
                             </div>
@@ -400,14 +447,14 @@
         </div>
     </header>
 
-    <!-- 서울 지도 대시보드 영역 (모바일에서도 보이도록 hidden 제거) -->
+    <!-- 서울 지도 대시보드 영역 -->
     <div class="max-w-7xl mx-auto px-4 md:px-10 mt-6 mb-4 block">
-        <div onclick="toggleMapVisibility()" class="flex justify-between items-center bg-white border border-orange-100 rounded-2xl p-5 mb-3 shadow-sm cursor-pointer hover:bg-orange-50 transition-all group">
+        <div onclick="toggleMapVisibility()" class="flex justify-between items-center bg-white dark:bg-slate-800 border border-orange-100 dark:border-slate-700 rounded-2xl p-5 mb-3 shadow-sm cursor-pointer hover:bg-orange-50 dark:hover:bg-slate-700/50 transition-all group">
             <div class="flex items-center gap-3">
-                <div class="bg-orange-100 p-2 rounded-xl group-hover:bg-[#FF6600] transition-colors">
+                <div class="bg-orange-100 dark:bg-orange-900/30 p-2 rounded-xl group-hover:bg-[#FF6600] transition-colors">
                     <i data-lucide="map" class="w-5 h-5 text-[#FF6600] group-hover:text-white transition-colors"></i>
                 </div>
-                <span class="font-black text-gray-800 text-lg">서울 기초의회 선거구 지도 (beta)<span id="seoul-map-new-badge" class="new-badge">NEW</span></span>
+                <span class="font-black text-gray-800 dark:text-slate-100 text-lg">서울 기초의회 선거구 지도 (beta)<span id="seoul-map-new-badge" class="new-badge">NEW</span></span>
             </div>
             <div class="flex items-center gap-2 text-sm font-bold text-gray-400">
                 <span id="map-toggle-label">[펼치기 · 닫기]</span>
@@ -422,14 +469,14 @@
         </div>
     </div>
 
-    <!-- 경기 기초의회 선거구 지도 대시보드 영역 (PC 전용 유지) -->
-    <div class="max-w-7xl mx-auto px-4 md:px-10 mt-4 mb-8 hidden lg:block">
-        <div onclick="toggleGyeonggiMapVisibility()" class="flex justify-between items-center bg-white border border-orange-100 rounded-2xl p-5 mb-3 shadow-sm cursor-pointer hover:bg-orange-50 transition-all group">
+    <!-- 경기 기초의회 선거구 지도 대시보드 영역 -->
+    <div class="max-w-7xl mx-auto px-4 md:px-10 mt-4 mb-8 block">
+        <div onclick="toggleGyeonggiMapVisibility()" class="flex justify-between items-center bg-white dark:bg-slate-800 border border-orange-100 dark:border-slate-700 rounded-2xl p-5 mb-3 shadow-sm cursor-pointer hover:bg-orange-50 dark:hover:bg-slate-700/50 transition-all group">
             <div class="flex items-center gap-3">
-                <div class="bg-orange-100 p-2 rounded-xl group-hover:bg-[#FF6600] transition-colors">
+                <div class="bg-orange-100 dark:bg-orange-900/30 p-2 rounded-xl group-hover:bg-[#FF6600] transition-colors">
                     <i data-lucide="map-pinned" class="w-5 h-5 text-[#FF6600] group-hover:text-white transition-colors"></i>
                 </div>
-                <span class="font-black text-gray-800 text-lg">경기 기초의회 선거구 지도 (beta)<span id="gyeonggi-map-new-badge" class="new-badge">NEW</span></span>
+                <span class="font-black text-gray-800 dark:text-slate-100 text-lg">경기 기초의회 선거구 지도 (beta)<span id="gyeonggi-map-new-badge" class="new-badge">NEW</span></span>
             </div>
             <div class="flex items-center gap-2 text-sm font-bold text-gray-400">
                 <span id="gyeonggi-map-toggle-label">[펼치기 · 닫기]</span>
@@ -447,15 +494,15 @@
     <div class="max-w-7xl mx-auto px-4 md:px-10">
         <!-- 네비게이션 바 -->
         <nav class="sticky top-4 z-50 mb-6 flex justify-center mt-2">
-            <div class="nav-container flex items-center bg-white/90 backdrop-blur-md shadow-lg border border-gray-100 rounded-2xl p-1 md:p-1.5 overflow-x-auto whitespace-nowrap gap-0">
+            <div class="nav-container flex items-center bg-white/90 dark:bg-slate-800/90 backdrop-blur-md shadow-lg border border-gray-100 dark:border-slate-700 rounded-2xl p-1 md:p-1.5 overflow-x-auto whitespace-nowrap gap-0">
                 <button onclick="scrollToId('top')" class="nav-btn" id="btn-original">홈</button>
-                <div class="w-px h-4 bg-gray-200 mx-0.5 flex-shrink-0"></div>
+                <div class="w-px h-4 bg-gray-200 dark:bg-slate-700 mx-0.5 flex-shrink-0"></div>
                 <button onclick="scrollToId('provincial-exec')" class="nav-btn">광역단체장</button>
                 <button onclick="scrollToId('local-exec')" class="nav-btn">기초단체장</button>
                 <button onclick="scrollToId('provincial-council')" class="nav-btn">광역의원</button>
                 <button onclick="scrollToId('local-council')" class="nav-btn">기초의원</button>
                 <button onclick="scrollToId('by-election')" class="nav-btn" id="nav-by-election">재보궐선거</button>
-                <div class="w-px h-4 bg-gray-200 mx-0.5 flex-shrink-0"></div>
+                <div class="w-px h-4 bg-gray-200 dark:bg-slate-700 mx-0.5 flex-shrink-0"></div>
                 <button onclick="renderRegionView()" class="nav-btn" id="btn-region">지역별보기</button>
             </div>
         </nav>
@@ -463,7 +510,7 @@
         <main id="content-area"></main>
 
         <!-- 요약 현황 푸터 -->
-        <footer id="summary" class="mt-16 bg-gray-900 text-white rounded-[1.5rem] md:rounded-[2.5rem] p-6 md:p-10 shadow-2xl border-b-8 border-orange-500">
+        <footer id="summary" class="mt-16 bg-gray-900 dark:bg-slate-900 text-white rounded-[1.5rem] md:rounded-[2.5rem] p-6 md:p-10 shadow-2xl border-b-8 border-orange-500">
             <div class="flex flex-col gap-8 w-full">
                 <div class="flex flex-col lg:flex-row justify-between items-center gap-6">
                     <div class="text-center lg:text-left">
@@ -489,14 +536,20 @@
             </div>
         </footer>
 
-        <div class="mt-12 mb-16 flex flex-col md:flex-row justify-between items-center gap-4 border-t border-gray-200 pt-8 pb-8 text-gray-400">
-            <div class="text-center md:text-left">
-                <p class="text-[10px] md:text-xs font-medium leading-relaxed">
-                    이 페이지는 <strong class="text-gray-500 font-bold">개혁신당과 관련 없는 비공식 페이지</strong>입니다.<br>
-                    내용 추가, 오류 수정, 정보 제거를 원하시면 <a href="https://rallypoint.kr" target="_blank" class="underline hover:text-gray-600 transition-colors">당원게시판</a>으로 문의주세요. (닉네임: 이즌석)
+        <div class="mt-12 mb-16 flex flex-col md:flex-row justify-between items-center gap-8 border-t border-gray-200 dark:border-slate-800 pt-8 pb-8 text-gray-400 dark:text-slate-500">
+            <!-- 좌측: 비공식 안내 및 다크모드 버튼 -->
+            <div class="flex flex-col items-center md:items-start gap-4">
+                <p class="text-[10px] md:text-xs font-medium leading-relaxed text-center md:text-left">
+                    이 페이지는 <strong class="text-gray-500 dark:text-slate-400 font-bold">개혁신당과 관련 없는 비공식 페이지</strong>입니다.<br>
+                    내용 추가, 오류 수정, 정보 제거를 원하시면 <a href="https://rallypoint.kr" target="_blank" class="underline hover:text-gray-600 dark:hover:text-slate-300 transition-colors">당원게시판</a>으로 문의주세요. (닉네임: 이즌석)
                 </p>
+                <button onclick="toggleDarkMode()" class="dark-mode-toggle shadow-sm hover:shadow-md active:scale-95 transition-all">
+                    <span id="dark-mode-icon-wrapper"><i data-lucide="moon" class="w-3 h-3"></i></span>
+                    <span id="dark-mode-text">다크모드로 보기</span>
+                </button>
             </div>
-            <div class="visitor-badge-area">
+            <!-- 우측: HITS 배지 -->
+            <div class="visitor-badge-area shrink-0">
                 <a href="https://myhits.vercel.app" target="_blank">
                     <img src="https://myhits.vercel.app/api/hit/https%3A%2F%2Frestep.cc%2F?color=gray&label=HITS%F0%9F%A7%A1&size=small" alt="HITS🧡" />
                 </a>
@@ -507,11 +560,11 @@
     <!-- 상세 프로필 팝업 -->
     <div id="profile-modal-overlay" onclick="closeProfileModal(event)">
         <div class="modal-content" onclick="event.stopPropagation()">
-            <div class="relative h-72 bg-gray-100 overflow-hidden" id="modal-photo-area"></div>
+            <div class="relative h-72 bg-gray-100 dark:bg-slate-700 overflow-hidden" id="modal-photo-area"></div>
             <div class="p-8 text-center">
                 <h2 class="text-2xl font-black mb-1 tracking-wider" id="modal-name">후보 이름</h2>
                 <p class="text-[#FF6600] font-bold text-sm mb-1 leading-tight" id="modal-office">출마선언</p>
-                <p class="text-gray-400 font-medium text-[11px] mb-6" id="modal-subregion"></p>
+                <p class="text-gray-400 dark:text-slate-400 font-medium text-[11px] mb-6" id="modal-subregion"></p>
                 <div class="flex justify-center gap-4 mb-8" id="modal-sns-container">
                     <a id="modal-fb" href="#" target="_blank" class="sns-btn fb"><i data-lucide="facebook"></i></a>
                     <a id="modal-ig" href="#" target="_blank" class="sns-btn ig"><i data-lucide="instagram"></i></a>
@@ -521,13 +574,40 @@
                     <a id="modal-site" href="#" target="_blank" class="sns-btn site"><i data-lucide="globe"></i></a>
                 </div>
                 <a id="modal-declaration" href="#" target="_blank" class="block w-full py-4 nrp-bg-orange text-white rounded-2xl font-black text-lg shadow-lg hover:shadow-orange-200 transition-all">출마선언 보기</a>
-                <button onclick="closeProfileModal()" class="mt-6 text-gray-400 text-sm font-bold hover:text-gray-600 tracking-tight">창 닫기</button>
+                <button onclick="closeProfileModal()" class="mt-6 text-gray-400 dark:text-slate-500 text-sm font-bold hover:text-gray-600 dark:hover:text-slate-300 tracking-tight">창 닫기</button>
             </div>
         </div>
     </div>
 
     <!-- 기본 스크립트 -->
     <script>
+        /* 다크모드 관리 */
+        function initDarkMode() {
+            const isDark = localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
+            if (isDark) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+            updateDarkModeUI(isDark);
+        }
+
+        window.toggleDarkMode = function() {
+            const isDark = document.documentElement.classList.toggle('dark');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            updateDarkModeUI(isDark);
+        };
+
+        function updateDarkModeUI(isDark) {
+            const text = document.getElementById('dark-mode-text');
+            const iconWrapper = document.getElementById('dark-mode-icon-wrapper');
+            if (text && iconWrapper) {
+                text.innerText = isDark ? '라이트모드로 보기' : '다크모드로 보기';
+                iconWrapper.innerHTML = isDark ? '<i data-lucide="sun" class="w-3 h-3 text-orange-400"></i>' : '<i data-lucide="moon" class="w-3 h-3 text-slate-500"></i>';
+                lucide.createIcons();
+            }
+        }
+
         /* * 전역 함수 - 외부에서 호출 가능하도록 정의 */
         window.closeEntryPopup = function() {
             const overlay = document.getElementById('entry-popup-overlay');
@@ -575,7 +655,6 @@
             if (isHidden) {
                 content.classList.remove('hidden');
                 setTimeout(() => {
-                    // 모바일 대응: 모바일은 세로로 길어지므로 높이값 조정
                     const isMobile = window.innerWidth < 1024;
                     content.style.height = isMobile ? '900px' : '550px';
                     content.style.opacity = '1';
@@ -599,7 +678,8 @@
             if (isHidden) {
                 content.classList.remove('hidden');
                 setTimeout(() => {
-                    content.style.height = '650px';
+                    const isMobile = window.innerWidth < 1024;
+                    content.style.height = isMobile ? '900px' : '650px';
                     content.style.opacity = '1';
                     iconWrapper.style.transform = 'rotate(180deg)';
                 }, 10);
@@ -679,7 +759,7 @@
             { name: "박현겸", region: "대전 동구", metropolitan: "대전광역시", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "중앙동, 효동, 신인동, 홍도동, 삼성동, 산내동", bio: ["대전시당 미래희망위원장"], photo: "https://i.imgur.com/TVxC1Kl.jpeg", district: "가", sns: { ig: "https://www.instagram.com/white46ant/" }, decl: "https://www.youtube.com/watch?v=uyHmrX9hypw", dateAdded: "2025-12-01" },
             { name: "성진영", region: "대구 중구", metropolitan: "대구광역시", category: "기초의원", office: "기초의원 후보", subRegion: "동인동, 삼덕동, 성내1동, 남산1동, 대봉1동, 대봉2동", bio: ["대구시당 미래희망위원회 위원", "캠퍼스지부 경북대학교 지부장"], photo: "https://i.imgur.com/fHwNOji.png", district: "가", sns: { ig: "https://www.instagram.com/jyseong_gyeongsan/" }, decl: "https://rallypoint.kr/board/politics-free/222667", dateAdded: "2026-01-15" },
             { name: "윤서진", region: "대전 유성구", metropolitan: "대전광역시", category: "기초의원", office: "기초의원 후보", subRegion: "온천1동, 온천2동, 노은1동", bio: ["중앙당 미래희망위원회 위원", "대전시당 부위원장", "제35대 KAIST 총학생회장"], photo: "https://i.imgur.com/N24OK0K.jpeg", district: "나", sns: { ig: "https://www.instagram.com/seojin_ys/" }, decl: "https://www.youtube.com/watch?v=YBVriZc5RQc", dateAdded: "2026-01-17" },
-            { name: "최진형", region: "경기 안산시", metropolitan: "경기도", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "사동, 사이동, 해양동, 본오3동", bio: ["안산시 가선거구 후보"], photo: "https://i.imgur.com/nihgF8a.png", district: "가", sns: { ig: "https://www.instagram.com/jhchoi_ansan4/" }, decl: "https://rallypoint.kr/board/politics-free/223063", dateAdded: "2026-01-26" },
+            { name: "최진형", region: "경기 안산시", metropolitan: "경기도", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "본오3동, 사동, 사이동, 해양동", bio: ["안산시 가선거구 후보"], photo: "https://i.imgur.com/nihgF8a.png", district: "가", sns: { ig: "https://www.instagram.com/jhchoi_ansan4/" }, decl: "https://rallypoint.kr/board/politics-free/223063", dateAdded: "2026-01-26" },
             { name: "이강민", region: "충남 천안시", metropolitan: "충청남도", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "불당1동, 불당2동", bio: ["대전시당 정책위원", "대전시당 자문위원", "21대 대선 충남 선대본부 위원", "충남개혁정책네트워크 대표"], photo: "https://i.imgur.com/rpUTBbK.png", district: "라", cardFit: "cover", cardPos: "center 15%", sns: { fb: "https://www.facebook.com/leangmin4473", blog: "https://blog.naver.com/buldang_leekangmin" }, decl: "https://rallypoint.kr/board/politics-free/223549", dateAdded: "2025-12-01" },
             { name: "고재윤", region: "충남 당진시", metropolitan: "충청남도", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "고대면, 석문면, 당진1동, 당진3동", bio: ["대전시당 정책위원", "대전시당 자문위원", "21대 대선 충남 선대본부 위원", "자원봉사단체 청춘 대표"], photo: "https://i.imgur.com/sJf2zpM.jpeg", district: "라", sns: { fb: "https://www.facebook.com/profile.php?id=1000075309062913", ig: "https://www.instagram.com/yn._.jae/", blog: "https://m.blog.naver.com/kojy9402?tab=1", site: "https://litt.ly/gojaeyun" }, decl: "https://www.instagram.com/reel/DUaehbcAUci/?igsh=M2Y5aWdreGsxM2Zi", dateAdded: "2026-02-05" },
             { name: "황시현", region: "충남 천안시", metropolitan: "충청남도", category: "기초의원", office: "기초의원 후보", subRegion: "부성2동", bio: ["21대 대선 충남 선대본 홍보위원", "충남개혁정책네트워크 조직국장", "청년 커뮤니티 '청연' 대표"], photo: "https://i.imgur.com/3yWK8BF.png", district: "사", sns: { fb: "#" }, decl: "https://rallypoint.kr/board/politics-free/223942", dateAdded: "2026-01-15" },
@@ -706,9 +786,9 @@
             if (c.category === "기초의원") {
                 const parts = c.region.split(' ');
                 const cityOrGu = parts[parts.length - 1];
-                baseOffice = cityOrGu + "의원"; // '구의원'으로 변경
+                baseOffice = cityOrGu + "의회"; 
             }
-            return baseOffice.replace(/\s*후보\s*$/, ""); // '의회' 강제 변환 제거
+            return baseOffice.replace(/\s*후보\s*$/, ""); 
         }
 
         const councilSort = (a, b) => (a.region || "").localeCompare(b.region || "") || (a.district || "").localeCompare(b.district || "");
@@ -723,7 +803,7 @@
                 let gridHtml = '';
                 Object.keys(regionPriority).forEach(region => {
                     const count = candidates.filter(c => c.metropolitan === region || c.region === region).length;
-                    gridHtml += `<div class="region-box cursor-pointer" onclick="renderRegionView('${region}')"><p class="text-gray-500 text-[10px] font-bold">${shortNameMap[region]}</p><p class="text-lg font-black ${count > 0 ? 'text-[#FF6600]' : 'text-gray-700'}">${count}</p></div>`;
+                    gridHtml += `<div class="region-box cursor-pointer" onclick="renderRegionView('${region}')"><p class="text-gray-500 text-[10px] font-bold">${shortNameMap[region]}</p><p class="text-lg font-black ${count > 0 ? 'text-[#FF6600]' : 'text-gray-700 dark:text-slate-400'}">${count}</p></div>`;
                 });
                 regionGrid.innerHTML = gridHtml;
             }
@@ -762,7 +842,6 @@
             const isConfirmed = (c.status === "후보" && c.name !== "김성민" && c.name !== "이수찬");
             let statusLabel = isConfirmed ? "후보" : (c.name === "송진영" ? "출마예정" : ((c.decl && c.decl !== "#") ? "출마선언" : "출마예정"));
             
-            // 상세 명칭 매핑 로직 (모달 전용)
             let displayOfficeLabel = "";
             if (c.name === "양해두") displayOfficeLabel = "제주특별자치도의회 제주시 외도동·이호동·도두동 선거구 후보";
             else if (c.name === "이건우") displayOfficeLabel = "제주특별자치도의회 제주시 노형동 선거구 후보";
@@ -896,11 +975,11 @@
         }
 
         window.onload = function() {
+            initDarkMode();
             const diff = Math.ceil((new Date('2026-06-03') - new Date().setHours(0,0,0,0)) / (1000*60*60*24));
             const badge = document.getElementById('d-day-badge');
             if (badge) badge.innerText = diff > 0 ? `D-${diff}` : (diff === 0 ? 'D-Day' : `D+${Math.abs(diff)}`);
             
-            // 지도 NEW 뱃지 표시 제어 (2026-02-21까지 유지)
             const expiryDate = new Date('2026-02-22'); 
             const today = new Date();
             if (today >= expiryDate) {
@@ -933,7 +1012,7 @@
                 leftTagText = (c.name === "양해두" || c.name === "이건우") ? "제주" : (c.shortMetro || c.region);
             }
             let rightTagText = c.district || (c.constituency === "비례" ? "비례" : "");
-            let districtTag = rightTagText ? `<div class="district-tag">${rightTagText}</div>` : "";
+            let districtTag = rightTagText ? `<div class="district-tag dark:bg-slate-900 dark:text-orange-500 dark:border-orange-500">${rightTagText}</div>` : "";
             const isNoPhoto = !c.photo || c.photo.trim() === "";
             const fit = c.cardFit || "cover";
             const pos = c.cardPos || "center top"; 
@@ -954,7 +1033,7 @@
             else statusLabel = (c.decl && c.decl !== "#") ? "출마선언" : "출마예정";
 
             return `
-                <div onclick="openProfileModal('${c.name}')" class="bg-white rounded-[1rem] md:rounded-[1.5rem] shadow-md border border-gray-100 card-hover transition-all duration-500 overflow-hidden flex flex-col h-full cursor-pointer">
+                <div onclick="openProfileModal('${c.name}')" class="bg-white dark:bg-slate-800 rounded-[1rem] md:rounded-[1.5rem] shadow-md border border-gray-100 dark:border-slate-700 card-hover transition-all duration-500 overflow-hidden flex flex-col h-full cursor-pointer">
                     <div class="photo-frame">
                         <div class="region-tag">${leftTagText}</div>
                         ${districtTag}
@@ -962,7 +1041,7 @@
                         ${photoContent}
                     </div>
                     <div class="pt-2 px-3 pb-4 md:pt-4 md:px-6 md:pb-6 text-center flex flex-col flex-grow">
-                        <h3 class="text-base md:text-xl font-bold mb-1 tracking-wider flex items-center justify-center">${c.name}${newBadge}</h3>
+                        <h3 class="text-base md:text-xl font-bold mb-1 dark:text-white tracking-wider flex items-center justify-center">${c.name}${newBadge}</h3>
                         <div class="bio-text" ${bioStyleAttr}>${bioHtml}</div>
                         <div class="mt-auto nrp-bg-orange text-white py-2 rounded-xl font-bold text-[10px] md:text-sm leading-tight text-center">${displayOffice} ${statusLabel}</div>
                     </div>
@@ -975,7 +1054,6 @@
     <script type="text/babel">
         const { useState, useEffect, useRef, useMemo } = React;
 
-        // --- 서울 지도용 기초의원 선거구 데이터 ---
         const SEOUL_INITIAL_DISTRICTS = {
             "종로구 가선거구": { dongs: ["청운효자동", "사직동", "무악동", "교남동"], seats: 2 },
             "종로구 나선거구": { dongs: ["삼청동", "부암동", "평창동", "가회동"], seats: 2 },
@@ -1300,6 +1378,7 @@
         };
 
         const EMPTY_GRAY_PALETTE = ["#cbd5e1", "#b1b9c6", "#94a3b8", "#a8b2c1", "#bdc6d4"];
+        const EMPTY_GRAY_PALETTE_DARK = ["#1e293b", "#334155", "#0f172a", "#111827", "#1e1b4b"];
         const ACTIVE_ORANGE_PALETTE = ["#fb923c", "#f97316"]; 
         const CITY_ORDER = ["가평군", "고양시", "과천시", "광명시", "광주시", "구리시", "군포시", "김포시", "남양주시", "동두천시", "부천시", "성남시", "수원시", "시흥시", "안산시", "안성시", "안양시", "양주시", "양평군", "여주시", "연천군", "오산시", "용인시", "의왕시", "의정부시", "이천시", "파주시", "평택시", "포천시", "하남시", "화성시"];
 
@@ -1318,7 +1397,6 @@
                 return (c.decl && c.decl !== "#") ? "출마선언" : "출마예정";
             };
 
-            // 상세 명칭 매핑 로직 (지도 대시보드 전용)
             let displayOfficeLabel = "";
             if (can.name === "양해두") displayOfficeLabel = "제주특별자치도의회 제주시 외도동·이호동·도두동 선거구 후보";
             else if (can.name === "이건우") displayOfficeLabel = "제주특별자치도의회 제주시 노형동 선거구 후보";
@@ -1329,7 +1407,7 @@
                 const regionParts = can.region.split(' ');
                 const cityName = regionParts[regionParts.length - 1]; 
                 const districtLabel = can.district ? ` ${can.district}선거구` : "";
-                displayOfficeLabel = `${cityName}의원${districtLabel} ${getStatusLabel(can)}`; // '의원'으로 변경
+                displayOfficeLabel = `${cityName}의회${districtLabel} ${getStatusLabel(can)}`;
             }
 
             useEffect(() => {
@@ -1337,26 +1415,26 @@
             }, [can]);
 
             return (
-                <div className="h-full flex flex-col overflow-hidden text-slate-800">
+                <div className="h-full flex flex-col overflow-hidden text-slate-800 dark:text-slate-200">
                     <div className="flex flex-col sm:flex-row h-auto lg:h-[45%] shrink-0 gap-6">
-                        <div className="w-full sm:w-[40%] aspect-square sm:aspect-auto bg-orange-50 border border-orange-100 rounded-2xl flex items-center justify-center shadow-inner overflow-hidden shrink-0">
+                        <div className="w-full sm:w-[40%] aspect-square sm:aspect-auto bg-orange-50 dark:bg-slate-700 border border-orange-100 dark:border-slate-600 rounded-2xl flex items-center justify-center shadow-inner overflow-hidden shrink-0">
                             {can.photo ? (
                                 <img src={can.photo} className="w-full h-full object-cover" alt={can.name} />
                             ) : (
-                                <div className="flex flex-col items-center justify-center text-orange-200">
+                                <div className="flex flex-col items-center justify-center text-orange-200 dark:text-slate-500">
                                     <i data-lucide="user" className="w-16 h-16 opacity-30"></i>
                                     <span className="text-[10px] font-black uppercase tracking-widest mt-2">No Profile</span>
                                 </div>
                             )}
                         </div>
                         <div className="flex-1 flex flex-col items-center justify-center text-center py-2">
-                            <h3 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-wider mb-2">{can.name}</h3>
-                            <div className="px-3 py-1 bg-orange-100 text-orange-600 rounded-lg text-xs font-black uppercase mb-4">{displayOfficeLabel}</div>
+                            <h3 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-wider mb-2">{can.name}</h3>
+                            <div className="px-3 py-1 bg-orange-100 dark:bg-orange-900/40 text-orange-600 dark:text-orange-400 rounded-lg text-xs font-black uppercase mb-4">{displayOfficeLabel}</div>
                             <div className="flex gap-2 mb-4">
-                                {isValidLink(can.sns?.fb) && <a href={can.sns.fb} target="_blank" className="p-2 bg-orange-50 text-orange-600 rounded-lg hover:bg-orange-500 hover:text-white transition-colors border border-orange-100 shadow-sm"><i data-lucide="facebook" className="w-4 h-4"></i></a>}
-                                {isValidLink(can.sns?.ig) && <a href={can.sns.ig} target="_blank" className="p-2 bg-orange-50 text-orange-600 rounded-lg hover:bg-orange-500 hover:text-white transition-colors border border-orange-100 shadow-sm"><i data-lucide="instagram" className="w-4 h-4"></i></a>}
-                                {isValidLink(can.sns?.blog) && <a href={can.sns.blog} target="_blank" className="p-2 bg-orange-50 text-orange-600 rounded-lg hover:bg-orange-500 hover:text-white transition-colors border border-orange-100 shadow-sm"><i data-lucide="link" className="w-4 h-4"></i></a>}
-                                {isValidLink(can.sns?.yt) && <a href={can.sns.yt} target="_blank" className="p-2 bg-orange-50 text-orange-600 rounded-lg hover:bg-orange-500 hover:text-white transition-colors border border-orange-100 shadow-sm"><i data-lucide="youtube" className="w-4 h-4"></i></a>}
+                                {isValidLink(can.sns?.fb) && <a href={can.sns.fb} target="_blank" className="p-2 bg-orange-50 dark:bg-slate-800 text-orange-600 dark:text-orange-400 rounded-lg hover:bg-orange-500 hover:text-white transition-colors border border-orange-100 dark:border-slate-700 shadow-sm"><i data-lucide="facebook" className="w-4 h-4"></i></a>}
+                                {isValidLink(can.sns?.ig) && <a href={can.sns.ig} target="_blank" className="p-2 bg-orange-50 dark:bg-slate-800 text-orange-600 dark:text-orange-400 rounded-lg hover:bg-orange-500 hover:text-white transition-colors border border-orange-100 dark:border-slate-700 shadow-sm"><i data-lucide="instagram" className="w-4 h-4"></i></a>}
+                                {isValidLink(can.sns?.blog) && <a href={can.sns.blog} target="_blank" className="p-2 bg-orange-50 dark:bg-slate-800 text-orange-600 dark:text-orange-400 rounded-lg hover:bg-orange-500 hover:text-white transition-colors border border-orange-100 dark:border-slate-700 shadow-sm"><i data-lucide="link" className="w-4 h-4"></i></a>}
+                                {isValidLink(can.sns?.yt) && <a href={can.sns.yt} target="_blank" className="p-2 bg-orange-50 dark:bg-slate-800 text-orange-600 dark:text-orange-400 rounded-lg hover:bg-orange-500 hover:text-white transition-colors border border-orange-100 dark:border-slate-700 shadow-sm"><i data-lucide="youtube" className="w-4 h-4"></i></a>}
                             </div>
                             {isValidLink(can.decl) && (
                                 <a href={can.decl} target="_blank" className="w-full py-2.5 bg-orange-500 text-white rounded-xl text-sm font-black text-center shadow-lg shadow-orange-200 hover:bg-orange-600 transition-all active:scale-95 flex items-center justify-center gap-2">
@@ -1365,7 +1443,7 @@
                             )}
                         </div>
                     </div>
-                    <div className="flex-1 mt-6 border-t border-orange-50 pt-6 lg:overflow-y-auto custom-scrollbar font-bold text-slate-700 text-left text-sm">
+                    <div className="flex-1 mt-6 border-t border-orange-50 dark:border-slate-700 pt-6 lg:overflow-y-auto custom-scrollbar font-bold text-slate-700 dark:text-slate-300 text-left text-sm">
                         <div className="space-y-3">
                             {can.bio.map((line, idx) => (
                                 <div key={idx} className="flex items-start gap-3">
@@ -1406,8 +1484,9 @@
             };
 
             const getGreyColor = (distName) => {
-                if (!distName) return "#F1F5F9";
-                const greys = ["#E5E7EB", "#DDE1E7", "#D1D5DB", "#E2E8F0", "#CBD5E1"];
+                if (!distName) return document.documentElement.classList.contains('dark') ? "#1e293b" : "#F1F5F9";
+                const isDark = document.documentElement.classList.contains('dark');
+                const greys = isDark ? ["#1e293b", "#0f172a", "#1e1b4b", "#020617", "#030712"] : ["#E5E7EB", "#DDE1E7", "#D1D5DB", "#E2E8F0", "#CBD5E1"];
                 const alphabet = "가나다라마바사아자차카타파하";
                 const parts = distName.split(' ');
                 const letter = parts[1] ? parts[1].replace('선거구', '') : '';
@@ -1474,8 +1553,8 @@
             };
 
             return (
-                <div className="bg-white rounded-[2rem] border border-orange-100 shadow-xl overflow-hidden flex flex-col lg:flex-row h-[900px] lg:h-[550px]">
-                    <div className="h-[400px] lg:h-auto lg:w-[55%] relative bg-slate-50 flex items-center justify-center p-4 border-b lg:border-b-0 lg:border-r border-orange-50 shrink-0">
+                <div className="bg-white dark:bg-slate-900 rounded-[2rem] border border-orange-100 dark:border-slate-800 shadow-xl overflow-hidden flex flex-col lg:flex-row h-[900px] lg:h-[550px]">
+                    <div className="h-[400px] lg:h-auto lg:w-[55%] relative bg-slate-50 dark:bg-slate-950 flex items-center justify-center p-4 border-b lg:border-b-0 lg:border-r border-orange-50 dark:border-slate-800 shrink-0">
                         {loading ? (
                             <div className="animate-spin-custom w-10 h-10 border-4 border-orange-200 border-t-orange-500 rounded-full"></div>
                         ) : (
@@ -1500,10 +1579,10 @@
                                         key={i} 
                                         d={generatePath(f)} 
                                         fill={fillStyle} 
-                                        stroke={isSelected ? "#fff" : "#cbd5e1"} 
+                                        stroke={isSelected ? "#fff" : (document.documentElement.classList.contains('dark') ? "#0f172a" : "#cbd5e1")} 
                                         strokeWidth={isSelected ? "1.5" : "0.2"} 
                                         style={{ opacity: isDimmed ? 0.2 : 1 }}
-                                        className="map-path cursor-pointer hover:fill-orange-200" 
+                                        className="map-path cursor-pointer hover:fill-orange-200 dark:hover:fill-orange-800" 
                                         onClick={() => {
                                             if (selectedDistrictInfo && selectedDistrictInfo.district === distName) {
                                                 setSelectedDistrictInfo(null);
@@ -1520,7 +1599,7 @@
                                         key={`gu-${gi}`}
                                         d={generatePath(gf)}
                                         fill="none"
-                                        stroke="#475569"
+                                        stroke={document.documentElement.classList.contains('dark') ? "#cbd5e1" : "#475569"}
                                         strokeWidth="1.2"
                                         pointerEvents="none"
                                         style={{ opacity: selectedDistrictInfo ? 0.3 : 1 }}
@@ -1528,12 +1607,12 @@
                                 ))}
                             </svg>
                         )}
-                        <div className="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-2 rounded-xl border border-orange-100 text-[11px] font-black text-orange-600 shadow-sm">
+                        <div className="absolute top-4 left-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur px-3 py-2 rounded-xl border border-orange-100 dark:border-slate-800 text-[11px] font-black text-orange-600 dark:text-orange-400 shadow-sm">
                             서울특별시 기초의회 선거구 지도 (beta)
                         </div>
                     </div>
-                    <div className="flex-1 lg:w-[45%] flex flex-col bg-white text-slate-800 overflow-hidden">
-                        <div className={`p-6 transition-colors duration-300 ${selectedDistrictInfo ? 'bg-orange-500 text-white' : 'bg-gray-50 text-gray-400'}`}>
+                    <div className="flex-1 lg:w-[45%] flex flex-col bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 overflow-hidden">
+                        <div className={`p-6 transition-colors duration-300 ${selectedDistrictInfo ? 'bg-orange-500 text-white' : 'bg-gray-50 dark:bg-slate-800 text-gray-400 dark:text-slate-500'}`}>
                             <div className="flex justify-between items-start">
                                 <div className="flex-1">
                                     <h2 className="text-xl lg:text-2xl font-black">{selectedDistrictInfo ? selectedDistrictInfo.district : "지도의 행정동을 선택하세요"}</h2>
@@ -1551,18 +1630,17 @@
                                 )}
                             </div>
                         </div>
-                        <div className="flex-1 overflow-y-auto custom-scrollbar bg-white">
+                        <div className="flex-1 overflow-y-auto custom-scrollbar bg-white dark:bg-slate-900">
                             {selectedDistrictInfo ? (
                                 matchedCandidates.length > 0 ? (
-                                    <div className="divide-y divide-gray-100">
+                                    <div className="divide-y divide-gray-100 dark:divide-slate-800">
                                         {matchedCandidates.map((can, idx) => {
                                             const parts = can.region.split(' ');
-                                            const displayOffice = parts[parts.length - 1] + "의원"; // '의원'으로 변경
+                                            const displayOffice = parts[parts.length - 1] + "의회"; 
                                             const isConfirmed = (can.status === "후보" && can.name !== "김성민" && can.name !== "이수찬");
                                             
                                             let statusText = isConfirmed ? " 후보" : (can.name === "송진영" ? " 출마예정" : ((can.decl && can.decl !== "#") ? " 출마선언" : " 출마예정"));
                                             
-                                            // 상세 명칭 매핑 로직 (서울 지도 리스트 전용)
                                             let fullOfficeLabel = "";
                                             if (can.name === "최현석") fullOfficeLabel = "서울특별시의회 송파구 제2 선거구 후보";
                                             else if (can.name === "이재원") fullOfficeLabel = "서울특별시의회 비례대표 출마예정";
@@ -1573,55 +1651,55 @@
                                             const showNew = isNewCandidate(can.dateAdded);
 
                                             return (
-                                                <div key={idx} className="p-8 hover:bg-gray-50/50 transition-colors">
+                                                <div key={idx} className="p-8 hover:bg-gray-50/50 dark:hover:bg-slate-800/30 transition-colors">
                                                     <div className="flex gap-6 items-start mb-6">
-                                                        <div className="w-24 h-32 lg:w-32 lg:h-44 bg-gray-50 rounded-2xl overflow-hidden shrink-0 border border-gray-100 shadow-sm">
+                                                        <div className="w-24 h-32 lg:w-32 lg:h-44 bg-gray-50 dark:bg-slate-800 rounded-2xl overflow-hidden shrink-0 border border-gray-100 dark:border-slate-700 shadow-sm">
                                                             {can.photo ? (
                                                                 <img src={can.photo} className="w-full h-full object-cover" alt={can.name} />
                                                             ) : (
-                                                                <div className="w-full h-full flex flex-col items-center justify-center text-gray-200 bg-slate-50">
+                                                                <div className="w-full h-full flex flex-col items-center justify-center text-gray-200 dark:text-slate-600 bg-slate-50 dark:bg-slate-900">
                                                                     <i data-lucide="user" className="w-10 h-10 mb-1 opacity-20"></i>
                                                                     <span className="text-[8px] font-bold uppercase tracking-widest opacity-40">No Image</span>
                                                                 </div>
                                                             )}
                                                         </div>
                                                         <div className="flex-1 flex flex-col items-start pt-1">
-                                                            <h3 className="text-2xl lg:text-3xl font-black text-gray-900 mb-1 tracking-tight">
+                                                            <h3 className="text-2xl lg:text-3xl font-black text-gray-900 dark:text-white mb-1 tracking-tight">
                                                                 {can.name}
                                                                 {showNew && <span className="new-badge">NEW</span>}
                                                             </h3>
-                                                            <div className="inline-block px-3 py-1.5 bg-orange-50 text-orange-600 rounded-xl text-[11px] lg:text-[12px] font-black mb-6 border border-orange-100/50">
+                                                            <div className="inline-block px-3 py-1.5 bg-orange-50 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 rounded-xl text-[11px] lg:text-[12px] font-black mb-6 border border-orange-100/50 dark:border-orange-900/50">
                                                                 {fullOfficeLabel}
                                                             </div>
                                                             
                                                             <div className="flex gap-4 items-center mb-6">
                                                                 {can.sns?.fb && can.sns.fb !== "#" && (
-                                                                    <a href={can.sns.fb} target="_blank" className="sns-btn fb w-8 h-8 lg:w-10 lg:h-10 rounded-full border border-gray-100 shadow-sm flex items-center justify-center">
+                                                                    <a href={can.sns.fb} target="_blank" className="sns-btn fb w-8 h-8 lg:w-10 lg:h-10 rounded-full border border-gray-100 dark:border-slate-700 shadow-sm flex items-center justify-center">
                                                                         <i data-lucide="facebook" className="w-4 h-4 lg:w-5 lg:h-5"></i>
                                                                     </a>
                                                                 )}
                                                                 {can.sns?.ig && can.sns.ig !== "#" && (
-                                                                    <a href={can.sns.ig} target="_blank" className="sns-btn ig w-8 h-8 lg:w-10 lg:h-10 rounded-full border border-gray-100 shadow-sm flex items-center justify-center">
+                                                                    <a href={can.sns.ig} target="_blank" className="sns-btn ig w-8 h-8 lg:w-10 lg:h-10 rounded-full border border-gray-100 dark:border-slate-700 shadow-sm flex items-center justify-center">
                                                                         <i data-lucide="instagram" className="w-4 h-4 lg:w-5 lg:h-5"></i>
                                                                     </a>
                                                                 )}
                                                                 {can.sns?.threads && can.sns.threads !== "#" && (
-                                                                    <a href={can.sns.threads} target="_blank" className="sns-btn threads w-8 h-8 lg:w-10 lg:h-10 rounded-full border border-gray-100 shadow-sm flex items-center justify-center">
+                                                                    <a href={can.sns.threads} target="_blank" className="sns-btn threads w-8 h-8 lg:w-10 lg:h-10 rounded-full border border-gray-100 dark:border-slate-700 shadow-sm flex items-center justify-center">
                                                                         <i data-lucide="at-sign" className="w-4 h-4 lg:w-5 lg:h-5"></i>
                                                                     </a>
                                                                 )}
                                                                 {can.sns?.yt && can.sns.yt !== "#" && (
-                                                                    <a href={can.sns.yt} target="_blank" className="sns-btn youtube w-8 h-8 lg:w-10 lg:h-10 rounded-full border border-gray-100 shadow-sm flex items-center justify-center">
+                                                                    <a href={can.sns.yt} target="_blank" className="sns-btn youtube w-8 h-8 lg:w-10 lg:h-10 rounded-full border border-gray-100 dark:border-slate-700 shadow-sm flex items-center justify-center">
                                                                         <i data-lucide="youtube" className="w-4 h-4 lg:w-5 lg:h-5"></i>
                                                                     </a>
                                                                 )}
                                                                 {can.sns?.blog && can.sns.blog !== "#" && (
-                                                                    <a href={can.sns.blog} target="_blank" className="sns-btn blog w-8 h-8 lg:w-10 lg:h-10 rounded-full border border-gray-100 shadow-sm flex items-center justify-center">
+                                                                    <a href={can.sns.blog} target="_blank" className="sns-btn blog w-8 h-8 lg:w-10 lg:h-10 rounded-full border border-gray-100 dark:border-slate-700 shadow-sm flex items-center justify-center">
                                                                         <i data-lucide="link-2" className="w-4 h-4 lg:w-5 lg:h-5"></i>
                                                                     </a>
                                                                 )}
                                                                 {can.sns?.site && can.sns.site !== "#" && (
-                                                                    <a href={can.sns.site} target="_blank" className="sns-btn site w-8 h-8 lg:w-10 lg:h-10 rounded-full border border-gray-100 shadow-sm flex items-center justify-center">
+                                                                    <a href={can.sns.site} target="_blank" className="sns-btn site w-8 h-8 lg:w-10 lg:h-10 rounded-full border border-gray-100 dark:border-slate-700 shadow-sm flex items-center justify-center">
                                                                         <i data-lucide="globe" className="w-4 h-4 lg:w-5 lg:h-5"></i>
                                                                     </a>
                                                                 )}
@@ -1635,10 +1713,10 @@
                                                             )}
                                                         </div>
                                                     </div>
-                                                    <div className="pt-6 border-t border-gray-100">
+                                                    <div className="pt-6 border-t border-gray-100 dark:border-slate-800">
                                                         <ul className="space-y-2.5">
                                                             {can.bio.map((b, bIdx) => (
-                                                                <li key={bIdx} className="text-[12px] lg:text-[13px] text-gray-600 flex items-start gap-2.5 font-semibold leading-relaxed">
+                                                                <li key={bIdx} className="text-[12px] lg:text-[13px] text-gray-600 dark:text-slate-400 flex items-start gap-2.5 font-semibold leading-relaxed">
                                                                     <span className="mt-2 flex-shrink-0 w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
                                                                     {b}
                                                                 </li>
@@ -1649,8 +1727,8 @@
                                             );
                                         })}
                                     </div>
-                                ) : <div className="h-full flex flex-col items-center justify-center opacity-30 text-center p-10"><p className="font-bold">해당 선거구에 등록된<br/>서울특별시 기초의회 후보가 없습니다.</p></div>
-                            ) : <div className="h-full flex flex-col items-center justify-center opacity-30 text-center p-10"><p className="font-bold">서울 지도의 행정동을 클릭하여<br/>선거구별 후보 정보를 확인하세요.</p></div>}
+                                ) : <div className="h-full flex flex-col items-center justify-center opacity-30 text-center p-10"><p className="font-bold dark:text-slate-300">해당 선거구에 등록된<br/>서울특별시 기초의회 후보가 없습니다.</p></div>
+                            ) : <div className="h-full flex flex-col items-center justify-center opacity-30 text-center p-10"><p className="font-bold dark:text-slate-300">서울 지도의 행정동을 클릭하여<br/>선거구별 후보 정보를 확인하세요.</p></div>}
                         </div>
                     </div>
                 </div>
@@ -1661,7 +1739,6 @@
             const [geoData, setGeoData] = useState(null);
             const [muniGeoData, setMuniGeoData] = useState(null);
             const [loading, setLoading] = useState(true);
-            const [error, setError] = useState(null);
             const [activeDistrict, setActiveDistrict] = useState(null); 
             const [selectedDistrict, setSelectedDistrict] = useState(null);
             const [selectedCandidateIdx, setSelectedCandidateIdx] = useState(0);
@@ -1673,8 +1750,6 @@
             const [isDragging, setIsDragging] = useState(false);
             const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
             const svgRef = useRef(null);
-
-            const displayDistrictName = activeDistrict || selectedDistrict;
 
             const allDongsList = useMemo(() => {
                 const list = [];
@@ -1708,7 +1783,7 @@
                         setMapBounds({ minX, maxX, minY, maxY });
                         setGeoData({ ...dataDong, features: dongFeatures });
                         setMuniGeoData({ ...dataMuni, features: muniFeatures });
-                    } catch (err) { setError("Failed to load map."); } finally { setLoading(false); }
+                    } catch (err) { setLoading(false); } finally { setLoading(false); }
                 };
                 fetchMapData();
             }, []);
@@ -1751,7 +1826,7 @@
             };
 
             const getDistColor = (dName) => {
-                if (!dName) return "#fcf9f6";
+                if (!dName) return document.documentElement.classList.contains('dark') ? "#020617" : "#fcf9f6";
                 const hasCandidate = candidates.some(c => 
                     c.category === "기초의원" && 
                     c.metropolitan === "경기도" && 
@@ -1763,7 +1838,9 @@
                 const cityIdx = CITY_ORDER.indexOf(city);
                 const letterIdx = "가나다라마바사아자차카타파하".indexOf(distLetter[0]);
                 if (hasCandidate) return ACTIVE_ORANGE_PALETTE[(cityIdx * 2 + letterIdx) % 2];
-                return EMPTY_GRAY_PALETTE[(cityIdx * 2 + letterIdx) % 5];
+                const isDark = document.documentElement.classList.contains('dark');
+                const palette = isDark ? EMPTY_GRAY_PALETTE_DARK : EMPTY_GRAY_PALETTE;
+                return palette[(cityIdx * 2 + letterIdx) % palette.length];
             };
 
             const matchedCandidatesMap = useMemo(() => {
@@ -1787,44 +1864,44 @@
             };
 
             return (
-                <div className="flex flex-col bg-[#fffbf7] rounded-[2rem] border border-orange-100 overflow-hidden shadow-xl">
-                    <main className="flex flex-col lg:flex-row p-4 sm:p-6 gap-4 sm:gap-6 h-[600px]">
-                        <div className={`relative flex-[1.5] bg-white rounded-3xl border border-orange-50 overflow-hidden flex items-center justify-center ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}>
+                <div className="flex flex-col bg-[#fffbf7] dark:bg-slate-950 rounded-[2rem] border border-orange-100 dark:border-slate-800 overflow-hidden shadow-xl">
+                    <main className="flex flex-col lg:flex-row p-4 sm:p-6 gap-4 sm:gap-6 h-[900px] lg:h-[600px]">
+                        <div className={`relative flex-[1.5] bg-white dark:bg-slate-900 rounded-3xl border border-orange-50 dark:border-slate-800 overflow-hidden flex items-center justify-center ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}>
                             {loading ? <div className="animate-spin-custom w-10 h-10 border-4 border-orange-200 border-t-orange-500 rounded-full"></div> : (
                                 <svg ref={svgRef} viewBox="0 0 800 600" className="w-full h-full drop-shadow-lg touch-none" onMouseDown={onPointerDown} onMouseMove={onPointerMove} onMouseUp={() => setIsDragging(false)} onMouseLeave={() => setIsDragging(false)} onTouchStart={onPointerDown} onTouchMove={onPointerMove} onTouchEnd={() => setIsDragging(false)}>
                                     {geoData.features.map((f, i) => {
                                         const dName = getDistrictNameFromFeature(f);
                                         const isSelected = selectedDistrict === dName;
                                         const baseFill = getDistColor(dName);
-                                        return <path key={i} d={generatePath(f)} fill={isSelected ? "#9a3412" : baseFill} fillOpacity={selectedDistrict && !isSelected ? 0.2 : (activeDistrict === dName ? 0.8 : 1)} stroke={isSelected ? "#000" : "#fff"} strokeWidth={isSelected ? "1" : "0.05"} className="map-path" onMouseEnter={() => !isDragging && dName && setActiveDistrict(dName)} onMouseLeave={() => setActiveDistrict(null)} onClick={() => dName && setSelectedDistrict(prev => prev === dName ? null : dName)} />;
+                                        return <path key={i} d={generatePath(f)} fill={isSelected ? "#9a3412" : baseFill} fillOpacity={selectedDistrict && !isSelected ? 0.2 : (activeDistrict === dName ? 0.8 : 1)} stroke={isSelected ? "#000" : (document.documentElement.classList.contains('dark') ? "#0f172a" : "#fff")} strokeWidth={isSelected ? "1" : "0.05"} className="map-path" onMouseEnter={() => !isDragging && dName && setActiveDistrict(dName)} onMouseLeave={() => setActiveDistrict(null)} onClick={() => dName && setSelectedDistrict(prev => prev === dName ? null : dName)} />;
                                     })}
-                                    {muniGeoData.features.map((f, i) => <path key={i} d={generatePath(f)} fill="none" stroke="#000" strokeWidth="0.9" style={{ pointerEvents: 'none', opacity: selectedDistrict ? 0.1 : 1 }} />)}
+                                    {muniGeoData.features.map((f, i) => <path key={i} d={generatePath(f)} fill="none" stroke={document.documentElement.classList.contains('dark') ? "#475569" : "#000"} strokeWidth="0.9" style={{ pointerEvents: 'none', opacity: selectedDistrict ? 0.1 : 1 }} />)}
                                 </svg>
                             )}
                             <div className="absolute top-4 left-4 w-64 z-10">
-                                <div className="bg-white/95 backdrop-blur p-3 rounded-2xl border border-orange-50 flex items-center gap-2 shadow-lg">
+                                <div className="bg-white/95 dark:bg-slate-800/95 backdrop-blur p-3 rounded-2xl border border-orange-50 dark:border-slate-700 flex items-center gap-2 shadow-lg">
                                     <i data-lucide="search" className="w-4 h-4 text-orange-400"></i>
-                                    <input type="text" placeholder="읍면동 검색 (예: 인창동)" className="bg-transparent outline-none w-full text-xs font-bold" value={searchTerm} onChange={(e) => { setSearchTerm(e.target.value); setShowSuggestions(true); }} />
+                                    <input type="text" placeholder="읍면동 검색 (예: 인창동)" className="bg-transparent outline-none w-full text-xs font-bold dark:text-slate-200" value={searchTerm} onChange={(e) => { setSearchTerm(e.target.value); setShowSuggestions(true); }} />
                                 </div>
                                 {showSuggestions && searchTerm.length > 0 && (
-                                    <div className="mt-2 bg-white rounded-xl shadow-2xl max-h-40 overflow-y-auto custom-scrollbar border border-orange-50">
+                                    <div className="mt-2 bg-white dark:bg-slate-800 rounded-xl shadow-2xl max-h-40 overflow-y-auto custom-scrollbar border border-orange-50 dark:border-slate-700">
                                         {allDongsList.filter(it => normalizeFunc(it.dong).includes(normalizeFunc(searchTerm))).map((it, idx) => (
-                                            <div key={idx} className="px-4 py-2 hover:bg-orange-50 cursor-pointer text-xs font-bold border-b border-orange-50" onClick={() => { setSelectedDistrict(it.district); setShowSuggestions(false); setSearchTerm(''); }}>{it.dong} ({it.district})</div>
+                                            <div key={idx} className="px-4 py-2 hover:bg-orange-50 dark:hover:bg-slate-700 cursor-pointer text-xs font-bold border-b border-orange-50 dark:border-slate-700 dark:text-slate-200" onClick={() => { setSelectedDistrict(it.district); setShowSuggestions(false); setSearchTerm(''); }}>{it.dong} ({it.district})</div>
                                         ))}
                                     </div>
                                 )}
                             </div>
                             <div className="absolute bottom-4 right-4 flex flex-col gap-2">
-                                <button onClick={() => setZoomMultiplier(p => p * 1.2)} className="w-10 h-10 bg-white rounded-xl shadow border border-orange-50 text-orange-500 hover:bg-orange-500 hover:text-white transition-colors"><i data-lucide="plus" className="w-5 h-5 mx-auto"></i></button>
-                                <button onClick={() => setZoomMultiplier(p => p / 1.2)} className="w-10 h-10 bg-white rounded-xl shadow border border-orange-50 text-slate-400 hover:bg-slate-500 hover:text-white transition-colors"><i data-lucide="minus" className="w-5 h-5 mx-auto"></i></button>
-                                <button onClick={() => { setZoomMultiplier(1); setPanOffset({x:130, y:90}); }} className="w-10 h-10 bg-white rounded-xl shadow border border-orange-100 transition-colors"><i data-lucide="refresh-cw" className="w-4 h-4 mx-auto text-slate-400"></i></button>
+                                <button onClick={() => setZoomMultiplier(p => p * 1.2)} className="w-10 h-10 bg-white dark:bg-slate-800 rounded-xl shadow border border-orange-50 dark:border-slate-700 text-orange-500 hover:bg-orange-500 hover:text-white transition-colors"><i data-lucide="plus" className="w-5 h-5 mx-auto"></i></button>
+                                <button onClick={() => setZoomMultiplier(p => p / 1.2)} className="w-10 h-10 bg-white dark:bg-slate-800 rounded-xl shadow border border-orange-50 dark:border-slate-700 text-slate-400 dark:text-slate-500 hover:bg-slate-500 hover:text-white transition-colors"><i data-lucide="minus" className="w-5 h-5 mx-auto"></i></button>
+                                <button onClick={() => { setZoomMultiplier(1); setPanOffset({x:130, y:90}); }} className="w-10 h-10 bg-white dark:bg-slate-800 rounded-xl shadow border border-orange-100 dark:border-slate-700 transition-colors"><i data-lucide="refresh-cw" className="w-4 h-4 mx-auto text-slate-400 dark:text-slate-500"></i></button>
                             </div>
                         </div>
-                        <div className="flex-1 bg-white rounded-3xl border border-orange-50 shadow-xl flex flex-col overflow-hidden">
-                            <div className={`p-6 transition-colors duration-500 ${selectedDistrict ? 'bg-orange-500 text-white' : 'bg-orange-50 text-orange-200'}`}>
+                        <div className="flex-1 bg-white dark:bg-slate-900 rounded-3xl border border-orange-50 dark:border-slate-800 shadow-xl flex flex-col overflow-hidden">
+                            <div className={`p-6 transition-colors duration-500 ${selectedDistrict ? 'bg-orange-500 text-white' : 'bg-orange-50 dark:bg-slate-800 text-orange-200 dark:text-slate-600'}`}>
                                 <div className="flex justify-between items-start">
                                     <div className="flex-1 overflow-hidden">
-                                        <h2 className="text-xl font-black truncate">{selectedDistrict || "지역을 선택하세요"}</h2>
+                                        <h2 className="text-xl font-black truncate dark:text-white">{selectedDistrict || "지역을 선택하세요"}</h2>
                                         {selectedDistrict && <div className="mt-2 text-[10px] font-bold opacity-80 leading-tight">{GYEONGGI_INITIAL_DISTRICTS[selectedDistrict].dongs.join(', ')}</div>}
                                     </div>
                                     {selectedDistrict && (
@@ -1838,8 +1915,8 @@
                             <div className="flex-1 p-6 lg:overflow-y-auto custom-scrollbar">
                                 {selectedDistrict ? (
                                     matchedCandidatesMap.length > 0 ? <IntegratedProfile can={matchedCandidatesMap[selectedCandidateIdx]} /> :
-                                    <div className="h-full flex flex-col items-center justify-center text-slate-300 opacity-50"><i data-lucide="users" className="w-12 h-12 mb-2"></i><p>등록된 후보자가 없습니다.</p></div>
-                                ) : <div className="h-full flex flex-col items-center justify-center text-orange-200 opacity-50"><i data-lucide="mouse-pointer-2" className="w-12 h-12 mb-2"></i><p>지도를 클릭해주세요!</p></div>}
+                                    <div className="h-full flex flex-col items-center justify-center text-slate-300 dark:text-slate-600 opacity-50"><i data-lucide="users" className="w-12 h-12 mb-2"></i><p>등록된 후보자가 없습니다.</p></div>
+                                ) : <div className="h-full flex flex-col items-center justify-center text-orange-200 dark:text-slate-700 opacity-50"><i data-lucide="mouse-pointer-2" className="w-12 h-12 mb-2"></i><p>지도를 클릭해주세요!</p></div>}
                             </div>
                         </div>
                     </main>
