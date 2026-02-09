@@ -768,7 +768,7 @@
             { name: "최성진", region: "서울 구로구", metropolitan: "서울특별시", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "구로제3동, 구로제4동, 가리봉동", bio: ["서울시당 미래희망위원회 위원", "국제개발협력 NGO 근무", "WFK KOICA NGO 봉사단원 파견"], photo: "https://secondteam-newways-feed.s3.ap-northeast-2.amazonaws.com/politicians/profiles/reformguro.webp", district: "바", sns: { fb: "#" }, decl: "https://rallypoint.kr/board/politics-free/224459", dateAdded: "2026-01-24" },
             { name: "박윤옥", region: "경기 남양주시", metropolitan: "경기도", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "와부읍, 조안면, 금곡동, 양정동, 다산2동", bio: ["제9대 남양주시의원", "남양주시의회 복지환경부위원장"], photo: "https://i.imgur.com/HgnuJAp.png", district: "가", sns: { fb: "https://www.facebook.com/profile.php?id=100009520359078" }, decl: "https://www.gnnews.org/news/articleView.html?idxno=11383", dateAdded: "2026-02-05" },
             { name: "조동운", region: "대전 서구", metropolitan: "대전광역시", category: "기초의원", office: "서구의원", subRegion: "가수원동, 관저1동, 관저2동, 기성동", bio: ["서구 을 당협위원장", "전) 경찰대학 경찰학과 교수", "한국경찰연구원 원장", "법학박사"], photo: "https://i.imgur.com/q8Z5Mst.png", district: "다", sns: { fb: "https://www.facebook.com/c2716898", ig: "https://www.instagram.com/c2716898/" }, decl: "https://www.youtube.com/watch?v=uyHmrX9hypw", dateAdded: "2025-12-01" },
-            { name: "박현겸", region: "대전 동구", metropolitan: "대전광역시", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "중앙동, 효동, 삼성동, 홍도동, 삼성동, 산내동", bio: ["대전시당 미래희망위원장"], photo: "https://i.imgur.com/TVxC1Kl.jpeg", district: "가", sns: { ig: "https://www.instagram.com/white46ant/" }, decl: "https://www.youtube.com/watch?v=uyHmrX9hypw", dateAdded: "2025-12-01" },
+            { name: "박현겸", region: "대전 동구", metropolitan: "대전광역시", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "판암1동, 판암2동, 대청동, 용운동, 대동, 자양동", bio: ["대전시당 미래희망위원장"], photo: "https://i.imgur.com/TVxC1Kl.jpeg", district: "가", sns: { ig: "https://www.instagram.com/white46ant/" }, decl: "https://www.youtube.com/watch?v=uyHmrX9hypw", dateAdded: "2025-12-01" },
             { name: "성진영", region: "대구 중구", metropolitan: "대구광역시", category: "기초의원", office: "기초의원 후보", subRegion: "동인동, 삼덕동, 성내1동, 남산1동, 대봉1동, 대봉2동", bio: ["대구시당 미래희망위원회 위원", "캠퍼스지부 경북대학교 지부장"], photo: "https://i.imgur.com/fHwNOji.png", district: "가", sns: { ig: "https://www.instagram.com/jyseong_gyeongsan/" }, decl: "https://rallypoint.kr/board/politics-free/222667", dateAdded: "2026-01-15" },
             { name: "윤서진", region: "대전 유성구", metropolitan: "대전광역시", category: "기초의원", office: "기초의원 후보", subRegion: "온천1동, 온천2동, 노은1동", bio: ["중앙당 미래희망위원회 위원", "대전시당 부위원장", "제35대 KAIST 총학생회장"], photo: "https://i.imgur.com/N24OK0K.jpeg", district: "나", sns: { ig: "https://www.instagram.com/seojin_ys/" }, decl: "https://www.youtube.com/watch?v=YBVriZc5RQc", dateAdded: "2026-01-17" },
             { name: "최진형", region: "경기 안산시", metropolitan: "경기도", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "본오3동, 사동, 사이동, 해양동", bio: ["안산시 가선거구 후보"], photo: "https://i.imgur.com/nihgF8a.png", district: "가", sns: { ig: "https://www.instagram.com/jhchoi_ansan4/" }, decl: "https://rallypoint.kr/board/politics-free/223063", dateAdded: "2026-01-26" },
@@ -1787,7 +1787,7 @@
             const [searchTerm, setSearchTerm] = useState('');
             const [showSuggestions, setShowSuggestions] = useState(false);
             const [zoomMultiplier, setZoomMultiplier] = useState(1.0);
-            const [panOffset, setPanOffset] = useState({ x: 210, y: 90 });
+            const [panOffset, setPanOffset] = useState({ x: 230, y: 90 });
             const [isDragging, setIsDragging] = useState(false);
             const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
             const svgRef = useRef(null);
@@ -1818,7 +1818,8 @@
                             const polygons = f.geometry.type === "Polygon" ? [f.geometry.coordinates] : f.geometry.coordinates;
                             polygons.forEach(poly => (Array.isArray(poly[0][0]) ? poly : [poly]).forEach(ring => ring.forEach(c => {
                                 if (c[0] < minX) minX = c[0]; if (c[0] > maxX) maxX = c[0];
-                                if (c[1] < minY) minY = c[1]; if (c[1] > maxY) maxY = c[1];
+                                if (c[1] < minY) minY = f.properties.adm_cd.startsWith('11') ? 37.5 : c[1];
+                                if (c[1] > maxY) maxY = c[1];
                             })));
                         });
                         setMapBounds({ minX, maxX, minY, maxY });
@@ -1890,7 +1891,7 @@
                 return candidates.filter(can => 
                     can.category === "기초의원" && 
                     can.metropolitan === "경기도" && 
-                    can.region.includes(selCity) && 
+                    can.region.split(' ').pop() === selCity &&
                     selectedDistrict.includes(can.district)
                 );
             }, [selectedDistrict]);
@@ -1935,7 +1936,7 @@
                             <div className="absolute bottom-4 right-4 flex flex-col gap-2">
                                 <button onClick={() => setZoomMultiplier(p => p * 1.2)} className="w-10 h-10 bg-white dark:bg-slate-800 rounded-xl shadow border border-orange-50 dark:border-slate-700 text-orange-500 hover:bg-orange-500 hover:text-white transition-colors"><i data-lucide="plus" className="w-5 h-5 mx-auto"></i></button>
                                 <button onClick={() => setZoomMultiplier(p => p / 1.2)} className="w-10 h-10 bg-white dark:bg-slate-800 rounded-xl shadow border border-orange-50 dark:border-slate-700 text-slate-400 dark:text-slate-500 hover:bg-slate-500 hover:text-white transition-colors"><i data-lucide="minus" className="w-5 h-5 mx-auto"></i></button>
-                                <button onClick={() => { setZoomMultiplier(1); setPanOffset({x:210, y:90}); }} className="w-10 h-10 bg-white dark:bg-slate-800 rounded-xl shadow border border-orange-100 dark:border-slate-700 transition-colors"><i data-lucide="refresh-cw" className="w-4 h-4 mx-auto text-slate-400 dark:text-slate-500"></i></button>
+                                <button onClick={() => { setZoomMultiplier(1); setPanOffset({x:230, y:90}); }} className="w-10 h-10 bg-white dark:bg-slate-800 rounded-xl shadow border border-orange-100 dark:border-slate-700 transition-colors"><i data-lucide="refresh-cw" className="w-4 h-4 mx-auto text-slate-400 dark:text-slate-500"></i></button>
                             </div>
                         </div>
                         <div className="flex-1 bg-white dark:bg-slate-900 rounded-3xl border border-orange-50 dark:border-slate-800 shadow-xl flex flex-col overflow-hidden">
