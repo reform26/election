@@ -108,22 +108,25 @@
             font-size: 0.6rem; font-weight: 700; z-index: 10; backdrop-filter: blur(4px);
         }
 
+        /* NEW 뱃지 스타일 보강 */
         .new-badge {
-            display: inline-flex;
+            display: inline-flex !important;
             align-items: center;
             justify-content: center;
-            background-color: #FF6600;
-            color: white;
-            padding: 1px 5px;
-            border-radius: 4px;
-            font-size: 0.6rem;
-            font-weight: 800;
-            margin-left: 6px;
-            vertical-align: middle;
-            line-height: 1;
+            background-color: #FF6600 !important;
+            color: white !important;
+            padding: 2px 7px !important;
+            border-radius: 6px !important;
+            font-size: 0.6rem !important;
+            font-weight: 900 !important;
+            margin-left: 6px !important;
+            vertical-align: middle !important;
+            line-height: 1 !important;
+            box-shadow: 0 2px 5px rgba(255, 102, 0, 0.4) !important;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            height: 18px;
             transform: translateY(-2px);
-            box-shadow: 0 2px 4px rgba(255, 102, 0, 0.2);
-            white-space: nowrap;
+            text-transform: uppercase;
         }
 
         .district-tag {
@@ -364,7 +367,7 @@
             <div class="flex justify-between items-center mb-10">
                 <div class="bg-white dark:bg-slate-900 border-2 border-[#FF6600] px-4 py-1.5 md:px-8 md:py-3 rounded-full shadow-sm">
                     <span id="last-update-date" class="nrp-orange font-black text-xs md:text-xl tracking-tighter whitespace-nowrap">
-                        최종 업데이트 : 2026. 02. 09
+                        최종 업데이트 : 2026. 02. 12
                     </span>
                 </div>
                 <div id="d-day-badge" class="nrp-bg-orange text-white px-4 py-1.5 md:px-8 md:py-3 rounded-full text-sm md:text-2xl font-black tracking-tighter shadow-lg whitespace-nowrap">
@@ -424,6 +427,10 @@
                             
                             <div id="notice-collapsible-content" class="hidden opacity-0 h-0 collapsible-container px-6 pb-8 md:px-8 md:pb-10">
                                 <div class="flex flex-col gap-2.5 items-center">
+                                    <p class="text-gray-700 dark:text-slate-300 bg-white dark:bg-slate-900 border border-orange-100 dark:border-orange-900/30 rounded-xl py-2.5 px-4 w-full max-w-lg text-center text-[10px] md:text-sm font-bold shadow-sm">
+                                        <span class="text-[#FF6600]">제4차 공천결과 : 9명</span> (02.12.) | 
+                                        <a href="https://rallypoint.kr/board/notice/225748" target="_blank" class="underline hover:text-gray-900 dark:hover:text-white transition-colors font-black ml-1">공고보기</a>
+                                    </p>
                                     <p class="text-gray-700 dark:text-slate-300 bg-white dark:bg-slate-900 border border-orange-100 dark:border-orange-900/30 rounded-xl py-2.5 px-4 w-full max-w-lg text-center text-[10px] md:text-sm font-bold shadow-sm">
                                         <span class="text-[#FF6600]">제3차 공천결과 : 17명</span> (02.09.) | 
                                         <a href="https://rallypoint.kr/board/notice/225533" target="_blank" class="underline hover:text-gray-900 dark:hover:text-white transition-colors font-black ml-1">공고보기</a>
@@ -702,17 +709,21 @@
             { name: "김정철", region: "서울특별시", category: "광역단체장", office: "서울특별시장", bio: ["개혁신당 최고위원", "개혁신당 윤리위원"], photo: "https://img1.newsis.com/2025/11/25/NISI20251125_0021074114_web.jpg", sns: { fb: "https://www.facebook.com/gimjeongcheol.869066/", yt: "https://www.youtube.com/@%EA%B9%80%EC%A0%95%EC%B2%A0%EB%B3%80%ED%98%B8%EC%82%AC" }, decl: "https://daily.hankooki.com/news/articleView.html?idxno=1247318", dateAdded: "2025-11-25" },
             { name: "정이한", region: "부산광역시", category: "광역단체장", office: "부산광역시장", bio: ["개혁신당 대변인"], photo: "https://cdn.seoulfn.com/news/photo/202511/612324_411809_430.jpg", sns: { fb: "https://www.facebook.com/jeong21official", ig: "https://www.instagram.com/jeong21_official", yt: "https://www.youtube.com/@jeong21tv" }, decl: "https://youtube.com/shorts/M88-dOI_Uz4?si=YjhleHQGtMmJBVPF", dateAdded: "2025-11-25" },
             { name: "이기붕", region: "인천광역시", category: "광역단체장", office: "인천광역시장", bio: ["인천시당 위원장"], photo: "https://i.imgur.com/aNqvWiU.jpeg", sns: { fb: "https://www.facebook.com/keebung", ig: "https://www.instagram.com/keebung_lee/" }, decl: "https://www.youtube.com/watch?v=vB47J90zQ00", dateAdded: "2025-12-01" },
-            { name: "이수찬", region: "대구광역시", category: "광역단체장", office: "대구광역시장", status: "출마예정", bio: ["대구시당 위원장"], photo: "https://i.imgur.com/1FbAb5u.jpeg", sns: { fb: "https://www.facebook.com/profile.php?id=1000045002273835", ig: "https://www.instagram.com/i.isucan/" }, decl: "#", dateAdded: "2026-02-06" },
+            { name: "이수찬", region: "대구광역시", category: "광역단체장", office: "대구광역시장", status: "출마선언", bio: ["대구시당 위원장"], photo: "https://i.imgur.com/1FbAb5u.jpeg", sns: { fb: "https://www.facebook.com/profile.php?id=1000045002273835", ig: "https://www.instagram.com/i.isucan/" }, decl: "https://www.youtube.com/live/ixdTcenUjMw?si=62KazlMWdC6ciOpY", dateAdded: "2026-02-06" },
             { name: "강희린", region: "대전광역시", category: "광역단체장", office: "대전광역시장", bio: ["대전시당 위원장"], photo: "https://i.imgur.com/fcEHXnS.png", cardFit: "cover", sns: { fb: "https://www.facebook.com/ganghuilin.2025/", ig: "https://www.instagram.com/korria1/", yt: "https://www.youtube.com/@%EA%B0%95%ED%9D%AC%EB%A6%B0-q8h", blog: "https://blog.naver.com/korria1/224142918612" }, decl: "https://www.cctoday.co.kr/news/articleView.html?idxno=2225440", dateAdded: "2026-01-17" },
             { name: "최현수", region: "광주광역시", category: "광역단체장", office: "광주광역시장", bio: ["광주시당 위원장", "서구 을 당협위원장"], photo: "https://i.imgur.com/mzd1dts.jpeg", sns: { fb: "https://www.facebook.com/profile.php?id=1000075888273756", ig: "https://www.instagram.com/hyun_soo_ch9/", yt: "https://www.youtube.com/@%EC%B5%9C%ED%98%84%EC%88%98TV" }, decl: "https://www.youtube.com/live/zNKugaDviEM", dateAdded: "2025-12-01" },
             { name: "하헌휘", region: "세종특별자치시", category: "광역단체장", office: "세종특별자치시장", bio: ["세종시당 창준위원장", "세종시 갑 당협위원장"], photo: "https://image.dnews.co.kr/photo/photo/2024/11/21/202411211945335960037-2-565966.jpg", sns: { fb: "https://www.facebook.com/profile.php?id=61562035792083", ig: "https://www.instagram.com/reform_lawyer/", yt: "https://www.youtube.com/@%EA%B0%9E%ED%98%81%EC%8B%A0%EB%8B%B9%EC%84%B8%EC%222025-12-05" }, decl: "https://www.youtube.com/watch?v=m4DTvulTDFk", dateAdded: "2025-12-05" },
+            { name: "이은창", region: "충청남도", category: "광역단체장", office: "충청남도지사", bio: ["공주·부여·청양 당협위원장", "제6대 유성구의원", "제21대 대선 선대위 대변인"], photo: "https://i.imgur.com/CUx0gAv.png", sns: { fb: "https://www.facebook.com/profile.php?id=100002081097533" }, decl: "https://www.youtube.com/live/ykvvk-37iws?si=iGJ3virBz9tVUHMO&t=288", dateAdded: "2026-02-12" },
             { name: "이용우", region: "서울 강동구", metropolitan: "서울특별시", category: "기초단체장", office: "강동구청장", status: "후보", bio: ["강동구 을 당협위원장", "서울시당 수석대변인", "제21대 대선 선대위 조직부본부장"], photo: "https://i.imgur.com/9IVX879.jpeg", sns: { fb: "https://www.facebook.com/profile.php?id=61565772029621" }, decl: "https://www.facebook.com/share/p/1a1XZmBRh2/", dateAdded: "2026-01-26" },
-            { name: "송진영", region: "경기 오산시", metropolitan: "경기도", category: "기초단체장", office: "오산시장", status: "출마예정", bio: ["제9대 오산시의원", "민주평화통일자문회의 자문위원"], photo: "https://www.osancouncil.go.kr/attach/member/CT_9/172376d6ff7bcbc7a6a038add9585f95.jpg", sns: { fb: "https://www.facebook.com/osminjun/about/?_rdr" }, decl: "https://www.youtube.com/live/MMpZKb1X3_o?si=CbCZu59sVX-e6r-o&t=1009", cardFit: "cover", cardPos: "center 0%", dateAdded: "2026-01-23" },
+            { name: "정희윤", region: "경기 수원시", metropolitan: "경기도", category: "기초단체장", office: "수원시장", status: "후보", bio: ["수원시 갑 당협위원장", "경기도당 부위원장", "경기도당 미래희망위원장"], photo: "https://i.imgur.com/OuiAd60.png", sns: { fb: "https://www.facebook.com/jungdison?_rdr", yt: "https://youtube.com/channel/UC3-CpPJnxTWi0oLAlNs7GRw?si=-YVfD0oAizDhXgxX" }, decl: "#", dateAdded: "2026-02-12" },
+            { name: "송진영", region: "경기 오산시", metropolitan: "경기도", category: "기초단체장", office: "오산시장", status: "출마예정", bio: ["제9대 오산시의원", "민주평화통일자문회의 자문위원"], photo: "https://www.osancouncil.go.kr/attach/member/CT_9/172376d6ff7bcbc7a6a038add9585f95.jpg", sns: { fb: "https://www.facebook.com/osminjun/about/?_rdr" }, decl: "https://www.getnews.co.kr/news/articleView.html?idxno=670154", dateAdded: "2026-01-23" },
             { name: "이혜숙", region: "서울 관악구", metropolitan: "서울특별시", category: "기초단체장", office: "관악구청장", status: "후보", bio: ["관악구 갑 당협위원장"], photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQldYi95_jeH9ZscObQhU8SfeBkt7_id2CYecNX-bHuIl-NIOJ8r4XS_F4&s=10", sns: { fb: "https://www.facebook.com/yesleehaesuk", ig: "https://www.instagram.com/hyeasooklee/" }, decl: "https://youtu.be/b4ofl-SQGlU", dateAdded: "2026-01-01" },
             { name: "전성균", region: "경기 화성시", metropolitan: "경기도", category: "기초단체장", office: "화성시장", bio: ["제9대 화성시의원", "경기도당 위원장", "전) 개혁신당 최고위원"], photo: "https://i.imgur.com/iK8aR6Y.jpeg", sns: { fb: "https://www.facebook.com/seonggyun.jeon.7", ig: "https://www.instagram.com/jeonsk_reform/", yt: "https://www.youtube.com/@resetkorea_revolution" }, decl: "https://www.youtube.com/watch?v=MZHron4TMO4", dateAdded: "2026-01-05" },
             { name: "송창훈", region: "경기 용인시", metropolitan: "경기도", category: "기초단체장", office: "용인시장", bio: ["용인시 정 당협위원장"], photo: "https://i.imgur.com/xHTGUwg.jpeg", sns: { fb: "https://www.facebook.com/profile.php?id=100004103197128", ig: "https://www.instagram.com/song_c_h_/" }, decl: "https://www.youtube.com/watch?v=MZHron4TMO4", dateAdded: "2026-01-05" },
             { name: "하대식", region: "전북 남원시", metropolitan: "전북특별자치도", category: "기초단체장", office: "남원시장", bio: ["전) 전라북도의회 의원 (7, 8, 9대)", "전) 제8대 전라북도의회 부의장", "21대 대선 선대본부장"], photo: "https://i.imgur.com/iQNAzbs.jpeg", sns: { fb: "#" }, decl: "https://rallypoint.kr/board/politics-free/223350", dateAdded: "2025-12-10" },
+            { name: "김형우", region: "강원 삼척시", metropolitan: "강원특별자치도", category: "기초단체장", office: "삼척시장", status: "후보", bio: ["전) 산업통상자원부", "동해자유무역원 원장"], photo: "https://cdn.kado.net/news/photo/201801/895272_365485_3640.jpg", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-12" },
             { name: "이재원", region: "서울특별시", metropolitan: "서울특별시", shortMetro: "서울", constituency: "비례", category: "광역의원", office: "서울시의원", status: "출마예정", bio: ["부산시당 청소년참여위 수석부위원장", "대한민국 청소년 의회 17대 부의장"], photo: "https://i.imgur.com/wX5wC2A.jpeg", sns: { ig: "https://www.instagram.com/jaewoncalelee/" }, decl: "#", dateAdded: "2025-12-01" },
+            { name: "서운교", region: "대구광역시", metropolitan: "대구광역시", shortMetro: "대구", district: "수성 3", constituencyFull: "대구광역시의회 수성구 제3선거구", category: "광역의원", office: "대구시의회", status: "후보", subRegion: "고산1동, 고산2동, 고산3동", bio: ["수성구 제3선거구 후보"], photo: "", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-12" },
             { name: "강인수", region: "서울특별시", metropolitan: "서울특별시", shortMetro: "서울", district: "강남 1", constituencyFull: "강남구 제1선거구", category: "광역의원", office: "서울시의원", status: "후보", subRegion: "신사동, 논현1동, 압구정동, 청담동", bio: ["강남구 제1선거구 후보"], photo: "", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-09" },
             { name: "최현석", region: "서울특별시", metropolitan: "서울특별시", shortMetro: "서울", district: "송파 2", constituencyFull: "송파구 제2선거구", category: "광역의원", office: "서울시의원", status: "후보", subRegion: "방이1동, 방이2동, 오륜동, 송파1동, 송파2동", bio: ["송파구 제2선거구 후보"], photo: "", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-05" },
             { name: "김순주", region: "세종특별자치시", metropolitan: "세종특별자치시", shortMetro: "세종", district: "4", constituencyFull: "세종특별자치시 제4선거구", category: "광역의원", office: "세종시의회", status: "후보", subRegion: "연기면, 연동면, 연서면, 해밀동", bio: ["세종특별자치시 제4선거구 후보"], photo: "", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-09" },
@@ -720,25 +731,31 @@
             { name: "양해두", region: "제주특별자치도", metropolitan: "제주특별자치도", shortMetro: "제주", district: "제주 외도·이호·도두", category: "광역의원", office: "제주도의원", status: "후보", subRegion: "외도동, 이호동, 도두동", bio: ["제주시 갑 당협위원장", "제21대 대선 선대위 홍보부본부장"], photo: "https://img2.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/202601/07/kbs/20260107150152592uwgk.jpg", sns: { fb: "https://www.facebook.com/profile.php?id=100007883867189#", ig: "https://www.instagram.com/haeduyang/" }, decl: "https://www.facebook.com/share/p/17qQErhuYr/", dateAdded: "2026-01-26" },
             { name: "이규민", region: "서울 강남구", metropolitan: "서울특별시", category: "기초의원", office: "강남구의원", status: "후보", subRegion: "삼성1동, 삼성2동, 대치2동", bio: ["강남구 마선거구 후보"], photo: "", district: "마", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-05" },
             { name: "구성도", region: "서울 강남구", metropolitan: "서울특별시", category: "기초의원", office: "강남구의원", status: "후보", subRegion: "개포1동, 개포2동, 개포4동", bio: ["강남구 라선거구 후보"], photo: "", district: "라", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-09" },
+            { name: "박종길", region: "대구 달서구", metropolitan: "대구광역시", category: "기초의원", office: "기초의원", status: "출마선언", subRegion: "이곡1동, 이곡2동, 신당동", bio: ["제8, 9대 달서구의원 (재선)", "<span style='letter-spacing:-0.15em;'>전) 제9대 달서구의회 복지문화위원장</span>", "<span style='letter-spacing:-0.15em;'>전) 제8대 달서구의회 윤리특별위원장</span>"], photo: "https://www.dalseocouncil.daegu.kr/images/memberHome/inc/leftvisible_8050.jpg?v=1.666", district: "나", sns: { fb: "#" }, decl: "https://www.youtube.com/live/ixdTcenUjMw?si=62KazlMWdC6ciOpY", dateAdded: "2026-02-12" },
+            { name: "이호엽", region: "서울 성북구", metropolitan: "서울특별시", category: "기초의원", office: "기초의원", status: "후보", subRegion: "성북동, 삼선동, 동선동, 돈암2동, 안암동, 보문동", bio: ["성북구 가선거구 후보"], photo: "", district: "가", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-12" },
             { name: "김성우", region: "서울 서대문구", metropolitan: "서울특별시", category: "기초의원", office: "기초의원", status: "후보", subRegion: "북아현동, 신촌동,천연동, 충현동", bio: ["우리부동산 공인중개사", "북아현살집연구소 소장"], photo: "https://i.imgur.com/uVeuzZN.png", district: "가", sns: { blog: "https://blog.naver.com/manksw" }, decl: "#", dateAdded: "2026-02-06" },
-            { name: "김정훈", region: "서울 동대문구", metropolitan: "서울특별시", category: "기초의원", office: "동대문구의원", status: "후보", subRegion: "답십리2동, 장안1동, 장안2동", bio: ["동대문구 바선거구 후보"], photo: "", district: "바", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-05" },
+            { name: "김정훈", region: "서울 동대문구", metropolitan: "서울특별시", category: "기초의원", office: "동대문구의원", status: "후보", subRegion: "답십리2동, 장안1동, 장안2동", bio: ["전)동대문구축구협회 사무국장"], photo: "https://i.imgur.com/cH6JHd7.png", district: "바", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-05" },
             { name: "고길주", region: "서울 영등포구", metropolitan: "서울특별시", category: "기초의원", office: "기초의원", status: "후보", subRegion: "신길 6동, 대림1동, 대림2동, 대림3동", bio: ["영등포구 사선거구 후보"], photo: "", district: "사", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-05" },
             { name: "서준호", region: "서울 용산구", metropolitan: "서울특별시", category: "기초의원", office: "용산구의원", status: "후보", subRegion: "원효로제1동, 원효로제2동,용문동", bio: ["용산구 나선거구 후보"], photo: "", district: "나", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-05" },
             { name: "정상필", region: "서울 중랑구", metropolitan: "서울특별시", category: "기초의원", office: "기초의원", status: "후보", subRegion: "면목4동,면목7동", bio: ["중랑구 나선거구 후보"], photo: "", district: "나", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-05" },
-            { name: "박성진", region: "서울 노원구", metropolitan: "서울특별시", category: "기초의원", office: "노원구의원", status: "후보", subRegion: "상계2동, 상계3동, 상계4동, 상계5동", bio: ["노무사", "노동법률사무소 범아 대표", "<div style='letter-spacing:-0.18em; margin-top:2px;'>자녀안심하고학교보내기운동국민재단<br/>법교육 전문강사</div>"], photo: "", district: "마", sns: { fb: "#" }, decl: "https://rallypoint.kr/board/politics-free/225582?searchType=0&currentPage=1", dateAdded: "2026-02-09" },
+            { name: "박성진", region: "서울 노원구", metropolitan: "서울특별시", category: "기초의원", office: "노원구의원", status: "후보", subRegion: "상계2동, 상계3동, 상계4동, 상계5동", bio: ["노무사", "노동법률사무소 범아 대표", "<div style='letter-spacing:-0.18em; margin-top:2px;'>자녀안심하고학교보내기운동국민재단<br/>법교육 전문강사</div>"], photo: "https://i.imgur.com/VncShvK.jpeg", district: "마", sns: { fb: "#" }, decl: "https://rallypoint.kr/board/politics-free/225582?searchType=0&currentPage=1", dateAdded: "2026-02-09" },
             { name: "주한송", region: "서울 도봉구", metropolitan: "서울특별시", category: "기초의원", office: "도봉구의원", status: "후보", subRegion: "창1동, 창4동, 창5동", bio: ["도봉구 가선거구 후보"], photo: "", district: "가", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-09" },
-            { name: "최제일", region: "서울 광진구", metropolitan: "서울특별시", category: "기초의원", office: "광진구의원", status: "후보", subRegion: "능동, 구의2동, 광장동, 군자동", bio: ["광진구 나선거구 후보"], photo: "", district: "나", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-09" },
+            { name: "최제일", region: "서울 광진구", metropolitan: "서울특별시", category: "기초의원", office: "광진구의원", status: "후보", subRegion: "능동, 구의2동, 광장동, 군자동", bio: ["출판사 '도서출판 문각' 대표", "<span style='letter-spacing:-0.12em;'>광진구 주민참여예산위 1분과 부위원장</span>", "<span style='letter-spacing:-0.12em;'>(사)철기이범석장군기념사업회 청년위원</span>"], photo: "https://i.imgur.com/miiK7Cq.jpeg", district: "나", sns: { fb: "#", ig: "https://www.instagram.com/bestchoi__" }, decl: "https://rallypoint.kr/board/politics-free/225625/", dateAdded: "2026-02-09" },
             { name: "조연우", region: "부산 기장군", metropolitan: "부산광역시", category: "기초의원", office: "기장군의원", status: "후보", subRegion: "정관읍, 장안읍", bio: ["기장군 다선거구 후보"], photo: "", district: "다", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-05" },
             { name: "강신학", region: "인천 연수구", metropolitan: "인천광역시", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "송도2동, 송도4동, 송도5동", bio: ["인천시당 부위원장", "인천시당 소상공인·전략분과위원장"], photo: "https://i.imgur.com/fd8NVNE.jpeg", district: "마", sns: { fb: "https://www.facebook.com/kangsh1" }, decl: "#", dateAdded: "2026-01-26" },
             { name: "이성실", region: "인천 연수구", metropolitan: "인천광역시", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "송도1동, 송도3동", bio: ["연수구의회 라선거구 후보"], photo: "", district: "라", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-05" },
             { name: "강민제", region: "인천 남동구", metropolitan: "인천광역시", category: "기초의원", office: "남동구의원", status: "후보", subRegion: "구월3동, 간석1동, 간석4동", bio: ["남동구 나선거구 후보"], photo: "", district: "나", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-09" },
             { name: "심재현", region: "경기 양주시", metropolitan: "경기도", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "은현면, 남면, 옥정1동, 옥정2동, 은현면, 회천1동, 회천2동, 회천3동", bio: ["양주시 다선거구 후보"], photo: "", district: "다", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-05" },
             { name: "김동광", region: "경기 수원시", metropolitan: "경기도", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "매탄1동, 매탄2동, 매탄3동, 매탄4동", bio: ["수원시 아선거구 후보"], photo: "", district: "아", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-05" },
+            { name: "조현수", region: "경기 여주시", metropolitan: "경기도", category: "기초의원", office: "기초의원", status: "후보", subRegion: "흥천면, 금사면, 산북면, 대신면, 중앙동, 오학동", bio: ["여주시 나선거구 후보"], photo: "", district: "나", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-12" },
+            { name: "최종열", region: "경기 남양주시", metropolitan: "경기도", category: "기초의원", office: "기초의원", status: "후보", subRegion: "와부읍, 조안면, 금곡동, 진건읍, 퇴계원읍", bio: ["남양주시 사선거구 후보"], photo: "", district: "사", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-12" },
             { name: "류태하", region: "경북 구미시", metropolitan: "경상북도", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "인동동, 진미동", bio: ["구미시 을 당협위원장", "제21대 대선 선대위 홍보부본부장"], photo: "", district: "자", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-05" },
+            { name: "김태근", region: "경북 포항시", metropolitan: "경상북도", category: "기초의원", office: "기초의원", status: "후보", subRegion: "용흥동, 우창동", bio: ["포항시 다선거구 후보"], photo: "", district: "다", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-12" },
+            { name: "김태현", region: "경북 포항시", metropolitan: "경상북도", category: "기초의원", office: "기초의원", status: "후보", subRegion: "두호동, 양덕동, 환여동", bio: ["포항시 마선거구 후보"], photo: "", district: "마", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-12" },
             { name: "송원근", region: "충남 예산군", metropolitan: "충청남도", category: "기초의원", office: "예산군의원", status: "후보", subRegion: "덕산면, 봉산면, 고덕면, 신암면", bio: ["예산군 라선거구 후보"], photo: "", district: "라", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-05" },
             { name: "이해성", region: "충남 천안시", metropolitan: "충청남도", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "쌍용1동, 쌍용2동, 쌍용3동", bio: ["충남도당 사무처장"], photo: "https://i.imgur.com/fqfARBT.png", cardFit: "contain", cardPos: "center 0%", cardScale: "1", district: "카", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-05" },
             { name: "이도윤", region: "서울 동대문구", metropolitan: "서울특별시", category: "기초의원", office: "동대문구의원", status: "출마선언", subRegion: "전농제1동, 전농제2동, 답십리제1동", bio: ["동대문구 마선거구 출마"], photo: "", district: "마", sns: { fb: "#" }, decl: "https://rallypoint.kr/board/politics-free/224812", dateAdded: "2026-01-31" },
-            { name: "김영욱", region: "대전 서구", metropolitan: "대전광역시", category: "기초의원", office: "서구의원", status: "출마선언", subRegion: "판암1동, 판암2동, 대청동, 용운동, 대동, 자양동", bio: ["대전시당 자문위원"], photo: "https://i.imgur.com/K0dT4FH.jpeg", district: "가", sns: { fb: "#", ig: "https://www.instagram.com/saveourdaejeon_97/" }, decl: "https://rallypoint.kr/board/politics-free/224817", dateAdded: "2026-01-30" },
+            { name: "김영욱", region: "대전 서구", metropolitan: "대전광역시", category: "기초의원", office: "서구의원", status: "출마선언", subRegion: "복수동, 도마1동, 도마2동, 정림동", bio: ["대전시당 자문위원"], photo: "https://i.imgur.com/K0dT4FH.jpeg", district: "가", sns: { fb: "#", ig: "https://www.instagram.com/saveourdaejeon_97/" }, decl: "https://rallypoint.kr/board/politics-free/224817", dateAdded: "2026-01-30" },
             { name: "오상균", region: "서울 성동구", metropolitan: "서울특별시", category: "기초의원", office: "성동구의원", status: "후보", subRegion: "마장동, 사근동, 송정동,용답동", bio: ["성동구 다선거구 후보"], photo: "", district: "다", sns: { fb: "#" }, decl: "#", dateAdded: "2026-01-26" },
             { name: "박범근", region: "서울 관악구", metropolitan: "서울특별시", category: "기초의원", office: "기초의원", status: "후보", subRegion: "신사동, 조원동, 미성동", bio: ["관악구 마선거구 후보"], photo: "", district: "마", sns: { fb: "#" }, decl: "#", dateAdded: "2026-01-26" },
             { name: "원동철", region: "서울 관악구", metropolitan: "서울특별시", category: "기초의원", office: "기초의원", status: "후보", subRegion: "삼성동, 대학동", bio: ["배우", "오오더블유 대표"], photo: "", district: "아", sns: { fb: "#" }, ig: "https://www.instagram.com/_oneofwon", decl: "#", dateAdded: "2026-01-26" },
@@ -747,8 +764,8 @@
             { name: "우영훈", region: "대구 달성군", metropolitan: "대구광역시", category: "기초의원", office: "달성군의원", status: "후보", subRegion: "화원읍, 가창면", bio: ["중앙당 지역발전특별위 부위원장", "국제라이온스협회 특별위원장", "국제라이온스협회 분과위원장", "국제라이온스협회 영진L 14대 회장"], photo: "https://i.imgur.com/amHTRAa.jpeg", district: "가", sns: { fb: "https://www.facebook.com/wooyounghoon", ig: "https://www.instagram.com/wooyounghoon" }, decl: "https://www.facebook.com/share/p/17tdaEkjL5/", dateAdded: "2026-01-26" },
             { name: "우성원", region: "대구 달성군", metropolitan: "대구광역시", category: "기초의원", office: "달성군의원", status: "후보", subRegion: "유가읍,현풍읍, 구지면", bio: ["달성군 당협위원장"], photo: "https://i.imgur.com/NNtiJ53.jpeg", district: "다", sns: { fb: "https://www.facebook.com/seongwon.woo.3/" }, decl: "https://www.facebook.com/share/p/1D9hTEiQjh/", dateAdded: "2026-01-26" },
             { name: "박철현", region: "대구 동구", metropolitan: "대구광역시", category: "기초의원", office: "동구의원", status: "후보", subRegion: "신천1·2동, 신천3동, 신천4동, 효목1동, 효목2동", bio: ["대구시당 인재위원장", "개혁신당 지역발전특별위 부위원장"], photo: "", district: "다", sns: { ig: "https://www.instagram.com/park___cheol_hyeon/" }, decl: "#", dateAdded: "2026-01-26" },
-            { name: "오태훈", region: "대구 수성구", metropolitan: "대구광역시", category: "기초의원", office: "수성구의원", status: "후보", subRegion: "고산1동, 고산2동, 고산3동", bio: ["대구시당 대변인"], photo: "", district: "라", sns: { fb: "#" }, decl: "#", dateAdded: "2026-01-26" },
-            { name: "최윤석", region: "대구 수성구", metropolitan: "대구광역시", category: "기초의원", office: "수성구의원", status: "후보", district: "마", subRegion: "중동, 상동, 두산동, 수성1가동, 수성2.3가동, 수성4가동", bio: ["수성구 마선거구 후보"], photo: "", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-09" },
+            { name: "오태훈", region: "대구 수성구", metropolitan: "대구광역시", category: "기초의원", office: "기초의원", status: "후보", subRegion: "고산1동, 고산2동, 고산3동", bio: ["대구시당 대변인"], photo: "", district: "라", sns: { fb: "#" }, decl: "#", dateAdded: "2026-01-26" },
+            { name: "최윤석", region: "대구 수성구", metropolitan: "대구광역시", category: "기초의원", office: "수성구의원", status: "후보", district: "마", subRegion: "중동, 상동, 두산동, 수성1가동, 수성2.3가동, 수성4가동", bio: ["수성구 마선거구 후보"], photo: "", sns: { fb: "#", ig: "https://www.instagram.com/rapaellchoi/" }, decl: "#", dateAdded: "2026-02-09" },
             { name: "하용준", region: "대전 동구", metropolitan: "대전광역시", category: "기초의원", office: "기초의원", status: "후보", subRegion: "판암1동, 판암2동, 대청동, 용운동, 대동, 자양동", bio: ["대전 동구 나선거구 출마"], photo: "https://i.imgur.com/MxyJ2sm.jpeg", district: "나", sns: { fb: "#", ig: "https://www.instagram.com/official_yongjun" }, decl: "https://rallypoint.kr/board/politics-free/224918", dateAdded: "2026-01-31" },
             { name: "박진우", region: "광주 동구", metropolitan: "광주광역시", category: "기초의원", office: "동구의원", status: "후보", subRegion: "충장동, 동명동, 계림1동, 계림2동, 산수1동, 산수2동", bio: ["동구·남구 을 당협위원장", "21대 대선 선대위 홍보부본부장"], photo: "https://i.imgur.com/cah0vOW.png", district: "가", sns: { fb: "https://www.facebook.com/jinu.park.77/about", ig: "https://www.instagram.com/1jwpark/", yt: "https://www.youtube.com/@jinu_park" }, dateAdded: "2026-01-26" },
             { name: "오정대", region: "경기 성남시", metropolitan: "경기도", category: "기초의원", office: "기초의원", status: "후보", subRegion: "분당구 이매1동, 이매2동, 삼평동", bio: ["도로교통사고감정사", "도로교통사고감정사 협회 정회원", "유튜브 '운전하는곰돌' 운영", "작가"], photo: "", district: "아", sns: { yt: "https://www.youtube.com/@d_gomdol/featured" }, decl: "#", dateAdded: "2026-01-31" },
@@ -758,18 +775,18 @@
             { name: "이승도", region: "경기 용인시", metropolitan: "경기도", category: "기초의원", office: "용인시의원", status: "후보", subRegion: "수지구 상현1동, 상현3동", bio: ["용인시 사선거구 후보"], photo: "", district: "사", sns: { fb: "#" }, decl: "#", dateAdded: "2026-01-26" },
             { name: "황승빈", region: "경기 수원시", metropolitan: "경기도", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "영통구 영통2동, 영통3동, 망포1동, 망포2동", bio: ["수원시 파선거구 후보"], photo: "https://i.imgur.com/kMbaiCJ.jpeg", district: "파", sns: { fb: "#" }, decl: "#", dateAdded: "2026-01-26" },
             { name: "박원길", region: "경기 안양시", metropolitan: "경기도", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "동안구 호계1동, 호계2동, 호계3동, 신촌동", bio: ["안양시 아선거구 후보"], photo: "", district: "아", sns: { fb: "#" }, decl: "#", dateAdded: "2026-01-26" },
-            { name: "심용진", region: "경기 화성시", metropolitan: "경기도", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "우정읍, 남양읍, 매송면, 비봉면, 마도면, 송산면, 서신면, 장안면, 새솔동", bio: ["전) 매송면 원평1리 이장", "현) 매송면 송전탑 지중화 추진위원장", "현) 한국해양소년단 경기연맹이사"], photo: "https://i.imgur.com/XgGMe74.png", district: "나", sns: { fb: "#" }, decl: "http://www.hsnews.or.kr/news/view.html?section=1&no=49750", dateAdded: "2026-01-26" },
+            { name: "심용진", region: "경기 화성시", metropolitan: "경기도", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "우정읍, 남양읍, 매송면, 비봉면, 마도면, 송산면, 서신면, 장안면, 새솔동", bio: ["전) 매송면 원평1리 이장", "현) 매송면 송전탑 지중화 추진위원장", "현) 한국해양소년단 경기연맹이사"], photo: "https://i.imgur.com/XgGMe74.png", district: "나", sns: { fb: "#" }, decl: "http://www. hsnews.or.kr/news/view.html?section=1&no=49750", dateAdded: "2026-01-26" },
             { name: "오태석", region: "경기 화성시", metropolitan: "경기도", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "봉담읍, 기배동, 화산동", bio: ["화성시 바선거구 후보"], photo: "https://i.imgur.com/JztC0G2.jpeg", district: "바", sns: { fb: "#" , blog: "https://blog.naver.com/01696265977", ig: "https://www.instagram.com/thinkingofts/" }, decl: "#", dateAdded: "2026-01-26" },
             { name: "윤효석", region: "경기 화성시", metropolitan: "경기도", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "진안동, 병점1동, 병점2동", bio: ["화성시 사선거구 후보"], photo: "", district: "사", sns: { fb: "#" }, decl: "#", dateAdded: "2026-01-26" },
-            { name: "전상현", region: "강원 원주시", metropolitan: "강원특별자치도", category: "기초의원", office: "춘천시의원", status: "후보", subRegion: "문막읍, 지정면, 부론면, 귀래면", bio: ["원주시 가선거구 후보"], photo: "", district: "가", sns: { fb: "#" }, decl: "https://rallypoint.kr/board/politics-free/225573?searchType=0&currentPage=1", dateAdded: "2026-01-26" },
+            { name: "전상현", region: "강원 원주시", metropolitan: "강원특별자치도", category: "기초의원", office: "춘천시의원", status: "후보", subRegion: "문막읍, 지정면, 부론면, 귀래면", bio: ["원주시 가선거구 후보"], photo: "https://i.imgur.com/VU1whW9.jpeg", district: "가", sns: { fb: "#", ig: "https://www.instagram.com/wonju_.sh" }, decl: "https://rallypoint.kr/board/politics-free/225573?searchType=0&currentPage=1", dateAdded: "2026-01-26" },
             { name: "양성혁", region: "경기 의왕시", metropolitan: "경기도", category: "기초의원", office: "의왕시의회", status: "후보", district: "나", subRegion: "내손1동, 내손2동, 청계동", bio: ["의왕시 나선거구 후보"], photo: "", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-09" },
             { name: "양준모", region: "경기 파주시", metropolitan: "경기도", category: "기초의원", office: "파주시의회", status: "후보", district: "마", subRegion: "파주읍, 월룡면, 금촌1동, 금촌2동, 금촌3동", bio: ["파주시 마선거구 후보"], photo: "", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-09" },
             { name: "정진호", region: "경북 울진군", metropolitan: "경상북도", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "북면, 죽변면", bio: ["울진군 나선거구 후보"], photo: "", district: "나", sns: { fb: "#" }, decl: "#", dateAdded: "2026-01-26" },
             { name: "최성진", region: "서울 구로구", metropolitan: "서울특별시", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "구로제3동, 구로제4동, 가리봉동", bio: ["서울시당 미래희망위원회 위원", "국제개발협력 NGO 근무", "WFK KOICA NGO 봉사단원 파견"], photo: "https://secondteam-newways-feed.s3.ap-northeast-2.amazonaws.com/politicians/profiles/reformguro.webp", district: "바", sns: { fb: "#" }, decl: "https://rallypoint.kr/board/politics-free/224459", dateAdded: "2026-01-24" },
             { name: "박윤옥", region: "경기 남양주시", metropolitan: "경기도", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "와부읍, 조안면, 금곡동, 양정동, 다산2동", bio: ["제9대 남양주시의원", "남양주시의회 복지환경부위원장"], photo: "https://i.imgur.com/HgnuJAp.png", district: "가", sns: { fb: "https://www.facebook.com/profile.php?id=100009520359078" }, decl: "https://www.gnnews.org/news/articleView.html?idxno=11383", dateAdded: "2026-02-05" },
             { name: "조동운", region: "대전 서구", metropolitan: "대전광역시", category: "기초의원", office: "서구의원", subRegion: "가수원동, 관저1동, 관저2동, 기성동", bio: ["서구 을 당협위원장", "전) 경찰대학 경찰학과 교수", "한국경찰연구원 원장", "법학박사"], photo: "https://i.imgur.com/q8Z5Mst.png", district: "다", sns: { fb: "https://www.facebook.com/c2716898", ig: "https://www.instagram.com/c2716898/" }, decl: "https://www.youtube.com/watch?v=uyHmrX9hypw", dateAdded: "2025-12-01" },
-            { name: "박현겸", region: "대전 동구", metropolitan: "대전광역시", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "판암1동, 판암2동, 대청동, 용운동, 대동, 자양동", bio: ["대전시당 미래희망위원장"], photo: "https://i.imgur.com/TVxC1Kl.jpeg", district: "가", sns: { ig: "https://www.instagram.com/white46ant/" }, decl: "https://www.youtube.com/watch?v=uyHmrX9hypw", dateAdded: "2025-12-01" },
-            { name: "성진영", region: "대구 중구", metropolitan: "대구광역시", category: "기초의원", office: "기초의원 후보", subRegion: "동인동, 삼덕동, 성내1동, 남산1동, 대봉1동, 대봉2동", bio: ["대구시당 미래희망위원회 위원", "캠퍼스지부 경북대학교 지부장"], photo: "https://i.imgur.com/fHwNOji.png", district: "가", sns: { ig: "https://www.instagram.com/jyseong_gyeongsan/" }, decl: "https://rallypoint.kr/board/politics-free/222667", dateAdded: "2026-01-15" },
+            { name: "박현겸", region: "대전 동구", metropolitan: "대전광역시", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "중앙동, 효동, 삼성동, 홍도동, 삼성동, 산내동", bio: ["대전시당 미래희망위원장"], photo: "https://i.imgur.com/TVxC1Kl.jpeg", district: "가", sns: { ig: "https://www.instagram.com/white46ant/" }, decl: "https://www.youtube.com/watch?v=uyHmrX9hypw", dateAdded: "2025-12-01" },
+            { name: "성진영", region: "대구 중구", metropolitan: "대구광역시", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "동인동, 삼덕동, 성내1동, 남산1동, 대봉1동, 대봉2동", bio: ["대구시당 미래희망위원회 위원", "캠퍼스지부 경북대학교 지부장"], photo: "https://i.imgur.com/fHwNOji.png", district: "가", sns: { ig: "https://www.instagram.com/jyseong_gyeongsan/" }, decl: "https://rallypoint.kr/board/politics-free/222667", dateAdded: "2026-02-12" },
             { name: "윤서진", region: "대전 유성구", metropolitan: "대전광역시", category: "기초의원", office: "기초의원 후보", subRegion: "온천1동, 온천2동, 노은1동", bio: ["중앙당 미래희망위원회 위원", "대전시당 부위원장", "제35대 KAIST 총학생회장"], photo: "https://i.imgur.com/N24OK0K.jpeg", district: "나", sns: { ig: "https://www.instagram.com/seojin_ys/" }, decl: "https://www.youtube.com/watch?v=YBVriZc5RQc", dateAdded: "2026-01-17" },
             { name: "최진형", region: "경기 안산시", metropolitan: "경기도", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "본오3동, 사동, 사이동, 해양동", bio: ["안산시 가선거구 후보"], photo: "https://i.imgur.com/nihgF8a.png", district: "가", sns: { ig: "https://www.instagram.com/jhchoi_ansan4/" }, decl: "https://rallypoint.kr/board/politics-free/223063", dateAdded: "2026-01-26" },
             { name: "이강민", region: "충남 천안시", metropolitan: "충청남도", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "불당1동, 불당2동", bio: ["대전시당 정책위원", "대전시당 자문위원", "21대 대선 충남 선대본부 위원", "충남개혁정책네트워크 대표"], photo: "https://i.imgur.com/rpUTBbK.png", district: "라", cardFit: "cover", cardPos: "center 15%", sns: { fb: "https://www.facebook.com/leangmin4473", blog: "https://blog.naver.com/buldang_leekangmin" }, decl: "https://rallypoint.kr/board/politics-free/223549", dateAdded: "2025-12-01" },
@@ -786,15 +803,31 @@
         /* 유틸리티 함수 */
         function isNewCandidate(dateStr) {
             if (!dateStr) return false;
-            const parts = dateStr.split('-');
-            const addedDate = new Date(parts[0], parts[1] - 1, parts[2]);
+            // 2026-02-12 같은 형식을 정확히 처리
+            const addedDate = new Date(dateStr);
             const now = new Date();
+            // 시간 차이를 무시하기 위해 날짜만 비교
             now.setHours(0,0,0,0);
-            return Math.floor((now - addedDate) / (1000 * 60 * 60 * 24)) <= 14;
+            addedDate.setHours(0,0,0,0);
+            const diffTime = now - addedDate;
+            const diffDays = diffTime / (1000 * 60 * 60 * 24);
+            // 7일 이내면 신규로 표시
+            return diffDays >= 0 && diffDays <= 7;
         }
 
         function getCleanOffice(c) {
             let baseOffice = c.office || "";
+            if (c.category === "광역의원") {
+                const metro = c.metropolitan || "";
+                if (metro.endsWith("특별시") || metro.endsWith("광역시")) {
+                    baseOffice = metro.replace(/(특별시|광역시)$/, "") + "시의회";
+                } else if (metro.endsWith("특별자치시")) {
+                    baseOffice = "세종시의회";
+                } else if (metro.endsWith("도") || metro.endsWith("특별자치도")) {
+                    baseOffice = metro.replace(/(특별자치도|도)$/, "") + "도의회";
+                }
+                return baseOffice;
+            }
             if (c.category === "기초의원") {
                 const parts = c.region.split(' ');
                 const cityOrGu = parts[parts.length - 1];
@@ -858,7 +891,8 @@
             let statusLabel = isConfirmed ? "후보" : (c.name === "송진영" ? "출마예정" : ((c.decl && c.decl !== "#") ? "출마선언" : "출마예정"));
             
             let displayOfficeLabel = "";
-            if (c.name === "양해두") displayOfficeLabel = "제주특별자치도의회 제주시 외도동·이호동·도두동 선거구 후보";
+            if (c.name === "서운교") displayOfficeLabel = "대구광역시의회 수성구 제3선거구 후보";
+            else if (c.name === "양해두") displayOfficeLabel = "제주특별자치도의회 제주시 외도동·이호동·도두동 선거구 후보";
             else if (c.name === "이건우") displayOfficeLabel = "제주특별자치도의회 제주시 노형동 선거구 후보";
             else if (c.name === "최현석") displayOfficeLabel = "서울특별시의회 송파구 제2 선거구 후보";
             else if (c.name === "이재원") displayOfficeLabel = "서울특별시의회 비례대표 출마예정";
@@ -1025,7 +1059,7 @@
         };
 
         function createCard(c) {
-            const isTightBio = ["김태수", "고재윤", "이강민", "오정대", "우영훈", "최윤석", "구성도", "박성진", "주한송", "최제일", "심용진"].includes(c.name);
+            const isTightBio = ["김태수", "고재윤", "이강민", "오정대", "우영훈", "최윤석", "구성도", "박성진", "주한송", "최제일", "심용진", "박종길"].includes(c.name);
             const isTightSpacing = ["우영훈", "김태수", "심용진"].includes(c.name);
             let styles = [];
             if (isTightBio || ["하대식", "조동운", "박철현", "김성민", "류태하", "이용우", "이재원", "김병진", "양성혁", "양준모"].includes(c.name)) {
@@ -1046,10 +1080,10 @@
                 } 
                 else { leftTagText = c.region.replace("경기도", "경기").replace("충청남도", "충남").replace("경상북도", "경북").replace("전라북도", "전북").replace("충청북도", "충북").replace("경상남도", "경남").replace("전라남도", "전남").replace("강원특별자치도", "강원").replace("제주특별자치도", "제주"); }
             } else if (c.category === "광역의원") {
-                leftTagText = (c.name === "양해두" || c.name === "이건우" || c.name === "김순주") ? (c.shortMetro || c.region) : (c.shortMetro || c.region);
+                leftTagText = (c.name === "양해두" || c.name === "이건우" || c.name === "김순주" || c.name === "서운교") ? (c.shortMetro || c.region) : (c.shortMetro || c.region);
             }
             let rightTagText = c.district || (c.constituency === "비례" ? "비례" : "");
-            let districtTag = rightTagText ? `<div class="district-tag dark:bg-slate-900 dark:text-orange-500 dark:border-orange-500">${rightTagText}</div>` : "";
+            let districtTag = rightTagText ? `<div class="district-tag dark:bg-slate-900 dark:text-orange-50 dark:border-orange-500">${rightTagText}</div>` : "";
             const isNoPhoto = !c.photo || c.photo.trim() === "";
             const fit = c.cardFit || "cover";
             const pos = c.cardPos || "center top"; 
@@ -1057,7 +1091,9 @@
             const photoContent = isNoPhoto 
                 ? `<div class="no-photo-placeholder"><i data-lucide="user-round" class="w-12 h-12"></i><span>이미지 준비중</span></div>`
                 : `<img src="${c.photo}" class="candidate-photo ${!c.cardFit ? 'photo-face-focus' : ''}" style="object-fit: ${fit} !important; object-position: ${pos} !important; transform: scale(${scale});" alt="${c.name}">`;
-            const newBadge = isNewCandidate(c.dateAdded) ? `<span class="new-badge">NEW</span>` : "";
+            
+            const hasNewBadge = isNewCandidate(c.dateAdded);
+            const newBadgeHtml = hasNewBadge ? `<span class="new-badge">NEW</span>` : "";
             
             const displayOffice = getCleanOffice(c);
             
@@ -1078,7 +1114,7 @@
                         ${photoContent}
                     </div>
                     <div class="pt-2 px-3 pb-4 md:pt-4 md:px-6 md:pb-6 text-center flex flex-col flex-grow">
-                        <h3 class="text-base md:text-xl font-bold mb-1 dark:text-white tracking-wider flex items-center justify-center">${c.name}${newBadge}</h3>
+                        <h3 class="text-base md:text-xl font-bold mb-1 dark:text-white tracking-wider flex items-center justify-center">${c.name}${newBadgeHtml}</h3>
                         <div class="bio-text" ${bioStyleAttr}>${bioHtml}</div>
                         <div class="mt-auto nrp-bg-orange text-white py-2 rounded-xl font-bold text-[10px] md:text-sm leading-tight text-center">${displayOffice} ${statusLabel}</div>
                     </div>
@@ -1206,7 +1242,7 @@
             "동작구 다선거구": { dongs: ["상도제3동", "대방동"], seats: 2 },
             "동작구 라선거구": { dongs: ["신대방제1동", "신대방제1동", "신대방제2동"], seats: 2 },
             "동작구 마선거구": { dongs: ["상도제1동", "사당제5동"], seats: 2 },
-            "동작구 바선거구": { dongs: ["상도제1동", "사당제5동", "사당제3동", "사당제4동"], seats: 2 },
+            "동작구 바선거구": { dongs: ["상도제1동", "사당제5동", "상도제3동", "상도제4동"], seats: 2 },
             "동작구 사선거구": { dongs: ["흑석동", "사당제1동", "사당제2동"], seats: 3 },
             "관악구 가선거구": { dongs: ["보라매동", "은천동", "신림동"], seats: 3 },
             "관악구 나선거구": { dongs: ["중앙동", "청룡동"], seats: 2 },
@@ -1292,7 +1328,7 @@
             "남양주시 라선거구": { dongs: ["오남읍"], seats: 2 },
             "남양주시 마선거구": { dongs: ["별내동", "별내면"], seats: 2 },
             "남양주시 바선거구": { dongs: ["다산1동", "다산2동", "양정동"], seats: 3 },
-            "남양주시 사선거구": { dongs: ["금곡동", "와부읍", "조안면", "진건읍", "퇴계원읍"], seats: 5 },
+            "남양주시 사선거구": { dongs: ["와부읍", "조안면", "금곡동", "진건읍", "퇴계원읍"], seats: 5 },
             "동두천시 가선거구": { dongs: ["상패동", "생연2동", "송내동"], seats: 3 },
             "동두천시 나선거구": { dongs: ["보산동", "불현동", "생연1동", "소요동", "중앙동"], seats: 3 },
             "부천시 가선거구": { dongs: ["도당동", "역곡1동", "역곡2동", "원미1동", "춘의동"], seats: 3 },
@@ -1362,7 +1398,7 @@
             "양평군 가선거구": { dongs: ["서종면", "양서면", "양평읍", "옥천면"], seats: 3 },
             "양평군 나선거구": { dongs: ["강상면", "강하면", "개군면", "단월면", "양동면", "용문면", "지평면", "청운면"], seats: 3 },
             "여주시 가선거구": { dongs: ["가남읍", "강천면", "북내면", "세종대왕면", "여흥동", "점동면"], seats: 3 },
-            "여주시 나선거구": { dongs: ["금사면", "대신면", "산북면", "오학동", "중앙동", "흥천면"], seats: 3 },
+            "여주시 나선거구": { dongs: ["흥천면", "금사면", "산북면", "대신면", "중앙동", "오학동"], seats: 3 },
             "연천군 가선거구": { dongs: ["군남면", "미산면", "신서면", "연천읍", "왕징면", "중면"], seats: 3 },
             "연천군 나선거구": { dongs: ["백학면", "장남면", "전곡읍", "청산면"], seats: 3 },
             "오산시 가선거구": { dongs: ["세마동", "신장1동", "신장2동", "중앙동"], seats: 3 },
@@ -1416,7 +1452,10 @@
 
         const EMPTY_GRAY_PALETTE = ["#cbd5e1", "#b1b9c6", "#94a3b8", "#a8b2c1", "#bdc6d4"];
         const EMPTY_GRAY_PALETTE_DARK = ["#1e293b", "#334155", "#0f172a", "#111827", "#1e1b4b"];
-        const ACTIVE_ORANGE_PALETTE = ["#fb923c", "#f97316"]; 
+        
+        // 경기 주황색 팔레트 4종으로 확장
+        const ACTIVE_ORANGE_PALETTE = ["#FF6600", "#FF8233", "#FFA366", "#FFC499"]; 
+        
         const CITY_ORDER = ["가평군", "고양시", "과천시", "광명시", "광주시", "구리시", "군포시", "김포시", "남양주시", "동두천시", "부천시", "성남시", "수원시", "시흥시", "안산시", "안성시", "안양시", "양주시", "양평군", "여주시", "연천군", "오산시", "용인시", "의왕시", "의정부시", "이천시", "파주시", "평택시", "포천시", "하남시", "화성시"];
 
         const normalizeFunc = (s) => String(s || "")
@@ -1428,14 +1467,15 @@
             const isValidLink = (link) => link && link !== "" && link !== "#";
             
             const getStatusLabel = (c) => {
-                const isConfirmed = (c.status === "후보" && c.name !== "김성민" && c.name !== "이수찬");
+                const isConfirmed = (c.status === "후보" && c.name !== "김성민" && c.name !== "이수찬" && c.name !== "박종길");
                 if (isConfirmed) return "후보";
                 if (c.name === "송진영") return "출마예정";
                 return (c.decl && c.decl !== "#") ? "출마선언" : "출마예정";
             };
 
             let displayOfficeLabel = "";
-            if (can.name === "양해두") displayOfficeLabel = "제주특별자치도의회 제주시 외도동·이호동·도두동 선거구 후보";
+            if (can.name === "서운교") displayOfficeLabel = "대구광역시의회 수성구 제3선거구 후보";
+            else if (can.name === "양해두") displayOfficeLabel = "제주특별자치도의회 제주시 외도동·이호동·도두동 선거구 후보";
             else if (can.name === "이건우") displayOfficeLabel = "제주특별자치도의회 제주시 노형동 선거구 후보";
             else if (can.name === "최현석") displayOfficeLabel = "서울특별시의회 송파구 제2 선거구 후보";
             else if (can.name === "이재원") displayOfficeLabel = "서울특별시의회 비례대표 출마예정";
@@ -1466,7 +1506,10 @@
                             )}
                         </div>
                         <div className="flex-1 flex flex-col items-start justify-center py-1 sm:py-2">
-                            <h3 className="text-lg sm:text-3xl font-black text-slate-900 dark:text-white tracking-wider mb-1 sm:mb-2">{can.name}</h3>
+                            <h3 className="text-lg sm:text-3xl font-black text-slate-900 dark:text-white tracking-wider mb-1 sm:mb-2">
+                                {can.name}
+                                {isNewCandidate(can.dateAdded) && <span className="new-badge">NEW</span>}
+                            </h3>
                             <div className="px-2 py-0.5 sm:px-3 sm:py-1 bg-orange-100 dark:bg-orange-900/40 text-orange-600 dark:text-orange-400 rounded-lg text-[9px] sm:text-xs font-black uppercase mb-2 sm:mb-4">{displayOfficeLabel}</div>
                             <div className="flex gap-1.5 sm:gap-2 mb-2 sm:mb-4">
                                 {isValidLink(can.sns?.fb) && <a href={can.sns.fb} target="_blank" className="p-1.5 sm:p-2 bg-orange-50 dark:bg-slate-800 text-orange-600 dark:text-orange-400 rounded-lg hover:bg-orange-500 hover:text-white transition-colors border border-orange-100 dark:border-slate-700 shadow-sm"><i data-lucide="facebook" className="w-3.5 h-3.5 sm:w-4 sm:h-4"></i></a>}
@@ -1514,12 +1557,11 @@
             };
 
             const getOrangeColor = (distName) => {
-                const palette = ["#FF6600", "#FF8233", "#FFA366", "#FFC499"];
                 const alphabet = "가나다라마바사아자차카타파하";
                 const parts = distName.split(' ');
                 const letter = parts[1] ? parts[1].replace('선거구', '') : '';
-                const index = alphabet.indexOf(letter);
-                return palette[index % palette.length];
+                const index = alphabet.indexOf(letter[0]);
+                return ACTIVE_ORANGE_PALETTE[index % ACTIVE_ORANGE_PALETTE.length];
             };
 
             const getGreyColor = (distName) => {
@@ -1529,7 +1571,7 @@
                 const alphabet = "가나다라마바사아자차카타파하";
                 const parts = distName.split(' ');
                 const letter = parts[1] ? parts[1].replace('선거구', '') : '';
-                const index = alphabet.indexOf(letter);
+                const index = alphabet.indexOf(letter[0]);
                 return greys[index % greys.length];
             };
 
@@ -1676,12 +1718,13 @@
                                         {matchedCandidates.map((can, idx) => {
                                             const parts = can.region.split(' ');
                                             const displayOffice = parts[parts.length - 1] + "의회"; 
-                                            const isConfirmed = (can.status === "후보" && can.name !== "김성민" && can.name !== "이수찬");
+                                            const isConfirmed = (can.status === "후보" && can.name !== "김성민" && can.name !== "이수찬" && can.name !== "박종길");
                                             
                                             let statusText = isConfirmed ? " 후보" : (can.name === "송진영" ? " 출마예정" : ((can.decl && can.decl !== "#") ? " 출마선언" : " 출마예정"));
                                             
                                             let fullOfficeLabel = "";
-                                            if (can.name === "최현석") fullOfficeLabel = "서울특별시의회 송파구 제2 선거구 후보";
+                                            if (can.name === "서운교") fullOfficeLabel = "대구광역시의회 수성구 제3선거구 후보";
+                                            else if (can.name === "최현석") fullOfficeLabel = "서울특별시의회 송파구 제2 선거구 후보";
                                             else if (can.name === "이재원") fullOfficeLabel = "서울특별시의회 비례대표 출마예정";
                                             else if (can.name === "강인수") fullOfficeLabel = "서울특별시의회 강남구 제1 선거구 후보";
                                             else if (can.name === "김순주") fullOfficeLabel = "세종특별자치시의회 제4 선거구 후보";
@@ -1875,29 +1918,29 @@
                     dName.startsWith(c.region.replace('경기 ', '')) && 
                     dName.includes(c.district)
                 );
+                
+                // 인접 선거구 색상 겹침 방지를 위한 4색 배정 로직 개선
                 const city = dName.split(' ')[0] || "";
                 const distLetter = dName.split(' ')[1] || "";
                 const cityIdx = CITY_ORDER.indexOf(city);
                 const letterIdx = "가나다라마바사아자차카타파하".indexOf(distLetter[0]);
-                if (hasCandidate) return ACTIVE_ORANGE_PALETTE[(cityIdx * 2 + letterIdx) % 2];
+                
+                // 도시 인덱스와 선거구 순서를 조합하여 순환
+                const colorIdx = (cityIdx + letterIdx) % 4;
+
+                if (hasCandidate) return ACTIVE_ORANGE_PALETTE[colorIdx];
                 const isDark = document.documentElement.classList.contains('dark');
                 const palette = isDark ? EMPTY_GRAY_PALETTE_DARK : EMPTY_GRAY_PALETTE;
-                return palette[(cityIdx * 2 + letterIdx) % palette.length];
+                return palette[colorIdx % palette.length];
             };
 
             const matchedCandidatesMap = useMemo(() => {
                 if (!selectedDistrict) return [];
                 const [selCity] = selectedDistrict.split(' ');
-                
-                // 도시 이름이 '양주시' 또는 '남양주시'인 경우 정확하게 구분하여 필터링
                 return candidates.filter(can => {
                     if (can.category !== "기초의원" || can.metropolitan !== "경기도") return false;
-                    
-                    const candidateCity = can.region.split(' ').pop(); // '양주시' 혹은 '남양주시'
-                    const isCorrectCity = candidateCity === selCity;
-                    const isCorrectDistrict = selectedDistrict.includes(can.district);
-                    
-                    return isCorrectCity && isCorrectDistrict;
+                    const candidateCity = can.region.split(' ').pop();
+                    return candidateCity === selCity && selectedDistrict.includes(can.district);
                 });
             }, [selectedDistrict]);
 
