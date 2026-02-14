@@ -22,6 +22,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <!-- 네이버 사이트 소유확인 -->
+    <meta name="naver-site-verification" content="fd28a70b503cbae1a40202da92ff12c89126a1fe" />
+
     <!-- SEO 및 오픈 그래프 설정 -->
     <title>개혁신당 2026 지방선거 · 재보궐선거 출마 · 공천 현황</title>
     <meta name="description" content="제9회 전국동시지방선거 개혁신당 후보자 명단 아카이브">
@@ -834,7 +837,7 @@
             const c = candidates.find(cand => cand.name === name);
             if (!c) return;
 
-            // 공천 확정 여부 판단 (기존 로직 활용)
+            // 공천 확정 여부 판단
             const isConfirmed = (c.status === "후보" && c.name !== "김성민" && c.name !== "이수찬" && c.name !== "박종길");
             
             // 호칭 결정: 확정자는 "예비후보", 미확정자는 "출마자"
@@ -849,7 +852,7 @@
                 // 예: [개혁신당] 강동구청장 예비후보 이용우 정보를 확인하세요!
                 shareTextContent = `[개혁신당] ${c.office} ${roleLabel} ${name} 정보를 확인하세요!`;
             } else if (c.category === "광역의원") {
-                // 예: [개혁신당] 서울시의회 강남구 제1선거구 후보 강인수 정보를 확인하세요!
+                // 예: [개혁신당] 서울시의회 강남구 제1선거구 예비후보 강인수 정보를 확인하세요!
                 if (c.constituency === "비례") {
                     let council = c.metropolitan.replace("특별시", "시의회").replace("광역시", "시의회").replace("특별자치시", "시의회").replace("특별자치도", "도의회").replace("도", "도의회");
                     shareTextContent = `[개혁신당] ${council} 비례대표 ${roleLabel} ${name} 정보를 확인하세요!`;
@@ -868,14 +871,14 @@
                     shareTextContent = `[개혁신당] ${fullTitle} ${roleLabel} ${name} 정보를 확인하세요!`;
                 }
             } else if (c.category === "기초의원") {
-                // 예: [개혁신당] 서울 성북구 가선거구 후보 이호엽 정보를 확인하세요!
+                // 예: [개혁신당] 서울 성북구 가선거구 예비후보 이호엽 정보를 확인하세요!
                 if (c.district) {
                     shareTextContent = `[개혁신당] ${c.region} ${c.district}선거구 ${roleLabel} ${name} 정보를 확인하세요!`;
                 } else {
                     shareTextContent = `[개혁신당] ${c.office} ${roleLabel} ${name} 정보를 확인하세요!`;
                 }
             } else {
-                shareTextContent = `[개혁신당] ${c.office || '후보'} ${name} 정보를 확인하세요!`;
+                shareTextContent = `[개혁신당] ${c.office || '후보'} ${roleLabel} ${name} 정보를 확인하세요!`;
             }
 
             const shareUrl = `${window.location.origin}${window.location.pathname}?candidate=${encodeURIComponent(name)}`;
