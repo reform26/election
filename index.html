@@ -271,15 +271,15 @@
         }
         #profile-modal-overlay.active { display: flex; }
 
-        /* 모달 우상단 공유 버튼 스타일 (수정됨) */
+        /* 모달 우상단 공유 버튼 스타일 */
         .modal-share-btn {
             position: absolute;
             top: 20px;
             right: 20px;
             background-color: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(4px);
-            padding: 6px 14px; /* 가로로 길게 */
-            border-radius: 99px; /* 알약 모양 */
+            padding: 6px 14px;
+            border-radius: 99px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -288,8 +288,6 @@
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             transition: all 0.2s;
             z-index: 20;
-            
-            /* 주황색 글씨 적용 */
             color: #FF6600;
             font-size: 0.75rem;
             font-weight: 800;
@@ -441,7 +439,7 @@
             <div class="flex justify-between items-center mb-10">
                 <div class="bg-white dark:bg-slate-900 border-2 border-[#FF6600] px-4 py-1.5 md:px-8 md:py-3 rounded-full shadow-sm">
                     <span id="last-update-date" class="nrp-orange font-black text-xs md:text-xl tracking-tighter whitespace-nowrap">
-                        최종 업데이트 : 2026. 02. 12
+                        최종 업데이트 : 2026. 02. 15
                     </span>
                 </div>
                 <div id="d-day-badge" class="nrp-bg-orange text-white px-4 py-1.5 md:px-8 md:py-3 rounded-full text-sm md:text-2xl font-black tracking-tighter shadow-lg whitespace-nowrap">
@@ -665,7 +663,7 @@
     <!-- 상세 프로필 팝업 -->
     <div id="profile-modal-overlay" onclick="closeProfileModal(event)">
         <div class="modal-content" onclick="event.stopPropagation()">
-            <!-- 우상단 공유 버튼 추가 -->
+            <!-- 우상단 공유 버튼 -->
             <div class="modal-share-btn" onclick="shareCurrentCandidate(event)">
                 <i data-lucide="share-2" class="w-4 h-4"></i>
                 <span>공유하기</span>
@@ -692,7 +690,6 @@
 
     <!-- 기본 스크립트 -->
     <script>
-        /* 전역 변수: 현재 열린 후보 이름 저장용 */
         let currentModalCandidateName = '';
 
         /* 다크모드 관리 */
@@ -722,7 +719,6 @@
             }
         }
 
-        /* * 전역 함수 - 외부에서 호출 가능하도록 정의 */
         window.closeEntryPopup = function() {
             const overlay = document.getElementById('entry-popup-overlay');
             if (overlay) {
@@ -827,32 +823,24 @@
             }
         };
 
-        /* 후보자 공유하기 함수 - 상세 텍스트 생성 */
         window.shareCurrentCandidate = function(e) {
-            e.stopPropagation(); // 모달 닫기 방지
+            e.stopPropagation();
             const name = currentModalCandidateName;
             if(!name) return;
             
-            // candidates 배열에서 정보 찾기
             const c = candidates.find(cand => cand.name === name);
             if (!c) return;
 
-            // 공천 확정 여부 판단
             const isConfirmed = (c.status === "후보" && c.name !== "김성민" && c.name !== "이수찬" && c.name !== "박종길");
-            
-            // 호칭 결정: 확정자는 "예비후보", 미확정자는 "출마자"
             const roleLabel = isConfirmed ? "예비후보" : "출마자";
 
             let shareTextContent = "";
             
             if (c.category === "광역단체장") {
-                // 예: [개혁신당] 서울특별시장 예비후보 김정철 정보를 확인하세요!
                 shareTextContent = `[개혁신당] ${c.office} ${roleLabel} ${name} 정보를 확인하세요!`;
             } else if (c.category === "기초단체장") {
-                // 예: [개혁신당] 강동구청장 예비후보 이용우 정보를 확인하세요!
                 shareTextContent = `[개혁신당] ${c.office} ${roleLabel} ${name} 정보를 확인하세요!`;
             } else if (c.category === "광역의원") {
-                // 예: [개혁신당] 서울시의회 강남구 제1선거구 예비후보 강인수 정보를 확인하세요!
                 if (c.constituency === "비례") {
                     let council = c.metropolitan.replace("특별시", "시의회").replace("광역시", "시의회").replace("특별자치시", "시의회").replace("특별자치도", "도의회").replace("도", "도의회");
                     shareTextContent = `[개혁신당] ${council} 비례대표 ${roleLabel} ${name} 정보를 확인하세요!`;
@@ -871,7 +859,6 @@
                     shareTextContent = `[개혁신당] ${fullTitle} ${roleLabel} ${name} 정보를 확인하세요!`;
                 }
             } else if (c.category === "기초의원") {
-                // 예: [개혁신당] 서울 성북구 가선거구 예비후보 이호엽 정보를 확인하세요!
                 if (c.district) {
                     shareTextContent = `[개혁신당] ${c.region} ${c.district}선거구 ${roleLabel} ${name} 정보를 확인하세요!`;
                 } else {
@@ -891,7 +878,6 @@
                     url: shareUrl,
                 }).catch(console.error);
             } else {
-                // PC 등 navigator.share 미지원 시 클립보드 복사
                 const textArea = document.createElement("textarea");
                 textArea.value = `${shareText}\n${shareUrl}`;
                 document.body.appendChild(textArea);
@@ -941,7 +927,7 @@
             }
         };
 
-        /* * GLOBAL DATA & UTILITY FUNCTIONS */
+        /* GLOBAL DATA & UTILITY FUNCTIONS */
         const regionPriority = { "서울특별시": 1, "부산광역시": 2, "대구광역시": 3, "인천광역시": 4, "광주광역시": 5, "대전광역시": 6, "울산광역시": 7, "세종특별자치시": 8, "경기도": 9, "강원특별자치도": 10, "충청북도": 11, "충청남도": 12, "전북특별자치도": 13, "전라남도": 14, "경상북도": 15, "경상남도": 16, "제주특별자치도": 17 };
         
         const candidates = [
@@ -1036,21 +1022,19 @@
             { name: "김성조", region: "경북 포항시", metropolitan: "경상북도", category: "기초의원", office: "포항시의회", status: "후보", district: "바", subRegion: "장량동", bio: ["제5-9대 포항시의회 의원 (5선)", "포항시 북구 당협위원장"], photo: "https://i.imgur.com/fvcpYIy.png", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-09" },
             { name: "이동현", region: "경북 구미시", metropolitan: "경상북도", category: "기초의원", office: "구미시의회", status: "후보", district: "마", subRegion: "상모사곡동, 임오동", bio: ["구미시 마선거구 후보"], photo: "", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-09" },
             { name: "김성민", region: "부산 사상구", metropolitan: "부산광역시", category: "기초의원", office: "기초의원", status: "출마예비", subRegion: "삼락동, 덕포제1동, 덕포제2동, 괘법동, 감전동", bio: ["사상구 가선거구 출마예정"], photo: "", district: "가", sns: { fb: "#" }, decl: "https://rallypoint.kr/board/politics-free/224669", dateAdded: "2026-01-28" },
-            { name: "최태영", region: "강원 원주시", metropolitan: "강원특별자치도", category: "기초의원", office: "춘천시의원", status: "후보", subRegion: "효자2동,석사동", bio: ["캠퍼스지부 강원스테이션 리더장", "캠퍼스지부 강원대학교 지부장"], photo: "https://i.imgur.com/eeRt5rd.jpeg", cardPos: "center 15%", cardScale: "1.25", district: "라", sns: { fb: "https://www.facebook.com/choetaeyeong.979932/", ig: "https://www.instagram.com/taeyoung_politics?igsh=OWtwaDcwejZzamth" }, decl: "https://rallypoint.kr/board/politics-free/223910", dateAdded: "2026-02-05" }
+            { name: "최태영", region: "강원 원주시", metropolitan: "강원특별자치도", category: "기초의원", office: "춘천시의원", status: "후보", subRegion: "효자2동,석사동", bio: ["캠퍼스지부 강원스테이션 리더장", "캠퍼스지부 강원대학교 지부장"], photo: "https://i.imgur.com/eeRt5rd.jpeg", cardPos: "center 15%", cardScale: "1.25", district: "라", sns: { fb: "https://www.facebook.com/choetaeyeong.979932/", ig: "https://www.instagram.com/taeyoung_politics?igsh=OWtwaDcwejZzamth" }, decl: "https://rallypoint.kr/board/politics-free/223910", dateAdded: "2026-02-05" },
+            { name: "김영민", region: "서울 강동구", metropolitan: "서울특별시", category: "기초의원", office: "강동구의원", status: "출마예정", subRegion: "성내1·2·3동, 둔촌제1·2동", bio: ["서울시당 환경위원장"], photo: "", district: "바", sns: { fb: "https://www.facebook.com/profile.php?id=61557084968016" }, decl: "#", dateAdded: "2026-02-15" }
         ];
 
         /* 유틸리티 함수 */
         function isNewCandidate(dateStr) {
             if (!dateStr) return false;
-            // 2026-02-12 같은 형식을 정확히 처리
             const addedDate = new Date(dateStr);
             const now = new Date();
-            // 시간 차이를 무시하기 위해 날짜만 비교
             now.setHours(0,0,0,0);
             addedDate.setHours(0,0,0,0);
             const diffTime = now - addedDate;
             const diffDays = diffTime / (1000 * 60 * 60 * 24);
-            // 7일 이내면 신규로 표시
             return diffDays >= 0 && diffDays <= 7;
         }
 
@@ -1125,8 +1109,6 @@
             const c = candidates.find(cand => cand.name === name);
             if (!c) return;
             document.getElementById('modal-name').innerText = c.name;
-            
-            // 전역 변수에 현재 열린 후보 이름 저장 (공유 기능을 위해)
             currentModalCandidateName = c.name;
             
             const isConfirmed = (c.status === "후보" && c.name !== "김성민" && c.name !== "이수찬" && c.name !== "박종길");
@@ -1189,7 +1171,7 @@
             setTimeout(() => { 
                 overlay.style.display = 'none'; 
                 document.body.style.overflow = ''; 
-                currentModalCandidateName = ''; // 초기화
+                currentModalCandidateName = '';
             }, 300); 
         }
 
@@ -1254,13 +1236,11 @@
                     const catDiff = (catOrder[a.category] || 5) - (catOrder[b.category] || 5);
                     if (catDiff !== 0) return catDiff;
 
-                    // 의원 그룹인 경우 추가 정렬 로직 (ㄱㄴㄷ순 + 비례는 마지막)
                     if (a.category === "광역의원" || a.category === "기초의원") {
                         const isAPro = a.constituency === "비례" || a.district === "비례";
                         const isBPro = b.constituency === "비례" || b.district === "비례";
                         if (isAPro !== isBPro) return isAPro ? 1 : -1;
                         
-                        // 지역명(시군구) + 선거구 기호(가나다) 조합으로 가나다순 정렬
                         const nameA = (a.region || "") + (a.district || a.constituencyFull || "");
                         const nameB = (b.region || "") + (b.district || b.constituencyFull || "");
                         return nameA.localeCompare(nameB, 'ko');
@@ -1298,13 +1278,9 @@
                 if (gBadge) gBadge.style.display = 'none';
             }
 
-            // 딥링킹: URL 파라미터 확인 및 자동 팝업
             const params = new URLSearchParams(window.location.search);
             const candidateName = params.get('candidate');
             if (candidateName) {
-                // DOM이 완전히 로드된 후 실행하기 위해 약간의 지연을 줄 수 있음
-                // 하지만 window.onload 내부이므로 바로 실행해도 무방
-                // 단, candidates 배열이 이미 정의되어 있어야 함 (현재 구조상 문제 없음)
                 const target = candidates.find(c => c.name === candidateName);
                 if (target) {
                     openProfileModal(candidateName);
@@ -1315,7 +1291,7 @@
         };
 
         function createCard(c) {
-            const isTightBio = ["김태수", "고재윤", "이강민", "오정대", "우영훈", "최윤석", "구성도", "박성진", "주한송", "최제일", "심용진", "박종길", "하대식", "송원근", "이호엽", "하용준"].includes(c.name);
+            const isTightBio = ["김태수", "고재윤", "이강민", "오정대", "우영훈", "최윤석", "구성도", "박성진", "주한송", "최제일", "심용진", "박종길", "하대식", "송원근", "이호엽", "하용준", "김영민"].includes(c.name);
             const isTightSpacing = ["우영훈", "김태수", "심용진"].includes(c.name);
             let styles = [];
             if (isTightBio || ["하대식", "조동운", "박철현", "김성민", "류태하", "이용우", "이재원", "김병진", "양성혁", "양준모"].includes(c.name)) {
@@ -1336,7 +1312,7 @@
                 } 
                 else { leftTagText = c.region.replace("경기도", "경기").replace("충청남도", "충남").replace("경상북도", "경북").replace("전라북도", "전북").replace("충청북도", "충북").replace("경상남도", "경남").replace("전라남도", "전남").replace("강원특별자치도", "강원").replace("제주특별자치도", "제주"); }
             } else if (c.category === "광역의원") {
-                leftTagText = (c.name === "양해두" || c.name === "이건우" || c.name === "김순주" || c.name === "서운교") ? (c.shortMetro || c.region) : (c.shortMetro || c.region);
+                leftTagText = (c.shortMetro || c.region);
             }
             let rightTagText = c.district || (c.constituency === "비례" ? "비례" : "");
             let districtTag = rightTagText ? `<div class="district-tag dark:bg-slate-900 dark:text-orange-50 dark:border-orange-500">${rightTagText}</div>` : "";
@@ -1496,9 +1472,8 @@
             "동작구 가선거구": { dongs: ["노량진제1동", "노량진제2동"], seats: 2 },
             "동작구 나선거구": { dongs: ["상도제2동", "상도제4동"], seats: 2 },
             "동작구 다선거구": { dongs: ["상도제3동", "대방동"], seats: 2 },
-            "동작구 라선거구": { dongs: ["신대방제1동", "신대방제1동", "신대방제2동"], seats: 2 },
+            "동작구 라선거구": { dongs: ["신대방제1동", "신대방제2동"], seats: 2 },
             "동작구 마선거구": { dongs: ["상도제1동", "사당제5동"], seats: 2 },
-            "동작구 바선거구": { dongs: ["상도제1동", "사당제5동", "상도제3동", "상도제4동"], seats: 2 },
             "동작구 사선거구": { dongs: ["흑석동", "사당제1동", "사당제2동"], seats: 3 },
             "관악구 가선거구": { dongs: ["보라매동", "은천동", "신림동"], seats: 3 },
             "관악구 나선거구": { dongs: ["중앙동", "청룡동"], seats: 2 },
@@ -1537,7 +1512,7 @@
             "강동구 다선거구": { dongs: ["고덕제1동", "암사제1동", "암사제2동", "암사제3동"], seats: 3 },
             "강동구 라선거구": { dongs: ["천호제1동", "천호제3동"], seats: 2 },
             "강동구 마선거구": { dongs: ["천호제2동"], seats: 2 },
-            "강동구 바선거구": { dongs: ["성내제1동", "성내제2동", "성내제3동"], seats: 3 },
+            "강동구 바선거구": { dongs: ["성내제1동", "성내제2동", "성내제3동", "둔촌제1동", "둔촌제2동"], seats: 3 },
             "강동구 사선거구": { dongs: ["둔촌제1동", "둔촌제2동"], seats: 2 },
         };
 
@@ -1973,19 +1948,8 @@
                                             const parts = can.region.split(' ');
                                             const displayOffice = parts[parts.length - 1] + "의회"; 
                                             const isConfirmed = (can.status === "후보" && can.name !== "김성민" && can.name !== "이수찬" && can.name !== "박종길");
-                                            
                                             let statusText = isConfirmed ? " 후보" : (can.name === "송진영" ? " 출마예정" : ((can.decl && can.decl !== "#") ? " 출마선언" : " 출마예정"));
-                                            
-                                            let fullOfficeLabel = "";
-                                            if (can.name === "서운교") fullOfficeLabel = "대구광역시의회 수성구 제3선거구 후보";
-                                            else if (can.name === "최현석") fullOfficeLabel = "서울특별시의회 송파구 제2 선거구 후보";
-                                            else if (can.name === "이재원") fullOfficeLabel = "서울특별시의회 비례대표 출마예정";
-                                            else if (can.name === "강인수") fullOfficeLabel = "서울특별시의회 강남구 제1 선거구 후보";
-                                            else if (can.name === "김순주") fullOfficeLabel = "세종특별자치시의회 제4 선거구 후보";
-                                            else {
-                                                fullOfficeLabel = `${displayOffice}${can.district ? ` ${can.district}선거구` : ""}${statusText}`;
-                                            }
-                                            
+                                            let fullOfficeLabel = `${displayOffice}${can.district ? ` ${can.district}선거구` : ""}${statusText}`;
                                             const showNew = isNewCandidate(can.dateAdded);
 
                                             return (
@@ -2009,7 +1973,6 @@
                                                             <div className="inline-block px-3 py-1.5 bg-orange-50 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 rounded-xl text-[11px] lg:text-[12px] font-black mb-6 border border-orange-100/50 dark:border-orange-900/50">
                                                                 {fullOfficeLabel}
                                                             </div>
-                                                            
                                                             <div className="flex gap-4 items-center mb-6">
                                                                 {can.sns?.fb && can.sns.fb !== "#" && (
                                                                     <a href={can.sns.fb} target="_blank" className="sns-btn fb w-8 h-8 lg:w-10 lg:h-10 rounded-full border border-gray-100 dark:border-slate-700 shadow-sm flex items-center justify-center">
@@ -2021,28 +1984,12 @@
                                                                         <i data-lucide="instagram" className="w-4 h-4 lg:w-5 lg:h-5"></i>
                                                                     </a>
                                                                 )}
-                                                                {can.sns?.threads && can.sns.threads !== "#" && (
-                                                                    <a href={can.sns.threads} target="_blank" className="sns-btn threads w-8 h-8 lg:w-10 lg:h-10 rounded-full border border-gray-100 dark:border-slate-700 shadow-sm flex items-center justify-center">
-                                                                        <i data-lucide="at-sign" className="w-4 h-4 lg:w-5 lg:h-5"></i>
-                                                                    </a>
-                                                                )}
                                                                 {can.sns?.yt && can.sns.yt !== "#" && (
                                                                     <a href={can.sns.yt} target="_blank" className="sns-btn youtube w-8 h-8 lg:w-10 lg:h-10 rounded-full border border-gray-100 dark:border-slate-700 shadow-sm flex items-center justify-center">
                                                                         <i data-lucide="youtube" className="w-4 h-4 lg:w-5 lg:h-5"></i>
                                                                     </a>
                                                                 )}
-                                                                {can.sns?.blog && can.sns.blog !== "#" && (
-                                                                    <a href={can.sns.blog} target="_blank" className="sns-btn blog w-8 h-8 lg:w-10 lg:h-10 rounded-full border border-gray-100 dark:border-slate-700 shadow-sm flex items-center justify-center">
-                                                                        <i data-lucide="link-2" className="w-4 h-4 lg:w-5 lg:h-5"></i>
-                                                                    </a>
-                                                                )}
-                                                                {can.sns?.site && can.sns.site !== "#" && (
-                                                                    <a href={can.sns.site} target="_blank" className="sns-btn site w-8 h-8 lg:w-10 lg:h-10 rounded-full border border-gray-100 dark:border-slate-700 shadow-sm flex items-center justify-center">
-                                                                        <i data-lucide="globe" className="w-4 h-4 lg:w-5 lg:h-5"></i>
-                                                                    </a>
-                                                                )}
                                                             </div>
-
                                                             {can.decl && can.decl !== "#" && (
                                                                 <a href={can.decl} target="_blank" className="flex items-center justify-center gap-2 px-4 py-2 lg:px-6 lg:py-3 nrp-bg-orange text-white rounded-2xl text-xs lg:text-sm font-black shadow-lg shadow-orange-200 hover:-translate-y-0.5 transition-all active:scale-95">
                                                                     <i data-lucide="file-text" className="w-3 h-3 lg:w-4 lg:h-4"></i>
@@ -2115,8 +2062,7 @@
                             const polygons = f.geometry.type === "Polygon" ? [f.geometry.coordinates] : f.geometry.coordinates;
                             polygons.forEach(poly => (Array.isArray(poly[0][0]) ? poly : [poly]).forEach(ring => ring.forEach(c => {
                                 if (c[0] < minX) minX = c[0]; if (c[0] > maxX) maxX = c[0];
-                                if (c[1] < minY) minY = f.properties.adm_cd.startsWith('11') ? 37.5 : c[1];
-                                if (c[1] > maxY) maxY = c[1];
+                                if (c[1] < minY) minY = 36.8; if (c[1] > maxY) maxY = c[1];
                             })));
                         });
                         setMapBounds({ minX, maxX, minY, maxY });
@@ -2188,14 +2134,11 @@
             const matchedCandidatesMap = useMemo(() => {
                 if (!selectedDistrict) return [];
                 const [selCity] = selectedDistrict.split(' ');
-                
-                // 도시 이름이 '양주시' 또는 '남양주시'인 경우 정확하게 구분하여 필터링
                 return candidates.filter(can => {
                     if (can.category !== "기초의원" || can.metropolitan !== "경기도") return false;
-                    const candidateCity = can.region.split(' ').pop(); // '양주시' 혹은 '남양주시'
+                    const candidateCity = can.region.split(' ').pop();
                     const isCorrectCity = candidateCity === selCity;
                     const isCorrectDistrict = selectedDistrict.includes(can.district);
-                    
                     return isCorrectCity && isCorrectDistrict;
                 });
             }, [selectedDistrict]);
