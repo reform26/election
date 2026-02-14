@@ -338,6 +338,40 @@
             color: #f1f5f9;
             border-color: #334155;
         }
+
+        .share-btn-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background-color: #f3f4f6;
+            color: #4b5563;
+            transition: all 0.2s;
+            border: 1px solid #e5e7eb;
+        }
+        .dark .share-btn-item {
+            background-color: #1e293b;
+            color: #cbd5e1;
+            border-color: #334155;
+        }
+        .share-btn-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .share-btn-item.facebook:hover { background-color: #1877F2; color: white; border-color: #1877F2; }
+        .share-btn-item.x:hover { background-color: #000000; color: white; border-color: #000000; }
+        .dark .share-btn-item.x:hover { background-color: #fff; color: black; border-color: #fff; }
+        .share-btn-item.link:hover { background-color: #FF6600; color: white; border-color: #FF6600; }
+
+        @keyframes fadeInScale {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .share-fallback-animate {
+            animation: fadeInScale 0.2s ease-out forwards;
+        }
     </style>
 </head>
 <body id="top" class="p-0 overflow-hidden">
@@ -454,6 +488,28 @@
             </div>
         </div>
     </header>
+
+    <!-- 공유하기 섹션 -->
+    <div class="max-w-7xl mx-auto px-4 md:px-10 mt-2 mb-4">
+        <div class="flex flex-col items-center justify-center">
+             <button onclick="sharePage()" class="inline-flex items-center gap-2 px-5 py-2.5 bg-white dark:bg-slate-800 border border-orange-200 dark:border-orange-900/50 rounded-xl text-orange-600 dark:text-orange-400 font-black text-sm shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all active:scale-95">
+                <i data-lucide="share-2" class="w-4 h-4"></i> 이 페이지 공유하기
+             </button>
+             
+             <!-- PC용 폴백 SNS 버튼들 (초기엔 숨김) -->
+             <div id="share-fallback-area" class="hidden items-center gap-3 mt-4 share-fallback-animate">
+                <button onclick="shareToSNS('facebook')" class="share-btn-item facebook" aria-label="페이스북 공유">
+                    <i data-lucide="facebook" class="w-5 h-5"></i>
+                </button>
+                <button onclick="shareToSNS('x')" class="share-btn-item x" aria-label="X(트위터) 공유">
+                    <i data-lucide="twitter" class="w-5 h-5"></i>
+                </button>
+                <button onclick="copyLink()" class="share-btn-item link" aria-label="링크 복사">
+                    <i data-lucide="link" class="w-5 h-5"></i>
+                </button>
+             </div>
+        </div>
+    </div>
 
     <!-- 서울 지도 대시보드 영역 -->
     <div class="max-w-7xl mx-auto px-4 md:px-10 mt-6 mb-4 block">
@@ -698,6 +754,62 @@
                 setTimeout(() => {
                     content.classList.add('hidden');
                 }, 500);
+            }
+        };
+
+        /* 공유하기 관련 함수 추가 */
+        window.sharePage = function() {
+            if (navigator.share) {
+                navigator.share({
+                    title: '개혁신당 2026 지방선거 현황',
+                    text: '개혁신당 2026 지방선거 출마·공천 현황 아카이브입니다.',
+                    url: window.location.href,
+                }).catch(console.error);
+            } else {
+                // PC 등 미지원 환경: 버튼 영역 토글
+                const area = document.getElementById('share-fallback-area');
+                if (area.classList.contains('hidden')) {
+                    area.classList.remove('hidden');
+                    area.classList.add('flex');
+                } else {
+                    area.classList.add('hidden');
+                    area.classList.remove('flex');
+                }
+            }
+        };
+
+        window.shareToSNS = function(platform) {
+            const url = encodeURIComponent(window.location.href);
+            const title = encodeURIComponent(document.title);
+            let link = '';
+            
+            if (platform === 'facebook') {
+                link = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+            } else if (platform === 'x') {
+                link = `https://twitter.com/intent/tweet?text=${title}&url=${url}`;
+            }
+            
+            if (link) {
+                window.open(link, '_blank', 'width=600,height=400');
+            }
+        };
+
+        window.copyLink = function() {
+            const url = window.location.href;
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(url).then(() => {
+                    alert('링크가 복사되었습니다!');
+                }).catch(() => {
+                    alert('링크 복사에 실패했습니다.');
+                });
+            } else {
+                const textArea = document.createElement("textarea");
+                textArea.value = url;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand("Copy");
+                textArea.remove();
+                alert('링크가 복사되었습니다!');
             }
         };
 
@@ -1920,7 +2032,7 @@
                 const distLetter = dName.split(' ')[1] || "";
                 const cityIdx = CITY_ORDER.indexOf(city);
                 const letterIdx = "가나다라마바사아자차카타파하".indexOf(distLetter[0]);
-                const colorIdx = (cityIdx + letterIdx) % 4;
+                const colorIdx = (cityIdx + (letterIdx !== -1 ? letterIdx : 0)) % 4;
 
                 if (hasCandidate) return ACTIVE_ORANGE_PALETTE[colorIdx];
                 const isDark = document.documentElement.classList.contains('dark');
