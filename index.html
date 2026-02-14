@@ -22,6 +22,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <!-- PWA 관련 메타 태그 -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#FF6600">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="개혁2026">
+    <link rel="apple-touch-icon" href="https://img.icons8.com/?size=192&id=hfNCM7e9VGca&format=png">
+
     <!-- 네이버 사이트 소유확인 -->
     <meta name="naver-site-verification" content="fd28a70b503cbae1a40202da92ff12c89126a1fe" />
 
@@ -411,6 +419,11 @@
         .share-fallback-animate {
             animation: fadeInScale 0.2s ease-out forwards;
         }
+
+        /* PWA 설치 버튼 추가 스타일 */
+        #pwa-install-btn {
+            display: none; /* 기본 숨김 */
+        }
     </style>
 </head>
 <body id="top" class="p-0 overflow-hidden">
@@ -528,25 +541,30 @@
         </div>
     </header>
 
-    <!-- 공유하기 섹션 -->
+    <!-- 공유하기 및 앱 설치 섹션 -->
     <div class="max-w-7xl mx-auto px-4 md:px-10 mt-2 mb-4">
-        <div class="flex flex-col items-center justify-center">
+        <div class="flex flex-row items-center justify-center gap-3">
+             <!-- PWA 설치 버튼 -->
+             <button id="pwa-install-btn" class="inline-flex items-center gap-2 px-5 py-2.5 bg-orange-600 text-white border border-orange-500 rounded-xl font-black text-sm shadow-md hover:bg-orange-700 transition-all active:scale-95">
+                <i data-lucide="smartphone" class="w-4 h-4"></i> 앱 설치하기
+             </button>
+
              <button onclick="sharePage()" class="inline-flex items-center gap-2 px-5 py-2.5 bg-white dark:bg-slate-800 border border-orange-200 dark:border-orange-900/50 rounded-xl text-orange-600 dark:text-orange-400 font-black text-sm shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all active:scale-95">
                 <i data-lucide="share-2" class="w-4 h-4"></i> 이 페이지 공유하기
              </button>
-             
-             <!-- PC용 폴백 SNS 버튼들 (초기엔 숨김) -->
-             <div id="share-fallback-area" class="hidden items-center gap-3 mt-4 share-fallback-animate">
-                <button onclick="shareToSNS('facebook')" class="share-btn-item facebook" aria-label="페이스북 공유">
-                    <i data-lucide="facebook" class="w-5 h-5"></i>
-                </button>
-                <button onclick="shareToSNS('x')" class="share-btn-item x" aria-label="X(트위터) 공유">
-                    <i data-lucide="twitter" class="w-5 h-5"></i>
-                </button>
-                <button onclick="copyLink()" class="share-btn-item link" aria-label="링크 복사">
-                    <i data-lucide="link" class="w-5 h-5"></i>
-                </button>
-             </div>
+        </div>
+        
+        <!-- PC용 폴백 SNS 버튼들 -->
+        <div id="share-fallback-area" class="hidden items-center justify-center gap-3 mt-4 share-fallback-animate">
+           <button onclick="shareToSNS('facebook')" class="share-btn-item facebook" aria-label="페이스북 공유">
+               <i data-lucide="facebook" class="w-5 h-5"></i>
+           </button>
+           <button onclick="shareToSNS('x')" class="share-btn-item x" aria-label="X(트위터) 공유">
+               <i data-lucide="twitter" class="w-5 h-5"></i>
+           </button>
+           <button onclick="copyLink()" class="share-btn-item link" aria-label="링크 복사">
+               <i data-lucide="link" class="w-5 h-5"></i>
+           </button>
         </div>
     </div>
 
@@ -927,6 +945,44 @@
             }
         };
 
+        /* PWA 설치 로직 */
+        let deferredPrompt;
+        const installBtn = document.getElementById('pwa-install-btn');
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            installBtn.style.display = 'inline-flex'; // 설치 가능하면 버튼 표시
+        });
+
+        installBtn.addEventListener('click', async () => {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                const { outcome } = await deferredPrompt.userChoice;
+                if (outcome === 'accepted') {
+                    console.log('User accepted the install prompt');
+                }
+                deferredPrompt = null;
+                installBtn.style.display = 'none';
+            }
+        });
+
+        window.addEventListener('appinstalled', () => {
+            console.log('PWA was installed');
+            installBtn.style.display = 'none';
+        });
+
+        /* Service Worker 등록 */
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js').then(reg => {
+                    console.log('SW registered:', reg);
+                }).catch(err => {
+                    console.log('SW registration failed:', err);
+                });
+            });
+        }
+
         /* GLOBAL DATA & UTILITY FUNCTIONS */
         const regionPriority = { "서울특별시": 1, "부산광역시": 2, "대구광역시": 3, "인천광역시": 4, "광주광역시": 5, "대전광역시": 6, "울산광역시": 7, "세종특별자치시": 8, "경기도": 9, "강원특별자치도": 10, "충청북도": 11, "충청남도": 12, "전북특별자치도": 13, "전라남도": 14, "경상북도": 15, "경상남도": 16, "제주특별자치도": 17 };
         
@@ -964,7 +1020,7 @@
             { name: "서준호", region: "서울 용산구", metropolitan: "서울특별시", category: "기초의원", office: "용산구의원", status: "후보", subRegion: "원효로제1동, 원효로제2동,용문동", bio: ["용산구 나선거구 후보"], photo: "", district: "나", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-05" },
             { name: "정상필", region: "서울 중랑구", metropolitan: "서울특별시", category: "기초의원", office: "기초의원", status: "후보", subRegion: "면목4동,면목7동", bio: ["중랑구 나선거구 후보"], photo: "", district: "나", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-05" },
             { name: "박성진", region: "서울 노원구", metropolitan: "서울특별시", category: "기초의원", office: "노원구의원", status: "후보", subRegion: "상계2동, 상계3동, 상계4동, 상계5동", bio: ["노무사", "노동법률사무소 범아 대표", "<div style='letter-spacing:-0.18em; margin-top:2px;'>자녀안심하고학교보내기운동국민재단<br/>법교육 전문강사</div>"], photo: "https://i.imgur.com/VncShvK.jpeg", district: "마", sns: { fb: "#" }, decl: "https://rallypoint.kr/board/politics-free/225582?searchType=0&currentPage=1", dateAdded: "2026-02-09" },
-            { name: "주한송", region: "서울 도봉구", metropolitan: "서울특별시", category: "기초의원", office: "도봉구의원", status: "후보", subRegion: "창1동, 창4동, 창5동", bio: ["도봉구 가선거구 후보"], photo: "", district: "가", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-09" },
+            { name: "주한송", region: "서울 도봉구", metropolitan: "서울특별시", category: "기초의원", office: "도봉구의원", status: "후보", subRegion: "창1동,창4동, 창5동", bio: ["도봉구 가선거구 후보"], photo: "", district: "가", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-09" },
             { name: "최제일", region: "서울 광진구", metropolitan: "서울특별시", category: "기초의원", office: "광진구의원", status: "후보", subRegion: "능동, 구의2동, 광장동, 군자동", bio: ["출판사 '도서출판 문각' 대표", "<span style='letter-spacing:-0.12em;'>광진구 주민참여예산위 1분과 부위원장</span>", "<span style='letter-spacing:-0.12em;'>(사)철기이범석장군기념사업회 청년위원</span>"], photo: "https://i.imgur.com/miiK7Cq.jpeg", district: "나", sns: { fb: "#", ig: "https://www.instagram.com/bestchoi__" }, decl: "https://rallypoint.kr/board/politics-free/225625/", dateAdded: "2026-02-09" },
             { name: "조연우", region: "부산 기장군", metropolitan: "부산광역시", category: "기초의원", office: "기장군의원", status: "후보", subRegion: "정관읍, 장안읍", bio: ["기장군 다선거구 후보"], photo: "", district: "다", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-05" },
             { name: "강신학", region: "인천 연수구", metropolitan: "인천광역시", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "송도2동, 송도4동, 송도5동", bio: ["인천시당 부위원장", "인천시당 소상공인·전략분과위원장"], photo: "https://i.imgur.com/fd8NVNE.jpeg", district: "마", sns: { fb: "https://www.facebook.com/kangsh1" }, decl: "#", dateAdded: "2026-01-26" },
