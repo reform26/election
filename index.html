@@ -731,9 +731,9 @@
             { name: "이규민", region: "서울 강남구", metropolitan: "서울특별시", category: "기초의원", office: "강남구의원", status: "후보", subRegion: "삼성1동, 삼성2동, 대치2동", bio: ["강남구 마선거구 후보"], photo: "", district: "마", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-05" },
             { name: "구성도", region: "서울 강남구", metropolitan: "서울특별시", category: "기초의원", office: "강남구의원", status: "후보", subRegion: "개포1동, 개포2동, 개포4동", bio: ["강남구 라선거구 후보"], photo: "", district: "라", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-09" },
             { name: "박종길", region: "대구 달서구", metropolitan: "대구광역시", category: "기초의원", office: "기초의원", status: "출마선언", subRegion: "이곡1동, 이곡2동, 신당동", bio: ["제8, 9대 달서구의원 (재선)", "<span style='letter-spacing:-0.15em;'>전) 제9대 달서구의회 복지문화위원장</span>", "<span style='letter-spacing:-0.15em;'>전) 제8대 달서구의회 윤리특별위원장</span>"], photo: "https://www.dalseocouncil.daegu.kr/images/memberHome/inc/leftvisible_8050.jpg?v=1.666", district: "나", sns: { fb: "#" }, decl: "https://www.youtube.com/live/ixdTcenUjMw?si=62KazlMWdC6ciOpY", dateAdded: "2026-02-12" },
-            { name: "이호엽", region: "서울 성북구", metropolitan: "서울특별시", category: "기초의원", office: "기초의원", status: "후보", subRegion: "성북동, 삼선동, 동선동, 돈암2동, 안암동, 보문동", bio: ["개혁신당 성북구 지역발전특위 부위원장"], photo: "https://i.imgur.com/CgkcABz.png", district: "가", sns: { fb: "#", ig: "https://www.instagram.com/hoyup97/" }, decl: "https://rallypoint.kr/board/politics-free/225837", dateAdded: "2026-02-12" },
+            { name: "이호엽", region: "서울 성북구", metropolitan: "서울특별시", category: "기초의원", office: "기초의원", status: "후보", subRegion: "성북동, 삼선동, 동선동, 돈암2동, 안암동, 보문동", bio: ["<span style='letter-spacing:-0.12em;'>개혁신당 성북구 지역발전특위 부위원장</span>"], photo: "https://i.imgur.com/CgkcABz.png", district: "가", sns: { fb: "#", ig: "https://www.instagram.com/hoyup97/" }, decl: "https://rallypoint.kr/board/politics-free/225837", dateAdded: "2026-02-12" },
             { name: "김성우", region: "서울 서대문구", metropolitan: "서울특별시", category: "기초의원", office: "기초의원", status: "후보", subRegion: "북아현동, 신촌동,천연동, 충현동", bio: ["우리부동산 공인중개사", "북아현살집연구소 소장"], photo: "https://i.imgur.com/uVeuzZN.png", district: "가", sns: { blog: "https://blog.naver.com/manksw" }, decl: "#", dateAdded: "2026-02-06" },
-            { name: "김정훈", region: "서울 동대문구", metropolitan: "서울특별시", category: "기초의원", office: "동대문구의원", status: "후보", subRegion: "답십리2동, 장안1동, 장안2동", bio: ["전)동대문구축구협회 사무국장"], photo: "https://i.imgur.com/cH6JHd7.png", district: "바", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-05" },
+            { name: "김정훈", region: "서울 동대문구", metropolitan: "서울특별시", category: "기초의원", office: "동대문구의원", status: "후보", subRegion: "답십리2동, 장안1동, 장안2동", bio: ["전)동대문구축구협회 사무국장"], photo: "https://i.imgur.com/cH6JHd7.png", district: "바", sns: { fb: "#", ig: "https://www.instagram.com/orange.ddm/" }, decl: "#", dateAdded: "2026-02-05" },
             { name: "고길주", region: "서울 영등포구", metropolitan: "서울특별시", category: "기초의원", office: "기초의원", status: "후보", subRegion: "신길 6동, 대림1동, 대림2동, 대림3동", bio: ["영등포구 사선거구 후보"], photo: "", district: "사", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-05" },
             { name: "서준호", region: "서울 용산구", metropolitan: "서울특별시", category: "기초의원", office: "용산구의원", status: "후보", subRegion: "원효로제1동, 원효로제2동,용문동", bio: ["용산구 나선거구 후보"], photo: "", district: "나", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-05" },
             { name: "정상필", region: "서울 중랑구", metropolitan: "서울특별시", category: "기초의원", office: "기초의원", status: "후보", subRegion: "면목4동,면목7동", bio: ["중랑구 나선거구 후보"], photo: "", district: "나", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-05" },
@@ -1935,10 +1935,9 @@
                 // 도시 이름이 '양주시' 또는 '남양주시'인 경우 정확하게 구분하여 필터링
                 return candidates.filter(can => {
                     if (can.category !== "기초의원" || can.metropolitan !== "경기도") return false;
-                    const candidateCity = can.region.split(' ').pop(); // '양주시' 혹은 '남양주시'
+                    const candidateCity = can.region.split(' ').pop();
                     const isCorrectCity = candidateCity === selCity;
                     const isCorrectDistrict = selectedDistrict.includes(can.district);
-                    
                     return isCorrectCity && isCorrectDistrict;
                 });
             }, [selectedDistrict]);
