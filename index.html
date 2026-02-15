@@ -33,17 +33,18 @@
     <!-- 네이버 사이트 소유확인 -->
     <meta name="naver-site-verification" content="fd28a70b503cbae1a40202da92ff12c89126a1fe" />
 
-    <!-- SEO 및 오픈 그래프 설정 -->
-    <title>개혁신당 2026 지방선거 · 재보궐선거 출마 · 공천 현황</title>
+    <!-- SEO 및 오픈 그래프 기본 설정 (자바스크립트로 동적 변경됨) -->
+    <title id="dynamic-title">개혁신당 2026 지방선거 · 재보궐선거 출마 · 공천 현황</title>
     <meta name="description" content="제9회 전국동시지방선거 개혁신당 후보자 명단 아카이브">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="[비공식] 개혁신당 2026 지방선거 출마 · 공천 아카이브">
+    <meta property="og:title" content="[비공식] 개혁신당 2026 지방선거 출마 · 공천 아카이브" id="meta-og-title">
     <meta property="og:site_name" content="비공식 선거 아카이브">
-    <meta property="og:description" content="2026 지선 후보자들을 정리한 페이지입니다.[비공식]">
+    <meta property="og:description" content="2026 지선 후보자들을 정리한 페이지입니다.[비공식]" id="meta-og-description">
     <meta property="og:image" content="https://i.imgur.com/z0Ly5fh.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:url" content="https://restep.cc/">
+    <link rel="canonical" href="https://restep.cc/" id="meta-canonical">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://i.imgur.com/z0Ly5fh.png">
 
@@ -821,6 +822,27 @@
             }
         };
 
+        /* SEO용 메타데이터 동적 업데이트 함수 */
+        function updateMetadata(name, title, description) {
+            // 브라우저 탭 타이틀 변경
+            document.title = name ? `[개혁신당] ${name} 후보 프로필 | 2026 지방선거` : "개혁신당 2026 지방선거 아카이브";
+            
+            // OG 태그 업데이트
+            const ogTitle = document.getElementById('meta-og-title');
+            const ogDesc = document.getElementById('meta-og-description');
+            const canonical = document.getElementById('meta-canonical');
+            const currentUrl = name ? `${window.location.origin}${window.location.pathname}?candidate=${encodeURIComponent(name)}` : window.location.origin + window.location.pathname;
+
+            if (ogTitle) ogTitle.setAttribute('content', name ? `개혁신당 ${name} 후보 정보를 확인하세요!` : "[비공식] 개혁신당 2026 지방선거 출마 · 공천 아카이브");
+            if (ogDesc) ogDesc.setAttribute('content', description || "2026 지선 후보자들을 정리한 페이지입니다.[비공식]");
+            if (canonical) canonical.setAttribute('href', currentUrl);
+            
+            // URL 히스토리 업데이트 (새로고침 없이 주소창 변경)
+            if (window.history.pushState) {
+                window.history.pushState(null, null, currentUrl);
+            }
+        }
+
         /* 공유하기 관련 함수 */
         window.sharePage = function() {
             if (navigator.share) {
@@ -1190,7 +1212,7 @@
             
             const subRegionEl = document.getElementById('modal-subregion');
             subRegionEl.innerText = c.subRegion || "";
-            document.getElementById('modal-photo-area').innerHTML = c.photo ? `<img src="${c.photo}" class="w-full h-full object-contain" style="object-position: center top">` : `<div class="no-photo-placeholder"><i data-lucide="user-round" class="w-12 h-12"></i><span>이미지 준비중</span></div>`;
+            document.getElementById('modal-photo-area').innerHTML = c.photo ? `<img src="${c.photo}" class="w-full h-full object-contain" style="object-position: center top" alt="개혁신당 ${c.name} 후보 프로필">` : `<div class="no-photo-placeholder"><i data-lucide="user-round" class="w-12 h-12"></i><span>이미지 준비중</span></div>`;
             
             const snsBtns = { 
                 fb: document.getElementById('modal-fb'), 
@@ -1217,6 +1239,10 @@
                 declBtn.style.display = 'none';
             }
 
+            // SEO 업데이트 호출
+            const description = c.bio ? c.bio[0].replace(/<[^>]*>?/gm, '') : "";
+            updateMetadata(c.name, displayOfficeLabel, description);
+
             const overlay = document.getElementById('profile-modal-overlay'); 
             overlay.style.display = 'flex'; 
             setTimeout(() => overlay.classList.add('active'), 10);
@@ -1230,6 +1256,8 @@
                 overlay.style.display = 'none'; 
                 document.body.style.overflow = ''; 
                 currentModalCandidateName = '';
+                // SEO 초기화
+                updateMetadata(null);
             }, 300); 
         }
 
@@ -1380,7 +1408,7 @@
             const scale = c.cardScale || "1";
             const photoContent = isNoPhoto 
                 ? `<div class="no-photo-placeholder"><i data-lucide="user-round" class="w-12 h-12"></i><span>이미지 준비중</span></div>`
-                : `<img src="${c.photo}" class="candidate-photo ${!c.cardFit ? 'photo-face-focus' : ''}" style="object-fit: ${fit} !important; object-position: ${pos} !important; transform: scale(${scale});" alt="${c.name}">`;
+                : `<img src="${c.photo}" class="candidate-photo ${!c.cardFit ? 'photo-face-focus' : ''}" style="object-fit: ${fit} !important; object-position: ${pos} !important; transform: scale(${scale});" alt="개혁신당 ${c.name} 후보 프로필">`;
             
             const hasNewBadge = isNewCandidate(c.dateAdded);
             const newBadgeHtml = hasNewBadge ? `<span class="new-badge">NEW</span>` : "";
@@ -1783,7 +1811,7 @@
                     <div className="flex flex-row h-auto shrink-0 gap-4 sm:gap-6">
                         <div className="w-1/4 aspect-square sm:w-[40%] sm:aspect-auto bg-orange-50 dark:bg-slate-700 border border-orange-100 dark:border-slate-600 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-inner overflow-hidden shrink-0">
                             {can.photo ? (
-                                <img src={can.photo} className="w-full h-full object-cover" alt={can.name} />
+                                <img src={can.photo} className="w-full h-full object-cover" alt={`개혁신당 ${can.name} 후보 프로필`} />
                             ) : (
                                 <div className="flex flex-col items-center justify-center text-orange-200 dark:text-slate-500">
                                     <i data-lucide="user" className="w-8 h-8 sm:w-16 sm:h-16 opacity-30"></i>
@@ -2015,7 +2043,7 @@
                                                     <div className="flex gap-6 items-start mb-6">
                                                         <div className="w-24 h-32 lg:w-32 lg:h-44 bg-gray-50 dark:bg-slate-800 rounded-2xl overflow-hidden shrink-0 border border-gray-100 dark:border-slate-700 shadow-sm">
                                                             {can.photo ? (
-                                                                <img src={can.photo} className="w-full h-full object-cover" alt={can.name} />
+                                                                <img src={can.photo} className="w-full h-full object-cover" alt={`개혁신당 ${can.name} 후보 프로필`} />
                                                             ) : (
                                                                 <div className="w-full h-full flex flex-col items-center justify-center text-gray-200 dark:text-slate-600 bg-slate-50 dark:bg-slate-900">
                                                                     <i data-lucide="user" className="w-10 h-10 mb-1 opacity-20"></i>
