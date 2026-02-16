@@ -1052,7 +1052,7 @@
             { name: "박진우", region: "광주 동구", metropolitan: "광주광역시", category: "기초의원", office: "동구의원", status: "후보", subRegion: "충장동, 동명동, 계림1동, 계림2동, 산수1동, 산수2동", bio: ["동구·남구 을 당협위원장", "21대 대선 선대위 홍보부본부장"], photo: "https://i.imgur.com/cah0vOW.png", district: "가", sns: { fb: "https://www.facebook.com/jinu.park.77/about", ig: "https://www.instagram.com/1jwpark/", yt: "https://www.youtube.com/@jinu_park" }, dateAdded: "2026-01-26" },
             { name: "오정대", region: "경기 성남시", metropolitan: "경기도", category: "기초의원", office: "기초의원", status: "후보", subRegion: "분당구 이매1동, 이매2동, 삼평동", bio: ["도로교통사고감정사", "도로교통사고감정사 협회 정회원", "유튜브 '운전하는곰돌' 운영", "작가"], photo: "", district: "아", sns: { yt: "https://www.youtube.com/@d_gomdol/featured" }, decl: "#", dateAdded: "2026-01-31" },
             { name: "김병진", region: "경기 성남시", metropolitan: "경기도", category: "기초의원", office: "성남시의회", status: "후보", district: "사", subRegion: "중앙동, 금광1동, 금광2동, 은행1동, 은행2동", bio: ["성남시 사선거구 후보"], photo: "", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-09" },
-            { name: "김태수", region: "경기 부천시", metropolitan: "경기도", category: "기초의원", office: "부천시의원", status: "후보", subRegion: "원미구 중1동, 중2동, 중3동, 중4동, 약대동", bio: ["현 현대흥립통합재건축추진준비위 위원장", "현 흥립약대아파트 입대위 감사", "전 에어아시아재팬 항공승무원"], photo: "https://i.imgur.com/JROiWlJ.png", district: "마", sns: { fb: "https://www.facebook.com/share/1B6fqnbu3X/", ig: "https://www.instagram.com/bucheon_tezz/", blog: "https://blog.naver.com/bucheon_tezz" }, decl: "https://blog.naver.com/bucheon_tezz/224160408956", dateAdded: "2026-01-26" },
+            { name: "김태수", region: "경기 부천시", metropolitan: "경기도", category: "기초의원", office: "부천시의원", status: "후보", subRegion: "원미구 중1동, 중2동, 중3동, 중4동, 약대동", bio: ["<span style='letter-spacing:-0.12em;'>개혁신당 부천시 지역발전특위 부위원장</span>", "<span style='letter-spacing:-0.12em;'>현 현대흥립통합재건축추진준비위 위원장</span>", "전 에어아시아재팬 항공승무원"], photo: "https://i.imgur.com/JROiWlJ.png", district: "마", sns: { fb: "https://www.facebook.com/share/1B6fqnbu3X/", ig: "https://www.instagram.com/bucheon_tezz/", blog: "https://blog.naver.com/bucheon_tezz" }, decl: "https://blog.naver.com/bucheon_tezz/224160408956", dateAdded: "2026-01-26" },
             { name: "조병찬", region: "경기 부천시", metropolitan: "경기도", category: "기초의원", office: "부천시의원", status: "후보", subRegion: "소사구 범박동, 괴안동, 역곡3동, 옥길동", bio: ["구로 보스톤미치과 대표원장", "치과의사"], photo: "", district: "아", sns: { fb: "#" }, decl: "#", dateAdded: "2026-01-26" },
             { name: "이승도", region: "경기 용인시", metropolitan: "경기도", category: "기초의원", office: "용인시의원", status: "후보", subRegion: "상현1동, 상현3동", bio: ["용인시 사선거구 후보"], photo: "", district: "사", sns: { fb: "#" }, decl: "#", dateAdded: "2026-01-26" },
             { name: "황승빈", region: "경기 수원시", metropolitan: "경기도", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "영통구 영통2동, 영통3동, 망포1동, 망포2동", bio: ["수원시 파선거구 후보"], photo: "https://i.imgur.com/kMbaiCJ.jpeg", district: "파", sns: { fb: "#" }, decl: "#", dateAdded: "2026-01-26" },
@@ -1355,10 +1355,10 @@
         };
 
         function createCard(c) {
-            const isTightBio = ["김태수", "고재윤", "이강민", "오정대", "우영훈", "최윤석", "구성도", "박성진", "주한송", "최제일", "심용진", "박종길", "하대식", "송원근", "이호엽", "하용준", "김영민", "손승범", "김주연", "주이삭" ].includes(c.name);
+            const isTightBio = ["김태수", "고재윤", "이강민", "오정대", "우영훈", "최윤석", "구성도", "박성진", "주한송", "최제일", "심용진", "박종길", "하대식", "송원근", "이호엽", "하용준", "김영민", "손승범", "김주연", "주이삭", "김태수" ].includes(c.name);
             const isTightSpacing = ["우영훈", "김태수", "심용진", "김주연"].includes(c.name);
             let styles = [];
-            if (isTightBio || ["하대식", "조동운", "박철현", "김성민", "류태하", "이용우", "이재원", "김병진", "양성혁", "양준모", "김주연", "주이삭"].includes(c.name)) {
+            if (isTightBio || ["하대식", "조동운", "박철현", "김성민", "류태하", "이용우", "이재원", "김병진", "양성혁", "양준모", "김주연", "주이삭", "김태수"].includes(c.name)) {
                 styles.push("line-height: 1.05");
             }
             if (isTightSpacing) { styles.push("letter-spacing: -0.08em"); }
@@ -1968,3 +1968,18 @@
     </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
