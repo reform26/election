@@ -16,7 +16,15 @@
             y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
         })(window, document, "clarity", "script", "v2ogrkuyk0");
     </script>
-
+    
+    <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.4/kakao.min.js" integrity="sha384-oY7Sbo96v7u6TvskvLOnOOfP5J5KXT80f7X8FTNvvzO9UfXqW9yNf5Vf74YpT5/1" crossorigin="anonymous"></script>
+    <script>
+      // 발급받은 JavaScript 키로 초기화
+      if (typeof Kakao !== 'undefined' && !Kakao.isInitialized()) {
+        Kakao.init('f09f6548fc495f897d1a9131da59ce1d');
+      }
+    </script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
@@ -881,68 +889,69 @@
             e.stopPropagation();
             const name = currentModalCandidateName;
             if(!name) return;
-            
+    
             const c = candidates.find(cand => cand.name === name);
             if (!c) return;
 
+            // 1. 3단계 상태 라벨 결정 로직
             const isConfirmed = (c.status === "후보" && c.name !== "김성민" && c.name !== "이수찬" && c.name !== "박종길");
-            const roleLabel = isConfirmed ? "예비후보" : "출마자";
-
-            let shareTextContent = "";
-            
-            if (c.category === "광역단체장") {
-                shareTextContent = `[개혁신당] ${c.office} ${roleLabel} ${name} 정보를 확인하세요!`;
-            } else if (c.category === "기초단체장") {
-                shareTextContent = `[개혁신당] ${c.office} ${roleLabel} ${name} 정보를 확인하세요!`;
-            } else if (c.category === "광역의원") {
-                if (c.constituency === "비례") {
-                    let council = c.metropolitan.replace("특별시", "시의회").replace("광역시", "시의회").replace("특별자치시", "시의회").replace("특별자치도", "도의회").replace("도", "도의회");
-                    shareTextContent = `[개혁신당] ${council} 비례대표 ${roleLabel} ${name} 정보를 확인하세요!`;
-                } else {
-                    let council = c.metropolitan;
-                    if (council.endsWith("특별시") || council.endsWith("광역시")) council = council.substring(0, 2) + "시의회";
-                    else if (council === "세종특별자치시") council = "세종시의회";
-                    else if (council === "제주특별자치도") council = "제주도의회"; 
-                    else if (council.endsWith("도")) council = council.substring(0, 2) + "도의회";
-                    
-                    const regionName = c.constituencyFull || `${c.shortMetro || c.region} ${c.district}선거구`;
-                    let fullTitle = regionName;
-                    if (!regionName.startsWith(council)) {
-                        fullTitle = `${council} ${regionName}`;
-                    }
-                    shareTextContent = `[개혁신당] ${fullTitle} ${roleLabel} ${name} 정보를 확인하세요!`;
-                }
-            } else if (c.category === "기초의원") {
-                if (c.district) {
-                    shareTextContent = `[개혁신당] ${c.region} ${c.district}선거구 ${roleLabel} ${name} 정보를 확인하세요!`;
-                } else {
-                    shareTextContent = `[개혁신당] ${c.office} ${roleLabel} ${name} 정보를 확인하세요!`;
-                }
+            let roleLabel = "";
+            if (isConfirmed) {
+                roleLabel = "예비후보";
+            } else if (c.decl && c.decl !== "#") {
+                roleLabel = "출마선언";
             } else {
-                shareTextContent = `[개혁신당] ${c.office || '후보'} ${roleLabel} ${name} 정보를 확인하세요!`;
+                roleLabel = "출마예정";
             }
 
-            const shareUrl = `${window.location.origin}${window.location.pathname}?candidate=${encodeURIComponent(name)}`;
-            const shareText = shareTextContent;
+            // 2. 제목 구성을 위한 정보 조합
+            const displayOffice = getCleanOffice(c); // 예: 서대문구의회
+            const districtLabel = c.district ? ` ${c.district}선거구` : ""; // 예: 가선거구
+    
+            // 최종 제목: [개혁신당] 이름 선거구 라벨
+            const customTitle = `[개혁신당] ${name} ${displayOffice}${districtLabel} ${roleLabel}`;
+    
+            // 3. 약력 설명 (HTML 태그 제거)
+            const firstBio = c.bio && c.bio.length > 0 
+                ? c.bio[0].replace(/<[^>]*>?/gm, '') 
+                : `${c.region} 후보자`;
 
-            if (navigator.share) {
-                navigator.share({
-                    title: shareText,
-                    text: shareText,
-                    url: shareUrl,
-                }).catch(console.error);
+            const shareUrl = `${window.location.origin}${window.location.pathname}?candidate=${encodeURIComponent(name)}`;
+
+            // 4. 카카오톡 공유 실행 (SDK 연동)
+            if (window.Kakao && Kakao.Share) {
+                Kakao.Share.sendDefault({
+                    objectType: 'feed',
+                    content: {
+                        title: customTitle,
+                        description: firstBio,
+                        imageUrl: c.photo || "https://i.imgur.com/z0Ly5fh.png",
+                        link: {
+                            mobileWebUrl: shareUrl,
+                            webUrl: shareUrl,
+                        },
+                    },
+                    buttons: [
+                        {
+                            title: '상세 프로필 보기',
+                            link: {
+                                mobileWebUrl: shareUrl,
+                                webUrl: shareUrl,
+                            },
+                        },
+                    ],
+                });
             } else {
-                const textArea = document.createElement("textarea");
-                textArea.value = `${shareText}\n${shareUrl}`;
-                document.body.appendChild(textArea);
-                textArea.select();
-                try {
-                    document.execCommand('copy');
-                    alert('후보자 정보를 복사했습니다!\n원하는 곳에 붙여넣기 하세요.');
-                } catch (err) {
-                    alert('복사에 실패했습니다.');
+                // SDK 로드 실패 시 일반 공유창 호출
+                if (navigator.share) {
+                    navigator.share({
+                        title: customTitle,
+                        text: firstBio,
+                        url: shareUrl,
+                    }).catch(console.error);
+                } else {
+                    copyLink(); // 최종 fallback: 링크 복사
                 }
-                document.body.removeChild(textArea);
             }
         };
 
@@ -2016,4 +2025,5 @@
     </script>
 </body>
 </html>
+
 
