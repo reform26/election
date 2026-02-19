@@ -182,6 +182,11 @@
                 grid-template-columns: repeat(5, 1fr); 
             } 
         }
+        @media (min-width: 10280px) { 
+            .grid-responsive { 
+                grid-template-columns: repeat(6, 1fr); 
+            } 
+        }
 
         .photo-frame { 
             height: 180px; 
@@ -579,7 +584,7 @@
                 <div class="bg-orange-100 dark:bg-orange-900/30 p-2 rounded-xl group-hover:bg-[#FF6600] transition-colors">
                     <i data-lucide="map" class="w-5 h-5 text-[#FF6600] group-hover:text-white transition-colors"></i>
                 </div>
-                <span class="font-black text-gray-800 dark:text-slate-100 text-lg">서울 기초의회 선거구 지도 (beta)<span id="seoul-map-new-badge" class="new-badge">NEW</span></span>
+                <span class="font-black text-gray-800 dark:text-slate-100 text-lg">서울 기초의회 선거구 지도<span id="seoul-map-new-badge" class="new-badge">NEW</span></span>
             </div>
             <div class="flex items-center gap-2 text-sm font-bold text-gray-400">
                 <span id="map-toggle-label">[펼치기 · 닫기]</span>
@@ -600,7 +605,7 @@
                 <div class="bg-orange-100 dark:bg-orange-900/30 p-2 rounded-xl group-hover:bg-[#FF6600] transition-colors">
                     <i data-lucide="map-pinned" class="w-5 h-5 text-[#FF6600] group-hover:text-white transition-colors"></i>
                 </div>
-                <span class="font-black text-gray-800 dark:text-slate-100 text-lg">경기 기초의회 선거구 지도 (beta)<span id="gyeonggi-map-new-badge" class="new-badge">NEW</span></span>
+                <span class="font-black text-gray-800 dark:text-slate-100 text-lg">경기 기초의회 선거구 지도<span id="gyeonggi-map-new-badge" class="new-badge">NEW</span></span>
             </div>
             <div class="flex center gap-2 text-sm font-bold text-gray-400">
                 <span id="gyeonggi-map-toggle-label">[펼치기 · 닫기]</span>
@@ -2039,14 +2044,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
