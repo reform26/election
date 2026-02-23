@@ -17,7 +17,7 @@
         })(window, document, "clarity", "script", "v2ogrkuyk0");
     </script>
     
-    <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.4/kakao.min.js" integrity="sha384-oY7Sbo96v7u6TvskvLOnOOfP5J5KXT80f7X8FTNvvzO9UfXqW9yNf5Vf74YpT5/1" crossorigin="anonymous"></script>
+    <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.4/kakao.min.js" xintegrity="sha384-oY7Sbo96v7u6TvskvLOnOOfP5J5KXT80f7X8FTNvvzO9UfXqW9yNf5Vf74YpT5/1" crossorigin="anonymous"></script>
     <script>
       if (typeof Kakao !== 'undefined' && !Kakao.isInitialized()) {
         Kakao.init('f09f6548fc495f897d1a9131da59ce1d');
@@ -578,7 +578,7 @@
         </div>
     </div>
 
-    <div class="max-w-7xl mx-auto px-4 md:px-10 mt-6 mb-4 block">
+    <div class="max-w-7xl mx-auto px-4 md:px-10 mt-6 mb-3 block">
         <div onclick="toggleMapVisibility()" class="flex justify-between items-center bg-white dark:bg-slate-800 border border-orange-100 dark:border-slate-700 rounded-2xl p-5 mb-3 shadow-sm cursor-pointer hover:bg-orange-50 dark:hover:bg-slate-700/50 transition-all group">
             <div class="flex items-center gap-3">
                 <div class="bg-orange-100 dark:bg-orange-900/30 p-2 rounded-xl group-hover:bg-[#FF6600] transition-colors">
@@ -599,7 +599,7 @@
         </div>
     </div>
 
-    <div class="max-w-7xl mx-auto px-4 md:px-10 mt-4 mb-8 block">
+    <div class="max-w-7xl mx-auto px-4 md:px-10 mt-3 mb-3 block">
         <div onclick="toggleGyeonggiMapVisibility()" class="flex justify-between items-center bg-white dark:bg-slate-800 border border-orange-100 dark:border-slate-700 rounded-2xl p-5 mb-3 shadow-sm cursor-pointer hover:bg-orange-50 dark:hover:bg-slate-700/50 transition-all group">
             <div class="flex items-center gap-3">
                 <div class="bg-orange-100 dark:bg-orange-900/30 p-2 rounded-xl group-hover:bg-[#FF6600] transition-colors">
@@ -620,7 +620,26 @@
         </div>
     </div>
 
-    <!-- 내 동네 후보 찾기 검색 섹션 -->
+    <div class="max-w-7xl mx-auto px-4 md:px-10 mt-3 mb-4 block">
+        <div onclick="toggleDaeguMapVisibility()" class="flex justify-between items-center bg-white dark:bg-slate-800 border border-orange-100 dark:border-slate-700 rounded-2xl p-5 mb-3 shadow-sm cursor-pointer hover:bg-orange-50 dark:hover:bg-slate-700/50 transition-all group">
+            <div class="flex items-center gap-3">
+                <div class="bg-orange-100 dark:bg-orange-900/30 p-2 rounded-xl group-hover:bg-[#FF6600] transition-colors">
+                    <i data-lucide="map-pin" class="w-5 h-5 text-[#FF6600] group-hover:text-white transition-colors"></i>
+                </div>
+                <span class="font-black text-gray-800 dark:text-slate-100 text-lg">대구 기초의회 선거구 지도<span id="daegu-map-new-badge" class="new-badge">NEW</span></span>
+            </div>
+            <div class="flex items-center gap-2 text-sm font-bold text-gray-400">
+                <span>[펼치기 · 닫기]</span>
+                <div id="daegu-map-toggle-icon-wrapper" class="transition-transform duration-300">
+                    <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400"></i>
+                </div>
+            </div>
+        </div>
+        <div id="daegu-map-dashboard-root-content" class="hidden opacity-0 h-0 collapsible-container">
+            <div id="daegu-map-dashboard-root-render"></div>
+        </div>
+    </div>
+
     <div class="max-w-7xl mx-auto px-4 md:px-10 mt-4 mb-8" id="dong-search-section">
         <div id="dong-search-root"></div>
     </div>
@@ -673,7 +692,7 @@
                 <p class="text-[10px] md:text-xs font-medium leading-relaxed text-center md:text-left">
                     이 페이지는 <strong class="text-gray-500 dark:text-slate-400 font-bold">개혁신당과 관련 없는 비공식 페이지</strong>입니다.<br>
                     내용 추가, 오류 수정, 정보 제거를 원하시면 <a href="https://rallypoint.kr" target="_blank" class="underline hover:text-gray-600 dark:hover:text-slate-300 transition-colors">당원게시판</a>으로 문의주세요. (닉네임: 이즌석)<br>
-                    (이메일 : reform.orange26@gmail.com)
+                    (이메일 : <a href="mailto:reform.orange26@gmail.com">reform.orange26@gmail.com</a>)
                 </p>
                 <button onclick="toggleDarkMode()" class="dark-mode-toggle shadow-sm hover:shadow-md active:scale-95 transition-all">
                     <span id="dark-mode-icon-wrapper"><i data-lucide="moon" class="w-3 h-3"></i></span>
@@ -714,15 +733,7 @@
         </div>
     </div>
 
-    <!-- ====================================================== -->
-    <!--  외부 데이터 파일 로드 (반드시 메인 스크립트보다 먼저)  -->
-    <!-- ====================================================== -->
-    <script src="can.js?v=0222.01"></script>   <!-- 후보자 데이터 (candidates, regionPriority) -->
-    <script src="data1.js"></script> <!-- 서울/경기 선거구 지도 데이터 -->
-    <script src="search.js"></script>
-    <!-- ====================================================== -->
-    <!--  메인 애플리케이션 스크립트                            -->
-    <!-- ====================================================== -->
+    <script src="can.js?v=0223.05"></script>   <script src="data1.js?v=0223.05"></script> <script src="search.js?v=0223.05"></script>
     <script>
         let currentModalCandidateName = '';
         let showOnlyConfirmed = false;
@@ -885,7 +896,37 @@
                     const isMobile = window.innerWidth < 1024;
                     content.style.height = isMobile ? '950px' : '650px'; 
                     content.style.opacity = '1';
-                    iconWrapper.style.transform = 'rotate(0deg)';
+                    iconWrapper.style.transform = 'rotate(180deg)';
+                }, 10);
+            } else {
+                content.style.height = '0';
+                content.style.opacity = '0';
+                iconWrapper.style.transform = 'rotate(0deg)';
+                setTimeout(() => {
+                    content.classList.add('hidden');
+                }, 500);
+            }
+        };
+
+        window.toggleDaeguMapVisibility = function() {
+            const content = document.getElementById('daegu-map-dashboard-root-content');
+            const iconWrapper = document.getElementById('daegu-map-toggle-icon-wrapper');
+            const isHidden = content.classList.contains('hidden');
+
+            if (isHidden) {
+                content.classList.remove('hidden');
+                if (!window._daeguMapMounted) {
+                    window._daeguMapMounted = true;
+                    setTimeout(() => {
+                        const daeguRoot = ReactDOM.createRoot(document.getElementById('daegu-map-dashboard-root-render'));
+                        daeguRoot.render(React.createElement(DaeguMapDashboard));
+                    }, 20);
+                }
+                setTimeout(() => {
+                    const isMobile = window.innerWidth < 1024;
+                    content.style.height = isMobile ? '950px' : '650px';
+                    content.style.opacity = '1';
+                    iconWrapper.style.transform = 'rotate(180deg)';
                 }, 10);
             } else {
                 content.style.height = '0';
@@ -1354,6 +1395,10 @@
                 if (sBadge) sBadge.style.display = 'none';
                 if (gBadge) gBadge.style.display = 'none';
             }
+            // 대구 지도 NEW 뱃지: 2026-02-12 기준 14일 = 2026-02-26 만료
+            const daeguBadgeExpiry = new Date('2026-02-26');
+            const dBadge = document.getElementById('daegu-map-new-badge');
+            if (dBadge && today >= daeguBadgeExpiry) dBadge.style.display = 'none';
 
             const params = new URLSearchParams(window.location.search);
             const candidateName = params.get('candidate');
@@ -1434,9 +1479,6 @@
         }
     </script>
 
-    <!-- ====================================================== -->
-    <!--  React 지도 컴포넌트                                   -->
-    <!-- ====================================================== -->
     <script type="text/babel">
         const { useState, useEffect, useRef, useMemo } = React;
 
@@ -1453,9 +1495,40 @@
             .replace(/[ABC]$/, "")
             .replace("中央", "중앙");
 
+        // ── 인라인 SVG 아이콘 (lucide.createIcons() DOM 충돌 방지) ──
+        const Icon = ({ name, className = "w-4 h-4" }) => {
+            const paths = {
+                user: <><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></>,
+                "user-round": <><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></>,
+                users: <><circle cx="9" cy="7" r="3"/><path d="M3 20c0-3 2.7-5.5 6-5.5"/><circle cx="17" cy="7" r="3"/><path d="M21 20c0-3-2.7-5.5-6-5.5"/><path d="M9 14.5c1-.3 2-.5 3-.5s2 .2 3 .5"/></>,
+                facebook: <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>,
+                instagram: <><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></>,
+                youtube: <><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></>,
+                link: <><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></>,
+                "link-2": <><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"/><line x1="8" x2="16" y1="12" y2="12"/></>,
+                globe: <><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></>,
+                "file-text": <><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/><line x1="16" x2="8" y1="17" y2="17"/><polyline points="10 9 9 9 8 9"/></>,
+                search: <><circle cx="11" cy="11" r="8"/><line x1="21" x2="16.65" y1="21" y2="16.65"/></>,
+                plus: <><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></>,
+                minus: <line x1="5" x2="19" y1="12" y2="12"/>,
+                "refresh-cw": <><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></>,
+                x: <><line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/></>,
+                "mouse-pointer-2": <path d="m4 4 7.07 17 2.51-7.39L21 11.07z"/>,
+                "corner-down-left": <><polyline points="9 10 4 15 9 20"/><path d="M20 4v7a4 4 0 0 1-4 4H4"/></>,
+                "map-pin": <><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></>,
+            };
+            return (
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+                    className={className}>
+                    {paths[name] || null}
+                </svg>
+            );
+        };
+
         const IntegratedProfile = ({ can }) => {
             const isValidLink = (link) => link && link !== "" && link !== "#";
-            
+
             const getStatusLabel = (c) => {
                 const isConfirmed = (c.status === "후보" && c.name !== "김성민" && c.name !== "이수찬");
                 if (isConfirmed) return "후보";
@@ -1479,10 +1552,6 @@
                 displayOfficeLabel = `${cityName}의회${districtLabel} ${getStatusLabel(can)}`;
             }
 
-            useEffect(() => {
-                if (typeof lucide !== 'undefined') lucide.createIcons();
-            }, [can]);
-
             return (
                 <div className="h-full flex flex-col overflow-hidden text-slate-800 dark:text-slate-200">
                     <div className="flex flex-row h-auto shrink-0 gap-4 sm:gap-6">
@@ -1491,7 +1560,7 @@
                                 <img src={can.photo} className="w-full h-full object-cover" alt={`개혁신당 ${can.name} 후보 프로필`} />
                             ) : (
                                 <div className="flex flex-col items-center justify-center text-orange-200 dark:text-slate-500">
-                                    <i data-lucide="user" className="w-8 h-8 sm:w-16 sm:h-16 opacity-30"></i>
+                                    <Icon name="user" className="w-8 h-8 sm:w-16 sm:h-16 opacity-30"/>
                                     <span className="text-[8px] font-black uppercase tracking-widest mt-1 hidden sm:block">No Profile</span>
                                 </div>
                             )}
@@ -1503,14 +1572,14 @@
                             </h3>
                             <div className="px-2 py-0.5 sm:px-3 sm:py-1 bg-orange-100 dark:bg-orange-900/40 text-orange-600 dark:text-orange-400 rounded-lg text-[9px] sm:text-xs font-black uppercase mb-2 sm:mb-4">{displayOfficeLabel}</div>
                             <div className="flex gap-1.5 sm:gap-2 mb-2 sm:mb-4">
-                                {isValidLink(can.sns?.fb) && <a href={can.sns.fb} target="_blank" className="p-1.5 sm:p-2 bg-orange-50 dark:bg-slate-800 text-orange-600 dark:text-orange-400 rounded-lg hover:bg-orange-500 hover:text-white transition-colors border border-orange-100 dark:border-slate-700 shadow-sm"><i data-lucide="facebook" className="w-3.5 h-3.5 sm:w-4 sm:h-4"></i></a>}
-                                {isValidLink(can.sns?.ig) && <a href={can.sns.ig} target="_blank" className="p-1.5 sm:p-2 bg-orange-50 dark:bg-slate-800 text-orange-600 dark:text-orange-400 rounded-lg hover:bg-orange-500 hover:text-white transition-colors border border-orange-100 dark:border-slate-700 shadow-sm"><i data-lucide="instagram" className="w-3.5 h-3.5 sm:w-4 sm:h-4"></i></a>}
-                                {isValidLink(can.sns?.blog) && <a href={can.sns.blog} target="_blank" className="p-1.5 sm:p-2 bg-orange-50 dark:bg-slate-800 text-orange-600 dark:text-orange-400 rounded-lg hover:bg-orange-500 hover:text-white transition-colors border border-orange-100 dark:border-slate-700 shadow-sm"><i data-lucide="link" className="w-3.5 h-3.5 sm:w-4 sm:h-4"></i></a>}
-                                {isValidLink(can.sns?.yt) && <a href={can.sns.yt} target="_blank" className="p-1.5 sm:p-2 bg-orange-50 dark:bg-slate-800 text-orange-600 dark:text-orange-400 rounded-lg hover:bg-orange-500 hover:text-white transition-colors border border-orange-100 dark:border-slate-700 shadow-sm"><i data-lucide="youtube" className="w-3.5 h-3.5 sm:w-4 sm:h-4"></i></a>}
+                                {isValidLink(can.sns?.fb) && <a href={can.sns.fb} target="_blank" className="p-1.5 sm:p-2 bg-orange-50 dark:bg-slate-800 text-orange-600 dark:text-orange-400 rounded-lg hover:bg-orange-500 hover:text-white transition-colors border border-orange-100 dark:border-slate-700 shadow-sm"><Icon name="facebook" className="w-3.5 h-3.5 sm:w-4 sm:h-4"/></a>}
+                                {isValidLink(can.sns?.ig) && <a href={can.sns.ig} target="_blank" className="p-1.5 sm:p-2 bg-orange-50 dark:bg-slate-800 text-orange-600 dark:text-orange-400 rounded-lg hover:bg-orange-500 hover:text-white transition-colors border border-orange-100 dark:border-slate-700 shadow-sm"><Icon name="instagram" className="w-3.5 h-3.5 sm:w-4 sm:h-4"/></a>}
+                                {isValidLink(can.sns?.blog) && <a href={can.sns.blog} target="_blank" className="p-1.5 sm:p-2 bg-orange-50 dark:bg-slate-800 text-orange-600 dark:text-orange-400 rounded-lg hover:bg-orange-500 hover:text-white transition-colors border border-orange-100 dark:border-slate-700 shadow-sm"><Icon name="link" className="w-3.5 h-3.5 sm:w-4 sm:h-4"/></a>}
+                                {isValidLink(can.sns?.yt) && <a href={can.sns.yt} target="_blank" className="p-1.5 sm:p-2 bg-orange-50 dark:bg-slate-800 text-orange-600 dark:text-orange-400 rounded-lg hover:bg-orange-500 hover:text-white transition-colors border border-orange-100 dark:border-slate-700 shadow-sm"><Icon name="youtube" className="w-3.5 h-3.5 sm:w-4 sm:h-4"/></a>}
                             </div>
                             {isValidLink(can.decl) && (
                                 <a href={can.decl} target="_blank" className="w-full sm:w-auto px-3 py-1.5 sm:py-2.5 bg-orange-500 text-white rounded-lg sm:rounded-xl text-[10px] sm:text-sm font-black text-center shadow-lg shadow-orange-200 hover:bg-orange-600 transition-all active:scale-95 flex items-center justify-center gap-1.5">
-                                    <i data-lucide="file-text" className="w-3 h-3 sm:w-4 sm:h-4"></i><span className="whitespace-nowrap">출마선언문 보기</span>
+                                    <Icon name="file-text" className="w-3 h-3 sm:w-4 sm:h-4"/><span className="whitespace-nowrap">출마선언문 보기</span>
                                 </a>
                             )}
                         </div>
@@ -1603,10 +1672,6 @@
 
                 Promise.all([dongPromise, guPromise]).finally(() => setLoading(false));
             }, []);
-
-            useEffect(() => {
-                if (!loading && typeof lucide !== 'undefined') lucide.createIcons();
-            }, [loading, selectedDistrictInfo, matchedCandidates]);
 
             const project = (coords) => {
                 const scale = 1800;
@@ -1721,7 +1786,7 @@
                                                                 <img src={can.photo} className="w-full h-full object-cover" alt={`개혁신당 ${can.name} 후보 프로필`} />
                                                             ) : (
                                                                 <div className="w-full h-full flex flex-col items-center justify-center text-gray-200 dark:text-slate-600 bg-slate-50 dark:bg-slate-900">
-                                                                    <i data-lucide="user" className="w-10 h-10 mb-1 opacity-20"></i>
+                                                                    <Icon name="user" className="w-10 h-10 mb-1 opacity-20"/>
                                                                     <span className="text-[8px] font-bold uppercase tracking-widest opacity-40">No Image</span>
                                                                 </div>
                                                             )}
@@ -1737,23 +1802,23 @@
                                                             <div className="flex gap-4 items-center mb-6">
                                                                 {can.sns?.fb && can.sns.fb !== "#" && (
                                                                     <a href={can.sns.fb} target="_blank" className="sns-btn fb w-8 h-8 lg:w-10 lg:h-10 rounded-full border border-gray-100 dark:border-slate-700 shadow-sm flex items-center justify-center">
-                                                                        <i data-lucide="facebook" className="w-4 h-4 lg:w-5 lg:h-5"></i>
+                                                                        <Icon name="facebook" className="w-4 h-4 lg:w-5 lg:h-5"/>
                                                                     </a>
                                                                 )}
                                                                 {can.sns?.ig && can.sns.ig !== "#" && (
                                                                     <a href={can.sns.ig} target="_blank" className="sns-btn ig w-8 h-8 lg:w-10 lg:h-10 rounded-full border border-gray-100 dark:border-slate-700 shadow-sm flex items-center justify-center">
-                                                                        <i data-lucide="instagram" className="w-4 h-4 lg:w-5 lg:h-5"></i>
+                                                                        <Icon name="instagram" className="w-4 h-4 lg:w-5 lg:h-5"/>
                                                                     </a>
                                                                 )}
                                                                 {can.sns?.yt && can.sns.yt !== "#" && (
                                                                     <a href={can.sns.yt} target="_blank" className="sns-btn youtube w-8 h-8 lg:w-10 lg:h-10 rounded-full border border-gray-100 dark:border-slate-700 shadow-sm flex items-center justify-center">
-                                                                        <i data-lucide="youtube" className="w-4 h-4 lg:w-5 lg:h-5"></i>
+                                                                        <Icon name="youtube" className="w-4 h-4 lg:w-5 lg:h-5"/>
                                                                     </a>
                                                                 )}
                                                             </div>
                                                             {can.decl && can.decl !== "#" && (
                                                                 <a href={can.decl} target="_blank" className="flex items-center justify-center gap-2 px-4 py-2 lg:px-6 lg:py-3 nrp-bg-orange text-white rounded-2xl text-xs lg:text-sm font-black shadow-lg shadow-orange-200 hover:-translate-y-0.5 transition-all active:scale-95">
-                                                                    <i data-lucide="file-text" className="w-3 h-3 lg:w-4 lg:h-4"></i>
+                                                                    <Icon name="file-text" className="w-3 h-3 lg:w-4 lg:h-4"/>
                                                                     출마선언 보기
                                                                 </a>
                                                             )}
@@ -1833,10 +1898,6 @@
                 };
                 fetchMapData();
             }, []);
-
-            useEffect(() => {
-                if (!loading && typeof lucide !== 'undefined') lucide.createIcons();
-            }, [loading, selectedDistrict, activeDistrict]);
 
             const project = (coords) => {
                 const { minX, maxX, minY, maxY } = mapBounds;
@@ -1930,7 +1991,7 @@
                             )}
                             <div className="absolute top-4 left-4 w-64 z-10">
                                 <div className="bg-white/95 dark:bg-slate-800/95 backdrop-blur p-3 rounded-2xl border border-orange-50 dark:border-slate-700 flex items-center gap-2 shadow-lg">
-                                    <i data-lucide="search" className="w-4 h-4 text-orange-400"></i>
+                                    <Icon name="search" className="w-4 h-4 text-orange-400 shrink-0"/>
                                     <input type="text" placeholder="읍면동 검색 (예: 인창동)" className="bg-transparent outline-none w-full text-xs font-bold dark:text-slate-200" value={searchTerm} onChange={(e) => { setSearchTerm(e.target.value); setShowSuggestions(true); }} />
                                 </div>
                                 {showSuggestions && searchTerm.length > 0 && (
@@ -1942,9 +2003,9 @@
                                 )}
                             </div>
                             <div className="absolute bottom-4 right-4 flex flex-col gap-2">
-                                <button onClick={() => setZoomMultiplier(p => p * 1.2)} className="w-10 h-10 bg-white dark:bg-slate-800 rounded-xl shadow border border-orange-50 dark:border-slate-700 text-orange-500 hover:bg-orange-500 hover:text-white transition-colors"><i data-lucide="plus" className="w-5 h-5 mx-auto"></i></button>
-                                <button onClick={() => setZoomMultiplier(p => p / 1.2)} className="w-10 h-10 bg-white dark:bg-slate-800 rounded-xl shadow border border-orange-50 dark:border-slate-700 text-slate-400 dark:text-slate-500 hover:bg-slate-500 hover:text-white transition-colors"><i data-lucide="minus" className="w-5 h-5 mx-auto"></i></button>
-                                <button onClick={() => { setZoomMultiplier(1); setPanOffset({x:120, y:90}); }} className="w-10 h-10 bg-white dark:bg-slate-800 rounded-xl shadow border border-orange-100 dark:border-slate-700 transition-colors"><i data-lucide="refresh-cw" className="w-4 h-4 mx-auto text-slate-400 dark:text-slate-500"></i></button>
+                                <button onClick={() => setZoomMultiplier(p => p * 1.2)} className="w-10 h-10 bg-white dark:bg-slate-800 rounded-xl shadow border border-orange-50 dark:border-slate-700 text-orange-500 hover:bg-orange-500 hover:text-white transition-colors flex items-center justify-center"><Icon name="plus" className="w-5 h-5"/></button>
+                                <button onClick={() => setZoomMultiplier(p => p / 1.2)} className="w-10 h-10 bg-white dark:bg-slate-800 rounded-xl shadow border border-orange-50 dark:border-slate-700 text-slate-400 dark:text-slate-500 hover:bg-slate-500 hover:text-white transition-colors flex items-center justify-center"><Icon name="minus" className="w-5 h-5"/></button>
+                                <button onClick={() => { setZoomMultiplier(1); setPanOffset({x:120, y:90}); }} className="w-10 h-10 bg-white dark:bg-slate-800 rounded-xl shadow border border-orange-100 dark:border-slate-700 transition-colors flex items-center justify-center"><Icon name="refresh-cw" className="w-4 h-4 text-slate-400 dark:text-slate-500"/></button>
                             </div>
                         </div>
                         <div className="flex-1 bg-white dark:bg-slate-900 rounded-3xl border border-orange-50 dark:border-slate-800 shadow-xl flex flex-col overflow-hidden">
@@ -1965,8 +2026,407 @@
                             <div className="flex-1 p-5 sm:p-6 lg:overflow-y-auto custom-scrollbar">
                                 {selectedDistrict ? (
                                     matchedCandidatesMap.length > 0 ? <IntegratedProfile can={matchedCandidatesMap[selectedCandidateIdx]} /> :
-                                    <div className="h-full flex flex-col items-center justify-center text-slate-300 dark:text-slate-600 opacity-50"><i data-lucide="users" className="w-12 h-12 mb-2"></i><p>등록된 후보자가 없습니다.</p></div>
-                                ) : <div className="h-full flex flex-col items-center justify-center text-orange-200 dark:text-slate-700 opacity-50"><i data-lucide="mouse-pointer-2" className="w-12 h-12 mb-2"></i><p>지도를 클릭해주세요!</p></div>}
+                                    <div className="h-full flex flex-col items-center justify-center text-slate-300 dark:text-slate-600 opacity-50"><Icon name="users" className="w-12 h-12 mb-2"/><p>등록된 후보자가 없습니다.</p></div>
+                                ) : <div className="h-full flex flex-col items-center justify-center text-orange-200 dark:text-slate-700 opacity-50"><Icon name="mouse-pointer-2" className="w-12 h-12 mb-2"/><p>지도를 클릭해주세요!</p></div>}
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            );
+        };
+
+
+        // ── 대구 기초의회 선거구 지도 ──
+        const DaeguMapDashboard = () => {
+            const [geoData, setGeoData] = useState(null);
+            const [guGeoData, setGuGeoData] = useState(null);
+            const [loading, setLoading] = useState(true);
+            const [error, setError] = useState(null);
+            const [selectedDistrict, setSelectedDistrict] = useState(null);
+            const [activeDistrict, setActiveDistrict] = useState(null);
+            const [selCandIdx, setSelCandIdx] = useState(0);
+            const [mapBounds, setMapBounds] = useState({ minX: 128.3, maxX: 128.85, minY: 35.6, maxY: 36.3 });
+            const [mapZoom, setMapZoom] = useState(1);
+            const [panOffset, setPanOffset] = useState({ x: 0, y: 0 });
+            const [isDragging, setIsDragging] = useState(false);
+            const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
+            const [searchTerm, setSearchTerm] = useState('');
+            const [showSugg, setShowSugg] = useState(false);
+            const [searchFocused, setSearchFocused] = useState(false);
+            const svgRef = useRef(null);
+
+            const DAEGU_DISTRICTS = window.DAEGU_INITIAL_DISTRICTS || {};
+            const DAEGU_ORANGE = ["#FF9F43", "#FF821C", "#F26A00", "#E05400"];
+            const DAEGU_GRAY   = ["#cbd5e1", "#94a3b8", "#d1d5db", "#9ca3af"];
+
+            // window.candidates 참조
+            const daeguCands = useMemo(() => {
+                if (typeof window.candidates === 'undefined') return [];
+                return window.candidates.filter(c => c.metropolitan === "대구광역시" && c.category === "기초의원");
+            }, []);
+
+            const displayDistrict = activeDistrict || selectedDistrict;
+
+            const allDongsList = useMemo(() => {
+                const list = [];
+                if (Object.keys(DAEGU_DISTRICTS).length > 0) {
+                    Object.entries(DAEGU_DISTRICTS).forEach(([dName, info]) => {
+                        if (info.dongs) {
+                            info.dongs.forEach(dong => list.push({ dong, districtName: dName, gu: dName.split(' ')[0] }));
+                        }
+                    });
+                } else {
+                    daeguCands.forEach(can => {
+                        const gu = can.region.split(' ').pop();
+                        const distPart = can.district ? can.district.replace('선거구', '').trim() : '';
+                        const dName = `${gu} ${distPart}선거구`;
+                        (can.subRegion || '').split(/,\s*/).forEach(dong => {
+                            dong = dong.trim();
+                            if (dong) list.push({ dong, districtName: dName, gu });
+                        });
+                    });
+                }
+                return list;
+            }, [daeguCands]);
+
+            const getPureKey = (text) => {
+                if (!text) return "";
+                let s = String(text).replace(/[^가-힣0-9]/g, "");
+                s = s.replace(/^제/, "");
+                s = s.replace(/(동|구|군|읍|면)$/, "");
+                return s;
+            };
+
+            const suggestions = useMemo(() => {
+                const term = searchTerm.trim();
+                if (term.length < 1) return [];
+                const termPure = getPureKey(term);
+                return allDongsList.filter(item => {
+                    const combined = getPureKey(item.gu) + getPureKey(item.dong);
+                    const dongPure = getPureKey(item.dong);
+                    return combined.includes(termPure) || dongPure.includes(termPure);
+                }).slice(0, 10);
+            }, [searchTerm, allDongsList]);
+
+            useEffect(() => {
+                const term = searchTerm.trim();
+                if (term.length < 2) return;
+                const termPure = getPureKey(term);
+                const fullMatch = allDongsList.find(item => getPureKey(item.gu + item.dong) === termPure);
+                if (fullMatch) { setSelectedDistrict(fullMatch.districtName); return; }
+                const dongMatches = allDongsList.filter(item => getPureKey(item.dong) === termPure);
+                if (dongMatches.length === 1) { setSelectedDistrict(dongMatches[0].districtName); }
+            }, [searchTerm, allDongsList]);
+
+            const matchedCands = useMemo(() => {
+                if (!displayDistrict) return [];
+                return daeguCands.filter(can => {
+                    const gu = can.region.split(' ').pop();
+                    const distPart = can.district ? can.district.replace('선거구', '').trim() : '';
+                    return displayDistrict === `${gu} ${distPart}선거구`;
+                });
+            }, [displayDistrict, daeguCands]);
+
+            const fetchWithRetry = async (url, retries = 2, delay = 400) => {
+                for (let i = 0; i < retries; i++) {
+                    try {
+                        const response = await fetch(url);
+                        // 404는 즉시 포기 (재시도 의미 없음)
+                        if (response.status === 404) throw new Error(`404: ${url}`);
+                        if (!response.ok) throw new Error(`HTTP Error: ${response.status}`);
+                        return await response.json();
+                    } catch (error) {
+                        if (i === retries - 1 || error.message.startsWith('404:')) throw error;
+                        await new Promise(res => setTimeout(res, delay * (i + 1))); 
+                    }
+                }
+            };
+
+            const fetchData = async () => {
+                setLoading(true); setError(null);
+                try {
+                    let dongData = null;
+                    // 작동하는 URL을 우선순위로 정렬
+                    const DONG_URLS = [
+                        "https://raw.githubusercontent.com/vuski/admdongkor/master/ver20250401/HangJeongDong_ver20250401.geojson",
+                        "https://raw.githubusercontent.com/vuski/admdongkor/master/ver20240101/HangJeongDong_ver20240101.geojson",
+                        "https://raw.githubusercontent.com/southkorea/southkorea-maps/master/kostat/2018/json/HangJeongDong_20180401.json",
+                    ];
+                    let lastErr = null;
+                    for (const url of DONG_URLS) {
+                        try {
+                            dongData = await fetchWithRetry(url, 2, 400);
+                            if (dongData) break;
+                        } catch(e) { lastErr = e; }
+                    }
+                    if (!dongData) throw new Error(`지도 데이터를 불러오는데 실패했습니다: ${lastErr?.message || '알 수 없는 오류'}`);
+
+                    let guData = null;
+                    try {
+                        guData = await fetchWithRetry("https://raw.githubusercontent.com/southkorea/southkorea-maps/master/kostat/2013/json/skorea_municipalities_geo_simple.json");
+                    } catch(e) {}
+
+                    const features = dongData.features.filter(f => {
+                        const code = String(f.properties.adm_cd || f.properties.adm_cd2 || f.properties.code || '');
+                        const name = f.properties.adm_nm || f.properties.name || '';
+                        const isTarget = code.startsWith('27') || name.includes('대구') || name.includes('군위');
+                        if (!isTarget) return false;
+
+                        let p = null;
+                        if (f.geometry && f.geometry.type === "Polygon") p = f.geometry.coordinates[0][0];
+                        else if (f.geometry && f.geometry.type === "MultiPolygon") p = f.geometry.coordinates[0][0][0];
+                        
+                        if (p && Array.isArray(p) && p.length >= 2) {
+                            const [x, y] = p;
+                            if (x < 128.0 || x > 129.5 || y < 35.3 || y > 36.6) return false;
+                        }
+                        return true;
+                    });
+
+                    if (!features.length) throw new Error("대구 지역 데이터를 찾을 수 없습니다.");
+
+                    let guFeatures = [];
+                    if (guData && guData.features) {
+                        guFeatures = guData.features.filter(f => {
+                            const code = String(f.properties.code || "");
+                            const name = String(f.properties.name || "");
+                            return code.startsWith('27') || code.startsWith('22') || code === '37720' || code === '47720' || code === '27720' || name.includes('대구') || name === '군위군';
+                        });
+                    }
+
+                    let mn = 180, mx = 0, my = 90, mxy = 0;
+                    features.forEach(f => {
+                        const scan = c => {
+                            if (typeof c[0] === 'number') {
+                                if (c[0]>128.0 && c[0]<129.5 && c[1]>35.3 && c[1]<36.6) {
+                                    if(c[0]<mn) mn=c[0]; if(c[0]>mx) mx=c[0];
+                                    if(c[1]<my) my=c[1]; if(c[1]>mxy) mxy=c[1];
+                                }
+                            } else c.forEach(scan);
+                        };
+                        if (f.geometry && f.geometry.coordinates) scan(f.geometry.coordinates);
+                    });
+
+                    if (mx > mn && (mx - mn) > 0.05) setMapBounds({minX:mn, maxX:mx, minY:my, maxY:mxy});
+                    else setMapBounds({ minX: 128.3, maxX: 128.85, minY: 35.6, maxY: 36.3 });
+
+                    setGeoData({...dongData, features});
+                    if(guFeatures.length > 0) setGuGeoData({...guData, features: guFeatures});
+                    
+                    setLoading(false);
+                } catch(e) { setError(e.message); setLoading(false); }
+            };
+
+            useEffect(() => { fetchData(); }, []);
+
+            const project = (c, offsetYOverride) => {
+                const {minX,maxX,minY,maxY} = mapBounds;
+                let w = maxX-minX || 0.001, h = maxY-minY || 0.001;
+                const sc = Math.min(800/(w*Math.cos((minY+maxY)/2*Math.PI/180)), 600/h) * 1.8;
+                const yOffset = offsetYOverride !== undefined ? offsetYOverride : 100;
+                return [
+                    (c[0]-(minX+maxX)/2)*Math.cos((minY+maxY)/2*Math.PI/180)*sc + 500,
+                    yOffset - (c[1]-(minY+maxY)/2)*sc
+                ];
+            };
+
+            const toPath = (f, offsetY) => {
+                if (!f || !f.geometry || !f.geometry.coordinates) return '';
+                const ring2p = ring => 'M' + ring.map(c => project(c, offsetY).join(',')).join('L') + 'Z';
+                if (f.geometry.type === 'Polygon') return f.geometry.coordinates.map(ring2p).join(' ');
+                if (f.geometry.type === 'MultiPolygon') return f.geometry.coordinates.map(p => p.map(ring2p).join(' ')).join(' ');
+                return '';
+            };
+
+            const findDistrict = f => {
+                const nm = f.properties.adm_nm || f.properties.adm_nm_all || f.properties.name || '';
+                const parts = nm.trim().split(/\s+/);
+                if (parts.length < 2) return null;
+                let gu = '', dong = '';
+                if (parts[0].includes('대구') || parts[0].includes('경북') || parts[0].includes('경상북도')) {
+                    if (parts.length >= 3) { gu = parts[1]; dong = parts.slice(2).join(''); }
+                } else { gu = parts[0]; dong = parts.slice(1).join(''); }
+                
+                const pDong = getPureKey(dong);
+                // DAEGU_DISTRICTS가 있으면 기존 방식으로 찾기
+                if (Object.keys(DAEGU_DISTRICTS).length > 0) {
+                    for (const [dName, info] of Object.entries(DAEGU_DISTRICTS)) {
+                        if (gu && dName.startsWith(gu) && info.dongs && info.dongs.some(d => getPureKey(d) === pDong)) return dName;
+                    }
+                    return null;
+                }
+                // DAEGU_DISTRICTS가 없으면 후보자 subRegion으로 직접 매핑
+                for (const can of daeguCands) {
+                    const canGu = can.region.split(' ').pop();
+                    if (canGu !== gu) continue;
+                    const subDongs = (can.subRegion || '').split(/[,·\s]+/).map(d => getPureKey(d)).filter(Boolean);
+                    if (subDongs.some(d => d === pDong || pDong.includes(d) || d.includes(pDong))) {
+                        const distPart = can.district ? can.district.replace('선거구', '').trim() : '';
+                        return `${gu} ${distPart}선거구`;
+                    }
+                }
+                return null;
+            };
+
+            const hasCand = dName => dName && daeguCands.some(can => {
+                const gu = can.region.split(' ').pop();
+                const distPart = can.district ? can.district.replace('선거구', '').trim() : '';
+                return dName === `${gu} ${distPart}선거구`;
+            });
+
+            const onMD = e => { setIsDragging(true); setDragStart({x:e.clientX-panOffset.x, y:e.clientY-panOffset.y}); };
+            const onMM = e => { if(!isDragging) return; setPanOffset({x:e.clientX-dragStart.x, y:e.clientY-dragStart.y}); };
+            const onMU = () => setIsDragging(false);
+            const onTS = e => { const t=e.touches[0]; setIsDragging(true); setDragStart({x:t.clientX-panOffset.x, y:t.clientY-panOffset.y}); };
+            const onTM = e => { if(!isDragging) return; const t=e.touches[0]; setPanOffset({x:t.clientX-dragStart.x, y:t.clientY-dragStart.y}); };
+
+            return (
+                <div className="flex flex-col bg-[#fffbf7] dark:bg-slate-950 rounded-[2rem] border border-orange-100 dark:border-slate-800 overflow-hidden shadow-xl">
+                    <main className="flex flex-col lg:flex-row p-4 sm:p-6 gap-4 sm:gap-6 h-[950px] lg:h-[600px]">
+                        <div className={`relative h-[400px] lg:h-auto lg:flex-[1.5] bg-white dark:bg-slate-900 rounded-3xl border border-orange-50 dark:border-slate-800 overflow-hidden flex items-center justify-center shrink-0 ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
+                            onMouseDown={onMD} onMouseMove={onMM} onMouseUp={onMU} onMouseLeave={onMU}
+                            onTouchStart={onTS} onTouchMove={onTM} onTouchEnd={onMU}>
+                            {loading ? (
+                                <div className="flex flex-col items-center gap-3 text-slate-400">
+                                    <div className="animate-spin-custom w-10 h-10 border-4 border-orange-200 border-t-orange-500 rounded-full"></div>
+                                    <p className="text-sm font-bold">대구 지도를 불러오는 중...</p>
+                                </div>
+                            ) : error ? (
+                                <div className="flex flex-col items-center gap-3 text-slate-400 p-8 text-center">
+                                    <p className="text-sm font-bold">{error}</p>
+                                    <button onClick={fetchData} className="px-4 py-2 bg-orange-500 text-white rounded-xl text-xs font-black hover:bg-orange-600 transition-colors">다시 시도</button>
+                                </div>
+                            ) : (
+                                <svg ref={svgRef} viewBox="0 0 800 600" className="w-full h-full pointer-events-none drop-shadow-lg">
+                                    <g style={{ 
+                                        transform: `translate(${panOffset.x}px, ${panOffset.y}px) scale(${mapZoom})`, 
+                                        transformOrigin: '500px 100px', 
+                                        transition: isDragging ? 'none' : 'transform 0.15s ease-out' 
+                                    }} className="pointer-events-auto">
+                                        {geoData && geoData.features.map((f, i) => {
+                                            const dist = findDistrict(f);
+                                            const hc = hasCand(dist);
+                                            const isSel = selectedDistrict === dist;
+                                            const isHov = activeDistrict === dist;
+                                            const isAnySel = !!selectedDistrict;
+                                            let fill = document.documentElement.classList.contains('dark') ? '#1e293b' : '#e2e8f0';
+                                            if (dist) {
+                                                if (DAEGU_DISTRICTS[dist]) {
+                                                    const ci = DAEGU_DISTRICTS[dist].cIdx;
+                                                    fill = hc ? DAEGU_ORANGE[ci] : DAEGU_GRAY[ci];
+                                                } else {
+                                                    // DAEGU_DISTRICTS 없을 때 단순 색상 적용
+                                                    fill = hc ? DAEGU_ORANGE[1] : DAEGU_GRAY[0];
+                                                }
+                                            }
+                                            if (isSel || isHov) fill = hc ? '#cc5500' : '#64748b';
+                                            return <path key={i} d={toPath(f, 100)} fill={fill}
+                                                fillOpacity={isSel ? 1 : isHov ? 0.9 : isAnySel ? 0.15 : 1}
+                                                stroke={document.documentElement.classList.contains('dark') ? '#0f172a' : '#fff'}
+                                                strokeWidth={isSel || isHov ? '1.5' : '0.4'}
+                                                style={{filter: (isAnySel && !isSel && !isHov) ? 'grayscale(80%)' : 'none'}}
+                                                className="map-path cursor-pointer"
+                                                onMouseEnter={() => dist && !isDragging && setActiveDistrict(dist)}
+                                                onMouseLeave={() => setActiveDistrict(null)}
+                                                onClick={e => { e.stopPropagation(); if(isDragging) return; setSelectedDistrict(p => p === dist ? null : dist); setSelCandIdx(0); }}/>;
+                                        })}
+                                        {guGeoData && (() => {
+                                            // ▼ 구군 경계선 위치 조정 (픽셀 단위, SVG 좌표계 기준)
+                                            const GU_OFFSET_X = -2;   // 좌우: 음수=왼쪽, 양수=오른쪽
+                                            const GU_OFFSET_Y = -4;   // 상하: 음수=위쪽, 양수=아래쪽
+                                            return (
+                                                <g transform={`translate(${GU_OFFSET_X}, ${GU_OFFSET_Y})`}>
+                                                    {guGeoData.features.map((f, i) =>
+                                                        <path key={'gu'+i} d={toPath(f, 100)} fill="none"
+                                                            stroke={document.documentElement.classList.contains('dark') ? 'rgba(255, 255, 255, 0.4)' : 'rgba(0, 0, 0, 0.4)'}
+                                                            strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
+                                                            className="pointer-events-none"/>
+                                                    )}
+                                                </g>
+                                            );
+                                        })()}
+                                    </g>
+                                </svg>
+                            )}
+                            <div className="absolute top-4 left-4 w-64 z-10">
+                                <div className={`bg-white/95 dark:bg-slate-800/95 backdrop-blur p-3 rounded-2xl border flex items-center gap-2 shadow-lg transition-all ${searchFocused ? 'border-orange-400' : 'border-orange-50 dark:border-slate-700'}`}>
+                                    <Icon name="search" className="w-4 h-4 text-orange-400 shrink-0"/>
+                                    <input type="text" placeholder="동 검색 예) 이곡1동" className="bg-transparent outline-none w-full text-xs font-bold dark:text-slate-200"
+                                        value={searchTerm}
+                                        onChange={e => { setSearchTerm(e.target.value); setShowSugg(true); }}
+                                        onFocus={() => { setSearchFocused(true); setShowSugg(true); }}
+                                        onBlur={() => setTimeout(() => { setSearchFocused(false); setShowSugg(false); }, 200)}/>
+                                </div>
+                                {showSugg && suggestions.length > 0 && (
+                                    <div className="mt-1 bg-white dark:bg-slate-800 rounded-xl shadow-2xl max-h-40 overflow-y-auto custom-scrollbar border border-orange-50 dark:border-slate-700">
+                                        {suggestions.map((it, idx) => (
+                                            <div key={idx} className="px-4 py-2 hover:bg-orange-50 dark:hover:bg-slate-700 cursor-pointer text-xs font-bold border-b border-orange-50 dark:border-slate-700 dark:text-slate-200 flex justify-between items-center"
+                                                onClick={() => { setSelectedDistrict(it.districtName); setSelCandIdx(0); setSearchTerm(''); setShowSugg(false); }}>
+                                                <span>{it.dong} <span className="text-slate-400 font-normal">({it.gu} {it.districtName.split(' ')[1]})</span></span>
+                                                <Icon name="corner-down-left" className="w-3 h-3 text-slate-300"/>
+                                            </div>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
+                            <div className="absolute bottom-4 right-4 flex flex-col gap-2 z-10">
+                                <button onClick={e => { e.stopPropagation(); setMapZoom(z => Math.min(z+0.5, 4)); }} className="w-10 h-10 bg-white dark:bg-slate-800 rounded-xl shadow border border-orange-50 dark:border-slate-700 text-orange-500 hover:bg-orange-500 hover:text-white transition-colors flex items-center justify-center">
+                                    <Icon name="plus" className="w-5 h-5"/>
+                                </button>
+                                <button onClick={e => { e.stopPropagation(); setMapZoom(z => Math.max(z-0.5, 0.5)); }} className="w-10 h-10 bg-white dark:bg-slate-800 rounded-xl shadow border border-orange-50 dark:border-slate-700 text-slate-400 hover:bg-slate-500 hover:text-white transition-colors flex items-center justify-center">
+                                    <Icon name="minus" className="w-5 h-5"/>
+                                </button>
+                                <button onClick={e => { e.stopPropagation(); setMapZoom(1); setPanOffset({x:0, y:0}); }} className="w-10 h-10 bg-white dark:bg-slate-800 rounded-xl shadow border border-orange-50 dark:border-slate-700 transition-colors flex items-center justify-center">
+                                    <Icon name="refresh-cw" className="w-4 h-4 text-slate-400"/>
+                                </button>
+                            </div>
+                        </div>
+                        <div className="flex-1 bg-white dark:bg-slate-900 rounded-3xl border border-orange-50 dark:border-slate-800 shadow-xl flex flex-col overflow-hidden">
+                            <div className={`p-5 sm:p-6 transition-colors duration-300 relative ${displayDistrict ? 'bg-orange-500 text-white' : 'bg-orange-50 dark:bg-slate-800 text-orange-200 dark:text-slate-600'}`}>
+                                {selectedDistrict && (
+                                    <button onClick={() => setSelectedDistrict(null)} className="absolute top-3 right-4 p-1.5 text-white/50 hover:text-white">
+                                        <Icon name="x" className="w-5 h-5"/>
+                                    </button>
+                                )}
+                                <div className="flex justify-between items-start">
+                                    <div className="flex-1 overflow-hidden pr-8">
+                                        <h2 className="text-xl font-black truncate dark:text-white">{displayDistrict || "지역을 선택하세요"}</h2>
+                                        {displayDistrict && <div className="mt-2 text-[10px] font-bold opacity-80 leading-tight">{DAEGU_DISTRICTS[displayDistrict] ? DAEGU_DISTRICTS[displayDistrict].dongs.join(', ') : (matchedCands[0] && matchedCands[0].subRegion) || ''}</div>}
+                                    </div>
+                                    {displayDistrict && (
+                                        <div className="ml-4 bg-[#1e293b] px-3 py-1.5 rounded-xl border border-white/10 text-center shrink-0 shadow-lg">
+                                            <p className="text-[10px] font-black text-slate-200 leading-none mb-2">선거정수</p>
+                                            <p className="text-lg font-black text-white leading-none">{DAEGU_DISTRICTS[displayDistrict] ? DAEGU_DISTRICTS[displayDistrict].seats : '?'}명</p>
+                                        </div>
+                                    )}
+                                </div>
+                            </div>
+                            <div className="flex-1 p-5 sm:p-6 lg:overflow-y-auto custom-scrollbar">
+                                {displayDistrict ? (
+                                    matchedCands.length > 0 ? (
+                                        <div className="h-full flex flex-col">
+                                            {matchedCands.length > 1 && (
+                                                <div className="flex gap-2 mb-3 overflow-x-auto pb-1 custom-scrollbar">
+                                                    {matchedCands.map((c, i) => (
+                                                        <button key={i} onClick={() => setSelCandIdx(i)}
+                                                            className={`px-3 py-1 rounded-full text-xs font-black whitespace-nowrap transition-all ${selCandIdx === i ? 'bg-orange-500 text-white shadow-md' : 'bg-slate-50 dark:bg-slate-800 text-slate-400'}`}>
+                                                            {c.name}
+                                                        </button>
+                                                    ))}
+                                                </div>
+                                            )}
+                                            <IntegratedProfile can={matchedCands[selCandIdx]}/>
+                                        </div>
+                                    ) : (
+                                        <div className="h-full flex flex-col items-center justify-center text-slate-300 dark:text-slate-600 opacity-50">
+                                            <Icon name="users" className="w-12 h-12 mb-2"/><p>등록된 후보자가 없습니다.</p>
+                                        </div>
+                                    )
+                                ) : (
+                                    <div className="h-full flex flex-col items-center justify-center text-orange-200 dark:text-slate-700 opacity-50">
+                                        <Icon name="mouse-pointer-2" className="w-12 h-12 mb-2"/><p>지도를 클릭해주세요!</p>
+                                    </div>
+                                )}
                             </div>
                         </div>
                     </main>
@@ -1981,6 +2441,4 @@
         gyeonggiRoot.render(<GyeonggiMapDashboard />);
     </script>
 </body>
-
 </html>
-

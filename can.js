@@ -120,3 +120,5 @@ const candidates = [
 ];
 
 
+
+window.candidates = candidates;
