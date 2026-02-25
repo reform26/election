@@ -412,7 +412,7 @@ function buildSNSSection() {
 // ════════════════════════════════════════════════════════════
 //  🔑 YouTube Data API v3 키  ← 발급받은 키를 여기에 입력
 // ════════════════════════════════════════════════════════════
-const YOUTUBE_API_KEY = 'AIzaSyDdae1ZpkUHCjNoaQpP8TZPKdUPHGvd72o';
+const YOUTUBE_API_KEY = 'AIzaSyBKRkxkrf3lPRoYw9nHihymbUcLKjO4C4M';
 
 
 // ════════════════════════════════════════════════════════════
@@ -443,7 +443,7 @@ const reelsAndShorts = [
 // ════════════════════════════════════════════════════════════
 //  ⚙️  설정
 // ════════════════════════════════════════════════════════════
-const YT_VIDEOS_PER_CHANNEL = 2;   // 1줄: 후보 1명당 최신 영상 수
+const YT_VIDEOS_PER_CHANNEL = 50;  // 1줄: 후보 1명당 최신 영상 수 (API 최대값)
 const MAX_ROW1_CARDS         = 30;  // 1줄: 최대 카드 수
 const MAX_ROW2_CARDS         = 20;  // 2줄: 최대 카드 수
 
@@ -551,11 +551,7 @@ async function loadRow1() {
         new Date(b.publishedAt) - new Date(a.publishedAt)
     );
 
-    // 2025년 10월 이후 영상만 표시
-    const cutoff = new Date('2025-10-01T00:00:00Z');
-    const filtered = allVideos.filter(v => v.publishedAt && new Date(v.publishedAt) >= cutoff);
-
-    row1Data = filtered.slice(0, MAX_ROW1_CARDS);
+    row1Data = allVideos.slice(0, MAX_ROW1_CARDS);
     renderRow1(row1Data);
     initDragScroll(document.getElementById('sns-row1-track')?.parentElement);
 }
