@@ -59,7 +59,7 @@ const candidates = [
     { name: "김주연", region: "서울 광진구", metropolitan: "서울특별시", category: "기초의원", office: "광진구의원", status: "후보", subRegion: "자양제1동, 자양제2동, 구의제1동, 구의제3동", bio: ["<span style='letter-spacing:-0.12em;'>개혁신당 광진구 지역발전특위 부위원장</span>", "전) 한국어, 중국어 강사", "<span style='letter-spacing:-0.12em;'>21대 대선 서울시 선대위 환경위 위원</span>", "<span style='letter-spacing:-0.18em;'>21대 대선 조직본부 강남캠프 자원봉사단원</span>"], photo: "https://i.imgur.com/0cMZalE.jpeg", district: "다", sns: { fb: "https://facebook.com/leadingkim6" }, decl: "https://rallypoint.kr/best/225947", dateAdded: "2026-01-26" },
     { name: "이진현", region: "서울 광진구", metropolitan: "서울특별시", category: "기초의원", office: "기초의원", status: "후보", subRegion: "화양동, 자양제3동, 자양제4동", bio: ["광진구 라선거구 후보"], photo: "", district: "라", sns: { fb: "https://www.facebook.com/profile.php?id=100004762395806", yt: "https://www.youtube.com/@different-politics" }, decl: "#", dateAdded: "2026-01-26" },
     { name: "박범근", region: "서울 관악구", metropolitan: "서울특별시", category: "기초의원", office: "기초의원", status: "후보", subRegion: "신사동, 조원동, 미성동", bio: ["관악구 마선거구 후보"], photo: "", district: "마", sns: { fb: "#" }, decl: "#", dateAdded: "2026-01-26" },
-    { name: "원동철", region: "서울 관악구", metropolitan: "서울특별시", category: "기초의원", office: "기초의원", status: "후보", subRegion: "삼성동, 대학동", bio: ["배우", "오오더블유 대표"], photo: "", district: "아", sns: { fb: "#", ig: "https://www.instagram.com/_oneofwon" }, decl: "#", dateAdded: "2026-01-26" },
+    { name: "원동철", region: "서울 관악구", metropolitan: "서울특별시", category: "기초의원", office: "관악구의원", status: "후보", subRegion: "삼성동, 대학동", bio: ["배우", "오오더블유 대표"], photo: "https://i.imgur.com/ltw22IP.jpeg", district: "아", sns: { fb: "#", ig: "https://www.instagram.com/_oneofwon" }, decl: "#", dateAdded: "2026-01-26" },
     { name: "장성혁", region: "서울 송파구", metropolitan: "서울특별시", category: "기초의원", office: "송파구의원 후보", status: "후보", subRegion: "풍납1동, 풍납2동, 잠실4동, 잠실6동", bio: ["송파구의회 가선거구 후보"], photo: "", district: "가", sns: { ig: "" }, decl: "#", dateAdded: "2026-02-19" },
     { name: "김영민", region: "서울 강동구", metropolitan: "서울특별시", category: "기초의원", office: "강동구의원", status: "출마예정", subRegion: "성내1·2·3동, 둔촌제1·2동", bio: ["서울시당 환경위원장"], photo: "", district: "바", sns: { fb: "https://www.facebook.com/profile.php?id=61557084968016" }, decl: "#", dateAdded: "2026-02-15" },
     { name: "조연우", region: "부산 기장군", metropolitan: "부산광역시", category: "기초의원", office: "기장군의원", status: "후보", subRegion: "정관읍, 장안읍", bio: ["기장군 다선거구 후보"], photo: "", district: "다", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-05" },
@@ -122,6 +122,7 @@ const candidates = [
 
 
 window.candidates = candidates;
+
 
 
 
