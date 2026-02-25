@@ -443,6 +443,8 @@
         #pwa-install-btn {
             display: none;
         }
+
+        /* SNS 피드 스타일은 sns.js에서 동적으로 주입됩니다 */
     </style>
 </head>
 <body id="top" class="p-0 overflow-hidden">
@@ -661,6 +663,10 @@
         <div id="dong-search-root"></div>
     </div>
 
+    <!-- ══════════════ 후보자 SNS 섹션 (sns.js가 동적으로 렌더링) ══════════════ -->
+    <div id="sns-feed-section"></div>
+    <!-- ════════════════════════════════════════════════ -->
+
     <div class="max-w-7xl mx-auto px-4 md:px-10">
         <nav class="sticky top-4 z-50 mb-6 flex justify-center mt-2">
             <div class="nav-container flex items-center bg-white/90 dark:bg-slate-800/90 backdrop-blur-md shadow-lg border border-gray-100 dark:border-slate-700 rounded-2xl p-1 md:p-1.5 overflow-x-auto whitespace-nowrap gap-0">
@@ -750,7 +756,7 @@
         </div>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="can.js?v=0225.08"></script>   <script src="data1.js?v=0223.05"></script> <script src="search.js?v=0223.05"></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="can.js?v=0225.09"></script>   <script src="data1.js?v=0223.05"></script> <script src="search.js?v=0223.05"></script>
     <script>
         let currentModalCandidateName = '';
         let showOnlyConfirmed = false;
@@ -2457,5 +2463,8 @@
         const gyeonggiRoot = ReactDOM.createRoot(document.getElementById('gyeonggi-map-dashboard-root-render'));
         gyeonggiRoot.render(<GyeonggiMapDashboard />);
     </script>
+
+    <!-- ══ 후보자 SNS 피드 ══ -->
+    <script src="sns.js"></script>
 </body>
 </html>
