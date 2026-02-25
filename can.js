@@ -32,7 +32,7 @@ const candidates = [
 
     // ─── 광역의원 ───
     { name: "이재원", region: "서울특별시", metropolitan: "서울특별시", shortMetro: "서울", constituency: "비례", category: "광역의원", office: "서울시의원", status: "출마예정", bio: ["부산시당 청소년참여위 수석부위원장", "대한민국 청소년 의회 17대 부의장"], photo: "https://i.imgur.com/lVviUSa.png", sns: { ig: "https://www.instagram.com/jaewoncalelee/" }, decl: "#", dateAdded: "2025-12-01" },
-    { name: "서운교", region: "대구광역시", metropolitan: "대구광역시", shortMetro: "대구", district: "수성 3", constituencyFull: "대구광역시의회 수성구 제3선거구", category: "광역의원", office: "대구시의회", status: "후보", subRegion: "고산1동, 고산2동, 고산3동", bio: ["공인노무사", "'더클래스 노무사' 대표 노무사"], photo: "", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-12" },
+    { name: "서운교", region: "대구광역시", metropolitan: "대구광역시", shortMetro: "대구", district: "수성 3", constituencyFull: "대구광역시의회 수성구 제3선거구", category: "광역의원", office: "대구시의회", status: "후보", subRegion: "고산1동, 고산2동, 고산3동", bio: ["공인노무사", "'더클래스 노무사' 대표 노무사"], photo: "https://i.imgur.com/qu4U613.png", sns: { fb: "#", blog: "https://blog.naver.com/cpla1005" }, decl: "#", dateAdded: "2026-02-12" },
     { name: "강인수", region: "서울특별시", metropolitan: "서울특별시", shortMetro: "서울", district: "강남 1", constituencyFull: "강남구 제1선거구", category: "광역의원", office: "서울시의원", status: "후보", subRegion: "신사동, 논현1동, 압구정동, 청담동", bio: ["강남구 제1선거구 후보"], photo: "", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-09" },
     { name: "최현석", region: "서울특별시", metropolitan: "서울특별시", shortMetro: "서울", district: "송파 2", constituencyFull: "송파구 제2선거구", category: "광역의원", office: "서울시의원", status: "후보", subRegion: "방이1동, 방이2동, 오륜동, 송파1동, 송파2동", bio: ["송파구 제2선거구 후보"], photo: "", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-05" },
     { name: "주이삭", region: "서울특별시", metropolitan: "서울특별시", shortMetro: "서울", district: "서대문 1", constituencyFull: "서대문구 제1선거구", category: "광역의원", office: "서울시의원", status: "출마선언", subRegion: "충현동, 천연동, 북아현동, 신촌동", bio: ["제8, 9대 서대문구의원", "개혁신당 최고위원", "개혁신당 미래희망위원장", "서울시당 정책자문위원장"], photo: "https://i.imgur.com/TSkZWyU.png", sns: { fb: "https://www.facebook.com/ju.isaac.9", ig: "https://www.instagram.com/isaactic_sdm", yt: "https://www.youtube.com/@isaactic_sdm" }, decl: "https://www.youtube.com/live/IAdVNF7Id1k?t=422s", dateAdded: "2026-02-16" },
@@ -122,6 +122,7 @@ const candidates = [
 
 
 window.candidates = candidates;
+
 
 
 
