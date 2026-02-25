@@ -83,10 +83,10 @@ const candidates = [
     { name: "심재현", region: "경기 양주시", metropolitan: "경기도", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "은현면, 남면, 옥정1동, 옥정2동, 은현면, 회천1동, 회천2동, 회천3동", bio: ["양주시 다선거구 후보"], photo: "", district: "다", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-05" },
     { name: "김동광", region: "경기 수원시", metropolitan: "경기도", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "매탄1동, 매탄2동, 매탄3동, 매탄4동", bio: ["수원시 아선거구 후보"], photo: "", district: "아", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-05" },
     { name: "황승빈", region: "경기 수원시", metropolitan: "경기도", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "영통구 영통2동, 영통3동, 망포1동, 망포2동", bio: ["<span style='letter-spacing:-0.12em;'>개혁신당 수원시 지역발전특위 부위원장</span>", "경기도당 수원시교통특별위 위원장"], photo: "https://i.imgur.com/kMbaiCJ.jpeg", district: "파", sns: { fb: "#" }, decl: "#", dateAdded: "2026-01-26" },
-    { name: "오정대", region: "경기 성남시", metropolitan: "경기도", category: "기초의원", office: "기초의원", status: "후보", subRegion: "분당구 이매1동, 이매2동, 삼평동", bio: ["<span style='letter-spacing:-0.12em;'>경기도당 성남시 스마트모빌리티 혁신위원장</span>", "도로교통사고감정사", "유튜브 '운전하는곰돌' 운영"], photo: "", district: "아", sns: { yt: "https://www.youtube.com/@d_gomdol/featured" }, decl: "#", dateAdded: "2026-01-31" },
+    { name: "오정대", region: "경기 성남시", metropolitan: "경기도", category: "기초의원", office: "성남시의원", status: "후보", subRegion: "분당구 이매1동, 이매2동, 삼평동", bio: ["<span style='letter-spacing:-0.12em;'>경기도당 성남시 스마트모빌리티 혁신위원장</span>", "도로교통사고감정사", "유튜브 '운전하는곰돌' 운영"], photo: "https://i.imgur.com/KkRzwWU.jpeg", district: "아", sns: { yt: "https://www.youtube.com/@d_gomdol/featured" }, decl: "#", dateAdded: "2026-01-31" },
     { name: "김병진", region: "경기 성남시", metropolitan: "경기도", category: "기초의원", office: "성남시의회", status: "후보", district: "사", subRegion: "중앙동, 금광1동, 금광2동, 은행1동, 은행2동", bio: ["성남시 사선거구 후보"], photo: "", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-09" },
     { name: "홍승우", region: "경기 성남시", metropolitan: "경기도", category: "기초의원", office: "성남시의원 후보", status: "후보", subRegion: "분당구 분당동, 수내3동, 정자2동, 정자3동, 구미동", bio: ["성남시의회 타선거구 후보"], photo: "", district: "타", sns: { ig: "" }, decl: "#", dateAdded: "2026-02-19" },
-    { name: "김태수", region: "경기 부천시", metropolitan: "경기도", category: "기초의원", office: "부천시의원", status: "후보", subRegion: "원미구 중1동, 중2동, 중3동, 중4동, 약대동", bio: ["<span style='letter-spacing:-0.12em;'>개혁신당 부천시 지역발전특위 부위원장</span>", "<span style='letter-spacing:-0.12em;'>현 현대흥립통합재건축추준비위 위원장</span>", "전 에어아시아재팬 항공승무원"], photo: "https://i.imgur.com/JROiWlJ.png", district: "마", sns: { fb: "https://www.facebook.com/share/1B6fqnbu3X/", ig: "https://www.instagram.com/bucheon_tezz/", blog: "https://blog.naver.com/bucheon_tezz" }, decl: "https://blog.naver.com/bucheon_tezz/224160408956", dateAdded: "2026-01-26" },
+    { name: "김태수", region: "경기 부천시", metropolitan: "경기도", category: "기초의원", office: "부천시의원", status: "후보", subRegion: "원미구 중1동, 중2동, 중3동, 중4동, 약대동", bio: ["<span style='letter-spacing:-0.12em;'>개혁신당 부천시 지역발전특위 부위원장</span>", "<span style='letter-spacing:-0.12em;'>현 현대흥립통합재건축추준비위 위원장</span>", "전 에어아시아재팬 항공승무원"], photo: "https://i.imgur.com/JROiWlJ.png", district: "마", sns: { fb: "https://www.facebook.com/share/1B6fqnbu3X/", ig: "https://www.instagram.com/bucheon_tezz/", yt: "https://www.youtube.com/@%EB%B6%80%EC%B2%9C%EA%B9%80%ED%83%9C%EC%88%98", blog: "https://blog.naver.com/bucheon_tezz" }, decl: "https://blog.naver.com/bucheon_tezz/224160408956", dateAdded: "2026-01-26" },
     { name: "조병찬", region: "경기 부천시", metropolitan: "경기도", category: "기초의원", office: "부천시의원", status: "후보", subRegion: "소사구 범박동, 괴안동, 역곡3동, 옥길동", bio: ["구로 보스톤미치과 대표원장", "치과의사"], photo: "", district: "아", sns: { fb: "#" }, decl: "#", dateAdded: "2026-01-26" },
     { name: "이승도", region: "경기 용인시", metropolitan: "경기도", category: "기초의원", office: "용인시의원", status: "후보", subRegion: "상현1동, 상현3동", bio: ["용인시 사선거구 후보"], photo: "", district: "사", sns: { fb: "#" }, decl: "#", dateAdded: "2026-01-26" },
     { name: "박창현", region: "경기 용인시", metropolitan: "경기도", category: "기초의원", office: "용인시의원 후보", status: "후보", subRegion: "기흥구 구성동, 마북동, 동백1동, 동백2동", bio: ["용인시의회 차선거구 후보"], photo: "", district: "차", sns: { ig: "" }, decl: "#", dateAdded: "2026-02-19" },
@@ -122,6 +122,8 @@ const candidates = [
 
 
 window.candidates = candidates;
+
+
 
 
 

@@ -433,6 +433,7 @@ const reelsAndShorts = [
     { type: 'yt', candidate: '개혁신당', url: 'https://www.youtube.com/shorts/DblJGqG6erM' },
     { type: 'yt', candidate: '개혁신당', url: 'https://www.youtube.com/shorts/zsg7igj9lFY' },
     // ── 인스타 릴스 ──
+    { type: 'ig', candidate: '이성실',  url: 'https://www.instagram.com/reel/DVIxMZskfK5/' },
     { type: 'ig', candidate: '박진우',  url: 'https://www.instagram.com/reel/DUxZ7kUEwxv/' },
     { type: 'ig', candidate: '최태영',  url: 'https://www.instagram.com/reel/DVFXPloE_Vg/' },
     { type: 'ig', candidate: '고재윤',  url: 'https://www.instagram.com/reel/DUaehbcAUci/' },
