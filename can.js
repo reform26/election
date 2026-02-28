@@ -31,7 +31,6 @@ const candidates = [
     { name: "김홍수", region: "강원 동해시", metropolitan: "강원특별자치도", category: "기초단체장", office: "동해시장", status: "후보", bio: ["전) 민주평화통일자문회의 동해시협의회장", "해군사랑 바다사랑 회장"], photo: "https://i.imgur.com/Caknmnk.jpeg", sns: { fb: "https://www.facebook.com/gimhongsu.426192/" }, decl: "#", dateAdded: "2026-02-19" },
 
     // ─── 광역의원 ───
-    { name: "이재원", region: "서울특별시", metropolitan: "서울특별시", shortMetro: "서울", constituency: "비례", category: "광역의원", office: "서울시의원", status: "출마예정", bio: ["부산시당 청소년참여위 수석부위원장", "대한민국 청소년 의회 17대 부의장"], photo: "https://i.imgur.com/lVviUSa.png", sns: { ig: "https://www.instagram.com/jaewoncalelee/" }, decl: "#", dateAdded: "2025-12-01" },
     { name: "서운교", region: "대구광역시", metropolitan: "대구광역시", shortMetro: "대구", district: "수성 3", constituencyFull: "대구광역시의회 수성구 제3선거구", category: "광역의원", office: "대구시의회", status: "후보", subRegion: "고산1동, 고산2동, 고산3동", bio: ["공인노무사", "'더클래스 노무사' 대표 노무사"], photo: "https://i.imgur.com/qu4U613.png", sns: { fb: "#", blog: "https://blog.naver.com/cpla1005" }, decl: "#", dateAdded: "2026-02-12" },
     { name: "강인수", region: "서울특별시", metropolitan: "서울특별시", shortMetro: "서울", district: "강남 1", constituencyFull: "강남구 제1선거구", category: "광역의원", office: "서울시의원", status: "후보", subRegion: "신사동, 논현1동, 압구정동, 청담동", bio: ["강남구 제1선거구 후보"], photo: "", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-09" },
     { name: "최현석", region: "서울특별시", metropolitan: "서울특별시", shortMetro: "서울", district: "송파 2", constituencyFull: "송파구 제2선거구", category: "광역의원", office: "서울시의원", status: "후보", subRegion: "방이1동, 방이2동, 오륜동, 송파1동, 송파2동", bio: ["송파구 제2선거구 후보"], photo: "", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-05" },
@@ -117,7 +116,7 @@ const candidates = [
     { name: "김태현", region: "경북 포항시", metropolitan: "경상북도", category: "기초의원", office: "기초의원", status: "후보", subRegion: "두호동, 양덕동, 환여동", bio: ["포항시 마선거구 후보"], photo: "", district: "마", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-12" },
     { name: "정진호", region: "경북 울진군", metropolitan: "경상북도", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "북면, 죽변면", bio: ["울진군 나선거구 후보"], photo: "", district: "나", sns: { fb: "#" }, decl: "#", dateAdded: "2026-01-26" },
     { name: "이윤용", region: "인천 영종구", metropolitan: "인천광역시", category: "기초의원", office: "영종구의회", status: "후보", subRegion: "영종동, 영종1동, 운서동, 용유동", bio: ["영종구 *선거구 후보"], photo: "", district: "", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-27" },
-    { name: "박현수", region: "경기 이천시", metropolitan: "경기도", category: "기초의원", office: "이천시의회", status: "후보", subRegion: "증포동, 관고동, 신둔면, 백사면", bio: ["이천시 가선거구 후보"], photo: "", district: "가", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-27" },
+    { name: "박현수", region: "경기 이천시", metropolitan: "경기도", category: "기초의원", office: "이천시의회", status: "후보", subRegion: "증포동, 관고동, 신둔면, 백사면", bio: ["이천시 지역발전특별위 부위원장", "전) 공군 장교"], photo: "", district: "가", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-27" },
     { name: "황은재", region: "충북 청주시", metropolitan: "충청북도", category: "기초의원", office: "청주시의회", status: "후보", subRegion: "가경동, 복대제2동", bio: ["청주시 차선거구 후보"], photo: "", district: "차", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-27" },
     { name: "김대성", region: "전북 익산시", metropolitan: "전북특별자치도", category: "기초의원", office: "익산시의회", status: "후보", subRegion: "남중동, 신동, 오산면", bio: ["익산시 다선거구 후보"], photo: "", district: "다", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-27" },
 
@@ -126,3 +125,4 @@ const candidates = [
 
 
 window.candidates = candidates;
+
