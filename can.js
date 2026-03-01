@@ -2,10 +2,10 @@
 
 const regionPriority = {
     "서울특별시": 1, "부산광역시": 2, "대구광역시": 3, "인천광역시": 4,
-    "광주광역시": 5, "대전광역시": 6, "울산광역시": 7, "세종특별자치시": 8,
+    "전남광주통합특별시": 5, "대전광역시": 6, "울산광역시": 7, "세종특별자치시": 8,
     "경기도": 9, "강원특별자치도": 10, "충청북도": 11, "충청남도": 12,
-    "전북특별자치도": 13, "전라남도": 14, "경상북도": 15, "경상남도": 16,
-    "제주특별자치도": 17
+    "전북특별자치도": 13, "경상북도": 14, "경상남도": 15,
+    "제주특별자치도": 16
 };
 
 const candidates = [
@@ -15,7 +15,7 @@ const candidates = [
     { name: "이기붕", region: "인천광역시", category: "광역단체장", office: "인천광역시장", bio: ["인천시당 위원장"], photo: "https://i.imgur.com/aNqvWiU.jpeg", sns: { fb: "https://www.facebook.com/keebung", ig: "https://www.instagram.com/keebung_lee/" }, decl: "https://www.youtube.com/watch?v=vB47J90zQ00", dateAdded: "2025-12-01" },
     { name: "이수찬", region: "대구광역시", category: "광역단체장", office: "대구광역시장", status: "출마선언", bio: ["대구시당 위원장"], photo: "https://i.imgur.com/1FbAb5u.jpeg", sns: { fb: "https://www.facebook.com/profile.php?id=1000045002273835", ig: "https://www.instagram.com/i.isucan/" }, decl: "https://www.youtube.com/live/ixdTcenUjMw?si=62KazlMWdC6ciOpY", dateAdded: "2026-02-06" },
     { name: "강희린", region: "대전광역시", category: "광역단체장", office: "대전광역시장", bio: ["대전시당 위원장"], photo: "https://i.imgur.com/fcEHXnS.png", cardFit: "cover", sns: { fb: "https://www.facebook.com/ganghuilin.2025/", ig: "https://www.instagram.com/korria1/", yt: "https://www.youtube.com/@%EA%B0%95%ED%9D%AC%EB%A6%B0-q8h", blog: "https://blog.naver.com/korria1/224142918612" }, decl: "https://www.cctoday.co.kr/news/articleView.html?idxno=2225440", dateAdded: "2026-01-17" },
-    { name: "최현수", region: "광주광역시", category: "광역단체장", office: "광주광역시장", bio: ["광주시당 위원장", "서구 을 당협위원장"], photo: "https://i.imgur.com/mzd1dts.jpeg", sns: { fb: "https://www.facebook.com/profile.php?id=1000075888273756", ig: "https://www.instagram.com/hyun_soo_ch9/", yt: "https://www.youtube.com/@%EC%B5%9C%ED%98%84%EC%88%98TV" }, decl: "https://www.youtube.com/live/zNKugaDviEM", dateAdded: "2025-12-01" },
+    { name: "최현수", region: "전남광주통합특별시", category: "광역단체장", office: "광주특별시장", bio: ["광주시당 위원장", "서구 을 당협위원장"], photo: "https://i.imgur.com/mzd1dts.jpeg", sns: { fb: "https://www.facebook.com/profile.php?id=1000075888273756", ig: "https://www.instagram.com/hyun_soo_ch9/", yt: "https://www.youtube.com/@%EC%B5%9C%ED%98%84%EC%88%98TV" }, decl: "https://www.youtube.com/live/zNKugaDviEM", dateAdded: "2025-12-01" },
     { name: "하헌휘", region: "세종특별자치시", category: "광역단체장", office: "세종특별자치시장", bio: ["세종시당 창준위원장", "세종시 갑 당협위원장"], photo: "https://image.dnews.co.kr/photo/photo/2024/11/21/202411211945335960037-2-565966.jpg", sns: { fb: "https://www.facebook.com/profile.php?id=61557084968016", ig: "https://www.instagram.com/reform_lawyer/", yt: "https://www.youtube.com/@%EA%B0%95%ED%9D%AC%EB%A6%B0-q8h" }, decl: "https://www.youtube.com/watch?v=m4DTvulTDFk", dateAdded: "2025-12-05" },
     { name: "이은창", region: "충청남도", category: "광역단체장", office: "충청남도지사", bio: ["공주·부여·청양 당협위원장", "제6대 유성구의원", "제21대 대선 선대위 대변인"], photo: "https://i.imgur.com/CUx0gAv.png", sns: { fb: "https://www.facebook.com/profile.php?id=100002081097533" }, decl: "https://www.youtube.com/live/ykvvk-37iws?si=iGJ3virBz9tVUHMO&t=288", dateAdded: "2026-02-12" },
 
@@ -125,4 +125,5 @@ const candidates = [
 
 
 window.candidates = candidates;
+
 
