@@ -106,7 +106,7 @@ const candidates = [
     { name: "이강민", region: "충남 천안시", metropolitan: "충청남도", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "불당1동, 불당2동", bio: ["개혁신당 지역발전특위 부위원장", "대전시당 자문위원", "21대 대선 충남 선대본부 위원", "충남개혁정책네트워크 대표"], photo: "https://i.imgur.com/UtBP6ph.png", district: "라", cardFit: "cover", cardPos: "center 15%", sns: { fb: "https://www.facebook.com/leekangmin4473", blog: "https://blog.naver.com/buldang_leekangmin", yt: "https://www.youtube.com/channel/UCUC5ttFtQfNRCqANIffAalg" }, decl: "https://rallypoint.kr/board/politics-free/223549", dateAdded: "2025-12-01" },
     { name: "이해성", region: "충남 천안시", metropolitan: "충청남도", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "쌍용1동, 쌍용2동, 쌍용3동", bio: ["충남도당 사무처장", "21대 대선 충남선대위 상황실장"], photo: "https://i.imgur.com/fqfARBT.png", cardFit: "contain", cardPos: "center 0%", cardScale: "1", district: "카", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-05" },
     { name: "손승범", region: "충남 천안시", metropolitan: "충청남도", category: "기초의원", office: "천안시의원 후보", status: "출마선언", subRegion: "봉명동, 성정1동, 성정2동, 문성동", bio: ["전) 충남도당 대학생 대변인"], photo: "https://i.imgur.com/tgnxWFB.png", district: "다", sns: { ig: "https://www.instagram.com/sonseungbeom2004/" }, decl: "https://rallypoint.kr/board/politics-free/225934", dateAdded: "2026-02-15" },
-    { name: "황시현", region: "충남 천안시", metropolitan: "충청남도", category: "기초의원", office: "기초의원 후보", subRegion: "부성2동", bio: ["21대 대선 충남 선대본 홍보위원", "충남개혁정책네트워크 조직국장", "청년 커뮤니티 '청연' 대표"], photo: "https://i.imgur.com/3yWK8BF.png", district: "사", sns: { fb: "#" }, decl: "https://rallypoint.kr/board/politics-free/223942", dateAdded: "2026-01-15" },
+    { name: "황시현", region: "충남 천안시", metropolitan: "충청남도", category: "기초의원", office: "기초의원 후보", subRegion: "부성2동", bio: ["21대 대선 충남 선대본 홍보위원", "충남청년개발혁신회의 의장", "청년 커뮤니티 '청연' 대표"], photo: "https://i.imgur.com/3yWK8BF.png", district: "사", sns: { fb: "#" }, decl: "https://rallypoint.kr/board/politics-free/223942", dateAdded: "2026-01-15" },
     { name: "고재윤", region: "충남 당진시", metropolitan: "충청남도", category: "기초의원", office: "당진시의원 후보", status: "후보", subRegion: "고대면, 석문면, 당진1동, 당진3동", bio: ["대전시당 정책위원", "대전시당 자문위원", "21대 대선 충남 선대본부 위원", "자원봉사단체 청춘 대표"], photo: "https://i.imgur.com/Fyk1Di8.png", district: "라", sns: { fb: "https://www.facebook.com/profile.php?id=100075309062913", ig: "https://www.instagram.com/yn._.jae/", blog: "https://m.blog.naver.com/kojy9402?tab=1", site: "https://litt.ly/gojaeyun" }, decl: "https://www.instagram.com/reel/DUaehbcAUci/?igsh=M2Y5aWdreGsxM2Zi", dateAdded: "2026-02-05" },
     { name: "송원근", region: "충남 예산군", metropolitan: "충청남도", category: "기초의원", office: "예산군의원", status: "후보", subRegion: "덕산면, 봉산면, 고덕면, 신암면", bio: ["<span style='letter-spacing:-0.12em;'>개혁신당 예산군 지역발전특위 부위원장</span>"], photo: "https://i.imgur.com/TAmoUh0.jpeg", district: "라", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-05" },
     { name: "류태하", region: "경북 구미시", metropolitan: "경상북도", category: "기초의원", office: "기초의원 후보", status: "후보", subRegion: "인동동, 진미동", bio: ["구미시 을 당협위원장", "제21대 대선 선대위 홍보부본부장"], photo: "", district: "자", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-05" },
@@ -126,6 +126,7 @@ const candidates = [
 
 
 window.candidates = candidates;
+
 
 
 
