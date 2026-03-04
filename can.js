@@ -36,7 +36,7 @@ const candidates = [
     { name: "최현석", region: "서울특별시", metropolitan: "서울특별시", shortMetro: "서울", district: "송파 2", constituencyFull: "송파구 제2선거구", category: "광역의원", office: "서울시의원", status: "후보", subRegion: "방이1동, 방이2동, 오륜동, 송파1동, 송파2동", bio: ["송파구 제2선거구 후보"], photo: "", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-05" },
     { name: "주이삭", region: "서울특별시", metropolitan: "서울특별시", shortMetro: "서울", district: "서대문 1", constituencyFull: "서대문구 제1선거구", category: "광역의원", office: "서울시의원", status: "출마선언", subRegion: "충현동, 천연동, 북아현동, 신촌동", bio: ["제8, 9대 서대문구의원", "개혁신당 최고위원", "개혁신당 미래희망위원장", "서울시당 정책자문위원장"], photo: "https://i.imgur.com/TSkZWyU.png", sns: { fb: "https://www.facebook.com/ju.isaac.9", ig: "https://www.instagram.com/isaactic_sdm", yt: "https://www.youtube.com/@isaactic_sdm" }, decl: "https://www.youtube.com/live/IAdVNF7Id1k?t=422s", dateAdded: "2026-02-16" },
     { name: "김순주", region: "세종특별자치시", metropolitan: "세종특별자치시", shortMetro: "세종", district: "4", constituencyFull: "세종특별자치시 제4선거구", category: "광역의원", office: "세종시의회", status: "후보", subRegion: "연기면, 연동면, 연서면, 해밀동", bio: ["마을활동가", "현) 방송통신대 세종·공주 학생회장"], photo: "", sns: { fb: "https://www.facebook.com/gimsunju.64081/#" }, decl: "#", dateAdded: "2026-02-09" },
-    { name: "이건우", region: "제주특별자치도", metropolitan: "제주특별자치도", shortMetro: "제주", district: "노형 을", constituencyFull: "제주시 노형동 을 선거구", category: "광역의원", office: "제주도의원", status: "후보", subRegion: "제주시 노형동 을", bio: ["개혁신당 노형동 지역발전특별위원장", "부마정치연구소장"], photo: "", sns: { fb: "#" }, decl: "#", dateAdded: "2026-02-05" },
+    { name: "이건우", region: "제주특별자치도", metropolitan: "제주특별자치도", shortMetro: "제주", district: "노형 을", constituencyFull: "제주시 노형동 을 선거구", category: "광역의원", office: "제주도의원", status: "후보", subRegion: "제주시 노형동 을", bio: ["개혁신당 노형동 지역발전특별위원장", "부마정치연구소장"], photo: "", sns: { fb: "#", ig: "https://www.instagram.com/gw_jeju/" }, decl: "#", dateAdded: "2026-02-05" },
     { name: "양해두", region: "제주특별자치도", metropolitan: "제주특별자치도", shortMetro: "제주", district: "외도·이호·도두", category: "광역의원", office: "제주도의원", status: "후보", subRegion: "제주시 외도동, 이호동, 도두동", bio: ["제주시 갑 당협위원장", "제21대 대선 선대위 홍보부본부장"], photo: "https://img2.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/202601/07/kbs/20260107150152592uwgk.jpg", sns: { fb: "https://www.facebook.com/profile.php?id=100007883867189#", ig: "https://www.instagram.com/haeduyang/" }, decl: "https://www.facebook.com/share/p/17qQErhuYr/", dateAdded: "2026-01-26" },
 
     // ─── 기초의원 ───
@@ -126,6 +126,7 @@ const candidates = [
 
 
 window.candidates = candidates;
+
 
 
 
