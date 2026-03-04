@@ -755,12 +755,13 @@
                     <a id="modal-site" href="#" target="_blank" class="sns-btn site"><i data-lucide="globe"></i></a>
                 </div>
                 <a id="modal-declaration" href="#" target="_blank" class="block w-full py-4 nrp-bg-orange text-white rounded-2xl font-black text-lg shadow-lg hover:shadow-orange-200 transition-all">출마선언 보기</a>
+                <a id="modal-pledge" href="#" target="_blank" class="block w-full py-4 mt-3 bg-white dark:bg-slate-700 border-2 border-[#FF6600] text-[#FF6600] dark:text-orange-400 rounded-2xl font-black text-lg shadow-sm hover:bg-orange-50 dark:hover:bg-slate-600 transition-all">📋 공약 보기</a>
                 <button onclick="closeProfileModal()" class="mt-6 text-gray-400 dark:text-slate-500 text-sm font-bold hover:text-gray-600 dark:hover:text-slate-300 tracking-tight">창 닫기</button>
             </div>
         </div>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="can.js?v=0304.01"></script>   <script src="data1.js?v=0223.05"></script> <script src="search.js?v=0223.05"></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="can.js?v=0304.03"></script>   <script src="data1.js?v=0223.05"></script> <script src="search.js?v=0223.05"></script>
     <script>
         let currentModalCandidateName = '';
         let showOnlyConfirmed = false;
@@ -1288,6 +1289,14 @@
                 declBtn.href = c.decl;
             } else {
                 declBtn.style.display = 'none';
+            }
+
+            const pledgeBtn = document.getElementById('modal-pledge');
+            if (c.pledge && c.pledge !== "#") {
+                pledgeBtn.style.display = 'block';
+                pledgeBtn.href = c.pledge;
+            } else {
+                pledgeBtn.style.display = 'none';
             }
 
             const description = c.bio ? c.bio[0].replace(/<[^>]*>?/gm, '') : "";
