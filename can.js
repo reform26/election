@@ -57,7 +57,7 @@ const candidates = [
     { name: "주한송", region: "서울 도봉구", metropolitan: "서울특별시", category: "기초의원", office: "도봉구의원", status: "후보", subRegion: "창1동, 창4동, 창5동", bio: ["도봉구 가선거구 후보"], photo: "", district: "가", sns: { fb: "#" }, pledge: "#", decl: "#", dateAdded: "2026-02-09" },
     { name: "최제일", region: "서울 광진구", metropolitan: "서울특별시", category: "기초의원", office: "광진구의원", status: "후보", subRegion: "능동, 구의2동, 광장동, 군자동", bio: ["출판사 '도서출판 문각' 대표", "<span style='letter-spacing:-0.12em;'>광진구 주민참여예산위 1분과 부위원장</span>", "<span style='letter-spacing:-0.12em;'>(사)철기이범석장군기념사업회 청년위원</span>"], photo: "https://i.imgur.com/miiK7Cq.jpeg", district: "나", sns: { fb: "#", ig: "https://www.instagram.com/bestchoi__" }, pledge: "#", decl: "https://rallypoint.kr/board/politics-free/225625/", dateAdded: "2026-02-09" },
     { name: "김주연", region: "서울 광진구", metropolitan: "서울특별시", category: "기초의원", office: "광진구의원", status: "후보", subRegion: "자양제1동, 자양제2동, 구의제1동, 구의제3동", bio: ["<span style='letter-spacing:-0.12em;'>개혁신당 광진구 지역발전특위 부위원장</span>", "전) 한국어, 중국어 강사", "<span style='letter-spacing:-0.12em;'>21대 대선 서울시 선대위 환경위 위원</span>", "<span style='letter-spacing:-0.18em;'>21대 대선 조직본부 강남캠프 자원봉사단원</span>"], photo: "https://i.imgur.com/0cMZalE.jpeg", district: "다", sns: { fb: "https://facebook.com/leadingkim6" }, pledge: "#", decl: "https://rallypoint.kr/best/225947", dateAdded: "2026-01-26" },
-    { name: "이진현", region: "서울 광진구", metropolitan: "서울특별시", category: "기초의원", office: "기초의원", status: "후보", subRegion: "화양동, 자양제3동, 자양제4동", bio: ["광진구 라선거구 후보"], photo: "", district: "라", sns: { fb: "https://www.facebook.com/profile.php?id=100004762395806", yt: "https://www.youtube.com/@different-politics" }, pledge: "#", decl: "#", dateAdded: "2026-01-26" },
+    { name: "이진현", region: "서울 광진구", metropolitan: "서울특별시", category: "기초의원", office: "기초의원", status: "후보", subRegion: "화양동, 자양제3동, 자양제4동", bio: ["<span style='letter-spacing:-0.12em;'>개혁신당 광진구 지역발전특위 부위원장</span>", "21대 대선 중앙당 홍보국 주임", "<span style='letter-spacing:-0.14em;'>뉴미디어정치평론채널 '이진현의 다른정치'운영</span>"], photo: "https://i.imgur.com/1yup6y8.png", district: "라", sns: { fb: "https://www.facebook.com/profile.php?id=100004762395806", yt: "https://www.youtube.com/@different-politics" }, pledge: "#", decl: "https://rallypoint.kr/board/politics-free/227187", dateAdded: "2026-01-26" },
     { name: "박범근", region: "서울 관악구", metropolitan: "서울특별시", category: "기초의원", office: "기초의원", status: "후보", subRegion: "신사동, 조원동, 미성동", bio: ["관악구 마선거구 후보"], photo: "", district: "마", sns: { fb: "#" }, pledge: "#", decl: "#", dateAdded: "2026-01-26" },
     { name: "원동철", region: "서울 관악구", metropolitan: "서울특별시", category: "기초의원", office: "관악구의원", status: "후보", subRegion: "삼성동, 대학동", bio: ["배우", "오오더블유 대표"], photo: "https://i.imgur.com/ltw22IP.jpeg", district: "아", sns: { fb: "#", ig: "https://www.instagram.com/_oneofwon" }, pledge: "#", decl: "#", dateAdded: "2026-01-26" },
     { name: "장성혁", region: "서울 송파구", metropolitan: "서울특별시", category: "기초의원", office: "송파구의원 후보", status: "후보", subRegion: "풍납1동, 풍납2동, 잠실4동, 잠실6동", bio: ["개혁신당 송파구 지역발전특위 부위원장"], photo: "", district: "가", sns: { ig: "" }, pledge: "#", decl: "#", dateAdded: "2026-02-19" },
@@ -133,6 +133,9 @@ const candidates = [
 
 
 window.candidates = candidates;
+
+
+
 
 
 
