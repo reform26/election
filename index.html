@@ -471,7 +471,7 @@
             <div class="flex justify-between items-center mb-10">
                 <div class="bg-white dark:bg-slate-900 border-2 border-[#FF6600] px-4 py-1.5 md:px-8 md:py-3 rounded-full shadow-sm">
                     <span id="last-update-date" class="nrp-orange font-black text-xs md:text-xl tracking-tighter whitespace-nowrap">
-                        최종 업데이트 : 2026. 03. 09
+                        최종 업데이트 : 2026. 03. 10
                     </span>
                 </div>
                 <div id="d-day-badge" class="nrp-bg-orange text-white px-4 py-1.5 md:px-8 md:py-3 rounded-full text-sm md:text-2xl font-black tracking-tighter shadow-lg whitespace-nowrap">
@@ -769,7 +769,7 @@
         </div>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="can.js?v=0309.02"></script>   <script src="data1.js?v=0223.05"></script> <script src="search.js?v=0223.05"></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="can.js?v=0310.01"></script>   <script src="data1.js?v=0223.05"></script> <script src="search.js?v=0223.05"></script>
     <script>
         let currentModalCandidateName = '';
         let showOnlyConfirmed = false;
@@ -1249,7 +1249,7 @@
             currentModalCandidateName = c.name;
             
             const isConfirmed = (c.status === "후보" && c.name !== "김성민" && c.name !== "이수찬");
-            let statusLabel = isConfirmed ? "후보" : (c.name === "송진영" ? "출마예정" : ((c.decl && c.decl !== "#") ? "출마선언" : "출마예정"));
+            let statusLabel = isConfirmed ? "후보" : (c.name === "이유원" ? "출마예정" : ((c.decl && c.decl !== "#") ? "출마선언" : "출마예정"));
             
             let displayOfficeLabel = "";
             if (c.name === "서운교") displayOfficeLabel = "대구광역시의회 수성구 제3선거구 후보";
@@ -1502,7 +1502,7 @@
 
             let statusLabel = "";
             if (isConfirmed) statusLabel = "후보";
-            else if (c.name === "송진영") statusLabel = "출마예정";
+            else if (c.name === "이유원") statusLabel = "출마예정";
             else statusLabel = (c.decl && c.decl !== "#") ? "출마선언" : "출마예정";
 
             return `
@@ -1576,7 +1576,7 @@
             const getStatusLabel = (c) => {
                 const isConfirmed = (c.status === "후보" && c.name !== "김성민" && c.name !== "이수찬");
                 if (isConfirmed) return "후보";
-                if (c.name === "송진영") return "출마예정";
+                if (c.name === "이유원") return "출마예정";
                 return (c.decl && c.decl !== "#") ? "출마선언" : "출마예정";
             };
 
@@ -1818,7 +1818,7 @@
                                             const parts = can.region.split(' ');
                                             const displayOffice = parts[parts.length - 1] + "의회"; 
                                             const isConfirmed = (can.status === "후보" && can.name !== "김성민" && can.name !== "이수찬");
-                                            let statusText = isConfirmed ? " 후보" : (can.name === "송진영" ? " 출마예정" : ((can.decl && can.decl !== "#") ? " 출마선언" : " 출마예정"));
+                                            let statusText = isConfirmed ? " 후보" : (can.name === "이유원" ? " 출마예정" : ((can.decl && can.decl !== "#") ? " 출마선언" : " 출마예정"));
                                             let fullOfficeLabel = `${displayOffice}${can.district ? ` ${can.district}선거구` : ""}${statusText}`;
                                             const showNew = isNewCandidate(can.dateAdded);
 
