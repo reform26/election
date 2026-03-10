@@ -576,7 +576,7 @@ const candidates = [
             "마을활동가",
             "현) 방송통신대 세종·공주 학생회장"
         ],
-        photo: "",
+        photo: "https://i.imgur.com/wbdLG7a.png",
         sns: {
             fb: "https://www.facebook.com/gimsunju.64081/#"
         },
