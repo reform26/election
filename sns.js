@@ -377,6 +377,31 @@ function buildSNSSection() {
 // ════════════════════════════════════════════════════════════
 //  🔑 YouTube Data API v3 키  ← 발급받은 키를 여기에 입력
 // ════════════════════════════════════════════════════════════
+const YOUTUBE_API_KEY = 'AIzaSyBKRkxkrf3lPRoYw9nHihymbUcLKjO4C4M';
+
+
+// ════════════════════════════════════════════════════════════
+//  📱 2줄: 릴스 & 숏츠 수동 등록
+// ════════════════════════════════════════════════════════════
+const reelsAndShorts = [];
+
+
+// ════════════════════════════════════════════════════════════
+//  ⚙️  설정
+// ════════════════════════════════════════════════════════════
+const YT_VIDEOS_PER_CHANNEL = 50;  // 1줄: 후보 1명당 최신 영상 수 (API 최대값)
+const MAX_ROW1_CARDS         = 30;  // 1줄: 최대 카드 수
+const MAX_ROW2_CARDS         = 20;  // 2줄: 최대 카드 수
+
+
+// ────────────────────────────────────────────────────────────
+//  내부 상태
+// ────────────────────────────────────────────────────────────
+let row1Data          = [];
+let row2Data          = [];
+let currentRow1Filter = 'all';
+let currentRow2Filter = 'all';
+
 
 // ════════════════════════════════════════════════════════════
 //  공통 유틸
@@ -533,6 +558,122 @@ function renderRow1(items, isFiltered = false) {
 
 
 // ════════════════════════════════════════════════════════════
+//  2줄: 릴스 & 숏츠 수동 등록
+// ════════════════════════════════════════════════════════════
+async function loadRow2() {
+    const track = document.getElementById('sns-row2-track');
+    if (!track) return;
+
+    if (reelsAndShorts.length === 0) {
+        track.innerHTML = `
+            <div class="sns-feed-empty" style="width:100%;min-width:320px;">
+                <span style="font-size:2rem">📭</span>
+                <span>sns.js의 reelsAndShorts 배열에 URL을 추가해주세요</span>
+            </div>`;
+        return;
+    }
+
+    track.innerHTML = `
+        <div class="sns-feed-loading">
+            <span class="sns-pulse">⏳</span>
+            <span class="sns-pulse">릴스 · 숏츠 불러오는 중...</span>
+        </div>`;
+
+    // 릴스(ig) 먼저, 유튜브 숏츠(yt) 나중 정렬
+    const items = [...reelsAndShorts.slice(0, MAX_ROW2_CARDS)].sort((a, b) => {
+        if (a.type === b.type) return 0;
+        return a.type === 'ig' ? -1 : 1;
+    });
+
+    row2Data = items;
+    renderRow2(row2Data);
+    const row2Wrap  = document.getElementById('sns-row2-scroll-wrap');
+    const row2Thumb = document.getElementById('sns-row2-scrollbar-thumb');
+    const row2Track = document.getElementById('sns-row2-scrollbar-track');
+    initDragScroll(row2Wrap);
+    initCustomScrollbar(row2Wrap, row2Thumb, row2Track);
+}
+
+function filterRow2(filter, btn) {
+    currentRow2Filter = filter;
+    document.querySelectorAll('#row2-filter-tabs .sns-filter-tab').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+    const filtered = currentRow2Filter === 'all'
+        ? row2Data
+        : row2Data.filter(i => i.type === currentRow2Filter);
+    renderRow2(filtered);
+}
+
+function getIgEmbedUrl(url) {
+    const m = url.match(/instagram\.com\/(?:reel|p)\/([\w-]+)/);
+    return m ? `https://www.instagram.com/p/${m[1]}/embed/` : null;
+}
+
+function getYtThumb(url) {
+    const m = url.match(/shorts\/([\w-]+)/);
+    return m ? `https://i.ytimg.com/vi/${m[1]}/hqdefault.jpg` : '';
+}
+
+function renderRow2(items) {
+    const track   = document.getElementById('sns-row2-track');
+    const countEl = document.getElementById('sns-row2-count');
+    if (!track) return;
+
+    if (countEl) countEl.textContent = `총 ${items.length}개`;
+
+    if (items.length === 0) {
+        track.innerHTML = `
+            <div class="sns-feed-empty" style="width:100%;min-width:320px;">
+                <span style="font-size:2rem">📭</span>
+                <span>등록된 게시물이 없습니다</span>
+            </div>`;
+        return;
+    }
+
+    const YT_ICON = `<svg viewBox="0 0 24 24" fill="#FF0000" width="10" height="10"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 00.5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 002.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 002.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>`;
+
+    track.innerHTML = items.map(item => {
+        const isYt      = item.type === 'yt';
+        const typeLabel = isYt ? 'Shorts' : 'Reels';
+
+        if (isYt) {
+            const thumb = getYtThumb(item.url);
+            return `
+                <div class="sns-feed-card type-yt" onclick="window.open('${item.url}','_blank')">
+                    ${thumb ? `<img class="sns-feed-thumb" src="${thumb}" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">` : ''}
+                    <div class="sns-feed-thumb-placeholder" style="${thumb ? 'display:none' : ''}">▶</div>
+                    <div class="sns-feed-info">
+                        <div class="sns-feed-candidate">${YT_ICON} ${item.candidate}</div>
+                        <div class="sns-feed-title">${typeLabel}</div>
+                    </div>
+                </div>`;
+        }
+
+        const embedUrl = getIgEmbedUrl(item.url);
+        if (!embedUrl) return '';
+
+        return `
+            <div class="sns-embed-card type-ig">
+                <div class="sns-embed-label">
+                    <span class="sns-embed-badge ig">${typeLabel}</span>
+                    <span class="sns-embed-candidate">${item.candidate}</span>
+                    <a href="${item.url}" target="_blank" class="sns-embed-link">↗</a>
+                </div>
+                <div class="sns-embed-drag-overlay"></div>
+                <iframe
+                    src="${embedUrl}"
+                    style="width:min(328px,85vw);height:480px;border:0;"
+                    frameborder="0"
+                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"
+                    allowfullscreen
+                    loading="lazy"
+                ></iframe>
+            </div>`;
+    }).join('');
+}
+
+
+// ════════════════════════════════════════════════════════════
 //  🖱️ 드래그 스크롤 (마우스로 좌우 이동)
 // ════════════════════════════════════════════════════════════
 function initCustomScrollbar(scrollWrap, thumbEl, trackEl) {
@@ -672,7 +813,9 @@ document.addEventListener('DOMContentLoaded', () => {
     buildSNSSection(); // HTML 구조 먼저 생성
 
     loadRow1(); // 1줄: 유튜브 자동
+    loadRow2(); // 2줄: 릴스·숏츠 수동
 
     // 드래그 스크롤 적용
     initDragScroll(document.querySelector('#sns-row1-track')?.parentElement);
+    initDragScroll(document.querySelector('#sns-row2-track')?.parentElement);
 });
