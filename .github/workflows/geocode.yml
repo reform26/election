@@ -1,0 +1,31 @@
+name: 후보자 좌표 자동 삽입
+
+on:
+  push:
+    paths:
+      - 'can.js'   # can.js가 바뀔 때만 실행
+
+jobs:
+  geocode:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 코드 체크아웃
+        uses: actions/checkout@v4
+
+      - name: Node.js 설정
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: 좌표 삽입 실행
+        run: node geocode.js
+
+      - name: can.js 변경사항 커밋
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git diff --quiet can.js || (
+            git add can.js &&
+            git commit -m "🗺️ 후보자 좌표 자동 삽입 [skip ci]" &&
+            git push
+          )
