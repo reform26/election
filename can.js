@@ -436,7 +436,7 @@ const candidates = [
             "21대대선 선대위 부대변인",
             "아트노바 대표"
         ],
-        photo: "https://i.imgur.com/SI1e3zR.jpeg",
+        photo: "https://i.imgur.com/PRvdy2T.png",
         sns: {
             fb: "https://www.facebook.com/radiostarlee",
             ig: "https://www.instagram.com/radiostarlee",
@@ -1865,8 +1865,8 @@ const candidates = [
         decl: "#",
         dateAdded: "2026-01-26",
         coords: [
-            37.2805,
-            127.054
+            37.301125,
+            127.072028
         ]
     },
     {
@@ -2879,7 +2879,7 @@ const candidates = [
         bio: [
             "서해구 다선거구 후보"
         ],
-        photo: "https://i.imgur.com/ZD4Kpwo.png",
+        photo: "",
         district: "다",
         sns: {
             fb: "#"
