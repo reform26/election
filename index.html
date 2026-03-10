@@ -692,6 +692,9 @@
         </div>
     </div>
 
+    <!-- ── 응원 순위 슬라이더 ── -->
+    <div id="cheers-ranking-root" class="max-w-7xl mx-auto px-4 md:px-10 mt-3 mb-4"></div>
+
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
 
@@ -1373,6 +1376,7 @@
             document.getElementById('modal-photo-area').innerHTML = c.photo 
                 ? `<img src="${c.photo}" class="w-full h-full object-contain" style="object-position: center top" alt="개혁신당 ${c.name} 후보 프로필">` 
                 : `<div class="no-photo-placeholder"><i data-lucide="user-round" class="w-12 h-12"></i><span>이미지 준비중</span></div>`;
+            window.renderModalCheerBtn && window.renderModalCheerBtn(c.name);
             
             const snsBtns = { 
                 fb: document.getElementById('modal-fb'), 
@@ -2576,5 +2580,8 @@
 
     <!-- ══ 후보자 SNS 피드 ══ -->
     <script src="sns.js?v=0310.02"></script>
+
+    <!-- ══ 응원 시스템 ══ -->
+    <script type="module" src="cheers.js"></script>
 </body>
 </html>
