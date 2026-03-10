@@ -1061,9 +1061,9 @@ const candidates = [
         status: "후보",
         subRegion: "화양동, 자양제3동, 자양제4동",
         bio: [
+	    "서울시당 대변인",
             "<span style='letter-spacing:-0.12em;'>개혁신당 광진구 지역발전특위 부위원장</span>",
-            "21대 대선 중앙당 홍보국 주임",
-            "<span style='letter-spacing:-0.14em;'>뉴미디어정치평론채널 '이진현의 다른정치'운영</span>"
+            "21대 대선 중앙당 홍보국 주임"
         ],
         photo: "https://i.imgur.com/1yup6y8.png",
         district: "라",
