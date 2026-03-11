@@ -1141,7 +1141,7 @@ const candidates = [
         bio: [
             "개혁신당 송파구 지역발전특위 부위원장"
         ],
-        photo: "",
+        photo: "https://i.imgur.com/Gf4IEYo.jpeg",
         district: "가",
         sns: {
             ig: ""
@@ -2421,7 +2421,7 @@ const candidates = [
             "구미시 을 당협위원장",
             "제21대 대선 선대위 홍보부본부장"
         ],
-        photo: "",
+        photo: "https://i.imgur.com/KD5O2X3.jpeg",
         district: "자",
         sns: {
             fb: "#"
