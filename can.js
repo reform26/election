@@ -490,7 +490,7 @@ const candidates = [
         status: "후보",
         subRegion: "신사동, 논현1동, 압구정동, 청담동",
         bio: [
-            "강남구 제1선거구 후보"
+            "서울시당 대변인"
         ],
         photo: "",
         sns: {
@@ -652,10 +652,10 @@ const candidates = [
         status: "후보",
         subRegion: "개포제3동, 일원본동, 일원제1동",
         bio: [
+            "서울시당 대변인",
             "<span style='letter-spacing:-0.12em;'>개혁신당 강남구 지역발전특위 부위원장</span>",
             "한국자동차연구원 연구원",
-            "전) 소프트웨어/AI 강사",
-            "전) 더벤처스 대학생 투자심사역"
+            "전) 소프트웨어/AI 강사"
         ],
         photo: "",
         district: "마",
@@ -680,6 +680,7 @@ const candidates = [
         status: "후보",
         subRegion: "개포1동, 개포2동, 개포4동",
         bio: [
+            "서울시당 대변인",
             "(주)제일기연 대표이사"
         ],
         photo: "",
@@ -729,7 +730,8 @@ const candidates = [
         status: "후보",
         subRegion: "답십리2동, 장안1동, 장안2동",
         bio: [
-            "개혁신당 동대문구 지역발전특위 부위원장",
+            "서울시당 대변인",
+            "<span style='letter-spacing:-0.14em;'>개혁신당 동대문구 지역발전특위 부위원장</span>",
             "전) 동대문구축구협회 사무국장"
         ],
         photo: "https://i.imgur.com/cH6JHd7.png",
@@ -932,7 +934,7 @@ const candidates = [
         status: "후보",
         subRegion: "면목4동, 면목7동",
         bio: [
-            "중랑구 나선거구 후보"
+            "서울시당 대변인"
         ],
         photo: "",
         district: "나",
@@ -1034,8 +1036,8 @@ const candidates = [
         status: "후보",
         subRegion: "자양제1동, 자양제2동, 구의제1동, 구의제3동",
         bio: [
+            "서울시당 대변인",
             "<span style='letter-spacing:-0.12em;'>개혁신당 광진구 지역발전특위 부위원장</span>",
-            "전) 한국어, 중국어 강사",
             "<span style='letter-spacing:-0.12em;'>21대 대선 서울시 선대위 환경위 위원</span>",
             "<span style='letter-spacing:-0.18em;'>21대 대선 조직본부 강남캠프 자원봉사단원</span>"
         ],
@@ -2099,7 +2101,7 @@ const candidates = [
         status: "후보",
         subRegion: "본오3동, 사동, 사이동, 해양동",
         bio: [
-            "안산시 가선거구 후보"
+            "개혁신당 안산시 지역발전특위 부위원장"
         ],
         photo: "https://i.imgur.com/nihgF8a.png",
         district: "가",
