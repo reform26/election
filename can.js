@@ -706,6 +706,7 @@ const candidates = [
         district: "자",
         subRegion: "삼성1동, 삼성2동, 대치2동",
         bio: [
+            "서울시당 대변인",
             "건국대학교 캠퍼스 지부원"
         ],
         photo: "https://i.imgur.com/uzVK2Vj.jpeg",
@@ -891,7 +892,8 @@ const candidates = [
         photo: "",
         district: "사",
         sns: {
-            fb: "#"
+            fb: "#",
+            ig: "https://www.instagram.com/reform_kogilju/",
         },
         pledge: "#",
         decl: "#",
@@ -2240,7 +2242,7 @@ const candidates = [
             ig: "https://www.instagram.com/taeyoung_choe/",
             blog: "https://blog.naver.com/taeyoung_choe"
         },
-        pledge: "#",
+        pledge: "https://policy.reformparty.kr/map?region_code=42&election_type=local_council&district_code=42%3A%EC%B6%98%EC%B2%9C%EC%8B%9C",
         decl: "https://rallypoint.kr/board/politics-free/223910",
         dateAdded: "2026-02-05",
         coords: [
@@ -2615,7 +2617,8 @@ const candidates = [
         status: "후보",
         subRegion: "가경동, 복대제2동",
         bio: [
-            "청주시 차선거구 후보"
+            "개혁신당 흥덕구 지역발전특위 부위원장",
+            "캠퍼스지부 충북대학교 지부장"
         ],
         photo: "",
         district: "차",
@@ -2886,8 +2889,8 @@ const candidates = [
         sns: {
             fb: "#"
         },
-        pledge: "#",
-        decl: "#",
+        pledge: "https://policy.reformparty.kr/map?region_code=28&election_type=local_council&district_code=28%3A%EC%84%9C%EA%B5%AC%3A%EB%8B%A4%EC%84%A0%EA%B1%B0%EA%B5%AC",
+        decl: "https://rallypoint.kr/board/politics-free/227363",
         dateAdded: "2026-03-09",
         coords: [
             37.5396,
@@ -2989,7 +2992,151 @@ const candidates = [
             36.8043,
             128.6178
         ]
-    }
+    },
+    {
+        name: "양현성",
+        region: "서울 강남구",
+        metropolitan: "서울특별시",
+        category: "기초의원",
+        office: "강남구의회",
+        status: "후보",
+        subRegion: "압구정동, 청담동",
+        bio: [
+            "강남구 나선거구 후보"
+        ],
+        photo: "",
+        district: "나",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        dateAdded: "2026-03-12",
+        coords: [
+            37.5271,
+            127.0355
+        ]
+    },
+    {
+        name: "권민찬",
+        region: "부산 금정구",
+        metropolitan: "부산광역시",
+        category: "기초의원",
+        office: "금정구의회",
+        status: "후보",
+        subRegion: "남산동, 구서2동",
+        bio: [
+            "금정구 라선거구 후보"
+        ],
+        photo: "",
+        district: "라",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        dateAdded: "2026-03-12",
+        coords: [
+            35.2375,
+            129.0927
+        ]
+    },
+    {
+        name: "박은강",
+        region: "경기 과천시",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "과천시의회",
+        status: "후보",
+        subRegion: "갈현동, 문원동, 부림동, 원문동",
+        bio: [
+            "과천시 나선거구 후보"
+        ],
+        photo: "",
+        district: "나",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        dateAdded: "2026-03-12",
+        coords: [
+            37.4292,
+            126.9879
+        ]
+    },
+    {
+        name: "정민재",
+        region: "경기 고양시",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "고양시의회",
+        status: "후보",
+        subRegion: "일산1동, 탄현1동, 탄현2동",
+        bio: [
+            "고양시 차선거구 후보"
+        ],
+        photo: "",
+        district: "차",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        dateAdded: "2026-03-12",
+        coords: [
+            37.665,
+            126.7699
+        ]
+    },
+    {
+        name: "방서진",
+        region: "경기 양평군",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "양평군의회",
+        status: "후보",
+        subRegion: "서종면, 양서면, 양평읍, 옥천면",
+        bio: [
+            "양평군 가선거구 후보"
+        ],
+        photo: "",
+        district: "가",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        dateAdded: "2026-03-12",
+        coords: [
+            37.4914,
+            127.4875
+        ]
+    },
+    {
+        name: "이세원",
+        region: "경기 화성시",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "화성시의회",
+        status: "출마예정",
+        subRegion: "동탄7동, 동탄8동, 동탄9동",
+        bio: [
+            "화성시 마선거구 출마예정"
+        ],
+        photo: "",
+        district: "마",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        dateAdded: "2026-03-12",
+        coords: [
+            37.2012,
+            127.075
+        ]
+    },    
 ];
 
 

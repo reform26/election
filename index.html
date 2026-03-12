@@ -530,6 +530,11 @@
                             
                             <div id="notice-collapsible-content" class="hidden opacity-0 h-0 collapsible-container px-6 pb-8 md:px-8 md:pb-10">
                                 <div class="flex flex-col gap-2.5 items-center">
+			             <p class="text-gray-700 dark:text-slate-300 bg-white dark:bg-slate-900 border border-orange-100 dark:border-orange-900/30 rounded-xl py-2.5 px-4 w-full max-w-lg text-center text-[10px] md:text-sm font-bold shadow-sm">
+                                        <span class="text-[#FF6600]">제9차 공천결과 : 5명</span> (03.12.) | 
+                                        <a href="https://rallypoint.kr/board/notice/227439" target="_blank" class="underline hover:text-gray-900 dark:hover:text-white transition-colors font-black ml-1">공고보기</a>
+                                    </p>
+
                                     <p class="text-gray-700 dark:text-slate-300 bg-white dark:bg-slate-900 border border-orange-100 dark:border-orange-900/30 rounded-xl py-2.5 px-4 w-full max-w-lg text-center text-[10px] md:text-sm font-bold shadow-sm">
                                         <span class="text-[#FF6600]">제8차 공천결과 : 11명</span> (03.09.) | 
                                         <a href="https://rallypoint.kr/board/notice/227243" target="_blank" class="underline hover:text-gray-900 dark:hover:text-white transition-colors font-black ml-1">공고보기</a>
@@ -872,7 +877,7 @@
         </div>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="can.js?v=0311.10"></script>   <script src="data1.js?v=0223.05"></script> <script src="search.js?v=0223.05"></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="can.js?v=0312.01"></script>   <script src="data1.js?v=0223.05"></script> <script src="search.js?v=0223.05"></script>
     <script>
         let currentModalCandidateName = '';
         let showOnlyConfirmed = false;
@@ -1452,13 +1457,14 @@
 
             const filterByMetro = (metro) => filtered.filter(c => c.category === "기초의원" && c.metropolitan === metro).sort(councilSort);
             const seoulCands = filterByMetro("서울특별시");
+            const busanCands = filterByMetro("부산광역시");
             const daeguCands = filterByMetro("대구광역시");
             const incheonCands = filterByMetro("인천광역시");
             const daejeonCands = filterByMetro("대전광역시");
             const gyeonggiCands = filterByMetro("경기도");
             const chungnamCands = filterByMetro("충청남도");
             const gyeongbukCands = filterByMetro("경상북도");
-            const excluded = ["서울특별시", "대구광역시", "대전광역시", "인천광역시", "경기도", "경상북도", "충청남도"];
+            const excluded = ["서울특별시","부산광역시", "대구광역시", "대전광역시", "인천광역시", "경기도", "경상북도", "충청남도"];
             const otherCands = filtered.filter(c => !excluded.includes(c.metropolitan) && c.category === "기초의원").sort((a, b) => (regionPriority[a.metropolitan] || 99) - (regionPriority[b.metropolitan] || 99) || councilSort(a, b));
 
             container.innerHTML = `
@@ -1479,6 +1485,7 @@
                 <section id="local-council" class="mb-16 scroll-mt-24">
                     <h2 class="section-title">기초의회의원</h2>
                     ${seoulCands.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">서울특별시</h3><div class="grid-responsive">${seoulCands.map(createCard).join('')}</div></div>` : ''}
+                    ${busanCands.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">부산광역시</h3><div class="grid-responsive">${busanCands.map(createCard).join('')}</div></div>` : ''}
                     ${daeguCands.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">대구광역시</h3><div class="grid-responsive">${daeguCands.map(createCard).join('')}</div></div>` : ''}
                     ${incheonCands.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">인천광역시</h3><div class="grid-responsive">${incheonCands.map(createCard).join('')}</div></div>` : ''}
                     ${daejeonCands.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">대전광역시</h3><div class="grid-responsive">${daejeonCands.map(createCard).join('')}</div></div>` : ''}
