@@ -466,238 +466,318 @@
         </div>
     </div>
 
-    <header class="header-gradient pt-8 pb-2 px-4 md:pt-12 md:pb-3 md:px-10 mb-0">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex justify-between items-center mb-10">
-                <div class="bg-white dark:bg-slate-900 border-2 border-[#FF6600] px-4 py-1.5 md:px-8 md:py-3 rounded-full shadow-sm">
-                    <span id="last-update-date" class="nrp-orange font-black text-xs md:text-xl tracking-tighter whitespace-nowrap">
-                        최종 업데이트 : 2026. 03. 13
-                    </span>
-                </div>
-                <div id="d-day-badge" class="nrp-bg-orange text-white px-4 py-1.5 md:px-8 md:py-3 rounded-full text-sm md:text-2xl font-black tracking-tighter shadow-lg whitespace-nowrap">
-                    D-000
-                </div>
-            </div>
-            <div class="text-center">
-                <h1 class="text-2xl md:text-5xl font-black mb-4 tracking-tighter text-gray-900 dark:text-white leading-tight md:leading-[1.1]">
-                    <span class="block mb-2 md:mb-4">
-                        <span class="tracking-[-0.12em]">6 · 3</span> 지방선거 · 재보궐선거
-                    </span>
-                    <span class="block">출마 · 공천 현황</span>
-                </h1>
-                <p class="text-gray-500 dark:text-slate-400 text-sm md:text-lg font-semibold mb-6 text-center">제9회 전국동시지방선거를 향한 개혁의 도전</p>
-                <div class="text-center">
-                    <a href="https://apply.reformparty.kr/" target="_blank" 
-                       class="inline-block bg-white dark:bg-slate-900 border-2 border-[#FF6600] nrp-orange px-8 py-3 md:px-14 md:py-4 rounded-2xl text-sm md:text-xl font-black hover:bg-[#FF6600] hover:text-white transition-all duration-300 shadow-md hover:shadow-xl transform hover:-translate-y-1">
-                          개혁신당 온라인 공천심사 시스템 들어가기
-                    </a>
-                    
-                    <div class="mt-8 space-y-4">
-                        <div class="max-w-2xl mx-auto bg-white dark:bg-slate-800 border border-orange-200 dark:border-orange-900/50 rounded-[2rem] p-6 md:p-8 shadow-sm">
-                            <div class="flex items-center justify-center gap-2 mb-4">
-                                <i data-lucide="alert-triangle" class="w-5 h-5 md:w-6 md:h-6 text-[#FF6600]"></i>
-                                <span class="text-[#FF6600] text-lg md:text-2xl font-black tracking-tight">주의사항</span>
-                            </div>
-                            <div class="inline-block text-left space-y-2 text-gray-700 dark:text-slate-300 text-xs md:text-sm font-bold">
-                                <p class="flex items-start gap-1.5">
-                                    <span class="mt-1.5 flex-shrink-0 w-1 h-1 rounded-full bg-[#FF6600]"></span>
-                                    <span>이 페이지는 <strong class="underline font-black text-gray-900 dark:text-white">개혁신당과 관련 없는 비공식 페이지</strong>입니다.</span>
-                                </p>
-                                <p class="flex items-start gap-1.5">
-                                    <span class="mt-1.5 flex-shrink-0 w-1 h-1 rounded-full bg-[#FF6600]"></span>
-                                    <span>'공개 출마 선언' 혹은 '후보자 직접 제보'를 정리한 명단입니다.</span>
-                                </p>
-                                <p class="flex items-start gap-1.5">
-                                    <span class="mt-1.5 flex-shrink-0 w-1 h-1 rounded-full bg-[#FF6600]"></span>
-                                    <span>해당 정보는 상시 변경될 수 있으며, 수동 수집으로 부정확할 수 있습니다.</span>
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="max-w-2xl mx-auto bg-gray-50 dark:bg-slate-800/50 border border-gray-100 dark:border-slate-700 rounded-[2rem] shadow-sm overflow-hidden transition-all">
-                            <div onclick="toggleNoticeVisibility()" class="p-6 md:p-8 flex flex-col items-center justify-center cursor-pointer hover:bg-gray-100 dark:hover:bg-slate-700/50 transition-colors group">
-                                <div class="flex items-center justify-center gap-2 mb-2">
-                                    <i data-lucide="info" class="w-5 h-5 md:w-5 md:h-5 text-gray-400 group-hover:text-[#FF6600] transition-colors"></i>
-                                    <span class="text-gray-800 dark:text-slate-200 text-sm md:text-xl font-black tracking-tight">공천 심사 · 발표 관련 참고사항</span>
-                                </div>
-                                <div class="flex items-center gap-1.5 text-[10px] md:text-xs font-bold text-gray-400">
-                                    <span>[펼치기 · 닫기]</span>
-                                    <div id="notice-toggle-icon-wrapper" class="transition-transform duration-300">
-                                        <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div id="notice-collapsible-content" class="hidden opacity-0 h-0 collapsible-container px-6 pb-8 md:px-8 md:pb-10">
-                                <div class="flex flex-col gap-2.5 items-center">
-			             <p class="text-gray-700 dark:text-slate-300 bg-white dark:bg-slate-900 border border-orange-100 dark:border-orange-900/30 rounded-xl py-2.5 px-4 w-full max-w-lg text-center text-[10px] md:text-sm font-bold shadow-sm">
-                                        <span class="text-[#FF6600]">제9차 공천결과 : 5명</span> (03.12.) | 
-                                        <a href="https://rallypoint.kr/board/notice/227439" target="_blank" class="underline hover:text-gray-900 dark:hover:text-white transition-colors font-black ml-1">공고보기</a>
-                                    </p>
-
-                                    <p class="text-gray-700 dark:text-slate-300 bg-white dark:bg-slate-900 border border-orange-100 dark:border-orange-900/30 rounded-xl py-2.5 px-4 w-full max-w-lg text-center text-[10px] md:text-sm font-bold shadow-sm">
-                                        <span class="text-[#FF6600]">제8차 공천결과 : 11명</span> (03.09.) | 
-                                        <a href="https://rallypoint.kr/board/notice/227243" target="_blank" class="underline hover:text-gray-900 dark:hover:text-white transition-colors font-black ml-1">공고보기</a>
-                                    </p>
-                                    <p class="text-gray-700 dark:text-slate-300 bg-white dark:bg-slate-900 border border-orange-100 dark:border-orange-900/30 rounded-xl py-2.5 px-4 w-full max-w-lg text-center text-[10px] md:text-sm font-bold shadow-sm">
-                                        <span class="text-[#FF6600]">제7차 공천결과 : 9명</span> (03.05.) | 
-                                        <a href="https://rallypoint.kr/board/notice/227052" target="_blank" class="underline hover:text-gray-900 dark:hover:text-white transition-colors font-black ml-1">공고보기</a>
-                                    </p>
-                                    <p class="text-gray-700 dark:text-slate-300 bg-white dark:bg-slate-900 border border-orange-100 dark:border-orange-900/30 rounded-xl py-2.5 px-4 w-full max-w-lg text-center text-[10px] md:text-sm font-bold shadow-sm">
-                                        <span class="text-[#FF6600]">제6차 공천결과 : 5명</span> (02.26.) | 
-                                        <a href="https://rallypoint.kr/board/notice/226443" target="_blank" class="underline hover:text-gray-900 dark:hover:text-white transition-colors font-black ml-1">공고보기</a>
-                                    </p>
-                                    <p class="text-gray-700 dark:text-slate-300 bg-white dark:bg-slate-900 border border-orange-100 dark:border-orange-900/30 rounded-xl py-2.5 px-4 w-full max-w-lg text-center text-[10px] md:text-sm font-bold shadow-sm">
-                                        <span class="text-[#FF6600]">제5차 공천결과 : 8명</span> (02.19.) | 
-                                        <a href="https://rallypoint.kr/board/notice/226072" target="_blank" class="underline hover:text-gray-900 dark:hover:text-white transition-colors font-black ml-1">공고보기</a>
-                                    </p>
-                                    <p class="text-gray-700 dark:text-slate-300 bg-white dark:bg-slate-900 border border-orange-100 dark:border-orange-900/30 rounded-xl py-2.5 px-4 w-full max-w-lg text-center text-[10px] md:text-sm font-bold shadow-sm">
-                                        <span class="text-[#FF6600]">제4차 공천결과 : 9명</span> (02.12.) | 
-                                        <a href="https://rallypoint.kr/board/notice/225748" target="_blank" class="underline hover:text-gray-900 dark:hover:text-white transition-colors font-black ml-1">공고보기</a>
-                                    </p>
-                                    <p class="text-gray-700 dark:text-slate-300 bg-white dark:bg-slate-900 border border-orange-100 dark:border-orange-900/30 rounded-xl py-2.5 px-4 w-full max-w-lg text-center text-[10px] md:text-sm font-bold shadow-sm">
-                                        <span class="text-[#FF6600]">제3차 공천결과 : 17명</span> (02.09.) | 
-                                        <a href="https://rallypoint.kr/board/notice/225533" target="_blank" class="underline hover:text-gray-900 dark:hover:text-white transition-colors font-black ml-1">공고보기</a>
-                                    </p>
-                                    <p class="text-gray-700 dark:text-slate-300 bg-white dark:bg-slate-900 border border-orange-100 dark:border-orange-900/30 rounded-xl py-2.5 px-4 w-full max-w-lg text-center text-[10px] md:text-sm font-bold shadow-sm">
-                                        <span class="text-[#FF6600]">제2차 공천결과 : 18명</span> (02.05.) | 
-                                        <a href="https://rallypoint.kr/board/notice/225284" target="_blank" class="underline hover:text-gray-900 dark:hover:text-white transition-colors font-black ml-1">공고보기</a>
-                                    </p>
-                                    <p class="text-gray-700 dark:text-slate-300 bg-white dark:bg-slate-900 border border-orange-100 dark:border-orange-900/30 rounded-xl py-2.5 px-4 w-full max-w-lg text-center text-[10px] md:text-sm font-bold shadow-sm">
-                                        <span class="text-[#FF6600]">제1차 공천결과 : 29명</span> (01.26.) | 
-                                        <a href="https://rallypoint.kr/board/notice/224559" target="_blank" class="underline hover:text-gray-900 dark:hover:text-white transition-colors font-black ml-1">공고보기</a>
-                                    </p>
-                                    <p class="text-gray-700 dark:text-slate-300 bg-white dark:bg-slate-900 border border-gray-100 dark:border-slate-800 rounded-xl py-2.5 px-4 w-full max-w-lg text-center text-[10px] md:text-sm font-bold shadow-sm">
-                                        '이미 수백명의 후보자들이 있다' : 이준석 대표 (01.13.) | 
-                                        <a href="https://www.youtube.com/live/9HRqgZ0Lghw?si=268vprQF1QLCHBoc&t=2065" target="_blank" class="underline hover:text-gray-900 dark:hover:text-white transition-colors font-black ml-1">영상보기</a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+    <!-- ══════════════════════════════════════════════
+         공천 심사·발표 참고사항 팝업
+    ══════════════════════════════════════════════ -->
+    <div id="notice-popup-overlay" onclick="if(event.target===this)closeNoticePopup()" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.55);backdrop-filter:blur(5px);z-index:2000;align-items:center;justify-content:center;padding:16px;">
+        <div style="background:white;border-radius:20px;width:100%;max-width:460px;max-height:85vh;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 24px 64px rgba(0,0,0,0.3);" class="dark:bg-slate-800">
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:15px 20px;border-bottom:1px solid #f0f0f0;flex-shrink:0;" class="dark:border-slate-700">
+                <div style="display:flex;align-items:center;gap:10px;">
+                    <div style="width:32px;height:32px;border-radius:10px;background:rgba(255,102,0,0.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                        <i data-lucide="file-text" style="width:15px;height:15px;color:#FF6600;"></i>
+                    </div>
+                    <div>
+                        <div style="font-size:13px;font-weight:900;color:#111;" class="dark:text-white">공천 심사 · 발표 관련 참고사항</div>
                     </div>
                 </div>
+                <button onclick="closeNoticePopup()" style="width:28px;height:28px;border-radius:8px;background:#f5f5f5;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:14px;color:#888;font-weight:700;" class="dark:bg-slate-700 dark:text-slate-300">✕</button>
             </div>
-        </div>
-    </header>
-
-    <div class="max-w-7xl mx-auto px-4 md:px-10 mt-2 mb-4">
-        <div class="flex flex-row items-center justify-center gap-3 flex-wrap">
-             <button id="pwa-install-btn" class="inline-flex items-center gap-2 px-5 py-2.5 bg-orange-600 text-white border border-orange-50 rounded-xl font-black text-sm shadow-md hover:bg-orange-700 transition-all active:scale-95">
-                <i data-lucide="smartphone" class="w-4 h-4"></i> 앱 설치하기
-             </button>
-
-             <button onclick="sharePage()" class="inline-flex items-center gap-2 px-5 py-2.5 bg-white dark:bg-slate-800 border border-orange-200 dark:border-orange-900/50 rounded-xl text-orange-600 dark:text-orange-400 font-black text-sm shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all active:scale-95">
-                <i data-lucide="share-2" class="w-4 h-4"></i> 이 페이지 공유하기
-             </button>
-
-             <button id="filter-confirmed-btn" onclick="toggleConfirmedFilter()" class="inline-flex items-center gap-2 px-5 py-2.5 bg-white dark:bg-slate-800 border border-orange-200 dark:border-orange-900/50 rounded-xl text-orange-600 dark:text-orange-400 font-black text-sm shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all active:scale-95">
-                <i data-lucide="check-circle" class="w-4 h-4"></i>
-                <span id="filter-btn-text">공천 확정자만 보기</span>
-             </button>
-
-             <button id="filter-new-btn" onclick="toggleNewFilter()" class="inline-flex items-center gap-2 px-5 py-2.5 bg-white dark:bg-slate-800 border border-orange-200 dark:border-orange-900/50 rounded-xl text-orange-600 dark:text-orange-400 font-black text-sm shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all active:scale-95">
-                <i data-lucide="sparkles" class="w-4 h-4"></i>
-                <span id="filter-new-btn-text">신규 후보자 보기</span>
-             </button>
-        </div>
-        
-        <div id="share-fallback-area" class="hidden items-center justify-center gap-3 mt-4 share-fallback-animate">
-           <button onclick="shareToSNS('facebook')" class="share-btn-item facebook" aria-label="페이스북 공유">
-               <i data-lucide="facebook" class="w-5 h-5"></i>
-           </button>
-           <button onclick="shareToSNS('x')" class="share-btn-item x" aria-label="X(트위터) 공유">
-               <i data-lucide="twitter" class="w-5 h-5"></i>
-           </button>
-           <button onclick="copyLink()" class="share-btn-item link" aria-label="링크 복사">
-               <i data-lucide="link" class="w-5 h-5"></i>
-           </button>
+            <div style="padding:14px 18px;overflow-y:auto;display:flex;flex-direction:column;gap:5px;">
+                <div class="notice-popup-item"><div class="notice-popup-left"><span class="notice-popup-badge">제9차</span><span class="notice-popup-count">5명</span><span class="notice-popup-date">03.12.</span></div><a href="https://rallypoint.kr/board/notice/227439" target="_blank" class="notice-popup-link">공고보기 →</a></div>
+                <div class="notice-popup-item"><div class="notice-popup-left"><span class="notice-popup-badge">제8차</span><span class="notice-popup-count">11명</span><span class="notice-popup-date">03.09.</span></div><a href="https://rallypoint.kr/board/notice/227243" target="_blank" class="notice-popup-link">공고보기 →</a></div>
+                <div class="notice-popup-item"><div class="notice-popup-left"><span class="notice-popup-badge">제7차</span><span class="notice-popup-count">9명</span><span class="notice-popup-date">03.05.</span></div><a href="https://rallypoint.kr/board/notice/227052" target="_blank" class="notice-popup-link">공고보기 →</a></div>
+                <div class="notice-popup-item"><div class="notice-popup-left"><span class="notice-popup-badge">제6차</span><span class="notice-popup-count">5명</span><span class="notice-popup-date">02.26.</span></div><a href="https://rallypoint.kr/board/notice/226443" target="_blank" class="notice-popup-link">공고보기 →</a></div>
+                <div class="notice-popup-item"><div class="notice-popup-left"><span class="notice-popup-badge">제5차</span><span class="notice-popup-count">8명</span><span class="notice-popup-date">02.19.</span></div><a href="https://rallypoint.kr/board/notice/226072" target="_blank" class="notice-popup-link">공고보기 →</a></div>
+                <div class="notice-popup-item"><div class="notice-popup-left"><span class="notice-popup-badge">제4차</span><span class="notice-popup-count">9명</span><span class="notice-popup-date">02.12.</span></div><a href="https://rallypoint.kr/board/notice/225748" target="_blank" class="notice-popup-link">공고보기 →</a></div>
+                <div class="notice-popup-item"><div class="notice-popup-left"><span class="notice-popup-badge">제3차</span><span class="notice-popup-count">17명</span><span class="notice-popup-date">02.09.</span></div><a href="https://rallypoint.kr/board/notice/225533" target="_blank" class="notice-popup-link">공고보기 →</a></div>
+                <div class="notice-popup-item"><div class="notice-popup-left"><span class="notice-popup-badge">제2차</span><span class="notice-popup-count">18명</span><span class="notice-popup-date">02.05.</span></div><a href="https://rallypoint.kr/board/notice/225284" target="_blank" class="notice-popup-link">공고보기 →</a></div>
+                <div class="notice-popup-item"><div class="notice-popup-left"><span class="notice-popup-badge">제1차</span><span class="notice-popup-count">29명</span><span class="notice-popup-date">01.26.</span></div><a href="https://rallypoint.kr/board/notice/224559" target="_blank" class="notice-popup-link">공고보기 →</a></div>
+                <div style="background:#f9f9f9;border:0.5px solid #ebebeb;border-radius:10px;padding:10px 13px;font-size:10px;color:#777;font-weight:600;line-height:1.7;font-style:italic;" class="dark:bg-slate-700/50 dark:border-slate-600 dark:text-slate-400">
+                    💬 "이미 수백명의 후보자들이 있다" — 이준석 대표 (01.13.) &nbsp;
+                    <a href="https://www.youtube.com/live/9HRqgZ0Lghw?si=268vprQF1QLCHBoc&t=2065" target="_blank" style="color:#FF6600;font-weight:800;">영상보기 →</a>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div class="max-w-7xl mx-auto px-4 md:px-10 mt-6 mb-3 block">
-        <div onclick="toggleMapVisibility()" class="flex justify-between items-center bg-white dark:bg-slate-800 border border-orange-100 dark:border-slate-700 rounded-2xl p-5 mb-3 shadow-sm cursor-pointer hover:bg-orange-50 dark:hover:bg-slate-700/50 transition-all group">
-            <div class="flex items-center gap-3">
-                <div class="bg-orange-100 dark:bg-orange-900/30 p-2 rounded-xl group-hover:bg-[#FF6600] transition-colors">
-                    <i data-lucide="map" class="w-5 h-5 text-[#FF6600] group-hover:text-white transition-colors"></i>
+    <!-- ══════════════════════════════════════════════
+         새 헤더 영역 (A 시안 미니멀 카드 그룹형)
+    ══════════════════════════════════════════════ -->
+    <style>
+        /* 새 헤더 공통 */
+        .rh-hero {
+            background: rgba(255,255,255,0.7);
+            backdrop-filter: blur(8px);
+            border: 0.5px solid rgba(255,102,0,0.15);
+            border-radius: 18px;
+            padding: 22px 24px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 16px;
+        }
+        .dark .rh-hero { background: rgba(30,41,59,0.7); border-color: rgba(255,102,0,0.2); }
+        .rh-eyebrow { font-size: 9px; font-weight: 700; color: #FF6600; letter-spacing: .08em; text-transform: uppercase; display: block; margin-bottom: 5px; }
+        .rh-title { font-size: clamp(26px, 3.5vw, 48px); font-weight: 900; color: #111; letter-spacing: -.05em; line-height: 1.15; }
+        .dark .rh-title { color: #f1f5f9; }
+        .rh-title em { color: #FF6600; font-style: normal; }
+        .rh-sub { font-size: 12px; color: #666; font-weight: 700; margin-top: 6px; display: block; }
+        .dark .rh-sub { color: #94a3b8; }
+        @media (min-width: 768px) { .rh-sub { font-size: 16px; font-weight: 700; color: #555; } .dark .rh-sub { color: #94a3b8; } }
+        .rh-dday { background: #FF6600; color: white; font-size: clamp(16px, 2vw, 22px); font-weight: 900; padding: 8px 18px; border-radius: 20px; letter-spacing: -.03em; white-space: nowrap; }
+        /* 최종 업데이트 배지 */
+        .rh-update-badge {
+            display: inline-flex; align-items: center; gap: 5px;
+            background: rgba(255,102,0,0.08); border: 1px solid rgba(255,102,0,0.25);
+            color: #FF6600; font-size: 11px; font-weight: 800;
+            padding: 4px 10px; border-radius: 20px; margin-top: 10px;
+            letter-spacing: -.01em; white-space: nowrap;
+        }
+        .dark .rh-update-badge { background: rgba(255,102,0,0.12); border-color: rgba(255,102,0,0.3); }
+        .rh-update-badge svg, .rh-update-badge i { width: 11px; height: 11px; }
+
+        /* 공천심사 버튼 */
+        .rh-apply-btn {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 13px;
+            font-weight: 800;
+            padding: 13px 20px;
+            border-radius: 14px;
+            border: 1.5px solid #FF6600;
+            color: #FF6600;
+            background: white;
+            cursor: pointer;
+            transition: all .2s;
+            text-decoration: none;
+        }
+        .dark .rh-apply-btn { background: #1e293b; }
+        .rh-apply-btn:hover { background: #FF6600; color: white; }
+
+        /* 액션 버튼들 */
+        .rh-actions { display: flex; gap: 6px; flex-wrap: wrap; justify-content: center; }
+        .rh-btn {
+            display: inline-flex; align-items: center; gap: 5px;
+            font-size: 12px; font-weight: 700;
+            padding: 8px 14px; border-radius: 10px;
+            border: 0.5px solid #e2e5ea; background: white; color: #444;
+            cursor: pointer; white-space: nowrap; transition: all .15s;
+        }
+        .dark .rh-btn { background: #1e293b; border-color: #334155; color: #cbd5e1; }
+        .rh-btn:hover { border-color: #FF6600; color: #FF6600; }
+        .rh-btn.fill { background: #FF6600; color: white; border-color: #FF6600; }
+        .rh-btn.fill:hover { background: #e05a00; }
+        .rh-btn svg, .rh-btn i { width: 13px; height: 13px; flex-shrink: 0; }
+
+        /* 주의사항 카드 */
+        .rh-notice {
+            background: #fffaf7;
+            border: 0.5px solid rgba(255,102,0,.2);
+            border-radius: 14px;
+            padding: 16px 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .dark .rh-notice { background: rgba(255,102,0,0.05); border-color: rgba(255,102,0,.15); }
+        .rh-notice-label {
+            font-size: 11px; font-weight: 900; color: #FF6600;
+            display: flex; align-items: center; gap: 5px;
+        }
+        .rh-notice-label i { width: 13px; height: 13px; }
+        .rh-notice-item {
+            display: flex; align-items: flex-start; gap: 7px;
+            font-size: 11px; font-weight: 600; color: #555; line-height: 1.6;
+        }
+        .dark .rh-notice-item { color: #94a3b8; }
+        .rh-notice-item strong { color: #111; font-weight: 800; }
+        .dark .rh-notice-item strong { color: #f1f5f9; }
+        .rh-o-dot { width: 5px; height: 5px; border-radius: 50%; background: #FF6600; flex-shrink: 0; margin-top: 5px; }
+        /* 공천결과 참고사항 버튼 */
+        .rh-ref-btn {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 10px 13px; background: white;
+            border: 0.5px solid rgba(255,102,0,.25); border-radius: 10px;
+            cursor: pointer; transition: all .15s;
+        }
+        .dark .rh-ref-btn { background: #1e293b; border-color: rgba(255,102,0,.2); }
+        .rh-ref-btn:hover { border-color: #FF6600; background: rgba(255,102,0,.04); }
+        .rh-ref-left { display: flex; align-items: center; gap: 7px; }
+        .rh-ref-left i { width: 13px; height: 13px; color: #FF6600; flex-shrink: 0; }
+        .rh-ref-text { font-size: 11px; font-weight: 800; color: #444; }
+        .dark .rh-ref-text { color: #cbd5e1; }
+        .rh-ref-hint { font-size: 9px; color: #bbb; font-weight: 600; margin-left: 4px; }
+        .rh-ref-arrow { font-size: 11px; color: #FF6600; font-weight: 700; flex-shrink: 0; }
+
+        /* 지도 3개 그리드 */
+        .rh-map-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 7px; }
+        .rh-map-card {
+            background: white; border: 0.5px solid #e5e7eb; border-radius: 13px;
+            padding: 12px 14px; display: flex; align-items: center; gap: 10px;
+            cursor: pointer; transition: all .15s;
+        }
+        .dark .rh-map-card { background: #1e293b; border-color: #334155; }
+        .rh-map-card:hover { border-color: #FF6600; background: rgba(255,102,0,.04); }
+        .rh-map-icon {
+            width: 32px; height: 32px; background: rgba(255,102,0,.08);
+            border-radius: 9px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+        }
+        .rh-map-icon i { width: 15px; height: 15px; color: #FF6600; }
+        .rh-map-name { font-size: 13px; font-weight: 900; color: #222; }
+        .dark .rh-map-name { color: #e2e8f0; }
+        .rh-map-sub { font-size: 9px; color: #bbb; font-weight: 600; }
+
+        /* 동 검색 + 전체후보자지도 버튼 행 */
+        .rh-bottom-row { display: flex; gap: 7px; align-items: stretch; }
+        .rh-globe-btn {
+            display: flex; align-items: center; gap: 6px;
+            background: #FF6600; color: white; border: none;
+            border-radius: 12px; padding: 0 18px;
+            font-size: 12px; font-weight: 800; cursor: pointer;
+            white-space: nowrap; transition: background .15s; flex-shrink: 0;
+        }
+        .rh-globe-btn:hover { background: #e05a00; }
+        .rh-globe-btn i { width: 14px; height: 14px; }
+
+        /* 팝업 공통 스타일 */
+        .notice-popup-item {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 9px 12px; background: #fafafa;
+            border-radius: 10px; border: 0.5px solid #f0f0f0; transition: background .12s;
+        }
+        .dark .notice-popup-item { background: #1e293b; border-color: #334155; }
+        .notice-popup-item:hover { background: rgba(255,102,0,.05); }
+        .notice-popup-left { display: flex; align-items: center; gap: 9px; }
+        .notice-popup-badge { font-size: 10px; font-weight: 800; color: #FF6600; background: rgba(255,102,0,.08); padding: 2px 8px; border-radius: 6px; white-space: nowrap; }
+        .notice-popup-count { font-size: 12px; font-weight: 900; color: #222; }
+        .dark .notice-popup-count { color: #f1f5f9; }
+        .notice-popup-date { font-size: 9px; color: #bbb; font-weight: 600; }
+        .notice-popup-link { font-size: 10px; font-weight: 800; color: #FF6600; text-decoration: none; }
+        .notice-popup-link:hover { text-decoration: underline; }
+
+        /* 모바일 전용 override */
+        @media (max-width: 640px) {
+            .rh-hero { padding: 16px; flex-wrap: nowrap; gap: 10px; }
+            .rh-title { font-size: 24px; }
+            .rh-dday { font-size: 14px; padding: 6px 12px; }
+            .rh-apply-btn { font-size: 11px; padding: 11px 14px; }
+            .rh-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; }
+            .rh-btn { font-size: 10px; padding: 8px 8px; justify-content: center; }
+            .rh-notice { padding: 13px 14px; }
+            .rh-notice-item { font-size: 10px; }
+            .rh-map-grid { gap: 5px; }
+            .rh-map-card { padding: 10px 8px; flex-direction: column; align-items: center; text-align: center; gap: 5px; }
+            .rh-map-icon { width: 30px; height: 30px; }
+            .rh-map-sub { display: none; }
+            .rh-globe-btn { padding: 0 12px; font-size: 11px; }
+        }
+    </style>
+
+    <!-- 새 헤더 마크업 -->
+    <div class="header-gradient px-4 md:px-10 pt-8 md:pt-12 pb-4">
+    <div class="max-w-7xl mx-auto flex flex-col gap-3">
+
+        <!-- 1. 제목 + D-day 카드 -->
+        <div class="rh-hero">
+            <div>
+                <span class="rh-eyebrow">비공식 아카이브 · 개혁신당</span>
+                <h1 class="rh-title">
+                    6·3 지방선거<br>
+                    <em>출마·공천 현황</em>
+                </h1>
+                <span class="rh-sub">제9회 전국동시지방선거를 향한 개혁의 도전</span>
+                <div class="rh-update-badge">
+                    <i data-lucide="clock"></i>
+                    <span id="last-update-date">최종 업데이트 : 2026. 03. 13</span>
                 </div>
-                <span class="font-black text-gray-800 dark:text-slate-100 text-lg">서울 기초의회 선거구 지도</span>
             </div>
-            <div class="flex items-center gap-2 text-sm font-bold text-gray-400">
-                <span id="map-toggle-label">[펼치기 · 닫기]</span>
-                <div id="map-toggle-icon-wrapper" class="transition-transform duration-300">
-                    <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400"></i>
+            <div style="display:flex;flex-direction:column;align-items:flex-end;flex-shrink:0;gap:6px;">
+                <div id="d-day-badge" class="rh-dday">D-000</div>
+            </div>
+        </div>
+
+        <!-- 2. 공천심사 시스템 버튼 -->
+        <a href="https://apply.reformparty.kr/" target="_blank" class="rh-apply-btn">
+            <i data-lucide="external-link" style="width:14px;height:14px;"></i>
+            개혁신당 온라인 공천 심사 시스템 들어가기
+        </a>
+
+        <!-- 3. 주의사항 카드 -->
+        <div class="rh-notice">
+            <div class="rh-notice-label">
+                <i data-lucide="alert-triangle"></i>
+                주의사항
+            </div>
+            <div class="rh-notice-item"><span class="rh-o-dot"></span><span>이 페이지는 <strong>개혁신당과 관련 없는 비공식 페이지</strong>입니다.</span></div>
+            <div class="rh-notice-item"><span class="rh-o-dot"></span><span>'공개 출마 선언' 혹은 '후보자 직접 제보'를 정리한 명단입니다.</span></div>
+            <div class="rh-notice-item"><span class="rh-o-dot"></span><span>해당 정보는 상시 변경될 수 있으며, 수동 수집으로 부정확할 수 있습니다.</span></div>
+            <div class="rh-ref-btn" onclick="openNoticePopup()">
+                <div class="rh-ref-left">
+                    <i data-lucide="file-text"></i>
+                    <span class="rh-ref-text">공천 심사 · 발표 관련 참고사항</span>
+                </div>
+                <span class="rh-ref-arrow">보기 →</span>
+            </div>
+        </div>
+
+        <!-- 4. 선거구 지도 3개 -->
+        <div class="rh-map-grid">
+            <div class="rh-map-card" onclick="toggleMapVisibility()">
+                <div class="rh-map-icon"><i data-lucide="map"></i></div>
+                <div>
+                    <div class="rh-map-name">서울</div>
+                    <div class="rh-map-sub">기초의회 선거구</div>
+                </div>
+            </div>
+            <div class="rh-map-card" onclick="toggleGyeonggiMapVisibility()">
+                <div class="rh-map-icon"><i data-lucide="map-pinned"></i></div>
+                <div>
+                    <div class="rh-map-name">경기</div>
+                    <div class="rh-map-sub">기초의회 선거구</div>
+                </div>
+            </div>
+            <div class="rh-map-card" onclick="toggleDaeguMapVisibility()">
+                <div class="rh-map-icon"><i data-lucide="map-pin"></i></div>
+                <div>
+                    <div class="rh-map-name">대구</div>
+                    <div class="rh-map-sub">기초의회 선거구</div>
                 </div>
             </div>
         </div>
-        
+
+        <!-- 지도 접기 영역들 -->
         <div id="map-collapsible-content" class="hidden opacity-0 h-0 collapsible-container">
             <div id="map-dashboard-root"></div>
         </div>
-    </div>
-
-    <div class="max-w-7xl mx-auto px-4 md:px-10 mt-3 mb-3 block">
-        <div onclick="toggleGyeonggiMapVisibility()" class="flex justify-between items-center bg-white dark:bg-slate-800 border border-orange-100 dark:border-slate-700 rounded-2xl p-5 mb-3 shadow-sm cursor-pointer hover:bg-orange-50 dark:hover:bg-slate-700/50 transition-all group">
-            <div class="flex items-center gap-3">
-                <div class="bg-orange-100 dark:bg-orange-900/30 p-2 rounded-xl group-hover:bg-[#FF6600] transition-colors">
-                    <i data-lucide="map-pinned" class="w-5 h-5 text-[#FF6600] group-hover:text-white transition-colors"></i>
-                </div>
-                <span class="font-black text-gray-800 dark:text-slate-100 text-lg">경기 기초의회 선거구 지도</span>
-            </div>
-            <div class="flex center gap-2 text-sm font-bold text-gray-400">
-                <span id="gyeonggi-map-toggle-label">[펼치기 · 닫기]</span>
-                <div id="gyeonggi-map-toggle-icon-wrapper" class="transition-transform duration-300">
-                    <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400"></i>
-                </div>
-            </div>
-        </div>
-        
         <div id="gyeonggi-map-dashboard-root-content" class="hidden opacity-0 h-0 collapsible-container">
             <div id="gyeonggi-map-dashboard-root-render"></div>
-        </div>
-    </div>
-
-    <div class="max-w-7xl mx-auto px-4 md:px-10 mt-3 mb-4 block">
-        <div onclick="toggleDaeguMapVisibility()" class="flex justify-between items-center bg-white dark:bg-slate-800 border border-orange-100 dark:border-slate-700 rounded-2xl p-5 mb-3 shadow-sm cursor-pointer hover:bg-orange-50 dark:hover:bg-slate-700/50 transition-all group">
-            <div class="flex items-center gap-3">
-                <div class="bg-orange-100 dark:bg-orange-900/30 p-2 rounded-xl group-hover:bg-[#FF6600] transition-colors">
-                    <i data-lucide="map-pin" class="w-5 h-5 text-[#FF6600] group-hover:text-white transition-colors"></i>
-                </div>
-                <span class="font-black text-gray-800 dark:text-slate-100 text-lg">대구 기초의회 선거구 지도</span>
-            </div>
-            <div class="flex items-center gap-2 text-sm font-bold text-gray-400">
-                <span>[펼치기 · 닫기]</span>
-                <div id="daegu-map-toggle-icon-wrapper" class="transition-transform duration-300">
-                    <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400"></i>
-                </div>
-            </div>
         </div>
         <div id="daegu-map-dashboard-root-content" class="hidden opacity-0 h-0 collapsible-container">
             <div id="daegu-map-dashboard-root-render"></div>
         </div>
-    </div>
 
-    <div class="max-w-7xl mx-auto px-4 md:px-10 mt-4 mb-8" id="dong-search-section">
-        <div id="dong-search-root"></div>
-        <!-- ── 전체 후보자 지도 보기 버튼 ── -->
-        <div class="mt-3 mb-4">
-            <div onclick="openAllCandidatesMap()" class="flex justify-between items-center bg-white dark:bg-slate-800 border border-orange-100 dark:border-slate-700 rounded-2xl p-5 shadow-sm cursor-pointer hover:bg-orange-50 dark:hover:bg-slate-700/50 transition-all group">
-                <div class="flex items-center gap-3">
-                    <div class="bg-orange-100 dark:bg-orange-900/30 p-2 rounded-xl group-hover:bg-[#FF6600] transition-colors">
-                        <i data-lucide="globe" class="w-5 h-5 text-[#FF6600] group-hover:text-white transition-colors"></i>
-                    </div>
-                    <span class="font-black text-gray-800 dark:text-slate-100 text-lg">전체 후보자 지도 보기</span>
-                </div>
-                <div class="flex items-center gap-2 text-sm font-bold text-gray-400">
-                    <span>[지도 열기]</span>
-                    <div class="transition-transform duration-300">
-                        <i data-lucide="chevron-right" class="w-5 h-5 text-gray-400"></i>
-                    </div>
-                </div>
-            </div>
+        <!-- 5. 전체 후보자 지도 버튼 (지도 3개 바로 아래) -->
+        <button onclick="openAllCandidatesMap()" style="
+            width:100%; min-height:46px; border-radius:12px; font-size:13px;
+            display:flex; align-items:center; justify-content:center; gap:7px;
+            background:white; color:#FF6600; font-weight:800; cursor:pointer;
+            border:1.5px solid rgba(255,102,0,0.35); transition:all .15s;">
+            <i data-lucide="globe" style="width:15px;height:15px;"></i>
+            전체 후보자 지도
+        </button>
+
+        <!-- 6. 동네 검색 -->
+        <div id="dong-search-section">
+            <div id="dong-search-root"></div>
         </div>
+
+    </div>
     </div>
 
-    <!-- ── 응원 순위 슬라이더 ── -->
+    <!-- ── 응원 순위 슬라이더 (기존 그대로) ── -->
     <div id="cheers-ranking-root" class="max-w-7xl mx-auto px-4 md:px-10 mt-3 mb-4"></div>
 
     <!-- Leaflet CSS -->
@@ -788,6 +868,30 @@
     <!-- ════════════════════════════════════════════════ -->
 
     <div class="max-w-7xl mx-auto px-4 md:px-10">
+
+        <!-- 액션 버튼 4개 (nav 바 바로 위) -->
+        <div class="rh-actions mt-4 mb-2">
+            <button id="pwa-install-btn" onclick="" class="rh-btn fill">
+                <i data-lucide="smartphone"></i> 앱 설치하기
+            </button>
+            <button onclick="sharePage()" class="rh-btn">
+                <i data-lucide="share-2"></i> 이 페이지 공유하기
+            </button>
+            <button id="filter-confirmed-btn" onclick="toggleConfirmedFilter()" class="rh-btn">
+                <i data-lucide="check-circle"></i>
+                <span id="filter-btn-text">공천확정자만 보기</span>
+            </button>
+            <button id="filter-new-btn" onclick="toggleNewFilter()" class="rh-btn">
+                <i data-lucide="sparkles"></i>
+                <span id="filter-new-btn-text">신규 후보자 보기</span>
+            </button>
+        </div>
+        <div id="share-fallback-area" class="hidden items-center justify-center gap-3 mb-2 share-fallback-animate">
+            <button onclick="shareToSNS('facebook')" class="share-btn-item facebook" aria-label="페이스북 공유"><i data-lucide="facebook" class="w-5 h-5"></i></button>
+            <button onclick="shareToSNS('x')" class="share-btn-item x" aria-label="X(트위터) 공유"><i data-lucide="twitter" class="w-5 h-5"></i></button>
+            <button onclick="copyLink()" class="share-btn-item link" aria-label="링크 복사"><i data-lucide="link" class="w-5 h-5"></i></button>
+        </div>
+
         <nav class="sticky top-4 z-50 mb-6 flex justify-center mt-2">
             <div class="nav-container flex items-center bg-white/90 dark:bg-slate-800/90 backdrop-blur-md shadow-lg border border-gray-100 dark:border-slate-700 rounded-2xl p-1 md:p-1.5 overflow-x-auto whitespace-nowrap gap-0">
                 <button onclick="scrollToId('top')" class="nav-btn" id="btn-original">홈</button>
@@ -861,7 +965,11 @@
             <div class="p-8 text-center">
                 <h2 class="text-2xl font-black mb-1 tracking-wider" id="modal-name">후보 이름</h2>
                 <p class="text-[#FF6600] font-bold text-sm mb-1 leading-tight" id="modal-office">출마선언</p>
-                <p class="text-gray-400 dark:text-slate-400 font-medium text-[11px] mb-6" id="modal-subregion"></p>
+                <p class="text-gray-400 dark:text-slate-400 font-medium text-[11px] mb-4" id="modal-subregion"></p>
+                <div id="modal-bio-section" class="hidden mb-6 text-left bg-gray-50 dark:bg-slate-800 rounded-2xl px-4 py-3 border border-gray-100 dark:border-slate-700">
+                    <p class="text-[10px] font-black text-[#FF6600] mb-2 tracking-wider uppercase">약력</p>
+                    <ul id="modal-bio-list" class="space-y-1"></ul>
+                </div>
                 <div class="flex justify-center gap-4 mb-8" id="modal-sns-container">
                     <a id="modal-fb" href="#" target="_blank" class="sns-btn fb"><i data-lucide="facebook"></i></a>
                     <a id="modal-ig" href="#" target="_blank" class="sns-btn ig"><i data-lucide="instagram"></i></a>
@@ -1004,6 +1112,18 @@
                     content.classList.add('hidden');
                 }, 500);
             }
+        };
+
+        window.openNoticePopup = function() {
+            const el = document.getElementById('notice-popup-overlay');
+            el.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            lucide.createIcons();
+        };
+        window.closeNoticePopup = function() {
+            const el = document.getElementById('notice-popup-overlay');
+            el.style.display = 'none';
+            document.body.style.overflow = '';
         };
 
         window.toggleMapVisibility = function() {
@@ -1378,6 +1498,21 @@
             
             const subRegionEl = document.getElementById('modal-subregion');
             subRegionEl.innerText = c.subRegion || "";
+
+            const bioSection = document.getElementById('modal-bio-section');
+            const bioList = document.getElementById('modal-bio-list');
+            if (c.bio && c.bio.length > 0) {
+                bioList.innerHTML = c.bio.map(line =>
+                    `<li class="flex items-start gap-2 text-[12px] font-medium text-gray-700 dark:text-slate-300 leading-snug">
+                        <span class="mt-[4px] w-[5px] h-[5px] rounded-full bg-[#FF6600] shrink-0"></span>
+                        <span>${line}</span>
+                    </li>`
+                ).join('');
+                bioSection.classList.remove('hidden');
+            } else {
+                bioSection.classList.add('hidden');
+            }
+
             document.getElementById('modal-photo-area').innerHTML = c.photo 
                 ? `<img src="${c.photo}" class="w-full h-full object-contain" style="object-position: center top" alt="개혁신당 ${c.name} 후보 프로필">` 
                 : `<div class="no-photo-placeholder"><i data-lucide="user-round" class="w-12 h-12"></i><span>이미지 준비중</span></div>`;
