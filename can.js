@@ -893,7 +893,7 @@ const candidates = [
         district: "사",
         sns: {
             fb: "#",
-            ig: "https://www.instagram.com/reform_kogilju/"
+            ig: "https://www.instagram.com/reform_kogilju/",
         },
         pledge: "#",
         decl: "#",
@@ -3113,31 +3113,7 @@ const candidates = [
             127.4875
         ]
     },
-    {
-        name: "이세원",
-        region: "경기 화성시",
-        metropolitan: "경기도",
-        category: "기초의원",
-        office: "화성시의회",
-        status: "출마예정",
-        subRegion: "동탄7동, 동탄8동, 동탄9동",
-        bio: [
-            "화성시 마선거구 출마예정"
-        ],
-        photo: "",
-        district: "마",
-        sns: {
-            fb: "#"
-        },
-        pledge: "#",
-        decl: "#",
-        dateAdded: "2026-03-12",
-        coords: [
-            37.2012,
-            127.075
-        ]
-    }
-];
+   ];
 
 
 
