@@ -893,7 +893,7 @@ const candidates = [
         district: "사",
         sns: {
             fb: "#",
-            ig: "https://www.instagram.com/reform_kogilju/",
+            ig: "https://www.instagram.com/reform_kogilju/"
         },
         pledge: "#",
         decl: "#",
@@ -3113,8 +3113,8 @@ const candidates = [
             37.4914,
             127.4875
         ]
-    },
-   ];
+    }
+];
 
 
 
