@@ -893,7 +893,7 @@ const candidates = [
         district: "사",
         sns: {
             fb: "#",
-            ig: "https://www.instagram.com/reform_kogilju/"
+            ig: "https://www.instagram.com/reform_kogilju/",
         },
         pledge: "#",
         decl: "#",
@@ -2271,7 +2271,8 @@ const candidates = [
         sns: {
             fb: "https://www.facebook.com/leekangmin4473",
             blog: "https://blog.naver.com/buldang_leekangmin",
-            yt: "https://www.youtube.com/channel/UCUC5ttFtQfNRCqANIffAalg"
+            yt: "https://www.youtube.com/channel/UCUC5ttFtQfNRCqANIffAalg",
+            site: "https://litt.ly/leekangmin"
         },
         pledge: "#",
         decl: "https://rallypoint.kr/board/politics-free/223549",
@@ -2501,7 +2502,7 @@ const candidates = [
         photo: "",
         district: "다",
         sns: {
-            fb: "#"
+            fb: "https://www.facebook.com/profile.php?id=61587826521843"
         },
         pledge: "#",
         decl: "#",
@@ -3112,8 +3113,8 @@ const candidates = [
             37.4914,
             127.4875
         ]
-    }
-];
+    },
+   ];
 
 
 
