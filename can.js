@@ -333,30 +333,6 @@ const candidates = [
         ]
     },
     {
-        name: "하대식",
-        region: "전북 남원시",
-        metropolitan: "전북특별자치도",
-        category: "기초단체장",
-        office: "남원시장",
-        status: "출마선언",
-        bio: [
-            "전) 전라북도의회 의원 (7, 8, 9대)",
-            "전) 제8대 전라북도의회 부의장",
-            "<span style='letter-spacing:-0.12em;'>21대 대선 남원·장수·임실·순창 선대본부장</span>"
-        ],
-        photo: "https://i.imgur.com/iQNAzbs.jpeg",
-        sns: {
-            fb: "#"
-        },
-        pledge: "#",
-        decl: "https://rallypoint.kr/board/politics-free/223350",
-        dateAdded: "2025-12-10",
-        coords: [
-            35.4165,
-            127.3902
-        ]
-    },
-    {
         name: "김형우",
         region: "강원 삼척시",
         metropolitan: "강원특별자치도",
