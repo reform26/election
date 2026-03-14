@@ -758,6 +758,7 @@ const candidates = [
         status: "후보",
         subRegion: "성북동, 삼선동, 동선동, 돈암제2동, 안암동, 보문동",
         bio: [
+            "서울시당 대변인",
             "<span style='letter-spacing:-0.12em;'>개혁신당 성북구 지역발전특위 부위원장</span>"
         ],
         photo: "https://i.imgur.com/zZEqfNs.png",
@@ -987,6 +988,7 @@ const candidates = [
         status: "후보",
         subRegion: "능동, 구의2동, 광장동, 군자동",
         bio: [
+            "서울시당 대변인",
             "출판사 '도서출판 문각' 대표",
             "<span style='letter-spacing:-0.12em;'>광진구 주민참여예산위 1분과 부위원장</span>",
             "<span style='letter-spacing:-0.12em;'>(사)철기이범석장군기념사업회 청년위원</span>"
@@ -2739,7 +2741,7 @@ const candidates = [
         status: "후보",
         subRegion: "대야동, 신천동, 은행동",
         bio: [
-            "시흥시 가선거구 후보"
+            "보드리봄 (주) 대표이사"
         ],
         photo: "",
         district: "가",
@@ -2811,7 +2813,7 @@ const candidates = [
         status: "후보",
         subRegion: "천호1동, 천호3동",
         bio: [
-            "강동구 라선거구 후보"
+            "서울시장 대변인"
         ],
         photo: "",
         district: "라",
@@ -2861,10 +2863,11 @@ const candidates = [
         bio: [
             "서해구 다선거구 후보"
         ],
-        photo: "https://i.imgur.com/ZD4Kpwo.png",
+        photo: "https://i.imgur.com/Gy1fbgP.png",
         district: "다",
         sns: {
-            fb: "#"
+            fb: "#",
+            ig: "https://www.instagram.com/minculcate_"
         },
         pledge: "https://policy.reformparty.kr/map?region_code=28&election_type=local_council&district_code=28%3A%EC%84%9C%EA%B5%AC%3A%EB%8B%A4%EC%84%A0%EA%B1%B0%EA%B5%AC",
         decl: "https://rallypoint.kr/board/politics-free/227363",
