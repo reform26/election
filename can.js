@@ -14,9 +14,10 @@ const candidates = [
         region: "서울특별시",
         category: "광역단체장",
         office: "서울특별시장",
+        status: "후보",
         bio: [
             "개혁신당 최고위원",
-            "개혁신당 윤리위원"
+            "법무법인 우리 대표변호사"
         ],
         photo: "https://img1.newsis.com/2025/11/25/NISI20251125_0021074114_web.jpg",
         sns: {
@@ -36,8 +37,9 @@ const candidates = [
         region: "부산광역시",
         category: "광역단체장",
         office: "부산광역시장",
+        status: "후보",
         bio: [
-            "개혁신당 대변인"
+            "개혁신당 중앙당 대변인"
         ],
         photo: "https://cdn.seoulfn.com/news/photo/202511/612324_411809_430.jpg",
         sns: {
@@ -58,6 +60,7 @@ const candidates = [
         region: "인천광역시",
         category: "광역단체장",
         office: "인천광역시장",
+        status: "출마선언",
         bio: [
             "인천시당 위원장"
         ],
@@ -79,7 +82,7 @@ const candidates = [
         region: "대구광역시",
         category: "광역단체장",
         office: "대구광역시장",
-        status: "출마선언",
+        status: "후보",
         bio: [
             "대구시당 위원장"
         ],
@@ -101,6 +104,7 @@ const candidates = [
         region: "대전광역시",
         category: "광역단체장",
         office: "대전광역시장",
+        status: "후보",
         bio: [
             "대전시당 위원장"
         ],
@@ -148,6 +152,7 @@ const candidates = [
         region: "세종특별자치시",
         category: "광역단체장",
         office: "세종특별자치시장",
+        status: "후보",
         bio: [
             "세종시당 창준위원장",
             "세종시 갑 당협위원장"
@@ -171,6 +176,7 @@ const candidates = [
         region: "충청남도",
         category: "광역단체장",
         office: "충청남도지사",
+        status: "후보",
         bio: [
             "공주·부여·청양 당협위원장",
             "제6대 유성구의원",

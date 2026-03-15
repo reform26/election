@@ -383,6 +383,11 @@
         .modal-left-col  { display: block; }
         .modal-right-col { display: block; }
 
+        /* ── 모바일: 사진 영역 cover ── */
+        #modal-photo-area img {
+            width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block;
+        }
+
         /* ── PC (640px+): 가로 2단 ── */
         @media (min-width: 640px) {
             .modal-content {
@@ -625,6 +630,7 @@
                 <button onclick="closeNoticePopup()" style="width:28px;height:28px;border-radius:8px;background:#f5f5f5;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:14px;color:#888;font-weight:700;" class="dark:bg-slate-700 dark:text-slate-300">✕</button>
             </div>
             <div style="padding:14px 18px;overflow-y:auto;display:flex;flex-direction:column;gap:5px;">
+                <div class="notice-popup-item"><div class="notice-popup-left"><span class="notice-popup-badge">제10차</span><span class="notice-popup-count">6명</span><span class="notice-popup-date">03.15.</span></div><a href="https://rallypoint.kr/board/notice/227627" target="_blank" class="notice-popup-link">공고보기 →</a></div>
                 <div class="notice-popup-item"><div class="notice-popup-left"><span class="notice-popup-badge">제9차</span><span class="notice-popup-count">5명</span><span class="notice-popup-date">03.12.</span></div><a href="https://rallypoint.kr/board/notice/227439" target="_blank" class="notice-popup-link">공고보기 →</a></div>
                 <div class="notice-popup-item"><div class="notice-popup-left"><span class="notice-popup-badge">제8차</span><span class="notice-popup-count">11명</span><span class="notice-popup-date">03.09.</span></div><a href="https://rallypoint.kr/board/notice/227243" target="_blank" class="notice-popup-link">공고보기 →</a></div>
                 <div class="notice-popup-item"><div class="notice-popup-left"><span class="notice-popup-badge">제7차</span><span class="notice-popup-count">9명</span><span class="notice-popup-date">03.05.</span></div><a href="https://rallypoint.kr/board/notice/227052" target="_blank" class="notice-popup-link">공고보기 →</a></div>
@@ -835,7 +841,7 @@
                 <div id="d-day-badge" class="rh-dday">D-000</div>
                 <div class="rh-update-badge">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    <span id="last-update-date">최종 업데이트 : 2026. 03. 14</span>
+                    <span id="last-update-date">최종 업데이트 : 2026. 03. 15</span>
                 </div>
             </div>
         </div>
@@ -1187,7 +1193,7 @@
         </div>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="can.js?v=0314.02" defer></script>   <script src="data1.js?v=0223.05" defer></script> <script src="search.js?v=0223.05" defer></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="can.js?v=0315.01" defer></script>   <script src="data1.js?v=0223.05" defer></script> <script src="search.js?v=0315.01" defer></script>
     <script>
         let currentModalCandidateName = '';
         let showOnlyConfirmed = false;
@@ -1271,7 +1277,7 @@
         function getFilteredCandidates() {
             let filtered = candidates;
             if (showOnlyConfirmed) {
-                filtered = filtered.filter(c => (c.status === "후보" && c.name !== "이수찬"));
+                filtered = filtered.filter(c => (c.status === "후보"));
             }
             if (showOnlyNew) {
                 filtered = filtered.filter(c => isNewCandidate(c.dateAdded));
@@ -1424,7 +1430,7 @@
             const c = candidates.find(cand => cand.name === name);
             if (!c) return;
 
-            const isConfirmed = (c.status === "후보" && c.name !== "이수찬");
+            const isConfirmed = (c.status === "후보");
             let roleLabel = "";
             if (isConfirmed) {
                 roleLabel = "예비후보";
@@ -1654,18 +1660,17 @@
 
             // 카테고리 배지 제거됨
             
-            const isConfirmed = (c.status === "후보" && c.name !== "김성민" && c.name !== "이수찬");
+            const isConfirmed = (c.status === "후보" && c.name !== "김성민");
             let statusLabel = isConfirmed ? "후보" : (c.name === "이유원" ? "출마예정" : ((c.decl && c.decl !== "#") ? "출마선언" : "출마예정"));
             
             let displayOfficeLabel = "";
             if (c.name === "서운교") displayOfficeLabel = `대구광역시의회 수성구 제3선거구 ${statusLabel}`;
             else if (c.name === "양해두") displayOfficeLabel = `제주특별자치도의회 제주시 외도동·이호동·도두동 선거구 ${statusLabel}`;
             else if (c.name === "이건우") displayOfficeLabel = `제주특별자치도의회 제주시 노형동 을 선거구 ${statusLabel}`;
-            else if (c.name === "최현석") displayOfficeLabel = `서울특별시의회 송파구 제2 선거구 ${statusLabel}`;
-            else if (c.name === "이재원") displayOfficeLabel = `서울특별시의회 비례대표 ${statusLabel}`;
-            else if (c.name === "강인수") displayOfficeLabel = `서울특별시의회 강남구 제1 선거구 ${statusLabel}`;
-            else if (c.name === "주이삭") displayOfficeLabel = `서울특별시의회 서대문구 제1 선거구 ${statusLabel}`;
-            else if (c.name === "김순주") displayOfficeLabel = `세종특별자치시의회 제4 선거구 ${statusLabel}`;
+            else if (c.name === "최현석") displayOfficeLabel = `서울특별시의회 송파구 제2선거구 ${statusLabel}`;
+            else if (c.name === "강인수") displayOfficeLabel = `서울특별시의회 강남구 제1선거구 ${statusLabel}`;
+            else if (c.name === "주이삭") displayOfficeLabel = `서울특별시의회 서대문구 제1선거구 ${statusLabel}`;
+            else if (c.name === "김순주") displayOfficeLabel = `세종특별자치시의회 제4선거구 ${statusLabel}`;
             else {
                 let districtLabel = c.district ? ` ${c.district}선거구` : "";
                 const displayOffice = getCleanOffice(c);
@@ -1924,7 +1929,7 @@
             
             const displayOffice = getCleanOffice(c);
             
-            const isConfirmed = (c.status === "후보" && c.name !== "김성민" && c.name !== "이수찬");
+            const isConfirmed = (c.status === "후보" && c.name !== "김성민");
             const confirmedBadge = isConfirmed ? `<div class="confirmed-badge"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>공천 확정</div>` : "";
 
             let statusLabel = "";
@@ -2000,7 +2005,7 @@
             const isValidLink = (link) => link && link !== "" && link !== "#";
 
             const getStatusLabel = (c) => {
-                const isConfirmed = (c.status === "후보" && c.name !== "김성민" && c.name !== "이수찬");
+                const isConfirmed = (c.status === "후보" && c.name !== "김성민");
                 if (isConfirmed) return "후보";
                 if (c.name === "이유원") return "출마예정";
                 return (c.decl && c.decl !== "#") ? "출마선언" : "출마예정";
@@ -2010,11 +2015,10 @@
             if (can.name === "서운교") displayOfficeLabel = "대구광역시의회 수성구 제3선거구 후보";
             else if (can.name === "양해두") displayOfficeLabel = "제주특별자치도의회 제주시 외도동·이호동·도두동 선거구 후보";
             else if (can.name === "이건우") displayOfficeLabel = "제주특별자치도의회 제주시 노형동 을 선거구 후보";
-            else if (can.name === "최현석") displayOfficeLabel = "서울특별시의회 송파구 제2 선거구 후보";
-            else if (can.name === "이재원") displayOfficeLabel = "서울특별시의회 비례대표 출마예정";
-            else if (can.name === "주이삭") displayOfficeLabel = "서울특별시의회 서대문구 제1 선거구 출마선언";   
-            else if (can.name === "강인수") displayOfficeLabel = "서울특별시의회 강남구 제1 선거구 후보";
-            else if (can.name === "김순주") displayOfficeLabel = "세종특별자치시의회 제4 선거구 후보";
+            else if (can.name === "최현석") displayOfficeLabel = "서울특별시의회 송파구 제2선거구 후보";
+            else if (can.name === "주이삭") displayOfficeLabel = "서울특별시의회 서대문구 제1선거구 출마선언";   
+            else if (can.name === "강인수") displayOfficeLabel = "서울특별시의회 강남구 제1선거구 후보";
+            else if (can.name === "김순주") displayOfficeLabel = "세종특별자치시의회 제4선거구 후보";
             else {
                 const regionParts = can.region.split(' ');
                 const cityName = regionParts[regionParts.length - 1]; 
@@ -2243,7 +2247,7 @@
                                         {matchedCandidates.map((can, idx) => {
                                             const parts = can.region.split(' ');
                                             const displayOffice = parts[parts.length - 1] + "의회"; 
-                                            const isConfirmed = (can.status === "후보" && can.name !== "김성민" && can.name !== "이수찬");
+                                            const isConfirmed = (can.status === "후보" && can.name !== "김성민");
                                             let statusText = isConfirmed ? " 후보" : (can.name === "이유원" ? " 출마예정" : ((can.decl && can.decl !== "#") ? " 출마선언" : " 출마예정"));
                                             let fullOfficeLabel = `${displayOffice}${can.district ? ` ${can.district}선거구` : ""}${statusText}`;
                                             const showNew = isNewCandidate(can.dateAdded);
@@ -2912,9 +2916,9 @@
     </script>
 
     <!-- ══ 후보자 SNS 피드 ══ -->
-    <script src="sns.js?v=0310.02" defer></script>
+    <script src="sns.js?v=0315.01" defer></script>
 
     <!-- ══ 응원 시스템 ══ -->
-    <script type="module" src="cheers.js"></script>
+    <script type="module" src="cheers.js?v=0315.01"></script>
 </body>
 </html>
