@@ -202,8 +202,8 @@ function subscribeRankings(callback) {
             weekly: v.weekKey === weekKey ? (v.weekly || 0) : 0
         }));
         callback({
-            weekly:     [...list].filter(x => x.weekly > 0).sort((a,b) => b.weekly - a.weekly).slice(0, 15),
-            cumulative: [...list].filter(x => x.total  > 0).sort((a,b) => b.total  - a.total ).slice(0, 15)
+            weekly:     [...list].filter(x => x.weekly > 0).sort((a,b) => b.weekly - a.weekly).slice(0, 20),
+            cumulative: [...list].filter(x => x.total  > 0).sort((a,b) => b.total  - a.total ).slice(0, 20)
         });
     });
 }
@@ -607,7 +607,7 @@ function renderSlider(sliderId, list, countKey) {
     }
 
     // TOP 15만, 무한루프를 위해 카드 3벌 복제
-    const top15 = list.slice(0, 15);
+    const top15 = list.slice(0, 20);
     const cardHTML = top15.map((item, i) => _sliderCardHTML(item, i + 1, countKey)).join('');
     el.innerHTML = cardHTML + cardHTML + cardHTML;  // 3벌 복제
     // 2번째 벌 시작 위치로 초기 스크롤 (앞뒤로 여유)
