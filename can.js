@@ -142,7 +142,7 @@ const candidates = [
         photo: "https://i.imgur.com/mzd1dts.jpeg",
         sns: {
             fb: "https://www.facebook.com/profile.php?id=1000075888273756",
-            ig: "https://www.instagram.com/hyun_soo_ch9/"
+            ig: "https://www.instagram.com/hyun_soo_ch9/",
         },
         pledge: "#",
         decl: "https://www.youtube.com/live/zNKugaDviEM",
@@ -894,7 +894,7 @@ const candidates = [
             "개혁신당 영등포구 지역발전특위 부위원장",
             "배우"
         ],
-        photo: "https://i.imgur.com/Z1SVjJ8.png",
+        photo: "",
         district: "사",
         sns: {
             fb: "#",
@@ -1595,7 +1595,8 @@ const candidates = [
         metropolitan: "대전광역시",
         category: "기초의원",
         office: "서구의원",
-        status: "공천확정",
+        age: 19,
+        status: "예비후보",
         subRegion: "복수동, 도마1동, 도마2동, 정림동",
         bio: [
             "대전시당 자문위원"
@@ -1651,8 +1652,7 @@ const candidates = [
         status: "예비후보",
         subRegion: "충장동, 동명동, 계림1동, 계림2동, 산수1동, 산수2동",
         bio: [
-            "<span style='letter-spacing:-0.15em;'>개혁신당 광주광역시 지역발전특위 위원장</span>",
-            "전) 동구·남구 을 당협위원장",
+            "동구·남구 을 당협위원장",
             "21대 대선 선대위 홍보부본부장"
         ],
         photo: "https://i.imgur.com/cah0vOW.png",
@@ -3187,7 +3187,7 @@ const candidates = [
             37.170497,
             127.102412
         ]
-    }
+    },
 ];
 
 
