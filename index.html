@@ -239,6 +239,21 @@
             gap: 3px;
             border: 1px solid rgba(255, 255, 255, 0.3);
         }
+        .preliminary-badge {
+            position: absolute; bottom: 8px; left: 10px;
+            background-color: #ffffff;
+            color: #0a1a3d;
+            padding: 3px 8px;
+            border-radius: 8px;
+            font-size: 0.7rem;
+            font-weight: 900;
+            z-index: 10;
+            letter-spacing: -0.02em;
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            border: 1px solid #0a1a3d;
+        }
 
         .grid-responsive { 
             display: grid; 
@@ -931,6 +946,40 @@
             전체 후보자 지도
         </button>
 
+
+        <!-- 5-1. 예비후보 통계 카드 -->
+        <div id="prelim-stats-card" style="border:0.5px solid rgba(10,26,61,0.2); border-radius:14px; background:white; padding:14px 16px;">
+            <div style="display:flex; align-items:center; gap:6px; margin-bottom:12px;">
+                <span style="font-size:11px; font-weight:900; color:#0a1a3d; background:#f0f3fa; border:1px solid #0a1a3d; border-radius:6px; padding:2px 8px;">예비후보자 통계</span>
+            </div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px; margin-bottom:10px;">
+                <div style="background:#f8fafc; border-radius:8px; padding:8px 10px;">
+                    <div style="font-size:9px; font-weight:700; color:#94a3b8; margin-bottom:2px; letter-spacing:0.03em;">후보자 수</div>
+                    <div style="font-size:20px; font-weight:800; color:#0f172a; line-height:1.1;"><span id="ps-total-num">-</span><span style="font-size:12px; font-weight:500; color:#94a3b8;">명</span></div>
+                </div>
+                <div style="background:#f8fafc; border-radius:8px; padding:8px 10px;">
+                    <div style="font-size:9px; font-weight:700; color:#94a3b8; margin-bottom:2px; letter-spacing:0.03em;">평균 연령</div>
+                    <div style="font-size:20px; font-weight:800; color:#0f172a; line-height:1.1;"><span id="ps-age-num">-</span><span style="font-size:12px; font-weight:500; color:#94a3b8;">세</span></div>
+                </div>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:7px;">
+                <div style="display:flex; align-items:center; gap:8px;">
+                    <div style="font-size:10px; font-weight:700; color:#64748b; width:40px; flex-shrink:0;">여성</div>
+                    <div style="flex:1; height:8px; border-radius:99px; background:#e2e8f0; overflow:hidden; position:relative;">
+                        <div id="ps-gender-bar" style="height:100%; border-radius:99px; background:#e879a0; position:absolute; left:0; top:0; width:0%; transition:width 0.6s ease;"></div>
+                    </div>
+                    <div id="ps-gender-pct" style="font-size:10px; font-weight:700; color:#64748b; width:38px; text-align:right; flex-shrink:0;">-</div>
+                </div>
+                <div style="display:flex; align-items:center; gap:8px;">
+                    <div style="font-size:10px; font-weight:700; color:#64748b; width:40px; flex-shrink:0;">2030</div>
+                    <div style="flex:1; height:8px; border-radius:99px; background:#e2e8f0; overflow:hidden; position:relative;">
+                        <div id="ps-youth-bar" style="height:100%; border-radius:99px; background:#FF6600; position:absolute; left:0; top:0; width:0%; transition:width 0.6s ease;"></div>
+                    </div>
+                    <div id="ps-youth-pct" style="font-size:10px; font-weight:700; color:#64748b; width:38px; text-align:right; flex-shrink:0;">-</div>
+                </div>
+            </div>
+        </div>
+
         <!-- 6. 동네 검색 -->
         <div id="dong-search-section">
             <div id="dong-search-root"></div>
@@ -1277,7 +1326,7 @@
         function getFilteredCandidates() {
             let filtered = candidates;
             if (showOnlyConfirmed) {
-                filtered = filtered.filter(c => (c.status === "후보"));
+                filtered = filtered.filter(c => (["공천확정","후보"].includes(c.status) || (c.status === "예비후보" && c.preliminary !== true)));
             }
             if (showOnlyNew) {
                 filtered = filtered.filter(c => isNewCandidate(c.dateAdded));
@@ -1430,7 +1479,7 @@
             const c = candidates.find(cand => cand.name === name);
             if (!c) return;
 
-            const isConfirmed = (c.status === "후보");
+            const isConfirmed = (["공천확정","후보"].includes(c.status) || (c.status === "예비후보" && c.preliminary !== true));
             let roleLabel = "";
             if (isConfirmed) {
                 roleLabel = "예비후보";
@@ -1660,8 +1709,8 @@
 
             // 카테고리 배지 제거됨
             
-            const isConfirmed = (c.status === "후보" && c.name !== "김성민");
-            let statusLabel = isConfirmed ? "후보" : (c.name === "이유원" ? "출마예정" : ((c.decl && c.decl !== "#") ? "출마선언" : "출마예정"));
+            const isConfirmed = ((["공천확정","후보"].includes(c.status) || (c.status === "예비후보" && c.preliminary !== true)) && c.name !== "김성민");
+            let statusLabel = isConfirmed ? c.status : (c.name === "이유원" ? "출마예정" : ((c.decl && c.decl !== "#") ? "출마선언" : "출마예정"));
             
             let displayOfficeLabel = "";
             if (c.name === "서운교") displayOfficeLabel = `대구광역시의회 수성구 제3선거구 ${statusLabel}`;
@@ -1696,9 +1745,11 @@
                 bioSection.classList.add('hidden');
             }
 
-            document.getElementById('modal-photo-area').innerHTML = c.photo 
+            const isYouth = c.age != null && c.age >= 10 && c.age <= 39;
+            const youthBadgeHtml = isYouth ? `<div style="position:absolute;top:10px;left:10px;background:#FF6600;color:white;font-size:0.68rem;font-weight:900;padding:3px 9px;border-radius:8px;letter-spacing:-0.02em;border:1px solid rgba(255,255,255,0.3);box-shadow:0 2px 8px rgba(255,102,0,0.35);z-index:10;">2030세대</div>` : "";
+            document.getElementById('modal-photo-area').innerHTML = (c.photo 
                 ? `<img src="${c.photo}" class="w-full h-full object-cover" style="object-position: center top" alt="개혁신당 ${c.name} 후보 프로필">` 
-                : `<div class="no-photo-placeholder"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>이미지 준비중</span></div>`;
+                : `<div class="no-photo-placeholder"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>이미지 준비중</span></div>`) + youthBadgeHtml;
             window.renderModalCheerBtn && window.renderModalCheerBtn(c.name);
             
             const snsBtns = { 
@@ -1855,6 +1906,27 @@
 
         document.addEventListener('DOMContentLoaded', function() {
             initDarkMode();
+            // 예비후보 통계 카드 계산
+            (function() {
+                const prelim = (window.candidates || []).filter(c => c.status === "예비후보");
+                const total = prelim.length;
+                const withAge = prelim.filter(c => c.age != null);
+                const avgAge = withAge.length ? (withAge.reduce((s,c) => s + c.age, 0) / withAge.length) : 0;
+                const female = prelim.filter(c => c.gender === "f").length;
+                const femalePct = total ? (female / total * 100).toFixed(1) : "0.0";
+                const youth = withAge.filter(c => c.age >= 10 && c.age <= 39).length;
+                const youthPct = total ? (youth / total * 100).toFixed(1) : "0.0";
+
+                document.getElementById("ps-total-num").innerText = total;
+                document.getElementById("ps-age-num").innerText = avgAge.toFixed(1);
+                setTimeout(() => {
+                    document.getElementById("ps-gender-bar").style.width = femalePct + "%";
+                    document.getElementById("ps-gender-pct").innerText = femalePct + "%";
+                    document.getElementById("ps-youth-bar").style.width = youthPct + "%";
+                    document.getElementById("ps-youth-pct").innerText = youthPct + "%";
+                }, 300);
+            })();
+
             const diff = Math.ceil((new Date('2026-06-02') - new Date().setHours(0,0,0,0)) / (1000*60*60*24));
             const badge = document.getElementById('d-day-badge');
             if (badge) badge.innerText = diff > 0 ? `D-${diff}` : (diff === 0 ? 'D-Day' : `D+${Math.abs(diff)}`);
@@ -1929,11 +2001,13 @@
             
             const displayOffice = getCleanOffice(c);
             
-            const isConfirmed = (c.status === "후보" && c.name !== "김성민");
+            const isPreliminary = (c.status === "예비후보");
+            const isConfirmed = (["공천확정","후보"].includes(c.status) || (isPreliminary && c.preliminary !== true)) && c.name !== "김성민";
             const confirmedBadge = isConfirmed ? `<div class="confirmed-badge"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>공천 확정</div>` : "";
+            const preliminaryBadge = isPreliminary ? `<div class="preliminary-badge"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#0a1a3d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>예비후보</div>` : "";
 
             let statusLabel = "";
-            if (isConfirmed) statusLabel = "후보";
+            if (isConfirmed) statusLabel = c.status;
             else if (c.name === "이유원") statusLabel = "출마예정";
             else statusLabel = (c.decl && c.decl !== "#") ? "출마선언" : "출마예정";
 
@@ -1943,6 +2017,7 @@
                         <div class="region-tag">${leftTagText}</div>
                         ${districtTag}
                         ${confirmedBadge}
+                        ${preliminaryBadge}
                         ${photoContent}
                     </div>
                     <div class="pt-2 px-3 pb-4 md:pt-4 md:px-6 md:pb-6 text-center flex flex-col flex-grow">
@@ -2005,7 +2080,7 @@
             const isValidLink = (link) => link && link !== "" && link !== "#";
 
             const getStatusLabel = (c) => {
-                const isConfirmed = (c.status === "후보" && c.name !== "김성민");
+                const isConfirmed = ((["공천확정","후보"].includes(c.status) || (c.status === "예비후보" && c.preliminary !== true)) && c.name !== "김성민");
                 if (isConfirmed) return "후보";
                 if (c.name === "이유원") return "출마예정";
                 return (c.decl && c.decl !== "#") ? "출마선언" : "출마예정";
@@ -2247,8 +2322,8 @@
                                         {matchedCandidates.map((can, idx) => {
                                             const parts = can.region.split(' ');
                                             const displayOffice = parts[parts.length - 1] + "의회"; 
-                                            const isConfirmed = (can.status === "후보" && can.name !== "김성민");
-                                            let statusText = isConfirmed ? " 후보" : (can.name === "이유원" ? " 출마예정" : ((can.decl && can.decl !== "#") ? " 출마선언" : " 출마예정"));
+                                            const isConfirmed = ((["공천확정","후보"].includes(can.status) || (can.status === "예비후보" && can.preliminary !== true)) && can.name !== "김성민");
+                                            let statusText = isConfirmed ? ` ${can.status}` : (can.name === "이유원" ? " 출마예정" : ((can.decl && can.decl !== "#") ? " 출마선언" : " 출마예정"));
                                             let fullOfficeLabel = `${displayOffice}${can.district ? ` ${can.district}선거구` : ""}${statusText}`;
                                             const showNew = isNewCandidate(can.dateAdded);
 

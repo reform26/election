@@ -14,7 +14,7 @@ const candidates = [
         region: "서울특별시",
         category: "광역단체장",
         office: "서울특별시장",
-        status: "후보",
+        status: "공천확정",
         bio: [
             "개혁신당 최고위원",
             "법무법인 우리 대표변호사"
@@ -37,9 +37,10 @@ const candidates = [
         region: "부산광역시",
         category: "광역단체장",
         office: "부산광역시장",
-        status: "후보",
+        age: 37,
+        status: "예비후보",
         bio: [
-            "개혁신당 중앙당 대변인"
+            "전) 개혁신당 중앙당 대변인"
         ],
         photo: "https://cdn.seoulfn.com/news/photo/202511/612324_411809_430.jpg",
         sns: {
@@ -60,7 +61,9 @@ const candidates = [
         region: "인천광역시",
         category: "광역단체장",
         office: "인천광역시장",
-        status: "출마선언",
+        age: 63,
+        status: "예비후보",
+        preliminary: true,
         bio: [
             "인천시당 위원장"
         ],
@@ -82,7 +85,8 @@ const candidates = [
         region: "대구광역시",
         category: "광역단체장",
         office: "대구광역시장",
-        status: "후보",
+        age: 58,
+        status: "예비후보",
         bio: [
             "대구시당 위원장"
         ],
@@ -104,7 +108,8 @@ const candidates = [
         region: "대전광역시",
         category: "광역단체장",
         office: "대전광역시장",
-        status: "후보",
+        age: 29,
+        status: "예비후보",
         bio: [
             "대전시당 위원장"
         ],
@@ -137,7 +142,7 @@ const candidates = [
         photo: "https://i.imgur.com/mzd1dts.jpeg",
         sns: {
             fb: "https://www.facebook.com/profile.php?id=1000075888273756",
-            ig: "https://www.instagram.com/hyun_soo_ch9/"
+            ig: "https://www.instagram.com/hyun_soo_ch9/",
         },
         pledge: "#",
         decl: "https://www.youtube.com/live/zNKugaDviEM",
@@ -152,7 +157,7 @@ const candidates = [
         region: "세종특별자치시",
         category: "광역단체장",
         office: "세종특별자치시장",
-        status: "후보",
+        status: "공천확정",
         bio: [
             "세종시당 창준위원장",
             "세종시 갑 당협위원장"
@@ -176,7 +181,7 @@ const candidates = [
         region: "충청남도",
         category: "광역단체장",
         office: "충청남도지사",
-        status: "후보",
+        status: "공천확정",
         bio: [
             "공주·부여·청양 당협위원장",
             "제6대 유성구의원",
@@ -200,7 +205,8 @@ const candidates = [
         metropolitan: "서울특별시",
         category: "기초단체장",
         office: "강동구청장",
-        status: "후보",
+        age: 39,
+        status: "예비후보",
         bio: [
             "강동구 을 당협위원장",
             "서울시당 수석대변인",
@@ -224,7 +230,7 @@ const candidates = [
         metropolitan: "경기도",
         category: "기초단체장",
         office: "수원시장",
-        status: "후보",
+        status: "공천확정",
         bio: [
             "수원시 갑 당협위원장",
             "경기도당 부위원장",
@@ -249,7 +255,7 @@ const candidates = [
         metropolitan: "경기도",
         category: "기초단체장",
         office: "오산시장",
-        status: "후보",
+        status: "공천확정",
         bio: [
             "제9대 오산시의원",
             "민주평화통일자문회의 자문위원"
@@ -272,7 +278,8 @@ const candidates = [
         metropolitan: "서울특별시",
         category: "기초단체장",
         office: "관악구청장",
-        status: "후보",
+        gender: "f",
+        status: "공천확정",
         bio: [
             "관악구 갑 당협위원장"
         ],
@@ -321,7 +328,7 @@ const candidates = [
         metropolitan: "경기도",
         category: "기초단체장",
         office: "용인시장",
-        status: "후보",
+        status: "공천확정",
         bio: [
             "용인시 정 당협위원장"
         ],
@@ -344,7 +351,8 @@ const candidates = [
         metropolitan: "강원특별자치도",
         category: "기초단체장",
         office: "삼척시장",
-        status: "후보",
+        age: 69,
+        status: "예비후보",
         bio: [
             "전) 산업통상자원부",
             "동해자유무역원 원장"
@@ -367,7 +375,8 @@ const candidates = [
         metropolitan: "강원특별자치도",
         category: "기초단체장",
         office: "동해시장",
-        status: "후보",
+        age: 68,
+        status: "예비후보",
         bio: [
             "전) 민주평화통일자문회의 동해시협의회장",
             "해군사랑 바다사랑 회장"
@@ -390,7 +399,7 @@ const candidates = [
         metropolitan: "충청남도",
         category: "기초단체장",
         office: "서산시장",
-        status: "후보",
+        status: "공천확정",
         bio: [
             "제5,6대 서산시의원"
         ],
@@ -412,6 +421,7 @@ const candidates = [
         metropolitan: "서울특별시",
         category: "기초단체장",
         office: "동작구청장",
+        gender: "f",
         status: "출마예정",
         bio: [
             "동작구 을 당협위원장",
@@ -441,7 +451,8 @@ const candidates = [
         constituencyFull: "대구광역시의회 수성구 제3선거구",
         category: "광역의원",
         office: "대구시의회",
-        status: "후보",
+        age: 33,
+        status: "예비후보",
         subRegion: "고산1동, 고산2동, 고산3동",
         bio: [
             "공인노무사",
@@ -469,7 +480,7 @@ const candidates = [
         constituencyFull: "강남구 제1선거구",
         category: "광역의원",
         office: "서울시의원",
-        status: "후보",
+        status: "공천확정",
         subRegion: "신사동, 논현1동, 압구정동, 청담동",
         bio: [
             "서울시당 대변인"
@@ -495,7 +506,7 @@ const candidates = [
         constituencyFull: "송파구 제2선거구",
         category: "광역의원",
         office: "서울시의원",
-        status: "후보",
+        status: "공천확정",
         subRegion: "방이1동, 방이2동, 오륜동, 송파1동, 송파2동",
         bio: [
             "송파구 제2선거구 후보"
@@ -521,7 +532,7 @@ const candidates = [
         constituencyFull: "서대문구 제1선거구",
         category: "광역의원",
         office: "서울시의원",
-        status: "후보",
+        status: "공천확정",
         subRegion: "충현동, 천연동, 북아현동, 신촌동",
         bio: [
             "제8, 9대 서대문구의원",
@@ -552,7 +563,9 @@ const candidates = [
         constituencyFull: "세종특별자치시 제4선거구",
         category: "광역의원",
         office: "세종시의회",
-        status: "후보",
+        age: 53,
+        gender: "f",
+        status: "예비후보",
         subRegion: "연기면, 연동면, 연서면, 해밀동",
         bio: [
             "마을활동가",
@@ -579,7 +592,8 @@ const candidates = [
         constituencyFull: "제주시 노형동 을 선거구",
         category: "광역의원",
         office: "제주도의원",
-        status: "후보",
+        age: 33,
+        status: "예비후보",
         subRegion: "제주시 노형동 을",
         bio: [
             "개혁신당 노형동 지역발전특별위원장",
@@ -606,7 +620,8 @@ const candidates = [
         district: "외도·이호·도두",
         category: "광역의원",
         office: "제주도의원",
-        status: "후보",
+        age: 49,
+        status: "예비후보",
         subRegion: "제주시 외도동, 이호동, 도두동",
         bio: [
             "제주시 갑 당협위원장",
@@ -631,7 +646,7 @@ const candidates = [
         metropolitan: "서울특별시",
         category: "기초의원",
         office: "강남구의원",
-        status: "후보",
+        status: "공천확정",
         subRegion: "개포제3동, 일원본동, 일원제1동",
         bio: [
             "서울시당 대변인",
@@ -659,7 +674,8 @@ const candidates = [
         metropolitan: "서울특별시",
         category: "기초의원",
         office: "강남구의원",
-        status: "후보",
+        age: 43,
+        status: "예비후보",
         subRegion: "개포1동, 개포2동, 개포4동",
         bio: [
             "서울시당 대변인",
@@ -684,7 +700,8 @@ const candidates = [
         metropolitan: "서울특별시",
         category: "기초의원",
         office: "강남구의원",
-        status: "후보",
+        age: 27,
+        status: "예비후보",
         district: "자",
         subRegion: "삼성1동, 삼성2동, 대치2동",
         bio: [
@@ -710,7 +727,8 @@ const candidates = [
         metropolitan: "서울특별시",
         category: "기초의원",
         office: "동대문구의원",
-        status: "후보",
+        age: 40,
+        status: "예비후보",
         subRegion: "답십리2동, 장안1동, 장안2동",
         bio: [
             "서울시당 대변인",
@@ -761,7 +779,8 @@ const candidates = [
         metropolitan: "서울특별시",
         category: "기초의원",
         office: "기초의원",
-        status: "후보",
+        age: 29,
+        status: "예비후보",
         subRegion: "성북동, 삼선동, 동선동, 돈암제2동, 안암동, 보문동",
         bio: [
             "서울시당 대변인",
@@ -789,7 +808,8 @@ const candidates = [
         metropolitan: "서울특별시",
         category: "기초의원",
         office: "기초의원",
-        status: "후보",
+        age: 40,
+        status: "예비후보",
         subRegion: "북아현동, 신촌동, 천연동, 충현동",
         bio: [
             "<span style='letter-spacing:-0.14em;'>개혁신당 서대문구 지역발전특위 부위원장</span>",
@@ -815,7 +835,7 @@ const candidates = [
         metropolitan: "서울특별시",
         category: "기초의원",
         office: "성동구의원",
-        status: "후보",
+        status: "공천확정",
         subRegion: "마장동, 사근동, 송정동, 용답동",
         bio: [
             "성동구 다선거구 후보"
@@ -839,7 +859,8 @@ const candidates = [
         metropolitan: "서울특별시",
         category: "기초의원",
         office: "구로구의원",
-        status: "후보",
+        age: 30,
+        status: "예비후보",
         subRegion: "구로제3동, 구로제4동, 가리봉동",
         bio: [
             "서울시당 미래희망위원회 위원",
@@ -866,13 +887,14 @@ const candidates = [
         metropolitan: "서울특별시",
         category: "기초의원",
         office: "기초의원",
-        status: "후보",
+        age: 32,
+        status: "예비후보",
         subRegion: "신길 6동, 대림1동, 대림2동, 대림3동",
         bio: [
             "개혁신당 영등포구 지역발전특위 부위원장",
             "배우"
         ],
-        photo: "",
+        photo: "https://i.imgur.com/Z1SVjJ8.png",
         district: "사",
         sns: {
             fb: "#",
@@ -892,7 +914,7 @@ const candidates = [
         metropolitan: "서울특별시",
         category: "기초의원",
         office: "용산구의원",
-        status: "후보",
+        status: "공천확정",
         subRegion: "원효로제1동, 원효로제2동, 용문동",
         bio: [
             "용산구 나선거구 후보"
@@ -916,7 +938,7 @@ const candidates = [
         metropolitan: "서울특별시",
         category: "기초의원",
         office: "기초의원",
-        status: "후보",
+        status: "공천확정",
         subRegion: "면목4동, 면목7동",
         bio: [
             "서울시당 대변인"
@@ -940,7 +962,8 @@ const candidates = [
         metropolitan: "서울특별시",
         category: "기초의원",
         office: "노원구의원",
-        status: "후보",
+        age: 43,
+        status: "예비후보",
         subRegion: "상계2동, 상계3동, 상계4동, 상계5동",
         bio: [
             "<span style='letter-spacing:-0.12em;'>개혁신당 노원구 지역발전특위 부위원장</span>",
@@ -967,7 +990,7 @@ const candidates = [
         metropolitan: "서울특별시",
         category: "기초의원",
         office: "도봉구의원",
-        status: "후보",
+        status: "공천확정",
         subRegion: "창1동, 창4동, 창5동",
         bio: [
             "도봉구 가선거구 후보"
@@ -991,7 +1014,7 @@ const candidates = [
         metropolitan: "서울특별시",
         category: "기초의원",
         office: "광진구의원",
-        status: "후보",
+        status: "공천확정",
         subRegion: "능동, 구의2동, 광장동, 군자동",
         bio: [
             "서울시당 대변인",
@@ -1019,7 +1042,7 @@ const candidates = [
         metropolitan: "서울특별시",
         category: "기초의원",
         office: "광진구의원",
-        status: "후보",
+        status: "공천확정",
         subRegion: "자양제1동, 자양제2동, 구의제1동, 구의제3동",
         bio: [
             "서울시당 대변인",
@@ -1046,7 +1069,7 @@ const candidates = [
         metropolitan: "서울특별시",
         category: "기초의원",
         office: "기초의원",
-        status: "후보",
+        status: "공천확정",
         subRegion: "화양동, 자양제3동, 자양제4동",
         bio: [
             "서울시당 대변인",
@@ -1074,7 +1097,7 @@ const candidates = [
         metropolitan: "서울특별시",
         category: "기초의원",
         office: "기초의원",
-        status: "후보",
+        status: "공천확정",
         subRegion: "신사동, 조원동, 미성동",
         bio: [
             "관악구 마선거구 후보"
@@ -1098,7 +1121,8 @@ const candidates = [
         metropolitan: "서울특별시",
         category: "기초의원",
         office: "관악구의원",
-        status: "후보",
+        age: 34,
+        status: "예비후보",
         subRegion: "삼성동, 대학동",
         bio: [
             "배우",
@@ -1124,7 +1148,8 @@ const candidates = [
         metropolitan: "서울특별시",
         category: "기초의원",
         office: "송파구의원 후보",
-        status: "후보",
+        age: 38,
+        status: "예비후보",
         subRegion: "풍납1동, 풍납2동, 잠실4동, 잠실6동",
         bio: [
             "개혁신당 송파구 지역발전특위 부위원장"
@@ -1148,7 +1173,7 @@ const candidates = [
         metropolitan: "서울특별시",
         category: "기초의원",
         office: "강동구의원",
-        status: "후보",
+        status: "공천확정",
         subRegion: "성내1·2·3동, 둔촌제1·2동",
         bio: [
             "서울시당 환경위원장"
@@ -1172,7 +1197,7 @@ const candidates = [
         metropolitan: "부산광역시",
         category: "기초의원",
         office: "기장군의원",
-        status: "후보",
+        status: "공천확정",
         subRegion: "정관읍, 장안읍",
         bio: [
             "기장군 다선거구 후보"
@@ -1196,7 +1221,7 @@ const candidates = [
         metropolitan: "부산광역시",
         category: "기초의원",
         office: "남구의원 후보",
-        status: "후보",
+        status: "공천확정",
         subRegion: "용호1동, 용호2동, 용호3동, 용호4동",
         bio: [
             "남구의회 마선거구 후보"
@@ -1220,7 +1245,8 @@ const candidates = [
         metropolitan: "대구광역시",
         category: "기초의원",
         office: "달서구의원",
-        status: "후보",
+        age: 66,
+        status: "예비후보",
         subRegion: "이곡1동, 이곡2동, 신당동",
         bio: [
             "제8, 9대 달서구의원 (재선)",
@@ -1246,7 +1272,7 @@ const candidates = [
         metropolitan: "대구광역시",
         category: "기초의원",
         office: "달성군의원",
-        status: "후보",
+        status: "공천확정",
         subRegion: "화원읍, 가창면",
         bio: [
             "<span style='letter-spacing:-0.15em;'>개혁신당 지역발전특위 부위원장</span>",
@@ -1274,7 +1300,7 @@ const candidates = [
         metropolitan: "대구광역시",
         category: "기초의원",
         office: "달성군의원",
-        status: "후보",
+        status: "공천확정",
         subRegion: "유가읍, 현풍읍, 구지면",
         bio: [
             "달성군 당협위원장"
@@ -1301,7 +1327,8 @@ const candidates = [
         metropolitan: "대구광역시",
         category: "기초의원",
         office: "동구의원",
-        status: "후보",
+        age: 35,
+        status: "예비후보",
         subRegion: "신천1·2동, 신천3동, 신천4동, 효목1동, 효목2동",
         bio: [
             "대구시당 인재위원장",
@@ -1326,7 +1353,8 @@ const candidates = [
         metropolitan: "대구광역시",
         category: "기초의원",
         office: "수성구의원",
-        status: "후보",
+        age: 32,
+        status: "예비후보",
         subRegion: "고산1동, 고산2동, 고산3동",
         bio: [
             "대구시당 대변인"
@@ -1352,7 +1380,8 @@ const candidates = [
         metropolitan: "대구광역시",
         category: "기초의원",
         office: "수성구의원",
-        status: "후보",
+        age: 42,
+        status: "예비후보",
         district: "마",
         subRegion: "중동, 상동, 두산동, 수성1가동, 수성2.3가동, 수성4가동",
         bio: [
@@ -1378,7 +1407,8 @@ const candidates = [
         metropolitan: "대구광역시",
         category: "기초의원",
         office: "중구의원",
-        status: "후보",
+        age: 25,
+        status: "예비후보",
         subRegion: "동인동, 삼덕동, 성내1동, 남산1동, 대봉1동, 대봉2동",
         bio: [
             "대구시당 미래희망위원회 위원",
@@ -1404,7 +1434,8 @@ const candidates = [
         metropolitan: "인천광역시",
         category: "기초의원",
         office: "기초의원 후보",
-        status: "후보",
+        age: 57,
+        status: "예비후보",
         subRegion: "송도2동, 송도4동, 송도5동",
         bio: [
             "인천시당 부위원장",
@@ -1429,7 +1460,8 @@ const candidates = [
         metropolitan: "인천광역시",
         category: "기초의원",
         office: "기초의원 후보",
-        status: "후보",
+        age: 31,
+        status: "예비후보",
         subRegion: "송도1동, 송도3동",
         bio: [
             "개혁신당 연수구 지역발전특위 부위원장"
@@ -1454,7 +1486,8 @@ const candidates = [
         metropolitan: "인천광역시",
         category: "기초의원",
         office: "남동구의원",
-        status: "후보",
+        age: 41,
+        status: "예비후보",
         subRegion: "구월3동, 간석1동, 간석4동",
         bio: [
             "개혁신당 남동구 지역발전특위 부위원장",
@@ -1481,7 +1514,8 @@ const candidates = [
         metropolitan: "대전광역시",
         category: "기초의원",
         office: "기초의원",
-        status: "후보",
+        age: 29,
+        status: "예비후보",
         subRegion: "판암1동, 판암2동, 대청동, 용운동, 대동, 자양동",
         bio: [
             "<span style='letter-spacing:-0.15em;'>개혁신당 대전동구 지역발전특위 부위원장</span>",
@@ -1507,7 +1541,8 @@ const candidates = [
         metropolitan: "대전광역시",
         category: "기초의원",
         office: "기초의원 후보",
-        status: "후보",
+        age: 24,
+        status: "예비후보",
         subRegion: "중앙동, 효동, 삼성동, 홍도동, 삼성동, 산내동",
         bio: [
             "대전시당 미래희망위원장"
@@ -1531,7 +1566,8 @@ const candidates = [
         metropolitan: "대전광역시",
         category: "기초의원",
         office: "서구의원",
-        status: "후보",
+        age: 64,
+        status: "예비후보",
         subRegion: "가수원동, 관저1동, 관저2동, 기성동",
         bio: [
             "서구 을 당협위원장",
@@ -1559,7 +1595,7 @@ const candidates = [
         metropolitan: "대전광역시",
         category: "기초의원",
         office: "서구의원",
-        status: "후보",
+        status: "공천확정",
         subRegion: "복수동, 도마1동, 도마2동, 정림동",
         bio: [
             "대전시당 자문위원"
@@ -1584,7 +1620,8 @@ const candidates = [
         metropolitan: "대전광역시",
         category: "기초의원",
         office: "기초의원 후보",
-        status: "후보",
+        gender: "f",
+        status: "공천확정",
         subRegion: "온천1동, 온천2동, 노은1동",
         bio: [
             "중앙당 미래희망위원회 위원",
@@ -1610,10 +1647,12 @@ const candidates = [
         metropolitan: "전남광주통합특별시",
         category: "기초의원",
         office: "동구의원",
-        status: "후보",
+        age: 32,
+        status: "예비후보",
         subRegion: "충장동, 동명동, 계림1동, 계림2동, 산수1동, 산수2동",
         bio: [
-            "동구·남구 을 당협위원장",
+            "<span style='letter-spacing:-0.15em;'>개혁신당 광주광역시 지역발전특위 위원장</span>",
+            "전) 동구·남구 을 당협위원장",
             "21대 대선 선대위 홍보부본부장"
         ],
         photo: "https://i.imgur.com/cah0vOW.png",
@@ -1635,7 +1674,8 @@ const candidates = [
         metropolitan: "경기도",
         category: "기초의원",
         office: "기초의원 후보",
-        status: "후보",
+        age: 43,
+        status: "예비후보",
         subRegion: "은현면, 남면, 옥정1동, 옥정2동, 은현면, 회천1동, 회천2동, 회천3동",
         bio: [
             "법원감정인",
@@ -1660,7 +1700,7 @@ const candidates = [
         metropolitan: "경기도",
         category: "기초의원",
         office: "기초의원 후보",
-        status: "후보",
+        status: "공천확정",
         subRegion: "매탄1동, 매탄2동, 매탄3동, 매탄4동",
         bio: [
             "수원시 아선거구 후보"
@@ -1684,7 +1724,8 @@ const candidates = [
         metropolitan: "경기도",
         category: "기초의원",
         office: "기초의원 후보",
-        status: "후보",
+        age: 25,
+        status: "예비후보",
         subRegion: "영통구 영통2동, 영통3동, 망포1동, 망포2동",
         bio: [
             "<span style='letter-spacing:-0.12em;'>개혁신당 수원시 지역발전특위 부위원장</span>",
@@ -1709,7 +1750,8 @@ const candidates = [
         metropolitan: "경기도",
         category: "기초의원",
         office: "성남시의원",
-        status: "후보",
+        age: 38,
+        status: "예비후보",
         subRegion: "분당구 이매1동, 이매2동, 삼평동",
         bio: [
             "<span style='letter-spacing:-0.12em;'>경기도당 성남시 스마트모빌리티 혁신위원장</span>",
@@ -1737,7 +1779,8 @@ const candidates = [
         metropolitan: "경기도",
         category: "기초의원",
         office: "성남시의회",
-        status: "후보",
+        age: 31,
+        status: "예비후보",
         district: "사",
         subRegion: "중앙동, 금광1동, 금광2동, 은행1동, 은행2동",
         bio: [
@@ -1761,7 +1804,7 @@ const candidates = [
         metropolitan: "경기도",
         category: "기초의원",
         office: "성남시의원 후보",
-        status: "후보",
+        status: "공천확정",
         subRegion: "분당구 분당동, 수내3동, 정자2동, 정자3동, 구미동",
         bio: [
             "성남시의회 타선거구 후보"
@@ -1785,7 +1828,8 @@ const candidates = [
         metropolitan: "경기도",
         category: "기초의원",
         office: "부천시의원",
-        status: "후보",
+        age: 33,
+        status: "예비후보",
         subRegion: "원미구 중1동, 중2동, 중3동, 중4동, 약대동",
         bio: [
             "<span style='letter-spacing:-0.12em;'>개혁신당 부천시 지역발전특위 부위원장</span>",
@@ -1814,7 +1858,7 @@ const candidates = [
         metropolitan: "경기도",
         category: "기초의원",
         office: "부천시의원",
-        status: "후보",
+        status: "공천확정",
         subRegion: "소사구 범박동, 괴안동, 역곡3동, 옥길동",
         bio: [
             "구로 보스톤미치과 대표원장",
@@ -1839,7 +1883,7 @@ const candidates = [
         metropolitan: "경기도",
         category: "기초의원",
         office: "용인시의원",
-        status: "후보",
+        status: "공천확정",
         subRegion: "상현1동, 상현3동",
         bio: [
             "용인시 사선거구 후보"
@@ -1863,7 +1907,7 @@ const candidates = [
         metropolitan: "경기도",
         category: "기초의원",
         office: "용인시의원 후보",
-        status: "후보",
+        status: "공천확정",
         subRegion: "기흥구 구성동, 마북동, 동백1동, 동백2동",
         bio: [
             "용인시의회 차선거구 후보"
@@ -1887,7 +1931,7 @@ const candidates = [
         metropolitan: "경기도",
         category: "기초의원",
         office: "기초의원",
-        status: "후보",
+        status: "공천확정",
         subRegion: "흥천면, 금사면, 산북면, 대신면, 중앙동, 오학동",
         bio: [
             "여주시 나선거구 후보"
@@ -1911,7 +1955,8 @@ const candidates = [
         metropolitan: "경기도",
         category: "기초의원",
         office: "기초의원",
-        status: "후보",
+        age: 52,
+        status: "예비후보",
         subRegion: "와부읍, 조안면, 금곡동, 진건읍, 퇴계원읍",
         bio: [
             "지엔에스파트너스 교육이사",
@@ -1937,7 +1982,8 @@ const candidates = [
         metropolitan: "경기도",
         category: "기초의원",
         office: "기초의원 후보",
-        status: "후보",
+        gender: "f",
+        status: "공천확정",
         subRegion: "수동면, 화도읍",
         bio: [
             "제9대 남양주시의원",
@@ -1962,7 +2008,8 @@ const candidates = [
         metropolitan: "경기도",
         category: "기초의원",
         office: "남양주시의원 후보",
-        status: "후보",
+        age: 30,
+        status: "예비후보",
         subRegion: "진접읍",
         bio: [
             "(전) 드림청년단 공동대표"
@@ -1986,7 +2033,8 @@ const candidates = [
         metropolitan: "경기도",
         category: "기초의원",
         office: "기초의원 후보",
-        status: "후보",
+        age: 66,
+        status: "예비후보",
         subRegion: "동안구 호계1동, 호계2동, 호계3동, 신촌동",
         bio: [
             "안양시 아선거구 후보"
@@ -2010,7 +2058,8 @@ const candidates = [
         metropolitan: "경기도",
         category: "기초의원",
         office: "기초의원 후보",
-        status: "후보",
+        age: 39,
+        status: "예비후보",
         district: "바",
         subRegion: "달안동, 부림동, 인덕원동, 관양동",
         bio: [
@@ -2035,7 +2084,7 @@ const candidates = [
         metropolitan: "경기도",
         category: "기초의원",
         office: "의왕시의회",
-        status: "후보",
+        status: "공천확정",
         district: "나",
         subRegion: "내손1동, 내손2동, 청계동",
         bio: [
@@ -2059,7 +2108,8 @@ const candidates = [
         metropolitan: "경기도",
         category: "기초의원",
         office: "파주시의회",
-        status: "후보",
+        age: 32,
+        status: "예비후보",
         district: "마",
         subRegion: "파주읍, 월룡면, 금촌1동, 금촌2동, 금촌3동",
         bio: [
@@ -2084,7 +2134,8 @@ const candidates = [
         metropolitan: "경기도",
         category: "기초의원",
         office: "기초의원 후보",
-        status: "후보",
+        age: 27,
+        status: "예비후보",
         subRegion: "본오3동, 사동, 사이동, 해양동",
         bio: [
             "개혁신당 안산시 지역발전특위 부위원장"
@@ -2108,7 +2159,8 @@ const candidates = [
         metropolitan: "경기도",
         category: "기초의원",
         office: "기초의원 후보",
-        status: "후보",
+        age: 61,
+        status: "예비후보",
         subRegion: "우정읍, 남양읍, 매송면, 비봉면, 마도면, 송산면, 서신면, 장안면, 새솔동",
         bio: [
             "전) 매송면 원평1리 이장",
@@ -2135,7 +2187,8 @@ const candidates = [
         metropolitan: "경기도",
         category: "기초의원",
         office: "기초의원 후보",
-        status: "후보",
+        age: 37,
+        status: "예비후보",
         subRegion: "봉담읍, 기배동, 화산동",
         bio: [
             "민주평화통일자문회의 자문위원",
@@ -2162,7 +2215,7 @@ const candidates = [
         metropolitan: "경기도",
         category: "기초의원",
         office: "기초의원 후보",
-        status: "후보",
+        status: "공천확정",
         subRegion: "진안동, 병점1동, 병점2동",
         bio: [
             "화성시 사선거구 후보"
@@ -2186,7 +2239,8 @@ const candidates = [
         metropolitan: "강원특별자치도",
         category: "기초의원",
         office: "춘천시의원",
-        status: "후보",
+        age: 33,
+        status: "예비후보",
         subRegion: "문막읍, 지정면, 부론면, 귀래면",
         bio: [
             "원주시 가선거구 후보"
@@ -2211,7 +2265,8 @@ const candidates = [
         metropolitan: "강원특별자치도",
         category: "기초의원",
         office: "춘천시의원",
-        status: "후보",
+        age: 25,
+        status: "예비후보",
         subRegion: "효자2동, 석사동",
         bio: [
             "캠퍼스지부 강원스테이션 리더장",
@@ -2240,7 +2295,8 @@ const candidates = [
         metropolitan: "충청남도",
         category: "기초의원",
         office: "기초의원 후보",
-        status: "후보",
+        age: 39,
+        status: "예비후보",
         subRegion: "불당1동, 불당2동",
         bio: [
             "개혁신당 지역발전특위 부위원장",
@@ -2272,7 +2328,8 @@ const candidates = [
         metropolitan: "충청남도",
         category: "기초의원",
         office: "기초의원 후보",
-        status: "후보",
+        age: 27,
+        status: "예비후보",
         subRegion: "쌍용1동, 쌍용2동, 쌍용3동",
         bio: [
             "충남도당 사무처장",
@@ -2300,7 +2357,8 @@ const candidates = [
         metropolitan: "충청남도",
         category: "기초의원",
         office: "천안시의원 후보",
-        status: "후보",
+        age: 22,
+        status: "예비후보",
         subRegion: "봉명동, 성정1동, 성정2동, 문성동",
         bio: [
             "전) 충남도당 대학생 대변인"
@@ -2350,7 +2408,8 @@ const candidates = [
         metropolitan: "충청남도",
         category: "기초의원",
         office: "당진시의원 후보",
-        status: "후보",
+        age: 19,
+        status: "예비후보",
         subRegion: "고대면, 석문면, 당진1동, 당진3동",
         bio: [
             "대전시당 정책위원",
@@ -2380,7 +2439,7 @@ const candidates = [
         metropolitan: "충청남도",
         category: "기초의원",
         office: "예산군의원",
-        status: "후보",
+        status: "공천확정",
         subRegion: "덕산면, 봉산면, 고덕면, 신암면",
         bio: [
             "<span style='letter-spacing:-0.12em;'>개혁신당 예산군 지역발전특위 부위원장</span>"
@@ -2404,7 +2463,8 @@ const candidates = [
         metropolitan: "경상북도",
         category: "기초의원",
         office: "기초의원 후보",
-        status: "후보",
+        age: 40,
+        status: "예비후보",
         subRegion: "인동동, 진미동",
         bio: [
             "구미시 을 당협위원장",
@@ -2429,7 +2489,7 @@ const candidates = [
         metropolitan: "경상북도",
         category: "기초의원",
         office: "구미시의회",
-        status: "후보",
+        status: "공천확정",
         district: "마",
         subRegion: "상모사곡동, 임오동",
         bio: [
@@ -2453,7 +2513,7 @@ const candidates = [
         metropolitan: "경상북도",
         category: "기초의원",
         office: "포항시의회",
-        status: "후보",
+        status: "공천확정",
         district: "바",
         subRegion: "장량동",
         bio: [
@@ -2478,7 +2538,8 @@ const candidates = [
         metropolitan: "경상북도",
         category: "기초의원",
         office: "기초의원",
-        status: "후보",
+        age: 65,
+        status: "예비후보",
         subRegion: "용흥동, 우창동",
         bio: [
             "전) 포항시 우창동 재향군인회 회장"
@@ -2502,7 +2563,7 @@ const candidates = [
         metropolitan: "경상북도",
         category: "기초의원",
         office: "기초의원",
-        status: "후보",
+        status: "공천확정",
         subRegion: "두호동, 양덕동, 환여동",
         bio: [
             "포항시 마선거구 후보"
@@ -2526,7 +2587,7 @@ const candidates = [
         metropolitan: "경상북도",
         category: "기초의원",
         office: "기초의원 후보",
-        status: "후보",
+        status: "공천확정",
         subRegion: "북면, 죽변면",
         bio: [
             "울진군 나선거구 후보"
@@ -2550,7 +2611,7 @@ const candidates = [
         metropolitan: "인천광역시",
         category: "기초의원",
         office: "영종구의회",
-        status: "후보",
+        status: "공천확정",
         subRegion: "영종동, 영종1동, 운서동, 용유동",
         bio: [
             "영종구 *선거구 후보"
@@ -2574,7 +2635,7 @@ const candidates = [
         metropolitan: "경기도",
         category: "기초의원",
         office: "이천시의회",
-        status: "후보",
+        status: "공천확정",
         subRegion: "증포동, 관고동, 신둔면, 백사면",
         bio: [
             "이천시 지역발전특별위 부위원장",
@@ -2599,7 +2660,8 @@ const candidates = [
         metropolitan: "충청북도",
         category: "기초의원",
         office: "청주시의회",
-        status: "후보",
+        age: 25,
+        status: "예비후보",
         subRegion: "가경동, 복대제2동",
         bio: [
             "개혁신당 흥덕구 지역발전특위 부위원장",
@@ -2624,7 +2686,7 @@ const candidates = [
         metropolitan: "전북특별자치도",
         category: "기초의원",
         office: "익산시의회",
-        status: "후보",
+        status: "공천확정",
         subRegion: "남중동, 신동, 오산면",
         bio: [
             "익산시 다선거구 후보"
@@ -2672,7 +2734,7 @@ const candidates = [
         metropolitan: "부산광역시",
         category: "기초의원",
         office: "동구의회",
-        status: "후보",
+        status: "공천확정",
         subRegion: "초량제1동, 초량제2동, 초량제3동",
         bio: [
             "동구 가선거구 후보"
@@ -2696,7 +2758,8 @@ const candidates = [
         metropolitan: "인천광역시",
         category: "기초의원",
         office: "제물포구의회",
-        status: "후보",
+        age: 22,
+        status: "예비후보",
         subRegion: "신포동, 연안동, 신흥동, 도원동, 율목동, 동인천동, 개항동",
         bio: [
             "법률사무소 송무직원"
@@ -2720,7 +2783,7 @@ const candidates = [
         metropolitan: "경기도",
         category: "기초의원",
         office: "평택시의회",
-        status: "후보",
+        status: "공천확정",
         subRegion: "팽성읍, 고덕면, 신평동, 원평동, 고덕동",
         bio: [
             "평택시 사선거구 후보"
@@ -2744,7 +2807,8 @@ const candidates = [
         metropolitan: "경기도",
         category: "기초의원",
         office: "시흥시의회",
-        status: "후보",
+        age: 41,
+        status: "예비후보",
         subRegion: "대야동, 신천동, 은행동",
         bio: [
             "보드리봄 (주) 대표이사"
@@ -2768,7 +2832,7 @@ const candidates = [
         metropolitan: "경기도",
         category: "기초의원",
         office: "의정부시의회",
-        status: "후보",
+        status: "공천확정",
         subRegion: "의정부2동, 호원1동, 호원2동",
         bio: [
             "의정부시 라선거구 후보"
@@ -2792,7 +2856,7 @@ const candidates = [
         metropolitan: "서울특별시",
         category: "기초의원",
         office: "강동구의회",
-        status: "후보",
+        status: "공천확정",
         subRegion: "상일1동, 상일2동, 명일2동",
         bio: [
             "강동구 나선거구 후보"
@@ -2816,7 +2880,7 @@ const candidates = [
         metropolitan: "서울특별시",
         category: "기초의원",
         office: "강동구의회",
-        status: "후보",
+        status: "공천확정",
         subRegion: "천호1동, 천호3동",
         bio: [
             "서울시장 대변인"
@@ -2840,7 +2904,7 @@ const candidates = [
         metropolitan: "서울특별시",
         category: "기초의원",
         office: "성북구의회",
-        status: "후보",
+        status: "공천확정",
         subRegion: "정릉1동, 정릉2동, 정릉3동, 정릉4동, 길음1동",
         bio: [
             "성북구 나선거구 후보"
@@ -2864,7 +2928,7 @@ const candidates = [
         metropolitan: "인천광역시",
         category: "기초의원",
         office: "서해구의회",
-        status: "후보",
+        status: "공천확정",
         subRegion: "가정1동, 가정2동, 가정3동, 신현원창동",
         bio: [
             "서해구 다선거구 후보"
@@ -2889,7 +2953,7 @@ const candidates = [
         metropolitan: "경기도",
         category: "기초의원",
         office: "고양시의회",
-        status: "후보",
+        status: "공천확정",
         subRegion: "정발산동, 중산1동, 중산2동, 일산2동",
         bio: [
             "고양시 아선거구 후보"
@@ -2913,7 +2977,8 @@ const candidates = [
         metropolitan: "경기도",
         category: "기초의원",
         office: "안산시의회",
-        status: "후보",
+        age: 30,
+        status: "예비후보",
         subRegion: "호수동, 중앙동, 대부동",
         bio: [
             "안산시 아선거구 후보"
@@ -2937,7 +3002,7 @@ const candidates = [
         metropolitan: "경기도",
         category: "기초의원",
         office: "평택시의회",
-        status: "후보",
+        status: "공천확정",
         subRegion: "안중읍, 포승읍, 청북읍, 오성면, 현덕면",
         bio: [
             "평택시 바선거구 후보"
@@ -2961,7 +3026,7 @@ const candidates = [
         metropolitan: "경상북도",
         category: "기초의원",
         office: "영주시의회",
-        status: "후보",
+        status: "공천확정",
         subRegion: "휴천1동, 휴천2동",
         bio: [
             "영주시 마선거구 후보"
@@ -2985,7 +3050,7 @@ const candidates = [
         metropolitan: "서울특별시",
         category: "기초의원",
         office: "강남구의회",
-        status: "후보",
+        status: "공천확정",
         subRegion: "압구정동, 청담동",
         bio: [
             "강남구 나선거구 후보"
@@ -3009,7 +3074,7 @@ const candidates = [
         metropolitan: "부산광역시",
         category: "기초의원",
         office: "금정구의회",
-        status: "후보",
+        status: "공천확정",
         subRegion: "남산동, 구서2동",
         bio: [
             "금정구 라선거구 후보"
@@ -3033,7 +3098,7 @@ const candidates = [
         metropolitan: "경기도",
         category: "기초의원",
         office: "과천시의회",
-        status: "후보",
+        status: "공천확정",
         subRegion: "갈현동, 문원동, 부림동, 원문동",
         bio: [
             "과천시 나선거구 후보"
@@ -3057,7 +3122,7 @@ const candidates = [
         metropolitan: "경기도",
         category: "기초의원",
         office: "고양시의회",
-        status: "후보",
+        status: "공천확정",
         subRegion: "일산1동, 탄현1동, 탄현2동",
         bio: [
             "고양시 차선거구 후보"
@@ -3081,7 +3146,7 @@ const candidates = [
         metropolitan: "경기도",
         category: "기초의원",
         office: "양평군의회",
-        status: "후보",
+        status: "공천확정",
         subRegion: "서종면, 양서면, 양평읍, 옥천면",
         bio: [
             "양평군 가선거구 후보"
@@ -3119,10 +3184,10 @@ const candidates = [
         decl: "#",
         dateAdded: "2026-03-16",
         coords: [
-            37.206,
-            127.075
+            37.170497,
+            127.102412
         ]
-    }
+    },
 ];
 
 
