@@ -129,6 +129,7 @@ const candidates = [
         region: "전남광주통합특별시",
         category: "광역단체장",
         office: "전남광주통합특별시장",
+        status: "출마선언",
         bio: [
             "광주시당 위원장",
             "서구 을 당협위원장"
@@ -137,7 +138,6 @@ const candidates = [
         sns: {
             fb: "https://www.facebook.com/profile.php?id=1000075888273756",
             ig: "https://www.instagram.com/hyun_soo_ch9/",
-            yt: "https://www.youtube.com/@%EC%B5%9C%ED%98%84%EC%88%98TV"
         },
         pledge: "#",
         decl: "https://www.youtube.com/live/zNKugaDviEM",
@@ -3098,7 +3098,31 @@ const candidates = [
             37.4914,
             127.4875
         ]
-    }
+    },
+    {
+        name: "이세원",
+        region: "경기 화성시",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "화성시의회",
+        status: "출마예정",
+        subRegion: "동탄7동, 동탄8동, 동탄9동",
+        bio: [
+            "화성시 마선거구 출마예정"
+        ],
+        photo: "",
+        district: "마",
+        sns: {
+            fb: "#"
+        },
+        pledge: "https://policy.reformparty.kr/map?region_code=41&election_type=local_council&district_code=41%3A%ED%99%94%EC%84%B1%EC%8B%9C%3A%EB%A7%88%EC%84%A0%EA%B1%B0%EA%B5%AC",
+        decl: "#",
+        dateAdded: "2026-03-16",
+        coords: [
+            37.2060,
+            127.0750
+        ]
+    },
 ];
 
 
