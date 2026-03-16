@@ -142,7 +142,7 @@ const candidates = [
         photo: "https://i.imgur.com/mzd1dts.jpeg",
         sns: {
             fb: "https://www.facebook.com/profile.php?id=1000075888273756",
-            ig: "https://www.instagram.com/hyun_soo_ch9/",
+            ig: "https://www.instagram.com/hyun_soo_ch9/"
         },
         pledge: "#",
         decl: "https://www.youtube.com/live/zNKugaDviEM",
@@ -3187,7 +3187,7 @@ const candidates = [
             37.170497,
             127.102412
         ]
-    },
+    }
 ];
 
 
