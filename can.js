@@ -142,7 +142,7 @@ const candidates = [
         photo: "https://i.imgur.com/mzd1dts.jpeg",
         sns: {
             fb: "https://www.facebook.com/profile.php?id=1000075888273756",
-            ig: "https://www.instagram.com/hyun_soo_ch9/"
+            ig: "https://www.instagram.com/hyun_soo_ch9/",
         },
         pledge: "#",
         decl: "https://www.youtube.com/live/zNKugaDviEM",
@@ -358,7 +358,7 @@ const candidates = [
             "전) 산업통상자원부",
             "동해자유무역원 원장"
         ],
-        photo: "https://cdn.kado.net/news/photo/201801/895272_365485_3640.jpg",
+        photo: "https://i.imgur.com/r85Zjfb.png",
         sns: {
             fb: "#"
         },
@@ -1655,7 +1655,7 @@ const candidates = [
         status: "예비후보",
         subRegion: "충장동, 동명동, 계림1동, 계림2동, 산수1동, 산수2동",
         bio: [
-            "<span style='letter-spacing:-0.15em;'>개혁신당 광주광역시 지역발전특위 위원장</span>",
+            "<span style='letter-spacing:-0.15em;'>개혁신당 광주광역시 지역발전특위 부위원장</span>",
             "전)동구·남구 을 당협위원장",
             "21대 대선 선대위 홍보부본부장"
         ],
@@ -2144,7 +2144,7 @@ const candidates = [
         bio: [
             "개혁신당 안산시 지역발전특위 부위원장"
         ],
-        photo: "https://i.imgur.com/nihgF8a.png",
+        photo: "https://i.imgur.com/dwYubSe.png",
         district: "가",
         sns: {
             ig: "https://www.instagram.com/jhchoi_ansan4/"
@@ -2822,7 +2822,7 @@ const candidates = [
         sns: {
             fb: "https://www.facebook.com/JooWooKim",
             ig: "https://www.instagram.com/kimjoowoo/",
-            blog: "https://blog.naver.com/kimjoowoo"
+            blog: "https://blog.naver.com/kimjoowoo",
         },
         pledge: "#",
         decl: "#",
@@ -2979,6 +2979,7 @@ const candidates = [
             126.7824
         ]
     },
+
     {
         name: "이재범",
         region: "경기 평택시",
@@ -3191,7 +3192,7 @@ const candidates = [
         sns: {
             fb: "#",
             ig: "https://www.instagram.com/leewanggug/",
-            yt: "https://www.youtube.com/@coreanomango"
+            yt: "https://www.youtube.com/@coreanomango",
         },
         pledge: "#",
         decl: "#",
@@ -3200,7 +3201,7 @@ const candidates = [
             35.8687,
             128.5934
         ]
-    }
+    },
 ];
 
 
