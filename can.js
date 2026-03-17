@@ -142,7 +142,7 @@ const candidates = [
         photo: "https://i.imgur.com/mzd1dts.jpeg",
         sns: {
             fb: "https://www.facebook.com/profile.php?id=1000075888273756",
-            ig: "https://www.instagram.com/hyun_soo_ch9/"
+            ig: "https://www.instagram.com/hyun_soo_ch9/",
         },
         pledge: "#",
         decl: "https://www.youtube.com/live/zNKugaDviEM",
@@ -835,10 +835,12 @@ const candidates = [
         metropolitan: "서울특별시",
         category: "기초의원",
         office: "성동구의원",
-        status: "공천확정",
+        age: 58,
+        status: "예비후보",
         subRegion: "마장동, 사근동, 송정동, 용답동",
         bio: [
-            "성동구 다선거구 후보"
+            "변리사",
+            "전) 정보통신부 서기관"
         ],
         photo: "",
         district: "다",
@@ -894,7 +896,7 @@ const candidates = [
             "개혁신당 영등포구 지역발전특위 부위원장",
             "배우"
         ],
-        photo: "",
+        photo: "https://i.imgur.com/Z1SVjJ8.png",
         district: "사",
         sns: {
             fb: "#",
@@ -1652,7 +1654,8 @@ const candidates = [
         status: "예비후보",
         subRegion: "충장동, 동명동, 계림1동, 계림2동, 산수1동, 산수2동",
         bio: [
-            "동구·남구 을 당협위원장",
+            "<span style='letter-spacing:-0.15em;'>개혁신당 광주광역시 지역발전특위 위원장</span>",
+            "전)동구·남구 을 당협위원장",
             "21대 대선 선대위 홍보부본부장"
         ],
         photo: "https://i.imgur.com/cah0vOW.png",
@@ -2816,7 +2819,9 @@ const candidates = [
         photo: "",
         district: "가",
         sns: {
-            fb: "#"
+            fb: "https://www.facebook.com/JooWooKim",
+            ig: "https://www.instagram.com/kimjoowoo/",
+            blog: "https://blog.naver.com/kimjoowoo",
         },
         pledge: "#",
         decl: "#",
@@ -2883,7 +2888,7 @@ const candidates = [
         status: "공천확정",
         subRegion: "천호1동, 천호3동",
         bio: [
-            "서울시장 대변인"
+            "서울시 대변인"
         ],
         photo: "",
         district: "라",
@@ -2928,10 +2933,12 @@ const candidates = [
         metropolitan: "인천광역시",
         category: "기초의원",
         office: "서해구의회",
-        status: "공천확정",
+        age: 37,
+        status: "예비후보",
         subRegion: "가정1동, 가정2동, 가정3동, 신현원창동",
         bio: [
-            "서해구 다선거구 후보"
+            "<span style='letter-spacing:-0.15em;'>현) 유비케어 산업안전보건위원회 근로자대표</span>",
+            "루원호반베르디움 더 센트럴 동대표"
         ],
         photo: "https://i.imgur.com/Gy1fbgP.png",
         district: "다",
@@ -2971,31 +2978,7 @@ const candidates = [
             126.7824
         ]
     },
-    {
-        name: "신성호",
-        region: "경기 안산시",
-        metropolitan: "경기도",
-        category: "기초의원",
-        office: "안산시의회",
-        age: 30,
-        status: "예비후보",
-        subRegion: "호수동, 중앙동, 대부동",
-        bio: [
-            "안산시 아선거구 후보"
-        ],
-        photo: "",
-        district: "아",
-        sns: {
-            fb: "#"
-        },
-        pledge: "#",
-        decl: "#",
-        dateAdded: "2026-03-09",
-        coords: [
-            37.3218,
-            126.8452
-        ]
-    },
+
     {
         name: "이재범",
         region: "경기 평택시",
@@ -3050,10 +3033,11 @@ const candidates = [
         metropolitan: "서울특별시",
         category: "기초의원",
         office: "강남구의회",
-        status: "공천확정",
+        age: 28,
+        status: "예비후보",
         subRegion: "압구정동, 청담동",
         bio: [
-            "강남구 나선거구 후보"
+            "개혁신당 강남구 지역발전특위 부위원장"
         ],
         photo: "",
         district: "나",
@@ -3122,10 +3106,12 @@ const candidates = [
         metropolitan: "경기도",
         category: "기초의원",
         office: "고양시의회",
-        status: "공천확정",
+        age: 26,
+        status: "예비후보",
         subRegion: "일산1동, 탄현1동, 탄현2동",
         bio: [
-            "고양시 차선거구 후보"
+            "개혁신당 고양시 지역발전특위 부위원장",
+            "개혁신당 AI특위 위원장"
         ],
         photo: "",
         district: "차",
@@ -3187,7 +3173,32 @@ const candidates = [
             37.170497,
             127.102412
         ]
-    }
+    },
+    {
+        name: "이왕국",
+        region: "대구 중구",
+        metropolitan: "대구광역시",
+        category: "기초의원",
+        office: "중구의원",
+        status: "출마예정",
+        district: "나",
+        subRegion: "성내2동, 성내3동, 대신동, 남산2동, 남산3동, 남산4동",
+        bio: [
+            "중구 나선거구 출마예정"
+        ],
+        photo: "",
+        sns: {
+            fb: "#",
+            ig: "https://www.instagram.com/leewanggug/"
+        },
+        pledge: "#",
+        decl: "#",
+        dateAdded: "2026-03-17",
+        coords: [
+            35.8687,
+            128.5934
+        ]
+    },
 ];
 
 

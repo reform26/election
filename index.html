@@ -223,6 +223,12 @@
             z-index: 10; box-shadow: 0 2px 4px rgba(0,0,0,0.05); white-space: nowrap;
         }
 
+        @media (min-width: 768px) {
+            #prelim-stats-card .age-label-text { font-size: 11px !important; }
+            #prelim-stats-card .age-val-text { font-size: 16px !important; }
+            #prelim-stats-card .age-unit-text { font-size: 11px !important; }
+            #ps-age-grid { grid-template-columns: repeat(6, 1fr) !important; }
+        }
         .confirmed-badge {
             position: absolute; bottom: 8px; right: 10px;
             background-color: #FF6600; 
@@ -984,6 +990,33 @@
                     <div id="ps-youth-pct" style="font-size:10px; font-weight:700; color:#64748b; width:38px; text-align:right; flex-shrink:0;">-</div>
                 </div>
             </div>
+            <hr style="border:none; border-top:0.5px solid #e2e8f0; margin:10px 0;">
+            <div id="ps-age-grid" style="display:grid; grid-template-columns:repeat(3,1fr); gap:5px;">
+                <div id="ps-age-10" style="background:#fff4ee; border-radius:8px; padding:5px 8px; display:flex; align-items:center; justify-content:space-between; gap:4px;">
+                    <span style="font-size:9px; font-weight:700; color:#FF6600; white-space:nowrap;" class="age-label-text">20대이하</span>
+                    <span style="font-size:13px; font-weight:800; color:#FF6600; white-space:nowrap;" class="age-val-text">-<span style="font-size:9px; font-weight:500; color:#FF6600;" class="age-unit-text">명</span></span>
+                </div>
+                <div id="ps-age-30" style="background:#fff4ee; border-radius:8px; padding:5px 8px; display:flex; align-items:center; justify-content:space-between; gap:4px;">
+                    <span style="font-size:9px; font-weight:700; color:#FF6600; white-space:nowrap;" class="age-label-text">30대</span>
+                    <span style="font-size:13px; font-weight:800; color:#FF6600; white-space:nowrap;" class="age-val-text">-<span style="font-size:9px; font-weight:500; color:#FF6600;" class="age-unit-text">명</span></span>
+                </div>
+                <div id="ps-age-40" style="background:#f8fafc; border-radius:8px; padding:5px 8px; display:flex; align-items:center; justify-content:space-between; gap:4px;">
+                    <span style="font-size:9px; font-weight:700; color:#94a3b8; white-space:nowrap;" class="age-label-text">40대</span>
+                    <span style="font-size:13px; font-weight:800; color:#0f172a; white-space:nowrap;" class="age-val-text">-<span style="font-size:9px; font-weight:500; color:#94a3b8;" class="age-unit-text">명</span></span>
+                </div>
+                <div id="ps-age-50" style="background:#f8fafc; border-radius:8px; padding:5px 8px; display:flex; align-items:center; justify-content:space-between; gap:4px;">
+                    <span style="font-size:9px; font-weight:700; color:#94a3b8; white-space:nowrap;" class="age-label-text">50대</span>
+                    <span style="font-size:13px; font-weight:800; color:#0f172a; white-space:nowrap;" class="age-val-text">-<span style="font-size:9px; font-weight:500; color:#94a3b8;" class="age-unit-text">명</span></span>
+                </div>
+                <div id="ps-age-60" style="background:#f8fafc; border-radius:8px; padding:5px 8px; display:flex; align-items:center; justify-content:space-between; gap:4px;">
+                    <span style="font-size:9px; font-weight:700; color:#94a3b8; white-space:nowrap;" class="age-label-text">60대</span>
+                    <span style="font-size:13px; font-weight:800; color:#0f172a; white-space:nowrap;" class="age-val-text">-<span style="font-size:9px; font-weight:500; color:#94a3b8;" class="age-unit-text">명</span></span>
+                </div>
+                <div id="ps-age-70" style="background:#f8fafc; border-radius:8px; padding:5px 8px; display:flex; align-items:center; justify-content:space-between; gap:4px;">
+                    <span style="font-size:9px; font-weight:700; color:#94a3b8; white-space:nowrap;" class="age-label-text">70대이상</span>
+                    <span style="font-size:13px; font-weight:800; color:#0f172a; white-space:nowrap;" class="age-val-text">-<span style="font-size:9px; font-weight:500; color:#94a3b8;" class="age-unit-text">명</span></span>
+                </div>
+            </div>
         </div>
 
         <!-- 6. 동네 검색 -->
@@ -1248,7 +1281,7 @@
         </div>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="can.js?v=0316.02" defer></script>   <script src="data1.js?v=0223.05" defer></script> <script src="search.js?v=0315.01" defer></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="can.js?v=0316.01" defer></script>   <script src="data1.js?v=0223.05" defer></script> <script src="search.js?v=0315.01" defer></script>
     <script>
         let currentModalCandidateName = '';
         let showOnlyConfirmed = false;
@@ -1923,8 +1956,21 @@
                 const youth = withAge.filter(c => c.age >= 10 && c.age <= 39).length;
                 const youthPct = total ? (youth / total * 100).toFixed(1) : "0.0";
 
+                const age10 = withAge.filter(c => c.age <= 29).length;
+                const age30 = withAge.filter(c => c.age >= 30 && c.age <= 39).length;
+                const age40 = withAge.filter(c => c.age >= 40 && c.age <= 49).length;
+                const age50 = withAge.filter(c => c.age >= 50 && c.age <= 59).length;
+                const age60 = withAge.filter(c => c.age >= 60 && c.age <= 69).length;
+                const age70 = withAge.filter(c => c.age >= 70).length;
+
                 document.getElementById("ps-total-num").innerText = total;
                 document.getElementById("ps-age-num").innerText = avgAge.toFixed(1);
+                document.getElementById("ps-age-10").querySelector("span:last-child").innerHTML = age10 + "<span style=\"font-size:9px;font-weight:500;color:#FF6600;\">명</span>";
+                document.getElementById("ps-age-30").querySelector("span:last-child").innerHTML = age30 + "<span style=\"font-size:9px;font-weight:500;color:#FF6600;\">명</span>";
+                document.getElementById("ps-age-40").querySelector("span:last-child").innerHTML = age40 + "<span style=\"font-size:9px;font-weight:500;color:#94a3b8;\">명</span>";
+                document.getElementById("ps-age-50").querySelector("span:last-child").innerHTML = age50 + "<span style=\"font-size:9px;font-weight:500;color:#94a3b8;\">명</span>";
+                document.getElementById("ps-age-60").querySelector("span:last-child").innerHTML = age60 + "<span style=\"font-size:9px;font-weight:500;color:#94a3b8;\">명</span>";
+                document.getElementById("ps-age-70").querySelector("span:last-child").innerHTML = age70 + "<span style=\"font-size:9px;font-weight:500;color:#94a3b8;\">명</span>";
                 setTimeout(() => {
                     document.getElementById("ps-gender-bar").style.width = femalePct + "%";
                     document.getElementById("ps-gender-pct").innerText = femalePct + "%";
