@@ -363,15 +363,15 @@
         const html = suggestions.map(s => {
             const icon = s.type === 'city' ? 'building-2' : 'map-pin';
             return `
-            <button onclick="executeAutocomplete('${s.searchVal}')" class="flex items-center gap-3 w-full text-left bg-white dark:bg-slate-900 border-2 border-transparent hover:border-[#FF6600] hover:bg-orange-50 dark:hover:bg-orange-900/20 rounded-xl px-4 py-2.5 transition-all group">
+            <button onclick="executeAutocomplete('${s.searchVal}')" class="flex items-center gap-3 w-full text-left bg-white dark:bg-slate-900 border-2 border-transparent hover:border-[#FF6600] hover:bg-orange-50 dark:hover:bg-orange-900/20 rounded-xl px-3 py-2 transition-all group">
                 <div class="bg-gray-100 dark:bg-slate-800 group-hover:bg-[#FF6600] p-1.5 rounded-lg transition-colors flex-shrink-0">
-                    <i data-lucide="${icon}" class="w-4 h-4 text-gray-400 dark:text-slate-400 group-hover:text-white transition-colors"></i>
+                    
                 </div>
                 <div class="flex-1 min-w-0 flex items-baseline gap-2">
                     <span class="text-sm font-bold text-gray-900 dark:text-white truncate">${s.displayText}</span>
                     <span class="text-[11px] text-gray-400 dark:text-slate-500 font-medium truncate">${s.desc}</span>
                 </div>
-                <i data-lucide="arrow-up-left" class="w-3.5 h-3.5 text-gray-300 group-hover:text-[#FF6600] opacity-0 group-hover:opacity-100 transition-all flex-shrink-0"></i>
+                
             </button>`;
         }).join('');
 
@@ -380,8 +380,7 @@
             <p class="text-[10px] text-gray-400 font-bold mb-2 ml-1">💡 추천 검색어</p>
             <div class="flex flex-col gap-1">${html}</div>
         </div>`;
-        lucide.createIcons();
-    }
+}
 
     window.executeAutocomplete = function(val) {
         const input = document.getElementById('dong-search-input');
@@ -459,17 +458,16 @@
 
         if (!filtered.length) {
             container.innerHTML = `
-            <div class="flex flex-col items-center justify-center py-20 text-center">
+            <div class="flex flex-col items-center justify-center py-8 text-center">
                 <div class="bg-gray-100 dark:bg-slate-700 rounded-2xl p-4 mb-3">
-                    <i data-lucide="search-x" class="w-10 h-10 text-gray-300 dark:text-slate-500"></i>
+                    
                 </div>
                 <p class="text-base font-black text-gray-400 dark:text-slate-500">해당 지역에 등록된 후보가 없어요</p>
                 <button onclick="resetSearchFilter()" class="mt-4 inline-flex items-center gap-2 px-5 py-2.5 bg-[#FF6600] text-white rounded-xl font-black text-sm hover:bg-orange-700 transition-colors">
-                    <i data-lucide="refresh-ccw" class="w-4 h-4"></i>전체 보기로 돌아가기
+                    전체 보기로 돌아가기
                 </button>
             </div>`;
-            lucide.createIcons();
-            return;
+return;
         }
 
         let html = `
@@ -478,7 +476,7 @@
                 🔍 검색 결과 <span class="text-[#FF6600]">${filtered.length}명</span>
             </h2>
             <button onclick="resetSearchFilter()" class="inline-flex items-center gap-1.5 px-4 py-2 bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-slate-300 rounded-xl font-black text-sm hover:bg-gray-200 transition-colors">
-                <i data-lucide="x" class="w-4 h-4"></i>필터 해제
+                필터 해제
             </button>
         </div>`;
 
@@ -508,8 +506,7 @@
         }
 
         container.innerHTML = html;
-        lucide.createIcons();
-    }
+}
 
     // ── 10. 검색 박스 UI 및 제어 ───────────────────────────────
     window.renderDongSearch = function () {
@@ -517,10 +514,10 @@
         if (!container) return;
 
         container.innerHTML = `
-        <div class="bg-white dark:bg-slate-800 border border-orange-100 dark:border-slate-700 rounded-[1.5rem] md:rounded-[2rem] p-5 md:p-7 shadow-sm">
-            <div class="flex items-center gap-3 mb-5">
-                <div class="bg-orange-100 dark:bg-orange-900/30 p-2.5 rounded-xl">
-                    <i data-lucide="search" class="w-5 h-5 text-[#FF6600]"></i>
+        <div class="bg-white dark:bg-slate-800 border border-orange-100 dark:border-slate-700 rounded-[1.5rem] md:rounded-[2rem] p-3 md:p-4 shadow-sm">
+            <div class="flex items-center gap-3 mb-3">
+                <div class="bg-orange-100 dark:bg-orange-900/30 p-2 rounded-xl">
+                    
                 </div>
                 <div>
                     <h2 class="font-black text-gray-900 dark:text-white text-lg leading-tight">내 동네 후보 찾기</h2>
@@ -534,36 +531,34 @@
                     type="text"
                     autocomplete="off"
                     placeholder="예) 종로구, 이곡1동, 병점동..."
-                    class="w-full border-2 border-orange-200 dark:border-orange-900/50 rounded-2xl px-5 py-3.5 pr-32 text-sm font-bold bg-white dark:bg-slate-900 text-gray-900 dark:text-white placeholder-gray-300 dark:placeholder-slate-600 focus:outline-none focus:border-[#FF6600] transition-colors"
+                    class="w-full border-2 border-orange-200 dark:border-orange-900/50 rounded-2xl px-4 py-2.5 pr-28 text-sm font-bold bg-white dark:bg-slate-900 text-gray-900 dark:text-white placeholder-gray-300 dark:placeholder-slate-600 focus:outline-none focus:border-[#FF6600] transition-colors"
                     oninput="onDongSearchInput(this.value, false)"
                     onkeydown="if(event.key==='Enter') onDongSearchInput(this.value, true)"
                 />
                 <div class="absolute right-2 top-1/2 -translate-y-1/2 flex gap-1.5 items-center">
                     <button id="search-reset-btn" onclick="resetSearchFilter()" class="hidden items-center gap-1 bg-gray-100 dark:bg-slate-700 text-gray-500 dark:text-slate-300 rounded-xl px-2.5 py-1.5 text-xs font-black hover:bg-gray-200 transition-colors">
-                        <i data-lucide="x" class="w-3 h-3"></i>초기화
+                        초기화
                     </button>
                     <button onclick="onDongSearchInput(document.getElementById('dong-search-input').value, true)" class="bg-[#FF6600] text-white rounded-xl p-2 hover:bg-orange-700 transition-colors">
-                        <i data-lucide="search" class="w-4 h-4"></i>
+                        
                     </button>
                 </div>
             </div>
             <p class="text-[10px] text-gray-400 dark:text-slate-600 font-medium mb-1">※ 현재 서울 · 경기 · 대구 지역 지원 | 초성 검색 지원</p>
 
-            <div id="dong-search-result" class="mt-3"></div>
+            <div id="dong-search-result" class="mt-2"></div>
         </div>
 
-        <div id="search-active-banner" class="hidden mt-3 items-center justify-between bg-orange-50 dark:bg-orange-900/20 border border-orange-200 dark:border-orange-800/50 rounded-2xl px-4 py-3">
+        <div id="search-active-banner" class="hidden mt-3 items-center justify-between bg-orange-50 dark:bg-orange-900/20 border border-orange-200 dark:border-orange-800/50 rounded-2xl px-3 py-2">
             <div class="flex items-center gap-2 min-w-0">
-                <i data-lucide="filter" class="w-4 h-4 text-[#FF6600] flex-shrink-0"></i>
+                
                 <span id="search-active-text" class="text-sm font-black text-orange-600 dark:text-orange-400 truncate"></span>
             </div>
             <button onclick="resetSearchFilter()" class="flex items-center gap-1 text-xs font-black text-gray-500 dark:text-slate-400 hover:text-gray-700 transition-colors flex-shrink-0 ml-3">
-                <i data-lucide="x" class="w-3 h-3"></i>해제
+                해제
             </button>
         </div>`;
-
-        lucide.createIcons();
-    };
+};
 
     let searchTimeout = null;
     window.onDongSearchInput = function (value, immediate) {
@@ -597,16 +592,15 @@
         const labelText = `'${result.cityName}' 관련 후보 ${result.candidates.length}명 표시 중`;
         if (resultEl) {
             resultEl.innerHTML = `
-            <div class="bg-orange-50 dark:bg-orange-900/20 rounded-xl px-4 py-3 mb-1">
+            <div class="bg-orange-50 dark:bg-orange-900/20 rounded-xl px-3 py-2 mb-1">
                 <div class="flex items-center gap-2">
-                    <i data-lucide="map-pin" class="w-3.5 h-3.5 text-[#FF6600]"></i>
+                    
                     <span class="text-xs font-black text-gray-700 dark:text-slate-200">${result.cityName}</span>
                     <span class="text-[10px] text-gray-400">· 후보 ${result.candidates.length}명</span>
                 </div>
                 <p class="text-[10px] text-gray-400 mt-2">↓ 아래 목록이 검색 결과로 필터링됩니다</p>
             </div>`;
-            lucide.createIcons();
-        }
+}
         window.applySearchFilter(result.candidates);
         showBannerAndScroll(labelText);
     }
@@ -628,7 +622,7 @@
             
             return `<div class="mb-4 last:mb-0">
                 <div class="flex items-center gap-2 mb-1.5">
-                    <i data-lucide="map-pin" class="w-3.5 h-3.5 text-[#FF6600]"></i>
+                    
                     <span class="text-[13px] font-black text-gray-800 dark:text-slate-200">${r.districtName}</span>
                     <span class="text-[10px] text-gray-400">· ${r.short} · 후보 ${total}명</span>
                 </div>
@@ -643,12 +637,11 @@
 
         if (resultEl) {
             resultEl.innerHTML = `
-            <div class="bg-orange-50 dark:bg-orange-900/20 rounded-xl px-4 py-3 mb-1">
+            <div class="bg-orange-50 dark:bg-orange-900/20 rounded-xl px-3 py-2 mb-1">
                 ${infoRows}
                 <p class="text-[10px] text-gray-400 mt-3 pt-2 border-t border-orange-200/50 dark:border-orange-800/30">↓ 아래 목록이 검색 결과로 필터링됩니다</p>
             </div>`;
-            lucide.createIcons();
-        }
+}
 
         const labelText = `'${query}' (${results.map(r=>r.districtName).join(', ')}) 후보 ${matchedCandidates.length}명 표시 중`;
         window.applySearchFilter(matchedCandidates);
@@ -665,30 +658,29 @@
 
             return `
             <button onclick="selectSpecificDistrict('${query}', '${d.districtName}', '${d.metropolitan}')"
-                class="flex items-start gap-3 w-full text-left bg-white dark:bg-slate-900 border-2 border-gray-100 dark:border-slate-700 hover:border-[#FF6600] hover:bg-orange-50 dark:hover:bg-orange-900/20 rounded-2xl px-4 py-3.5 transition-all group">
+                class="flex items-start gap-3 w-full text-left bg-white dark:bg-slate-900 border-2 border-gray-100 dark:border-slate-700 hover:border-[#FF6600] hover:bg-orange-50 dark:hover:bg-orange-900/20 rounded-2xl px-3 py-2.5 transition-all group">
                 <div class="bg-orange-100 dark:bg-orange-900/30 group-hover:bg-[#FF6600] p-2 rounded-xl transition-colors flex-shrink-0 mt-0.5">
-                    <i data-lucide="map-pin" class="w-4 h-4 text-[#FF6600] group-hover:text-white transition-colors"></i>
+                    
                 </div>
                 <div class="flex-1 min-w-0">
                     <p class="font-black text-gray-900 dark:text-white text-sm truncate">${d.districtName}</p>
                     ${mDongsStr ? `<p class="text-[11px] font-bold text-[#FF6600] mt-1.5 leading-tight truncate">💡 검색된 동: ${mDongsStr}</p>` : ''}
                     <p class="text-[11px] text-gray-500 font-medium mt-1.5 leading-relaxed line-clamp-2 break-keep">📍 관할: ${allDongsStr}</p>
                 </div>
-                <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 ml-1 mt-1 flex-shrink-0 group-hover:text-[#FF6600] transition-colors"></i>
+                
             </button>`;
         }).join('');
 
         resultEl.innerHTML = `
         <div class="py-1">
             <div class="flex items-center gap-2 mb-2">
-                <i data-lucide="help-circle" class="w-4 h-4 text-[#FF6600]"></i>
+                
                 <p class="text-sm font-black text-gray-700 dark:text-slate-200">'${query}'(이)가 여러 선거구에 나뉘어 있어요</p>
             </div>
             <p class="text-xs text-gray-400 dark:text-slate-500 mb-3">어느 선거구를 찾으시나요?</p>
             <div class="flex flex-col gap-2">${btnHtml}</div>
         </div>`;
-        lucide.createIcons();
-    }
+}
 
     // [다중 도시 선택 화면]
     function renderCitySelectionForDong(query, uniqueCities) {
@@ -696,29 +688,28 @@
         const btnHtml = uniqueCities.map(c => {
             return `
             <button onclick="selectSpecificCityForDong('${query}', '${c.city}', '${c.metro}')"
-                class="flex items-center gap-3 w-full text-left bg-white dark:bg-slate-900 border-2 border-gray-100 dark:border-slate-700 hover:border-[#FF6600] hover:bg-orange-50 dark:hover:bg-orange-900/20 rounded-2xl px-4 py-3.5 transition-all group">
+                class="flex items-center gap-3 w-full text-left bg-white dark:bg-slate-900 border-2 border-gray-100 dark:border-slate-700 hover:border-[#FF6600] hover:bg-orange-50 dark:hover:bg-orange-900/20 rounded-2xl px-3 py-2.5 transition-all group">
                 <div class="bg-orange-100 dark:bg-orange-900/30 group-hover:bg-[#FF6600] p-2 rounded-xl transition-colors flex-shrink-0">
-                    <i data-lucide="map-pin" class="w-4 h-4 text-[#FF6600] group-hover:text-white transition-colors"></i>
+                    
                 </div>
                 <div>
                     <p class="font-black text-gray-900 dark:text-white text-sm">${c.short} ${c.city}</p>
                     <p class="text-[11px] text-gray-400 font-medium mt-0.5">선거구 ${c.districts.length}개 발견</p>
                 </div>
-                <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 ml-auto flex-shrink-0 group-hover:text-[#FF6600] transition-colors"></i>
+                
             </button>`;
         }).join('');
 
         resultEl.innerHTML = `
         <div class="py-1">
             <div class="flex items-center gap-2 mb-2">
-                <i data-lucide="help-circle" class="w-4 h-4 text-[#FF6600]"></i>
+                
                 <p class="text-sm font-black text-gray-700 dark:text-slate-200">여러 지역이 발견되었어요</p>
             </div>
             <p class="text-xs text-gray-400 dark:text-slate-500 mb-3">어느 지역을 찾으시나요?</p>
             <div class="flex flex-col gap-2">${btnHtml}</div>
         </div>`;
-        lucide.createIcons();
-    }
+}
 
     function handleDongResults(query, results) {
         const uniqueCities = [];
@@ -784,13 +775,12 @@
             resultEl.innerHTML = `
             <div class="flex flex-col items-center justify-center py-6 text-center">
                 <div class="bg-gray-100 dark:bg-slate-700 rounded-xl p-3 mb-2">
-                    <i data-lucide="map-pin-off" class="w-6 h-6 text-gray-300 dark:text-slate-500"></i>
+                    
                 </div>
                 <p class="text-sm font-black text-gray-400">'${query}'을(를) 찾지 못했어요</p>
                 <p class="text-xs text-gray-300 dark:text-slate-600 mt-1">서울·경기·대구 행정동 또는 시·군·구 이름을 정확히 입력해 주세요</p>
             </div>`;
-            lucide.createIcons();
-            return;
+return;
         }
 
         if (result.type === 'multi-city') {
@@ -798,28 +788,27 @@
             const btnHtml = matchedCities.map(c => {
                 return `
                 <button onclick="selectSpecificCity('${query}', '${c.metro}')"
-                    class="flex items-center gap-3 w-full text-left bg-white dark:bg-slate-900 border-2 border-gray-100 dark:border-slate-700 hover:border-[#FF6600] hover:bg-orange-50 dark:hover:bg-orange-900/20 rounded-2xl px-4 py-3.5 transition-all group">
+                    class="flex items-center gap-3 w-full text-left bg-white dark:bg-slate-900 border-2 border-gray-100 dark:border-slate-700 hover:border-[#FF6600] hover:bg-orange-50 dark:hover:bg-orange-900/20 rounded-2xl px-3 py-2.5 transition-all group">
                     <div class="bg-orange-100 dark:bg-orange-900/30 group-hover:bg-[#FF6600] p-2 rounded-xl transition-colors flex-shrink-0">
-                        <i data-lucide="map-pin" class="w-4 h-4 text-[#FF6600] group-hover:text-white transition-colors"></i>
+                        
                     </div>
                     <div>
                         <p class="font-black text-gray-900 dark:text-white text-sm">${c.short} ${c.city}</p>
                     </div>
-                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-300 ml-auto flex-shrink-0 group-hover:text-[#FF6600] transition-colors"></i>
+                    
                 </button>`;
             }).join('');
 
             resultEl.innerHTML = `
             <div class="py-1">
                 <div class="flex items-center gap-2 mb-2">
-                    <i data-lucide="help-circle" class="w-4 h-4 text-[#FF6600]"></i>
+                    
                     <p class="text-sm font-black text-gray-700 dark:text-slate-200">여러 지역이 발견되었어요</p>
                 </div>
                 <p class="text-xs text-gray-400 dark:text-slate-500 mb-3">어느 지역을 찾으시나요?</p>
                 <div class="flex flex-col gap-2">${btnHtml}</div>
             </div>`;
-            lucide.createIcons();
-            return;
+return;
         }
 
         if (result.type === 'city') {

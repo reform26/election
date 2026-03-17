@@ -65,7 +65,7 @@ const candidates = [
         status: "예비후보",
         preliminary: true,
         bio: [
-            "인천시당 위원장"
+            "인천광역시당 위원장"
         ],
         photo: "https://i.imgur.com/aNqvWiU.jpeg",
         sns: {
@@ -88,7 +88,7 @@ const candidates = [
         age: 58,
         status: "예비후보",
         bio: [
-            "대구시당 위원장"
+            "대구광역시당 위원장"
         ],
         photo: "https://i.imgur.com/1FbAb5u.jpeg",
         sns: {
@@ -111,7 +111,7 @@ const candidates = [
         age: 29,
         status: "예비후보",
         bio: [
-            "대전시당 위원장"
+            "대전광역시당 위원장"
         ],
         photo: "https://i.imgur.com/fcEHXnS.png",
         cardFit: "cover",
@@ -136,13 +136,13 @@ const candidates = [
         office: "전남광주통합특별시장",
         status: "출마선언",
         bio: [
-            "광주시당 위원장",
+            "광주광역시당 위원장",
             "서구 을 당협위원장"
         ],
         photo: "https://i.imgur.com/mzd1dts.jpeg",
         sns: {
             fb: "https://www.facebook.com/profile.php?id=1000075888273756",
-            ig: "https://www.instagram.com/hyun_soo_ch9/"
+            ig: "https://www.instagram.com/hyun_soo_ch9/",
         },
         pledge: "#",
         decl: "https://www.youtube.com/live/zNKugaDviEM",
@@ -159,7 +159,7 @@ const candidates = [
         office: "세종특별자치시장",
         status: "공천확정",
         bio: [
-            "세종시당 창준위원장",
+            "세종특별자치시당 창준위장",
             "세종시 갑 당협위원장"
         ],
         photo: "https://image.dnews.co.kr/photo/photo/2024/11/21/202411211945335960037-2-565966.jpg",
@@ -212,7 +212,7 @@ const candidates = [
             "서울시당 수석대변인",
             "제21대 대선 선대위 조직부본부장"
         ],
-        photo: "https://i.imgur.com/9IVX879.jpeg",
+        photo: "https://i.imgur.com/moDKFx9.png",
         sns: {
             fb: "https://www.facebook.com/profile.php?id=61557084968016"
         },
@@ -281,7 +281,8 @@ const candidates = [
         gender: "f",
         status: "공천확정",
         bio: [
-            "관악구 갑 당협위원장"
+            "관악구 갑 당협위원장",
+            "정치컨설팅 공론 대표"
         ],
         photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQldYi95_jeH9ZscObQhU8SfeBkt7_id2CYecNX-bHuIl-NIOJ8r4XS_F4&s=10",
         sns: {
@@ -308,7 +309,7 @@ const candidates = [
             "경기도당 위원장",
             "전) 개혁신당 최고위원"
         ],
-        photo: "https://i.imgur.com/iK8aR6Y.jpeg",
+        photo: "https://i.imgur.com/gc9TjpX.png",
         sns: {
             fb: "https://www.facebook.com/seonggyun.jeon.7",
             ig: "https://www.instagram.com/jeonsk_reform/",
@@ -403,7 +404,7 @@ const candidates = [
         bio: [
             "제5,6대 서산시의원"
         ],
-        photo: "https://i.imgur.com/F4W51L5.jpeg",
+        photo: "https://i.imgur.com/Va7luHq.png",
         sns: {
             fb: ""
         },
@@ -1523,7 +1524,7 @@ const candidates = [
             "<span style='letter-spacing:-0.15em;'>개혁신당 대전동구 지역발전특위 부위원장</span>",
             "대전시당 자문위원"
         ],
-        photo: "https://i.imgur.com/MxyJ2sm.jpeg",
+        photo: "https://i.imgur.com/G5zWHas.png",
         district: "나",
         sns: {
             fb: "#",
@@ -2821,7 +2822,7 @@ const candidates = [
         sns: {
             fb: "https://www.facebook.com/JooWooKim",
             ig: "https://www.instagram.com/kimjoowoo/",
-            blog: "https://blog.naver.com/kimjoowoo"
+            blog: "https://blog.naver.com/kimjoowoo",
         },
         pledge: "#",
         decl: "#",
@@ -2888,7 +2889,7 @@ const candidates = [
         status: "공천확정",
         subRegion: "천호1동, 천호3동",
         bio: [
-            "서울시 대변인"
+            "서울시당 대변인"
         ],
         photo: "",
         district: "라",
@@ -2978,6 +2979,7 @@ const candidates = [
             126.7824
         ]
     },
+
     {
         name: "이재범",
         region: "경기 평택시",
@@ -3183,12 +3185,14 @@ const candidates = [
         district: "나",
         subRegion: "성내2동, 성내3동, 대신동, 남산2동, 남산3동, 남산4동",
         bio: [
-            "중구 나선거구 출마예정"
+            "예술가(음악,미술,문학)",
+            "미까사 대표"
         ],
-        photo: "",
+        photo: "https://i.imgur.com/QlaAAm4.png",
         sns: {
             fb: "#",
-            ig: "https://www.instagram.com/leewanggug/"
+            ig: "https://www.instagram.com/leewanggug/",
+            yt: "https://www.youtube.com/@coreanomango",
         },
         pledge: "#",
         decl: "#",
@@ -3197,7 +3201,7 @@ const candidates = [
             35.8687,
             128.5934
         ]
-    }
+    },
 ];
 
 
