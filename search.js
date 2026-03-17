@@ -506,6 +506,7 @@ return;
         }
 
         container.innerHTML = html;
+        if (typeof loadImagesSequentially === 'function') loadImagesSequentially();
 }
 
     // ── 10. 검색 박스 UI 및 제어 ───────────────────────────────
