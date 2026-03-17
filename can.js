@@ -142,7 +142,7 @@ const candidates = [
         photo: "https://i.imgur.com/mzd1dts.jpeg",
         sns: {
             fb: "https://www.facebook.com/profile.php?id=1000075888273756",
-            ig: "https://www.instagram.com/hyun_soo_ch9/",
+            ig: "https://www.instagram.com/hyun_soo_ch9/"
         },
         pledge: "#",
         decl: "https://www.youtube.com/live/zNKugaDviEM",
@@ -1967,7 +1967,7 @@ const candidates = [
         bio: [
             "경기도당 남양주시 경제특위 위원장",
             "지엔에스파트너스 교육이사",
-            "전)신한대, 명지전문대 겸임조교수",
+            "전)신한대, 명지전문대 겸임조교수"
         ],
         photo: "",
         district: "사",
@@ -2826,7 +2826,7 @@ const candidates = [
         sns: {
             fb: "https://www.facebook.com/JooWooKim",
             ig: "https://www.instagram.com/kimjoowoo/",
-            blog: "https://blog.naver.com/kimjoowoo",
+            blog: "https://blog.naver.com/kimjoowoo"
         },
         pledge: "#",
         decl: "#",
@@ -2983,7 +2983,6 @@ const candidates = [
             126.7824
         ]
     },
-
     {
         name: "이재범",
         region: "경기 평택시",
@@ -3196,7 +3195,7 @@ const candidates = [
         sns: {
             fb: "#",
             ig: "https://www.instagram.com/leewanggug/",
-            yt: "https://www.youtube.com/@coreanomango",
+            yt: "https://www.youtube.com/@coreanomango"
         },
         pledge: "#",
         decl: "#",
@@ -3205,7 +3204,7 @@ const candidates = [
             35.8687,
             128.5934
         ]
-    },
+    }
 ];
 
 
