@@ -142,7 +142,7 @@ const candidates = [
         photo: "https://i.imgur.com/mzd1dts.jpeg",
         sns: {
             fb: "https://www.facebook.com/profile.php?id=1000075888273756",
-            ig: "https://www.instagram.com/hyun_soo_ch9/"
+            ig: "https://www.instagram.com/hyun_soo_ch9/",
         },
         pledge: "#",
         decl: "https://www.youtube.com/live/zNKugaDviEM",
@@ -1788,7 +1788,8 @@ const candidates = [
         district: "사",
         subRegion: "중앙동, 금광1동, 금광2동, 은행1동, 은행2동",
         bio: [
-            "개혁신당 성남시 지역발전특위 부위원장"
+            "개혁신당 성남시 지역발전특위 부위원장",
+            "경기도당 성남시 행정안전특위 위원장"
         ],
         photo: "",
         sns: {
@@ -1837,6 +1838,7 @@ const candidates = [
         subRegion: "원미구 중1동, 중2동, 중3동, 중4동, 약대동",
         bio: [
             "<span style='letter-spacing:-0.12em;'>개혁신당 부천시 지역발전특위 부위원장</span>",
+            "<span style='letter-spacing:-0.12em;'>경기도당 부천시 도시정비특위 위원장</span>",
             "<span style='letter-spacing:-0.12em;'>현 현대흥립통합재건축추준비위 위원장</span>",
             "전 에어아시아재팬 항공승무원"
         ],
@@ -1890,7 +1892,7 @@ const candidates = [
         status: "공천확정",
         subRegion: "상현1동, 상현3동",
         bio: [
-            "용인시 사선거구 후보"
+            "경기도당 용인시 교육특위 위원장"
         ],
         photo: "",
         district: "사",
@@ -1963,9 +1965,9 @@ const candidates = [
         status: "예비후보",
         subRegion: "와부읍, 조안면, 금곡동, 진건읍, 퇴계원읍",
         bio: [
+            "경기도당 남양주시 경제특위 위원장",
             "지엔에스파트너스 교육이사",
-            "전)신한대 겸임조교수",
-            "전)명지전문대 겸임조교수"
+            "전)신한대, 명지전문대 겸임조교수",
         ],
         photo: "",
         district: "사",
@@ -2016,7 +2018,8 @@ const candidates = [
         status: "예비후보",
         subRegion: "진접읍",
         bio: [
-            "(전) 드림청년단 공동대표"
+            "경기도당 남양주시 행정안전상공특위 위원장",
+            "전) 드림청년단 공동대표"
         ],
         photo: "",
         district: "다",
@@ -2118,6 +2121,7 @@ const candidates = [
         subRegion: "파주읍, 월룡면, 금촌1동, 금촌2동, 금촌3동",
         bio: [
             "<span style='letter-spacing:-0.12em;'>개혁신당 파주시 지역발전특위 부위원장</span>",
+            "<span style='letter-spacing:-0.12em;'>경기도당 파주시 시민생활특위 위원장</span>",
             "<span style='letter-spacing:-0.12em;'>한국애견미용학원연합회 회장</span>"
         ],
         photo: "",
@@ -2822,7 +2826,7 @@ const candidates = [
         sns: {
             fb: "https://www.facebook.com/JooWooKim",
             ig: "https://www.instagram.com/kimjoowoo/",
-            blog: "https://blog.naver.com/kimjoowoo"
+            blog: "https://blog.naver.com/kimjoowoo",
         },
         pledge: "#",
         decl: "#",
@@ -2979,6 +2983,7 @@ const candidates = [
             126.7824
         ]
     },
+
     {
         name: "이재범",
         region: "경기 평택시",
@@ -3111,7 +3116,7 @@ const candidates = [
         subRegion: "일산1동, 탄현1동, 탄현2동",
         bio: [
             "개혁신당 고양시 지역발전특위 부위원장",
-            "개혁신당 AI특위 위원장"
+            "경기도당 AI특위 위원장"
         ],
         photo: "",
         district: "차",
@@ -3191,7 +3196,7 @@ const candidates = [
         sns: {
             fb: "#",
             ig: "https://www.instagram.com/leewanggug/",
-            yt: "https://www.youtube.com/@coreanomango"
+            yt: "https://www.youtube.com/@coreanomango",
         },
         pledge: "#",
         decl: "#",
@@ -3200,7 +3205,7 @@ const candidates = [
             35.8687,
             128.5934
         ]
-    }
+    },
 ];
 
 
