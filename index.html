@@ -952,45 +952,45 @@
         <button onclick="openAllCandidatesMap()" style="
             width:100%; min-height:46px; border-radius:12px; font-size:13px;
             display:flex; align-items:center; justify-content:center; gap:7px;
-            background:white; color:#FF6600; font-weight:800; cursor:pointer;
-            border:1.5px solid rgba(255,102,0,0.35); transition:all .15s;">
+            font-weight:800; cursor:pointer;
+            border:1.5px solid rgba(255,102,0,0.35); transition:all .15s;" class="bg-white dark:bg-slate-800 text-[#FF6600]">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px;"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
             전체 후보자 지도
         </button>
 
 
         <!-- 5-1. 예비후보 통계 카드 -->
-        <div id="prelim-stats-card" style="border:0.5px solid rgba(10,26,61,0.2); border-radius:14px; background:white; padding:14px 16px;">
+        <div id="prelim-stats-card" style="border:0.5px solid rgba(10,26,61,0.2); border-radius:14px; padding:14px 16px;" class="bg-white dark:bg-slate-800">
             <div style="display:flex; align-items:center; gap:6px; margin-bottom:12px;">
                 <span style="font-size:11px; font-weight:900; color:#0a1a3d; background:#f0f3fa; border:1px solid #0a1a3d; border-radius:6px; padding:2px 8px;">예비후보자 통계</span>
             </div>
             <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px; margin-bottom:10px;">
-                <div style="background:#f8fafc; border-radius:8px; padding:8px 10px;">
-                    <div style="font-size:9px; font-weight:700; color:#94a3b8; margin-bottom:2px; letter-spacing:0.03em;">후보자 수</div>
-                    <div style="font-size:20px; font-weight:800; color:#0f172a; line-height:1.1;"><span id="ps-total-num">-</span><span style="font-size:12px; font-weight:500; color:#94a3b8;">명</span></div>
+                <div style="border-radius:8px; padding:8px 10px;" class="bg-slate-50 dark:bg-slate-700">
+                    <div style="font-size:9px; font-weight:700; margin-bottom:2px; letter-spacing:0.03em;" class="text-slate-400 dark:text-slate-500">후보자 수</div>
+                    <div style="font-size:20px; font-weight:800; line-height:1.1;" class="text-slate-900 dark:text-slate-100"><span id="ps-total-num">-</span><span style="font-size:12px; font-weight:500; color:#94a3b8;">명</span></div>
                 </div>
-                <div style="background:#f8fafc; border-radius:8px; padding:8px 10px;">
-                    <div style="font-size:9px; font-weight:700; color:#94a3b8; margin-bottom:2px; letter-spacing:0.03em;">평균 연령</div>
-                    <div style="font-size:20px; font-weight:800; color:#0f172a; line-height:1.1;"><span id="ps-age-num">-</span><span style="font-size:12px; font-weight:500; color:#94a3b8;">세</span></div>
+                <div style="border-radius:8px; padding:8px 10px;" class="bg-slate-50 dark:bg-slate-700">
+                    <div style="font-size:9px; font-weight:700; margin-bottom:2px; letter-spacing:0.03em;" class="text-slate-400 dark:text-slate-500">평균 연령</div>
+                    <div style="font-size:20px; font-weight:800; line-height:1.1;" class="text-slate-900 dark:text-slate-100"><span id="ps-age-num">-</span><span style="font-size:12px; font-weight:500;" class="text-slate-400 dark:text-slate-500">세</span></div>
                 </div>
             </div>
             <div style="display:flex; flex-direction:column; gap:7px;">
                 <div style="display:flex; align-items:center; gap:8px;">
-                    <div style="font-size:10px; font-weight:700; color:#64748b; width:40px; flex-shrink:0;">여성</div>
-                    <div style="flex:1; height:8px; border-radius:99px; background:#e2e8f0; overflow:hidden; position:relative;">
+                    <div style="font-size:10px; font-weight:700; width:40px; flex-shrink:0;" class="text-slate-500 dark:text-slate-400">여성</div>
+                    <div style="flex:1; height:8px; border-radius:99px; overflow:hidden; position:relative;" class="bg-slate-200 dark:bg-slate-600">
                         <div id="ps-gender-bar" style="height:100%; border-radius:99px; background:#e879a0; position:absolute; left:0; top:0; width:0%; transition:width 0.6s ease;"></div>
                     </div>
-                    <div id="ps-gender-pct" style="font-size:10px; font-weight:700; color:#64748b; width:38px; text-align:right; flex-shrink:0;">-</div>
+                    <div id="ps-gender-pct" style="font-size:10px; font-weight:700; width:38px; text-align:right; flex-shrink:0;" class="text-slate-500 dark:text-slate-400">-</div>
                 </div>
                 <div style="display:flex; align-items:center; gap:8px;">
-                    <div style="font-size:10px; font-weight:700; color:#64748b; width:40px; flex-shrink:0;">2030</div>
-                    <div style="flex:1; height:8px; border-radius:99px; background:#e2e8f0; overflow:hidden; position:relative;">
+                    <div style="font-size:10px; font-weight:700; width:40px; flex-shrink:0;" class="text-slate-500 dark:text-slate-400">2030</div>
+                    <div style="flex:1; height:8px; border-radius:99px; overflow:hidden; position:relative;" class="bg-slate-200 dark:bg-slate-600">
                         <div id="ps-youth-bar" style="height:100%; border-radius:99px; background:#FF6600; position:absolute; left:0; top:0; width:0%; transition:width 0.6s ease;"></div>
                     </div>
-                    <div id="ps-youth-pct" style="font-size:10px; font-weight:700; color:#64748b; width:38px; text-align:right; flex-shrink:0;">-</div>
+                    <div id="ps-youth-pct" style="font-size:10px; font-weight:700; width:38px; text-align:right; flex-shrink:0;" class="text-slate-500 dark:text-slate-400">-</div>
                 </div>
             </div>
-            <hr style="border:none; border-top:0.5px solid #e2e8f0; margin:10px 0;">
+            <hr style="border:none; margin:10px 0;" class="border-t border-slate-200 dark:border-slate-600">
             <div id="ps-age-grid" style="display:grid; grid-template-columns:repeat(3,1fr); gap:5px;">
                 <div id="ps-age-10" style="background:#fff4ee; border-radius:8px; padding:5px 8px; display:flex; align-items:center; justify-content:space-between; gap:4px;">
                     <span style="font-size:9px; font-weight:700; color:#FF6600; white-space:nowrap;" class="age-label-text">20대이하</span>
@@ -1000,21 +1000,21 @@
                     <span style="font-size:9px; font-weight:700; color:#FF6600; white-space:nowrap;" class="age-label-text">30대</span>
                     <span style="font-size:13px; font-weight:800; color:#FF6600; white-space:nowrap;" class="age-val-text">-<span style="font-size:9px; font-weight:500; color:#FF6600;" class="age-unit-text">명</span></span>
                 </div>
-                <div id="ps-age-40" style="background:#f8fafc; border-radius:8px; padding:5px 8px; display:flex; align-items:center; justify-content:space-between; gap:4px;">
-                    <span style="font-size:9px; font-weight:700; color:#94a3b8; white-space:nowrap;" class="age-label-text">40대</span>
-                    <span style="font-size:13px; font-weight:800; color:#0f172a; white-space:nowrap;" class="age-val-text">-<span style="font-size:9px; font-weight:500; color:#94a3b8;" class="age-unit-text">명</span></span>
+                <div id="ps-age-40" style="border-radius:8px; padding:5px 8px; display:flex; align-items:center; justify-content:space-between; gap:4px;" class="bg-slate-50 dark:bg-slate-700">
+                    <span style="font-size:9px; font-weight:700; white-space:nowrap;" class="age-label-text text-slate-400 dark:text-slate-500">40대</span>
+                    <span style="font-size:13px; font-weight:800; white-space:nowrap;" class="age-val-text text-slate-900 dark:text-slate-100">-<span style="font-size:9px; font-weight:500; color:#94a3b8;" class="age-unit-text">명</span></span>
                 </div>
-                <div id="ps-age-50" style="background:#f8fafc; border-radius:8px; padding:5px 8px; display:flex; align-items:center; justify-content:space-between; gap:4px;">
-                    <span style="font-size:9px; font-weight:700; color:#94a3b8; white-space:nowrap;" class="age-label-text">50대</span>
-                    <span style="font-size:13px; font-weight:800; color:#0f172a; white-space:nowrap;" class="age-val-text">-<span style="font-size:9px; font-weight:500; color:#94a3b8;" class="age-unit-text">명</span></span>
+                <div id="ps-age-50" style="border-radius:8px; padding:5px 8px; display:flex; align-items:center; justify-content:space-between; gap:4px;" class="bg-slate-50 dark:bg-slate-700">
+                    <span style="font-size:9px; font-weight:700; white-space:nowrap;" class="age-label-text text-slate-400 dark:text-slate-500">50대</span>
+                    <span style="font-size:13px; font-weight:800; white-space:nowrap;" class="age-val-text text-slate-900 dark:text-slate-100">-<span style="font-size:9px; font-weight:500; color:#94a3b8;" class="age-unit-text">명</span></span>
                 </div>
-                <div id="ps-age-60" style="background:#f8fafc; border-radius:8px; padding:5px 8px; display:flex; align-items:center; justify-content:space-between; gap:4px;">
-                    <span style="font-size:9px; font-weight:700; color:#94a3b8; white-space:nowrap;" class="age-label-text">60대</span>
-                    <span style="font-size:13px; font-weight:800; color:#0f172a; white-space:nowrap;" class="age-val-text">-<span style="font-size:9px; font-weight:500; color:#94a3b8;" class="age-unit-text">명</span></span>
+                <div id="ps-age-60" style="border-radius:8px; padding:5px 8px; display:flex; align-items:center; justify-content:space-between; gap:4px;" class="bg-slate-50 dark:bg-slate-700">
+                    <span style="font-size:9px; font-weight:700; white-space:nowrap;" class="age-label-text text-slate-400 dark:text-slate-500">60대</span>
+                    <span style="font-size:13px; font-weight:800; white-space:nowrap;" class="age-val-text text-slate-900 dark:text-slate-100">-<span style="font-size:9px; font-weight:500; color:#94a3b8;" class="age-unit-text">명</span></span>
                 </div>
-                <div id="ps-age-70" style="background:#f8fafc; border-radius:8px; padding:5px 8px; display:flex; align-items:center; justify-content:space-between; gap:4px;">
-                    <span style="font-size:9px; font-weight:700; color:#94a3b8; white-space:nowrap;" class="age-label-text">70대이상</span>
-                    <span style="font-size:13px; font-weight:800; color:#0f172a; white-space:nowrap;" class="age-val-text">-<span style="font-size:9px; font-weight:500; color:#94a3b8;" class="age-unit-text">명</span></span>
+                <div id="ps-age-70" style="border-radius:8px; padding:5px 8px; display:flex; align-items:center; justify-content:space-between; gap:4px;" class="bg-slate-50 dark:bg-slate-700">
+                    <span style="font-size:9px; font-weight:700; white-space:nowrap;" class="age-label-text text-slate-400 dark:text-slate-500">70대이상</span>
+                    <span style="font-size:13px; font-weight:800; white-space:nowrap;" class="age-val-text text-slate-900 dark:text-slate-100">-<span style="font-size:9px; font-weight:500; color:#94a3b8;" class="age-unit-text">명</span></span>
                 </div>
             </div>
         </div>
@@ -1172,12 +1172,12 @@
                         <p class="text-gray-400 text-[10px] md:text-sm font-medium">전체 후보자 요약 통계</p>
                     </div>
                     <div class="grid grid-cols-6 gap-2 md:gap-8 w-full lg:w-auto text-center items-center">
-                        <div><p class="text-gray-500 text-[8px] md:text-xs font-bold uppercase mb-0.5">재보궐</p><p class="text-lg md:text-2xl font-black nrp-orange" id="sum-by">0</p></div>
-                        <div><p class="text-gray-500 text-[7px] md:text-xs font-bold uppercase mb-0.5">광역단체</p><p class="text-lg md:text-2xl font-black nrp-orange" id="sum-prov-exec">0</p></div>
-                        <div><p class="text-gray-500 text-[7px] md:text-xs font-bold uppercase mb-0.5">기초단체</p><p class="text-lg md:text-2xl font-black nrp-orange" id="sum-local-exec">0</p></div>
-                        <div><p class="text-gray-500 text-[7px] md:text-xs font-bold uppercase mb-0.5">광역의회</p><p class="text-lg md:text-2xl font-black nrp-orange" id="sum-prov-council">0</p></div>
-                        <div><p class="text-gray-500 text-[7px] md:text-xs font-bold uppercase mb-0.5">기초의회</p><p class="text-lg md:text-2xl font-black nrp-orange" id="sum-local-council">0</p></div>
-                        <div class="lg:border-l border-gray-700 lg:pl-10"><p class="text-gray-500 text-[8px] md:text-xs font-bold uppercase mb-0.5">Total</p><p class="text-lg md:text-2xl font-black text-white" id="sum-total">0</p></div>
+                        <div><p class="text-gray-500 text-[10px] md:text-xs font-bold uppercase mb-0.5">재보궐</p><p class="text-xl md:text-2xl font-black nrp-orange" id="sum-by">0</p></div>
+                        <div><p class="text-gray-500 text-[10px] md:text-xs font-bold uppercase mb-0.5">광역단체</p><p class="text-xl md:text-2xl font-black nrp-orange" id="sum-prov-exec">0</p></div>
+                        <div><p class="text-gray-500 text-[10px] md:text-xs font-bold uppercase mb-0.5">기초단체</p><p class="text-xl md:text-2xl font-black nrp-orange" id="sum-local-exec">0</p></div>
+                        <div><p class="text-gray-500 text-[10px] md:text-xs font-bold uppercase mb-0.5">광역의회</p><p class="text-xl md:text-2xl font-black nrp-orange" id="sum-prov-council">0</p></div>
+                        <div><p class="text-gray-500 text-[10px] md:text-xs font-bold uppercase mb-0.5">기초의회</p><p class="text-xl md:text-2xl font-black nrp-orange" id="sum-local-council">0</p></div>
+                        <div class="lg:border-l border-gray-700 lg:pl-10"><p class="text-gray-500 text-[10px] md:text-xs font-bold uppercase mb-0.5">Total</p><p class="text-xl md:text-2xl font-black text-white" id="sum-total">0</p></div>
                     </div>
                 </div>
                 <div class="border-t border-gray-800 pt-6">
@@ -1281,7 +1281,7 @@
         </div>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="can.js?v=0316.02" defer></script>   <script src="data1.js?v=0223.05" defer></script> <script src="search.js?v=0317.01" defer></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="can.js?v=0317.05" defer></script>   <script src="data1.js?v=0223.05" defer></script> <script src="search.js?v=0317.01" defer></script>
     <script>
         let currentModalCandidateName = '';
         let showOnlyConfirmed = false;
