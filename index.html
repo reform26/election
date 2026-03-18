@@ -535,15 +535,18 @@
             .region-grid { grid-template-columns: repeat(8, 1fr); }
         }
         .region-box {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 0.4rem 0.25rem;
-            border-radius: 0.75rem;
-            text-align: center;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 6px 8px;
+            border-radius: 0.6rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 3px;
             transition: all 0.2s;
         }
-        .dark .region-box { background: rgba(30, 41, 59, 0.5); border-color: rgba(255, 255, 255, 0.05); }
-        .region-box:hover { background: rgba(255, 255, 255, 1); border-color: #FF6600; }
+        .dark .region-box { background: #1e293b; border-color: #334155; }
+        .region-box:hover { background: #fff7ed; border-color: #FF6600; }
         .dark .region-box:hover { background: rgba(51, 65, 85, 1); border-color: #FF6600; }
         .visitor-badge-area { display: flex; align-items: center; justify-content: center; opacity: 0.8; }
         @media (min-width: 768px) { .visitor-badge-area { justify-content: flex-end; margin-top: 0; } }
@@ -1032,6 +1035,53 @@
             </div>
         </div>
 
+        <!-- 5-2. 후보자 통계 카드 -->
+        <div id="cand-stats-card" style="border:0.5px solid rgba(10,26,61,0.3); border-radius:14px; padding:12px 14px;" class="bg-white dark:bg-slate-800">
+
+            <!-- ── 후보자 통계 섹션 ── -->
+            <div style="background:rgba(10,26,61,0.04); border:1px solid rgba(10,26,61,0.15); border-radius:10px; padding:10px 12px; margin-bottom:10px;">
+                <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:9px;">
+                    <span style="font-size:11px; font-weight:900; color:#FF6600; background:#fff4ee; border:1px solid rgba(255,102,0,0.3); border-radius:6px; padding:2px 8px;">후보자 통계</span>
+                    <!-- 총 N명 강조 -->
+                    <div style="display:flex; align-items:baseline; gap:3px; background:#FF6600; border-radius:8px; padding:3px 10px; box-shadow:0 2px 8px rgba(255,102,0,0.35);">
+                        <span style="font-size:9px; font-weight:700; color:rgba(255,255,255,0.8);">총</span>
+                        <span id="cs-total" style="font-size:18px; font-weight:900; color:#fff; line-height:1;">0</span>
+                        <span style="font-size:9px; font-weight:700; color:rgba(255,255,255,0.8);">명</span>
+                    </div>
+                </div>
+                <!-- 카테고리 5개 -->
+                <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:5px;">
+                    <div onclick="scrollToId('by-election')" style="border-radius:7px; padding:7px 4px; text-align:center; cursor:pointer; transition:all .15s; background:rgba(255,255,255,0.7);" class="dark:bg-slate-700 hover:bg-white dark:hover:bg-slate-600">
+                        <div style="font-size:10px; font-weight:700; margin-bottom:3px; letter-spacing:0.02em;" class="text-slate-400 dark:text-slate-500">재보궐</div>
+                        <div style="font-size:18px; font-weight:900; line-height:1; color:#FF6600;"><span id="cs-by">0</span></div>
+                    </div>
+                    <div onclick="scrollToId('provincial-exec')" style="border-radius:7px; padding:7px 4px; text-align:center; cursor:pointer; transition:all .15s; background:rgba(255,255,255,0.7);" class="dark:bg-slate-700 hover:bg-white dark:hover:bg-slate-600">
+                        <div style="font-size:10px; font-weight:700; margin-bottom:3px; letter-spacing:0.02em;" class="text-slate-400 dark:text-slate-500">광역단체</div>
+                        <div style="font-size:18px; font-weight:900; line-height:1; color:#FF6600;"><span id="cs-prov-exec">0</span></div>
+                    </div>
+                    <div onclick="scrollToId('local-exec')" style="border-radius:7px; padding:7px 4px; text-align:center; cursor:pointer; transition:all .15s; background:rgba(255,255,255,0.7);" class="dark:bg-slate-700 hover:bg-white dark:hover:bg-slate-600">
+                        <div style="font-size:10px; font-weight:700; margin-bottom:3px; letter-spacing:0.02em;" class="text-slate-400 dark:text-slate-500">기초단체</div>
+                        <div style="font-size:18px; font-weight:900; line-height:1; color:#FF6600;"><span id="cs-local-exec">0</span></div>
+                    </div>
+                    <div onclick="scrollToId('provincial-council')" style="border-radius:7px; padding:7px 4px; text-align:center; cursor:pointer; transition:all .15s; background:rgba(255,255,255,0.7);" class="dark:bg-slate-700 hover:bg-white dark:hover:bg-slate-600">
+                        <div style="font-size:10px; font-weight:700; margin-bottom:3px; letter-spacing:0.02em;" class="text-slate-400 dark:text-slate-500">광역의회</div>
+                        <div style="font-size:18px; font-weight:900; line-height:1; color:#FF6600;"><span id="cs-prov-council">0</span></div>
+                    </div>
+                    <div onclick="scrollToId('local-council')" style="border-radius:7px; padding:7px 4px; text-align:center; cursor:pointer; transition:all .15s; background:rgba(255,255,255,0.7);" class="dark:bg-slate-700 hover:bg-white dark:hover:bg-slate-600">
+                        <div style="font-size:10px; font-weight:700; margin-bottom:3px; letter-spacing:0.02em;" class="text-slate-400 dark:text-slate-500">기초의회</div>
+                        <div style="font-size:18px; font-weight:900; line-height:1; color:#FF6600;"><span id="cs-local-council">0</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ── 지역별 현황 섹션 ── -->
+            <div style="background:rgba(10,26,61,0.03); border:1px solid rgba(10,26,61,0.12); border-radius:10px; padding:10px 12px;" class="dark:bg-slate-700/40 dark:border-slate-700">
+                <div style="font-size:11px; font-weight:900; color:#FF6600; background:#fff4ee; border:1px solid rgba(255,102,0,0.3); border-radius:6px; padding:2px 8px; display:inline-block; margin-bottom:8px;">지역별 현황</div>
+                <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:4px;" id="region-status-grid"></div>
+            </div>
+
+        </div>
+
         <!-- 6. 동네 검색 -->
         <div id="dong-search-section">
             <div id="dong-search-root"></div>
@@ -1177,32 +1227,6 @@
 
         <main id="content-area"></main>
 
-        <footer id="summary" class="mt-16 bg-gray-900 dark:bg-slate-900 text-white rounded-[1.5rem] md:rounded-[2.5rem] p-6 md:p-10 shadow-2xl border-b-8 border-orange-500">
-            <div class="flex flex-col gap-8 w-full">
-                <div class="flex flex-col lg:flex-row justify-between items-center gap-6">
-                    <div class="text-center lg:text-left">
-                        <h2 class="text-xl md:text-3xl font-black mb-1">출마 · 공천 현황</h2>
-                        <p class="text-gray-400 text-[10px] md:text-sm font-medium">전체 후보자 요약 통계</p>
-                    </div>
-                    <div class="grid grid-cols-6 gap-2 md:gap-8 w-full lg:w-auto text-center items-center">
-                        <div><p class="text-gray-500 text-[10px] md:text-xs font-bold uppercase mb-0.5">재보궐</p><p class="text-xl md:text-2xl font-black nrp-orange" id="sum-by">0</p></div>
-                        <div><p class="text-gray-500 text-[10px] md:text-xs font-bold uppercase mb-0.5">광역단체</p><p class="text-xl md:text-2xl font-black nrp-orange" id="sum-prov-exec">0</p></div>
-                        <div><p class="text-gray-500 text-[10px] md:text-xs font-bold uppercase mb-0.5">기초단체</p><p class="text-xl md:text-2xl font-black nrp-orange" id="sum-local-exec">0</p></div>
-                        <div><p class="text-gray-500 text-[10px] md:text-xs font-bold uppercase mb-0.5">광역의회</p><p class="text-xl md:text-2xl font-black nrp-orange" id="sum-prov-council">0</p></div>
-                        <div><p class="text-gray-500 text-[10px] md:text-xs font-bold uppercase mb-0.5">기초의회</p><p class="text-xl md:text-2xl font-black nrp-orange" id="sum-local-council">0</p></div>
-                        <div class="lg:border-l border-gray-700 lg:pl-10"><p class="text-gray-500 text-[10px] md:text-xs font-bold uppercase mb-0.5">Total</p><p class="text-xl md:text-2xl font-black text-white" id="sum-total">0</p></div>
-                    </div>
-                </div>
-                <div class="border-t border-gray-800 pt-6">
-                    <div class="text-center lg:text-left w-full mb-4">
-                        <h2 class="text-lg md:text-2xl font-black mb-1">지역별 현황</h2>
-                        <p class="text-gray-500 text-[10px] md:text-xs font-medium">전국 광역 단체별 후보자 분포</p>
-                    </div>
-                    <div class="region-grid" id="region-status-grid"></div>
-                </div>
-            </div>
-        </footer>
-
         <div class="mt-12 mb-16 flex flex-col md:flex-row justify-between items-center gap-8 border-t border-gray-200 dark:border-slate-800 pt-8 pb-8 text-gray-400 dark:text-slate-500">
             <div class="flex flex-col items-center md:items-start gap-4">
                 <p class="text-[10px] md:text-xs font-medium leading-relaxed text-center md:text-left">
@@ -1295,7 +1319,7 @@
         </div>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="can.js?v=0318.01" defer></script>   <script src="data1.js?v=0223.05" defer></script> <script src="search.js?v=0317.02" defer></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="can.js?v=0318.02" defer></script>   <script src="data1.js?v=0223.05" defer></script> <script src="search.js?v=0317.02" defer></script>
     <script>
         let currentModalCandidateName = '';
         let showOnlyConfirmed = false;
@@ -1663,18 +1687,28 @@
 
         function updateSummary() {
             const getCount = (cat) => candidates.filter(c => c.category === cat).length;
-            const els = {
-                'sum-by': getCount("재보궐선거"),
-                'sum-prov-exec': getCount("광역단체장"),
-                'sum-local-exec': getCount("기초단체장"),
-                'sum-prov-council': getCount("광역의원"),
-                'sum-local-council': getCount("기초의원"),
-                'sum-total': candidates.length
+            const byCount    = getCount("재보궐선거");
+            const provExec   = getCount("광역단체장");
+            const localExec  = getCount("기초단체장");
+            const provCounc  = getCount("광역의원");
+            const localCounc = getCount("기초의원");
+            const total      = candidates.length;
+
+            // footer
+            const footerEls = {
+                'sum-by': byCount, 'sum-prov-exec': provExec,
+                'sum-local-exec': localExec, 'sum-prov-council': provCounc,
+                'sum-local-council': localCounc, 'sum-total': total
             };
-            for (let id in els) {
-                const el = document.getElementById(id);
-                if (el) el.innerText = els[id];
-            }
+            for (let id in footerEls) { const el = document.getElementById(id); if (el) el.innerText = footerEls[id]; }
+
+            // header stats card
+            const headerEls = {
+                'cs-by': byCount, 'cs-prov-exec': provExec,
+                'cs-local-exec': localExec, 'cs-prov-council': provCounc,
+                'cs-local-council': localCounc, 'cs-total': total
+            };
+            for (let id in headerEls) { const el = document.getElementById(id); if (el) el.innerText = headerEls[id]; }
             const regionGrid = document.getElementById('region-status-grid');
             if (regionGrid) {
                 const shortNameMap = {
@@ -1688,7 +1722,7 @@
                 let gridHtml = '';
                 Object.keys(regionPriority).forEach(region => {
                     const count = candidates.filter(c => c.metropolitan === region || c.region === region).length;
-                    gridHtml += `<div class="region-box cursor-pointer" onclick="renderRegionView('${region}')"><p class="text-gray-500 text-[10px] font-bold">${shortNameMap[region]}</p><p class="text-lg font-black ${count > 0 ? 'text-[#FF6600]' : 'text-gray-700 dark:text-slate-400'}">${count}</p></div>`;
+                    gridHtml += `<div class="region-box cursor-pointer" onclick="renderRegionView('${region}')"><span class="text-gray-500 dark:text-slate-400" style="font-size:11px;font-weight:700;">${shortNameMap[region]}</span><span style="font-size:14px;font-weight:900;" class="${count > 0 ? 'text-[#FF6600]' : 'text-gray-400 dark:text-slate-500'}">${count}</span></div>`;
                 });
                 regionGrid.innerHTML = gridHtml;
             }
@@ -2018,6 +2052,18 @@
                     document.getElementById("ps-youth-bar").style.width = youthPct + "%";
                     document.getElementById("ps-youth-pct").innerText = youthPct + "%";
                 }, 300);
+            })();
+
+            // 후보자 통계 카드 채우기
+            (function() {
+                const getCount = (cat) => (window.candidates || []).filter(c => c.category === cat).length;
+                const setEl = (id, val) => { const el = document.getElementById(id); if (el) el.innerText = val; };
+                setEl('cs-by',           getCount('재보궐선거'));
+                setEl('cs-prov-exec',    getCount('광역단체장'));
+                setEl('cs-local-exec',   getCount('기초단체장'));
+                setEl('cs-prov-council', getCount('광역의원'));
+                setEl('cs-local-council',getCount('기초의원'));
+                setEl('cs-total',        (window.candidates || []).length);
             })();
 
             const diff = Math.ceil((new Date('2026-06-02') - new Date().setHours(0,0,0,0)) / (1000*60*60*24));

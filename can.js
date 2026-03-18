@@ -71,7 +71,8 @@ const candidates = [
         photo: "https://i.imgur.com/aNqvWiU.jpeg",
         sns: {
             fb: "https://www.facebook.com/keebung",
-            ig: "https://www.instagram.com/keebung_lee/"
+            ig: "https://www.instagram.com/keebung_lee/",
+            yt: "https://www.youtube.com/@rheekeebung",
         },
         pledge: "#",
         decl: "https://www.youtube.com/watch?v=vB47J90zQ00",
@@ -1498,7 +1499,7 @@ const candidates = [
         photo: "https://i.imgur.com/iNFNRAu.jpeg",
         district: "라",
         sns: {
-            fb: "#",
+            fb: "https://www.facebook.com/profile.php?id=61588067463081",
             ig: "https://www.instagram.com/yeonsu.lss/"
         },
         pledge: "#",
@@ -1527,6 +1528,7 @@ const candidates = [
         sns: {
             fb: "#",
             ig: "https://www.instagram.com/special.m.j/",
+            yt: "https://www.youtube.com/@Minje_Solver",
             blog: "https://blog.naver.com/kmj42"
         },
         pledge: "#",
@@ -2797,12 +2799,13 @@ const candidates = [
         status: "예비후보",
         subRegion: "신포동, 연안동, 신흥동, 도원동, 율목동, 동인천동, 개항동",
         bio: [
-            "법률사무소 송무직원"
+            "개혁신당 제물포구 지역발전특위 부위원장"
         ],
-        photo: "",
+        photo: "https://i.imgur.com/1VWN79v.png",
         district: "",
         sns: {
-            fb: "#"
+            fb: "#",
+            ig: '"https://www.instagram.com/cometrue_minsu/",
         },
         pledge: "#",
         decl: "#",
@@ -3221,7 +3224,7 @@ const candidates = [
         ],
         photo: "https://i.imgur.com/UCXNQZg.png",
         sns: {
-            fb: "#"
+            fb: "https://www.facebook.com/profile.php?id=61588118109250"
         },
         pledge: "#",
         decl: "#",
