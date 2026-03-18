@@ -72,7 +72,7 @@ const candidates = [
         sns: {
             fb: "https://www.facebook.com/keebung",
             ig: "https://www.instagram.com/keebung_lee/",
-            yt: "https://www.youtube.com/@rheekeebung",
+            yt: "https://www.youtube.com/@rheekeebung"
         },
         pledge: "#",
         decl: "https://www.youtube.com/watch?v=vB47J90zQ00",
@@ -2404,7 +2404,8 @@ const candidates = [
         sns: {
             ig: "https://www.instagram.com/sonseungbeom2004/",
             fb: "https://www.facebook.com/sonseungbeom2004",
-            yt: "https://www.youtube.com/@%EC%86%90%EC%8A%B9%EB%B2%942004"
+            yt: "https://www.youtube.com/@%EC%86%90%EC%8A%B9%EB%B2%942004",
+            site: "https://linktr.ee/seungbeom2004?utm_source=ig&utm_medium=social&utm_content=link_in_bio"
         },
         pledge: "#",
         decl: "https://rallypoint.kr/board/politics-free/225934",
@@ -2805,7 +2806,7 @@ const candidates = [
         district: "",
         sns: {
             fb: "#",
-            ig: '"https://www.instagram.com/cometrue_minsu/",
+            ig: "https://www.instagram.com/cometrue_minsu/",
         },
         pledge: "#",
         decl: "#",

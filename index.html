@@ -1319,7 +1319,7 @@
         </div>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="can.js?v=0318.02" defer></script>   <script src="data1.js?v=0223.05" defer></script> <script src="search.js?v=0317.02" defer></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="can.js?v=0318.03" defer></script>   <script src="data1.js?v=0223.05" defer></script> <script src="search.js?v=0317.02" defer></script>
     <script>
         let currentModalCandidateName = '';
         let showOnlyConfirmed = false;
@@ -1559,6 +1559,8 @@
             const isConfirmed = (["공천확정","후보"].includes(c.status) || (c.status === "예비후보" && c.preliminary !== true));
             let roleLabel = "";
             if (isConfirmed) {
+                roleLabel = "공천확정";
+            } else if (c.status === "예비후보") {
                 roleLabel = "예비후보";
             } else if (c.decl && c.decl !== "#") {
                 roleLabel = "출마선언";
