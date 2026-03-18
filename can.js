@@ -2806,7 +2806,7 @@ const candidates = [
         district: "",
         sns: {
             fb: "#",
-            ig: "https://www.instagram.com/cometrue_minsu/",
+            ig: "https://www.instagram.com/cometrue_minsu/"
         },
         pledge: "#",
         decl: "#",
