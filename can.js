@@ -14,7 +14,8 @@ const candidates = [
         region: "서울특별시",
         category: "광역단체장",
         office: "서울특별시장",
-        status: "공천확정",
+        age: 49,
+        status: "예비후보",
         bio: [
             "개혁신당 최고위원",
             "법무법인 우리 대표변호사"
@@ -200,6 +201,28 @@ const candidates = [
         ]
     },
     {
+        name: "김종욱",
+        region: "서울 강남구",
+        metropolitan: "서울특별시",
+        category: "기초단체장",
+        office: "강남구청장",
+        status: "출마선언",
+        bio: [
+            "강남구청장 출마선언"
+        ],
+        photo: "",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "https://rallypoint.kr/board/politics-free/227794/",
+        dateAdded: "2026-03-18",
+        coords: [
+            37.5172,
+            127.0413
+        ]
+    },
+    {
         name: "이용우",
         region: "서울 강동구",
         metropolitan: "서울특별시",
@@ -303,7 +326,9 @@ const candidates = [
         metropolitan: "경기도",
         category: "기초단체장",
         office: "화성시장",
+        age: 36,
         status: "출마선언",
+        showPreliminaryBadge: true,
         bio: [
             "제9대 화성시의원",
             "경기도당 위원장",
@@ -400,11 +425,12 @@ const candidates = [
         metropolitan: "충청남도",
         category: "기초단체장",
         office: "서산시장",
-        status: "공천확정",
+        age: 65,
+        status: "예비후보",
         bio: [
             "제5,6대 서산시의원"
         ],
-        photo: "https://i.imgur.com/Va7luHq.png",
+        photo: "https://i.imgur.com/8K5tuia.png",
         sns: {
             fb: ""
         },
@@ -2375,7 +2401,8 @@ const candidates = [
         district: "다",
         sns: {
             ig: "https://www.instagram.com/sonseungbeom2004/",
-            fb: "https://www.facebook.com/sonseungbeom2004"
+            fb: "https://www.facebook.com/sonseungbeom2004",
+            yt: "https://www.youtube.com/@%EC%86%90%EC%8A%B9%EB%B2%942004"
         },
         pledge: "#",
         decl: "https://rallypoint.kr/board/politics-free/225934",
@@ -3179,6 +3206,32 @@ const candidates = [
         ]
     },
     {
+        name: "이재원",
+        region: "제주특별자치도",
+        metropolitan: "제주특별자치도",
+        shortMetro: "제주",
+        category: "광역의원",
+        office: "제주특별자치도의회",
+        status: "출마선언",
+        constituency: "비례",
+        district: "비례",
+        bio: [
+            "개혁신당 청소년참여위 위원장 직무대행",
+            "대한민국 청소년의회 부의장"
+        ],
+        photo: "https://i.imgur.com/UCXNQZg.png",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        dateAdded: "2026-03-18",
+        coords: [
+            33.4889,
+            126.4981
+        ]
+    },
+    {
         name: "이왕국",
         region: "대구 중구",
         metropolitan: "대구광역시",
@@ -3188,14 +3241,14 @@ const candidates = [
         district: "나",
         subRegion: "성내2동, 성내3동, 대신동, 남산2동, 남산3동, 남산4동",
         bio: [
-            "예술가(음악,미술,문학)",
+            "Artist",
             "미까사 대표"
         ],
         photo: "https://i.imgur.com/QlaAAm4.png",
         sns: {
             fb: "#",
             ig: "https://www.instagram.com/leewanggug/",
-            yt: "https://www.youtube.com/@coreanomango"
+            yt: "https://www.youtube.com/channel/UCoCevP8cXXNIIjqZ12o9_JA"
         },
         pledge: "#",
         decl: "https://rallypoint.kr/board/politics-free/227748",

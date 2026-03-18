@@ -510,6 +510,19 @@
         .dark #modal-pledge { background: #1e293b !important; }
         .dark #modal-pledge:hover { background: #0f172a !important; }
 
+        #modal-team-cheonan {
+            align-items: center; justify-content: center; gap: 7px;
+            padding: 12px 16px !important; margin-top: 10px !important;
+            background: #FF6600 !important; color: white !important;
+            border-radius: 14px !important; font-weight: 900 !important;
+            font-size: 0.95rem !important; text-decoration: none;
+            border: 2px solid #FF6600 !important;
+            transition: background 0.2s !important;
+        }
+        #modal-team-cheonan:hover { background: #e55a00 !important; border-color: #e55a00 !important; }
+        .dark #modal-team-cheonan { background: #FF6600 !important; }
+        .dark #modal-team-cheonan:hover { background: #e55a00 !important; }
+
         .region-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -1274,6 +1287,7 @@
                         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
                         출마선언 보기
                     </a>
+                    <a id="modal-team-cheonan" href="https://www.reform-chungnam.kr/regular" target="_blank" style="display:none;">🤝 Team 천안 공약보기</a>
                     <a id="modal-pledge" href="#" target="_blank">📋 공약 보기</a>
                     <button onclick="closeProfileModal()" class="mt-5 w-full text-gray-400 dark:text-slate-500 text-sm font-bold hover:text-gray-600 dark:hover:text-slate-300 tracking-tight" style="background:none;border:none;cursor:pointer;">창 닫기</button>
                 </div>
@@ -1759,6 +1773,20 @@
             else if (c.name === "강인수") displayOfficeLabel = `서울특별시의회 강남구 제1선거구 ${statusLabel}`;
             else if (c.name === "주이삭") displayOfficeLabel = `서울특별시의회 서대문구 제1선거구 ${statusLabel}`;
             else if (c.name === "김순주") displayOfficeLabel = `세종특별자치시의회 제4선거구 ${statusLabel}`;
+            else if (c.constituency === "비례") {
+                const metro = c.metropolitan || "";
+                let fullOfficeName = "";
+                if (metro.endsWith("특별시") || metro.endsWith("광역시")) {
+                    fullOfficeName = metro + "의회";
+                } else if (metro.endsWith("특별자치시")) {
+                    fullOfficeName = metro + "의회";
+                } else if (metro.endsWith("특별자치도") || metro.endsWith("도")) {
+                    fullOfficeName = metro + "의회";
+                } else {
+                    fullOfficeName = c.office || getCleanOffice(c);
+                }
+                displayOfficeLabel = `${fullOfficeName} 비례대표 ${statusLabel}`;
+            }
             else {
                 let districtLabel = c.district ? ` ${c.district}선거구` : "";
                 const displayOffice = getCleanOffice(c);
@@ -1824,6 +1852,14 @@
                 pledgeBtn.style.display = 'none';
             }
 
+            const teamCheonanBtn = document.getElementById('modal-team-cheonan');
+            const teamCheonanNames = ["손승범", "이강민", "이해성"];
+            if (teamCheonanNames.includes(c.name)) {
+                teamCheonanBtn.style.display = 'flex';
+            } else {
+                teamCheonanBtn.style.display = 'none';
+            }
+
             const description = c.bio ? c.bio[0].replace(/<[^>]*>?/gm, '') : "";
             updateMetadata(c.name, displayOfficeLabel, description);
 
@@ -1860,7 +1896,13 @@
             });
             
             const provCouncilSeoul = provCouncilCands.filter(c => c.metropolitan === "서울특별시");
-            const provCouncilOthers = provCouncilCands.filter(c => c.metropolitan !== "서울특별시");
+            const provCouncilJeju = provCouncilCands.filter(c => c.metropolitan === "제주특별자치도");
+            const provCouncilOthers = provCouncilCands.filter(c => c.metropolitan !== "서울특별시" && c.metropolitan !== "제주특별자치도");
+
+            const localExecSort = (a, b) => (regionPriority[a.metropolitan] || 99) - (regionPriority[b.metropolitan] || 99) || (a.region || "").localeCompare(b.region || "");
+            const localExecSeoul = filtered.filter(c => c.category === "기초단체장" && c.metropolitan === "서울특별시").sort(localExecSort);
+            const localExecGyeonggi = filtered.filter(c => c.category === "기초단체장" && c.metropolitan === "경기도").sort(localExecSort);
+            const localExecOthers = filtered.filter(c => c.category === "기초단체장" && c.metropolitan !== "서울특별시" && c.metropolitan !== "경기도").sort(localExecSort);
 
             const filterByMetro = (metro) => filtered.filter(c => c.category === "기초의원" && c.metropolitan === metro).sort(councilSort);
             const seoulCands = filterByMetro("서울특별시");
@@ -1878,15 +1920,14 @@
                 <section id="provincial-exec" class="scroll-mt-24"><h2 class="section-title">광역자치단체장</h2><div class="grid-responsive">${filtered.filter(c => c.category === "광역단체장").map(createCard).join('')}</div></section>
                 <section id="local-exec" class="scroll-mt-24">
                     <h2 class="section-title">기초자치단체장</h2>
-                    <div class="grid-responsive">
-                        ${filtered.filter(c => c.category === "기초단체장")
-                            .sort((a, b) => (regionPriority[a.metropolitan] || 99) - (regionPriority[b.metropolitan] || 99) || (a.region || "").localeCompare(b.region || ""))
-                            .map(createCard).join('')}
-                    </div>
+                    ${localExecSeoul.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">서울특별시</h3><div class="grid-responsive">${localExecSeoul.map(createCard).join('')}</div></div>` : ''}
+                    ${localExecGyeonggi.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">경기도</h3><div class="grid-responsive">${localExecGyeonggi.map(createCard).join('')}</div></div>` : ''}
+                    ${localExecOthers.length > 0 ? `<div><h3 class="sub-section-title">기타 지역</h3><div class="grid-responsive">${localExecOthers.map(createCard).join('')}</div></div>` : ''}
                 </section>
                 <section id="provincial-council" class="scroll-mt-24">
                     <h2 class="section-title">광역의회의원</h2>
                     ${provCouncilSeoul.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">서울특별시</h3><div class="grid-responsive">${provCouncilSeoul.map(createCard).join('')}</div></div>` : ''}
+                    ${provCouncilJeju.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">제주특별자치도</h3><div class="grid-responsive">${provCouncilJeju.map(createCard).join('')}</div></div>` : ''}
                     ${provCouncilOthers.length > 0 ? `<div><h3 class="sub-section-title">기타 지역</h3><div class="grid-responsive">${provCouncilOthers.map(createCard).join('')}</div></div>` : ''}
                 </section>
                 <section id="local-council" class="mb-16 scroll-mt-24">
@@ -2053,8 +2094,8 @@
             
             const displayOffice = getCleanOffice(c);
             
-            const isPreliminary = (c.status === "예비후보");
-            const isConfirmed = (["공천확정","후보"].includes(c.status) || (isPreliminary && c.preliminary !== true)) && c.name !== "김성민";
+            const isPreliminary = (c.status === "예비후보" || c.showPreliminaryBadge === true);
+            const isConfirmed = (["공천확정","후보"].includes(c.status) || (c.status === "예비후보" && c.preliminary !== true && !c.showPreliminaryBadge)) && c.name !== "김성민";
             const confirmedBadge = isConfirmed ? `<div class="confirmed-badge"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="badge-full">공천 확정</span><span class="badge-short">공천</span></div>` : "";
             const preliminaryBadge = isPreliminary ? `<div class="preliminary-badge"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#0a1a3d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><span class="badge-full">예비후보</span><span class="badge-short">예비</span></div>` : "";
 
@@ -2075,7 +2116,7 @@
                     <div class="pt-2 px-3 pb-4 md:pt-4 md:px-6 md:pb-6 text-center flex flex-col flex-grow">
                         <h3 class="text-base md:text-xl font-bold mb-1 dark:text-white tracking-wider flex items-center justify-center">${c.name}${newBadgeHtml}</h3>
                         <div class="bio-text" ${bioStyleAttr}>${bioHtml}</div>
-                        <div class="mt-auto nrp-bg-orange text-white py-2 rounded-xl font-bold text-[10px] md:text-sm leading-tight text-center">${displayOffice} ${statusLabel}</div>
+                        <div class="mt-auto nrp-bg-orange text-white py-2 rounded-xl font-bold text-[10px] md:text-sm leading-tight text-center">${displayOffice + ' ' + statusLabel}</div>
                     </div>
                 </div>
             `;
