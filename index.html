@@ -1805,7 +1805,7 @@
             // 카테고리 배지 제거됨
             
             const isConfirmed = (["공천확정","후보"].includes(c.status) && c.name !== "김성민");
-            let statusLabel = isConfirmed ? c.status : (c.name === "이유원" ? "출마예정" : ((c.decl && c.decl !== "#") ? "출마선언" : "출마예정"));
+            let statusLabel = isConfirmed ? c.status : ((c.status === "예비후보" || c.showPreliminaryBadge === true) ? "예비후보" : (c.name === "이유원" ? "출마예정" : ((c.decl && c.decl !== "#") ? "출마선언" : "출마예정")));
             
             let displayOfficeLabel = "";
             if (c.name === "서운교") displayOfficeLabel = `대구광역시의회 수성구 제3선거구 ${statusLabel}`;
@@ -2155,6 +2155,7 @@
 
             let statusLabel = "";
             if (isConfirmed) statusLabel = c.status;
+            else if (c.status === "예비후보" || c.showPreliminaryBadge === true) statusLabel = "예비후보";
             else if (c.name === "이유원") statusLabel = "출마예정";
             else statusLabel = (c.decl && c.decl !== "#") ? "출마선언" : "출마예정";
 
@@ -2227,8 +2228,11 @@
             const isValidLink = (link) => link && link !== "" && link !== "#";
 
             const getStatusLabel = (c) => {
-                const isConfirmed = (["공천확정","후보"].includes(c.status) && c.name !== "김성민");
-                if (isConfirmed) return "후보";
+                if (c.name !== "김성민") {
+                    if (c.status === "공천확정") return "공천확정";
+                    if (c.status === "후보") return "후보";
+                }
+                if (c.status === "예비후보" || c.showPreliminaryBadge === true) return "예비후보";
                 if (c.name === "이유원") return "출마예정";
                 return (c.decl && c.decl !== "#") ? "출마선언" : "출마예정";
             };
@@ -2470,7 +2474,7 @@
                                             const parts = can.region.split(' ');
                                             const displayOffice = parts[parts.length - 1] + "의회"; 
                                             const isConfirmed = ((["공천확정","후보"].includes(can.status) || (can.status === "예비후보" && can.preliminary !== true)) && can.name !== "김성민");
-                                            let statusText = isConfirmed ? ` ${can.status}` : (can.name === "이유원" ? " 출마예정" : ((can.decl && can.decl !== "#") ? " 출마선언" : " 출마예정"));
+                                            let statusText = isConfirmed ? ` ${can.status}` : (can.status === "예비후보" ? " 예비후보" : (can.name === "이유원" ? " 출마예정" : ((can.decl && can.decl !== "#") ? " 출마선언" : " 출마예정")));
                                             let fullOfficeLabel = `${displayOffice}${can.district ? ` ${can.district}선거구` : ""}${statusText}`;
                                             const showNew = isNewCandidate(can.dateAdded);
 
