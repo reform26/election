@@ -1556,12 +1556,15 @@
             const c = candidates.find(cand => cand.name === name);
             if (!c) return;
 
-            const isConfirmed = (["공천확정","후보"].includes(c.status) || (c.status === "예비후보" && c.preliminary !== true));
             let roleLabel = "";
-            if (isConfirmed) {
+            if (["공천확정","후보"].includes(c.status)) {
                 roleLabel = "공천확정";
             } else if (c.status === "예비후보") {
                 roleLabel = "예비후보";
+            } else if (c.status === "출마선언") {
+                roleLabel = "출마선언";
+            } else if (c.status === "출마예정") {
+                roleLabel = "출마예정";
             } else if (c.decl && c.decl !== "#") {
                 roleLabel = "출마선언";
             } else {
@@ -1798,7 +1801,7 @@
 
             // 카테고리 배지 제거됨
             
-            const isConfirmed = ((["공천확정","후보"].includes(c.status) || (c.status === "예비후보" && c.preliminary !== true)) && c.name !== "김성민");
+            const isConfirmed = (["공천확정","후보"].includes(c.status) && c.name !== "김성민");
             let statusLabel = isConfirmed ? c.status : (c.name === "이유원" ? "출마예정" : ((c.decl && c.decl !== "#") ? "출마선언" : "출마예정"));
             
             let displayOfficeLabel = "";
@@ -2221,7 +2224,7 @@
             const isValidLink = (link) => link && link !== "" && link !== "#";
 
             const getStatusLabel = (c) => {
-                const isConfirmed = ((["공천확정","후보"].includes(c.status) || (c.status === "예비후보" && c.preliminary !== true)) && c.name !== "김성민");
+                const isConfirmed = (["공천확정","후보"].includes(c.status) && c.name !== "김성민");
                 if (isConfirmed) return "후보";
                 if (c.name === "이유원") return "출마예정";
                 return (c.decl && c.decl !== "#") ? "출마선언" : "출마예정";
@@ -2232,7 +2235,7 @@
             else if (can.name === "양해두") displayOfficeLabel = "제주특별자치도의회 제주시 외도동·이호동·도두동 선거구 후보";
             else if (can.name === "이건우") displayOfficeLabel = "제주특별자치도의회 제주시 노형동 을 선거구 후보";
             else if (can.name === "최현석") displayOfficeLabel = "서울특별시의회 송파구 제2선거구 후보";
-            else if (can.name === "주이삭") displayOfficeLabel = "서울특별시의회 서대문구 제1선거구 출마선언";   
+            else if (can.name === "주이삭") displayOfficeLabel = "서울특별시의회 서대문구 제1선거구 공천확정";
             else if (can.name === "강인수") displayOfficeLabel = "서울특별시의회 강남구 제1선거구 후보";
             else if (can.name === "김순주") displayOfficeLabel = "세종특별자치시의회 제4선거구 후보";
             else {
