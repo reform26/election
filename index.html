@@ -884,7 +884,7 @@
                 <div id="d-day-badge" class="rh-dday">D-000</div>
                 <div class="rh-update-badge">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    <span id="last-update-date">최종 업데이트 : 2026. 03. 15</span>
+                    <span id="last-update-date">최종 업데이트 : 2026. 03. 19</span>
                 </div>
             </div>
         </div>
@@ -1573,7 +1573,10 @@
 
             const displayOffice = getCleanOffice(c);
             const districtLabel = c.district ? ` ${c.district}선거구` : "";
-            const customTitle = `[개혁신당] ${name} ${displayOffice}${districtLabel} ${roleLabel}`;
+            const isPR = c.constituency === "비례" || c.district === "비례";
+            const customTitle = isPR
+                ? `[개혁신당] ${name} ${displayOffice} 비례대표 ${roleLabel}`
+                : `[개혁신당] ${name} ${displayOffice}${districtLabel} ${roleLabel}`;
             const firstBio = c.bio && c.bio.length > 0 
                 ? c.bio[0].replace(/<[^>]*>?/gm, '') 
                 : `${c.region} 후보자`;
