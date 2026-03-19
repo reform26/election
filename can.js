@@ -23,9 +23,11 @@ const candidates = [
         photo: "https://img1.newsis.com/2025/11/25/NISI20251125_0021074114_web.jpg",
         sns: {
             fb: "https://www.facebook.com/gimjeongcheol.869066/",
-            yt: "https://www.youtube.com/@%EA%B9%80%EC%A0%95%EC%B2%A0%EB%B3%80%ED%98%B8%EC%82%AC"
+            ig: "https://www.instagram.com/jch_kim/",
+            yt: "https://www.youtube.com/@%EA%B9%80%EC%A0%95%EC%B2%A0%EB%B3%80%ED%98%B8%EC%82%AC",
+            site: "https://www.xn--4k0bx30cygd.kr/"
         },
-        pledge: "#",
+        pledge: "https://www.xn--4k0bx30cygd.kr/",
         decl: "https://daily.hankooki.com/news/articleView.html?idxno=1247318",
         dateAdded: "2025-11-25",
         coords: [
@@ -63,8 +65,8 @@ const candidates = [
         category: "광역단체장",
         office: "인천광역시장",
         age: 63,
-        status: "예비후보",
-        preliminary: true,
+        status: "출마선언",
+        showPreliminaryBadge: true,
         bio: [
             "인천광역시당 위원장"
         ],
@@ -159,12 +161,13 @@ const candidates = [
         region: "세종특별자치시",
         category: "광역단체장",
         office: "세종특별자치시장",
-        status: "공천확정",
+        age: 39,
+        status: "예비후보",
         bio: [
             "세종특별자치시당 창준위장",
             "세종시 갑 당협위원장"
         ],
-        photo: "https://image.dnews.co.kr/photo/photo/2024/11/21/202411211945335960037-2-565966.jpg",
+        photo: "https://i.imgur.com/Z8LzmnG.png",
         sns: {
             fb: "https://www.facebook.com/p/%ED%95%98%ED%97%8C%ED%9C%98-61562035792083/",
             ig: "https://www.instagram.com/reform_lawyer/",
@@ -279,7 +282,9 @@ const candidates = [
         metropolitan: "경기도",
         category: "기초단체장",
         office: "오산시장",
-        status: "공천확정",
+        age: 54,
+        gender: "f",
+        status: "예비후보",
         bio: [
             "제9대 오산시의원",
             "민주평화통일자문회의 자문위원"
@@ -814,16 +819,16 @@ const candidates = [
             "서울시당 대변인",
             "<span style='letter-spacing:-0.12em;'>개혁신당 성북구 지역발전특위 부위원장</span>"
         ],
-        photo: "https://i.imgur.com/zZEqfNs.png",
+        photo: "https://i.imgur.com/dGEJZAi.jpeg",
         district: "가",
         sns: {
-            fb: "#",
+            fb: "https://www.facebook.com/hoyup.lee/",
             ig: "https://www.instagram.com/hoyup97/",
             blog: "https://blog.naver.com/hyl005",
-            site: "https://litt.ly/horang97"
+            site: "https://litt.ly/horang97",
+            site: "https://hoyup.kr/"
         },
-        pledge: "#",
-        decl: "https://rallypoint.kr/board/politics-free/225837",
+        pledge: "https://hoyup.kr/",
         dateAdded: "2026-02-12",
         coords: [
             37.5985,
@@ -1798,7 +1803,7 @@ const candidates = [
             site: "https://animated-panda-cb9b93.netlify.app"
         },
         pledge: "https://policy.reformparty.kr/map?region_code=41&election_type=local_council&district_code=41%3A%EC%84%B1%EB%82%A8%EC%8B%9C%EB%B6%84%EB%8B%B9%EA%B5%AC",
-        decl: "#",
+        decl: "https://rallypoint.kr/board/politics-free/227927",
         dateAdded: "2026-01-31",
         coords: [
             37.3992,
@@ -2644,43 +2649,19 @@ const candidates = [
         ]
     },
     {
-        name: "이윤용",
-        region: "인천 영종구",
-        metropolitan: "인천광역시",
-        category: "기초의원",
-        office: "영종구의회",
-        status: "공천확정",
-        subRegion: "영종동, 영종1동, 운서동, 용유동",
-        bio: [
-            "영종구 *선거구 후보"
-        ],
-        photo: "",
-        district: "",
-        sns: {
-            fb: "#"
-        },
-        pledge: "#",
-        decl: "#",
-        dateAdded: "2026-02-27",
-        coords: [
-            37.5034,
-            126.4804
-        ]
-    },
-    {
         name: "박현수",
         region: "경기 이천시",
         metropolitan: "경기도",
         category: "기초의원",
         office: "이천시의회",
         status: "공천확정",
-        subRegion: "증포동, 관고동, 신둔면, 백사면",
+        subRegion: "대월면, 모가면, 부발읍, 설성면, 율면, 장호원읍, 호법면",
         bio: [
-            "이천시 지역발전특별위 부위원장",
+            "개혁신당 이천시 지역발전특별위 부위원장",
             "전) 공군 장교"
         ],
-        photo: "",
-        district: "가",
+        photo: "https://i.imgur.com/GN9IlQf.png",
+        district: "다",
         sns: {
             fb: "#"
         },
@@ -2705,7 +2686,7 @@ const candidates = [
             "개혁신당 흥덕구 지역발전특위 부위원장",
             "캠퍼스지부 충북대학교 지부장"
         ],
-        photo: "",
+        photo: "https://i.imgur.com/KUQkhm6.png",
         district: "차",
         sns: {
             fb: "#"
@@ -3233,6 +3214,201 @@ const candidates = [
         coords: [
             33.4889,
             126.4981
+        ]
+    },
+    {
+        name: "최재일",
+        region: "서울 강서구",
+        metropolitan: "서울특별시",
+        category: "기초의원",
+        office: "강서구의회",
+        status: "공천확정",
+        subRegion: "화곡본동, 화곡제6동",
+        bio: [
+            "강서구 아선거구 공천확정"
+        ],
+        photo: "",
+        district: "아",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        dateAdded: "2026-03-19",
+        coords: [
+            37.5509,
+            126.8496
+        ]
+    },
+    {
+        name: "서명교",
+        region: "대구 수성구",
+        metropolitan: "대구광역시",
+        category: "기초의원",
+        office: "수성구의회",
+        status: "공천확정",
+        subRegion: "범어1동, 범어4동, 황금1동, 황금2동",
+        bio: [
+            "수성구 가선거구 공천확정"
+        ],
+        photo: "",
+        district: "가",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        dateAdded: "2026-03-19",
+        coords: [
+            35.8588,
+            128.6305
+        ]
+    },
+    {
+        name: "심명보",
+        region: "경기 김포시",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "김포시의회",
+        status: "공천확정",
+        subRegion: "구래동, 대곶면, 양촌읍, 월곶면, 통진읍, 하성면",
+        bio: [
+            "김포시 다선거구 공천확정"
+        ],
+        photo: "",
+        district: "다",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        dateAdded: "2026-03-19",
+        coords: [
+            37.6149,
+            126.7157
+        ]
+    },
+    {
+        name: "신찬호",
+        region: "경기 안양시",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "안양시의회",
+        status: "공천확정",
+        subRegion: "갈산동, 귀인동, 범계동, 평안동, 평촌동",
+        bio: [
+            "안양시 사선거구 공천확정"
+        ],
+        photo: "",
+        district: "사",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        dateAdded: "2026-03-19",
+        coords: [
+            37.3943,
+            126.9568
+        ]
+    },
+    {
+        name: "이민수",
+        region: "서울 동작구",
+        metropolitan: "서울특별시",
+        category: "기초의원",
+        office: "동작구의회",
+        status: "출마예정",
+        subRegion: "노량진제1동, 노량진제2동",
+        bio: [
+            "동작구 가선거구 출마예정"
+        ],
+        photo: "https://i.imgur.com/PRcEegQ.png",
+        district: "가",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        dateAdded: "2026-03-19",
+        coords: [
+            37.5132,
+            126.9396
+        ]
+    },
+    {
+        name: "민경준",
+        region: "서울 중랑구",
+        metropolitan: "서울특별시",
+        category: "기초의원",
+        office: "중랑구의회",
+        status: "공천확정",
+        subRegion: "면목본동, 면목제2동, 면목제5동, 상봉제2동",
+        bio: [
+            "중랑구 다선거구 공천확정"
+        ],
+        photo: "https://i.imgur.com/EPu4RBj.png",
+        district: "다",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        dateAdded: "2026-03-19",
+        coords: [
+            37.6066,
+            127.0928
+        ]
+    },
+    {
+        name: "박현호",
+        region: "경기 의왕시",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "의왕시의회",
+        status: "공천확정",
+        subRegion: "고천동, 부곡동, 오전동",
+        bio: [
+            "제9대 의왕시의원"
+        ],
+        photo: "https://i.imgur.com/QsapEky.png",
+        district: "가",
+        sns: {
+            yt: "https://www.youtube.com/channel/UCCsmS-7qC5zsCs9DDx_xkbg",
+            fb: "https://www.facebook.com/changehh95",
+            ig: "https://www.instagram.com/changehh95/",
+            blog: "https://changehh95.tistory.com/"
+        },
+        pledge: "#",
+        decl: "#",
+        dateAdded: "2026-03-19",
+        coords: [
+            37.3449,
+            126.9681
+        ]
+    },
+    {
+        name: "신현철",
+        region: "경기 고양시",
+        metropolitan: "경기도",
+        category: "기초단체장",
+        office: "고양시장",
+        status: "공천확정",
+        bio: [
+            "제9대 고양시의회 부의장",
+            "제9대 고양시의원"
+        ],
+        photo: "https://i.imgur.com/HMe3yEq.png",
+        sns: {
+            fb: "https://www.facebook.com/bundopro/",
+            ig: "https://www.instagram.com/bundopro/"
+        },
+        pledge: "#",
+        decl: "#",
+        dateAdded: "2026-03-19",
+        coords: [
+            37.6584,
+            126.8324
         ]
     },
     {
