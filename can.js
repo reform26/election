@@ -20,7 +20,7 @@ const candidates = [
             "개혁신당 최고위원",
             "법무법인 우리 대표변호사"
         ],
-        photo: "https://img1.newsis.com/2025/11/25/NISI20251125_0021074114_web.jpg",
+        photo: "https://i.imgur.com/EyejZgC.png",
         sns: {
             fb: "https://www.facebook.com/gimjeongcheol.869066/",
             ig: "https://www.instagram.com/jch_kim/",
@@ -825,6 +825,7 @@ const candidates = [
             fb: "https://www.facebook.com/hoyup.lee/",
             ig: "https://www.instagram.com/hoyup97/",
             blog: "https://blog.naver.com/hyl005",
+            site: "https://litt.ly/horang97",
             site: "https://hoyup.kr/"
         },
         pledge: "https://hoyup.kr/",
@@ -1688,7 +1689,7 @@ const candidates = [
         subRegion: "충장동, 동명동, 계림1동, 계림2동, 산수1동, 산수2동",
         bio: [
             "<span style='letter-spacing:-0.15em;'>개혁신당 광주광역시 지역발전특위 부위원장</span>",
-            "전)동구·남구 을 당협위원장",
+            "<span style='letter-spacing:-0.12em;'>전)동구·남구 을 당협위원장</span>",
             "21대 대선 선대위 홍보부본부장"
         ],
         photo: "https://i.imgur.com/cah0vOW.png",
@@ -2682,15 +2683,19 @@ const candidates = [
         status: "예비후보",
         subRegion: "가경동, 복대제2동",
         bio: [
-            "개혁신당 흥덕구 지역발전특위 부위원장",
-            "캠퍼스지부 충북대학교 지부장"
+            "<span style='letter-spacing:-0.12em;'>개혁신당 청주 지역발전특위 부위원장</span>",
+            "캠퍼스지부 충북대학교 지부장",
+            "중앙당 미래희망위원회 기획부",
+            "전) 개혁신당 세종 선대위 홍보위원"
         ],
         photo: "https://i.imgur.com/KUQkhm6.png",
         district: "차",
         sns: {
-            fb: "#"
+            fb: "#",
+            ig: "https://www.instagram.com/together.chachacha",
+            site: "https://litt.ly/newcheongju.kr"
         },
-        pledge: "#",
+        pledge: "https://litt.ly/newcheongju.kr",
         decl: "#",
         dateAdded: "2026-02-27",
         coords: [
