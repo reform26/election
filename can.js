@@ -831,6 +831,7 @@ const candidates = [
             fb: "https://www.facebook.com/hoyup.lee/",
             ig: "https://www.instagram.com/hoyup97/",
             blog: "https://blog.naver.com/hyl005",
+            site: "https://litt.ly/horang97",
             site: "https://hoyup.kr/"
         },
         pledge: "https://hoyup.kr/",
@@ -1085,7 +1086,7 @@ const candidates = [
         category: "기초의원",
         office: "광진구의원",
         age: 35,
-        slogan: "오늘보다 나은 광진의 내일, 모두와 함께 만들어 가겠습니다.",
+        slogan: "광진, 조연이 아닌 주연으로!",
         status: "예비후보",
         subRegion: "자양제1동, 자양제2동, 구의제1동, 구의제3동",
         bio: [
@@ -1804,7 +1805,7 @@ const candidates = [
         category: "기초의원",
         office: "성남시의원",
         age: 38,
-        slogan: "78년 동안 이어진 당에 충성하는 정치 진짜 이제 지겹습니다.",
+        slogan: "매너리즘 정치보다 알고리즘 정치를!",
         status: "예비후보",
         subRegion: "분당구 이매1동, 이매2동, 삼평동",
         bio: [
