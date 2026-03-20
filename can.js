@@ -16,6 +16,7 @@ const candidates = [
         office: "서울특별시장",
         age: 49,
         status: "예비후보",
+        slogan: "김정철과 서울의 기적을 함께 만들어요.",
         bio: [
             "개혁신당 최고위원",
             "법무법인 우리 대표변호사"
@@ -162,6 +163,7 @@ const candidates = [
         category: "광역단체장",
         office: "세종특별자치시장",
         age: 39,
+        slogan: "하헌휘와 함께 다시 뛰는 세종시",
         status: "예비후보",
         bio: [
             "세종특별자치시당 창준위장",
@@ -626,6 +628,7 @@ const candidates = [
         category: "광역의원",
         office: "제주도의원",
         age: 33,
+        slogan: "변화의 시작! 감사합니다 이건우입니다",
         status: "예비후보",
         subRegion: "제주시 노형동 을",
         bio: [
@@ -734,6 +737,7 @@ const candidates = [
         category: "기초의원",
         office: "강남구의원",
         age: 27,
+        slogan: "강남의 과거와 미래, 김동현입니다.",
         status: "예비후보",
         district: "자",
         subRegion: "삼성1동, 삼성2동, 대치2동",
@@ -761,6 +765,7 @@ const candidates = [
         category: "기초의원",
         office: "동대문구의원",
         age: 40,
+        slogan: "동대문구의 오늘보다 나은 내일 감사합니다. 김정훈입니다.",
         status: "예비후보",
         subRegion: "답십리2동, 장안1동, 장안2동",
         bio: [
@@ -813,6 +818,7 @@ const candidates = [
         category: "기초의원",
         office: "기초의원",
         age: 29,
+        slogan: "기다리던 미래의 시작, 준비된 이호엽과 함께해주셔서 감사합니다.",
         status: "예비후보",
         subRegion: "성북동, 삼선동, 동선동, 돈암제2동, 안암동, 보문동",
         bio: [
@@ -825,6 +831,7 @@ const candidates = [
             fb: "https://www.facebook.com/hoyup.lee/",
             ig: "https://www.instagram.com/hoyup97/",
             blog: "https://blog.naver.com/hyl005",
+            site: "https://litt.ly/horang97",
             site: "https://hoyup.kr/"
         },
         pledge: "https://hoyup.kr/",
@@ -997,6 +1004,7 @@ const candidates = [
         category: "기초의원",
         office: "노원구의원",
         age: 43,
+        slogan: "노원의 개혁을 위한 당당한 선택! 노원구의원 후보(상게 2,3•4,5동)",
         status: "예비후보",
         subRegion: "상계2동, 상계3동, 상계4동, 상계5동",
         bio: [
@@ -1076,6 +1084,7 @@ const candidates = [
         metropolitan: "서울특별시",
         category: "기초의원",
         office: "광진구의원",
+        slogan: "오늘보다 나은 광진의 내일, 모두와 함께 만들어 가겠습니다.",
         status: "공천확정",
         subRegion: "자양제1동, 자양제2동, 구의제1동, 구의제3동",
         bio: [
@@ -1183,6 +1192,7 @@ const candidates = [
         category: "기초의원",
         office: "송파구의원 후보",
         age: 38,
+        slogan: "송파의 기분 좋은 변화 장성혁과 함께해 주십시오",
         status: "예비후보",
         subRegion: "풍납1동, 풍납2동, 잠실4동, 잠실6동",
         bio: [
@@ -1334,6 +1344,7 @@ const candidates = [
         metropolitan: "대구광역시",
         category: "기초의원",
         office: "달성군의원",
+        slogan: "우성원이 보수의 심장이자 대구의 뿌리 달성에 개혁의 깃발을 꽂겠습니다.",
         status: "공천확정",
         subRegion: "유가읍, 현풍읍, 구지면",
         bio: [
@@ -1388,6 +1399,7 @@ const candidates = [
         category: "기초의원",
         office: "수성구의원",
         age: 32,
+        slogan: "대구에 개혁보수의 길을 열겠습니다.",
         status: "예비후보",
         subRegion: "고산1동, 고산2동, 고산3동",
         bio: [
@@ -1415,6 +1427,7 @@ const candidates = [
         category: "기초의원",
         office: "수성구의원",
         age: 42,
+        slogan: "아이가 행복한 새로운 수성구. 감사합니다 최윤석입니다.",
         status: "예비후보",
         district: "마",
         subRegion: "중동, 상동, 두산동, 수성1가동, 수성2.3가동, 수성4가동",
@@ -1550,6 +1563,7 @@ const candidates = [
         category: "기초의원",
         office: "기초의원",
         age: 29,
+        slogan: "대전 동구, 새로운 변화의 시작을 주민들과 함께 만들어 가겠습니다.",
         status: "예비후보",
         subRegion: "판암1동, 판암2동, 대청동, 용운동, 대동, 자양동",
         bio: [
@@ -1577,6 +1591,7 @@ const candidates = [
         category: "기초의원",
         office: "기초의원 후보",
         age: 24,
+        slogan: "미래를 이끌 청년 공학자, 박현겸입니다.",
         status: "예비후보",
         subRegion: "중앙동, 효동, 삼성동, 홍도동, 삼성동, 산내동",
         bio: [
@@ -1787,6 +1802,7 @@ const candidates = [
         category: "기초의원",
         office: "성남시의원",
         age: 38,
+        slogan: "78년 동안 이어진 당에 충성하는 정치 진짜 이제 지겹습니다.",
         status: "예비후보",
         subRegion: "분당구 이매1동, 이매2동, 삼평동",
         bio: [
@@ -1816,6 +1832,7 @@ const candidates = [
         category: "기초의원",
         office: "성남시의회",
         age: 31,
+        slogan: "중원구의 새로운 선택!",
         status: "예비후보",
         district: "사",
         subRegion: "중앙동, 금광1동, 금광2동, 은행1동, 은행2동",
@@ -1866,6 +1883,7 @@ const candidates = [
         category: "기초의원",
         office: "부천시의원",
         age: 33,
+        slogan: "청년 정치신인이 만드는 부천의 내일, 함께해 주십시오. 감사합니다.",
         status: "예비후보",
         subRegion: "원미구 중1동, 중2동, 중3동, 중4동, 약대동",
         bio: [
@@ -2098,6 +2116,7 @@ const candidates = [
         category: "기초의원",
         office: "기초의원 후보",
         age: 39,
+        slogan: "인공지능 시대, 준비된 전문가! 활력 넘치는 안양! 이천은 입니다",
         status: "예비후보",
         district: "바",
         subRegion: "달안동, 부림동, 인덕원동, 관양동",
@@ -2306,6 +2325,7 @@ const candidates = [
         category: "기초의원",
         office: "춘천시의원",
         age: 25,
+        slogan: "내일이 기대되는 정치 감사합니다 최태영입니다.",
         status: "예비후보",
         subRegion: "효자2동, 석사동",
         bio: [
@@ -2336,6 +2356,7 @@ const candidates = [
         category: "기초의원",
         office: "기초의원 후보",
         age: 39,
+        slogan: "오늘보다 나은 내을 만드는 이강민입니다.",
         status: "예비후보",
         subRegion: "불당1동, 불당2동",
         bio: [
@@ -2398,6 +2419,7 @@ const candidates = [
         category: "기초의원",
         office: "천안시의원 후보",
         age: 22,
+        slogan: "천안을 사랑하는 용기있는 선택, 손승범입니다",
         status: "예비후보",
         subRegion: "봉명동, 성정1동, 성정2동, 문성동",
         bio: [
@@ -2506,6 +2528,7 @@ const candidates = [
         category: "기초의원",
         office: "기초의원 후보",
         age: 40,
+        slogan: "그동안 소외되었던 능력있는 분들이 참여하는 정치 생태계를 만들겠습니다.",
         status: "예비후보",
         subRegion: "인동동, 진미동",
         bio: [
@@ -2949,10 +2972,10 @@ const candidates = [
     },
     {
         name: "김민식",
-        region: "인천 서해구",
+        region: "인천 서구",
         metropolitan: "인천광역시",
         category: "기초의원",
-        office: "서해구의회",
+        office: "서구의회",
         age: 37,
         status: "예비후보",
         subRegion: "가정1동, 가정2동, 가정3동, 신현원창동",
@@ -3053,6 +3076,7 @@ const candidates = [
         category: "기초의원",
         office: "강남구의회",
         age: 28,
+        slogan: "젊은 힘으로 젊은 강남 최선을 다하겠습니다",
         status: "예비후보",
         subRegion: "압구정동, 청담동",
         bio: [
@@ -3077,6 +3101,7 @@ const candidates = [
         metropolitan: "부산광역시",
         category: "기초의원",
         office: "금정구의회",
+        slogan: "가장 젊고 가장 새로운 정치인 권민찬 입니다 감사합니다!",
         status: "공천확정",
         subRegion: "남산동, 구서2동",
         bio: [
@@ -3324,7 +3349,10 @@ const candidates = [
         status: "출마예정",
         subRegion: "노량진제1동, 노량진제2동",
         bio: [
-            "동작구 가선거구 출마예정"
+            "사회복지사(2급)",
+            "IT 유지보수 전문가",
+            "IT 유지보수 노조위원장 역임",
+            "<span style='letter-spacing:-0.15em;'>본동 11번지 지주공동개발 비대위원장</span>"
         ],
         photo: "https://i.imgur.com/PRcEegQ.png",
         district: "가",
@@ -3396,6 +3424,7 @@ const candidates = [
         metropolitan: "경기도",
         category: "기초단체장",
         office: "고양시장",
+        slogan: "고양시민이 정책결정자입니다. 잘 사는 고양시민이 직접 만들어야 합니다.",
         status: "공천확정",
         bio: [
             "제9대 고양시의회 부의장",
