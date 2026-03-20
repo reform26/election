@@ -831,6 +831,7 @@ const candidates = [
             fb: "https://www.facebook.com/hoyup.lee/",
             ig: "https://www.instagram.com/hoyup97/",
             blog: "https://blog.naver.com/hyl005",
+            site: "https://litt.ly/horang97",
             site: "https://hoyup.kr/"
         },
         pledge: "https://hoyup.kr/",
@@ -1055,7 +1056,8 @@ const candidates = [
         metropolitan: "서울특별시",
         category: "기초의원",
         office: "광진구의원",
-        status: "공천확정",
+        age: 27,
+        status: "예비후보",
         subRegion: "능동, 구의2동, 광장동, 군자동",
         bio: [
             "서울시당 대변인",
@@ -1083,8 +1085,9 @@ const candidates = [
         metropolitan: "서울특별시",
         category: "기초의원",
         office: "광진구의원",
+        age: 35,
         slogan: "오늘보다 나은 광진의 내일, 모두와 함께 만들어 가겠습니다.",
-        status: "공천확정",
+        status: "예비후보",
         subRegion: "자양제1동, 자양제2동, 구의제1동, 구의제3동",
         bio: [
             "서울시당 대변인",
@@ -1111,14 +1114,15 @@ const candidates = [
         metropolitan: "서울특별시",
         category: "기초의원",
         office: "기초의원",
-        status: "공천확정",
+        age: 28,
+        status: "예비후보",
         subRegion: "화양동, 자양제3동, 자양제4동",
         bio: [
             "서울시당 대변인",
             "<span style='letter-spacing:-0.12em;'>개혁신당 광진구 지역발전특위 부위원장</span>",
             "21대 대선 중앙당 홍보국 주임"
         ],
-        photo: "https://i.imgur.com/1yup6y8.png",
+        photo: "https://i.imgur.com/2QlX6S1.png",
         district: "라",
         sns: {
             fb: "https://www.facebook.com/profile.php?id=100004762395806",
