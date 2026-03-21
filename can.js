@@ -502,8 +502,8 @@ const candidates = [
         decl: "#",
         dateAdded: "2026-02-12",
         coords: [
-            35.8495,
-            128.6622
+            35.8376,
+            128.6987
         ]
     },
     {
@@ -831,6 +831,7 @@ const candidates = [
             fb: "https://www.facebook.com/hoyup.lee/",
             ig: "https://www.instagram.com/hoyup97/",
             blog: "https://blog.naver.com/hyl005",
+            site: "https://litt.ly/horang97",
             site: "https://hoyup.kr/"
         },
         pledge: "https://hoyup.kr/",
@@ -1418,8 +1419,8 @@ const candidates = [
         decl: "https://www.facebook.com/share/p/1BkSL7Bw2c/",
         dateAdded: "2026-01-26",
         coords: [
-            35.8495,
-            128.6622
+            35.8376,
+            128.6987
         ]
     },
     {
@@ -2358,7 +2359,7 @@ const candidates = [
         category: "기초의원",
         office: "기초의원 후보",
         age: 39,
-        slogan: "오늘보다 나은 내을 만드는 이강민입니다.",
+        slogan: "오늘보다 나은 내일을 만드는 이강민입니다.",
         status: "예비후보",
         subRegion: "불당1동, 불당2동",
         bio: [
@@ -2668,8 +2669,8 @@ const candidates = [
         decl: "#",
         dateAdded: "2026-01-26",
         coords: [
-            37.0681,
-            129.3836
+            37.0538,
+            129.3945
         ]
     },
     {

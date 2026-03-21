@@ -158,13 +158,17 @@ async function loadRow1() {
         
         const data = await res.json();
         
-        const allVideos = data.map(item => ({
-            candidate: item.candidate_name,
-            url: `https://www.youtube.com/watch?v=${item.video_id}`,
-            title: item.title,
-            thumb: item.thumbnail_url,
-            publishedAt: item.published_at
-        }));
+        // '후원', '기부' 키워드가 제목에 포함된 영상 제외
+        const BLOCKED_KEYWORDS = ['후원', '기부'];
+        const allVideos = data
+            .filter(item => !BLOCKED_KEYWORDS.some(kw => (item.title || '').includes(kw)))
+            .map(item => ({
+                candidate: item.candidate_name,
+                url: `https://www.youtube.com/watch?v=${item.video_id}`,
+                title: item.title,
+                thumb: item.thumbnail_url,
+                publishedAt: item.published_at
+            }));
 
         row1Data = allVideos;
         renderRow1(row1Data);
