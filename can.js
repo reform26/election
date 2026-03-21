@@ -831,6 +831,7 @@ const candidates = [
             fb: "https://www.facebook.com/hoyup.lee/",
             ig: "https://www.instagram.com/hoyup97/",
             blog: "https://blog.naver.com/hyl005",
+            site: "https://litt.ly/horang97",
             site: "https://hoyup.kr/"
         },
         pledge: "https://hoyup.kr/",
@@ -2381,8 +2382,8 @@ const candidates = [
         decl: "https://rallypoint.kr/board/politics-free/223549",
         dateAdded: "2025-12-01",
         coords: [
-            36.8319,
-            127.1566
+            36.807091,
+            127.110328
         ]
     },
     {
