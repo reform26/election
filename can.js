@@ -831,6 +831,7 @@ const candidates = [
             fb: "https://www.facebook.com/hoyup.lee/",
             ig: "https://www.instagram.com/hoyup97/",
             blog: "https://blog.naver.com/hyl005",
+            site: "https://litt.ly/horang97",
             site: "https://hoyup.kr/"
         },
         pledge: "https://hoyup.kr/",
@@ -1348,12 +1349,14 @@ const candidates = [
         category: "기초의원",
         office: "달성군의원",
         slogan: "우성원이 보수의 심장이자 대구의 뿌리 달성에 개혁의 깃발을 꽂겠습니다.",
-        status: "공천확정",
+        status: "예비후보",
+        age: 35,
         subRegion: "유가읍, 현풍읍, 구지면",
         bio: [
-            "달성군 당협위원장"
+            "달성군 당협위원장",
+            "전) 달성군4-H연합회장"
         ],
-        photo: "https://i.imgur.com/NNtiJ53.jpeg",
+        photo: "https://i.imgur.com/Bi2Owdi.png",
         district: "다",
         sns: {
             fb: "https://www.facebook.com/seongwon.woo.3/",
@@ -2655,11 +2658,13 @@ const candidates = [
         region: "경북 울진군",
         metropolitan: "경상북도",
         category: "기초의원",
-        office: "기초의원 후보",
-        status: "공천확정",
+        office: "울진군의원",
+        status: "예비후보",
+        age: 66,
         subRegion: "북면, 죽변면",
         bio: [
-            "울진군 나선거구 후보"
+            "현) 풍경채 대표",
+            "전) 국가철도공단 시설장비사무소 산업안전관리담당자"
         ],
         photo: "",
         district: "나",
@@ -2950,6 +2955,7 @@ const candidates = [
             127.1295
         ]
     },
+
     {
         name: "김민식",
         region: "인천 서구",
