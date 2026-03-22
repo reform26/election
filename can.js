@@ -831,6 +831,7 @@ const candidates = [
             fb: "https://www.facebook.com/hoyup.lee/",
             ig: "https://www.instagram.com/hoyup97/",
             blog: "https://blog.naver.com/hyl005",
+            site: "https://litt.ly/horang97",
             site: "https://hoyup.kr/"
         },
         pledge: "https://hoyup.kr/",
@@ -880,7 +881,7 @@ const candidates = [
             "변리사",
             "전) 정보통신부 서기관"
         ],
-        photo: "",
+        photo: "https://i.imgur.com/89emGbq.jpeg",
         district: "다",
         sns: {
             fb: "#"
@@ -1673,8 +1674,9 @@ const candidates = [
         metropolitan: "대전광역시",
         category: "기초의원",
         office: "기초의원 후보",
+        age: 24,
         gender: "f",
-        status: "공천확정",
+        status: "예비후보",
         subRegion: "온천1동, 온천2동, 노은1동",
         bio: [
             "중앙당 미래희망위원회 위원",
