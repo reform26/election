@@ -831,6 +831,7 @@ const candidates = [
             fb: "https://www.facebook.com/hoyup.lee/",
             ig: "https://www.instagram.com/hoyup97/",
             blog: "https://blog.naver.com/hyl005",
+            site: "https://litt.ly/horang97",
             site: "https://hoyup.kr/"
         },
         pledge: "https://hoyup.kr/",
@@ -2950,6 +2951,7 @@ const candidates = [
             127.1295
         ]
     },
+
     {
         name: "김민식",
         region: "인천 서구",
@@ -2960,8 +2962,10 @@ const candidates = [
         status: "예비후보",
         subRegion: "가정1동, 가정2동, 가정3동, 신현원창동",
         bio: [
-            "<span style='letter-spacing:-0.15em;'>현) 유비케어 산업안전보건위원회 근로자대표</span>",
-            "루원호반베르디움 더 센트럴 동대표"
+            "<span style='letter-spacing:-0.15em;'>현) 유비케어 산업안전보건위 근로자대표</span>",
+            "루원호반베르디움 동대표",
+            "유비케어 IT인프라 구축담당",
+            "전)천안아산통합센터 ITS업무운영"
         ],
         photo: "https://i.imgur.com/Gy1fbgP.png",
         district: "다",
