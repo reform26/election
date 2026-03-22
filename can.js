@@ -831,6 +831,7 @@ const candidates = [
             fb: "https://www.facebook.com/hoyup.lee/",
             ig: "https://www.instagram.com/hoyup97/",
             blog: "https://blog.naver.com/hyl005",
+            site: "https://litt.ly/horang97",
             site: "https://hoyup.kr/"
         },
         pledge: "https://hoyup.kr/",
@@ -1243,10 +1244,11 @@ const candidates = [
         metropolitan: "부산광역시",
         category: "기초의원",
         office: "기장군의원",
-        status: "공천확정",
+        status: "예비후보",
+        age: 30,
         subRegion: "정관읍, 장안읍",
         bio: [
-            "기장군 다선거구 후보"
+            "(주)티제이앤앤에스 대리"
         ],
         photo: "",
         district: "다",
