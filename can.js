@@ -831,6 +831,7 @@ const candidates = [
             fb: "https://www.facebook.com/hoyup.lee/",
             ig: "https://www.instagram.com/hoyup97/",
             blog: "https://blog.naver.com/hyl005",
+            site: "https://litt.ly/horang97",
             site: "https://hoyup.kr/"
         },
         pledge: "https://hoyup.kr/",
@@ -2950,30 +2951,7 @@ const candidates = [
             127.1295
         ]
     },
-    {
-        name: "유재우",
-        region: "서울 성북구",
-        metropolitan: "서울특별시",
-        category: "기초의원",
-        office: "성북구의회",
-        status: "공천확정",
-        subRegion: "정릉1동, 정릉2동, 정릉3동, 정릉4동, 길음1동",
-        bio: [
-            "성북구 나선거구 후보"
-        ],
-        photo: "",
-        district: "나",
-        sns: {
-            fb: "#"
-        },
-        pledge: "#",
-        decl: "#",
-        dateAdded: "2026-03-09",
-        coords: [
-            37.6082,
-            127.0116
-        ]
-    },
+
     {
         name: "김민식",
         region: "인천 서구",
