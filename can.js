@@ -238,8 +238,8 @@ const candidates = [
         status: "예비후보",
         bio: [
             "강동구 을 당협위원장",
-            "개혁신당 강동구 지역발전특위 위원장",
-            "개혁신당 21대 대통령선거 일정기획부단장",
+            "<span style='letter-spacing:-0.12em;'>개혁신당 강동구 지역발전특위 위원장</span>",
+            "21대 대선 일정기획부단장",
             "전) 서울시당 수석대변인"
         ],
         photo: "https://i.imgur.com/moDKFx9.png",
@@ -314,8 +314,8 @@ const candidates = [
         status: "공천확정",
         bio: [
             "관악구 갑 당협위원장",
-            "정치컨설팅 공론 대표",
-            "개혁신당 21대 대통령선거 선대위 부대변인"
+            "21대 대선 선대위 부대변인",
+            "정치컨설팅 공론 대표"
         ],
         photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQldYi95_jeH9ZscObQhU8SfeBkt7_id2CYecNX-bHuIl-NIOJ8r4XS_F4&s=10",
         sns: {
@@ -834,6 +834,7 @@ const candidates = [
             fb: "https://www.facebook.com/hoyup.lee/",
             ig: "https://www.instagram.com/hoyup97/",
             blog: "https://blog.naver.com/hyl005",
+            site: "https://litt.ly/horang97",
             site: "https://hoyup.kr/"
         },
         pledge: "https://hoyup.kr/",
@@ -3000,6 +3001,7 @@ const candidates = [
             127.1295
         ]
     },
+
     {
         name: "김민식",
         region: "인천 서구",
