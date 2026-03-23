@@ -1329,7 +1329,7 @@
         </div>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="can.js?v=0323.03" defer></script>   <script src="data1.js?v=0223.05" defer></script> <script src="search.js?v=0317.02" defer></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="can.js?v=0323.04" defer></script>   <script src="data1.js?v=0223.05" defer></script> <script src="search.js?v=0317.02" defer></script>
     <script>
         let currentModalCandidateName = '';
         let showOnlyConfirmed = false;
@@ -2256,6 +2256,10 @@
                 return (c.decl && c.decl !== "#") ? "출마선언" : "출마예정";
             };
 
+            const isConfirmed = (["공천확정","후보"].includes(can.status) && can.name !== "김성민");
+            const isPreliminary = (can.status === "예비후보" || can.showPreliminaryBadge === true);
+            const isYouth = can.age != null && can.age >= 10 && can.age <= 39;
+
             let displayOfficeLabel = "";
             if (can.name === "서운교") displayOfficeLabel = "대구광역시의회 수성구 제3선거구 후보";
             else if (can.name === "양해두") displayOfficeLabel = "제주특별자치도의회 제주시 외도동·이호동·도두동 선거구 후보";
@@ -2289,20 +2293,54 @@
                                 {can.name}
                                 {isNewCandidate(can.dateAdded) && <span className="new-badge">NEW</span>}
                             </h3>
-                            <div className="px-2 py-0.5 sm:px-3 sm:py-1 bg-orange-100 dark:bg-orange-900/40 text-orange-600 dark:text-orange-400 rounded-lg text-[9px] sm:text-xs font-black uppercase mb-2 sm:mb-4">{displayOfficeLabel}</div>
-                            <div className="flex gap-1.5 sm:gap-2 mb-2 sm:mb-4">
+                            <div className="px-2 py-0.5 sm:px-3 sm:py-1 bg-orange-100 dark:bg-orange-900/40 text-orange-600 dark:text-orange-400 rounded-lg text-[9px] sm:text-xs font-black uppercase mb-1.5 sm:mb-2">{displayOfficeLabel}</div>
+                            {/* 뱃지 행 */}
+                            <div className="flex gap-1.5 flex-wrap mb-2 sm:mb-3">
+                                {isConfirmed && (
+                                    <span style={{display:'inline-flex',alignItems:'center',gap:'3px',background:'#FF6600',color:'white',fontSize:'9px',fontWeight:'900',padding:'2px 7px',borderRadius:'5px'}}>
+                                        <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                        공천확정
+                                    </span>
+                                )}
+                                {isPreliminary && (
+                                    <span style={{display:'inline-flex',alignItems:'center',gap:'3px',background:'white',color:'#0a1a3d',fontSize:'9px',fontWeight:'900',padding:'2px 7px',borderRadius:'5px',border:'1.5px solid #0a1a3d'}}>
+                                        <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#0a1a3d" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                                        예비후보
+                                    </span>
+                                )}
+                                {isYouth && (
+                                    <span style={{display:'inline-flex',alignItems:'center',background:'#FF6600',color:'white',fontSize:'9px',fontWeight:'900',padding:'2px 7px',borderRadius:'5px'}}>
+                                        2030
+                                    </span>
+                                )}
+                            </div>
+                            <div className="flex gap-1.5 sm:gap-2 mb-2 sm:mb-3">
                                 {isValidLink(can.sns?.fb) && <a href={can.sns.fb} target="_blank" className="p-1.5 sm:p-2 bg-orange-50 dark:bg-slate-800 text-orange-600 dark:text-orange-400 rounded-lg hover:bg-orange-500 hover:text-white transition-colors border border-orange-100 dark:border-slate-700 shadow-sm"><Icon name="facebook" className="w-3.5 h-3.5 sm:w-4 sm:h-4"/></a>}
                                 {isValidLink(can.sns?.ig) && <a href={can.sns.ig} target="_blank" className="p-1.5 sm:p-2 bg-orange-50 dark:bg-slate-800 text-orange-600 dark:text-orange-400 rounded-lg hover:bg-orange-500 hover:text-white transition-colors border border-orange-100 dark:border-slate-700 shadow-sm"><Icon name="instagram" className="w-3.5 h-3.5 sm:w-4 sm:h-4"/></a>}
                                 {isValidLink(can.sns?.blog) && <a href={can.sns.blog} target="_blank" className="p-1.5 sm:p-2 bg-orange-50 dark:bg-slate-800 text-orange-600 dark:text-orange-400 rounded-lg hover:bg-orange-500 hover:text-white transition-colors border border-orange-100 dark:border-slate-700 shadow-sm"><Icon name="link" className="w-3.5 h-3.5 sm:w-4 sm:h-4"/></a>}
                                 {isValidLink(can.sns?.yt) && <a href={can.sns.yt} target="_blank" className="p-1.5 sm:p-2 bg-orange-50 dark:bg-slate-800 text-orange-600 dark:text-orange-400 rounded-lg hover:bg-orange-500 hover:text-white transition-colors border border-orange-100 dark:border-slate-700 shadow-sm"><Icon name="youtube" className="w-3.5 h-3.5 sm:w-4 sm:h-4"/></a>}
                             </div>
-                            {isValidLink(can.decl) && (
-                                <a href={can.decl} target="_blank" className="w-full sm:w-auto px-3 py-1.5 sm:py-2.5 bg-orange-500 text-white rounded-lg sm:rounded-xl text-[10px] sm:text-sm font-black text-center shadow-lg shadow-orange-200 hover:bg-orange-600 transition-all active:scale-95 flex items-center justify-center gap-1.5">
-                                    <Icon name="file-text" className="w-3 h-3 sm:w-4 sm:h-4"/><span className="whitespace-nowrap">출마선언문 보기</span>
-                                </a>
-                            )}
+                            <div className="flex flex-col gap-1.5 w-full">
+                                {isValidLink(can.decl) && (
+                                    <a href={can.decl} target="_blank" className="w-full sm:w-auto px-3 py-1.5 sm:py-2.5 bg-orange-500 text-white rounded-lg sm:rounded-xl text-[10px] sm:text-sm font-black text-center shadow-lg shadow-orange-200 hover:bg-orange-600 transition-all active:scale-95 flex items-center justify-center gap-1.5">
+                                        <Icon name="file-text" className="w-3 h-3 sm:w-4 sm:h-4"/><span className="whitespace-nowrap">출마선언문 보기</span>
+                                    </a>
+                                )}
+                                {isValidLink(can.pledge) && (
+                                    <a href={can.pledge} target="_blank" className="w-full sm:w-auto px-3 py-1.5 sm:py-2.5 bg-white dark:bg-slate-800 text-orange-500 border-2 border-orange-500 rounded-lg sm:rounded-xl text-[10px] sm:text-sm font-black text-center hover:bg-orange-50 dark:hover:bg-slate-700 transition-all active:scale-95 flex items-center justify-center gap-1.5">
+                                        <Icon name="file-text" className="w-3 h-3 sm:w-4 sm:h-4"/><span className="whitespace-nowrap">공약 보기</span>
+                                    </a>
+                                )}
+                            </div>
                         </div>
                     </div>
+                    {/* 슬로건 */}
+                    {can.slogan && (
+                        <div style={{margin:'12px 0 0',padding:'9px 13px',borderRadius:'9px',border:'1.5px solid #FF6600',borderLeft:'4px solid #FF6600',background:'#fffaf5',position:'relative',overflow:'hidden'}} className="dark:bg-orange-900/10">
+                            <span style={{position:'absolute',right:'10px',top:'-2px',fontSize:'36px',color:'rgba(255,102,0,0.08)',fontWeight:'900',lineHeight:'1',pointerEvents:'none'}}>"</span>
+                            <p style={{fontSize:'12px',fontWeight:'900',color:'#cc5200',letterSpacing:'-0.03em',margin:'0',position:'relative'}} className="dark:text-orange-300">{can.slogan}</p>
+                        </div>
+                    )}
                     <div className="flex-1 mt-4 sm:mt-6 border-t border-orange-50 dark:border-slate-700 pt-4 sm:pt-6 overflow-y-auto custom-scrollbar font-bold text-slate-700 dark:text-slate-300 text-left text-[13px] sm:text-sm">
                         <div className="space-y-3 pb-4">
                             {can.bio.map((line, idx) => (
@@ -2360,6 +2398,7 @@
                 const guName = selectedDistrictInfo.gu;
                 const distIdPart = selectedDistrictInfo.district.split(' ')[1]?.replace('선거구', '') || "";
                 return candidates.filter(can => 
+                    !can.hidden &&
                     can.category === "기초의원" && 
                     can.metropolitan === "서울특별시" && 
                     can.region.includes(guName) && 
@@ -2422,6 +2461,7 @@
                                     const distName = findDistrictName(guName, dongName);
                                     const isSelected = selectedDistrictInfo && selectedDistrictInfo.district === distName;
                                     const hasCandidateInDist = distName && candidates.some(c => 
+                                        !c.hidden &&
                                         c.category === "기초의원" && 
                                         c.metropolitan === "서울특별시" && 
                                         c.region.includes(guName) && 
@@ -2654,6 +2694,7 @@
             const getDistColor = (dName) => {
                 if (!dName) return document.documentElement.classList.contains('dark') ? "#020617" : "#fcf9f6";
                 const hasCandidate = candidates.some(c => 
+                    !c.hidden &&
                     c.category === "기초의원" && 
                     c.metropolitan === "경기도" && 
                     dName.startsWith(c.region.replace('경기 ', '')) && 
@@ -2676,7 +2717,7 @@
                 if (!selectedDistrict) return [];
                 const [selCity] = selectedDistrict.split(' ');
                 return candidates.filter(can => {
-                    if (can.category !== "기초의원" || can.metropolitan !== "경기도") return false;
+                    if (can.hidden || can.category !== "기초의원" || can.metropolitan !== "경기도") return false;
                     const candidateCity = can.region.split(' ').pop();
                     const isCorrectCity = candidateCity === selCity;
                     const isCorrectDistrict = selectedDistrict.includes(can.district);
@@ -2781,7 +2822,7 @@
             // window.candidates 참조
             const daeguCands = useMemo(() => {
                 if (typeof window.candidates === 'undefined') return [];
-                return window.candidates.filter(c => c.metropolitan === "대구광역시" && c.category === "기초의원");
+                return window.candidates.filter(c => !c.hidden && c.metropolitan === "대구광역시" && c.category === "기초의원");
             }, []);
 
             const displayDistrict = activeDistrict || selectedDistrict;
