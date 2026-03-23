@@ -888,7 +888,7 @@
                 <div id="d-day-badge" class="rh-dday">D-000</div>
                 <div class="rh-update-badge">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    <span id="last-update-date">최종 업데이트 : 2026. 03. 19</span>
+                    <span id="last-update-date">최종 업데이트 : 2026. 03. 23</span>
                 </div>
             </div>
         </div>
@@ -1329,7 +1329,7 @@
         </div>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="can.js?v=0322.05" defer></script>   <script src="data1.js?v=0223.05" defer></script> <script src="search.js?v=0317.02" defer></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="can.js?v=0323.02" defer></script>   <script src="data1.js?v=0223.05" defer></script> <script src="search.js?v=0317.02" defer></script>
     <script>
         let currentModalCandidateName = '';
         let showOnlyConfirmed = false;
@@ -1704,13 +1704,13 @@
         const councilSort = (a, b) => (a.region || "").localeCompare(b.region || "") || (a.district || "").localeCompare(b.district || "");
 
         function updateSummary() {
-            const getCount = (cat) => candidates.filter(c => c.category === cat).length;
+            const getCount = (cat) => candidates.filter(c => !c.hidden && c.category === cat).length;
             const byCount    = getCount("재보궐선거");
             const provExec   = getCount("광역단체장");
             const localExec  = getCount("기초단체장");
             const provCounc  = getCount("광역의원");
             const localCounc = getCount("기초의원");
-            const total      = candidates.length;
+            const total      = candidates.filter(c => !c.hidden).length;
 
             // footer
             const footerEls = {
@@ -1739,7 +1739,7 @@
                 };
                 let gridHtml = '';
                 Object.keys(regionPriority).forEach(region => {
-                    const count = candidates.filter(c => c.metropolitan === region || c.region === region).length;
+                    const count = candidates.filter(c => !c.hidden && (c.metropolitan === region || c.region === region)).length;
                     gridHtml += `<div class="region-box cursor-pointer" onclick="renderRegionView('${region}')"><span class="text-gray-500 dark:text-slate-400" style="font-size:11px;font-weight:700;">${shortNameMap[region]}</span><span style="font-size:14px;font-weight:900;" class="${count > 0 ? 'text-[#FF6600]' : 'text-gray-400 dark:text-slate-500'}">${count}</span></div>`;
                 });
                 regionGrid.innerHTML = gridHtml;
@@ -2049,7 +2049,7 @@
             initDarkMode();
             // 예비후보 통계 카드 계산
             (function() {
-                const prelim = (window.candidates || []).filter(c => c.status === "예비후보" || c.showPreliminaryBadge === true);
+                const prelim = (window.candidates || []).filter(c => !c.hidden && (c.status === "예비후보" || c.showPreliminaryBadge === true));
                 const total = prelim.length;
                 const withAge = prelim.filter(c => c.age != null);
                 const avgAge = withAge.length ? (withAge.reduce((s,c) => s + c.age, 0) / withAge.length) : 0;
@@ -2083,14 +2083,14 @@
 
             // 후보자 통계 카드 채우기
             (function() {
-                const getCount = (cat) => (window.candidates || []).filter(c => c.category === cat).length;
+                const getCount = (cat) => (window.candidates || []).filter(c => !c.hidden && c.category === cat).length;
                 const setEl = (id, val) => { const el = document.getElementById(id); if (el) el.innerText = val; };
                 setEl('cs-by',           getCount('재보궐선거'));
                 setEl('cs-prov-exec',    getCount('광역단체장'));
                 setEl('cs-local-exec',   getCount('기초단체장'));
                 setEl('cs-prov-council', getCount('광역의원'));
                 setEl('cs-local-council',getCount('기초의원'));
-                setEl('cs-total',        (window.candidates || []).length);
+                setEl('cs-total',        (window.candidates || []).filter(c => !c.hidden).length);
             })();
 
             const diff = Math.ceil((new Date('2026-06-02') - new Date().setHours(0,0,0,0)) / (1000*60*60*24));

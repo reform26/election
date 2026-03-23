@@ -834,6 +834,7 @@ const candidates = [
             fb: "https://www.facebook.com/hoyup.lee/",
             ig: "https://www.instagram.com/hoyup97/",
             blog: "https://blog.naver.com/hyl005",
+            site: "https://litt.ly/horang97",
             site: "https://hoyup.kr/"
         },
         pledge: "https://hoyup.kr/",
@@ -1271,6 +1272,7 @@ const candidates = [
     },
     {
         name: "백성민",
+        hidden: true,
         region: "부산 남구",
         metropolitan: "부산광역시",
         category: "기초의원",
@@ -1925,6 +1927,7 @@ const candidates = [
     },
     {
         name: "조병찬",
+        hidden: true,
         region: "경기 부천시",
         metropolitan: "경기도",
         category: "기초의원",
@@ -1974,6 +1977,7 @@ const candidates = [
     },
     {
         name: "박창현",
+        hidden: true,
         region: "경기 용인시",
         metropolitan: "경기도",
         category: "기초의원",
@@ -1998,6 +2002,7 @@ const candidates = [
     },
     {
         name: "조현수",
+        hidden: true,
         region: "경기 여주시",
         metropolitan: "경기도",
         category: "기초의원",
@@ -2591,6 +2596,7 @@ const candidates = [
     },
     {
         name: "이동현",
+        hidden: true,
         region: "경북 구미시",
         metropolitan: "경상북도",
         category: "기초의원",
@@ -2995,6 +3001,7 @@ const candidates = [
             127.1295
         ]
     },
+
     {
         name: "김민식",
         region: "인천 서구",
