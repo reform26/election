@@ -145,7 +145,8 @@ async function loadAndPlaceMarkers() {
     const sizeMap  = { '광역단체장':34,'기초단체장':30,'광역의원':26,'기초의원':22,'재보궐선거':26 };
 
     const cands = (window.candidates || []).filter(c =>
-        currentMapCategory === '전체' || c.category === currentMapCategory
+        !c.hidden &&
+        (currentMapCategory === '전체' || c.category === currentMapCategory)
     );
 
     const cache = loadCache();
@@ -190,7 +191,7 @@ function addMarker(cand, coords, colorMap, sizeMap) {
         iconSize: [sz, sz], iconAnchor: [sz/2, sz/2], popupAnchor: [0, -(sz/2+4)],
     });
 
-    const isConfirmed = cand.status === "후보" && cand.name !== "이수찬" && cand.name !== "김성민";
+    const isConfirmed = (["공천확정","후보"].includes(cand.status)) && cand.name !== "이수찬" && cand.name !== "김성민";
     const statusText = isConfirmed ? '🟠 공천확정' : (cand.decl && cand.decl !== '#' ? '📢 출마선언' : '📝 출마예정');
     const districtText = cand.district ? ` ${cand.district}선거구` : '';
     const subRegionText = cand.subRegion

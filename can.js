@@ -834,6 +834,7 @@ const candidates = [
             fb: "https://www.facebook.com/hoyup.lee/",
             ig: "https://www.instagram.com/hoyup97/",
             blog: "https://blog.naver.com/hyl005",
+            site: "https://litt.ly/horang97",
             site: "https://hoyup.kr/"
         },
         pledge: "https://hoyup.kr/",
@@ -2945,8 +2946,8 @@ const candidates = [
         decl: "#",
         dateAdded: "2026-03-05",
         coords: [
-            37.7376,
-            127.0652
+            37.738211,
+            127.089271
         ]
     },
     {
@@ -3000,6 +3001,7 @@ const candidates = [
             127.1295
         ]
     },
+
     {
         name: "김민식",
         region: "인천 서구",
