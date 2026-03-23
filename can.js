@@ -238,8 +238,9 @@ const candidates = [
         status: "예비후보",
         bio: [
             "강동구 을 당협위원장",
-            "서울시당 수석대변인",
-            "제21대 대선 선대위 조직부본부장"
+            "개혁신당 강동구 지역발전특위 위원장",
+            "개혁신당 21대 대통령선거 일정기획부단장",
+            "전) 서울시당 수석대변인"
         ],
         photo: "https://i.imgur.com/moDKFx9.png",
         sns: {
@@ -313,7 +314,8 @@ const candidates = [
         status: "공천확정",
         bio: [
             "관악구 갑 당협위원장",
-            "정치컨설팅 공론 대표"
+            "정치컨설팅 공론 대표",
+            "개혁신당 21대 대통령선거 선대위 부대변인"
         ],
         photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQldYi95_jeH9ZscObQhU8SfeBkt7_id2CYecNX-bHuIl-NIOJ8r4XS_F4&s=10",
         sns: {
@@ -567,7 +569,8 @@ const candidates = [
         constituencyFull: "서대문구 제1선거구",
         category: "광역의원",
         office: "서울시의원",
-        status: "공천확정",
+        status: "예비후보",
+        age: 38,
         subRegion: "충현동, 천연동, 북아현동, 신촌동",
         bio: [
             "제8, 9대 서대문구의원",
@@ -831,6 +834,7 @@ const candidates = [
             fb: "https://www.facebook.com/hoyup.lee/",
             ig: "https://www.instagram.com/hoyup97/",
             blog: "https://blog.naver.com/hyl005",
+            site: "https://litt.ly/horang97",
             site: "https://hoyup.kr/"
         },
         pledge: "https://hoyup.kr/",
@@ -950,6 +954,7 @@ const candidates = [
     },
     {
         name: "서준호",
+        hidden: true,
         region: "서울 용산구",
         metropolitan: "서울특별시",
         category: "기초의원",
@@ -1027,6 +1032,7 @@ const candidates = [
     },
     {
         name: "주한송",
+        hidden: true,
         region: "서울 도봉구",
         metropolitan: "서울특별시",
         category: "기초의원",
@@ -1051,6 +1057,7 @@ const candidates = [
     },
     {
         name: "최제일",
+        slogan: "광진이 키운, 제일 잘 키운 최제일입니다.",
         region: "서울 광진구",
         metropolitan: "서울특별시",
         category: "기초의원",
@@ -1222,7 +1229,8 @@ const candidates = [
         status: "공천확정",
         subRegion: "성내1·2·3동, 둔촌제1·2동",
         bio: [
-            "서울시당 환경위원장"
+            "서울시당 환경위원장",
+            "개혁신당 21대 대선 위기대응팀"
         ],
         photo: "",
         district: "바",
@@ -1508,6 +1516,7 @@ const candidates = [
     },
     {
         name: "이성실",
+        slogan: "정치인보다 행정가로/번호보다 이름으로 이성실입니다. 감사합니다",
         region: "인천 연수구",
         metropolitan: "인천광역시",
         category: "기초의원",
@@ -1860,6 +1869,7 @@ const candidates = [
     },
     {
         name: "홍승우",
+        slogan: "생활 가까이, 우리 동네를 바꾸겠습니다 홍승우입니다.",
         region: "경기 성남시",
         metropolitan: "경기도",
         category: "기초의원",
@@ -2080,6 +2090,7 @@ const candidates = [
         photo: "",
         district: "다",
         sns: {
+            fb: "https://www.facebook.com/profile.php?id=100015815942147",
             ig: ""
         },
         pledge: "#",
@@ -2300,6 +2311,7 @@ const candidates = [
     },
     {
         name: "전상현",
+        slogan: "함께 하는 밝은 도시 전상현 입니다 감사합니다",
         region: "강원 원주시",
         metropolitan: "강원특별자치도",
         category: "기초의원",
@@ -2528,6 +2540,30 @@ const candidates = [
         ]
     },
     {
+        name: "김관호",
+        region: "충남 아산시",
+        metropolitan: "충청남도",
+        category: "기초의원",
+        office: "아산시의원",
+        status: "출마예정",
+        subRegion: "배방읍(세교리, 장재리, 휴대리), 탕정면, 염치읍",
+        bio: [
+            "아산시 라선거구 출마예정"
+        ],
+        photo: "",
+        district: "라",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        dateAdded: "2026-03-23",
+        coords: [
+            36.807656,
+            127.063715
+        ]
+    },
+    {
         name: "류태하",
         region: "경북 구미시",
         metropolitan: "경상북도",
@@ -2654,6 +2690,7 @@ const candidates = [
     },
     {
         name: "정진호",
+        slogan: "한울본부와 함께 만드는 울진의 미래도시 감사합니다 정진호입니다.",
         region: "경북 울진군",
         metropolitan: "경상북도",
         category: "기초의원",
@@ -2684,10 +2721,11 @@ const candidates = [
         metropolitan: "경기도",
         category: "기초의원",
         office: "이천시의회",
-        status: "공천확정",
+        status: "예비후보",
+        age: 28,
         subRegion: "대월면, 모가면, 부발읍, 설성면, 율면, 장호원읍, 호법면",
         bio: [
-            "개혁신당 이천시 지역발전특별위 부위원장",
+            "개혁신당 이천시 지역균형인프라특위 위원장",
             "전) 공군 장교"
         ],
         photo: "https://i.imgur.com/GN9IlQf.png",
@@ -2883,27 +2921,28 @@ const candidates = [
         ]
     },
     {
-        name: "장준희",
+        name: "장준휘",
         region: "경기 의정부시",
         metropolitan: "경기도",
         category: "기초의원",
         office: "의정부시의회",
         status: "공천확정",
-        subRegion: "의정부2동, 호원1동, 호원2동",
+        subRegion: "송산1동, 송산2동, 송산3동, 고산동",
         bio: [
             "의정부시 라선거구 후보"
         ],
-        photo: "",
+        photo: "https://i.imgur.com/j9o6o20.jpeg",
         district: "라",
         sns: {
-            fb: "#"
+            fb: "#",
+            ig: "https://www.instagram.com/dr.jang_ujb/"
         },
         pledge: "#",
         decl: "#",
         dateAdded: "2026-03-05",
         coords: [
-            37.7422,
-            127.0445
+            37.7376,
+            127.0652
         ]
     },
     {
@@ -2913,14 +2952,17 @@ const candidates = [
         category: "기초의원",
         office: "강동구의회",
         status: "공천확정",
+        slogan: "미래를 여는 강동의 선택",
         subRegion: "상일1동, 상일2동, 명일2동",
         bio: [
-            "강동구 나선거구 후보"
+            "개혁신당 강동(을) 사무국장",
+            "전) 개혁신당 서울시당 대변인",
+            "IT 스타트업 로지컬리 대표"
         ],
-        photo: "",
+        photo: "https://bvrgouhhibsqwfdmndwq.supabase.co/storage/v1/object/public/candidates/photos/kim-sungjun-v3.webp",
         district: "나",
         sns: {
-            fb: "#"
+            fb: "https://www.facebook.com/sjkim705/"
         },
         pledge: "#",
         decl: "#",
@@ -2954,6 +2996,7 @@ const candidates = [
             127.1295
         ]
     },
+
     {
         name: "김민식",
         region: "인천 서구",
@@ -3066,7 +3109,8 @@ const candidates = [
         status: "예비후보",
         subRegion: "압구정동, 청담동",
         bio: [
-            "개혁신당 강남구 지역발전특위 부위원장"
+            "개혁신당 강남구 지역발전특위 부위원장",
+            "2026년 강남 청년네트워크 위원"
         ],
         photo: "",
         district: "나",
@@ -3383,12 +3427,13 @@ const candidates = [
         metropolitan: "경기도",
         category: "기초의원",
         office: "의왕시의회",
-        status: "공천확정",
+        status: "예비후보",
+        age: 30,
         subRegion: "고천동, 부곡동, 오전동",
         bio: [
             "제9대 의왕시의원"
         ],
-        photo: "https://i.imgur.com/QsapEky.png",
+        photo: "https://i.imgur.com/9C5nDVE.png",
         district: "가",
         sns: {
             yt: "https://www.youtube.com/channel/UCCsmS-7qC5zsCs9DDx_xkbg",
