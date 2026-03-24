@@ -453,33 +453,6 @@ const candidates = [
         ]
     },
     {
-        name: "이유원",
-        region: "서울 동작구",
-        metropolitan: "서울특별시",
-        category: "기초단체장",
-        office: "동작구청장",
-        gender: "f",
-        status: "출마예정",
-        bio: [
-            "동작구 을 당협위원장",
-            "21대대선 선대위 부대변인",
-            "아트노바 대표"
-        ],
-        photo: "https://i.imgur.com/SI1e3zR.jpeg",
-        sns: {
-            fb: "https://www.facebook.com/radiostarlee",
-            ig: "https://www.instagram.com/radiostarlee",
-            yt: "https://www.youtube.com/@%EC%9D%B4%EC%9C%A0%EC%9B%90TV"
-        },
-        pledge: "#",
-        decl: "https://www.facebook.com/share/p/19dY6YXKDQ/",
-        dateAdded: "2026-03-10",
-        coords: [
-            37.5122,
-            126.9393
-        ]
-    },
-    {
         name: "서운교",
         region: "대구광역시",
         metropolitan: "대구광역시",
@@ -834,6 +807,7 @@ const candidates = [
             fb: "https://www.facebook.com/hoyup.lee/",
             ig: "https://www.instagram.com/hoyup97/",
             blog: "https://blog.naver.com/hyl005",
+            site: "https://litt.ly/horang97",
             site: "https://hoyup.kr/"
         },
         pledge: "https://hoyup.kr/",
@@ -3000,6 +2974,7 @@ const candidates = [
             127.1295
         ]
     },
+
     {
         name: "김민식",
         region: "인천 서구",
