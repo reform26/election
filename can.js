@@ -807,6 +807,7 @@ const candidates = [
             fb: "https://www.facebook.com/hoyup.lee/",
             ig: "https://www.instagram.com/hoyup97/",
             blog: "https://blog.naver.com/hyl005",
+            site: "https://litt.ly/horang97",
             site: "https://hoyup.kr/"
         },
         pledge: "https://hoyup.kr/",
@@ -1300,7 +1301,8 @@ const candidates = [
         metropolitan: "대구광역시",
         category: "기초의원",
         office: "달성군의원",
-        status: "공천확정",
+        age: 50,
+        status: "예비후보",
         subRegion: "화원읍, 가창면",
         bio: [
             "<span style='letter-spacing:-0.15em;'>개혁신당 지역발전특위 부위원장</span>",
@@ -2063,7 +2065,7 @@ const candidates = [
             "경기도당 남양주시 행정안전상공특위 위원장",
             "전) 드림청년단 공동대표"
         ],
-        photo: "",
+        photo: "https://i.imgur.com/jx3Jl8x.png",
         district: "다",
         sns: {
             fb: "https://www.facebook.com/profile.php?id=100015815942147",
@@ -2973,6 +2975,7 @@ const candidates = [
             127.1295
         ]
     },
+
     {
         name: "김민식",
         region: "인천 서구",
@@ -3281,10 +3284,11 @@ const candidates = [
         metropolitan: "대구광역시",
         category: "기초의원",
         office: "수성구의회",
-        status: "공천확정",
+        age: 29,
+        status: "예비후보",
         subRegion: "범어1동, 범어4동, 황금1동, 황금2동",
         bio: [
-            "수성구 가선거구 공천확정"
+            "전) 제73대 한국대학스키연맹 총 학생위원장"
         ],
         photo: "",
         district: "가",
@@ -3305,10 +3309,11 @@ const candidates = [
         metropolitan: "경기도",
         category: "기초의원",
         office: "김포시의회",
-        status: "공천확정",
+        age: 25,
+        status: "예비후보",
         subRegion: "구래동, 대곶면, 양촌읍, 월곶면, 통진읍, 하성면",
         bio: [
-            "김포시 다선거구 공천확정"
+            "농업인"
         ],
         photo: "",
         district: "다",
