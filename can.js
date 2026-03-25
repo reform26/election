@@ -2456,6 +2456,7 @@ const candidates = [
         category: "기초의원",
         office: "천안시의원",
         subRegion: "부성2동",
+        hidden: true,
         bio: [
             "충남도당 공보팀장",
             "21대 대선 충남 선대본 홍보위원",
