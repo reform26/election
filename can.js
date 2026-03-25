@@ -3463,7 +3463,7 @@ const candidates = [
         gender: "f",
         status: "예비후보",
         preliminary: true,
-        subRegion: "연수구 가선거구",
+        subRegion: "옥련2동, 연수1동, 청학동",
         bio: [
             "전) 인천대 겸임교수",
             "전) 한국가족상담교육연구소 선임연구원"
@@ -3478,7 +3478,7 @@ const candidates = [
         dateAdded: "2026-03-25",
         coords: [
             37.4104,
-            126.678
+            126.6780
         ]
     },
     {
