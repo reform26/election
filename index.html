@@ -906,8 +906,11 @@
                 주의사항
             </div>
             <div class="rh-notice-item"><span class="rh-o-dot"></span><span>이 페이지는 <strong>개혁신당과 관련 없는 비공식 페이지</strong>입니다.</span></div>
+            <div class="rh-notice-item"><span class="rh-o-dot"></span><span>이 사이트는 정당이나 후보자로부터 <strong>어떠한 경제적 대가도 받지 않고</strong> 개인이 <strong>공익적 아카이브 목적</strong>으로 운영하고 있습니다.</span></div>
             <div class="rh-notice-item"><span class="rh-o-dot"></span><span>'공개 출마 선언' 혹은 '후보자 직접 제보'를 정리한 명단입니다.</span></div>
             <div class="rh-notice-item"><span class="rh-o-dot"></span><span>해당 정보는 상시 변경될 수 있으며, 수동 수집으로 부정확할 수 있습니다.</span></div>
+            <div class="rh-notice-item"><span class="rh-o-dot"></span><span>후보자 슬로건은 후보자 공식 후원 사이트에서 인용하였습니다.</span></div>
+            <div class="rh-notice-item"><span class="rh-o-dot"></span><span>정확한 정보는 <a href="https://www.nec.go.kr/site/nec/main.do" target="_blank" style="color:#FF6600;font-weight:800;text-decoration:underline;text-underline-offset:2px;">중앙선거관리위원회 웹사이트</a>에서 확인하세요.</span></div>
             <div class="rh-ref-btn" onclick="openNoticePopup()">
                 <div class="rh-ref-left">
                     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
@@ -1281,10 +1284,47 @@
                     <div class="modal-divider"></div>
 
                     <!-- 슬로건 -->
-                    <div id="modal-slogan" class="hidden" style="margin-bottom:13px;padding:9px 13px;border-radius:9px;border:1.5px solid #FF6600;border-left:4px solid #FF6600;background:#fffaf5;position:relative;overflow:hidden;">
+                    <div id="modal-slogan" class="hidden" style="margin-bottom:13px;padding:9px 13px;border-radius:9px;border:1.5px solid #FF6600;border-left:4px solid #FF6600;background:#fffaf5;position:relative;">
                         <span style="position:absolute;right:10px;top:-2px;font-size:44px;color:rgba(26,42,74,0.1);font-weight:900;line-height:1;pointer-events:none;">"</span>
-                        <p id="modal-slogan-text" style="font-size:13px;font-weight:900;color:#1a2a4a;letter-spacing:-0.04em;margin:0;position:relative;"></p>
+                        <div style="display:flex;align-items:center;gap:6px;position:relative;">
+                            <p id="modal-slogan-text" style="font-size:13px;font-weight:900;color:#1a2a4a;letter-spacing:-0.04em;margin:0;flex:1;"></p>
+                            <div style="position:static;display:inline-flex;align-items:center;flex-shrink:0;"
+                                onmouseenter="document.getElementById('slogan-tooltip-bubble').style.display='block'"
+                                onmouseleave="document.getElementById('slogan-tooltip-bubble').style.display='none'">
+                                <span id="slogan-info-btn" style="width:15px;height:15px;border-radius:50%;background:#FF6600;color:white;font-size:10px;font-weight:900;display:flex;align-items:center;justify-content:center;cursor:pointer;line-height:1;user-select:none;"
+                                    onclick="event.stopPropagation();var t=document.getElementById('slogan-tooltip-bubble');t.style.display=t.style.display==='block'?'none':'block'">i</span>
+                            </div>
+                        </div>
                     </div>
+                    <div id="slogan-tooltip-bubble" style="display:none;position:fixed;background:#1a2a4a;color:white;font-size:11px;font-weight:600;padding:6px 10px;border-radius:8px;white-space:nowrap;z-index:9999;box-shadow:0 4px 12px rgba(0,0,0,0.2);">본 슬로건은 후보자 공식 후원 사이트에서 인용하였습니다</div>
+                    <script>
+                        (function() {
+                            var btn = document.getElementById('slogan-info-btn');
+                            var tip = document.getElementById('slogan-tooltip-bubble');
+                            if (!btn || !tip) return;
+                            function positionTip() {
+                                var r = btn.getBoundingClientRect();
+                                tip.style.left = (r.right - tip.offsetWidth) + 'px';
+                                tip.style.top  = (r.top - tip.offsetHeight - 6) + 'px';
+                            }
+                            btn.parentElement.addEventListener('mouseenter', function() {
+                                tip.style.display = 'block';
+                                positionTip();
+                            });
+                            btn.parentElement.addEventListener('mouseleave', function() {
+                                tip.style.display = 'none';
+                            });
+                            btn.addEventListener('click', function(e) {
+                                e.stopPropagation();
+                                if (tip.style.display === 'block') {
+                                    tip.style.display = 'none';
+                                } else {
+                                    tip.style.display = 'block';
+                                    positionTip();
+                                }
+                            });
+                        })();
+                    </script>
 
                     <!-- 약력 -->
                     <div id="modal-bio-section" class="hidden">
@@ -1329,7 +1369,7 @@
         </div>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="can.js?v=0324.05" defer></script>   <script src="data1.js?v=0223.05" defer></script> <script src="search.js?v=0317.02" defer></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="can.js?v=0325.02" defer></script>   <script src="data1.js?v=0223.05" defer></script> <script src="search.js?v=0317.02" defer></script>
     <script>
         let currentModalCandidateName = '';
         let showOnlyConfirmed = false;
@@ -1814,7 +1854,7 @@
 
             // 카테고리 배지 제거됨
             
-            const isConfirmed = (["공천확정","후보"].includes(c.status) && c.name !== "김성민");
+            const isConfirmed = (["공천확정","후보"].includes(c.status));
             let statusLabel = isConfirmed ? c.status : ((c.status === "예비후보" || c.showPreliminaryBadge === true) ? "예비후보" : (c.name === "이유원" ? "출마예정" : ((c.decl && c.decl !== "#") ? "출마선언" : "출마예정")));
             
             let displayOfficeLabel = "";
@@ -2128,10 +2168,10 @@
         }
 
         function createCard(c) {
-            const isTightBio = ["김태수", "고재윤", "이강민", "오정대", "우영훈", "최윤석", "구성도", "박성진", "주한송", "최제일", "심용진", "박종길", "박진우", "황은재", "송원근", "이호엽", "하용준", "김영민", "손승범", "김주연", "주이삭", "이민수", "이규민", "김민식"].includes(c.name);
+            const isTightBio = ["김태수", "고재윤", "이강민", "오정대", "우영훈", "최윤석", "구성도", "박성진", "주한송", "최제일", "심용진", "박종길", "박진우", "황은재", "송원근", "이호엽", "하용준", "김영민", "손승범", "김주연", "주이삭", "이민수", "이규민", "이은창", "김성우", "황시현", "이해성", "김민식"].includes(c.name);
             const isTightSpacing = ["우영훈", "김태수", "심용진", "김주연","이진현"].includes(c.name);
             let styles = [];
-            if (isTightBio || ["조동운", "김민식", "박철현", "김성민", "류태하", "이용우", "이재원", "김병진", "양성혁", "양준모", "김주연", "주이삭", "김태수", "이규민", "이진현"].includes(c.name)) {
+            if (isTightBio || ["조동운", "김민식", "박철현", "류태하", "이용우", "이재원", "김병진", "양성혁", "양준모", "김주연", "주이삭", "김태수", "이규민", "이진현"].includes(c.name)) {
                 styles.push("line-height: 1.05");
             }
             if (isTightSpacing) { styles.push("letter-spacing: -0.08em"); }
@@ -2168,7 +2208,7 @@
             const displayOffice = getCleanOffice(c);
             
             const isPreliminary = (c.status === "예비후보" || c.showPreliminaryBadge === true);
-            const isConfirmed = (["공천확정","후보"].includes(c.status) || (c.status === "예비후보" && c.preliminary !== true && !c.showPreliminaryBadge)) && c.name !== "김성민";
+            const isConfirmed = (["공천확정","후보"].includes(c.status) || (c.status === "예비후보" && c.preliminary !== true && !c.showPreliminaryBadge));
             const confirmedBadge = isConfirmed ? `<div class="confirmed-badge"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="badge-full">공천 확정</span><span class="badge-short">공천</span></div>` : "";
             const preliminaryBadge = isPreliminary ? `<div class="preliminary-badge"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#0a1a3d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><span class="badge-full">예비후보</span><span class="badge-short">예비</span></div>` : "";
 
@@ -2243,20 +2283,41 @@
             );
         };
 
+        const SloganBox = ({ slogan }) => {
+            const [show, setShow] = React.useState(false);
+            return (
+                <div style={{margin:'12px 0 0',padding:'9px 13px',borderRadius:'9px',border:'1.5px solid #FF6600',borderLeft:'4px solid #FF6600',background:'#fffaf5',position:'relative',overflow:'hidden'}} className="dark:bg-orange-900/10">
+                    <span style={{position:'absolute',right:'10px',top:'-2px',fontSize:'36px',color:'rgba(255,102,0,0.08)',fontWeight:'900',lineHeight:'1',pointerEvents:'none'}}>"</span>
+                    <div style={{display:'flex',alignItems:'center',gap:'6px',position:'relative'}}>
+                        <p style={{fontSize:'12px',fontWeight:'900',color:'#cc5200',letterSpacing:'-0.03em',margin:'0',flex:'1'}} className="dark:text-orange-300">{slogan}</p>
+                        <div style={{position:'relative',display:'inline-flex',alignItems:'center',flexShrink:0}}>
+                            <span
+                                style={{width:'15px',height:'15px',borderRadius:'50%',background:'#FF6600',color:'white',fontSize:'10px',fontWeight:'900',display:'flex',alignItems:'center',justifyContent:'center',cursor:'pointer',lineHeight:'1',userSelect:'none'}}
+                                onMouseEnter={() => setShow(true)}
+                                onMouseLeave={() => setShow(false)}
+                                onClick={(e) => { e.stopPropagation(); setShow(s => !s); }}
+                            >i</span>
+                            {show && (
+                                <div style={{position:'absolute',bottom:'calc(100% + 6px)',right:'0',background:'#1a2a4a',color:'white',fontSize:'11px',fontWeight:'600',padding:'6px 10px',borderRadius:'8px',whiteSpace:'nowrap',zIndex:100,boxShadow:'0 4px 12px rgba(0,0,0,0.2)'}}>본 슬로건은 후보자 공식 후원 사이트에서 인용하였습니다</div>
+                            )}
+                        </div>
+                    </div>
+                </div>
+            );
+        };
+
         const IntegratedProfile = ({ can }) => {
             const isValidLink = (link) => link && link !== "" && link !== "#";
 
             const getStatusLabel = (c) => {
-                if (c.name !== "김성민") {
-                    if (c.status === "공천확정") return "공천확정";
-                    if (c.status === "후보") return "후보";
-                }
+                if (c.status === "공천확정") return "공천확정";
+                if (c.status === "후보") return "후보";
                 if (c.status === "예비후보" || c.showPreliminaryBadge === true) return "예비후보";
                 if (c.name === "이유원") return "출마예정";
                 return (c.decl && c.decl !== "#") ? "출마선언" : "출마예정";
             };
 
-            const isConfirmed = (["공천확정","후보"].includes(can.status) && can.name !== "김성민");
+            const isConfirmed = (["공천확정","후보"].includes(can.status));
             const isPreliminary = (can.status === "예비후보" || can.showPreliminaryBadge === true);
             const isYouth = can.age != null && can.age >= 10 && can.age <= 39;
 
@@ -2335,12 +2396,7 @@
                         </div>
                     </div>
                     {/* 슬로건 */}
-                    {can.slogan && (
-                        <div style={{margin:'12px 0 0',padding:'9px 13px',borderRadius:'9px',border:'1.5px solid #FF6600',borderLeft:'4px solid #FF6600',background:'#fffaf5',position:'relative',overflow:'hidden'}} className="dark:bg-orange-900/10">
-                            <span style={{position:'absolute',right:'10px',top:'-2px',fontSize:'36px',color:'rgba(255,102,0,0.08)',fontWeight:'900',lineHeight:'1',pointerEvents:'none'}}>"</span>
-                            <p style={{fontSize:'12px',fontWeight:'900',color:'#cc5200',letterSpacing:'-0.03em',margin:'0',position:'relative'}} className="dark:text-orange-300">{can.slogan}</p>
-                        </div>
-                    )}
+                    {can.slogan && <SloganBox slogan={can.slogan} />}
                     <div className="flex-1 mt-4 sm:mt-6 border-t border-orange-50 dark:border-slate-700 pt-4 sm:pt-6 overflow-y-auto custom-scrollbar font-bold text-slate-700 dark:text-slate-300 text-left text-[13px] sm:text-sm">
                         <div className="space-y-3 pb-4">
                             {can.bio.map((line, idx) => (
@@ -3140,7 +3196,7 @@
     </script>
 
     <!-- ══ 후보자 SNS 피드 ══ -->
-    <script src="sns.js?v=0321.01" defer></script>
+    <script src="sns.js?v=0325.01" defer></script>
 
     <!-- ══ 응원 시스템 ══ -->
     <script type="module" src="cheers.js?v=0315.02"></script>

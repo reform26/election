@@ -62,6 +62,7 @@ const candidates = [
     },
     {
         name: "이기붕",
+        hidden: false,
         region: "인천광역시",
         category: "광역단체장",
         office: "인천광역시장",
@@ -136,6 +137,7 @@ const candidates = [
     },
     {
         name: "최현수",
+        hidden: true,
         region: "전남광주통합특별시",
         category: "광역단체장",
         office: "전남광주통합특별시장",
@@ -190,6 +192,7 @@ const candidates = [
         office: "충청남도지사",
         status: "공천확정",
         bio: [
+            "충청남도당 위원장 직무대행",
             "공주·부여·청양 당협위원장",
             "제6대 유성구의원",
             "제21대 대선 선대위 대변인"
@@ -208,6 +211,7 @@ const candidates = [
     },
     {
         name: "김종욱",
+        hidden: true,
         region: "서울 강남구",
         metropolitan: "서울특별시",
         category: "기초단체장",
@@ -332,6 +336,7 @@ const candidates = [
     },
     {
         name: "전성균",
+        hidden: false,
         region: "경기 화성시",
         metropolitan: "경기도",
         category: "기초단체장",
@@ -519,7 +524,7 @@ const candidates = [
         status: "공천확정",
         subRegion: "방이1동, 방이2동, 오륜동, 송파1동, 송파2동",
         bio: [
-            "송파구 제2선거구 후보"
+            "송파구 제2선거구 공천확정"
         ],
         photo: "",
         sns: {
@@ -765,6 +770,7 @@ const candidates = [
     },
     {
         name: "이도윤",
+        hidden: true,
         region: "서울 동대문구",
         metropolitan: "서울특별시",
         category: "기초의원",
@@ -807,6 +813,7 @@ const candidates = [
             fb: "https://www.facebook.com/hoyup.lee/",
             ig: "https://www.instagram.com/hoyup97/",
             blog: "https://blog.naver.com/hyl005",
+            site: "https://litt.ly/horang97",
             site: "https://hoyup.kr/"
         },
         pledge: "https://hoyup.kr/",
@@ -823,14 +830,16 @@ const candidates = [
         category: "기초의원",
         office: "기초의원",
         age: 40,
+        slogan: "성실하게 우직하게, 구의원은 []번 김성우",
         status: "예비후보",
         subRegion: "북아현동, 신촌동, 천연동, 충현동",
         bio: [
-            "<span style='letter-spacing:-0.14em;'>개혁신당 서대문구 지역발전특위 부위원장</span>",
-            "우리부동산 공인중개사",
-            "북아현살집연구소 소장"
+            "우리부동산(북아현동) 공인중개사",
+            "북아현살집연구소 소장",
+            "<span style='letter-spacing:-0.12em;'>비타에듀,스카이에듀,오르비,파고다영어</span>",
+            "<span style='letter-spacing:-0.14em;'>개혁신당 서대문구 지역발전특위 부위원장</span>"
         ],
-        photo: "https://i.imgur.com/uVeuzZN.png",
+        photo: "https://i.imgur.com/n4gwdB3.png",
         district: "가",
         sns: {
             blog: "https://blog.naver.com/manksw"
@@ -934,7 +943,7 @@ const candidates = [
         status: "공천확정",
         subRegion: "원효로제1동, 원효로제2동, 용문동",
         bio: [
-            "용산구 나선거구 후보"
+            "용산구 나선거구 공천확정"
         ],
         photo: "",
         district: "나",
@@ -980,7 +989,7 @@ const candidates = [
         category: "기초의원",
         office: "노원구의원",
         age: 43,
-        slogan: "노원의 개혁을 위한 당당한 선택! 노원구의원 후보(상게 2,3•4,5동)",
+        slogan: "노원의 개혁을 위한 당당한 선택! 노원구의원 예비후보(상게 2,3•4,5동)",
         status: "예비후보",
         subRegion: "상계2동, 상계3동, 상계4동, 상계5동",
         bio: [
@@ -1012,7 +1021,7 @@ const candidates = [
         status: "공천확정",
         subRegion: "창1동, 창4동, 창5동",
         bio: [
-            "도봉구 가선거구 후보"
+            "도봉구 가선거구 공천확정"
         ],
         photo: "",
         district: "가",
@@ -1124,7 +1133,7 @@ const candidates = [
         status: "공천확정",
         subRegion: "신사동, 조원동, 미성동",
         bio: [
-            "관악구 마선거구 후보"
+            "관악구 마선거구 공천확정"
         ],
         photo: "",
         district: "마",
@@ -1171,7 +1180,7 @@ const candidates = [
         region: "서울 송파구",
         metropolitan: "서울특별시",
         category: "기초의원",
-        office: "송파구의원 후보",
+        office: "송파구의원",
         age: 38,
         slogan: "송파의 기분 좋은 변화 장성혁과 함께해 주십시오",
         status: "예비후보",
@@ -1248,11 +1257,11 @@ const candidates = [
         region: "부산 남구",
         metropolitan: "부산광역시",
         category: "기초의원",
-        office: "남구의원 후보",
+        office: "남구의원",
         status: "공천확정",
         subRegion: "용호1동, 용호2동, 용호3동, 용호4동",
         bio: [
-            "남구의회 마선거구 후보"
+            "남구의회 마선거구 공천확정"
         ],
         photo: "",
         district: "마",
@@ -1467,7 +1476,7 @@ const candidates = [
         region: "인천 연수구",
         metropolitan: "인천광역시",
         category: "기초의원",
-        office: "기초의원 후보",
+        office: "연수구의원",
         age: 57,
         status: "예비후보",
         subRegion: "송도2동, 송도4동, 송도5동",
@@ -1494,7 +1503,7 @@ const candidates = [
         region: "인천 연수구",
         metropolitan: "인천광역시",
         category: "기초의원",
-        office: "기초의원 후보",
+        office: "연수구의원",
         age: 31,
         status: "예비후보",
         subRegion: "송도1동, 송도3동",
@@ -1577,7 +1586,7 @@ const candidates = [
         region: "대전 동구",
         metropolitan: "대전광역시",
         category: "기초의원",
-        office: "기초의원 후보",
+        office: "동구의원",
         age: 24,
         slogan: "미래를 이끌 청년 공학자, 박현겸입니다.",
         status: "예비후보",
@@ -1637,16 +1646,17 @@ const candidates = [
         status: "예비후보",
         subRegion: "복수동, 도마1동, 도마2동, 정림동",
         bio: [
-            "대전시당 자문위원"
+            "대전시당 부위원장",
+            "대전시당 노동특별위원장"
         ],
-        photo: "https://i.imgur.com/K0dT4FH.jpeg",
+        photo: "",
         district: "가",
         sns: {
-            fb: "#",
+            fb: "https://www.facebook.com/profile.php?id=61587860510753",
             ig: "https://www.instagram.com/saveourdaejeon_97/"
         },
         pledge: "#",
-        decl: "https://rallypoint.kr/board/politics-free/224817",
+        decl: "https://www.facebook.com/share/p/1GH8hcS9o2/",
         dateAdded: "2026-01-30",
         coords: [
             36.3462,
@@ -1658,7 +1668,7 @@ const candidates = [
         region: "대전 유성구",
         metropolitan: "대전광역시",
         category: "기초의원",
-        office: "기초의원 후보",
+        office: "유성구의원",
         age: 24,
         gender: "f",
         status: "예비후보",
@@ -1713,7 +1723,7 @@ const candidates = [
         region: "경기 양주시",
         metropolitan: "경기도",
         category: "기초의원",
-        office: "기초의원 후보",
+        office: "양주시의원",
         age: 43,
         status: "예비후보",
         subRegion: "은현면, 남면, 옥정1동, 옥정2동, 은현면, 회천1동, 회천2동, 회천3동",
@@ -1739,11 +1749,11 @@ const candidates = [
         region: "경기 수원시",
         metropolitan: "경기도",
         category: "기초의원",
-        office: "기초의원 후보",
+        office: "수원시의원",
         status: "공천확정",
         subRegion: "매탄1동, 매탄2동, 매탄3동, 매탄4동",
         bio: [
-            "수원시 아선거구 후보"
+            "수원시 아선거구 공천확정"
         ],
         photo: "",
         district: "아",
@@ -1763,7 +1773,7 @@ const candidates = [
         region: "경기 수원시",
         metropolitan: "경기도",
         category: "기초의원",
-        office: "기초의원 후보",
+        office: "수원시의원",
         age: 25,
         status: "예비후보",
         subRegion: "영통구 영통2동, 영통3동, 망포1동, 망포2동",
@@ -1847,11 +1857,11 @@ const candidates = [
         region: "경기 성남시",
         metropolitan: "경기도",
         category: "기초의원",
-        office: "성남시의원 후보",
+        office: "성남시의원",
         status: "공천확정",
         subRegion: "분당구 분당동, 수내3동, 정자2동, 정자3동, 구미동",
         bio: [
-            "성남시의회 타선거구 후보"
+            "성남시의회 타선거구 공천확정"
         ],
         photo: "",
         district: "타",
@@ -1954,11 +1964,11 @@ const candidates = [
         region: "경기 용인시",
         metropolitan: "경기도",
         category: "기초의원",
-        office: "용인시의원 후보",
+        office: "용인시의원",
         status: "공천확정",
         subRegion: "기흥구 구성동, 마북동, 동백1동, 동백2동",
         bio: [
-            "용인시의회 차선거구 후보"
+            "용인시의회 차선거구 공천확정"
         ],
         photo: "",
         district: "차",
@@ -1983,7 +1993,7 @@ const candidates = [
         status: "공천확정",
         subRegion: "흥천면, 금사면, 산북면, 대신면, 중앙동, 오학동",
         bio: [
-            "여주시 나선거구 후보"
+            "여주시 나선거구 공천확정"
         ],
         photo: "",
         district: "나",
@@ -2030,7 +2040,7 @@ const candidates = [
         region: "경기 남양주시",
         metropolitan: "경기도",
         category: "기초의원",
-        office: "기초의원 후보",
+        office: "남양주시의원",
         gender: "f",
         status: "공천확정",
         subRegion: "수동면, 화도읍",
@@ -2056,7 +2066,7 @@ const candidates = [
         region: "경기 남양주시",
         metropolitan: "경기도",
         category: "기초의원",
-        office: "남양주시의원 후보",
+        office: "남양주시의원",
         age: 30,
         status: "예비후보",
         subRegion: "진접읍",
@@ -2083,12 +2093,12 @@ const candidates = [
         region: "경기 안양시",
         metropolitan: "경기도",
         category: "기초의원",
-        office: "기초의원 후보",
+        office: "안양시의원",
         age: 66,
         status: "예비후보",
         subRegion: "동안구 호계1동, 호계2동, 호계3동, 신촌동",
         bio: [
-            "안양시 아선거구 후보"
+            "안양시 아선거구 예비후보"
         ],
         photo: "",
         district: "아",
@@ -2108,7 +2118,7 @@ const candidates = [
         region: "경기 안양시",
         metropolitan: "경기도",
         category: "기초의원",
-        office: "기초의원 후보",
+        office: "안양시의원",
         age: 39,
         slogan: "인공지능 시대, 준비된 전문가! 활력 넘치는 안양! 이천은 입니다",
         status: "예비후보",
@@ -2140,7 +2150,7 @@ const candidates = [
         district: "나",
         subRegion: "내손1동, 내손2동, 청계동",
         bio: [
-            "의왕시 나선거구 후보"
+            "의왕시 나선거구 공천확정"
         ],
         photo: "",
         sns: {
@@ -2186,7 +2196,7 @@ const candidates = [
         region: "경기 안산시",
         metropolitan: "경기도",
         category: "기초의원",
-        office: "기초의원 후보",
+        office: "안산시의원",
         age: 27,
         status: "예비후보",
         subRegion: "본오3동, 사동, 사이동, 해양동",
@@ -2211,7 +2221,7 @@ const candidates = [
         region: "경기 화성시",
         metropolitan: "경기도",
         category: "기초의원",
-        office: "기초의원 후보",
+        office: "화성시의원",
         age: 61,
         status: "예비후보",
         subRegion: "우정읍, 남양읍, 매송면, 비봉면, 마도면, 송산면, 서신면, 장안면, 새솔동",
@@ -2239,7 +2249,7 @@ const candidates = [
         region: "경기 화성시",
         metropolitan: "경기도",
         category: "기초의원",
-        office: "기초의원 후보",
+        office: "화성시의원",
         age: 37,
         status: "예비후보",
         subRegion: "봉담읍, 기배동, 화산동",
@@ -2267,11 +2277,11 @@ const candidates = [
         region: "경기 화성시",
         metropolitan: "경기도",
         category: "기초의원",
-        office: "기초의원 후보",
+        office: "화성시의원",
         status: "공천확정",
         subRegion: "진안동, 병점1동, 병점2동",
         bio: [
-            "화성시 사선거구 후보"
+            "화성시 사선거구 공천확정"
         ],
         photo: "",
         district: "사",
@@ -2297,7 +2307,7 @@ const candidates = [
         status: "예비후보",
         subRegion: "문막읍, 지정면, 부론면, 귀래면",
         bio: [
-            "원주시 가선거구 후보"
+            "원주시 가선거구 예비후보"
         ],
         photo: "https://i.imgur.com/VU1whW9.jpeg",
         district: "가",
@@ -2349,14 +2359,14 @@ const candidates = [
         region: "충남 천안시",
         metropolitan: "충청남도",
         category: "기초의원",
-        office: "기초의원 후보",
+        office: "천안시의원",
         age: 39,
         slogan: "오늘보다 나은 내일을 만드는 이강민입니다.",
         status: "예비후보",
         subRegion: "불당1동, 불당2동",
         bio: [
+            "충남도당 수석부위원장, 대변인",
             "개혁신당 지역발전특위 부위원장",
-            "대전시당 자문위원",
             "21대 대선 충남 선대본부 위원",
             "충남개혁정책네트워크 대표"
         ],
@@ -2383,12 +2393,14 @@ const candidates = [
         region: "충남 천안시",
         metropolitan: "충청남도",
         category: "기초의원",
-        office: "기초의원 후보",
+        office: "천안시의원",
         age: 27,
         status: "예비후보",
         subRegion: "쌍용1동, 쌍용2동, 쌍용3동",
         bio: [
+            "충남도당 부위원장",
             "충남도당 사무처장",
+            "충남도당 대변인",
             "21대 대선 충남선대위 상황실장"
         ],
         photo: "https://i.imgur.com/fqfARBT.png",
@@ -2412,12 +2424,14 @@ const candidates = [
         region: "충남 천안시",
         metropolitan: "충청남도",
         category: "기초의원",
-        office: "천안시의원 후보",
+        office: "천안시의원",
         age: 22,
         slogan: "천안을 사랑하는 용기있는 선택, 손승범입니다",
         status: "예비후보",
         subRegion: "봉명동, 성정1동, 성정2동, 문성동",
         bio: [
+            "충남도당 부위원장",
+            "충남도당 대변인",
             "전) 충남도당 대학생 대변인"
         ],
         photo: "https://i.imgur.com/tgnxWFB.png",
@@ -2441,9 +2455,10 @@ const candidates = [
         region: "충남 천안시",
         metropolitan: "충청남도",
         category: "기초의원",
-        office: "기초의원 후보",
+        office: "천안시의원",
         subRegion: "부성2동",
         bio: [
+            "충남도당 공보팀장",
             "21대 대선 충남 선대본 홍보위원",
             "충남청년개발혁신회의 의장",
             "청년 커뮤니티 '청연' 대표"
@@ -2466,13 +2481,13 @@ const candidates = [
         region: "충남 당진시",
         metropolitan: "충청남도",
         category: "기초의원",
-        office: "당진시의원 후보",
+        office: "당진시의원",
         age: 19,
         status: "예비후보",
         subRegion: "고대면, 석문면, 당진1동, 당진3동",
         bio: [
-            "대전시당 정책위원",
-            "대전시당 자문위원",
+            "충남도당 부위원장,대변인",
+            "대전시당 정책,자문위원",
             "21대 대선 충남 선대본부 위원",
             "자원봉사단체 청춘 대표"
         ],
@@ -2493,31 +2508,8 @@ const candidates = [
         ]
     },
     {
-        name: "송원근",
-        region: "충남 예산군",
-        metropolitan: "충청남도",
-        category: "기초의원",
-        office: "예산군의원",
-        status: "공천확정",
-        subRegion: "덕산면, 봉산면, 고덕면, 신암면",
-        bio: [
-            "<span style='letter-spacing:-0.12em;'>개혁신당 예산군 지역발전특위 부위원장</span>"
-        ],
-        photo: "https://i.imgur.com/TAmoUh0.jpeg",
-        district: "라",
-        sns: {
-            fb: "#"
-        },
-        pledge: "#",
-        decl: "#",
-        dateAdded: "2026-02-05",
-        coords: [
-            36.6747,
-            126.6622
-        ]
-    },
-    {
         name: "김관호",
+        hidden: true,
         region: "충남 아산시",
         metropolitan: "충청남도",
         category: "기초의원",
@@ -2545,7 +2537,7 @@ const candidates = [
         region: "경북 구미시",
         metropolitan: "경상북도",
         category: "기초의원",
-        office: "기초의원 후보",
+        office: "구미시의원",
         age: 40,
         slogan: "그동안 소외되었던 능력있는 분들이 참여하는 정치 생태계를 만들겠습니다.",
         status: "예비후보",
@@ -2578,7 +2570,7 @@ const candidates = [
         district: "마",
         subRegion: "상모사곡동, 임오동",
         bio: [
-            "구미시 마선거구 후보"
+            "구미시 마선거구 공천확정"
         ],
         photo: "",
         sns: {
@@ -2651,7 +2643,7 @@ const candidates = [
         status: "공천확정",
         subRegion: "두호동, 양덕동, 환여동",
         bio: [
-            "포항시 마선거구 후보"
+            "포항시 마선거구 공천확정"
         ],
         photo: "",
         district: "마",
@@ -2758,7 +2750,7 @@ const candidates = [
         status: "공천확정",
         subRegion: "남중동, 신동, 오산면",
         bio: [
-            "익산시 다선거구 후보"
+            "익산시 다선거구 공천확정"
         ],
         photo: "",
         district: "다",
@@ -2775,6 +2767,7 @@ const candidates = [
     },
     {
         name: "고윤주",
+        hidden: true,
         region: "서울 광진구",
         metropolitan: "서울특별시",
         category: "기초의원",
@@ -2806,7 +2799,7 @@ const candidates = [
         status: "공천확정",
         subRegion: "초량제1동, 초량제2동, 초량제3동",
         bio: [
-            "동구 가선거구 후보"
+            "동구 가선거구 공천확정"
         ],
         photo: "",
         district: "가",
@@ -2856,7 +2849,7 @@ const candidates = [
         status: "공천확정",
         subRegion: "팽성읍, 고덕면, 신평동, 원평동, 고덕동",
         bio: [
-            "평택시 사선거구 후보"
+            "평택시 사선거구 공천확정"
         ],
         photo: "",
         district: "사",
@@ -2907,7 +2900,7 @@ const candidates = [
         status: "공천확정",
         subRegion: "송산1동, 송산2동, 송산3동, 고산동",
         bio: [
-            "의정부시 라선거구 후보"
+            "의정부시 라선거구 공천확정"
         ],
         photo: "https://i.imgur.com/j9o6o20.jpeg",
         district: "라",
@@ -2974,6 +2967,7 @@ const candidates = [
             127.1295
         ]
     },
+
     {
         name: "김민식",
         region: "인천 서구",
@@ -3013,7 +3007,7 @@ const candidates = [
         status: "공천확정",
         subRegion: "정발산동, 중산1동, 중산2동, 일산2동",
         bio: [
-            "고양시 아선거구 후보"
+            "고양시 아선거구 공천확정"
         ],
         photo: "",
         district: "아",
@@ -3037,7 +3031,7 @@ const candidates = [
         status: "공천확정",
         subRegion: "안중읍, 포승읍, 청북읍, 오성면, 현덕면",
         bio: [
-            "평택시 바선거구 후보"
+            "평택시 바선거구 공천확정"
         ],
         photo: "",
         district: "바",
@@ -3061,7 +3055,7 @@ const candidates = [
         status: "공천확정",
         subRegion: "휴천1동, 휴천2동",
         bio: [
-            "영주시 마선거구 후보"
+            "영주시 마선거구 공천확정"
         ],
         photo: "",
         district: "마",
@@ -3113,7 +3107,7 @@ const candidates = [
         status: "공천확정",
         subRegion: "남산동, 구서2동",
         bio: [
-            "금정구 라선거구 후보"
+            "금정구 라선거구 공천확정"
         ],
         photo: "",
         district: "라",
@@ -3137,7 +3131,7 @@ const candidates = [
         status: "공천확정",
         subRegion: "갈현동, 문원동, 부림동, 원문동",
         bio: [
-            "과천시 나선거구 후보"
+            "과천시 나선거구 공천확정"
         ],
         photo: "",
         district: "나",
@@ -3187,7 +3181,7 @@ const candidates = [
         status: "공천확정",
         subRegion: "서종면, 양서면, 양평읍, 옥천면",
         bio: [
-            "양평군 가선거구 후보"
+            "양평군 가선거구 공천확정"
         ],
         photo: "",
         district: "가",
@@ -3204,6 +3198,7 @@ const candidates = [
     },
     {
         name: "이세원",
+        hidden: true,
         region: "경기 화성시",
         metropolitan: "경기도",
         category: "기초의원",
@@ -3228,6 +3223,7 @@ const candidates = [
     },
     {
         name: "이재원",
+        hidden: true,
         region: "제주특별자치도",
         metropolitan: "제주특별자치도",
         shortMetro: "제주",
@@ -3352,6 +3348,7 @@ const candidates = [
     },
     {
         name: "이민수",
+        hidden: true,
         region: "서울 동작구",
         metropolitan: "서울특별시",
         category: "기초의원",
@@ -3364,7 +3361,7 @@ const candidates = [
             "IT 유지보수 노조위원장 역임",
             "<span style='letter-spacing:-0.15em;'>본동 11번지 지주공동개발 비대위원장</span>"
         ],
-        photo: "https://i.imgur.com/PRcEegQ.png",
+        photo: "",
         district: "가",
         sns: {
             fb: "#"
@@ -3456,6 +3453,7 @@ const candidates = [
     },
     {
         name: "이왕국",
+        hidden: true,
         region: "대구 중구",
         metropolitan: "대구광역시",
         category: "기초의원",
