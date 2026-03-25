@@ -959,6 +959,7 @@ const candidates = [
     },
     {
         name: "정상필",
+        hidden: true,
         region: "서울 중랑구",
         metropolitan: "서울특별시",
         category: "기초의원",
@@ -1012,7 +1013,7 @@ const candidates = [
     },
     {
         name: "주한송",
-        hidden: false,
+        hidden: true,
         region: "서울 도봉구",
         metropolitan: "서울특별시",
         category: "기초의원",
@@ -2999,6 +3000,7 @@ const candidates = [
     },
     {
         name: "이호민",
+        hidden: true,
         region: "경기 고양시",
         metropolitan: "경기도",
         category: "기초의원",
@@ -3323,6 +3325,7 @@ const candidates = [
     },
     {
         name: "신찬호",
+        hidden: true,
         region: "경기 안양시",
         metropolitan: "경기도",
         category: "기초의원",
@@ -3448,6 +3451,34 @@ const candidates = [
         coords: [
             37.6584,
             126.8324
+        ]
+    },
+    {
+        name: "이영자",
+        region: "인천 연수구",
+        metropolitan: "인천광역시",
+        category: "기초의원",
+        office: "연수구의회",
+        age: 62,
+        gender: "f",
+        status: "예비후보",
+        preliminary: true,
+        subRegion: "연수구 가선거구",
+        bio: [
+            "전) 인천대 겸임교수",
+            "전) 한국가족상담교육연구소 선임연구원"
+        ],
+        photo: "",
+        district: "가",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        dateAdded: "2026-03-25",
+        coords: [
+            37.4104,
+            126.6780
         ]
     },
     {
