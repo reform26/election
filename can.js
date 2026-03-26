@@ -2510,15 +2510,15 @@ const candidates = [
     },
     {
         name: "김관호",
-        hidden: true,
+        hidden: false,
         region: "충남 아산시",
         metropolitan: "충청남도",
         category: "기초의원",
         office: "아산시의원",
-        status: "출마예정",
+        status: "공천확정",
         subRegion: "배방읍(세교리, 장재리, 휴대리), 탕정면, 염치읍",
         bio: [
-            "아산시 라선거구 출마예정"
+            "아산시 라선거구 공천확정"
         ],
         photo: "",
         district: "라",
@@ -3478,7 +3478,7 @@ const candidates = [
         dateAdded: "2026-03-25",
         coords: [
             37.4104,
-            126.678
+            126.6780
         ]
     },
     {
@@ -3507,6 +3507,72 @@ const candidates = [
         coords: [
             35.8687,
             128.5934
+        ]
+    },
+    {
+        name: "정민기",
+        region: "서울 중랑구",
+        metropolitan: "서울특별시",
+        category: "기초의원",
+        office: "중랑구의원",
+        status: "공천확정",
+        district: "바",
+        subRegion: "상봉제1동, 신내제2동",
+        bio: [
+            "중랑구 바선거구 공천확정"
+        ],
+        photo: "",
+        sns: {},
+        pledge: "#",
+        decl: "#",
+        dateAdded: "2026-03-26",
+        coords: [
+            37.599874,
+            127.0872
+        ]
+    },
+    {
+        name: "신형균",
+        region: "경기 군포시",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "군포시의원",
+        status: "공천확정",
+        district: "다",
+        subRegion: "산본2동, 궁내동, 광정동",
+        bio: [
+            "군포시 다선거구 공천확정"
+        ],
+        photo: "",
+        sns: {},
+        pledge: "#",
+        decl: "#",
+        dateAdded: "2026-03-26",
+        coords: [
+            37.369751,
+            126.931512
+        ]
+    },
+    {
+        name: "주쾌식",
+        region: "경남 창녕군",
+        metropolitan: "경상남도",
+        category: "기초의원",
+        office: "창녕군의원",
+        status: "공천확정",
+        district: "다",
+        subRegion: "남지읍, 길곡면, 부곡면",
+        bio: [
+            "창녕군 다선거구 공천확정"
+        ],
+        photo: "",
+        sns: {},
+        pledge: "#",
+        decl: "#",
+        dateAdded: "2026-03-26",
+        coords: [
+            35.391285,
+            128.473618
         ]
     }
 ];
