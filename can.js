@@ -513,32 +513,6 @@ const candidates = [
         ]
     },
     {
-        name: "최현석",
-        region: "서울특별시",
-        metropolitan: "서울특별시",
-        shortMetro: "서울",
-        district: "송파 2",
-        constituencyFull: "송파구 제2선거구",
-        category: "광역의원",
-        office: "서울시의원",
-        status: "공천확정",
-        subRegion: "방이1동, 방이2동, 오륜동, 송파1동, 송파2동",
-        bio: [
-            "송파구 제2선거구 공천확정"
-        ],
-        photo: "",
-        sns: {
-            fb: "#"
-        },
-        pledge: "#",
-        decl: "#",
-        dateAdded: "2026-02-05",
-        coords: [
-            37.5122,
-            127.104
-        ]
-    },
-    {
         name: "주이삭",
         region: "서울특별시",
         metropolitan: "서울특별시",
@@ -2899,10 +2873,12 @@ const candidates = [
         metropolitan: "경기도",
         category: "기초의원",
         office: "의정부시의회",
-        status: "공천확정",
+        status: "예비후보",
+        age: 34,
         subRegion: "송산1동, 송산2동, 송산3동, 고산동",
         bio: [
-            "의정부시 라선거구 공천확정"
+            "개혁신당 의정부시(을) 지역발전특위 부위원장",
+            "생명공학 연구원"
         ],
         photo: "https://i.imgur.com/j9o6o20.jpeg",
         district: "라",
@@ -3479,7 +3455,7 @@ const candidates = [
         dateAdded: "2026-03-25",
         coords: [
             37.4104,
-            126.678
+            126.6780
         ]
     },
     {
