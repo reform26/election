@@ -1676,7 +1676,8 @@ const candidates = [
         status: "예비후보",
         subRegion: "충장동, 동명동, 계림1동, 계림2동, 산수1동, 산수2동",
         bio: [
-            "<span style='letter-spacing:-0.15em;'>개혁신당 광주광역시 지역발전특위 부위원장</span>",
+            "광주시당 부위원장",
+            "<span style='letter-spacing:-0.15em;'>개혁신당 광주시 지역발전특위 부위원장</span>",
             "<span style='letter-spacing:-0.12em;'>전)동구·남구 을 당협위원장</span>",
             "21대 대선 선대위 홍보부본부장"
         ],
@@ -3431,7 +3432,7 @@ const candidates = [
         dateAdded: "2026-03-25",
         coords: [
             37.4104,
-            126.678
+            126.6780
         ]
     },
     {
