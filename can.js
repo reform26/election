@@ -2248,30 +2248,6 @@ const candidates = [
         ]
     },
     {
-        name: "윤효석",
-        region: "경기 화성시",
-        metropolitan: "경기도",
-        category: "기초의원",
-        office: "화성시의원",
-        status: "공천확정",
-        subRegion: "진안동, 병점1동, 병점2동",
-        bio: [
-            "화성시 사선거구 공천확정"
-        ],
-        photo: "",
-        district: "사",
-        sns: {
-            fb: "#"
-        },
-        pledge: "#",
-        decl: "#",
-        dateAdded: "2026-01-26",
-        coords: [
-            37.1851,
-            126.9796
-        ]
-    },
-    {
         name: "전상현",
         slogan: "함께 하는 밝은 도시 전상현 입니다 감사합니다",
         region: "강원 원주시",
@@ -3455,7 +3431,7 @@ const candidates = [
         dateAdded: "2026-03-25",
         coords: [
             37.4104,
-            126.678
+            126.6780
         ]
     },
     {
