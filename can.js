@@ -2502,7 +2502,8 @@ const candidates = [
         photo: "https://i.imgur.com/KD5O2X3.jpeg",
         district: "자",
         sns: {
-            fb: "#"
+            fb: "https://www.facebook.com/taeha2026",
+            blog: "https://blog.naver.com/reformgumi"
         },
         pledge: "#",
         decl: "#",
@@ -2649,6 +2650,7 @@ const candidates = [
         subRegion: "대월면, 모가면, 부발읍, 설성면, 율면, 장호원읍, 호법면",
         bio: [
             "개혁신당 이천시 지역균형인프라특위 위원장",
+            "개혁신당 이천시 지역발전특위 부위원장",
             "전) 공군 장교"
         ],
         photo: "https://i.imgur.com/GN9IlQf.png",
@@ -3346,7 +3348,7 @@ const candidates = [
         sns: {
             fb: "#"
         },
-        pledge: "#",
+        pledge: "https://policy.reformparty.kr/map?region_code=11&election_type=local_council&district_code=11%3A%EC%A4%91%EB%9E%91%EA%B5%AC%3A%EB%8B%A4%EC%84%A0%EA%B1%B0%EA%B5%AC",
         decl: "#",
         dateAdded: "2026-03-19",
         coords: [
@@ -3432,7 +3434,7 @@ const candidates = [
         dateAdded: "2026-03-25",
         coords: [
             37.4104,
-            126.678
+            126.6780
         ]
     },
     {
