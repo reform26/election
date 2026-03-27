@@ -2650,8 +2650,8 @@ const candidates = [
         age: 28,
         subRegion: "대월면, 모가면, 부발읍, 설성면, 율면, 장호원읍, 호법면",
         bio: [
-            "개혁신당 이천시 지역균형인프라특위 위원장",
-            "개혁신당 이천시 지역발전특위 부위원장",
+            "<span style='letter-spacing:-0.12em;'>개혁신당 이천시 지역균형인프라특위 위원장</span>",
+            "<span style='letter-spacing:-0.12em;'>개혁신당 이천시 지역발전특위 부위원장</span>",
             "전) 공군 장교"
         ],
         photo: "https://i.imgur.com/GN9IlQf.png",
@@ -3435,7 +3435,7 @@ const candidates = [
         dateAdded: "2026-03-25",
         coords: [
             37.4104,
-            126.678
+            126.6780
         ]
     },
     {
