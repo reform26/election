@@ -99,7 +99,8 @@ const candidates = [
         photo: "https://i.imgur.com/1FbAb5u.jpeg",
         sns: {
             fb: "https://www.facebook.com/profile.php?id=1000045002273835",
-            ig: "https://www.instagram.com/i.isucan/"
+            ig: "https://www.instagram.com/i.isucan/",
+            yt: "https://www.youtube.com/@%EB%8C%80%EA%B5%AC%EC%8B%9C%EB%AF%BC_%EC%9D%B4%EC%88%98%EC%B0%AC"
         },
         pledge: "#",
         decl: "https://www.youtube.com/live/ixdTcenUjMw?si=62KazlMWdC6ciOpY",
@@ -3434,7 +3435,7 @@ const candidates = [
         dateAdded: "2026-03-25",
         coords: [
             37.4104,
-            126.678
+            126.6780
         ]
     },
     {
