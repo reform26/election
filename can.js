@@ -1431,10 +1431,11 @@ const candidates = [
             "대구시당 정책위원장",
             "대한약사회 대외협력본부장"
         ],
-        photo: "",
+        photo: "https://i.imgur.com/pOJY2HW.png",
         sns: {
             fb: "https://www.facebook.com/yoonseok.choi.98",
-            ig: "https://www.instagram.com/rapaellchoi/"
+            ig: "https://www.instagram.com/rapaellchoi/",
+            yt: "https://www.youtube.com/channel/UCmKX7csNyGkPKzrv3ol11WA"
         },
         pledge: "#",
         decl: "#",
@@ -3478,7 +3479,7 @@ const candidates = [
         dateAdded: "2026-03-25",
         coords: [
             37.4104,
-            126.678
+            126.6780
         ]
     },
     {
