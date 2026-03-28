@@ -889,7 +889,7 @@
                 <div id="d-day-badge" class="rh-dday">D-000</div>
                 <div class="rh-update-badge">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    <span id="last-update-date">최종 업데이트 : 2026. 03. 23</span>
+                    <span id="last-update-date">최종 업데이트 : 2026. 03. 28</span>
                 </div>
             </div>
         </div>
@@ -907,10 +907,10 @@
                 주의사항
             </div>
             <div class="rh-notice-item"><span class="rh-o-dot"></span><span>이 페이지는 <strong>개혁신당과 관련 없는 비공식 페이지</strong>입니다.</span></div>
-            <div class="rh-notice-item"><span class="rh-o-dot"></span><span>이 사이트는 정당이나 후보자로부터 <strong>어떠한 경제적 대가도 받지 않고</strong> 개인이 <strong>공익적 아카이브 목적</strong>으로 운영하고 있습니다.</span></div>
-            <div class="rh-notice-item"><span class="rh-o-dot"></span><span>'공개 출마 선언' 혹은 '후보자 직접 제보'를 정리한 명단입니다.</span></div>
+            <div class="rh-notice-item"><span class="rh-o-dot"></span><span>이 사이트는 정당이나 후보자로부터 <strong>어떠한 대가도 받지 않고</strong> 개인이 <strong>공익적 아카이브 목적</strong>으로 운영하고 있습니다.</span></div>
             <div class="rh-notice-item"><span class="rh-o-dot"></span><span>해당 정보는 상시 변경될 수 있으며, 수동 수집으로 부정확할 수 있습니다.</span></div>
             <div class="rh-notice-item"><span class="rh-o-dot"></span><span>후보자 슬로건은 후보자 공식 후원 사이트에서 인용하였습니다.</span></div>
+            <div class="rh-notice-item"><span class="rh-o-dot"></span><span> 후원회 링크는 중앙선거관리위원회로부터 유권해석을 받았습니다.</span></div>
             <div class="rh-notice-item"><span class="rh-o-dot"></span><span>정확한 정보는 <a href="https://www.nec.go.kr/site/nec/main.do" target="_blank" style="color:#FF6600;font-weight:800;text-decoration:underline;text-underline-offset:2px;">중앙선거관리위원회 웹사이트</a>에서 확인하세요.</span></div>
             <div class="rh-ref-btn" onclick="openNoticePopup()">
                 <div class="rh-ref-left">
@@ -1327,6 +1327,17 @@
                         })();
                     </script>
 
+                    <!-- 후원하기 -->
+                    <div id="modal-donation-section" style="border-left: 3px solid #FF6600; padding-left: 12px; margin-bottom: 16px; display: none;">
+                        <a id="modal-donation" href="#" target="_blank" style="display: flex; flex-direction: column; gap: 6px; text-decoration: none; color: inherit; cursor: pointer; background: none; border: none; padding: 0; text-align: left;">
+                            <span id="modal-donation-main" style="font-size: 14px; font-weight: 600; color: #333; text-align: left;" class="dark:text-white"></span>
+                            <span style="font-size: 12px; color: #FF6600; font-weight: 500; display: flex; align-items: center; gap: 8px; text-align: left;">
+                                개혁신당 중앙당 후원회
+                                <span style="font-size: 12px; color: #999;" class="dark:text-slate-500">(givemoney.kr)</span>
+                            </span>
+                        </a>
+                    </div>
+
                     <!-- 약력 -->
                     <div id="modal-bio-section" class="hidden">
                         <p class="text-[10px] font-black text-[#FF6600] mb-2 tracking-wider uppercase">약력</p>
@@ -1370,7 +1381,7 @@
         </div>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="can.js?v=0327.08 defer></script>   <script src="data1.js?v=0223.05" defer></script> <script src="search.js?v=0317.02" defer></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="can.js?v=0328.01" defer></script>   <script src="data1.js?v=0223.05" defer></script> <script src="search.js?v=0317.02" defer></script>
     <script>
         let currentModalCandidateName = '';
         let showOnlyConfirmed = false;
@@ -1542,11 +1553,27 @@
         }
 
         window.toggleMapVisibility = function() {
-            _toggleMap('map-collapsible-content', 'map-toggle-icon-wrapper', '900px', '550px');
+            _toggleMap('map-collapsible-content', 'map-toggle-icon-wrapper', '900px', '550px', function() {
+                if (!window._seoulMapMounted) {
+                    window._seoulMapMounted = true;
+                    setTimeout(() => {
+                        const root = ReactDOM.createRoot(document.getElementById('map-dashboard-root'));
+                        root.render(React.createElement(window.MapDashboard));
+                    }, 20);
+                }
+            });
         };
 
         window.toggleGyeonggiMapVisibility = function() {
-            _toggleMap('gyeonggi-map-dashboard-root-content', 'gyeonggi-map-toggle-icon-wrapper', '950px', '650px');
+            _toggleMap('gyeonggi-map-dashboard-root-content', 'gyeonggi-map-toggle-icon-wrapper', '950px', '650px', function() {
+                if (!window._gyeonggiMapMounted) {
+                    window._gyeonggiMapMounted = true;
+                    setTimeout(() => {
+                        const root = ReactDOM.createRoot(document.getElementById('gyeonggi-map-dashboard-root-render'));
+                        root.render(React.createElement(window.GyeonggiMapDashboard));
+                    }, 20);
+                }
+            });
         };
 
         window.toggleDaeguMapVisibility = function() {
@@ -1954,6 +1981,17 @@
                 pledgeBtn.style.display = 'none';
             }
 
+            const donationSection = document.getElementById('modal-donation-section');
+            const donationBtn = document.getElementById('modal-donation');
+            const donationMain = document.getElementById('modal-donation-main');
+            if (c.donation && c.donation !== "#") {
+                donationSection.style.display = 'block';
+                donationBtn.href = c.donation;
+                donationMain.innerText = `후보자 '${c.name}' 후원회 바로가기`;
+            } else {
+                donationSection.style.display = 'none';
+            }
+
             const teamCheonanBtn = document.getElementById('modal-team-cheonan');
             const teamCheonanNames = ["손승범", "이강민", "이해성"];
             if (teamCheonanNames.includes(c.name)) {
@@ -2340,13 +2378,13 @@
             return (
                 <div className="h-full flex flex-col overflow-hidden text-slate-800 dark:text-slate-200">
                     <div className="flex flex-row h-auto shrink-0 gap-4 sm:gap-6">
-                        <div className="w-1/4 aspect-square sm:w-[40%] sm:aspect-auto bg-orange-50 dark:bg-slate-700 border border-orange-100 dark:border-slate-600 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-inner overflow-hidden shrink-0">
+                        <div style={{width:'130px', height:'160px', flexShrink:0}} className="bg-orange-50 dark:bg-slate-700 border border-orange-100 dark:border-slate-600 rounded-xl flex items-center justify-center shadow-inner overflow-hidden">
                             {can.photo ? (
-                                <img src={can.photo} loading="lazy" className="w-full h-full object-cover" alt={`개혁신당 ${can.name} 후보 프로필`} />
+                                <img src={can.photo} loading="lazy" style={{width:'100%', height:'100%', objectFit:'cover', objectPosition:'center top'}} alt={`개혁신당 ${can.name} 후보 프로필`} />
                             ) : (
                                 <div className="flex flex-col items-center justify-center text-orange-200 dark:text-slate-500">
-                                    <Icon name="user" className="w-8 h-8 sm:w-16 sm:h-16 opacity-30"/>
-                                    <span className="text-[8px] font-black uppercase tracking-widest mt-1 hidden sm:block">No Profile</span>
+                                    <Icon name="user" className="w-8 h-8 opacity-30"/>
+                                    <span className="text-[8px] font-black uppercase tracking-widest mt-1">No Photo</span>
                                 </div>
                             )}
                         </div>
@@ -2392,6 +2430,17 @@
                                     <a href={can.pledge} target="_blank" className="w-full sm:w-auto px-3 py-1.5 sm:py-2.5 bg-white dark:bg-slate-800 text-orange-500 border-2 border-orange-500 rounded-lg sm:rounded-xl text-[10px] sm:text-sm font-black text-center hover:bg-orange-50 dark:hover:bg-slate-700 transition-all active:scale-95 flex items-center justify-center gap-1.5">
                                         <Icon name="file-text" className="w-3 h-3 sm:w-4 sm:h-4"/><span className="whitespace-nowrap">공약 보기</span>
                                     </a>
+                                )}
+                                {isValidLink(can.donation) && (
+                                    <div style={{borderLeft:'3px solid #FF6600', paddingLeft:'12px', marginTop:'4px'}}>
+                                        <a href={can.donation} target="_blank" style={{display:'flex', flexDirection:'column', gap:'6px', textDecoration:'none', color:'inherit', cursor:'pointer', background:'none', border:'none', padding:'0', textAlign:'left'}}>
+                                            <span style={{fontSize:'14px', fontWeight:'600', color:'#333', textAlign:'left'}} className="dark:text-white">후보자 '{can.name}' 후원회 바로가기</span>
+                                            <span style={{fontSize:'12px', color:'#FF6600', fontWeight:'500', display:'flex', alignItems:'center', gap:'8px', textAlign:'left'}}>
+                                                개혁신당 중앙당 후원회
+                                                <span style={{fontSize:'12px', color:'#999'}} className="dark:text-slate-500">(givemoney.kr)</span>
+                                            </span>
+                                        </a>
+                                    </div>
                                 )}
                             </div>
                         </div>
@@ -3189,11 +3238,8 @@
             );
         };
 
-        const seoulRoot = ReactDOM.createRoot(document.getElementById('map-dashboard-root'));
-        seoulRoot.render(<MapDashboard />);
-
-        const gyeonggiRoot = ReactDOM.createRoot(document.getElementById('gyeonggi-map-dashboard-root-render'));
-        gyeonggiRoot.render(<GyeonggiMapDashboard />);
+        window.MapDashboard = MapDashboard;
+        window.GyeonggiMapDashboard = GyeonggiMapDashboard;
     </script>
 
     <!-- ══ 후보자 SNS 피드 ══ -->

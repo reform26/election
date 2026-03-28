@@ -30,6 +30,7 @@ const candidates = [
         },
         pledge: "https://www.xn--4k0bx30cygd.kr/",
         decl: "https://daily.hankooki.com/news/articleView.html?idxno=1247318",
+        donation: "https://givemoney.kr/politicians/141",
         dateAdded: "2025-11-25",
         coords: [
             37.5663,
@@ -54,6 +55,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "https://youtube.com/shorts/M88-dOI_Uz4?si=YjhleHQGtMmJBVPF",
+        donation: "https://givemoney.kr/politicians/142",
         dateAdded: "2025-11-25",
         coords: [
             35.1798,
@@ -80,6 +82,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "https://www.youtube.com/watch?v=vB47J90zQ00",
+        donation: "#",
         dateAdded: "2025-12-01",
         coords: [
             37.4563,
@@ -104,6 +107,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "https://www.youtube.com/live/ixdTcenUjMw?si=62KazlMWdC6ciOpY",
+        donation: "https://givemoney.kr/politicians/144",
         dateAdded: "2026-02-06",
         coords: [
             35.8714,
@@ -130,6 +134,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "https://www.cctoday.co.kr/news/articleView.html?idxno=2225440",
+        donation: "https://givemoney.kr/politicians/146",
         dateAdded: "2026-01-17",
         coords: [
             36.3504,
@@ -154,6 +159,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "https://www.youtube.com/live/zNKugaDviEM",
+        donation: "#",
         dateAdded: "2025-12-01",
         coords: [
             35.1595,
@@ -180,6 +186,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "https://www.youtube.com/watch?v=m4DTvulTDFk",
+        donation: "https://givemoney.kr/politicians/145",
         dateAdded: "2025-12-05",
         coords: [
             36.4801,
@@ -204,6 +211,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "https://www.youtube.com/live/ykvvk-37iws?si=iGJ3virBz9tVUHMO&t=288",
+        donation: "#",
         dateAdded: "2026-02-12",
         coords: [
             36.6588,
@@ -227,6 +235,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "https://rallypoint.kr/board/politics-free/227794/",
+        donation: "#",
         dateAdded: "2026-03-18",
         coords: [
             37.5172,
@@ -253,6 +262,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "https://www.facebook.com/share/p/1a1XZmBRh2/",
+        donation: "https://givemoney.kr/politicians/129",
         dateAdded: "2026-01-26",
         coords: [
             37.5301,
@@ -278,6 +288,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "#",
         dateAdded: "2026-02-12",
         coords: [
             37.2636,
@@ -303,6 +314,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "https://www.getnews.co.kr/news/articleView.html?idxno=670154",
+        donation: "https://givemoney.kr/politicians/149",
         dateAdded: "2026-01-23",
         coords: [
             37.1499,
@@ -329,6 +341,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "https://youtu.be/b4ofl-SQGlU",
+        donation: "#",
         dateAdded: "2026-01-01",
         coords: [
             37.4784,
@@ -358,6 +371,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "https://www.youtube.com/watch?v=MZHron4TMO4",
+        donation: "#",
         dateAdded: "2026-01-05",
         coords: [
             37.1994,
@@ -381,6 +395,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "https://www.youtube.com/watch?v=MZHron4TMO4",
+        donation: "#",
         dateAdded: "2026-01-05",
         coords: [
             37.2411,
@@ -405,6 +420,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "https://givemoney.kr/politicians/150",
         dateAdded: "2026-02-12",
         coords: [
             37.4502,
@@ -429,6 +445,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "https://givemoney.kr/politicians/148",
         dateAdded: "2026-02-19",
         coords: [
             37.5247,
@@ -452,6 +469,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "https://givemoney.kr/politicians/152",
         dateAdded: "2026-03-05",
         coords: [
             36.7845,
@@ -481,6 +499,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "https://givemoney.kr/politicians/45",
         dateAdded: "2026-02-12",
         coords: [
             35.8376,
@@ -507,6 +526,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "#",
         dateAdded: "2026-02-09",
         coords: [
             37.5219,
@@ -539,6 +559,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "https://www.youtube.com/live/IAdVNF7Id1k?t=422s",
+        donation: "https://givemoney.kr/politicians/44",
         dateAdded: "2026-02-16",
         coords: [
             37.5626,
@@ -568,6 +589,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "https://givemoney.kr/politicians/48",
         dateAdded: "2026-02-09",
         coords: [
             36.5036,
@@ -598,6 +620,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "https://givemoney.kr/politicians/51",
         dateAdded: "2026-02-05",
         coords: [
             33.4889,
@@ -626,6 +649,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "https://www.facebook.com/share/p/17qQErhuYr/",
+        donation: "https://givemoney.kr/politicians/49",
         dateAdded: "2026-01-26",
         coords: [
             33.4976,
@@ -654,6 +678,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "https://www.instagram.com/p/DUll53qEl7Z/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+        donation: "#",
         dateAdded: "2026-02-05",
         coords: [
             37.4813,
@@ -680,6 +705,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "https://givemoney.kr/politicians/126",
         dateAdded: "2026-02-09",
         coords: [
             37.4823,
@@ -708,6 +734,7 @@ const candidates = [
         pledge: "#",
         decl: "https://m.blog.naver.com/PostView.naver?blogId=uada5633&logNo=224121263655",
         focus: "photo-face-focus",
+        donation: "https://givemoney.kr/politicians/122",
         dateAdded: "2025-12-01",
         coords: [
             37.5088,
@@ -737,6 +764,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "https://givemoney.kr/politicians/91",
         dateAdded: "2026-02-05",
         coords: [
             37.572,
@@ -762,6 +790,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "https://rallypoint.kr/board/politics-free/224812",
+        donation: "#",
         dateAdded: "2026-01-31",
         coords: [
             37.5757,
@@ -791,6 +820,7 @@ const candidates = [
             site: "https://hoyup.kr/"
         },
         pledge: "https://hoyup.kr/",
+        donation: "https://givemoney.kr/politicians/88",
         dateAdded: "2026-02-12",
         coords: [
             37.5985,
@@ -820,6 +850,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "https://givemoney.kr/politicians/90",
         dateAdded: "2026-02-06",
         coords: [
             37.5602,
@@ -846,6 +877,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "https://givemoney.kr/politicians/89",
         dateAdded: "2026-01-26",
         coords: [
             37.5636,
@@ -874,6 +906,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "https://rallypoint.kr/board/politics-free/224459",
+        donation: "https://givemoney.kr/politicians/93",
         dateAdded: "2026-01-24",
         coords: [
             37.4853,
@@ -901,6 +934,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "https://givemoney.kr/politicians/86",
         dateAdded: "2026-02-05",
         coords: [
             37.491737,
@@ -926,6 +960,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "#",
         dateAdded: "2026-02-05",
         coords: [
             37.5418,
@@ -951,6 +986,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "#",
         dateAdded: "2026-02-05",
         coords: [
             37.573821,
@@ -980,6 +1016,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "https://rallypoint.kr/board/politics-free/225582",
+        donation: "https://givemoney.kr/politicians/92",
         dateAdded: "2026-02-09",
         coords: [
             37.6565,
@@ -1005,6 +1042,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "#",
         dateAdded: "2026-02-09",
         coords: [
             37.6614,
@@ -1035,6 +1073,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "https://rallypoint.kr/board/politics-free/225625/",
+        donation: "https://givemoney.kr/politicians/117",
         dateAdded: "2026-02-09",
         coords: [
             37.5503,
@@ -1064,6 +1103,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "https://rallypoint.kr/best/225947",
+        donation: "https://givemoney.kr/politicians/115",
         dateAdded: "2026-01-26",
         coords: [
             37.5372,
@@ -1093,6 +1133,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "https://rallypoint.kr/board/politics-free/227187",
+        donation: "https://givemoney.kr/politicians/113",
         dateAdded: "2026-01-26",
         coords: [
             37.543,
@@ -1117,6 +1158,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "#",
         dateAdded: "2026-01-26",
         coords: [
             37.485507,
@@ -1144,6 +1186,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "https://givemoney.kr/politicians/118",
         dateAdded: "2026-01-26",
         coords: [
             37.4683,
@@ -1170,6 +1213,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "https://givemoney.kr/politicians/87",
         dateAdded: "2026-02-19",
         coords: [
             37.5268,
@@ -1195,6 +1239,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "#",
         dateAdded: "2026-02-15",
         coords: [
             37.5328,
@@ -1220,6 +1265,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "https://givemoney.kr/politicians/136",
         dateAdded: "2026-02-05",
         coords: [
             35.3123,
@@ -1245,6 +1291,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "#",
         dateAdded: "2026-02-19",
         coords: [
             35.1199,
@@ -1272,6 +1319,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "https://www.youtube.com/live/ixdTcenUjMw?si=62KazlMWdC6ciOpY",
+        donation: "https://givemoney.kr/politicians/110",
         dateAdded: "2026-02-12",
         coords: [
             35.8444,
@@ -1301,6 +1349,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "https://www.facebook.com/share/p/17tdaEkjL5/",
+        donation: "https://givemoney.kr/politicians/111",
         dateAdded: "2026-01-26",
         coords: [
             35.8122,
@@ -1331,6 +1380,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "https://www.facebook.com/share/p/1D9hTEiQjh/",
+        donation: "https://givemoney.kr/politicians/112",
         dateAdded: "2026-01-26",
         coords: [
             35.7355,
@@ -1357,6 +1407,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "https://givemoney.kr/politicians/114",
         dateAdded: "2026-01-26",
         coords: [
             35.8614,
@@ -1385,6 +1436,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "https://www.facebook.com/share/p/1BkSL7Bw2c/",
+        donation: "https://givemoney.kr/politicians/116",
         dateAdded: "2026-01-26",
         coords: [
             35.8376,
@@ -1414,6 +1466,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "https://givemoney.kr/politicians/119",
         dateAdded: "2026-02-09",
         coords: [
             35.8611,
@@ -1441,6 +1494,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "https://rallypoint.kr/board/politics-free/222667",
+        donation: "https://givemoney.kr/politicians/121",
         dateAdded: "2026-02-12",
         coords: [
             35.8727,
@@ -1467,6 +1521,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "https://givemoney.kr/politicians/67",
         dateAdded: "2026-01-26",
         coords: [
             37.3914,
@@ -1494,6 +1549,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "https://www.instagram.com/p/DU-ZrFOkQ8k",
+        donation: "https://givemoney.kr/politicians/66",
         dateAdded: "2026-02-05",
         coords: [
             37.3833,
@@ -1523,6 +1579,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "https://givemoney.kr/politicians/70",
         dateAdded: "2026-02-09",
         coords: [
             37.4519,
@@ -1551,6 +1608,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "https://rallypoint.kr/board/politics-free/224918",
+        donation: "https://givemoney.kr/politicians/125",
         dateAdded: "2026-01-31",
         coords: [
             36.3153,
@@ -1577,6 +1635,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "https://www.youtube.com/watch?v=uyHmrX9hypw",
+        donation: "https://givemoney.kr/politicians/123",
         dateAdded: "2025-12-01",
         coords: [
             36.3504,
@@ -1606,6 +1665,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "https://www.youtube.com/watch?v=uyHmrX9hypw",
+        donation: "https://givemoney.kr/politicians/131",
         dateAdded: "2025-12-01",
         coords: [
             36.3321,
@@ -1633,6 +1693,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "https://www.facebook.com/share/p/1GH8hcS9o2/",
+        donation: "https://givemoney.kr/politicians/127",
         dateAdded: "2026-01-30",
         coords: [
             36.3462,
@@ -1661,6 +1722,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "https://www.youtube.com/watch?v=YBVriZc5RQc",
+        donation: "https://givemoney.kr/politicians/130",
         dateAdded: "2026-01-17",
         coords: [
             36.3659,
@@ -1689,6 +1751,7 @@ const candidates = [
             ig: "https://www.instagram.com/1jwpark/",
             yt: "https://www.youtube.com/@jinu_park"
         },
+        donation: "https://givemoney.kr/politicians/109",
         dateAdded: "2026-01-26",
         coords: [
             35.148,
@@ -1715,6 +1778,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "https://givemoney.kr/politicians/82",
         dateAdded: "2026-02-05",
         coords: [
             37.8183,
@@ -1739,6 +1803,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "#",
         dateAdded: "2026-02-05",
         coords: [
             37.2592,
@@ -1765,6 +1830,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "https://givemoney.kr/politicians/73",
         dateAdded: "2026-01-26",
         coords: [
             37.2541,
@@ -1795,6 +1861,7 @@ const candidates = [
         },
         pledge: "https://policy.reformparty.kr/map?region_code=41&election_type=local_council&district_code=41%3A%EC%84%B1%EB%82%A8%EC%8B%9C%EB%B6%84%EB%8B%B9%EA%B5%AC",
         decl: "https://rallypoint.kr/board/politics-free/227927",
+        donation: "https://givemoney.kr/politicians/69",
         dateAdded: "2026-01-31",
         coords: [
             37.3992,
@@ -1822,6 +1889,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "https://givemoney.kr/politicians/68",
         dateAdded: "2026-02-09",
         coords: [
             37.4437,
@@ -1847,6 +1915,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "#",
         dateAdded: "2026-02-19",
         coords: [
             37.3737,
@@ -1879,6 +1948,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "https://blog.naver.com/bucheon_tezz/224160408956",
+        donation: "https://givemoney.kr/politicians/65",
         dateAdded: "2026-01-26",
         coords: [
             37.5046,
@@ -1905,6 +1975,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "#",
         dateAdded: "2026-01-26",
         coords: [
             37.4787,
@@ -1929,6 +2000,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "#",
         dateAdded: "2026-01-26",
         coords: [
             37.301125,
@@ -1954,6 +2026,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "#",
         dateAdded: "2026-02-19",
         coords: [
             37.2641,
@@ -1979,6 +2052,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "#",
         dateAdded: "2026-02-12",
         coords: [
             37.3327,
@@ -2006,6 +2080,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "https://givemoney.kr/politicians/64",
         dateAdded: "2026-02-12",
         coords: [
             37.6634,
@@ -2032,6 +2107,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "https://www.gnnews.org/news/articleView.html?idxno=11383",
+        donation: "#",
         dateAdded: "2026-02-05",
         coords: [
             37.6877,
@@ -2059,6 +2135,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "https://givemoney.kr/politicians/62",
         dateAdded: "2026-02-19",
         coords: [
             37.7206,
@@ -2084,6 +2161,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "https://givemoney.kr/politicians/80",
         dateAdded: "2026-01-26",
         coords: [
             37.3946,
@@ -2111,6 +2189,7 @@ const candidates = [
         },
         pledge: "https://policy.reformparty.kr/map?region_code=41&election_type=local_council&district_code=41%3A%EC%95%88%EC%96%91%EC%8B%9C%EB%8F%99%EC%95%88%EA%B5%AC%3A%EC%95%88%EC%96%91%EC%8B%9C%EB%B0%94%EC%84%A0%EA%B1%B0%EA%B5%AC",
         decl: "https://www.instagram.com/p/DT9qrWckb3S/?igsh=MWtjcGlzOHk4MncxNg%3D%3D",
+        donation: "https://givemoney.kr/politicians/77",
         dateAdded: "2025-12-01",
         coords: [
             37.3975,
@@ -2135,6 +2214,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "#",
         dateAdded: "2026-02-09",
         coords: [
             37.3497,
@@ -2162,6 +2242,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "https://givemoney.kr/politicians/95",
         dateAdded: "2026-02-09",
         coords: [
             37.8288,
@@ -2175,6 +2256,7 @@ const candidates = [
         category: "기초의원",
         office: "안산시의원",
         age: 27,
+        slogan: "안산이 키운 용기 있는 정치인. 미래를 바꾸는 선택, 지금 함께해주십시오.",
         status: "예비후보",
         subRegion: "본오3동, 사동, 사이동, 해양동",
         bio: [
@@ -2187,6 +2269,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "https://rallypoint.kr/board/politics-free/223063",
+        donation: "https://givemoney.kr/politicians/75",
         dateAdded: "2026-01-26",
         coords: [
             37.3313,
@@ -2215,6 +2298,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "http://www.hsnews.or.kr/news/view.html?section=1&no=49750",
+        donation: "https://givemoney.kr/politicians/96",
         dateAdded: "2026-01-26",
         coords: [
             37.0817,
@@ -2243,6 +2327,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "https://givemoney.kr/politicians/97",
         dateAdded: "2026-01-26",
         coords: [
             37.2175,
@@ -2270,6 +2355,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "https://rallypoint.kr/board/politics-free/225573?searchType=0&currentPage=1",
+        donation: "https://givemoney.kr/politicians/54",
         dateAdded: "2026-01-26",
         coords: [
             37.3009,
@@ -2301,6 +2387,7 @@ const candidates = [
         },
         pledge: "https://policy.reformparty.kr/map?region_code=42&election_type=local_council&district_code=42%3A%EC%B6%98%EC%B2%9C%EC%8B%9C",
         decl: "https://rallypoint.kr/board/politics-free/223910",
+        donation: "https://givemoney.kr/politicians/56",
         dateAdded: "2026-02-05",
         coords: [
             37.8646,
@@ -2335,6 +2422,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "https://rallypoint.kr/board/politics-free/223549",
+        donation: "https://givemoney.kr/politicians/53",
         dateAdded: "2025-12-01",
         coords: [
             36.807091,
@@ -2366,6 +2454,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "https://givemoney.kr/politicians/160",
         dateAdded: "2026-02-05",
         coords: [
             36.7972,
@@ -2397,6 +2486,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "https://rallypoint.kr/board/politics-free/225934",
+        donation: "https://givemoney.kr/politicians/52",
         dateAdded: "2026-02-15",
         coords: [
             36.8098,
@@ -2424,6 +2514,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "https://rallypoint.kr/board/politics-free/223942",
+        donation: "#",
         dateAdded: "2026-01-15",
         coords: [
             36.8418,
@@ -2455,6 +2546,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "https://www.instagram.com/reel/DUaehbcAUci/?igsh=M2Y5aWdreGsxM2Zi",
+        donation: "https://givemoney.kr/politicians/57",
         dateAdded: "2026-02-05",
         coords: [
             36.9782,
@@ -2480,6 +2572,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "#",
         dateAdded: "2026-03-23",
         coords: [
             36.807656,
@@ -2508,6 +2601,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "https://givemoney.kr/politicians/139",
         dateAdded: "2026-02-05",
         coords: [
             36.1055,
@@ -2533,6 +2627,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "#",
         dateAdded: "2026-02-09",
         coords: [
             36.0978,
@@ -2558,6 +2653,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "#",
         dateAdded: "2026-02-09",
         coords: [
             36.0607,
@@ -2583,6 +2679,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "https://givemoney.kr/politicians/135",
         dateAdded: "2026-02-12",
         coords: [
             36.032,
@@ -2607,6 +2704,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "#",
         dateAdded: "2026-02-12",
         coords: [
             36.1042,
@@ -2634,6 +2732,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "https://givemoney.kr/politicians/140",
         dateAdded: "2026-01-26",
         coords: [
             37.0538,
@@ -2661,6 +2760,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "https://givemoney.kr/politicians/99",
         dateAdded: "2026-02-27",
         coords: [
             37.2789,
@@ -2691,6 +2791,7 @@ const candidates = [
         },
         pledge: "https://litt.ly/newcheongju.kr",
         decl: "#",
+        donation: "https://givemoney.kr/politicians/50",
         dateAdded: "2026-02-27",
         coords: [
             36.6295,
@@ -2715,6 +2816,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "#",
         dateAdded: "2026-02-27",
         coords: [
             35.9417,
@@ -2740,6 +2842,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "#",
         dateAdded: "2026-03-02",
         coords: [
             37.5602,
@@ -2764,6 +2867,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "#",
         dateAdded: "2026-03-05",
         coords: [
             35.1395,
@@ -2790,6 +2894,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "https://givemoney.kr/politicians/83",
         dateAdded: "2026-03-05",
         coords: [
             37.4745,
@@ -2814,6 +2919,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "#",
         dateAdded: "2026-03-05",
         coords: [
             36.9658,
@@ -2841,6 +2947,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "https://givemoney.kr/politicians/102",
         dateAdded: "2026-03-05",
         coords: [
             37.4069,
@@ -2868,6 +2975,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "https://givemoney.kr/politicians/103",
         dateAdded: "2026-03-05",
         coords: [
             37.738211,
@@ -2895,6 +3003,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "#",
         dateAdded: "2026-03-09",
         coords: [
             37.5527,
@@ -2919,6 +3028,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "#",
         dateAdded: "2026-03-09",
         coords: [
             37.5407,
@@ -2949,6 +3059,7 @@ const candidates = [
         },
         pledge: "https://policy.reformparty.kr/map?region_code=28&election_type=local_council&district_code=28%3A%EC%84%9C%EA%B5%AC%3A%EB%8B%A4%EC%84%A0%EA%B1%B0%EA%B5%AC",
         decl: "https://rallypoint.kr/board/politics-free/227363",
+        donation: "https://givemoney.kr/politicians/84",
         dateAdded: "2026-03-09",
         coords: [
             37.5396,
@@ -2974,6 +3085,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "#",
         dateAdded: "2026-03-09",
         coords: [
             37.658,
@@ -2998,6 +3110,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "#",
         dateAdded: "2026-03-09",
         coords: [
             36.998,
@@ -3022,6 +3135,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "#",
         dateAdded: "2026-03-09",
         coords: [
             36.8043,
@@ -3049,6 +3163,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "https://givemoney.kr/politicians/72",
         dateAdded: "2026-03-12",
         coords: [
             37.5271,
@@ -3074,6 +3189,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "#",
         dateAdded: "2026-03-12",
         coords: [
             35.2375,
@@ -3098,6 +3214,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "#",
         dateAdded: "2026-03-12",
         coords: [
             37.4292,
@@ -3124,6 +3241,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "https://givemoney.kr/politicians/107",
         dateAdded: "2026-03-12",
         coords: [
             37.665,
@@ -3148,6 +3266,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "#",
         dateAdded: "2026-03-12",
         coords: [
             37.4914,
@@ -3173,6 +3292,7 @@ const candidates = [
         },
         pledge: "https://policy.reformparty.kr/map?region_code=41&election_type=local_council&district_code=41%3A%ED%99%94%EC%84%B1%EC%8B%9C%3A%EB%A7%88%EC%84%A0%EA%B1%B0%EA%B5%AC",
         decl: "#",
+        donation: "#",
         dateAdded: "2026-03-16",
         coords: [
             37.170497,
@@ -3200,6 +3320,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "#",
         dateAdded: "2026-03-18",
         coords: [
             33.4889,
@@ -3224,6 +3345,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "#",
         dateAdded: "2026-03-19",
         coords: [
             37.5509,
@@ -3249,6 +3371,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "https://givemoney.kr/politicians/155",
         dateAdded: "2026-03-19",
         coords: [
             35.8588,
@@ -3274,6 +3397,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "https://givemoney.kr/politicians/157",
         dateAdded: "2026-03-19",
         coords: [
             37.6149,
@@ -3299,6 +3423,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "#",
         dateAdded: "2026-03-19",
         coords: [
             37.3943,
@@ -3327,6 +3452,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "#",
         dateAdded: "2026-03-19",
         coords: [
             37.5132,
@@ -3351,6 +3477,7 @@ const candidates = [
         },
         pledge: "https://policy.reformparty.kr/map?region_code=11&election_type=local_council&district_code=11%3A%EC%A4%91%EB%9E%91%EA%B5%AC%3A%EB%8B%A4%EC%84%A0%EA%B1%B0%EA%B5%AC",
         decl: "#",
+        donation: "#",
         dateAdded: "2026-03-19",
         coords: [
             37.6066,
@@ -3379,6 +3506,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "https://givemoney.kr/politicians/154",
         dateAdded: "2026-03-19",
         coords: [
             37.3449,
@@ -3404,6 +3532,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "#",
         dateAdded: "2026-03-19",
         coords: [
             37.6584,
@@ -3432,10 +3561,11 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
+        donation: "#",
         dateAdded: "2026-03-25",
         coords: [
             37.4104,
-            126.678
+            126.6780
         ]
     },
     {
@@ -3460,6 +3590,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "https://rallypoint.kr/board/politics-free/227748",
+        donation: "#",
         dateAdded: "2026-03-17",
         coords: [
             35.8687,
@@ -3482,6 +3613,7 @@ const candidates = [
         sns: {},
         pledge: "#",
         decl: "#",
+        donation: "#",
         dateAdded: "2026-03-26",
         coords: [
             37.599874,
@@ -3504,6 +3636,7 @@ const candidates = [
         sns: {},
         pledge: "#",
         decl: "#",
+        donation: "#",
         dateAdded: "2026-03-26",
         coords: [
             37.369751,
@@ -3526,6 +3659,7 @@ const candidates = [
         sns: {},
         pledge: "#",
         decl: "#",
+        donation: "#",
         dateAdded: "2026-03-26",
         coords: [
             35.391285,
