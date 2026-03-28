@@ -45,6 +45,7 @@ const candidates = [
         age: 37,
         status: "예비후보",
         bio: [
+            "부산시당 위원장 직무대행",
             "전) 개혁신당 중앙당 대변인"
         ],
         photo: "https://cdn.seoulfn.com/news/photo/202511/612324_411809_430.jpg",
@@ -3566,7 +3567,7 @@ const candidates = [
         dateAdded: "2026-03-25",
         coords: [
             37.4104,
-            126.678
+            126.6780
         ]
     },
     {
