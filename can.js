@@ -1099,7 +1099,8 @@ const candidates = [
         photo: "https://i.imgur.com/0cMZalE.jpeg",
         district: "다",
         sns: {
-            fb: "https://facebook.com/leadingkim6"
+            fb: "https://facebook.com/leadingkim6",
+            yt: "https://www.youtube.com/channel/UCdEJJkb_1spHDO5e2g0kuHQ"
         },
         pledge: "#",
         decl: "https://rallypoint.kr/best/225947",
@@ -3565,7 +3566,7 @@ const candidates = [
         dateAdded: "2026-03-25",
         coords: [
             37.4104,
-            126.678
+            126.6780
         ]
     },
     {
