@@ -3566,7 +3566,7 @@ const candidates = [
         dateAdded: "2026-03-25",
         coords: [
             37.4104,
-            126.6780
+            126.678
         ]
     },
     {
