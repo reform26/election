@@ -1686,7 +1686,7 @@ const candidates = [
             "대전시당 부위원장",
             "대전시당 노동특별위원장"
         ],
-        photo: "",
+        photo: "https://i.imgur.com/KmrmRfl.png",
         district: "가",
         sns: {
             fb: "https://www.facebook.com/profile.php?id=61587860510753",
@@ -3566,7 +3566,7 @@ const candidates = [
         dateAdded: "2026-03-25",
         coords: [
             37.4104,
-            126.678
+            126.6780
         ]
     },
     {
