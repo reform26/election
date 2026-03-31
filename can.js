@@ -2855,7 +2855,6 @@ const candidates = [
             127.0826
         ]
     },
-
     {
         name: "강민수",
         region: "인천 제물포구",
@@ -3547,7 +3546,7 @@ const candidates = [
         dateAdded: "2026-03-25",
         coords: [
             37.4104,
-            126.6780
+            126.678
         ]
     },
     {
