@@ -410,6 +410,7 @@ const candidates = [
         category: "기초단체장",
         office: "삼척시장",
         age: 69,
+        slogan: "72조원 국책사업 원전+방폐장 유치하여 소멸도시 삼척을 살리겠습니다.",
         status: "예비후보",
         bio: [
             "전) 산업통상자원부",
@@ -693,6 +694,7 @@ const candidates = [
         category: "기초의원",
         office: "강남구의원",
         age: 43,
+        slogan: "새로운 선택, 더 나은 강남의 미래",
         status: "예비후보",
         subRegion: "개포1동, 개포2동, 개포4동",
         bio: [
@@ -1990,10 +1992,12 @@ const candidates = [
         metropolitan: "경기도",
         category: "기초의원",
         office: "용인시의원",
-        status: "공천확정",
+        age: 35,
+        status: "예비후보",
         subRegion: "상현1동, 상현3동",
         bio: [
-            "경기도당 용인시 교육특위 위원장"
+            "현) 개발도사 대표",
+            "전) 삼성전자 개발팀"
         ],
         photo: "",
         district: "사",
@@ -2851,31 +2855,7 @@ const candidates = [
             127.0826
         ]
     },
-    {
-        name: "강두현",
-        region: "부산 동구",
-        metropolitan: "부산광역시",
-        category: "기초의원",
-        office: "동구의회",
-        status: "공천확정",
-        subRegion: "초량제1동, 초량제2동, 초량제3동",
-        bio: [
-            "동구 가선거구 공천확정"
-        ],
-        photo: "",
-        district: "가",
-        sns: {
-            fb: "#"
-        },
-        pledge: "#",
-        decl: "#",
-        donation: "#",
-        dateAdded: "2026-03-05",
-        coords: [
-            35.1395,
-            129.0439
-        ]
-    },
+
     {
         name: "강민수",
         region: "인천 제물포구",
@@ -3567,7 +3547,7 @@ const candidates = [
         dateAdded: "2026-03-25",
         coords: [
             37.4104,
-            126.678
+            126.6780
         ]
     },
     {
