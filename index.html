@@ -676,6 +676,7 @@
                 <button onclick="closeNoticePopup()" style="width:28px;height:28px;border-radius:8px;background:#f5f5f5;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:14px;color:#888;font-weight:700;" class="dark:bg-slate-700 dark:text-slate-300">✕</button>
             </div>
             <div style="padding:14px 18px;overflow-y:auto;display:flex;flex-direction:column;gap:5px;">
+                <div class="notice-popup-item"><div class="notice-popup-left"><span class="notice-popup-badge">제13차</span><span class="notice-popup-count">2명</span><span class="notice-popup-date">03.26.</span></div><a href="https://rallypoint.kr/board/notice/228842" target="_blank" class="notice-popup-link">공고보기 →</a></div>
                 <div class="notice-popup-item"><div class="notice-popup-left"><span class="notice-popup-badge">제12차</span><span class="notice-popup-count">4명</span><span class="notice-popup-date">03.26.</span></div><a href="https://rallypoint.kr/board/notice/228432" target="_blank" class="notice-popup-link">공고보기 →</a></div>
                 <div class="notice-popup-item"><div class="notice-popup-left"><span class="notice-popup-badge">제11차</span><span class="notice-popup-count">7명</span><span class="notice-popup-date">03.19.</span></div><a href="https://rallypoint.kr/board/notice/227913" target="_blank" class="notice-popup-link">공고보기 →</a></div>
                 <div class="notice-popup-item"><div class="notice-popup-left"><span class="notice-popup-badge">제10차</span><span class="notice-popup-count">6명</span><span class="notice-popup-date">03.15.</span></div><a href="https://rallypoint.kr/board/notice/227627" target="_blank" class="notice-popup-link">공고보기 →</a></div>
@@ -889,7 +890,7 @@
                 <div id="d-day-badge" class="rh-dday">D-000</div>
                 <div class="rh-update-badge">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    <span id="last-update-date">최종 업데이트 : 2026. 03. 28</span>
+                    <span id="last-update-date">최종 업데이트 : 2026. 04. 01</span>
                 </div>
             </div>
         </div>
@@ -1381,7 +1382,7 @@
         </div>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="can.js?v=0328.08" defer></script>   <script src="data1.js?v=0223.05" defer></script> <script src="search.js?v=0317.02" defer></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="can.js?v=0328.09" defer></script>   <script src="data1.js?v=0223.05" defer></script> <script src="search.js?v=0317.02" defer></script>
     <script>
         let currentModalCandidateName = '';
         let showOnlyConfirmed = false;
@@ -2207,7 +2208,7 @@
         }
 
         function createCard(c) {
-            const isTightBio = ["김태수", "고재윤", "이강민", "오정대", "우영훈", "최윤석", "구성도", "박성진", "주한송", "최제일", "심용진", "박종길", "박진우", "황은재", "송원근", "이호엽", "하용준", "김영민", "손승범", "김주연", "주이삭", "박현수", "이민수", "이규민", "이은창", "김성우", "황시현", "이해성", "김민식"].includes(c.name);
+            const isTightBio = ["김태수", "고재윤", "이강민", "오정대", "우영훈", "최윤석", "구성도", "박성진", "주한송", "최제일", "심용진", "박종길", "박진우", "황은재", "송원근", "이호엽", "하용준", "김영민", "손승범", "김주연", "주이삭", "김희성", "박현수", "이민수", "이규민", "이은창", "김성우", "황시현", "이해성", "김민식"].includes(c.name);
             const isTightSpacing = ["우영훈", "김태수", "심용진", "김주연","이진현"].includes(c.name);
             let styles = [];
             if (isTightBio || ["조동운", "김민식", "박철현", "류태하", "이용우", "이재원", "김병진", "양성혁", "양준모", "김주연", "주이삭", "김태수", "이규민", "이진현"].includes(c.name)) {

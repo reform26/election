@@ -199,20 +199,21 @@ const candidates = [
         region: "충청남도",
         category: "광역단체장",
         office: "충청남도지사",
-        status: "공천확정",
+        status: "예비후보",
+        age: 43,
         bio: [
             "충청남도당 위원장 직무대행",
             "공주·부여·청양 당협위원장",
             "제6대 유성구의원",
             "제21대 대선 선대위 대변인"
         ],
-        photo: "https://i.imgur.com/CUx0gAv.png",
+        photo: "https://i.imgur.com/74Md7kT.png",
         sns: {
             fb: "https://www.facebook.com/profile.php?id=100002081097533"
         },
         pledge: "#",
         decl: "https://www.youtube.com/live/ykvvk-37iws?si=iGJ3virBz9tVUHMO&t=288",
-        donation: "#",
+        donation: "https://givemoney.kr/politicians/143",
         dateAdded: "2026-02-12",
         coords: [
             36.6588,
@@ -2855,6 +2856,7 @@ const candidates = [
             127.0826
         ]
     },
+
     {
         name: "강민수",
         region: "인천 제물포구",
@@ -3413,12 +3415,12 @@ const candidates = [
     },
     {
         name: "이민수",
-        hidden: true,
+        hidden: false,
         region: "서울 동작구",
         metropolitan: "서울특별시",
         category: "기초의원",
         office: "동작구의회",
-        status: "출마예정",
+        status: "공천확정",
         subRegion: "노량진제1동, 노량진제2동",
         bio: [
             "사회복지사(2급)",
@@ -3434,10 +3436,10 @@ const candidates = [
         pledge: "#",
         decl: "#",
         donation: "#",
-        dateAdded: "2026-03-19",
+        dateAdded: "2026-04-01",
         coords: [
-            37.5132,
-            126.9396
+            37.5133,
+            126.9422
         ]
     },
     {
@@ -3546,7 +3548,7 @@ const candidates = [
         dateAdded: "2026-03-25",
         coords: [
             37.4104,
-            126.678
+            126.6780
         ]
     },
     {
@@ -3645,6 +3647,58 @@ const candidates = [
         coords: [
             35.391285,
             128.473618
+        ]
+    },
+    {
+        name: "한민희",
+        region: "충남 계룡시",
+        metropolitan: "충청남도",
+        category: "기초의원",
+        office: "계룡시의회",
+        status: "공천확정",
+        district: "나",
+        subRegion: "엄사면",
+        bio: [
+            "엄사면 의용소방대 부대장"
+        ],
+        photo: "",
+        sns: {},
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-04-01",
+        coords: [
+            36.285695,
+            127.238092
+        ]
+    },
+    {
+        name: "김희성",
+        region: "경남 김해시",
+        metropolitan: "경상남도",
+        category: "기초의원",
+        office: "김해시의회",
+        age: 64,
+        status: "예비후보",
+        preliminary: true,
+        district: "다",
+        subRegion: "동상동, 부원동, 활천동",
+        bio: [
+            "전) 제5·8대 김해시의원(재선)",
+            "사)대한파크골프연합회 부산경남본부장",
+            "지지테크 대표"
+        ],
+        photo: "https://i.imgur.com/PLbJc25.png",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-04-01",
+        coords: [
+            35.234549,
+            128.885038
         ]
     }
 ];
