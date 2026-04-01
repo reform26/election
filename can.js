@@ -2856,6 +2856,7 @@ const candidates = [
             127.0826
         ]
     },
+
     {
         name: "강민수",
         region: "인천 제물포구",
@@ -3427,7 +3428,7 @@ const candidates = [
             "IT 유지보수 노조위원장 역임",
             "<span style='letter-spacing:-0.15em;'>본동 11번지 지주공동개발 비대위원장</span>"
         ],
-        photo: "",
+        photo: "https://i.imgur.com/cTXKAuM.png",
         district: "가",
         sns: {
             fb: "#"
@@ -3547,7 +3548,7 @@ const candidates = [
         dateAdded: "2026-03-25",
         coords: [
             37.4104,
-            126.678
+            126.6780
         ]
     },
     {
@@ -3660,7 +3661,7 @@ const candidates = [
         bio: [
             "엄사면 의용소방대 부대장"
         ],
-        photo: "",
+        photo: "https://i.imgur.com/LThHraB.png",
         sns: {},
         pledge: "#",
         decl: "#",
