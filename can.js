@@ -1267,7 +1267,7 @@ const candidates = [
         sns: {
             fb: "#"
         },
-        pledge: "#",
+        pledge: "https://policy.reformparty.kr/map?region_code=26&election_type=local_council&district_code=26%3A%EA%B8%B0%EC%9E%A5%EA%B5%B0%3A%EB%8B%A4%EC%84%A0%EA%B1%B0%EA%B5%AC",
         decl: "#",
         donation: "https://givemoney.kr/politicians/136",
         dateAdded: "2026-02-05",
@@ -1891,7 +1891,7 @@ const candidates = [
         sns: {
             fb: "#"
         },
-        pledge: "#",
+        pledge: "https://policy.reformparty.kr/map?region_code=41&election_type=local_council&district_code=41%3A%EC%84%B1%EB%82%A8%EC%8B%9C%EC%A4%91%EC%9B%90%EA%B5%AC%3A%EC%82%AC%EC%84%A0%EA%B1%B0%EA%B5%AC",
         decl: "#",
         donation: "https://givemoney.kr/politicians/68",
         dateAdded: "2026-02-09",
@@ -2855,6 +2855,7 @@ const candidates = [
             127.0826
         ]
     },
+
     {
         name: "강민수",
         region: "인천 제물포구",
@@ -3546,7 +3547,7 @@ const candidates = [
         dateAdded: "2026-03-25",
         coords: [
             37.4104,
-            126.678
+            126.6780
         ]
     },
     {
