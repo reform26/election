@@ -1690,7 +1690,7 @@ const candidates = [
             "대전시당 부위원장",
             "대전시당 노동특별위원장"
         ],
-        photo: "",
+        photo: "https://i.imgur.com/l5dmme8.png",
         district: "가",
         sns: {
             fb: "https://www.facebook.com/profile.php?id=61587860510753",
@@ -2856,6 +2856,7 @@ const candidates = [
             127.0826
         ]
     },
+
     {
         name: "강민수",
         region: "인천 제물포구",
@@ -3547,7 +3548,7 @@ const candidates = [
         dateAdded: "2026-03-25",
         coords: [
             37.4104,
-            126.678
+            126.6780
         ]
     },
     {
