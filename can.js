@@ -2856,6 +2856,7 @@ const candidates = [
             127.0826
         ]
     },
+
     {
         name: "강민수",
         region: "인천 제물포구",
@@ -3187,12 +3188,14 @@ const candidates = [
         status: "공천확정",
         subRegion: "갈현동, 문원동, 부림동, 원문동",
         bio: [
-            "과천시 나선거구 공천확정"
+            "현) MVRIX",
+            "Associate CMC Research Engineer"
         ],
         photo: "",
         district: "나",
         sns: {
-            fb: "#"
+            fb: "#",
+            ig: "https://www.instagram.com/official.ekpark/"
         },
         pledge: "#",
         decl: "#",
@@ -3346,10 +3349,11 @@ const candidates = [
         bio: [
             "전) 제73대 한국대학스키연맹 총 학생위원장"
         ],
-        photo: "",
+        photo: "https://i.imgur.com/KalZzHE.png",
         district: "가",
         sns: {
-            fb: "#"
+            fb: "#",
+            ig: "https://www.instagram.com/myungkyo_seo/"
         },
         pledge: "#",
         decl: "#",
@@ -3547,7 +3551,7 @@ const candidates = [
         dateAdded: "2026-03-25",
         coords: [
             37.4104,
-            126.678
+            126.6780
         ]
     },
     {
