@@ -1128,10 +1128,13 @@ const candidates = [
         metropolitan: "서울특별시",
         category: "기초의원",
         office: "기초의원",
-        status: "공천확정",
+        age: 33,
+        status: "예비후보",
         subRegion: "신사동, 조원동, 미성동",
         bio: [
-            "관악구 마선거구 공천확정"
+            "약사",
+            "전) 서울특별시 공무원",
+            "전) 서울대학교병원 근무"
         ],
         photo: "",
         district: "마",
@@ -1140,7 +1143,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
-        donation: "#",
+        donation: "https://givemoney.kr/politicians/120",
         dateAdded: "2026-01-26",
         coords: [
             37.485507,
@@ -2833,6 +2836,7 @@ const candidates = [
             127.0826
         ]
     },
+
     {
         name: "강민수",
         region: "인천 제물포구",
@@ -3127,6 +3131,35 @@ const candidates = [
         coords: [
             37.5271,
             127.0355
+        ]
+    },
+    {
+        name: "조현조",
+        region: "부산 금정구",
+        metropolitan: "부산광역시",
+        category: "기초의원",
+        office: "금정구의회",
+        age: 34,
+        status: "예비후보",
+        preliminary: true,
+        district: "가",
+        subRegion: "서제1동, 서제2동, 서제3동, 금사회동동, 부곡제1동, 부곡제4동",
+        bio: [
+            "(주)에이치제이그룹 대표이사",
+            "(사)해맑음회 이사",
+            "금정구 중소기업발전협의회 회원"
+        ],
+        photo: "",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-04-02",
+        coords: [
+            35.226919,
+            129.119250
         ]
     },
     {
@@ -3527,7 +3560,7 @@ const candidates = [
         dateAdded: "2026-03-25",
         coords: [
             37.4104,
-            126.678
+            126.6780
         ]
     },
     {
