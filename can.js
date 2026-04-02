@@ -45,7 +45,7 @@ const candidates = [
         age: 37,
         status: "예비후보",
         bio: [
-            "부산시당 위원장 직무대행",
+            "부산광역시당 위원장 직무대행",
             "전) 개혁신당 중앙당 대변인"
         ],
         photo: "https://cdn.seoulfn.com/news/photo/202511/612324_411809_430.jpg",
@@ -177,7 +177,8 @@ const candidates = [
         status: "예비후보",
         bio: [
             "세종특별자치시당 창준위장",
-            "세종시 갑 당협위원장"
+            "세종시 갑 당협위원장",
+            "<span style='letter-spacing:-0.12em;'>'변호사 하헌휘 법률사무소' 대표변호사</span>"
         ],
         photo: "https://i.imgur.com/Z8LzmnG.png",
         sns: {
@@ -186,7 +187,7 @@ const candidates = [
             yt: "https://www.youtube.com/@%EC%84%B8%EC%A2%85%ED%95%98%ED%97%8C%ED%9C%98%EB%B3%80%ED%98%B8%EC%82%AC"
         },
         pledge: "#",
-        decl: "https://www.youtube.com/watch?v=m4DTvulTDFk",
+        decl: "https://www.youtube.com/watch?v=JcjbnGq3rN8",
         donation: "https://givemoney.kr/politicians/145",
         dateAdded: "2025-12-05",
         coords: [
@@ -218,30 +219,6 @@ const candidates = [
         coords: [
             36.6588,
             126.6728
-        ]
-    },
-    {
-        name: "김종욱",
-        hidden: true,
-        region: "서울 강남구",
-        metropolitan: "서울특별시",
-        category: "기초단체장",
-        office: "강남구청장",
-        status: "출마선언",
-        bio: [
-            "강남구청장 출마선언"
-        ],
-        photo: "",
-        sns: {
-            fb: "#"
-        },
-        pledge: "#",
-        decl: "https://rallypoint.kr/board/politics-free/227794/",
-        donation: "#",
-        dateAdded: "2026-03-18",
-        coords: [
-            37.5172,
-            127.0413
         ]
     },
     {
@@ -2856,6 +2833,7 @@ const candidates = [
             127.0826
         ]
     },
+
     {
         name: "강민수",
         region: "인천 제물포구",
@@ -3550,7 +3528,7 @@ const candidates = [
         dateAdded: "2026-03-25",
         coords: [
             37.4104,
-            126.678
+            126.6780
         ]
     },
     {
