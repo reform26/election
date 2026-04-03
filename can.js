@@ -2549,10 +2549,12 @@ const candidates = [
         metropolitan: "충청남도",
         category: "기초의원",
         office: "아산시의원",
-        status: "공천확정",
+        age: 28,
+        status: "예비후보",
         subRegion: "배방읍(세교리, 장재리, 휴대리), 탕정면, 염치읍",
         bio: [
-            "아산시 라선거구 공천확정"
+            "충남도당 대변인",
+            "개혁신당 아산시 지역발전특위 부위원장"
         ],
         photo: "",
         district: "라",
@@ -2561,7 +2563,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
-        donation: "#",
+        donation: "https://givemoney.kr/politicians/163",
         dateAdded: "2026-03-23",
         coords: [
             36.807656,
@@ -2838,6 +2840,7 @@ const candidates = [
             127.0826
         ]
     },
+
     {
         name: "강민수",
         region: "인천 제물포구",
@@ -3160,7 +3163,7 @@ const candidates = [
         dateAdded: "2026-04-02",
         coords: [
             35.226919,
-            129.11925
+            129.119250
         ]
     },
     {
@@ -3562,7 +3565,7 @@ const candidates = [
         dateAdded: "2026-03-25",
         coords: [
             37.4104,
-            126.678
+            126.6780
         ]
     },
     {
