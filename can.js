@@ -2838,6 +2838,7 @@ const candidates = [
             127.0826
         ]
     },
+
     {
         name: "강민수",
         region: "인천 제물포구",
@@ -3160,7 +3161,7 @@ const candidates = [
         dateAdded: "2026-04-02",
         coords: [
             35.226919,
-            129.11925
+            129.119250
         ]
     },
     {
@@ -3169,11 +3170,12 @@ const candidates = [
         metropolitan: "부산광역시",
         category: "기초의원",
         office: "금정구의회",
+        age: 19,
         slogan: "가장 젊고 가장 새로운 정치인 권민찬 입니다 감사합니다!",
-        status: "공천확정",
+        status: "예비후보",
         subRegion: "남산동, 구서2동",
         bio: [
-            "금정구 라선거구 공천확정"
+            "개혁신당 금정구 지역발전특위 부위원장"
         ],
         photo: "",
         district: "라",
@@ -3182,7 +3184,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
-        donation: "#",
+        donation: "https://givemoney.kr/politicians/132",
         dateAdded: "2026-03-12",
         coords: [
             35.2375,
@@ -3561,7 +3563,7 @@ const candidates = [
         dateAdded: "2026-03-25",
         coords: [
             37.4104,
-            126.678
+            126.6780
         ]
     },
     {
@@ -3712,6 +3714,32 @@ const candidates = [
         coords: [
             35.234549,
             128.885038
+        ]
+    },
+    {
+        name: "이창원",
+        region: "충남 논산시",
+        metropolitan: "충청남도",
+        category: "기초단체장",
+        office: "논산시장",
+        age: 68,
+        status: "예비후보",
+        preliminary: true,
+        bio: [
+            "세무사 이창원사무소 대표",
+            "정치인"
+        ],
+        photo: "https://i.imgur.com/vC7qQxi.png",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-04-03",
+        coords: [
+            36.1878,
+            127.0988
         ]
     }
 ];
