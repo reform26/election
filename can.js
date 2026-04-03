@@ -1051,7 +1051,8 @@ const candidates = [
         district: "나",
         sns: {
             fb: "#",
-            ig: "https://www.instagram.com/bestchoi__"
+            ig: "https://www.instagram.com/bestchoi__",
+            yt: "https://www.youtube.com/@%EA%B4%91%EC%A7%84%EA%B5%AC%EC%9E%A5%ED%95%99%EC%83%9D%EC%B5%9C%EC%A0%9C%EC%9D%BC"
         },
         pledge: "#",
         decl: "https://rallypoint.kr/board/politics-free/225625/",
@@ -2837,6 +2838,7 @@ const candidates = [
             127.0826
         ]
     },
+
     {
         name: "강민수",
         region: "인천 제물포구",
@@ -3159,7 +3161,7 @@ const candidates = [
         dateAdded: "2026-04-02",
         coords: [
             35.226919,
-            129.11925
+            129.119250
         ]
     },
     {
@@ -3560,7 +3562,7 @@ const candidates = [
         dateAdded: "2026-03-25",
         coords: [
             37.4104,
-            126.678
+            126.6780
         ]
     },
     {
