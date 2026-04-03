@@ -2394,7 +2394,7 @@ const candidates = [
         status: "예비후보",
         subRegion: "불당1동, 불당2동",
         bio: [
-            "충남도당 수석부위원장, 대변인",
+            "충남도당 수석부위원장",
             "개혁신당 지역발전특위 부위원장",
             "21대 대선 충남 선대본부 위원",
             "충남개혁정책네트워크 대표"
@@ -2556,7 +2556,7 @@ const candidates = [
             "충남도당 대변인",
             "개혁신당 아산시 지역발전특위 부위원장"
         ],
-        photo: "",
+        photo: "https://i.imgur.com/5hnVo9Y.jpeg",
         district: "라",
         sns: {
             fb: "#"
@@ -2840,6 +2840,7 @@ const candidates = [
             127.0826
         ]
     },
+
     {
         name: "강민수",
         region: "인천 제물포구",
@@ -3162,7 +3163,7 @@ const candidates = [
         dateAdded: "2026-04-02",
         coords: [
             35.226919,
-            129.11925
+            129.119250
         ]
     },
     {
@@ -3178,7 +3179,7 @@ const candidates = [
         bio: [
             "개혁신당 금정구 지역발전특위 부위원장"
         ],
-        photo: "",
+        photo: "https://i.imgur.com/Aaw6U4B.png",
         district: "라",
         sns: {
             fb: "#"
@@ -3564,7 +3565,7 @@ const candidates = [
         dateAdded: "2026-03-25",
         coords: [
             37.4104,
-            126.678
+            126.6780
         ]
     },
     {
