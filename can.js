@@ -2834,6 +2834,7 @@ const candidates = [
             127.0826
         ]
     },
+
     {
         name: "강민수",
         region: "인천 제물포구",
@@ -2948,11 +2949,13 @@ const candidates = [
         metropolitan: "서울특별시",
         category: "기초의원",
         office: "강동구의회",
-        status: "공천확정",
+        age: 39,
+        status: "예비후보",
         slogan: "미래를 여는 강동의 선택",
         subRegion: "상일1동, 상일2동, 명일2동",
         bio: [
             "개혁신당 강동(을) 사무국장",
+            "<span style='letter-spacing:-0.12em;'>개혁신당 강동구 지역발전특위 부위원장</span>",
             "전) 개혁신당 서울시당 대변인",
             "IT 스타트업 로지컬리 대표"
         ],
@@ -2963,7 +2966,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
-        donation: "#",
+        donation: "https://givemoney.kr/politicians/78",
         dateAdded: "2026-03-09",
         coords: [
             37.5527,
@@ -3156,7 +3159,7 @@ const candidates = [
         dateAdded: "2026-04-02",
         coords: [
             35.226919,
-            129.11925
+            129.119250
         ]
     },
     {
@@ -3458,10 +3461,11 @@ const candidates = [
         metropolitan: "서울특별시",
         category: "기초의원",
         office: "중랑구의회",
-        status: "공천확정",
+        age: 31,
+        status: "예비후보",
         subRegion: "면목본동, 면목제2동, 면목제5동, 상봉제2동",
         bio: [
-            "중랑구 다선거구 공천확정"
+            "개혁신당 중랑구 지역발전특위 부위원장"
         ],
         photo: "https://i.imgur.com/EPu4RBj.png",
         district: "다",
@@ -3470,7 +3474,7 @@ const candidates = [
         },
         pledge: "https://policy.reformparty.kr/map?region_code=11&election_type=local_council&district_code=11%3A%EC%A4%91%EB%9E%91%EA%B5%AC%3A%EB%8B%A4%EC%84%A0%EA%B1%B0%EA%B5%AC",
         decl: "#",
-        donation: "#",
+        donation: "https://givemoney.kr/politicians/156",
         dateAdded: "2026-03-19",
         coords: [
             37.6066,
@@ -3558,7 +3562,7 @@ const candidates = [
         dateAdded: "2026-03-25",
         coords: [
             37.4104,
-            126.678
+            126.6780
         ]
     },
     {
@@ -3710,6 +3714,32 @@ const candidates = [
         coords: [
             35.234549,
             128.885038
+        ]
+    },
+    {
+        name: "강명상",
+        region: "경남 창원시",
+        metropolitan: "경상남도",
+        category: "기초단체장",
+        office: "창원시장",
+        age: 53,
+        status: "출마선언",
+        showPreliminaryBadge: true,
+        bio: [
+            "현) 365병원 병원장",
+            "현) 365창원경제 연구원 원장"
+        ],
+        photo: "https://i.imgur.com/tTBE7If.png",
+        sns: {
+            fb: "https://www.facebook.com/p/%EA%B0%95%EB%AA%85%EC%83%81-61555386117076/"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-04-07",
+        coords: [
+            35.2281,
+            128.6811
         ]
     },
     {
