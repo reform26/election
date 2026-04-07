@@ -335,8 +335,7 @@ const candidates = [
         category: "기초단체장",
         office: "화성시장",
         age: 36,
-        status: "출마선언",
-        showPreliminaryBadge: true,
+        status: "예비후보",
         bio: [
             "제9대 화성시의원",
             "경기도당 위원장",
@@ -350,7 +349,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "https://www.youtube.com/watch?v=MZHron4TMO4",
-        donation: "#",
+        donation: "https://givemoney.kr/politicians/170",
         dateAdded: "2026-01-05",
         coords: [
             37.1994,
@@ -1132,6 +1131,7 @@ const candidates = [
         office: "기초의원",
         age: 33,
         status: "예비후보",
+        slogan: "관악 위상 상승! 이제부턴 관마용성!",
         subRegion: "신사동, 조원동, 미성동",
         bio: [
             "약사",
@@ -1387,7 +1387,7 @@ const candidates = [
             "대구시당 인재위원장",
             "개혁신당 지역발전특별위 부위원장"
         ],
-        photo: "",
+        photo: "https://i.imgur.com/mO3SSUc.png",
         district: "다",
         sns: {
             ig: "https://www.instagram.com/park___cheol_hyeon/"
@@ -2266,35 +2266,6 @@ const candidates = [
         ]
     },
     {
-        name: "심용진",
-        region: "경기 화성시",
-        metropolitan: "경기도",
-        category: "기초의원",
-        office: "화성시의원",
-        age: 61,
-        status: "예비후보",
-        subRegion: "우정읍, 남양읍, 매송면, 비봉면, 마도면, 송산면, 서신면, 장안면, 새솔동",
-        bio: [
-            "전) 매송면 원평1리 이장",
-            "<span style='letter-spacing:-0.15em;'>경기도당 화성시 동서균형발전특위 위원장</span>",
-            "현) 매송면 송전탑 지중화 추진위원장",
-            "현) 한국해양소년단 경기연맹이사"
-        ],
-        photo: "https://i.imgur.com/XgGMe74.png",
-        district: "나",
-        sns: {
-            fb: "#"
-        },
-        pledge: "#",
-        decl: "http://www.hsnews.or.kr/news/view.html?section=1&no=49750",
-        donation: "https://givemoney.kr/politicians/96",
-        dateAdded: "2026-01-26",
-        coords: [
-            37.0817,
-            126.8298
-        ]
-    },
-    {
         name: "오태석",
         region: "경기 화성시",
         metropolitan: "경기도",
@@ -2571,6 +2542,29 @@ const candidates = [
         ]
     },
     {
+        name: "조순자",
+        region: "경북 구미시",
+        metropolitan: "경상북도",
+        category: "기초단체장",
+        office: "구미시장",
+        status: "공천확정",
+        bio: [
+            "구미시장 공천확정"
+        ],
+        photo: "",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-04-07",
+        coords: [
+            36.1195,
+            128.3446
+        ]
+    },
+    {
         name: "류태하",
         region: "경북 구미시",
         metropolitan: "경상북도",
@@ -2840,6 +2834,7 @@ const candidates = [
             127.0826
         ]
     },
+
     {
         name: "강민수",
         region: "인천 제물포구",
@@ -3162,7 +3157,7 @@ const candidates = [
         dateAdded: "2026-04-02",
         coords: [
             35.226919,
-            129.11925
+            129.119250
         ]
     },
     {
@@ -3564,7 +3559,7 @@ const candidates = [
         dateAdded: "2026-03-25",
         coords: [
             37.4104,
-            126.678
+            126.6780
         ]
     },
     {
@@ -3671,17 +3666,18 @@ const candidates = [
         metropolitan: "충청남도",
         category: "기초의원",
         office: "계룡시의회",
-        status: "공천확정",
+        age: 60,
+        status: "예비후보",
         district: "나",
         subRegion: "엄사면",
         bio: [
-            "엄사면 의용소방대 부대장"
+            "<span style='letter-spacing:-0.05em;'>현) 광역철도 엄사역신설(구신도역)양정-파라디아간 철도복개추진위원장</span>"
         ],
         photo: "https://i.imgur.com/LThHraB.png",
         sns: {},
         pledge: "#",
         decl: "#",
-        donation: "#",
+        donation: "https://givemoney.kr/politicians/166/",
         dateAdded: "2026-04-01",
         coords: [
             36.285695,
@@ -3725,7 +3721,6 @@ const candidates = [
         office: "논산시장",
         age: 68,
         status: "예비후보",
-        preliminary: true,
         bio: [
             "세무사 이창원사무소 대표",
             "정치인"
@@ -3736,7 +3731,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
-        donation: "#",
+        donation: "https://givemoney.kr/politicians/168",
         dateAdded: "2026-04-03",
         coords: [
             36.1878,
