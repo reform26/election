@@ -2191,11 +2191,13 @@ const candidates = [
         metropolitan: "경기도",
         category: "기초의원",
         office: "의왕시의회",
-        status: "공천확정",
+        age: 32,
+        status: "예비후보",
         district: "나",
         subRegion: "내손1동, 내손2동, 청계동",
         bio: [
-            "의왕시 나선거구 공천확정"
+            "현) 공인회계사",
+            "현) 의왕시 공동주택관리 전문감사관"
         ],
         photo: "",
         sns: {
@@ -2203,7 +2205,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
-        donation: "#",
+        donation: "https://givemoney.kr/politicians/94",
         dateAdded: "2026-02-09",
         coords: [
             37.3497,
@@ -2835,6 +2837,7 @@ const candidates = [
             127.0826
         ]
     },
+
     {
         name: "강민수",
         region: "인천 제물포구",
@@ -3159,7 +3162,7 @@ const candidates = [
         dateAdded: "2026-04-02",
         coords: [
             35.226919,
-            129.11925
+            129.119250
         ]
     },
     {
@@ -3187,6 +3190,33 @@ const candidates = [
         coords: [
             35.2375,
             129.0927
+        ]
+    },
+    {
+        name: "신유림",
+        region: "부산 부산진구",
+        metropolitan: "부산광역시",
+        category: "기초의원",
+        office: "부산진구의회",
+        age: 24,
+        gender: "f",
+        status: "출마선언",
+        showPreliminaryBadge: true,
+        district: "다",
+        bio: [
+            "개혁신당 부산광역시 선대위 대변인"
+        ],
+        photo: "",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-04-08",
+        coords: [
+            35.171484,
+            129.036826
         ]
     },
     {
@@ -3562,7 +3592,7 @@ const candidates = [
         dateAdded: "2026-03-25",
         coords: [
             37.4104,
-            126.678
+            126.6780
         ]
     },
     {
