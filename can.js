@@ -2839,6 +2839,7 @@ const candidates = [
             127.0826
         ]
     },
+
     {
         name: "강민수",
         region: "인천 제물포구",
@@ -3153,9 +3154,10 @@ const candidates = [
             "(사)해맑음회 이사",
             "금정구 중소기업발전협의회 회원"
         ],
-        photo: "",
+        photo: "https://i.imgur.com/1qEzcp2.png",
         sns: {
-            fb: "#"
+            fb: "#",
+            ig: "https://www.instagram.com/p/DUrps6WDy1D/"
         },
         pledge: "#",
         decl: "#",
@@ -3163,7 +3165,7 @@ const candidates = [
         dateAdded: "2026-04-02",
         coords: [
             35.226919,
-            129.11925
+            129.119250
         ]
     },
     {
@@ -3502,7 +3504,8 @@ const candidates = [
         photo: "https://i.imgur.com/sHjUWdN.png",
         district: "다",
         sns: {
-            fb: "#"
+            fb: "#",
+            ig: "https://www.instagram.com/min.reform.jgn/"
         },
         pledge: "https://policy.reformparty.kr/map?region_code=11&election_type=local_council&district_code=11%3A%EC%A4%91%EB%9E%91%EA%B5%AC%3A%EB%8B%A4%EC%84%A0%EA%B1%B0%EA%B5%AC",
         decl: "#",
@@ -3594,7 +3597,7 @@ const candidates = [
         dateAdded: "2026-03-25",
         coords: [
             37.4104,
-            126.678
+            126.6780
         ]
     },
     {
