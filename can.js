@@ -306,8 +306,9 @@ const candidates = [
         metropolitan: "서울특별시",
         category: "기초단체장",
         office: "관악구청장",
+        age: 62,
         gender: "f",
-        status: "공천확정",
+        status: "예비후보",
         bio: [
             "관악구 갑 당협위원장",
             "21대 대선 선대위 부대변인",
@@ -320,7 +321,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "https://youtu.be/b4ofl-SQGlU",
-        donation: "#",
+        donation: "https://givemoney.kr/politicians/159",
         dateAdded: "2026-01-01",
         coords: [
             37.4784,
@@ -2837,6 +2838,7 @@ const candidates = [
             127.0826
         ]
     },
+
     {
         name: "강민수",
         region: "인천 제물포구",
@@ -3161,7 +3163,7 @@ const candidates = [
         dateAdded: "2026-04-02",
         coords: [
             35.226919,
-            129.11925
+            129.119250
         ]
     },
     {
@@ -3202,6 +3204,7 @@ const candidates = [
         status: "출마선언",
         showPreliminaryBadge: true,
         district: "다",
+        subRegion: "부암제1동, 부암제3동",
         bio: [
             "개혁신당 부산광역시 선대위 대변인"
         ],
@@ -3591,7 +3594,7 @@ const candidates = [
         dateAdded: "2026-03-25",
         coords: [
             37.4104,
-            126.678
+            126.6780
         ]
     },
     {
@@ -3794,6 +3797,62 @@ const candidates = [
         coords: [
             36.1878,
             127.0988
+        ]
+    },
+    {
+        name: "고귀한",
+        region: "부산 연제구",
+        metropolitan: "부산광역시",
+        category: "기초의원",
+        office: "연제구의회",
+        age: 35,
+        status: "출마선언",
+        showPreliminaryBadge: true,
+        district: "가",
+        subRegion: "거제제1동, 거제제2동, 거제제3동, 거제제4동",
+        bio: [
+            "개혁신당 부산시당 대변인",
+            "전) 카페 원플러스원 본부장"
+        ],
+        photo: "",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-04-08",
+        coords: [
+            35.192102,
+            129.076298
+        ]
+    },
+    {
+        name: "문현진",
+        region: "경남 김해시",
+        metropolitan: "경상남도",
+        category: "기초의원",
+        office: "김해시의회",
+        age: 39,
+        status: "출마선언",
+        showPreliminaryBadge: true,
+        district: "사",
+        subRegion: "내외동",
+        bio: [
+            "국민체육진흥공단 경륜선수",
+            "현) 그린닥터스 경상남도 청년단장"
+        ],
+        photo: "",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-04-08",
+        coords: [
+            35.236296,
+            128.863128
         ]
     }
 ];

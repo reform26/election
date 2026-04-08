@@ -1383,7 +1383,7 @@
         </div>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="can.js?v=0328.24" defer></script>   <script src="data1.js?v=0223.05" defer></script> <script src="search.js?v=0317.02" defer></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="can.js?v=0328.25" defer></script>   <script src="data1.js?v=0223.05" defer></script> <script src="search.js?v=0317.02" defer></script>
     <script>
         let currentModalCandidateName = '';
         let showOnlyConfirmed = false;
@@ -2057,7 +2057,8 @@
             const gyeonggiCands = filterByMetro("경기도");
             const chungnamCands = filterByMetro("충청남도");
             const gyeongbukCands = filterByMetro("경상북도");
-            const excluded = ["서울특별시","부산광역시", "대구광역시", "대전광역시", "인천광역시", "경기도", "경상북도", "충청남도"];
+            const gyeongnamCands = filterByMetro("경상남도");
+            const excluded = ["서울특별시","부산광역시", "대구광역시", "대전광역시", "인천광역시", "경기도", "경상북도", "충청남도", "경상남도"];
             const otherCands = filtered.filter(c => !excluded.includes(c.metropolitan) && c.category === "기초의원").sort((a, b) => (regionPriority[a.metropolitan] || 99) - (regionPriority[b.metropolitan] || 99) || councilSort(a, b));
 
             container.innerHTML = `
@@ -2084,6 +2085,7 @@
                     ${gyeonggiCands.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">경기도</h3><div class="grid-responsive">${gyeonggiCands.map(createCard).join('')}</div></div>` : ''}
                     ${chungnamCands.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">충청남도</h3><div class="grid-responsive">${chungnamCands.map(createCard).join('')}</div></div>` : ''}
                     ${gyeongbukCands.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">경상북도</h3><div class="grid-responsive">${gyeongbukCands.map(createCard).join('')}</div></div>` : ''}
+                    ${gyeongnamCands.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">경상남도</h3><div class="grid-responsive">${gyeongnamCands.map(createCard).join('')}</div></div>` : ''}
                     ${otherCands.length > 0 ? `<div><h3 class="sub-section-title">기타 지역</h3><div class="grid-responsive">${otherCands.map(createCard).join('')}</div></div>` : ''}
                 </section>
             `;
