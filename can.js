@@ -1138,7 +1138,7 @@ const candidates = [
             "전) 서울특별시 공무원",
             "전) 서울대학교병원 근무"
         ],
-        photo: "",
+        photo: "https://i.imgur.com/lR9f7RW.png",
         district: "마",
         sns: {
             fb: "#"
@@ -2254,7 +2254,8 @@ const candidates = [
         photo: "https://i.imgur.com/dwYubSe.png",
         district: "가",
         sns: {
-            ig: "https://www.instagram.com/jhchoi_ansan4/"
+            ig: "https://www.instagram.com/jhchoi_ansan4/",
+            yt: "https://www.youtube.com/@reformansan4"
         },
         pledge: "#",
         decl: "https://rallypoint.kr/board/politics-free/223063",
@@ -2834,6 +2835,7 @@ const candidates = [
             127.0826
         ]
     },
+
     {
         name: "강민수",
         region: "인천 제물포구",
@@ -3158,7 +3160,7 @@ const candidates = [
         dateAdded: "2026-04-02",
         coords: [
             35.226919,
-            129.11925
+            129.119250
         ]
     },
     {
@@ -3466,7 +3468,7 @@ const candidates = [
         bio: [
             "개혁신당 중랑구 지역발전특위 부위원장"
         ],
-        photo: "https://i.imgur.com/EPu4RBj.png",
+        photo: "https://i.imgur.com/sHjUWdN.png",
         district: "다",
         sns: {
             fb: "#"
@@ -3561,7 +3563,7 @@ const candidates = [
         dateAdded: "2026-03-25",
         coords: [
             37.4104,
-            126.678
+            126.6780
         ]
     },
     {
