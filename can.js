@@ -1214,7 +1214,8 @@ const candidates = [
         metropolitan: "서울특별시",
         category: "기초의원",
         office: "강동구의원",
-        status: "공천확정",
+        age: 31,
+        status: "예비후보",
         subRegion: "성내1·2·3동, 둔촌제1·2동",
         bio: [
             "서울시당 환경위원장",
@@ -1227,7 +1228,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
-        donation: "#",
+        donation: "https://givemoney.kr/politicians/76",
         dateAdded: "2026-02-15",
         coords: [
             37.5328,
@@ -2838,6 +2839,7 @@ const candidates = [
             127.0826
         ]
     },
+
     {
         name: "강민수",
         region: "인천 제물포구",
@@ -3162,7 +3164,7 @@ const candidates = [
         dateAdded: "2026-04-02",
         coords: [
             35.226919,
-            129.11925
+            129.119250
         ]
     },
     {
@@ -3593,7 +3595,7 @@ const candidates = [
         dateAdded: "2026-03-25",
         coords: [
             37.4104,
-            126.678
+            126.6780
         ]
     },
     {
