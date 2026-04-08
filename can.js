@@ -1247,7 +1247,7 @@ const candidates = [
         bio: [
             "(주)티제이앤앤에스 대리"
         ],
-        photo: "",
+        photo: "https://i.imgur.com/iXUZMlW.png",
         district: "다",
         sns: {
             fb: "#"
@@ -2839,6 +2839,7 @@ const candidates = [
             127.0826
         ]
     },
+
     {
         name: "강민수",
         region: "인천 제물포구",
@@ -3164,7 +3165,7 @@ const candidates = [
         dateAdded: "2026-04-02",
         coords: [
             35.226919,
-            129.11925
+            129.119250
         ]
     },
     {
@@ -3596,7 +3597,7 @@ const candidates = [
         dateAdded: "2026-03-25",
         coords: [
             37.4104,
-            126.678
+            126.6780
         ]
     },
     {
