@@ -2839,6 +2839,7 @@ const candidates = [
             127.0826
         ]
     },
+
     {
         name: "강민수",
         region: "인천 제물포구",
@@ -3164,7 +3165,7 @@ const candidates = [
         dateAdded: "2026-04-02",
         coords: [
             35.226919,
-            129.11925
+            129.119250
         ]
     },
     {
@@ -3596,7 +3597,7 @@ const candidates = [
         dateAdded: "2026-03-25",
         coords: [
             37.4104,
-            126.678
+            126.6780
         ]
     },
     {
@@ -3855,6 +3856,75 @@ const candidates = [
         coords: [
             35.236296,
             128.863128
+        ]
+    },
+    {
+        name: "양시훈",
+        region: "경기",
+        metropolitan: "경기도",
+        category: "광역의원",
+        office: "경기도의회",
+        status: "공천확정",
+        district: "화성 5",
+        subRegion: "동탄7동, 동탄8동, 동탄9동",
+        bio: [
+            "화성시 제5선거구 공천확정"
+        ],
+        photo: "",
+        sns: {},
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-04-09",
+        coords: [
+            37.177619,
+            127.131971
+        ]
+    },
+    {
+        name: "황종일",
+        region: "경기",
+        metropolitan: "경기도",
+        category: "광역의원",
+        office: "경기도의회",
+        status: "공천확정",
+        district: "수원 3",
+        subRegion: "장안구 율천동, 권선구 서둔동, 구운동, 입북동",
+        bio: [
+            "수원시 제3선거구 공천확정"
+        ],
+        photo: "",
+        sns: {},
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-04-09",
+        coords: [
+            37.296920,
+            126.974890
+        ]
+    },
+    {
+        name: "김성욱",
+        region: "경기 화성시",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "화성시의회",
+        status: "공천확정",
+        district: "다",
+        subRegion: "동탄1동, 동탄2동",
+        bio: [
+            "화성시 다선거구 공천확정"
+        ],
+        photo: "",
+        sns: {},
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-04-09",
+        coords: [
+            37.191534,
+            127.073829
         ]
     }
 ];
