@@ -2839,6 +2839,7 @@ const candidates = [
             127.0826
         ]
     },
+
     {
         name: "강민수",
         region: "인천 제물포구",
@@ -2983,10 +2984,12 @@ const candidates = [
         metropolitan: "서울특별시",
         category: "기초의원",
         office: "강동구의회",
-        status: "공천확정",
+        age: 39,
+        status: "예비후보",
         subRegion: "천호1동, 천호3동",
         bio: [
-            "서울시당 대변인"
+            "서울시당 대변인",
+            "개혁신당 강동구 지역발전특위 부위원장"
         ],
         photo: "",
         district: "라",
@@ -2995,7 +2998,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
-        donation: "#",
+        donation: "https://givemoney.kr/politicians/74",
         dateAdded: "2026-03-09",
         coords: [
             37.5407,
@@ -3164,7 +3167,7 @@ const candidates = [
         dateAdded: "2026-04-02",
         coords: [
             35.226919,
-            129.11925
+            129.119250
         ]
     },
     {
@@ -3596,7 +3599,7 @@ const candidates = [
         dateAdded: "2026-03-25",
         coords: [
             37.4104,
-            126.678
+            126.6780
         ]
     },
     {
@@ -3899,8 +3902,8 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-09",
         coords: [
-            37.29692,
-            126.97489
+            37.296920,
+            126.974890
         ]
     },
     {
