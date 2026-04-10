@@ -938,7 +938,8 @@ const candidates = [
         photo: "",
         district: "나",
         sns: {
-            fb: "#"
+            fb: "#",
+            yt: "https://www.youtube.com/@%EA%B9%80%EC%B2%A0%EA%B7%BCTV/streams"
         },
         pledge: "#",
         decl: "#",
@@ -964,7 +965,8 @@ const candidates = [
         photo: "",
         district: "나",
         sns: {
-            fb: "#"
+            fb: "#",
+            yt: "https://www.youtube.com/@reformpartytv/streams"
         },
         pledge: "#",
         decl: "#",
@@ -2176,7 +2178,8 @@ const candidates = [
         ],
         photo: "https://i.imgur.com/FJsBrQ1.png",
         sns: {
-            ig: "https://www.instagram.com/pyeongchonman?igsh=ZWY1dzBvZm1oYWVy"
+            ig: "https://www.instagram.com/pyeongchonman?igsh=ZWY1dzBvZm1oYWVy",
+            yt: "https://www.youtube.com/@pyeongchonman"
         },
         pledge: "https://policy.reformparty.kr/map?region_code=41&election_type=local_council&district_code=41%3A%EC%95%88%EC%96%91%EC%8B%9C%EB%8F%99%EC%95%88%EA%B5%AC%3A%EC%95%88%EC%96%91%EC%8B%9C%EB%B0%94%EC%84%A0%EA%B1%B0%EA%B5%AC",
         decl: "https://www.instagram.com/p/DT9qrWckb3S/?igsh=MWtjcGlzOHk4MncxNg%3D%3D",
@@ -2841,6 +2844,7 @@ const candidates = [
             127.0826
         ]
     },
+
     {
         name: "강민수",
         region: "인천 제물포구",
@@ -3168,7 +3172,7 @@ const candidates = [
         dateAdded: "2026-04-02",
         coords: [
             35.226919,
-            129.11925
+            129.119250
         ]
     },
     {
@@ -3600,7 +3604,7 @@ const candidates = [
         dateAdded: "2026-03-25",
         coords: [
             37.4104,
-            126.678
+            126.6780
         ]
     },
     {
@@ -3903,8 +3907,8 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-09",
         coords: [
-            37.29692,
-            126.97489
+            37.296920,
+            126.974890
         ]
     },
     {
@@ -4005,8 +4009,8 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-10",
         coords: [
-            35.24302,
-            129.09241
+            35.243020,
+            129.092410
         ]
     },
     {
@@ -4028,7 +4032,7 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-10",
         coords: [
-            37.50668,
+            37.506680,
             126.939279
         ]
     }
