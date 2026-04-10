@@ -2841,6 +2841,7 @@ const candidates = [
             127.0826
         ]
     },
+
     {
         name: "강민수",
         region: "인천 제물포구",
@@ -3168,7 +3169,7 @@ const candidates = [
         dateAdded: "2026-04-02",
         coords: [
             35.226919,
-            129.11925
+            129.119250
         ]
     },
     {
@@ -3600,7 +3601,7 @@ const candidates = [
         dateAdded: "2026-03-25",
         coords: [
             37.4104,
-            126.678
+            126.6780
         ]
     },
     {
@@ -3903,8 +3904,8 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-09",
         coords: [
-            37.29692,
-            126.97489
+            37.296920,
+            126.974890
         ]
     },
     {
@@ -3981,6 +3982,55 @@ const candidates = [
         coords: [
             35.059062,
             128.970823
+        ]
+    },
+    {
+        name: "최봉환",
+        region: "부산 금정구",
+        metropolitan: "부산광역시",
+        category: "기초단체장",
+        showPreliminaryBadge: true,
+        age: 66,
+        office: "금정구청장",
+        status: "출마예정",
+        bio: [
+            "제6~9대 금정구의원(4선)",
+            "<span style='letter-spacing:-0.12em;'>전)시군자치구의회 의장협의회 회장<span/>",
+            "제9대 금정구의회 전반기 의장",
+            "<span style='letter-spacing:-0.12em;'>개혁신당 부산시장 선대위 선대본부장<span/>"
+        ],
+        photo: "https://i.imgur.com/4uypBwQ.png",
+        sns: {},
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-04-10",
+        coords: [
+            35.243020,
+            129.092410
+        ]
+    },
+    {
+        name: "조성범",
+        region: "서울 동작구",
+        metropolitan: "서울특별시",
+        category: "기초단체장",
+        showPreliminaryBadge: true,
+        age: 58,
+        office: "동작구청장",
+        status: "출마예정",
+        bio: [
+            "전) Geo Intercontinental Inc Korea 대표"
+        ],
+        photo: "",
+        sns: {},
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-04-10",
+        coords: [
+            37.506680,
+            126.939279
         ]
     }
 ];
