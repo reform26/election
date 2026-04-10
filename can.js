@@ -2841,6 +2841,7 @@ const candidates = [
             127.0826
         ]
     },
+
     {
         name: "강민수",
         region: "인천 제물포구",
@@ -3168,7 +3169,7 @@ const candidates = [
         dateAdded: "2026-04-02",
         coords: [
             35.226919,
-            129.11925
+            129.119250
         ]
     },
     {
@@ -3600,7 +3601,7 @@ const candidates = [
         dateAdded: "2026-03-25",
         coords: [
             37.4104,
-            126.678
+            126.6780
         ]
     },
     {
@@ -3903,8 +3904,8 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-09",
         coords: [
-            37.29692,
-            126.97489
+            37.296920,
+            126.974890
         ]
     },
     {
@@ -3953,6 +3954,34 @@ const candidates = [
         coords: [
             35.210238,
             129.084875
+        ]
+    },
+    {
+        name: "오다겸",
+        region: "부산 사하구",
+        metropolitan: "부산광역시",
+        category: "기초의원",
+        showPreliminaryBadge: true,
+        age: 56,
+        gender: "f",
+        office: "사하구의회",
+        status: "출마예정",
+        district: "마",
+        subRegion: "다대제1동, 다대제2동",
+        bio: [
+            "전) 제 6,7대 사하구의원(재선)",
+            "전) 사하구의회 부의장",
+            "부산광역시당 수석 대변인"
+        ],
+        photo: "https://i.imgur.com/2oWVGW4.png",
+        sns: {},
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-04-10",
+        coords: [
+            35.059062,
+            128.970823
         ]
     }
 ];
