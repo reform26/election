@@ -939,7 +939,7 @@ const candidates = [
         district: "나",
         sns: {
             fb: "#",
-            yt: "https://www.youtube.com/@%EA%B9%80%EC%B2%A0%EA%B7%BCTV/streams"
+            yt: "#"
         },
         pledge: "#",
         decl: "#",
@@ -966,7 +966,7 @@ const candidates = [
         district: "나",
         sns: {
             fb: "#",
-            yt: "https://www.youtube.com/@reformpartytv/streams"
+            yt: "#"
         },
         pledge: "#",
         decl: "#",
@@ -2844,6 +2844,7 @@ const candidates = [
             127.0826
         ]
     },
+
     {
         name: "강민수",
         region: "인천 제물포구",
@@ -3171,7 +3172,7 @@ const candidates = [
         dateAdded: "2026-04-02",
         coords: [
             35.226919,
-            129.11925
+            129.119250
         ]
     },
     {
@@ -3603,7 +3604,7 @@ const candidates = [
         dateAdded: "2026-03-25",
         coords: [
             37.4104,
-            126.678
+            126.6780
         ]
     },
     {
@@ -3906,8 +3907,8 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-09",
         coords: [
-            37.29692,
-            126.97489
+            37.296920,
+            126.974890
         ]
     },
     {
@@ -3916,6 +3917,7 @@ const candidates = [
         metropolitan: "경기도",
         category: "기초의원",
         office: "화성시의회",
+        hidden: true,
         status: "공천확정",
         district: "다",
         subRegion: "동탄1동, 동탄2동",
@@ -4008,8 +4010,8 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-10",
         coords: [
-            35.24302,
-            129.09241
+            35.243020,
+            129.092410
         ]
     },
     {
@@ -4031,7 +4033,7 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-10",
         coords: [
-            37.50668,
+            37.506680,
             126.939279
         ]
     }
