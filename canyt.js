@@ -25,7 +25,7 @@
         CHANNELS: [
             { handle: '@김철근TV', displayName: '철근소', filterKeyword: '철근소' },
             { handle: '@reformpartytv', displayName: '오뉴월', filterKeyword: '오뉴월' },
-            { handle: '@이강민生정치', displayName: '이강민生정치', filterType: 'candidates' }
+            { handle: '@이강민生정치', displayName: '이강민生정치', filterKeyword: '🍊' }
         ]
     };
 
