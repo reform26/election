@@ -254,7 +254,8 @@ const candidates = [
         metropolitan: "경기도",
         category: "기초단체장",
         office: "수원시장",
-        status: "공천확정",
+        age: 39,
+        status: "예비후보",
         bio: [
             "수원시 갑 당협위원장",
             "경기도당 부위원장",
@@ -266,8 +267,8 @@ const candidates = [
             yt: "https://youtube.com/channel/UC3-CpPJnxTWi0oLAlNs7GRw?si=-YVfD0oAizDhXgxX"
         },
         pledge: "#",
-        decl: "#",
-        donation: "#",
+        decl: "https://www.youtube.com/watch?v=C7GBq2Rsd68&pp=ygUJ7KCV7Z2s7Jyk",
+        donation: "https://givemoney.kr/politicians/151",
         dateAdded: "2026-02-12",
         coords: [
             37.2636,
@@ -2844,6 +2845,7 @@ const candidates = [
             127.0826
         ]
     },
+
     {
         name: "강민수",
         region: "인천 제물포구",
@@ -3170,7 +3172,7 @@ const candidates = [
         dateAdded: "2026-04-02",
         coords: [
             35.226919,
-            129.11925
+            129.119250
         ]
     },
     {
@@ -3253,33 +3255,6 @@ const candidates = [
         coords: [
             37.4292,
             126.9879
-        ]
-    },
-    {
-        name: "정민재",
-        region: "경기 고양시",
-        metropolitan: "경기도",
-        category: "기초의원",
-        office: "고양시의회",
-        age: 26,
-        status: "예비후보",
-        subRegion: "일산1동, 탄현1동, 탄현2동",
-        bio: [
-            "개혁신당 고양시 지역발전특위 부위원장",
-            "경기도당 AI특위 위원장"
-        ],
-        photo: "",
-        district: "차",
-        sns: {
-            fb: "#"
-        },
-        pledge: "#",
-        decl: "#",
-        donation: "https://givemoney.kr/politicians/107",
-        dateAdded: "2026-03-12",
-        coords: [
-            37.665,
-            126.7699
         ]
     },
     {
@@ -3602,7 +3577,7 @@ const candidates = [
         dateAdded: "2026-03-25",
         coords: [
             37.4104,
-            126.678
+            126.6780
         ]
     },
     {
@@ -3905,8 +3880,8 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-09",
         coords: [
-            37.29692,
-            126.97489
+            37.296920,
+            126.974890
         ]
     },
     {
@@ -4008,8 +3983,8 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-10",
         coords: [
-            35.24302,
-            129.09241
+            35.243020,
+            129.092410
         ]
     },
     {
@@ -4031,7 +4006,7 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-10",
         coords: [
-            37.50668,
+            37.506680,
             126.939279
         ]
     }
