@@ -2845,6 +2845,7 @@ const candidates = [
             127.0826
         ]
     },
+
     {
         name: "강민수",
         region: "인천 제물포구",
@@ -3171,7 +3172,7 @@ const candidates = [
         dateAdded: "2026-04-02",
         coords: [
             35.226919,
-            129.11925
+            129.119250
         ]
     },
     {
@@ -3576,7 +3577,7 @@ const candidates = [
         dateAdded: "2026-03-25",
         coords: [
             37.4104,
-            126.678
+            126.6780
         ]
     },
     {
@@ -3879,8 +3880,8 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-09",
         coords: [
-            37.29692,
-            126.97489
+            37.296920,
+            126.974890
         ]
     },
     {
@@ -3905,31 +3906,6 @@ const candidates = [
         coords: [
             37.191534,
             127.073829
-        ]
-    },
-    {
-        name: "홍예준",
-        region: "부산 동래구",
-        metropolitan: "부산광역시",
-        category: "기초의원",
-        showPreliminaryBadge: true,
-        age: 27,
-        office: "동래구의회",
-        status: "출마예정",
-        district: "나",
-        subRegion: "명륜동, 온천제1동",
-        bio: [
-            "전) 부산시당 청년위원장"
-        ],
-        photo: "",
-        sns: {},
-        pledge: "#",
-        decl: "#",
-        donation: "#",
-        dateAdded: "2026-04-09",
-        coords: [
-            35.210238,
-            129.084875
         ]
     },
     {
@@ -3982,8 +3958,8 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-10",
         coords: [
-            35.24302,
-            129.09241
+            35.243020,
+            129.092410
         ]
     },
     {
@@ -4005,7 +3981,7 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-10",
         coords: [
-            37.50668,
+            37.506680,
             126.939279
         ]
     }
