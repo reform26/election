@@ -2845,6 +2845,7 @@ const candidates = [
             127.0826
         ]
     },
+
     {
         name: "강민수",
         region: "인천 제물포구",
@@ -3171,7 +3172,7 @@ const candidates = [
         dateAdded: "2026-04-02",
         coords: [
             35.226919,
-            129.11925
+            129.119250
         ]
     },
     {
@@ -3576,7 +3577,7 @@ const candidates = [
         dateAdded: "2026-03-25",
         coords: [
             37.4104,
-            126.678
+            126.6780
         ]
     },
     {
@@ -3879,8 +3880,35 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-09",
         coords: [
-            37.29692,
-            126.97489
+            37.296920,
+            126.974890
+        ]
+    },
+    {
+        name: "정민재",
+        region: "경기 고양시",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "고양시의회",
+        age: 26,
+        status: "예비후보",
+        subRegion: "일산1동, 탄현1동, 탄현2동",
+        bio: [
+            "개혁신당 고양시 지역발전특위 부위원장",
+            "경기도당 AI특위 위원장"
+        ],
+        photo: "",
+        district: "차",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/107",
+        dateAdded: "2026-03-12",
+        coords: [
+            37.665,
+            126.7699
         ]
     },
     {
@@ -3957,8 +3985,8 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-10",
         coords: [
-            35.24302,
-            129.09241
+            35.243020,
+            129.092410
         ]
     },
     {
@@ -3980,7 +4008,7 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-10",
         coords: [
-            37.50668,
+            37.506680,
             126.939279
         ]
     }
