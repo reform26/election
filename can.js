@@ -2845,6 +2845,7 @@ const candidates = [
             127.0826
         ]
     },
+
     {
         name: "강민수",
         region: "인천 제물포구",
@@ -3171,7 +3172,7 @@ const candidates = [
         dateAdded: "2026-04-02",
         coords: [
             35.226919,
-            129.11925
+            129.119250
         ]
     },
     {
@@ -3576,7 +3577,7 @@ const candidates = [
         dateAdded: "2026-03-25",
         coords: [
             37.4104,
-            126.678
+            126.6780
         ]
     },
     {
@@ -3879,8 +3880,8 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-09",
         coords: [
-            37.29692,
-            126.97489
+            37.296920,
+            126.974890
         ]
     },
     {
@@ -3984,8 +3985,36 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-10",
         coords: [
-            35.24302,
-            129.09241
+            35.243020,
+            129.092410
+        ]
+    },
+    {
+        name: "김신재",
+        region: "부산 해운대구",
+        metropolitan: "부산광역시",
+        category: "기초의원",
+        office: "해운대구의회",
+        age: 33,
+        status: "출마선언",
+        showPreliminaryBadge: true,
+        district: "다",
+        subRegion: "중제2동, 좌제2동, 송정동",
+        bio: [
+            "부산시당 청년위원장",
+            "(재) 그린닥터스 상임이사"
+        ],
+        photo: "",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-04-14",
+        coords: [
+            35.182109,
+            129.201291
         ]
     },
     {
@@ -4007,7 +4036,7 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-10",
         coords: [
-            37.50668,
+            37.506680,
             126.939279
         ]
     }
