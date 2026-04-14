@@ -23,7 +23,7 @@
 
         // 연동할 유튜브 채널 목록 (URL의 @핸들명 입력) 및 필터링 규칙
         CHANNELS: [
-            { handle: '@김철근TV', displayName: '철근소', filterKeyword: '철근소' },
+            { handle: '@김철근TV', displayName: '철근소', filterKeyword: '김철근이 소개하는 사람' },
             { handle: '@reformpartytv', displayName: '오뉴월', filterKeyword: '오뉴월' },
             { handle: '@이강민生정치', displayName: '이강민生정치', filterKeyword: '🍊' }
         ]
