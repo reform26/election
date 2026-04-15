@@ -2846,7 +2846,6 @@ const candidates = [
             127.0826
         ]
     },
-
     {
         name: "강민수",
         region: "인천 제물포구",
@@ -3173,7 +3172,7 @@ const candidates = [
         dateAdded: "2026-04-02",
         coords: [
             35.226919,
-            129.119250
+            129.11925
         ]
     },
     {
@@ -3578,7 +3577,7 @@ const candidates = [
         dateAdded: "2026-03-25",
         coords: [
             37.4104,
-            126.6780
+            126.678
         ]
     },
     {
@@ -3881,8 +3880,8 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-09",
         coords: [
-            37.296920,
-            126.974890
+            37.29692,
+            126.97489
         ]
     },
     {
@@ -3986,8 +3985,8 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-10",
         coords: [
-            35.243020,
-            129.092410
+            35.24302,
+            129.09241
         ]
     },
     {
@@ -4037,7 +4036,7 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-10",
         coords: [
-            37.506680,
+            37.50668,
             126.939279
         ]
     }
