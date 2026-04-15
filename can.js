@@ -133,7 +133,7 @@ const candidates = [
             yt: "https://www.youtube.com/@%EA%B0%95%ED%9D%AC%EB%A6%B0-q8h",
             blog: "https://blog.naver.com/korria1/224142918612"
         },
-        pledge: "#",
+        pledge: "https://policy.reformparty.kr/map?region_code=30&election_type=metro_mayor",
         decl: "https://www.cctoday.co.kr/news/articleView.html?idxno=2225440",
         donation: "https://givemoney.kr/politicians/146",
         dateAdded: "2026-01-17",
@@ -210,7 +210,8 @@ const candidates = [
         ],
         photo: "https://i.imgur.com/74Md7kT.png",
         sns: {
-            fb: "https://www.facebook.com/profile.php?id=100002081097533"
+            fb: "https://www.facebook.com/profile.php?id=100002081097533",
+            yt: "https://www.youtube.com/@%EC%9D%B4%EC%9D%80%EC%B0%BD-l8u"
         },
         pledge: "#",
         decl: "https://www.youtube.com/live/ykvvk-37iws?si=iGJ3virBz9tVUHMO&t=288",
@@ -2845,6 +2846,7 @@ const candidates = [
             127.0826
         ]
     },
+
     {
         name: "강민수",
         region: "인천 제물포구",
@@ -3171,7 +3173,7 @@ const candidates = [
         dateAdded: "2026-04-02",
         coords: [
             35.226919,
-            129.11925
+            129.119250
         ]
     },
     {
@@ -3576,7 +3578,7 @@ const candidates = [
         dateAdded: "2026-03-25",
         coords: [
             37.4104,
-            126.678
+            126.6780
         ]
     },
     {
@@ -3879,8 +3881,8 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-09",
         coords: [
-            37.29692,
-            126.97489
+            37.296920,
+            126.974890
         ]
     },
     {
@@ -3984,8 +3986,8 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-10",
         coords: [
-            35.24302,
-            129.09241
+            35.243020,
+            129.092410
         ]
     },
     {
@@ -4035,7 +4037,7 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-10",
         coords: [
-            37.50668,
+            37.506680,
             126.939279
         ]
     }
