@@ -211,6 +211,7 @@ const candidates = [
         photo: "https://i.imgur.com/74Md7kT.png",
         sns: {
             fb: "https://www.facebook.com/profile.php?id=100002081097533",
+            ig: "https://www.instagram.com/eunchang_0100/",
             yt: "https://www.youtube.com/@%EC%9D%B4%EC%9D%80%EC%B0%BD-l8u"
         },
         pledge: "#",
@@ -1249,6 +1250,7 @@ const candidates = [
         age: 30,
         subRegion: "정관읍, 장안읍",
         bio: [
+            "부산시당 대변인",
             "(주)티제이앤앤에스 대리"
         ],
         photo: "https://i.imgur.com/iXUZMlW.png",
@@ -2561,11 +2563,14 @@ const candidates = [
         gender: "f",
         status: "예비후보",
         bio: [
-            "21대 대선 개혁신당 선대위 조직특보"
+            "<span style='letter-spacing:-0.12em;'>21대 대선 경북도당 선대위 조직특보</span>",
+            "<span style='letter-spacing:-0.12em;'>전) 금성정밀 구미공장 5급사원</span>",
+            "<span style='letter-spacing:-0.12em;'>전)구미시립도서관 인문학강좌 강사</span>",
+            "<span style='letter-spacing:-0.12em;'>전)구미시 관내 중등미술기간제 및 강사</span>"
         ],
-        photo: "",
+        photo: "https://i.imgur.com/El45oNM.png",
         sns: {
-            fb: "#"
+            fb: "https://www.facebook.com/profile.php?id=61573236698515"
         },
         pledge: "#",
         decl: "#",
@@ -2846,6 +2851,7 @@ const candidates = [
             127.0826
         ]
     },
+
     {
         name: "강민수",
         region: "인천 제물포구",
@@ -3157,6 +3163,7 @@ const candidates = [
         district: "가",
         subRegion: "서제1동, 서제2동, 서제3동, 금사회동동, 부곡제1동, 부곡제4동",
         bio: [
+            "부산시당 대외협력위원장",
             "(주)에이치제이그룹 대표이사",
             "(사)해맑음회 이사",
             "금정구 중소기업발전협의회 회원"
@@ -3172,7 +3179,7 @@ const candidates = [
         dateAdded: "2026-04-02",
         coords: [
             35.226919,
-            129.11925
+            129.119250
         ]
     },
     {
@@ -3186,12 +3193,14 @@ const candidates = [
         status: "예비후보",
         subRegion: "남산동, 구서2동",
         bio: [
+            "부산시당 대변인",
             "개혁신당 금정구 지역발전특위 부위원장"
         ],
         photo: "https://i.imgur.com/Aaw6U4B.png",
         district: "라",
         sns: {
-            fb: "#"
+            fb: "#",
+            ig: "https://www.instagram.com/kwonminchan_reformparty/"
         },
         pledge: "#",
         decl: "#",
@@ -3215,11 +3224,13 @@ const candidates = [
         district: "다",
         subRegion: "부암제1동, 부암제3동",
         bio: [
-            "개혁신당 부산광역시 선대위 대변인"
+            "부산시당 대변인",
+            "부산시당 여성위원장"
         ],
-        photo: "",
+        photo: "https://i.imgur.com/bcMkD9n.png",
         sns: {
-            fb: "#"
+            fb: "https://www.facebook.com/profile.php?id=61572125019695",
+            ig: "https://www.instagram.com/urim._.shin/"
         },
         pledge: "#",
         decl: "#",
@@ -3410,8 +3421,8 @@ const candidates = [
         donation: "https://givemoney.kr/politicians/157",
         dateAdded: "2026-03-19",
         coords: [
-            37.6149,
-            126.7157
+            37.697904,
+            126.609086
         ]
     },
     {
@@ -3577,7 +3588,7 @@ const candidates = [
         dateAdded: "2026-03-25",
         coords: [
             37.4104,
-            126.678
+            126.6780
         ]
     },
     {
@@ -3794,12 +3805,13 @@ const candidates = [
         district: "가",
         subRegion: "거제제1동, 거제제2동, 거제제3동, 거제제4동",
         bio: [
-            "개혁신당 부산시당 대변인",
+            "부산시당 대변인",
             "전) 카페 원플러스원 본부장"
         ],
-        photo: "",
+        photo: "https://i.imgur.com/KZCwUre.png",
         sns: {
-            fb: "#"
+            fb: "#",
+            ig: "https://www.instagram.com/gwihantv/"
         },
         pledge: "#",
         decl: "#",
@@ -3827,7 +3839,8 @@ const candidates = [
         ],
         photo: "",
         sns: {
-            fb: "#"
+            fb: "#",
+            ig: "https://www.instagram.com/moonbest11/"
         },
         pledge: "#",
         decl: "#",
@@ -3848,10 +3861,12 @@ const candidates = [
         district: "화성 5",
         subRegion: "동탄7동, 동탄8동, 동탄9동",
         bio: [
-            "화성시 제5선거구 공천확정"
+            "개혁신당 화성시 지역발전특위 위원장"
         ],
         photo: "",
-        sns: {},
+        sns: {
+          ig: "https://www.instagram.com/dongtan789dong/"
+               },
         pledge: "#",
         decl: "#",
         donation: "#",
@@ -3880,8 +3895,8 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-09",
         coords: [
-            37.29692,
-            126.97489
+            37.296920,
+            126.974890
         ]
     },
     {
@@ -3953,7 +3968,7 @@ const candidates = [
             "부산광역시당 수석 대변인"
         ],
         photo: "https://i.imgur.com/2oWVGW4.png",
-        sns: {},
+        sns: {fb: "https://www.facebook.com/odagyeom.624975"},
         pledge: "#",
         decl: "#",
         donation: "#",
@@ -3979,14 +3994,14 @@ const candidates = [
             "<span style='letter-spacing:-0.12em;'>개혁신당 부산시장 선대위 선대본부장<span/>"
         ],
         photo: "https://i.imgur.com/4uypBwQ.png",
-        sns: {},
+        sns: {fb: "https://www.facebook.com/profile.php?id=100007951989026"},
         pledge: "#",
         decl: "#",
         donation: "#",
         dateAdded: "2026-04-10",
         coords: [
-            35.24302,
-            129.09241
+            35.243020,
+            129.092410
         ]
     },
     {
@@ -4002,11 +4017,13 @@ const candidates = [
         subRegion: "중제2동, 좌제2동, 송정동",
         bio: [
             "부산시당 청년위원장",
+            "부산시당 대변인",
             "(재) 그린닥터스 상임이사"
         ],
-        photo: "",
+        photo: "https://i.imgur.com/Sn7BLkH.png",
         sns: {
-            fb: "#"
+            fb: "#",
+            ig: "https://www.instagram.com/sinjae_official/"
         },
         pledge: "#",
         decl: "#",
@@ -4036,8 +4053,58 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-10",
         coords: [
-            37.50668,
+            37.506680,
             126.939279
+        ]
+    },
+    {
+        name: "안병두",
+        region: "서울 서초구",
+        metropolitan: "서울특별시",
+        category: "기초의원",
+        office: "서초구의회",
+        age: 69,
+        status: "출마선언",
+        showPreliminaryBadge: true,
+        district: "다",
+        subRegion: "서초1동, 서초3동, 방배2동, 방배3동",
+        bio: [
+            "제9대 서초구의회 의원"
+        ],
+        photo: "https://i.imgur.com/hHflRHJ.png",
+        sns: {},
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-04-16",
+        coords: [
+            37.474885,
+            126.989041
+        ]
+    },
+    {
+        name: "오세철",
+        region: "서울 서초구",
+        metropolitan: "서울특별시",
+        category: "기초의원",
+        office: "서초구의회",
+        age: 72,
+        status: "출마선언",
+        showPreliminaryBadge: true,
+        district: "가",
+        subRegion: "잠원동, 반포1동, 반포3동, 반포4동",
+        bio: [
+            "제7,8대 서초구의회 의원(재선)"
+        ],
+        photo: "https://i.imgur.com/WpM8WGw.png",
+        sns: {},
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-04-16",
+        coords: [
+            37.515390,
+            127.012946
         ]
     }
 ];
