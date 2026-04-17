@@ -2851,6 +2851,7 @@ const candidates = [
             127.0826
         ]
     },
+
     {
         name: "강민수",
         region: "인천 제물포구",
@@ -3178,7 +3179,7 @@ const candidates = [
         dateAdded: "2026-04-02",
         coords: [
             35.226919,
-            129.11925
+            129.119250
         ]
     },
     {
@@ -3190,13 +3191,13 @@ const candidates = [
         age: 19,
         slogan: "가장 젊고 가장 새로운 정치인 권민찬 입니다 감사합니다!",
         status: "예비후보",
-        subRegion: "남산동, 구서2동",
+        subRegion: "장전제1동, 청룡노포동, 구서제1동, 금성동",
         bio: [
             "부산시당 대변인",
             "개혁신당 금정구 지역발전특위 부위원장"
         ],
         photo: "https://i.imgur.com/Aaw6U4B.png",
-        district: "라",
+        district: "다",
         sns: {
             fb: "#",
             ig: "https://www.instagram.com/kwonminchan_reformparty/"
@@ -3587,7 +3588,7 @@ const candidates = [
         dateAdded: "2026-03-25",
         coords: [
             37.4104,
-            126.678
+            126.6780
         ]
     },
     {
@@ -3856,19 +3857,20 @@ const candidates = [
         metropolitan: "경기도",
         category: "광역의원",
         office: "경기도의회",
-        status: "공천확정",
+        status: "예비후보",
+        age: 31,
         district: "화성 5",
         subRegion: "동탄7동, 동탄8동, 동탄9동",
         bio: [
             "개혁신당 화성시 지역발전특위 위원장"
         ],
-        photo: "https://scontent-icn2-1.cdninstagram.com/v/t51.82787-19/670810246_18076957493257294_875401212779482784_n.jpg?stp=dst-jpg_s206x206_tt6&_nc_cat=110&ccb=7-5&_nc_sid=bf7eb4&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy4xMDgwLkMzIn0%3D&_nc_ohc=nKnOUOKm79AQ7kNvwFYXPzu&_nc_oc=Ado8PEk4NvZto192x1ajD1CAhw6u-_RnmN0Vlo4QR4n2eltDWtslpuefzuUSlWd9_Lk&_nc_zt=24&_nc_ht=scontent-icn2-1.cdninstagram.com&_nc_gid=OqomoZl2DpH4lFrRpNZYqQ&_nc_ss=7a2a8&oh=00_Af3l6sWGIcA6n2AXiRXWDKOjfg0caaaLw62V_yOCEZddwA&oe=69E6CAE9",
+        photo: "https://i.imgur.com/9bIX5mL.png",
         sns: {
-            ig: "https://www.instagram.com/dongtan789dong/"
-        },
+          ig: "https://www.instagram.com/dongtan789dong/"
+               },
         pledge: "#",
         decl: "#",
-        donation: "#",
+        donation: "https://givemoney.kr/politicians/171",
         dateAdded: "2026-04-09",
         coords: [
             37.177619,
@@ -3894,8 +3896,8 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-09",
         coords: [
-            37.29692,
-            126.97489
+            37.296920,
+            126.974890
         ]
     },
     {
@@ -3967,9 +3969,7 @@ const candidates = [
             "부산광역시당 수석 대변인"
         ],
         photo: "https://i.imgur.com/2oWVGW4.png",
-        sns: {
-            fb: "https://www.facebook.com/odagyeom.624975"
-        },
+        sns: {fb: "https://www.facebook.com/odagyeom.624975"},
         pledge: "#",
         decl: "#",
         donation: "#",
@@ -3995,16 +3995,14 @@ const candidates = [
             "<span style='letter-spacing:-0.12em;'>개혁신당 부산시장 선대위 선대본부장<span/>"
         ],
         photo: "https://i.imgur.com/4uypBwQ.png",
-        sns: {
-            fb: "https://www.facebook.com/profile.php?id=100007951989026"
-        },
+        sns: {fb: "https://www.facebook.com/profile.php?id=100007951989026"},
         pledge: "#",
         decl: "#",
         donation: "#",
         dateAdded: "2026-04-10",
         coords: [
-            35.24302,
-            129.09241
+            35.243020,
+            129.092410
         ]
     },
     {
@@ -4056,7 +4054,7 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-10",
         coords: [
-            37.50668,
+            37.506680,
             126.939279
         ]
     },
@@ -4108,7 +4106,7 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-16",
         coords: [
-            37.51539,
+            37.515390,
             127.012946
         ]
     }
