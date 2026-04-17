@@ -2851,6 +2851,7 @@ const candidates = [
             127.0826
         ]
     },
+
     {
         name: "강민수",
         region: "인천 제물포구",
@@ -3178,7 +3179,7 @@ const candidates = [
         dateAdded: "2026-04-02",
         coords: [
             35.226919,
-            129.11925
+            129.119250
         ]
     },
     {
@@ -3457,7 +3458,8 @@ const candidates = [
         metropolitan: "서울특별시",
         category: "기초의원",
         office: "동작구의회",
-        status: "공천확정",
+        age: 64,
+        status: "예비후보",
         subRegion: "노량진제1동, 노량진제2동",
         bio: [
             "사회복지사(2급)",
@@ -3465,14 +3467,14 @@ const candidates = [
             "IT 유지보수 노조위원장 역임",
             "<span style='letter-spacing:-0.15em;'>본동 11번지 지주공동개발 비대위원장</span>"
         ],
-        photo: "https://i.imgur.com/cTXKAuM.png",
+        photo: "https://i.imgur.com/4UIPbCj.png",
         district: "가",
         sns: {
             fb: "#"
         },
         pledge: "#",
         decl: "#",
-        donation: "#",
+        donation: "https://givemoney.kr/politicians/165",
         dateAdded: "2026-04-01",
         coords: [
             37.5133,
@@ -3587,7 +3589,7 @@ const candidates = [
         dateAdded: "2026-03-25",
         coords: [
             37.4104,
-            126.678
+            126.6780
         ]
     },
     {
@@ -3865,8 +3867,8 @@ const candidates = [
         ],
         photo: "https://i.imgur.com/9bIX5mL.png",
         sns: {
-            ig: "https://www.instagram.com/dongtan789dong/"
-        },
+          ig: "https://www.instagram.com/dongtan789dong/"
+               },
         pledge: "#",
         decl: "#",
         donation: "https://givemoney.kr/politicians/171",
@@ -3895,8 +3897,8 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-09",
         coords: [
-            37.29692,
-            126.97489
+            37.296920,
+            126.974890
         ]
     },
     {
@@ -3968,9 +3970,7 @@ const candidates = [
             "부산광역시당 수석 대변인"
         ],
         photo: "https://i.imgur.com/2oWVGW4.png",
-        sns: {
-            fb: "https://www.facebook.com/odagyeom.624975"
-        },
+        sns: {fb: "https://www.facebook.com/odagyeom.624975"},
         pledge: "#",
         decl: "#",
         donation: "#",
@@ -3996,16 +3996,14 @@ const candidates = [
             "<span style='letter-spacing:-0.12em;'>개혁신당 부산시장 선대위 선대본부장<span/>"
         ],
         photo: "https://i.imgur.com/4uypBwQ.png",
-        sns: {
-            fb: "https://www.facebook.com/profile.php?id=100007951989026"
-        },
+        sns: {fb: "https://www.facebook.com/profile.php?id=100007951989026"},
         pledge: "#",
         decl: "#",
         donation: "#",
         dateAdded: "2026-04-10",
         coords: [
-            35.24302,
-            129.09241
+            35.243020,
+            129.092410
         ]
     },
     {
@@ -4057,7 +4055,7 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-10",
         coords: [
-            37.50668,
+            37.506680,
             126.939279
         ]
     },
@@ -4109,7 +4107,7 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-16",
         coords: [
-            37.51539,
+            37.515390,
             127.012946
         ]
     }
