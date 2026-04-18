@@ -160,9 +160,11 @@ async function loadRow1() {
         
         // '후원', '기부' 키워드가 제목에 포함된 영상 제외
         const BLOCKED_KEYWORDS = ['후원', '기부'];
-        // 비공개(hidden) 처리된 후보자 이름 목록
+        // 비공개(hidden) 또는 preliminary 처리된 후보자 이름 목록
         const hiddenNames = new Set(
-            (window.candidates || []).filter(c => c.hidden === true).map(c => c.name)
+            (window.candidates || [])
+                .filter(c => c.hidden === true || c.visibility === 'hidden' || c.visibility === 'preliminary')
+                .map(c => c.name)
         );
         const allVideos = data
             .filter(item => !BLOCKED_KEYWORDS.some(kw => (item.title || '').includes(kw)))

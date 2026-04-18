@@ -145,7 +145,8 @@ async function loadAndPlaceMarkers() {
     const sizeMap  = { '광역단체장':34,'기초단체장':30,'광역의원':26,'기초의원':22,'재보궐선거':26 };
 
     const cands = (window.candidates || []).filter(c =>
-        !c.hidden &&
+        c.visibility !== 'hidden' &&
+        c.visibility !== 'preliminary' &&
         (currentMapCategory === '전체' || c.category === currentMapCategory)
     );
 

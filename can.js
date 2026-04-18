@@ -64,8 +64,32 @@ const candidates = [
         ]
     },
     {
+        name: "이수찬",
+        region: "대구광역시",
+        category: "광역단체장",
+        office: "대구광역시장",
+        age: 58,
+        status: "예비후보",
+        bio: [
+            "대구광역시당 위원장"
+        ],
+        photo: "https://i.imgur.com/1FbAb5u.jpeg",
+        sns: {
+            fb: "https://www.facebook.com/profile.php?id=1000045002273835",
+            ig: "https://www.instagram.com/i.isucan/",
+            yt: "https://www.youtube.com/@%EB%8C%80%EA%B5%AC%EC%8B%9C%EB%AF%BC_%EC%9D%B4%EC%88%98%EC%B0%AC"
+        },
+        pledge: "#",
+        decl: "https://www.youtube.com/live/ixdTcenUjMw?si=62KazlMWdC6ciOpY",
+        donation: "https://givemoney.kr/politicians/144",
+        dateAdded: "2026-02-06",
+        coords: [
+            35.8714,
+            128.6014
+        ]
+    },
+    {
         name: "이기붕",
-        hidden: false,
         region: "인천광역시",
         category: "광역단체장",
         office: "인천광역시장",
@@ -91,28 +115,28 @@ const candidates = [
         ]
     },
     {
-        name: "이수찬",
-        region: "대구광역시",
+        name: "최현수",
+        visibility: "hidden",
+        region: "전남광주통합특별시",
         category: "광역단체장",
-        office: "대구광역시장",
-        age: 58,
-        status: "예비후보",
+        office: "전남광주통합특별시장",
+        status: "출마선언",
         bio: [
-            "대구광역시당 위원장"
+            "광주광역시당 위원장",
+            "서구 을 당협위원장"
         ],
-        photo: "https://i.imgur.com/1FbAb5u.jpeg",
+        photo: "https://i.imgur.com/mzd1dts.jpeg",
         sns: {
-            fb: "https://www.facebook.com/profile.php?id=1000045002273835",
-            ig: "https://www.instagram.com/i.isucan/",
-            yt: "https://www.youtube.com/@%EB%8C%80%EA%B5%AC%EC%8B%9C%EB%AF%BC_%EC%9D%B4%EC%88%98%EC%B0%AC"
+            fb: "https://www.facebook.com/profile.php?id=1000075888273756",
+            ig: "https://www.instagram.com/hyun_soo_ch9/"
         },
         pledge: "#",
-        decl: "https://www.youtube.com/live/ixdTcenUjMw?si=62KazlMWdC6ciOpY",
-        donation: "https://givemoney.kr/politicians/144",
-        dateAdded: "2026-02-06",
+        decl: "https://www.youtube.com/live/zNKugaDviEM",
+        donation: "#",
+        dateAdded: "2025-12-01",
         coords: [
-            35.8714,
-            128.6014
+            35.1595,
+            126.8526
         ]
     },
     {
@@ -140,31 +164,6 @@ const candidates = [
         coords: [
             36.3504,
             127.3845
-        ]
-    },
-    {
-        name: "최현수",
-        hidden: true,
-        region: "전남광주통합특별시",
-        category: "광역단체장",
-        office: "전남광주통합특별시장",
-        status: "출마선언",
-        bio: [
-            "광주광역시당 위원장",
-            "서구 을 당협위원장"
-        ],
-        photo: "https://i.imgur.com/mzd1dts.jpeg",
-        sns: {
-            fb: "https://www.facebook.com/profile.php?id=1000075888273756",
-            ig: "https://www.instagram.com/hyun_soo_ch9/"
-        },
-        pledge: "#",
-        decl: "https://www.youtube.com/live/zNKugaDviEM",
-        donation: "#",
-        dateAdded: "2025-12-01",
-        coords: [
-            35.1595,
-            126.8526
         ]
     },
     {
@@ -196,31 +195,31 @@ const candidates = [
         ]
     },
     {
-        name: "이은창",
-        region: "충청남도",
+        name: "조응천",
+        visibility: "preliminary",
+        region: "경기도",
         category: "광역단체장",
-        office: "충청남도지사",
-        status: "예비후보",
-        age: 43,
+        office: "경기도지사",
+        status: "출마선언",
         bio: [
-            "충청남도당 위원장 직무대행",
-            "공주·부여·청양 당협위원장",
-            "제6대 유성구의원",
-            "제21대 대선 선대위 대변인"
+            "제20, 21대 국회의원",
+            "전) 대통령비서실 민정수석실 공직기강비서관",
+            "전) 개혁신당 최고위원"
         ],
-        photo: "https://i.imgur.com/74Md7kT.png",
+        photo: "",
         sns: {
-            fb: "https://www.facebook.com/profile.php?id=100002081097533",
-            ig: "https://www.instagram.com/eunchang_0100/",
-            yt: "https://www.youtube.com/@%EC%9D%B4%EC%9D%80%EC%B0%BD-l8u"
+            yt: "https://youtube.com/chopros",
+            ig: "https://instagram.com/chopros",
+            fb: "https://facebook.com/chopros",
+            blog: "https://blog.naver.com/chopros/"
         },
         pledge: "#",
-        decl: "https://www.youtube.com/live/ykvvk-37iws?si=iGJ3virBz9tVUHMO&t=288",
-        donation: "https://givemoney.kr/politicians/143",
-        dateAdded: "2026-02-12",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-04-18",
         coords: [
-            36.6588,
-            126.6728
+            37.4138,
+            127.5183
         ]
     },
     {
@@ -333,7 +332,6 @@ const candidates = [
     },
     {
         name: "전성균",
-        hidden: false,
         region: "경기 화성시",
         metropolitan: "경기도",
         category: "기초단체장",
@@ -758,7 +756,7 @@ const candidates = [
     },
     {
         name: "이도윤",
-        hidden: true,
+        visibility: "preliminary",
         region: "서울 동대문구",
         metropolitan: "서울특별시",
         category: "기초의원",
@@ -928,7 +926,7 @@ const candidates = [
     },
     {
         name: "서준호",
-        hidden: true,
+        visibility: "hidden",
         region: "서울 용산구",
         metropolitan: "서울특별시",
         category: "기초의원",
@@ -955,7 +953,7 @@ const candidates = [
     },
     {
         name: "정상필",
-        hidden: true,
+        visibility: "hidden",
         region: "서울 중랑구",
         metropolitan: "서울특별시",
         category: "기초의원",
@@ -1012,7 +1010,7 @@ const candidates = [
     },
     {
         name: "주한송",
-        hidden: true,
+        visibility: "hidden",
         region: "서울 도봉구",
         metropolitan: "서울특별시",
         category: "기초의원",
@@ -1269,7 +1267,7 @@ const candidates = [
     },
     {
         name: "백성민",
-        hidden: true,
+        visibility: "hidden",
         region: "부산 남구",
         metropolitan: "부산광역시",
         category: "기초의원",
@@ -1952,7 +1950,7 @@ const candidates = [
     },
     {
         name: "조병찬",
-        hidden: true,
+        visibility: "hidden",
         region: "경기 부천시",
         metropolitan: "경기도",
         category: "기초의원",
@@ -2006,7 +2004,7 @@ const candidates = [
     },
     {
         name: "박창현",
-        hidden: true,
+        visibility: "hidden",
         region: "경기 용인시",
         metropolitan: "경기도",
         category: "기초의원",
@@ -2032,7 +2030,7 @@ const candidates = [
     },
     {
         name: "조현수",
-        hidden: true,
+        visibility: "hidden",
         region: "경기 여주시",
         metropolitan: "경기도",
         category: "기초의원",
@@ -2472,7 +2470,7 @@ const candidates = [
         category: "기초의원",
         office: "천안시의원",
         subRegion: "부성2동",
-        hidden: true,
+        visibility: "hidden",
         bio: [
             "충남도당 공보팀장",
             "21대 대선 충남 선대본 홍보위원",
@@ -2527,7 +2525,6 @@ const candidates = [
     },
     {
         name: "김관호",
-        hidden: false,
         region: "충남 아산시",
         metropolitan: "충청남도",
         category: "기초의원",
@@ -2612,7 +2609,7 @@ const candidates = [
     },
     {
         name: "이동현",
-        hidden: true,
+        visibility: "hidden",
         region: "경북 구미시",
         metropolitan: "경상북도",
         category: "기초의원",
@@ -2827,7 +2824,7 @@ const candidates = [
     },
     {
         name: "고윤주",
-        hidden: true,
+        visibility: "hidden",
         region: "서울 광진구",
         metropolitan: "서울특별시",
         category: "기초의원",
@@ -3049,7 +3046,7 @@ const candidates = [
     },
     {
         name: "이호민",
-        hidden: true,
+        visibility: "hidden",
         region: "경기 고양시",
         metropolitan: "경기도",
         category: "기초의원",
@@ -3178,7 +3175,7 @@ const candidates = [
         dateAdded: "2026-04-02",
         coords: [
             35.226919,
-            129.11925
+            129.119250
         ]
     },
     {
@@ -3294,7 +3291,7 @@ const candidates = [
     },
     {
         name: "이세원",
-        hidden: true,
+        visibility: "hidden",
         region: "경기 화성시",
         metropolitan: "경기도",
         category: "기초의원",
@@ -3320,7 +3317,7 @@ const candidates = [
     },
     {
         name: "이재원",
-        hidden: true,
+        visibility: "preliminary",
         region: "제주특별자치도",
         metropolitan: "제주특별자치도",
         shortMetro: "제주",
@@ -3426,7 +3423,7 @@ const candidates = [
     },
     {
         name: "신찬호",
-        hidden: true,
+        visibility: "hidden",
         region: "경기 안양시",
         metropolitan: "경기도",
         category: "기초의원",
@@ -3452,7 +3449,6 @@ const candidates = [
     },
     {
         name: "이민수",
-        hidden: false,
         region: "서울 동작구",
         metropolitan: "서울특별시",
         category: "기초의원",
@@ -3588,12 +3584,12 @@ const candidates = [
         dateAdded: "2026-03-25",
         coords: [
             37.4104,
-            126.678
+            126.6780
         ]
     },
     {
         name: "이왕국",
-        hidden: true,
+        visibility: "hidden",
         region: "대구 중구",
         metropolitan: "대구광역시",
         category: "기초의원",
@@ -3866,8 +3862,8 @@ const candidates = [
         ],
         photo: "https://i.imgur.com/9bIX5mL.png",
         sns: {
-            ig: "https://www.instagram.com/dongtan789dong/"
-        },
+          ig: "https://www.instagram.com/dongtan789dong/"
+               },
         pledge: "#",
         decl: "#",
         donation: "https://givemoney.kr/politicians/171",
@@ -3896,8 +3892,8 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-09",
         coords: [
-            37.29692,
-            126.97489
+            37.296920,
+            126.974890
         ]
     },
     {
@@ -3933,7 +3929,7 @@ const candidates = [
         metropolitan: "경기도",
         category: "기초의원",
         office: "화성시의회",
-        hidden: true,
+        visibility: "hidden",
         status: "공천확정",
         district: "다",
         subRegion: "동탄1동, 동탄2동",
@@ -3969,9 +3965,7 @@ const candidates = [
             "부산광역시당 수석 대변인"
         ],
         photo: "https://i.imgur.com/2oWVGW4.png",
-        sns: {
-            fb: "https://www.facebook.com/odagyeom.624975"
-        },
+        sns: {fb: "https://www.facebook.com/odagyeom.624975"},
         pledge: "#",
         decl: "#",
         donation: "#",
@@ -3997,16 +3991,14 @@ const candidates = [
             "<span style='letter-spacing:-0.12em;'>개혁신당 부산시장 선대위 선대본부장<span/>"
         ],
         photo: "https://i.imgur.com/4uypBwQ.png",
-        sns: {
-            fb: "https://www.facebook.com/profile.php?id=100007951989026"
-        },
+        sns: {fb: "https://www.facebook.com/profile.php?id=100007951989026"},
         pledge: "#",
         decl: "#",
         donation: "#",
         dateAdded: "2026-04-10",
         coords: [
-            35.24302,
-            129.09241
+            35.243020,
+            129.092410
         ]
     },
     {
@@ -4058,7 +4050,7 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-10",
         coords: [
-            37.50668,
+            37.506680,
             126.939279
         ]
     },
@@ -4110,8 +4102,117 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-16",
         coords: [
-            37.51539,
+            37.515390,
             127.012946
+        ]
+    },
+    {
+        name: "이성진",
+        visibility: "preliminary",
+        region: "충남 천안시",
+        metropolitan: "충청남도",
+        category: "기초단체장",
+        office: "천안시장",
+        status: "출마선언",
+        bio: [
+            "천안시 병 당협위원장",
+            "전) 충청남도당 위원장",
+            "전) 개혁신당 홍보부총장",
+            "21대 대선 홍보부본부장"
+        ],
+        photo: "",
+        sns: {
+            yt: "https://www.youtube.com/@Leeseongjin24",
+            fb: "https://www.facebook.com/positivemoneel",
+            ig: "https://www.instagram.com/leeseong_"
+        },
+        pledge: "#",
+        decl: "https://news.tf.co.kr/read/national/2313050.htm",
+        donation: "#",
+        dateAdded: "2026-04-18",
+        coords: [
+            36.8151,
+            127.1139
+        ]
+    },
+    {
+        name: "이은창",
+        region: "충청남도",
+        category: "광역단체장",
+        office: "충청남도지사",
+        status: "예비후보",
+        age: 43,
+        bio: [
+            "충청남도당 위원장 직무대행",
+            "공주·부여·청양 당협위원장",
+            "제6대 유성구의원",
+            "제21대 대선 선대위 대변인"
+        ],
+        photo: "https://i.imgur.com/74Md7kT.png",
+        sns: {
+            fb: "https://www.facebook.com/profile.php?id=100002081097533",
+            ig: "https://www.instagram.com/eunchang_0100/",
+            yt: "https://www.youtube.com/@%EC%9D%B4%EC%9D%80%EC%B0%BD-l8u"
+        },
+        pledge: "#",
+        decl: "https://www.youtube.com/live/ykvvk-37iws?si=iGJ3virBz9tVUHMO&t=288",
+        donation: "https://givemoney.kr/politicians/143",
+        dateAdded: "2026-02-12",
+        coords: [
+            36.6588,
+            126.6728
+        ]
+    },
+    {
+        name: "조성한",
+        visibility: "preliminary",
+        region: "대전 유성구",
+        metropolitan: "대전광역시",
+        category: "기초의원",
+        office: "유성구의회",
+        status: "출마선언",
+        district: "가",
+        subRegion: "상대동, 원신흥동, 진잠동, 학하동",
+        bio: [
+            "대전시당 사무처장"
+        ],
+        photo: "",
+        sns: {
+            yt: "https://www.youtube.com/@mang_mang_2"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-04-18",
+        coords: [
+            36.337743,
+            127.343695
+        ]
+    },
+    {
+        name: "장경석",
+        visibility: "preliminary",
+        region: "인천",
+        metropolitan: "인천광역시",
+        category: "광역의원",
+        office: "인천광역시의회",
+        status: "출마선언",
+        district: "옹진군",
+        subRegion: "북도면, 연평면, 덕적면, 자월면, 영흥면, 백령면, 대청면",
+        bio: [
+            "전) 옹진군청 정무소통비서"
+        ],
+        photo: "",
+        sns: {
+            fb: "https://www.facebook.com/jang.gyeongseog.724597"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-04-18",
+        coords: [
+            37.4744,
+            126.6358
         ]
     }
 ];

@@ -74,28 +74,18 @@
             var loading = document.getElementById('loading-screen');
             var popup   = document.getElementById('entry-popup-overlay');
             if (!loading || !popup) return;
-            // 페이드아웃 후 팝업 표시
             loading.classList.add('fade-out');
             setTimeout(function() {
                 loading.style.display = 'none';
-                popup.style.display = 'flex';
-                // 다음 프레임에 opacity 전환 (transition 작동)
-                requestAnimationFrame(function() {
-                    requestAnimationFrame(function() {
-                        popup.classList.add('visible');
-                    });
-                });
+                popup.classList.add('visible');
             }, 400);
         });
 
         window.closeEntryPopup = function() {
             var popup = document.getElementById('entry-popup-overlay');
             if (!popup) return;
-            popup.style.opacity = '0';
-            setTimeout(function() {
-                popup.style.display = 'none';
-                document.body.classList.remove('overflow-hidden');
-            }, 300);
+            popup.classList.remove('visible');
+            document.body.classList.remove('overflow-hidden');
         };
         window._closeEntryPopupReady = true;
     </script>
@@ -162,11 +152,13 @@
             align-items: center; justify-content: center;
             padding: 20px;
             opacity: 0;
+            pointer-events: none;
             transition: opacity 0.35s ease;
         }
         #entry-popup-overlay.visible {
-            display: flex;
-            opacity: 1;
+            display: flex !important;
+            opacity: 1 !important;
+            pointer-events: auto !important;
         }
 
         .nrp-orange { color: #FF6600; }
@@ -384,6 +376,42 @@
             width: 48px;
             height: 48px;
             opacity: 0.5;
+        }
+
+        .coming-soon-placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(135deg, #0a1a3d 0%, #1a2e5a 35%, #FF6600 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .coming-soon-placeholder::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg,
+                rgba(255,102,0,0.0) 0%,
+                rgba(255,102,0,0.08) 50%,
+                rgba(255,102,0,0.35) 100%
+            );
+        }
+        .coming-soon-placeholder .cs-text {
+            position: relative;
+            font-size: 1.05rem;
+            font-weight: 900;
+            letter-spacing: 0.18em;
+            text-align: center;
+            line-height: 1.5;
+            text-transform: uppercase;
+            color: #ffffff;
+            text-shadow: 0 2px 12px rgba(0,0,0,0.35);
+        }
+        @media (min-width: 640px) {
+            .coming-soon-placeholder .cs-text { font-size: 1.15rem; letter-spacing: 0.2em; }
         }
 
         #profile-modal-overlay {
@@ -893,7 +921,7 @@
                 <div id="d-day-badge" class="rh-dday">D-000</div>
                 <div class="rh-update-badge">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    <span id="last-update-date">최종 업데이트 : 2026. 04. 14</span>
+                    <span id="last-update-date">최종 업데이트 : 2026. 04. 18</span>
                 </div>
             </div>
         </div>
@@ -1389,7 +1417,7 @@
         </div>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="can.js?v=0416.04" defer></script>   <script src="data1.js?v=0223.05" defer></script> <script src="search.js?v=0317.02" defer></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="can.js?v=0416.05" defer></script>   <script src="data1.js?v=0223.05" defer></script> <script src="search.js?v=0317.02" defer></script>
     <script>
         let currentModalCandidateName = '';
         let showOnlyConfirmed = false;
@@ -1471,7 +1499,8 @@
 
         /* 필터링된 후보자 목록 반환 */
         function getFilteredCandidates() {
-            let filtered = candidates.filter(c => !c.hidden);
+            // hidden 제외, preliminary는 카드는 표시하되 카운트에서 제외
+            let filtered = candidates.filter(c => c.visibility !== "hidden");
             if (showOnlyConfirmed) {
                 filtered = filtered.filter(c => (["공천확정","후보"].includes(c.status) || (c.status === "예비후보" && c.preliminary !== true)));
             }
@@ -1485,8 +1514,8 @@
         window.closeEntryPopup = function() {
             var popup = document.getElementById('entry-popup-overlay');
             if (!popup) return;
-            popup.style.opacity = '0';
-            setTimeout(function() { popup.style.display = 'none'; }, 300);
+            popup.classList.remove('visible');
+            document.body.classList.remove('overflow-hidden');
         };
         }
 
@@ -1780,13 +1809,13 @@
         const councilSort = (a, b) => (a.region || "").localeCompare(b.region || "") || (a.district || "").localeCompare(b.district || "");
 
         function updateSummary() {
-            const getCount = (cat) => candidates.filter(c => !c.hidden && c.category === cat).length;
+            const getCount = (cat) => candidates.filter(c => c.visibility !== "hidden" && c.visibility !== "preliminary" && c.category === cat).length;
             const byCount    = getCount("재보궐선거");
             const provExec   = getCount("광역단체장");
             const localExec  = getCount("기초단체장");
             const provCounc  = getCount("광역의원");
             const localCounc = getCount("기초의원");
-            const total      = candidates.filter(c => !c.hidden).length;
+            const total      = candidates.filter(c => c.visibility !== "hidden" && c.visibility !== "preliminary").length;
 
             // footer
             const footerEls = {
@@ -1815,7 +1844,7 @@
                 };
                 let gridHtml = '';
                 Object.keys(regionPriority).forEach(region => {
-                    const count = candidates.filter(c => !c.hidden && (c.metropolitan === region || c.region === region)).length;
+                    const count = candidates.filter(c => c.visibility !== "hidden" && c.visibility !== "preliminary" && (c.metropolitan === region || c.region === region)).length;
                     gridHtml += `<div class="region-box cursor-pointer" onclick="renderRegionView('${region}')"><span class="text-gray-500 dark:text-slate-400" style="font-size:11px;font-weight:700;">${shortNameMap[region]}</span><span style="font-size:14px;font-weight:900;" class="${count > 0 ? 'text-[#FF6600]' : 'text-gray-400 dark:text-slate-500'}">${count}</span></div>`;
                 });
                 regionGrid.innerHTML = gridHtml;
@@ -2142,7 +2171,7 @@
             initDarkMode();
             // 예비후보 통계 카드 계산
             (function() {
-                const prelim = (window.candidates || []).filter(c => !c.hidden && (c.status === "예비후보" || c.showPreliminaryBadge === true));
+                const prelim = (window.candidates || []).filter(c => c.visibility !== "hidden" && c.visibility !== "preliminary" && (c.status === "예비후보" || c.showPreliminaryBadge === true));
                 const total = prelim.length;
                 const withAge = prelim.filter(c => c.age != null);
                 const avgAge = withAge.length ? (withAge.reduce((s,c) => s + c.age, 0) / withAge.length) : 0;
@@ -2176,14 +2205,14 @@
 
             // 후보자 통계 카드 채우기
             (function() {
-                const getCount = (cat) => (window.candidates || []).filter(c => !c.hidden && c.category === cat).length;
+                const getCount = (cat) => (window.candidates || []).filter(c => c.visibility !== "hidden" && c.visibility !== "preliminary" && c.category === cat).length;
                 const setEl = (id, val) => { const el = document.getElementById(id); if (el) el.innerText = val; };
                 setEl('cs-by',           getCount('재보궐선거'));
                 setEl('cs-prov-exec',    getCount('광역단체장'));
                 setEl('cs-local-exec',   getCount('기초단체장'));
                 setEl('cs-prov-council', getCount('광역의원'));
                 setEl('cs-local-council',getCount('기초의원'));
-                setEl('cs-total',        (window.candidates || []).filter(c => !c.hidden).length);
+                setEl('cs-total',        (window.candidates || []).filter(c => c.visibility !== "hidden" && c.visibility !== "preliminary").length);
             })();
 
             const diff = Math.ceil((new Date('2026-06-02') - new Date().setHours(0,0,0,0)) / (1000*60*60*24));
@@ -2221,7 +2250,41 @@
         }
 
         function createCard(c) {
-            const isTightBio = ["김태수", "고재윤", "이강민", "오정대", "우영훈", "최윤석", "구성도", "박성진", "주한송", "최제일", "심용진", "박종길", "박진우", "황은재", "송원근", "이호엽", "하용준", "김영민", "손승범", "김주연", "주이삭", "조현조", "조순자", "오세철", "최봉환", "김성준", "하헌휘", "김희성", "박현수", "이민수", "이규민", "이은창", "김성우", "황시현", "이해성", "김민식"].includes(c.name);
+            // ── visibility: "preliminary" 카드 ──
+            if (c.visibility === "preliminary") {
+                let leftTagText = c.region;
+                if (c.category === "기초의원") {
+                    const isMetropolitan = c.metropolitan && (c.metropolitan.endsWith('특별시') || c.metropolitan.endsWith('광역시') || c.metropolitan.endsWith('특별자치시'));
+                    if (isMetropolitan) {
+                        leftTagText = c.region;
+                    } else {
+                        leftTagText = c.region.replace("경기도","경기").replace("충청남도","충남").replace("경상북도","경북").replace("전라북도","전북").replace("충청북도","충북").replace("경상남도","경남").replace("전라남도","전남").replace("강원특별자치도","강원").replace("제주특별자치도","제주");
+                    }
+                } else if (c.category === "광역의원") {
+                    leftTagText = (c.shortMetro || c.region);
+                }
+                let rightTagText = c.district || (c.constituency === "비례" ? "비례" : "");
+                let districtTag = rightTagText ? `<div class="district-tag dark:bg-slate-900 dark:text-orange-50 dark:border-orange-500">${rightTagText}</div>` : "";
+                const displayOffice = getCleanOffice(c);
+                return `
+                    <div class="bg-white dark:bg-slate-800 rounded-[1rem] md:rounded-[1.5rem] shadow-md border border-gray-100 dark:border-slate-700 transition-all duration-500 overflow-hidden flex flex-col h-full cursor-default select-none">
+                        <div class="photo-frame">
+                            <div class="region-tag">${leftTagText}</div>
+                            ${districtTag}
+                            <div class="coming-soon-placeholder">
+                                <span class="cs-text">COMING<br>SOON</span>
+                            </div>
+                        </div>
+                        <div class="pt-2 px-3 pb-4 md:pt-4 md:px-6 md:pb-6 text-center flex flex-col flex-grow">
+                            <h3 class="text-base md:text-xl font-bold mb-1 dark:text-white tracking-wider flex items-center justify-center" style="color:#94a3b8;">출마예정</h3>
+                            <div class="bio-text"></div>
+                            <div class="mt-auto nrp-bg-orange text-white py-2 rounded-xl font-bold text-[10px] md:text-sm leading-tight text-center">${displayOffice} 출마예정</div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            const isTightBio = ["김태수", "고재윤", "이강민", "오정대", "우영훈", "최윤석", "구성도", "박성진", "주한송", "최제일", "심용진", "박종길", "박진우", "황은재", "송원근", "이호엽", "하용준", "김영민", "손승범", "김주연", "주이삭", "조현조", "조응천", "이성진", "조순자", "오세철", "최봉환", "김성준", "하헌휘", "김희성", "박현수", "이민수", "이규민", "이은창", "김성우", "황시현", "이해성", "김민식"].includes(c.name);
             const isTightSpacing = ["우영훈", "김태수", "심용진", "김주연","이진현"].includes(c.name);
             let styles = [];
             if (isTightBio || ["조동운", "김민식", "박철현", "류태하", "이용우", "이재원", "김병진", "양성혁", "양준모", "김주연", "주이삭", "김태수", "이규민", "이진현"].includes(c.name)) {
@@ -2583,7 +2646,8 @@
                                     const distName = findDistrictName(guName, dongName);
                                     const isSelected = selectedDistrictInfo && selectedDistrictInfo.district === distName;
                                     const hasCandidateInDist = distName && candidates.some(c => 
-                                        !c.hidden &&
+                                        c.visibility !== "hidden" &&
+                                        c.visibility !== "preliminary" &&
                                         c.category === "기초의원" && 
                                         c.metropolitan === "서울특별시" && 
                                         c.region.includes(guName) && 
@@ -2754,7 +2818,8 @@
             const getDistColor = (dName) => {
                 if (!dName) return document.documentElement.classList.contains('dark') ? "#020617" : "#fcf9f6";
                 const hasCandidate = candidates.some(c => 
-                    !c.hidden &&
+                    c.visibility !== "hidden" &&
+                    c.visibility !== "preliminary" &&
                     c.category === "기초의원" && 
                     c.metropolitan === "경기도" && 
                     dName.startsWith(c.region.replace('경기 ', '')) && 
@@ -2882,7 +2947,7 @@
             // window.candidates 참조
             const daeguCands = useMemo(() => {
                 if (typeof window.candidates === 'undefined') return [];
-                return window.candidates.filter(c => !c.hidden && c.metropolitan === "대구광역시" && c.category === "기초의원");
+                return window.candidates.filter(c => c.visibility !== "hidden" && c.visibility !== "preliminary" && c.metropolitan === "대구광역시" && c.category === "기초의원");
             }, []);
 
             const displayDistrict = activeDistrict || selectedDistrict;
@@ -3259,10 +3324,10 @@
     </script>
 
     <!-- ══ 후보자 SNS 피드 ══ -->
-    <script src="sns.js?v=0325.01" defer></script>
+    <script src="sns.js?v=0325.02" defer></script>
 
     <!-- ══ 후보자 소개 유튜브 섹션 ══ -->
-    <script src="canyt.js?v=0410.05" defer></script>
+    <script src="canyt.js?v=0410.04" defer></script>
 
     <!-- ══ 응원 시스템 ══ -->
     <script type="module" src="cheers.js?v=0315.02"></script>
