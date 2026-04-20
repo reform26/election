@@ -704,6 +704,7 @@
                 <button onclick="closeNoticePopup()" style="width:28px;height:28px;border-radius:8px;background:#f5f5f5;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:14px;color:#888;font-weight:700;" class="dark:bg-slate-700 dark:text-slate-300">✕</button>
             </div>
             <div style="padding:14px 18px;overflow-y:auto;display:flex;flex-direction:column;gap:5px;">
+                <div class="notice-popup-item"><div class="notice-popup-left"><span class="notice-popup-badge">제17차</span><span class="notice-popup-count">15명</span><span class="notice-popup-date">04.20.</span></div><a href="https://rallypoint.kr/board/notice/230055" target="_blank" class="notice-popup-link">공고보기 →</a></div>
                 <div class="notice-popup-item"><div class="notice-popup-left"><span class="notice-popup-badge">제16차</span><span class="notice-popup-count">1명</span><span class="notice-popup-date">04.13.</span></div><a href="https://rallypoint.kr/board/notice/229632" target="_blank" class="notice-popup-link">공고보기 →</a></div>
                 <div class="notice-popup-item"><div class="notice-popup-left"><span class="notice-popup-badge">제15차</span><span class="notice-popup-count">3명</span><span class="notice-popup-date">04.09.</span></div><a href="https://rallypoint.kr/board/notice/229374" target="_blank" class="notice-popup-link">공고보기 →</a></div>
                 <div class="notice-popup-item"><div class="notice-popup-left"><span class="notice-popup-badge">제14차</span><span class="notice-popup-count">3명</span><span class="notice-popup-date">04.06.</span></div><a href="https://rallypoint.kr/board/notice/229105" target="_blank" class="notice-popup-link">공고보기 →</a></div>
@@ -1417,7 +1418,7 @@
         </div>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="can.js?v=0416.05" defer></script>   <script src="data1.js?v=0223.05" defer></script> <script src="search.js?v=0317.02" defer></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="can.js?v=0416.06" defer></script>   <script src="data1.js?v=0223.05" defer></script> <script src="search.js?v=0317.02" defer></script>
     <script>
         let currentModalCandidateName = '';
         let showOnlyConfirmed = false;
@@ -2095,7 +2096,8 @@
             const chungnamCands = filterByMetro("충청남도");
             const gyeongbukCands = filterByMetro("경상북도");
             const gyeongnamCands = filterByMetro("경상남도");
-            const excluded = ["서울특별시","부산광역시", "대구광역시", "대전광역시", "인천광역시", "경기도", "경상북도", "충청남도", "경상남도"];
+            const gangwonCands = filterByMetro("강원특별자치도");
+            const excluded = ["서울특별시","부산광역시", "대구광역시", "대전광역시", "인천광역시", "경기도", "경상북도", "충청남도", "경상남도", "강원특별자치도"];
             const otherCands = filtered.filter(c => !excluded.includes(c.metropolitan) && c.category === "기초의원").sort((a, b) => (regionPriority[a.metropolitan] || 99) - (regionPriority[b.metropolitan] || 99) || councilSort(a, b));
 
             container.innerHTML = `
@@ -2120,6 +2122,7 @@
                     ${incheonCands.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">인천광역시</h3><div class="grid-responsive">${incheonCands.map(createCard).join('')}</div></div>` : ''}
                     ${daejeonCands.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">대전광역시</h3><div class="grid-responsive">${daejeonCands.map(createCard).join('')}</div></div>` : ''}
                     ${gyeonggiCands.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">경기도</h3><div class="grid-responsive">${gyeonggiCands.map(createCard).join('')}</div></div>` : ''}
+                    ${gangwonCands.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">강원특별자치도</h3><div class="grid-responsive">${gangwonCands.map(createCard).join('')}</div></div>` : ''}
                     ${chungnamCands.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">충청남도</h3><div class="grid-responsive">${chungnamCands.map(createCard).join('')}</div></div>` : ''}
                     ${gyeongbukCands.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">경상북도</h3><div class="grid-responsive">${gyeongbukCands.map(createCard).join('')}</div></div>` : ''}
                     ${gyeongnamCands.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">경상남도</h3><div class="grid-responsive">${gyeongnamCands.map(createCard).join('')}</div></div>` : ''}
@@ -2284,7 +2287,7 @@
                 `;
             }
 
-            const isTightBio = ["김태수", "고재윤", "이강민", "오정대", "우영훈", "최윤석", "구성도", "박성진", "주한송", "최제일", "심용진", "박종길", "박진우", "황은재", "송원근", "이호엽", "하용준", "김영민", "손승범", "김주연", "주이삭", "조현조", "조응천", "이성진", "조순자", "오세철", "최봉환", "김성준", "하헌휘", "김희성", "박현수", "이민수", "이규민", "이은창", "김성우", "황시현", "이해성", "김민식"].includes(c.name);
+            const isTightBio = ["김태수", "고재윤", "이강민", "오정대", "우영훈", "최윤석", "구성도", "박성진", "주한송", "최제일", "심용진", "박종길", "박진우", "황은재", "송원근", "이호엽", "하용준", "김영민", "손승범", "김주연", "주이삭", "조현조", "김윤재", "조응천", "이성진", "조순자", "오세철", "최봉환", "김성준", "하헌휘", "김희성", "박현수", "이민수", "이규민", "이은창", "김성우", "황시현", "이해성", "김민식"].includes(c.name);
             const isTightSpacing = ["우영훈", "김태수", "심용진", "김주연","이진현"].includes(c.name);
             let styles = [];
             if (isTightBio || ["조동운", "김민식", "박철현", "류태하", "이용우", "이재원", "김병진", "양성혁", "양준모", "김주연", "주이삭", "김태수", "이규민", "이진현"].includes(c.name)) {

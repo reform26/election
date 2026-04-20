@@ -3215,8 +3215,7 @@ const candidates = [
         office: "부산진구의회",
         age: 24,
         gender: "f",
-        status: "출마선언",
-        showPreliminaryBadge: true,
+        status: "예비후보",
         district: "다",
         subRegion: "부암제1동, 부암제3동",
         bio: [
@@ -3230,7 +3229,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
-        donation: "#",
+        donation: "https://givemoney.kr/politicians/180",
         dateAdded: "2026-04-08",
         coords: [
             35.171484,
@@ -3745,8 +3744,7 @@ const candidates = [
         category: "기초단체장",
         office: "창원시장",
         age: 53,
-        status: "출마선언",
-        showPreliminaryBadge: true,
+        status: "예비후보",
         bio: [
             "현) 365병원 병원장",
             "현) 365창원경제 연구원 원장"
@@ -3796,8 +3794,7 @@ const candidates = [
         category: "기초의원",
         office: "연제구의회",
         age: 35,
-        status: "출마선언",
-        showPreliminaryBadge: true,
+        status: "예비후보",
         district: "가",
         subRegion: "거제제1동, 거제제2동, 거제제3동, 거제제4동",
         bio: [
@@ -3811,7 +3808,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
-        donation: "#",
+        donation: "https://givemoney.kr/politicians/181",
         dateAdded: "2026-04-08",
         coords: [
             35.192102,
@@ -3825,8 +3822,7 @@ const candidates = [
         category: "기초의원",
         office: "김해시의회",
         age: 39,
-        status: "출마선언",
-        showPreliminaryBadge: true,
+        status: "예비후보",
         district: "사",
         subRegion: "내외동",
         bio: [
@@ -3840,7 +3836,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
-        donation: "#",
+        donation: "https://givemoney.kr/politicians/186",
         dateAdded: "2026-04-08",
         coords: [
             35.236296,
@@ -3929,7 +3925,6 @@ const candidates = [
         metropolitan: "경기도",
         category: "기초의원",
         office: "화성시의회",
-        visibility: "hidden",
         status: "공천확정",
         district: "다",
         subRegion: "동탄1동, 동탄2동",
@@ -4012,8 +4007,7 @@ const candidates = [
         category: "기초의원",
         office: "해운대구의회",
         age: 33,
-        status: "출마선언",
-        showPreliminaryBadge: true,
+        status: "예비후보",
         district: "다",
         subRegion: "중제2동, 좌제2동, 송정동",
         bio: [
@@ -4028,7 +4022,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
-        donation: "#",
+        donation: "https://givemoney.kr/politicians/182",
         dateAdded: "2026-04-14",
         coords: [
             35.182109,
@@ -4065,8 +4059,7 @@ const candidates = [
         category: "기초의원",
         office: "서초구의회",
         age: 69,
-        status: "출마선언",
-        showPreliminaryBadge: true,
+        status: "예비후보",
         district: "다",
         subRegion: "서초1동, 서초3동, 방배2동, 방배3동",
         bio: [
@@ -4076,7 +4069,7 @@ const candidates = [
         sns: {},
         pledge: "#",
         decl: "#",
-        donation: "#",
+        donation: "https://givemoney.kr/politicians/178",
         dateAdded: "2026-04-16",
         coords: [
             37.474885,
@@ -4090,8 +4083,7 @@ const candidates = [
         category: "기초의원",
         office: "서초구의회",
         age: 72,
-        status: "출마선언",
-        showPreliminaryBadge: true,
+        status: "예비후보",
         district: "가",
         subRegion: "잠원동, 반포1동, 반포3동, 반포4동",
         bio: [
@@ -4103,7 +4095,7 @@ const candidates = [
         sns: {},
         pledge: "#",
         decl: "#",
-        donation: "#",
+        donation: "https://givemoney.kr/politicians/177",
         dateAdded: "2026-04-16",
         coords: [
             37.51539,
@@ -4169,12 +4161,11 @@ const candidates = [
     },
     {
         name: "조성한",
-        visibility: "preliminary",
         region: "대전 유성구",
         metropolitan: "대전광역시",
         category: "기초의원",
         office: "유성구의회",
-        status: "출마선언",
+        status: "공천확정",
         district: "가",
         subRegion: "상대동, 원신흥동, 진잠동, 학하동",
         bio: [
@@ -4217,6 +4208,224 @@ const candidates = [
         coords: [
             37.4744,
             126.6358
+        ]
+    },
+    {
+        name: "김윤재",
+        region: "서울 용산구",
+        metropolitan: "서울특별시",
+        category: "기초단체장",
+        office: "용산구청장",
+        age: 57,
+        status: "예비후보",
+        bio: [
+            "<span style='letter-spacing:-0.12em;'>서울시 수도권 주택시장 전문가 자문위원</span>",
+            "한국부동산원 정비사업 자문위원",
+            "네오 용산연구소 대표"
+        ],
+        photo: "https://i.imgur.com/oAztGUW.png",
+        sns: {
+            ig: "https://www.instagram.com/kimyoojae69/",
+            fb: "https://www.facebook.com/profile.php?id=61583520560182"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/175/",
+        dateAdded: "2026-04-20",
+        coords: [
+            37.5340,
+            126.9886
+        ]
+    },
+    {
+        name: "정찬옥",
+        region: "서울 성동구",
+        metropolitan: "서울특별시",
+        category: "기초단체장",
+        office: "성동구청장",
+        status: "공천확정",
+        bio: [
+            "제4,5대 성동구의원(재선)",
+            "제5대 성동구의회 의장(전반기)"
+        ],
+        photo: "https://i.imgur.com/f9qD3on.png",
+        sns: {
+            fb: "https://www.facebook.com/sdj8411"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-04-20",
+        coords: [
+            37.5633,
+            127.0372
+        ]
+    },
+    {
+        name: "손승현",
+        region: "서울 용산구",
+        metropolitan: "서울특별시",
+        category: "기초의원",
+        office: "용산구의회",
+        status: "공천확정",
+        district: "다",
+        subRegion: "한강로동, 이촌제1동, 이촌제2동",
+        bio: [
+            "용산구한남동지역사회보장협의체 부위원장"
+        ],
+        photo: "",
+        sns: {},
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-04-20",
+        coords: [
+            37.5291,
+            126.9661
+        ]
+    },
+    {
+        name: "정세인",
+        region: "부산 동래구",
+        metropolitan: "부산광역시",
+        category: "기초의원",
+        office: "동래구의회",
+        status: "공천확정",
+        district: "라",
+        subRegion: "사직제1동, 사직제2동, 사직제3동",
+        bio: [
+            "동래구 라선거구 공천확정"
+        ],
+        photo: "",
+        sns: {},
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-04-20",
+        coords: [
+            35.1976,
+            129.0602
+        ]
+    },
+    {
+        name: "이민희",
+        region: "광주 광산구",
+        metropolitan: "전남광주통합특별시",
+        category: "기초의원",
+        office: "광산구의회",
+        status: "공천확정",
+        district: "가",
+        subRegion: "송정1동, 송정2동, 도산동, 어룡동, 동곡동, 평동, 삼도동, 본량동",
+        bio: [
+            "광산구 가선거구 공천확정"
+        ],
+        photo: "",
+        sns: {},
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-04-20",
+        coords: [
+            35.1360,
+            126.7979
+        ]
+    },
+    {
+        name: "우태주",
+        region: "경기 용인시",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "용인시의회",
+        status: "공천확정",
+        district: "카",
+        subRegion: "기흥구 보정동, 죽전1동, 죽전3동, 상현2동",
+        bio: [
+            "제6대 경기도의원"
+        ],
+        photo: "https://i.imgur.com/Ap8MoCP.png",
+        sns: {},
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/187",
+        dateAdded: "2026-04-20",
+        coords: [
+            37.3317,
+            127.1225
+        ]
+    },
+    {
+        name: "손득호",
+        region: "강원특별자치도 동해시",
+        metropolitan: "강원특별자치도",
+        category: "기초의원",
+        office: "동해시의회",
+        age: 49,
+        status: "예비후보",
+        district: "가",
+        subRegion: "송정동, 북삼동, 북평동, 삼화동",
+        bio: [
+            "아시아일보 기자 (프리랜서)",
+            "현) 광희고등학교 총동문회 부회장"
+        ],
+        photo: "",
+        sns: {},
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/189",
+        dateAdded: "2026-04-20",
+        coords: [
+            37.4787,
+            129.1275
+        ]
+    },
+    {
+        name: "고금란",
+        region: "경기 과천시",
+        metropolitan: "경기도",
+        category: "기초단체장",
+        visibility: "preliminary",
+        office: "과천시장",
+        status: "출마예정",
+        bio: [
+            "제7,8대 과천시의원",
+            "제8대 과천시의회 의장(후기)",
+            "제8대 과천시의회 부의장(전기)"
+        ],
+        photo: "https://i.imgur.com/K2eldve.jpeg",
+        sns: {
+            fb: "https://www.facebook.com/keumran.go/"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-04-20",
+        coords: [
+            37.4292,
+            126.9876
+        ]
+    },
+    {
+        name: "방인섭",
+        region: "울산 남구",
+        metropolitan: "울산광역시",
+        category: "기초단체장",
+        visibility: "preliminary",
+        office: "남구청장",
+        status: "출마예정",
+        bio: [
+            "제6,7,8대 울산시의원"
+        ],
+        photo: "https://i.imgur.com/TbQkeLr.png",
+        sns: {
+            fb: "https://www.facebook.com/banginsup/"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-04-20",
+        coords: [
+            35.5384,
+            129.3114
         ]
     }
 ];
