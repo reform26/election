@@ -46,7 +46,7 @@ const candidates = [
         status: "예비후보",
         bio: [
             "부산광역시당 위원장 직무대행",
-            "전) 개혁신당 중앙당 대변인"
+            "개혁신당 중앙당 대변인"
         ],
         photo: "https://cdn.seoulfn.com/news/photo/202511/612324_411809_430.jpg",
         sns: {
@@ -1732,7 +1732,7 @@ const candidates = [
         status: "예비후보",
         subRegion: "충장동, 동명동, 계림1동, 계림2동, 산수1동, 산수2동",
         bio: [
-            "광주시당 부위원장",
+            "광주광역시당 부위원장",
             "<span style='letter-spacing:-0.15em;'>개혁신당 광주시 지역발전특위 부위원장</span>",
             "<span style='letter-spacing:-0.12em;'>전)동구·남구 을 당협위원장</span>",
             "21대 대선 선대위 홍보부본부장"
@@ -2774,7 +2774,7 @@ const candidates = [
         office: "청주시의회",
         age: 25,
         status: "예비후보",
-        subRegion: "가경동, 복대제2동",
+        subRegion: "흥덕구 가경동, 복대제2동",
         bio: [
             "<span style='letter-spacing:-0.12em;'>개혁신당 청주 지역발전특위 부위원장</span>",
             "캠퍼스지부 충북대학교 지부장",
@@ -4186,13 +4186,14 @@ const candidates = [
     },
     {
         name: "장경석",
-        visibility: "preliminary",
         region: "인천",
         metropolitan: "인천광역시",
         category: "광역의원",
         office: "인천광역시의회",
-        status: "출마선언",
+        status: "예비후보",
         district: "옹진군",
+        showPreliminaryBadge: true,
+        age: 46,
         subRegion: "북도면, 연평면, 덕적면, 자월면, 영흥면, 백령면, 대청면",
         bio: [
             "전) 옹진군청 정무소통비서"
@@ -4233,7 +4234,7 @@ const candidates = [
         donation: "https://givemoney.kr/politicians/175/",
         dateAdded: "2026-04-20",
         coords: [
-            37.534,
+            37.5340,
             126.9886
         ]
     },
@@ -4326,7 +4327,7 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-20",
         coords: [
-            35.136,
+            35.1360,
             126.7979
         ]
     },
@@ -4402,6 +4403,60 @@ const candidates = [
         coords: [
             37.4292,
             126.9876
+        ]
+    },
+    {
+        name: "이인숙",
+        region: "충북 청주시",
+        metropolitan: "충청북도",
+        category: "기초의원",
+        visibility: "preliminary",
+        office: "청주시의원",
+        district: "하",
+        subRegion: "율량·사천동",
+        status: "출마예정",
+        bio: [
+            "제3대 청주시의원"
+        ],
+        photo: "https://i.imgur.com/Zvd0dcK.png",
+        sns: {
+            fb: ""
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-04-21",
+        coords: [
+            36.666867,
+            127.493236
+        ]
+    },
+    {
+        name: "서태모",
+        region: "충남 서산시",
+        showPreliminaryBadge: true,
+        metropolitan: "충청남도",
+        category: "기초의원",
+        office: "서산시의원",
+        district: "마",
+        subRegion: "음암면, 운산면, 해미면, 고북면",
+        age: 71,
+        status: "예비후보",
+        bio: [
+            "전) 경기도 명예감사관",
+            "전) 한국도로공사 자문위원(군포지사)"
+        ],
+        photo: "",
+        sns: {
+            fb: ""
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-04-21",
+        coords: [
+            36.713353,
+            126.538322
         ]
     },
     {
