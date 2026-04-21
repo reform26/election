@@ -4150,6 +4150,8 @@ const candidates = [
         ],
         photo: "",
         sns: {
+            fb: "https://www.facebook.com/profile.php?id=100003241405728&ref=NONE_ig_profile_ac",
+            ig: "https://www.instagram.com/seonghan_star/",
             yt: "https://www.youtube.com/@mang_mang_2"
         },
         pledge: "#",
@@ -4211,7 +4213,7 @@ const candidates = [
         donation: "https://givemoney.kr/politicians/175/",
         dateAdded: "2026-04-20",
         coords: [
-            37.534,
+            37.5340,
             126.9886
         ]
     },
@@ -4304,7 +4306,7 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-20",
         coords: [
-            35.136,
+            35.1360,
             126.7979
         ]
     },
