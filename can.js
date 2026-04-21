@@ -564,7 +564,7 @@ const candidates = [
             "마을활동가",
             "현) 방송통신대 세종·공주 학생회장"
         ],
-        photo: "https://i.imgur.com/wbdLG7a.png",
+        photo: "https://i.imgur.com/55u5JPA.png",
         sns: {
             fb: "https://www.facebook.com/gimsunju.64081/#"
         },
@@ -4213,7 +4213,7 @@ const candidates = [
         donation: "https://givemoney.kr/politicians/175/",
         dateAdded: "2026-04-20",
         coords: [
-            37.534,
+            37.5340,
             126.9886
         ]
     },
@@ -4306,7 +4306,7 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-20",
         coords: [
-            35.136,
+            35.1360,
             126.7979
         ]
     },
