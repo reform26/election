@@ -3045,32 +3045,6 @@ const candidates = [
         ]
     },
     {
-        name: "이호민",
-        visibility: "hidden",
-        region: "경기 고양시",
-        metropolitan: "경기도",
-        category: "기초의원",
-        office: "고양시의회",
-        status: "공천확정",
-        subRegion: "정발산동, 중산1동, 중산2동, 일산2동",
-        bio: [
-            "고양시 아선거구 공천확정"
-        ],
-        photo: "",
-        district: "아",
-        sns: {
-            fb: "#"
-        },
-        pledge: "#",
-        decl: "#",
-        donation: "#",
-        dateAdded: "2026-03-09",
-        coords: [
-            37.658,
-            126.7824
-        ]
-    },
-    {
         name: "이재범",
         region: "경기 평택시",
         metropolitan: "경기도",
@@ -3900,23 +3874,26 @@ const candidates = [
         office: "고양시의회",
         age: 26,
         status: "예비후보",
-        subRegion: "일산1동, 탄현1동, 탄현2동",
+        subRegion: "정발산동, 중산1동, 중산2동, 일산2동",
         bio: [
             "개혁신당 고양시 지역발전특위 부위원장",
             "경기도당 AI특위 위원장"
         ],
         photo: "",
-        district: "차",
+        district: "아",
         sns: {
-            fb: "#"
+            fb: "https://www.facebook.com/profile.php?id=61580710135949",
+            ig: "https://www.instagram.com/jungmj.ilsan/",
+            yt: "https://www.youtube.com/channel/UCRPvsYs0bujxX1B9-O90htg/posts?pvf=CAI%253D",
+            site: "https://www.jungmj.site/"
         },
-        pledge: "#",
+        pledge: "https://policy.reformparty.kr/map?region_code=41&election_type=local_council&district_code=41%3A%EA%B3%A0%EC%96%91%EC%8B%9C%EC%9D%BC%EC%82%B0%EB%8F%99%EA%B5%AC%3A%EC%95%84%EC%84%A0%EA%B1%B0%EA%B5%AC",
         decl: "#",
         donation: "https://givemoney.kr/politicians/107",
         dateAdded: "2026-03-12",
         coords: [
-            37.665,
-            126.7699
+            37.669667,
+            126.777791
         ]
     },
     {
@@ -4234,7 +4211,7 @@ const candidates = [
         donation: "https://givemoney.kr/politicians/175/",
         dateAdded: "2026-04-20",
         coords: [
-            37.534,
+            37.5340,
             126.9886
         ]
     },
@@ -4327,7 +4304,7 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-20",
         coords: [
-            35.136,
+            35.1360,
             126.7979
         ]
     },
