@@ -1785,7 +1785,7 @@ const candidates = [
         category: "기초의원",
         office: "수원시의원",
         status: "공천확정",
-        subRegion: "매탄1동, 매탄2동, 매탄3동, 매탄4동",
+        subRegion: "영통구 매탄1동, 매탄2동, 매탄3동, 매탄4동",
         bio: [
             "수원시 아선거구 공천확정"
         ],
@@ -1871,7 +1871,7 @@ const candidates = [
         slogan: "중원구의 새로운 선택!",
         status: "예비후보",
         district: "사",
-        subRegion: "중앙동, 금광1동, 금광2동, 은행1동, 은행2동",
+        subRegion: "중원구 중앙동, 금광1동, 금광2동, 은행1동, 은행2동",
         bio: [
             "개혁신당 성남시 지역발전특위 부위원장",
             "경기도당 성남시 행정안전특위 위원장"
@@ -1983,7 +1983,7 @@ const candidates = [
         office: "용인시의원",
         age: 35,
         status: "예비후보",
-        subRegion: "상현1동, 상현3동",
+        subRegion: "수지구 상현1동, 상현3동",
         bio: [
             "현) 개발도사 대표",
             "전) 삼성전자 개발팀"
@@ -2173,7 +2173,7 @@ const candidates = [
         slogan: "인공지능 시대, 준비된 전문가! 활력 넘치는 안양! 이천은 입니다",
         status: "예비후보",
         district: "바",
-        subRegion: "달안동, 부림동, 인덕원동, 관양동",
+        subRegion: "동안구 달안동, 부림동, 인덕원동, 관양동",
         bio: [
             "<span style='letter-spacing:-0.12em;'>개혁신당 안양시 지역발전특위 부위원장</span>",
             "<span style='letter-spacing:-0.12em;'>경기도당 안양시 AI미래전략특위 위원장</span>"
@@ -2256,7 +2256,7 @@ const candidates = [
         age: 27,
         slogan: "안산이 키운 용기 있는 정치인. 미래를 바꾸는 선택, 지금 함께해주십시오.",
         status: "예비후보",
-        subRegion: "본오3동, 사동, 사이동, 해양동",
+        subRegion: "상록구 본오3동, 사동, 사이동, 해양동",
         bio: [
             "개혁신당 안산시 지역발전특위 부위원장"
         ],
@@ -2283,7 +2283,7 @@ const candidates = [
         office: "화성시의원",
         age: 37,
         status: "예비후보",
-        subRegion: "봉담읍, 기배동, 화산동",
+        subRegion: "효행구 봉담읍, 기배동, 병점구 화산동",
         bio: [
             "민주평화통일자문회의 자문위원",
             "뉴케이팝댄스학원 원장"
@@ -2373,7 +2373,7 @@ const candidates = [
         age: 39,
         slogan: "오늘보다 나은 내일을 만드는 이강민입니다.",
         status: "예비후보",
-        subRegion: "불당1동, 불당2동",
+        subRegion: "서북구 불당1동, 불당2동",
         bio: [
             "충남도당 수석부위원장",
             "개혁신당 지역발전특위 부위원장",
@@ -2407,7 +2407,7 @@ const candidates = [
         office: "천안시의원",
         age: 27,
         status: "예비후보",
-        subRegion: "쌍용1동, 쌍용2동, 쌍용3동",
+        subRegion: "서북구 쌍용1동, 쌍용2동, 쌍용3동",
         bio: [
             "충남도당 부위원장",
             "충남도당 사무처장",
@@ -2440,7 +2440,7 @@ const candidates = [
         age: 22,
         slogan: "천안을 사랑하는 용기있는 선택, 손승범입니다",
         status: "예비후보",
-        subRegion: "봉명동, 성정1동, 성정2동, 문성동",
+        subRegion: "동남구 봉명동, 성정1동, 성정2동, 문성동",
         bio: [
             "충남도당 부위원장",
             "충남도당 대변인",
@@ -2641,7 +2641,7 @@ const candidates = [
         office: "포항시의회",
         status: "공천확정",
         district: "바",
-        subRegion: "장량동",
+        subRegion: "북구 장량동",
         bio: [
             "제5-9대 포항시의회 의원 (5선)",
             "포항시 북구 당협위원장"
@@ -2667,7 +2667,7 @@ const candidates = [
         office: "기초의원",
         age: 65,
         status: "예비후보",
-        subRegion: "용흥동, 우창동",
+        subRegion: "북구 용흥동, 우창동",
         bio: [
             "전) 포항시 우창동 재향군인회 회장"
         ],
@@ -2692,7 +2692,7 @@ const candidates = [
         category: "기초의원",
         office: "기초의원",
         status: "공천확정",
-        subRegion: "두호동, 양덕동, 환여동",
+        subRegion: "북구 두호동, 양덕동, 환여동",
         bio: [
             "포항시 마선거구 공천확정"
         ],
@@ -3826,7 +3826,7 @@ const candidates = [
         status: "예비후보",
         age: 31,
         district: "화성 5",
-        subRegion: "동탄7동, 동탄8동, 동탄9동",
+        subRegion: "동탄구 동탄7동, 동탄9동",
         bio: [
             "개혁신당 화성시 지역발전특위 위원장"
         ],
@@ -3874,7 +3874,7 @@ const candidates = [
         office: "고양시의회",
         age: 26,
         status: "예비후보",
-        subRegion: "정발산동, 중산1동, 중산2동, 일산2동",
+        subRegion: "일산동구 정발산동, 중산1동, 중산2동, 일산2동",
         bio: [
             "개혁신당 고양시 지역발전특위 부위원장",
             "경기도당 AI특위 위원장"
@@ -3904,7 +3904,7 @@ const candidates = [
         office: "화성시의회",
         status: "공천확정",
         district: "다",
-        subRegion: "동탄1동, 동탄2동",
+        subRegion: "동탄구 동탄1동, 동탄2동",
         bio: [
             "화성시 다선거구 공천확정"
         ],
@@ -4213,7 +4213,7 @@ const candidates = [
         donation: "https://givemoney.kr/politicians/175/",
         dateAdded: "2026-04-20",
         coords: [
-            37.534,
+            37.5340,
             126.9886
         ]
     },
@@ -4306,7 +4306,7 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-20",
         coords: [
-            35.136,
+            35.1360,
             126.7979
         ]
     },
