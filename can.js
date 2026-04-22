@@ -4214,7 +4214,7 @@ const candidates = [
         donation: "https://givemoney.kr/politicians/175/",
         dateAdded: "2026-04-20",
         coords: [
-            37.5340,
+            37.534,
             126.9886
         ]
     },
@@ -4307,7 +4307,7 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-20",
         coords: [
-            35.1360,
+            35.136,
             126.7979
         ]
     },
