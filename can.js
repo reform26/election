@@ -2785,7 +2785,8 @@ const candidates = [
         district: "차",
         sns: {
             fb: "#",
-            ig: "https://www.instagram.com/together.chachacha",
+            ig: "https://www.instagram.com/with_eunjae/",
+            blog: "https://blog.naver.com/ej823456",
             site: "https://litt.ly/newcheongju.kr"
         },
         pledge: "https://litt.ly/newcheongju.kr",
@@ -4213,7 +4214,7 @@ const candidates = [
         donation: "https://givemoney.kr/politicians/175/",
         dateAdded: "2026-04-20",
         coords: [
-            37.534,
+            37.5340,
             126.9886
         ]
     },
@@ -4306,7 +4307,7 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-20",
         coords: [
-            35.136,
+            35.1360,
             126.7979
         ]
     },
