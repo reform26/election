@@ -4213,7 +4213,7 @@ const candidates = [
         donation: "https://givemoney.kr/politicians/175/",
         dateAdded: "2026-04-20",
         coords: [
-            37.534,
+            37.5340,
             126.9886
         ]
     },
@@ -4306,7 +4306,7 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-20",
         coords: [
-            35.136,
+            35.1360,
             126.7979
         ]
     },
@@ -4442,12 +4442,14 @@ const candidates = [
         name: "방인섭",
         region: "울산 남구",
         metropolitan: "울산광역시",
+        showPreliminaryBadge: true,
         category: "기초단체장",
-        visibility: "preliminary",
+        age: 50,
         office: "남구청장",
-        status: "출마예정",
+        status: "예비후보",
         bio: [
-            "제6,7,8대 울산시의원"
+            "제6,7,8대 울산시의원",
+            "울산시의회의원 예산결산특별위원장"
         ],
         photo: "https://i.imgur.com/TbQkeLr.png",
         sns: {
@@ -4456,7 +4458,7 @@ const candidates = [
         pledge: "#",
         decl: "#",
         donation: "#",
-        dateAdded: "2026-04-20",
+        dateAdded: "2026-04-22",
         coords: [
             35.5384,
             129.3114
