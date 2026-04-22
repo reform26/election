@@ -4214,7 +4214,7 @@ const candidates = [
         donation: "https://givemoney.kr/politicians/175/",
         dateAdded: "2026-04-20",
         coords: [
-            37.534,
+            37.5340,
             126.9886
         ]
     },
@@ -4294,20 +4294,23 @@ const candidates = [
         metropolitan: "전남광주통합특별시",
         category: "기초의원",
         office: "광산구의회",
-        status: "공천확정",
+        status: "예비후보",
+        age: 31,
+        gender: "f",
         district: "가",
         subRegion: "송정1동, 송정2동, 도산동, 어룡동, 동곡동, 평동, 삼도동, 본량동",
         bio: [
-            "광산구 가선거구 공천확정"
+            "개혁신당 광산구 지역발전특위 부위원장",
+            "전)정부세종청사 이든샘어린이집 담임교사"
         ],
         photo: "",
         sns: {},
         pledge: "#",
         decl: "#",
-        donation: "#",
+        donation: "https://givemoney.kr/politicians/184",
         dateAdded: "2026-04-20",
         coords: [
-            35.136,
+            35.1360,
             126.7979
         ]
     },
@@ -4437,6 +4440,34 @@ const candidates = [
         coords: [
             36.713353,
             126.538322
+        ]
+    },
+    {
+        name: "이봉관",
+        region: "경기 시흥시",
+        showPreliminaryBadge: true,
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "시흥시의원",
+        district: "마",
+        subRegion: "정왕3동, 정왕4동, 배곧1동, 배곧2동",
+        age: 59,
+        status: "출마선언",
+        bio: [
+            "제9대 시흥시의회 의원",
+            "(주) 주능스틸 대표이사"
+        ],
+        photo: "https://i.imgur.com/hoCvmRa.png",
+        sns: {
+            fb: ""
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-04-22",
+        coords: [
+           37.374900,
+           126.729348
         ]
     },
     {
