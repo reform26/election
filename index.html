@@ -1437,7 +1437,7 @@
         </div>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="can.js?v=0422.01" defer></script>   <script src="data1.js?v=0223.05" defer></script> <script src="search.js?v=0317.02" defer></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="can.js?v=0423.01" defer></script>   <script src="data1.js?v=0223.05" defer></script> <script src="search.js?v=0317.02" defer></script>
     <script>
         let currentModalCandidateName = '';
         let showOnlyConfirmed = false;
@@ -1949,6 +1949,7 @@
             else if (c.name === "최현석") displayOfficeLabel = `서울특별시의회 송파구 제2선거구 ${statusLabel}`;
             else if (c.name === "강인수") displayOfficeLabel = `서울특별시의회 강남구 제1선거구 ${statusLabel}`;
             else if (c.name === "주이삭") displayOfficeLabel = `서울특별시의회 서대문구 제1선거구 ${statusLabel}`;
+            else if (c.name === "한범수") displayOfficeLabel = `서울특별시의회 영등포구 제2선거구 ${statusLabel}`;
             else if (c.name === "장경석") displayOfficeLabel = `인천광역시의회 옹진군 선거구 ${statusLabel}`;
             else if (c.name === "황종일") displayOfficeLabel = `경기도의회 수원시 제3선거구 ${statusLabel}`;
             else if (c.name === "양시훈") displayOfficeLabel = `경기도의회 화성시 제5선거구 ${statusLabel}`;
@@ -2096,8 +2097,9 @@
             });
             
             const provCouncilSeoul = provCouncilCands.filter(c => c.metropolitan === "서울특별시");
+            const provCouncilGyeonggi = provCouncilCands.filter(c => c.metropolitan === "경기도");
             const provCouncilJeju = provCouncilCands.filter(c => c.metropolitan === "제주특별자치도");
-            const provCouncilOthers = provCouncilCands.filter(c => c.metropolitan !== "서울특별시" && c.metropolitan !== "제주특별자치도");
+            const provCouncilOthers = provCouncilCands.filter(c => c.metropolitan !== "서울특별시" && c.metropolitan !== "경기도" && c.metropolitan !== "제주특별자치도");
 
             const localExecSort = (a, b) => (regionPriority[a.metropolitan] || 99) - (regionPriority[b.metropolitan] || 99) || (a.region || "").localeCompare(b.region || "");
             const localExecSeoul = filtered.filter(c => c.category === "기초단체장" && c.metropolitan === "서울특별시").sort(localExecSort);
@@ -2132,7 +2134,10 @@
                 </section>
                 <section id="provincial-council" class="scroll-mt-24">
                     <h2 class="section-title">광역의회의원</h2>
-                    <div class="grid-responsive">${provCouncilCands.map(createCard).join('')}</div>
+                    ${provCouncilSeoul.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">서울특별시</h3><div class="grid-responsive">${provCouncilSeoul.map(createCard).join('')}</div></div>` : ''}
+                    ${provCouncilGyeonggi.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">경기도</h3><div class="grid-responsive">${provCouncilGyeonggi.map(createCard).join('')}</div></div>` : ''}
+                    ${provCouncilJeju.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">제주특별자치도</h3><div class="grid-responsive">${provCouncilJeju.map(createCard).join('')}</div></div>` : ''}
+                    ${provCouncilOthers.length > 0 ? `<div><h3 class="sub-section-title">기타 지역</h3><div class="grid-responsive">${provCouncilOthers.map(createCard).join('')}</div></div>` : ''}
                 </section>
                 <section id="local-council" class="mb-16 scroll-mt-24">
                     <h2 class="section-title">기초의회의원</h2>

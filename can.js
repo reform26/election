@@ -2264,7 +2264,7 @@ const candidates = [
         district: "가",
         sns: {
             ig: "https://www.instagram.com/jhchoi_ansan4/",
-            yt: "https://www.youtube.com/@reformansan4"
+            yt: "https://www.youtube.com/channel/UCyOl6VoS7EGd3xbk_Vbbynw"
         },
         pledge: "#",
         decl: "https://rallypoint.kr/board/politics-free/223063",
@@ -3691,7 +3691,6 @@ const candidates = [
         office: "김해시의회",
         age: 64,
         status: "예비후보",
-        preliminary: true,
         district: "다",
         subRegion: "동상동, 부원동, 활천동",
         bio: [
@@ -3842,6 +3841,31 @@ const candidates = [
         coords: [
             37.177619,
             127.131971
+        ]
+    },
+    {
+        name: "한범수",
+        region: "서울",
+        metropolitan: "서울특별시",
+        category: "광역의원",
+        office: "서울시의회",
+        status: "공천확정",
+        district: "영등포 2",
+        subRegion: "영등포동, 당산제1동, 당산제2동, 양평제1동, 양평제2동",
+        bio: [
+            "영등포구 제2선거구 공천확정"
+        ],
+        photo: "",
+        sns: {
+            ig: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-04-23",
+        coords: [
+           37.528145,
+           126.916286
         ]
     },
     {
@@ -4214,7 +4238,7 @@ const candidates = [
         donation: "https://givemoney.kr/politicians/175/",
         dateAdded: "2026-04-20",
         coords: [
-            37.534,
+            37.5340,
             126.9886
         ]
     },
@@ -4303,14 +4327,14 @@ const candidates = [
             "개혁신당 광산구 지역발전특위 부위원장",
             "전)정부세종청사 이든샘어린이집 담임교사"
         ],
-        photo: "",
+        photo: "https://i.imgur.com/OXhWgZh.png",
         sns: {},
         pledge: "#",
         decl: "#",
         donation: "https://givemoney.kr/politicians/184",
         dateAdded: "2026-04-20",
         coords: [
-            35.136,
+            35.1360,
             126.7979
         ]
     },
@@ -4443,6 +4467,56 @@ const candidates = [
         ]
     },
     {
+        name: "최재혁",
+        region: "서울 서대문구",
+        metropolitan: "서울특별시",
+        category: "기초의원",
+        office: "서대문구의원",
+        district: "마",
+        subRegion: "남가좌제1동, 남가좌제2동, 북가좌제1동, 북가좌제2동",
+        status: "공천확정",
+        bio: [
+            "서대문구 마선거구 공천확정"
+        ],
+        photo: "",
+        sns: {
+            fb: ""
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-04-23",
+        coords: [
+            37.570586,
+            126.917263
+        ]
+    },
+    {
+        name: "김범일",
+        region: "서울 양천구",
+        metropolitan: "서울특별시",
+        category: "기초의원",
+        office: "양천구의원",
+        district: "가",
+        subRegion: "목2동, 목3동",
+        status: "공천확정",
+        bio: [
+            "양천구 가선거구 공천확정"
+        ],
+        photo: "",
+        sns: {
+            fb: ""
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-04-23",
+        coords: [
+            37.543227,
+            126.873220
+        ]
+    },
+    {
         name: "이봉관",
         region: "경기 시흥시",
         showPreliminaryBadge: true,
@@ -4466,8 +4540,8 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-22",
         coords: [
-            37.3749,
-            126.729348
+           37.374900,
+           126.729348
         ]
     },
     {
