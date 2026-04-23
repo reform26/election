@@ -3264,26 +3264,29 @@ const candidates = [
         ]
     },
     {
-        name: "이세원",
-        visibility: "hidden",
+        name: "이우주",
         region: "경기 화성시",
         metropolitan: "경기도",
         category: "기초의원",
         office: "화성시의회",
-        status: "출마예정",
+        status: "예비후보",
+        age: 43,
+        gender: "f",
+        showPreliminaryBadge: true,
         subRegion: "동탄7동, 동탄8동, 동탄9동",
         bio: [
-            "화성시 마선거구 출마예정"
+            "현) 리프앤라인대표",
+            "현) 경희대학교 산업디자인학과 강사"
         ],
         photo: "",
         district: "마",
         sns: {
             fb: "#"
         },
-        pledge: "https://policy.reformparty.kr/map?region_code=41&election_type=local_council&district_code=41%3A%ED%99%94%EC%84%B1%EC%8B%9C%3A%EB%A7%88%EC%84%A0%EA%B1%B0%EA%B5%AC",
+        pledge: "#",
         decl: "#",
         donation: "#",
-        dateAdded: "2026-03-16",
+        dateAdded: "2026-04-23",
         coords: [
             37.170497,
             127.102412
@@ -3704,7 +3707,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
-        donation: "#",
+        donation: "https://givemoney.kr/politicians/193",
         dateAdded: "2026-04-01",
         coords: [
             35.234549,
@@ -3864,8 +3867,8 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-23",
         coords: [
-            37.528145,
-            126.916286
+           37.528145,
+           126.916286
         ]
     },
     {
@@ -3927,11 +3930,14 @@ const candidates = [
         metropolitan: "경기도",
         category: "기초의원",
         office: "화성시의회",
-        status: "공천확정",
+        status: "예비후보",
+        age: 39,
         district: "다",
         subRegion: "동탄구 동탄1동, 동탄2동",
         bio: [
-            "화성시 다선거구 공천확정"
+            "<span style='letter-spacing:-0.15em;'>개혁신당 화성시 지역발전특위 부위원장<span/>",
+            "<span style='letter-spacing:-0.15em;'>경기도당 화성시 주거환경혁신 특위 위원장<span/>",
+            "디에스케이인테리어 대표"
         ],
         photo: "",
         sns: {},
@@ -4238,7 +4244,7 @@ const candidates = [
         donation: "https://givemoney.kr/politicians/175/",
         dateAdded: "2026-04-20",
         coords: [
-            37.534,
+            37.5340,
             126.9886
         ]
     },
@@ -4334,7 +4340,7 @@ const candidates = [
         donation: "https://givemoney.kr/politicians/184",
         dateAdded: "2026-04-20",
         coords: [
-            35.136,
+            35.1360,
             126.7979
         ]
     },
@@ -4416,23 +4422,26 @@ const candidates = [
         name: "이인숙",
         region: "충북 청주시",
         metropolitan: "충청북도",
+        showPreliminaryBadge: true,
         category: "기초의원",
-        visibility: "preliminary",
         office: "청주시의원",
         district: "하",
+        age: 57,
+        gender: "f",
         subRegion: "율량·사천동",
-        status: "출마예정",
+        status: "예비후보",
         bio: [
-            "제3대 청주시의원"
+            "제3대 통합청주시의원",
+            "전)청주시의회 농업정책위원회 위원"
         ],
-        photo: "https://i.imgur.com/Zvd0dcK.png",
+        photo: "https://i.imgur.com/wTRaaCa.png",
         sns: {
             fb: ""
         },
         pledge: "#",
         decl: "#",
         donation: "#",
-        dateAdded: "2026-04-21",
+        dateAdded: "2026-04-23",
         coords: [
             36.666867,
             127.493236
@@ -4513,7 +4522,7 @@ const candidates = [
         dateAdded: "2026-04-23",
         coords: [
             37.543227,
-            126.87322
+            126.873220
         ]
     },
     {
@@ -4540,8 +4549,8 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-22",
         coords: [
-            37.3749,
-            126.729348
+           37.374900,
+           126.729348
         ]
     },
     {
@@ -4554,7 +4563,8 @@ const candidates = [
         office: "남구청장",
         status: "예비후보",
         bio: [
-            "제6,7,8대 울산시의원",
+            "제8대 울산시의원",
+            "제6,7대 남구의회 의원", 
             "울산시의회의원 예산결산특별위원장"
         ],
         photo: "https://i.imgur.com/TbQkeLr.png",
@@ -4569,8 +4579,201 @@ const candidates = [
             35.5384,
             129.3114
         ]
+    },
+    {
+        name: "김장호",
+        visibility: "preliminary",
+        region: "울산광역시",
+        metropolitan: "울산광역시",
+        shortMetro: "울산",
+        district: "남구 4",
+        constituencyFull: "남구 제4선거구",
+        category: "광역의원",
+        office: "울산시의원",
+        status: "출마예정",
+        subRegion: "삼산동, 야음장생포동",
+        bio: [
+            "제8대 남구의회 의원",
+            "남구 의회운영부위원장"
+        ],
+        photo: "https://i.imgur.com/bEX5LCH.jpeg",
+        sns: {
+            fb: ""
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-04-23",
+        coords: [
+            35.504401,
+            129.374238
+        ]
+    },
+    {
+        name: "최신성",
+        visibility: "preliminary",
+        region: "울산광역시",
+        metropolitan: "울산광역시",
+        shortMetro: "울산",
+        district: "남구 5",
+        constituencyFull: "남구 제5선거구",
+        category: "광역의원",
+        office: "울산시의원",
+        status: "출마예정",
+        subRegion: "달동, 수암동",
+        bio: [
+            "제7,8대 남구의회 의원",
+            "남구 의회운영위원장"
+        ],
+        photo: "https://i.imgur.com/LgC0Mbj.png",
+        sns: {
+            fb: ""
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-04-23",
+        coords: [
+            35.535388,
+            129.322848
+        ]
+    },
+    {
+        name: "김소라",
+        visibility: "preliminary",
+        region: "울산광역시",
+        metropolitan: "울산광역시",
+        shortMetro: "울산",
+        district: "남구 6",
+        constituencyFull: "남구 제6선거구",
+        category: "광역의원",
+        office: "울산시의원",
+        status: "출마예정",
+        subRegion: "대현동, 선암동",
+        bio: [
+            "현) 대현동 주민자치위원장"
+        ],
+        photo: "",
+        sns: {
+            fb: ""
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-04-23",
+        coords: [
+            35.491296,
+            129.351261
+        ]
+    },
+    {
+        name: "정일경",
+        visibility: "preliminary",
+        region: "울산 남구",
+        metropolitan: "울산광역시",
+        category: "기초의원",
+        office: "남구의원",
+        district: "마",
+        subRegion: "달동, 수암동",
+        status: "출마예정",
+        bio: [
+            "남구 마선거구 출마예정"
+        ],
+        photo: "",
+        sns: {
+            fb: ""
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-04-23",
+        coords: [
+            35.535388,
+            129.322850
+        ]
+    },
+    {
+        name: "김근우",
+        visibility: "preliminary",
+        region: "울산 남구",
+        metropolitan: "울산광역시",
+        category: "기초의원",
+        office: "남구의원",
+        district: "바",
+        subRegion: "대현동, 선암동",
+        status: "출마예정",
+        bio: [
+            "현) 울산 강남라이온스 회장"
+        ],
+        photo: "",
+        sns: {
+            fb: ""
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-04-23",
+        coords: [
+            35.491290,
+            129.351269
+        ]
+    },
+    {
+        name: "박소영",
+        visibility: "preliminary",
+        region: "울산 남구",
+        metropolitan: "울산광역시",
+        category: "기초의원",
+        office: "남구의원",
+        district: "나",
+        subRegion: "신정4동, 옥동",
+        status: "출마예정",
+        bio: [
+            "현) 신정4동 주민자치위원회 사무국장"
+        ],
+        photo: "",
+        sns: {
+            fb: ""
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-04-23",
+        coords: [
+            35.524458, 
+            129.290415
+        ]
+    },
+    {
+        name: "김동칠",
+        visibility: "preliminary",
+        region: "울산",
+        metropolitan: "울산광역시",
+        category: "재보궐선거",
+        office: "재보궐선거",
+        district: "남구 갑",
+        subRegion: "신정1동, 신정2동, 신정3동, 신정4동, 신정5동, 삼호동, 무거동, 옥동",
+        status: "출마예정",
+        bio: [
+            "제8대 울산시의원",
+            "제6대 남구의원",
+            "울산광역시당위원장"
+        ],
+        photo: "https://i.imgur.com/1JAap79.png",
+        sns: {
+            fb: "https://www.facebook.com/dongchil0252",
+            blog: "https://blog.naver.com/dongchil777"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-04-23",
+        coords: [
+            35.537743,
+            129.312083
+        ]
     }
-];
+ ];
 
 
 

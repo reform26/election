@@ -1438,7 +1438,7 @@
         </div>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="can.js?v=0423.02" defer></script>   <script src="data1.js?v=0223.05" defer></script> <script src="search.js?v=0317.02" defer></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="can.js?v=0423.03" defer></script>   <script src="data1.js?v=0223.05" defer></script> <script src="search.js?v=0317.02" defer></script>
     <script>
         let currentModalCandidateName = '';
         let showOnlyConfirmed = false;
@@ -1955,6 +1955,9 @@
             else if (c.name === "황종일") displayOfficeLabel = `경기도의회 수원시 제3선거구 ${statusLabel}`;
             else if (c.name === "양시훈") displayOfficeLabel = `경기도의회 화성시 제5선거구 ${statusLabel}`;
             else if (c.name === "김순주") displayOfficeLabel = `세종특별자치시의회 제4선거구 ${statusLabel}`;
+            else if (c.name === "김장호") displayOfficeLabel = `울산광역시의회 남구 제4선거구 ${statusLabel}`;
+            else if (c.name === "최신성") displayOfficeLabel = `울산광역시의회 남구 제5선거구 ${statusLabel}`;
+            else if (c.name === "김소라") displayOfficeLabel = `울산광역시의회 남구 제6선거구 ${statusLabel}`;
             else if (c.constituency === "비례") {
                 const metro = c.metropolitan || "";
                 let fullOfficeName = "";
@@ -2099,8 +2102,9 @@
             
             const provCouncilSeoul = provCouncilCands.filter(c => c.metropolitan === "서울특별시");
             const provCouncilGyeonggi = provCouncilCands.filter(c => c.metropolitan === "경기도");
+            const provCouncilUlsan = provCouncilCands.filter(c => c.metropolitan === "울산광역시");
             const provCouncilJeju = provCouncilCands.filter(c => c.metropolitan === "제주특별자치도");
-            const provCouncilOthers = provCouncilCands.filter(c => c.metropolitan !== "서울특별시" && c.metropolitan !== "경기도" && c.metropolitan !== "제주특별자치도");
+            const provCouncilOthers = provCouncilCands.filter(c => !["서울특별시","경기도","울산광역시","제주특별자치도"].includes(c.metropolitan));
 
             const localExecSort = (a, b) => (regionPriority[a.metropolitan] || 99) - (regionPriority[b.metropolitan] || 99) || (a.region || "").localeCompare(b.region || "");
             const localExecSeoul = filtered.filter(c => c.category === "기초단체장" && c.metropolitan === "서울특별시").sort(localExecSort);
@@ -2115,15 +2119,17 @@
             const daeguCands = filterByMetro("대구광역시");
             const incheonCands = filterByMetro("인천광역시");
             const daejeonCands = filterByMetro("대전광역시");
+            const ulsanCands = filterByMetro("울산광역시");
             const gyeonggiCands = filterByMetro("경기도");
             const chungnamCands = filterByMetro("충청남도");
             const gyeongbukCands = filterByMetro("경상북도");
             const gyeongnamCands = filterByMetro("경상남도");
             const gangwonCands = filterByMetro("강원특별자치도");
-            const excluded = ["서울특별시","부산광역시", "대구광역시", "대전광역시", "인천광역시", "경기도", "경상북도", "충청남도", "경상남도", "강원특별자치도"];
+            const excluded = ["서울특별시","부산광역시", "대구광역시", "대전광역시", "인천광역시", "울산광역시", "경기도", "경상북도", "충청남도", "경상남도", "강원특별자치도"];
             const otherCands = filtered.filter(c => !excluded.includes(c.metropolitan) && c.category === "기초의원").sort((a, b) => (regionPriority[a.metropolitan] || 99) - (regionPriority[b.metropolitan] || 99) || councilSort(a, b));
 
             container.innerHTML = `
+                ${filtered.filter(c => c.category === "재보궐선거").length > 0 ? `<section id="by-election" class="scroll-mt-24"><h2 class="section-title">재보궐선거</h2><div class="grid-responsive">${filtered.filter(c => c.category === "재보궐선거").map(createCard).join('')}</div></section>` : ''}
                 <section id="provincial-exec" class="scroll-mt-24"><h2 class="section-title">광역자치단체장</h2><div class="grid-responsive">${filtered.filter(c => c.category === "광역단체장").map(createCard).join('')}</div></section>
                 <section id="local-exec" class="scroll-mt-24">
                     <h2 class="section-title">기초자치단체장</h2>
@@ -2136,6 +2142,7 @@
                 <section id="provincial-council" class="scroll-mt-24">
                     <h2 class="section-title">광역의회의원</h2>
                     ${provCouncilSeoul.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">서울특별시</h3><div class="grid-responsive">${provCouncilSeoul.map(createCard).join('')}</div></div>` : ''}
+                    ${provCouncilUlsan.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">울산광역시</h3><div class="grid-responsive">${provCouncilUlsan.map(createCard).join('')}</div></div>` : ''}
                     ${provCouncilGyeonggi.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">경기도</h3><div class="grid-responsive">${provCouncilGyeonggi.map(createCard).join('')}</div></div>` : ''}
                     ${provCouncilJeju.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">제주특별자치도</h3><div class="grid-responsive">${provCouncilJeju.map(createCard).join('')}</div></div>` : ''}
                     ${provCouncilOthers.length > 0 ? `<div><h3 class="sub-section-title">기타 지역</h3><div class="grid-responsive">${provCouncilOthers.map(createCard).join('')}</div></div>` : ''}
@@ -2147,6 +2154,7 @@
                     ${daeguCands.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">대구광역시</h3><div class="grid-responsive">${daeguCands.map(createCard).join('')}</div></div>` : ''}
                     ${incheonCands.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">인천광역시</h3><div class="grid-responsive">${incheonCands.map(createCard).join('')}</div></div>` : ''}
                     ${daejeonCands.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">대전광역시</h3><div class="grid-responsive">${daejeonCands.map(createCard).join('')}</div></div>` : ''}
+                    ${ulsanCands.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">울산광역시</h3><div class="grid-responsive">${ulsanCands.map(createCard).join('')}</div></div>` : ''}
                     ${gyeonggiCands.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">경기도</h3><div class="grid-responsive">${gyeonggiCands.map(createCard).join('')}</div></div>` : ''}
                     ${gangwonCands.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">강원특별자치도</h3><div class="grid-responsive">${gangwonCands.map(createCard).join('')}</div></div>` : ''}
                     ${chungnamCands.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">충청남도</h3><div class="grid-responsive">${chungnamCands.map(createCard).join('')}</div></div>` : ''}
