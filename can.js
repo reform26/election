@@ -2855,6 +2855,7 @@ const candidates = [
         metropolitan: "인천광역시",
         category: "기초의원",
         office: "제물포구의회",
+        district: "가",
         age: 22,
         status: "예비후보",
         subRegion: "신포동, 연안동, 신흥동, 도원동, 율목동, 동인천동, 개항동",
@@ -2862,7 +2863,6 @@ const candidates = [
             "개혁신당 제물포구 지역발전특위 부위원장"
         ],
         photo: "https://i.imgur.com/1VWN79v.png",
-        district: "",
         sns: {
             fb: "#",
             ig: "https://www.instagram.com/cometrue_minsu/"
@@ -3864,8 +3864,8 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-23",
         coords: [
-            37.528145,
-            126.916286
+           37.528145,
+           126.916286
         ]
     },
     {
@@ -4238,7 +4238,7 @@ const candidates = [
         donation: "https://givemoney.kr/politicians/175/",
         dateAdded: "2026-04-20",
         coords: [
-            37.534,
+            37.5340,
             126.9886
         ]
     },
@@ -4334,7 +4334,7 @@ const candidates = [
         donation: "https://givemoney.kr/politicians/184",
         dateAdded: "2026-04-20",
         coords: [
-            35.136,
+            35.1360,
             126.7979
         ]
     },
@@ -4513,7 +4513,7 @@ const candidates = [
         dateAdded: "2026-04-23",
         coords: [
             37.543227,
-            126.87322
+            126.873220
         ]
     },
     {
@@ -4540,8 +4540,8 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-22",
         coords: [
-            37.3749,
-            126.729348
+           37.374900,
+           126.729348
         ]
     },
     {
