@@ -548,6 +548,64 @@ const candidates = [
         ]
     },
     {
+        name: "박상혁",
+        region: "서울특별시",
+        metropolitan: "서울특별시",
+        shortMetro: "서울",
+        district: "서초구 1",
+        constituencyFull: "서초구 제1선거구",
+        category: "광역의원",
+        office: "서울시의원",
+        status: "공천확정",
+        subRegion: "잠원동, 반포1동, 반포3동, 반포4동",
+        bio: [
+            "제11대 서울특별시의회 의원",
+            "서울시의회 교육위원회 위원장"
+        ],
+        photo: "https://i.imgur.com/pnMfEzC.jpeg",
+        sns: {
+            fb: "https://www.facebook.com/sanghyukpark2022/"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-04-24",
+        coords: [
+            37.518708,
+            127.013847
+        ]
+    },
+    {
+        name: "류근윤",
+        region: "충청북도",
+        metropolitan: "충청북도",
+        shortMetro: "충북",
+        district: "청주 13",
+        showPreliminaryBadge: true,
+        constituencyFull: "청주시 제13선거구",
+        category: "광역의원",
+        office: "청주시의원",
+        status: "예비후보",
+        subRegion: "우암동, 내덕제1동, 내덕제2동",
+        age: 63,
+        bio: [
+            "현) MG우암새마을금고 이사",
+            "전) 바르게살기운동 청주시협의회장"
+        ],
+        photo: "",
+        sns: {
+            fb: "https://www.facebook.com/profile.php?id=61588134602444"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-04-24",
+        coords: [
+            36.650683,
+            127.488250
+        ]
+    },
+    {
         name: "김순주",
         region: "세종특별자치시",
         metropolitan: "세종특별자치시",
@@ -559,7 +617,7 @@ const candidates = [
         age: 53,
         gender: "f",
         status: "예비후보",
-        subRegion: "연기면, 연동면, 연서면, 해밀동",
+        subRegion: "연기면, 연동면, 해밀동",
         bio: [
             "마을활동가",
             "현) 방송통신대 세종·공주 학생회장"
@@ -1502,7 +1560,7 @@ const candidates = [
         office: "연수구의원",
         age: 57,
         status: "예비후보",
-        subRegion: "송도2동, 송도4동, 송도5동",
+        subRegion: "송도2동, 송도5동",
         bio: [
             "인천시당 부위원장",
             "인천시당 소상공인·전략분과위원장"
@@ -2313,7 +2371,7 @@ const candidates = [
         office: "춘천시의원",
         age: 33,
         status: "예비후보",
-        subRegion: "문막읍, 지정면, 부론면, 귀래면",
+        subRegion: "문막읍, 부론면, 귀래면",
         bio: [
             "원주시 가선거구 예비후보"
         ],
@@ -2857,7 +2915,7 @@ const candidates = [
         office: "제물포구의회",
         district: "가",
         age: 22,
-        status: "예비후보",
+        status: "공천확정",
         subRegion: "신포동, 연안동, 신흥동, 도원동, 율목동, 동인천동, 개항동",
         bio: [
             "개혁신당 제물포구 지역발전특위 부위원장"
@@ -3272,8 +3330,7 @@ const candidates = [
         status: "예비후보",
         age: 43,
         gender: "f",
-        showPreliminaryBadge: true,
-        subRegion: "동탄7동, 동탄8동, 동탄9동",
+        subRegion: "동탄구 동탄7동, 동탄9동",
         bio: [
             "현) 리프앤라인대표",
             "현) 경희대학교 산업디자인학과 강사"
@@ -3290,6 +3347,58 @@ const candidates = [
         coords: [
             37.170497,
             127.102412
+        ]
+    },
+    {
+        name: "김기현",
+        region: "경기 화성시",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "화성시의회",
+        status: "예비후보",
+        age: 46,
+        subRegion: "동탄구 동탄4동, 동탄6동, 동탄8동",
+        bio: [
+            "현) 르노코리아 중앙연구소 재직",
+            "현) 민주평통 자문위원"
+        ],
+        photo: "",
+        district: "라",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-04-24",
+        coords: [
+            37.191131,
+            127.090138
+        ]
+    },
+    {
+        name: "이세원",
+        region: "경기 화성시",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "화성시의회",
+        status: "공천확정",
+        subRegion: "병점구 반월동, 동탄구 동탄3동",
+        bio: [
+            "화성시 아선거구 공천확정"
+        ],
+        photo: "",
+        district: "아",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-04-24",
+        coords: [
+            37.207775, 
+            127.056313
         ]
     },
     {
@@ -3599,17 +3708,19 @@ const candidates = [
         metropolitan: "서울특별시",
         category: "기초의원",
         office: "중랑구의원",
-        status: "공천확정",
+        status: "예비후보",
+        age: 37,
         district: "바",
         subRegion: "상봉제1동, 신내제2동",
         bio: [
-            "중랑구 바선거구 공천확정"
+            "현)닷플래너 MICE1팀 팀장",
+            "전)매일유업 외식사업부 오픈바이저"
         ],
         photo: "",
         sns: {},
         pledge: "#",
         decl: "#",
-        donation: "#",
+        donation: "https://givemoney.kr/politicians/161",
         dateAdded: "2026-03-26",
         coords: [
             37.599874,
@@ -3695,7 +3806,7 @@ const candidates = [
         age: 64,
         status: "예비후보",
         district: "다",
-        subRegion: "동상동, 부원동, 활천동",
+        subRegion: "동상동, 부원동, 활천동, 회현동",
         bio: [
             "전) 제5·8대 김해시의원(재선)",
             "사)대한파크골프연합회 부산경남본부장",
@@ -3867,8 +3978,8 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-23",
         coords: [
-            37.528145,
-            126.916286
+           37.528145,
+           126.916286
         ]
     },
     {
@@ -3955,11 +4066,10 @@ const candidates = [
         region: "부산 사하구",
         metropolitan: "부산광역시",
         category: "기초의원",
-        showPreliminaryBadge: true,
         age: 56,
         gender: "f",
         office: "사하구의회",
-        status: "출마예정",
+        status: "예비후보",
         district: "마",
         subRegion: "다대제1동, 다대제2동",
         bio: [
@@ -4202,7 +4312,6 @@ const candidates = [
         office: "인천광역시의회",
         status: "예비후보",
         district: "옹진군",
-        showPreliminaryBadge: true,
         age: 46,
         subRegion: "북도면, 연평면, 덕적면, 자월면, 영흥면, 백령면, 대청면",
         bio: [
@@ -4244,7 +4353,7 @@ const candidates = [
         donation: "https://givemoney.kr/politicians/175/",
         dateAdded: "2026-04-20",
         coords: [
-            37.534,
+            37.5340,
             126.9886
         ]
     },
@@ -4340,7 +4449,7 @@ const candidates = [
         donation: "https://givemoney.kr/politicians/184",
         dateAdded: "2026-04-20",
         coords: [
-            35.136,
+            35.1360,
             126.7979
         ]
     },
@@ -4522,7 +4631,7 @@ const candidates = [
         dateAdded: "2026-04-23",
         coords: [
             37.543227,
-            126.87322
+            126.873220
         ]
     },
     {
@@ -4549,8 +4658,8 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-22",
         coords: [
-            37.3749,
-            126.729348
+           37.374900,
+           126.729348
         ]
     },
     {
@@ -4564,7 +4673,7 @@ const candidates = [
         status: "예비후보",
         bio: [
             "제8대 울산시의원",
-            "제6,7대 남구의회 의원",
+            "제6,7대 남구의회 의원", 
             "울산시의회의원 예산결산특별위원장"
         ],
         photo: "https://i.imgur.com/TbQkeLr.png",
@@ -4582,7 +4691,6 @@ const candidates = [
     },
     {
         name: "김장호",
-        visibility: "preliminary",
         region: "울산광역시",
         metropolitan: "울산광역시",
         shortMetro: "울산",
@@ -4590,7 +4698,9 @@ const candidates = [
         constituencyFull: "남구 제4선거구",
         category: "광역의원",
         office: "울산시의원",
-        status: "출마예정",
+        status: "예비후보",
+        showPreliminaryBadge: true,
+        age: 47,
         subRegion: "삼산동, 야음장생포동",
         bio: [
             "제8대 남구의회 의원",
@@ -4603,7 +4713,7 @@ const candidates = [
         pledge: "#",
         decl: "#",
         donation: "#",
-        dateAdded: "2026-04-23",
+        dateAdded: "2026-04-24",
         coords: [
             35.504401,
             129.374238
@@ -4611,7 +4721,6 @@ const candidates = [
     },
     {
         name: "최신성",
-        visibility: "preliminary",
         region: "울산광역시",
         metropolitan: "울산광역시",
         shortMetro: "울산",
@@ -4619,13 +4728,14 @@ const candidates = [
         constituencyFull: "남구 제5선거구",
         category: "광역의원",
         office: "울산시의원",
-        status: "출마예정",
+        showPreliminaryBadge: true,
+        status: "예비후보",
         subRegion: "달동, 수암동",
         bio: [
             "제7,8대 남구의회 의원",
             "남구 의회운영위원장"
         ],
-        photo: "https://i.imgur.com/LgC0Mbj.png",
+        photo: "https://i.imgur.com/xWhuZOQ.png",
         sns: {
             fb: ""
         },
@@ -4689,7 +4799,7 @@ const candidates = [
         dateAdded: "2026-04-23",
         coords: [
             35.535388,
-            129.32285
+            129.322850
         ]
     },
     {
@@ -4714,7 +4824,7 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-23",
         coords: [
-            35.49129,
+            35.491290,
             129.351269
         ]
     },
@@ -4740,7 +4850,7 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-23",
         coords: [
-            35.524458,
+            35.524458, 
             129.290415
         ]
     },
@@ -4773,7 +4883,7 @@ const candidates = [
             129.312083
         ]
     }
-];
+ ];
 
 
 
