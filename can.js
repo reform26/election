@@ -602,7 +602,7 @@ const candidates = [
         dateAdded: "2026-04-24",
         coords: [
             36.650683,
-            127.48825
+            127.488250
         ]
     },
     {
@@ -2718,57 +2718,6 @@ const candidates = [
         ]
     },
     {
-        name: "김태근",
-        region: "경북 포항시",
-        metropolitan: "경상북도",
-        category: "기초의원",
-        office: "기초의원",
-        age: 65,
-        status: "예비후보",
-        subRegion: "북구 용흥동, 우창동",
-        bio: [
-            "전) 포항시 우창동 재향군인회 회장"
-        ],
-        photo: "",
-        district: "다",
-        sns: {
-            fb: "https://www.facebook.com/profile.php?id=61587826521843"
-        },
-        pledge: "#",
-        decl: "#",
-        donation: "https://givemoney.kr/politicians/135",
-        dateAdded: "2026-02-12",
-        coords: [
-            36.032,
-            129.36
-        ]
-    },
-    {
-        name: "김태현",
-        region: "경북 포항시",
-        metropolitan: "경상북도",
-        category: "기초의원",
-        office: "기초의원",
-        status: "공천확정",
-        subRegion: "북구 두호동, 양덕동, 환여동",
-        bio: [
-            "포항시 마선거구 공천확정"
-        ],
-        photo: "",
-        district: "마",
-        sns: {
-            fb: "#"
-        },
-        pledge: "#",
-        decl: "#",
-        donation: "#",
-        dateAdded: "2026-02-12",
-        coords: [
-            36.1042,
-            129.3651
-        ]
-    },
-    {
         name: "정진호",
         slogan: "한울본부와 함께 만드는 울진의 미래도시 감사합니다 정진호입니다.",
         region: "경북 울진군",
@@ -2905,33 +2854,6 @@ const candidates = [
         coords: [
             37.5602,
             127.0826
-        ]
-    },
-    {
-        name: "강민수",
-        region: "인천 제물포구",
-        metropolitan: "인천광역시",
-        category: "기초의원",
-        office: "제물포구의회",
-        district: "가",
-        age: 22,
-        status: "공천확정",
-        subRegion: "신포동, 연안동, 신흥동, 도원동, 율목동, 동인천동, 개항동",
-        bio: [
-            "개혁신당 제물포구 지역발전특위 부위원장"
-        ],
-        photo: "https://i.imgur.com/1VWN79v.png",
-        sns: {
-            fb: "#",
-            ig: "https://www.instagram.com/cometrue_minsu/"
-        },
-        pledge: "#",
-        decl: "#",
-        donation: "https://givemoney.kr/politicians/83",
-        dateAdded: "2026-03-05",
-        coords: [
-            37.4745,
-            126.6177
         ]
     },
     {
@@ -3397,7 +3319,7 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-24",
         coords: [
-            37.207775,
+            37.207775, 
             127.056313
         ]
     },
@@ -3978,8 +3900,8 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-23",
         coords: [
-            37.528145,
-            126.916286
+           37.528145,
+           126.916286
         ]
     },
     {
@@ -4353,7 +4275,7 @@ const candidates = [
         donation: "https://givemoney.kr/politicians/175/",
         dateAdded: "2026-04-20",
         coords: [
-            37.534,
+            37.5340,
             126.9886
         ]
     },
@@ -4449,7 +4371,7 @@ const candidates = [
         donation: "https://givemoney.kr/politicians/184",
         dateAdded: "2026-04-20",
         coords: [
-            35.136,
+            35.1360,
             126.7979
         ]
     },
@@ -4631,7 +4553,7 @@ const candidates = [
         dateAdded: "2026-04-23",
         coords: [
             37.543227,
-            126.87322
+            126.873220
         ]
     },
     {
@@ -4658,8 +4580,8 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-22",
         coords: [
-            37.3749,
-            126.729348
+           37.374900,
+           126.729348
         ]
     },
     {
@@ -4673,7 +4595,7 @@ const candidates = [
         status: "예비후보",
         bio: [
             "제8대 울산시의원",
-            "제6,7대 남구의회 의원",
+            "제6,7대 남구의회 의원", 
             "울산시의회의원 예산결산특별위원장"
         ],
         photo: "https://i.imgur.com/TbQkeLr.png",
@@ -4799,7 +4721,7 @@ const candidates = [
         dateAdded: "2026-04-23",
         coords: [
             35.535388,
-            129.32285
+            129.322850
         ]
     },
     {
@@ -4824,7 +4746,7 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-23",
         coords: [
-            35.49129,
+            35.491290,
             129.351269
         ]
     },
@@ -4850,7 +4772,7 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-23",
         coords: [
-            35.524458,
+            35.524458, 
             129.290415
         ]
     },
@@ -4883,7 +4805,7 @@ const candidates = [
             129.312083
         ]
     }
-];
+ ];
 
 
 
