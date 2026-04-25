@@ -602,7 +602,7 @@ const candidates = [
         dateAdded: "2026-04-24",
         coords: [
             36.650683,
-            127.48825
+            127.488250
         ]
     },
     {
@@ -1825,7 +1825,8 @@ const candidates = [
         photo: "",
         district: "다",
         sns: {
-            fb: "#"
+            fb: "#",
+            ig: "https://www.instagram.com/simjh2026/"
         },
         pledge: "#",
         decl: "#",
@@ -1934,9 +1935,10 @@ const candidates = [
             "개혁신당 성남시 지역발전특위 부위원장",
             "경기도당 성남시 행정안전특위 위원장"
         ],
-        photo: "",
+        photo: "https://i.imgur.com/VPIRCz2.png",
         sns: {
-            fb: "#"
+            fb: "#",
+            ig: "https://www.instagram.com/sns.kbj/"
         },
         pledge: "https://policy.reformparty.kr/map?region_code=41&election_type=local_council&district_code=41%3A%EC%84%B1%EB%82%A8%EC%8B%9C%EC%A4%91%EC%9B%90%EA%B5%AC%3A%EC%82%AC%EC%84%A0%EA%B1%B0%EA%B5%AC",
         decl: "#",
@@ -2205,7 +2207,7 @@ const candidates = [
         status: "예비후보",
         subRegion: "동안구 호계1동, 호계2동, 호계3동, 신촌동",
         bio: [
-            "안양시 아선거구 예비후보"
+            "전) 대주건설 경기 개발본부장"
         ],
         photo: "",
         district: "아",
@@ -2294,7 +2296,8 @@ const candidates = [
         ],
         photo: "",
         sns: {
-            fb: "#"
+            fb: "#",
+            ig: "https://www.instagram.com/cmzkfn369/"
         },
         pledge: "#",
         decl: "#",
@@ -2870,7 +2873,8 @@ const candidates = [
         photo: "",
         district: "사",
         sns: {
-            fb: "#"
+            fb: "#",
+            ig: "https://www.instagram.com/fmpark0213/"
         },
         pledge: "#",
         decl: "#",
@@ -3320,7 +3324,7 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-24",
         coords: [
-            37.207775,
+            37.207775, 
             127.056313
         ]
     },
@@ -3901,8 +3905,8 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-23",
         coords: [
-            37.528145,
-            126.916286
+           37.528145,
+           126.916286
         ]
     },
     {
@@ -4276,7 +4280,7 @@ const candidates = [
         donation: "https://givemoney.kr/politicians/175/",
         dateAdded: "2026-04-20",
         coords: [
-            37.534,
+            37.5340,
             126.9886
         ]
     },
@@ -4372,7 +4376,7 @@ const candidates = [
         donation: "https://givemoney.kr/politicians/184",
         dateAdded: "2026-04-20",
         coords: [
-            35.136,
+            35.1360,
             126.7979
         ]
     },
@@ -4554,7 +4558,7 @@ const candidates = [
         dateAdded: "2026-04-23",
         coords: [
             37.543227,
-            126.87322
+            126.873220
         ]
     },
     {
@@ -4581,8 +4585,8 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-22",
         coords: [
-            37.3749,
-            126.729348
+           37.374900,
+           126.729348
         ]
     },
     {
@@ -4596,7 +4600,7 @@ const candidates = [
         status: "예비후보",
         bio: [
             "제8대 울산시의원",
-            "제6,7대 남구의회 의원",
+            "제6,7대 남구의회 의원", 
             "울산시의회의원 예산결산특별위원장"
         ],
         photo: "https://i.imgur.com/TbQkeLr.png",
@@ -4722,7 +4726,7 @@ const candidates = [
         dateAdded: "2026-04-23",
         coords: [
             35.535388,
-            129.32285
+            129.322850
         ]
     },
     {
@@ -4747,7 +4751,7 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-23",
         coords: [
-            35.49129,
+            35.491290,
             129.351269
         ]
     },
@@ -4773,7 +4777,7 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-23",
         coords: [
-            35.524458,
+            35.524458, 
             129.290415
         ]
     },
@@ -4806,7 +4810,7 @@ const candidates = [
             129.312083
         ]
     }
-];
+ ];
 
 
 
