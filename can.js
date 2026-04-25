@@ -602,7 +602,7 @@ const candidates = [
         dateAdded: "2026-04-24",
         coords: [
             36.650683,
-            127.48825
+            127.488250
         ]
     },
     {
@@ -2344,7 +2344,7 @@ const candidates = [
         office: "화성시의원",
         age: 37,
         status: "예비후보",
-        subRegion: "효행구 봉담읍, 기배동, 병점구 화산동",
+        subRegion: "효행구 봉담읍, 기배동",
         bio: [
             "민주평화통일자문회의 자문위원",
             "뉴케이팝댄스학원 원장"
@@ -3324,7 +3324,7 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-24",
         coords: [
-            37.207775,
+            37.207775, 
             127.056313
         ]
     },
@@ -3905,8 +3905,8 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-23",
         coords: [
-            37.528145,
-            126.916286
+           37.528145,
+           126.916286
         ]
     },
     {
@@ -4280,7 +4280,7 @@ const candidates = [
         donation: "https://givemoney.kr/politicians/175/",
         dateAdded: "2026-04-20",
         coords: [
-            37.534,
+            37.5340,
             126.9886
         ]
     },
@@ -4376,7 +4376,7 @@ const candidates = [
         donation: "https://givemoney.kr/politicians/184",
         dateAdded: "2026-04-20",
         coords: [
-            35.136,
+            35.1360,
             126.7979
         ]
     },
@@ -4498,7 +4498,7 @@ const candidates = [
             "전) 경기도 명예감사관",
             "전) 한국도로공사 자문위원(군포지사)"
         ],
-        photo: "",
+        photo: "https://i.imgur.com/bpTujCH.png",
         sns: {
             fb: ""
         },
@@ -4558,7 +4558,7 @@ const candidates = [
         dateAdded: "2026-04-23",
         coords: [
             37.543227,
-            126.87322
+            126.873220
         ]
     },
     {
@@ -4585,8 +4585,8 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-22",
         coords: [
-            37.3749,
-            126.729348
+           37.374900,
+           126.729348
         ]
     },
     {
@@ -4600,7 +4600,7 @@ const candidates = [
         status: "예비후보",
         bio: [
             "제8대 울산시의원",
-            "제6,7대 남구의회 의원",
+            "제6,7대 남구의회 의원", 
             "울산시의회의원 예산결산특별위원장"
         ],
         photo: "https://i.imgur.com/TbQkeLr.png",
@@ -4726,7 +4726,7 @@ const candidates = [
         dateAdded: "2026-04-23",
         coords: [
             35.535388,
-            129.32285
+            129.322850
         ]
     },
     {
@@ -4751,7 +4751,7 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-23",
         coords: [
-            35.49129,
+            35.491290,
             129.351269
         ]
     },
@@ -4777,7 +4777,7 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-23",
         coords: [
-            35.524458,
+            35.524458, 
             129.290415
         ]
     },
@@ -4810,7 +4810,7 @@ const candidates = [
             129.312083
         ]
     }
-];
+ ];
 
 
 
