@@ -603,7 +603,7 @@ const candidates = [
         dateAdded: "2026-04-24",
         coords: [
             36.650683,
-            127.48825
+            127.488250
         ]
     },
     {
@@ -3328,7 +3328,7 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-24",
         coords: [
-            37.207775,
+            37.207775, 
             127.056313
         ]
     },
@@ -3908,8 +3908,8 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-23",
         coords: [
-            37.528145,
-            126.916286
+           37.528145,
+           126.916286
         ]
     },
     {
@@ -3982,7 +3982,7 @@ const candidates = [
         ],
         photo: "https://i.imgur.com/v1UfClC.png",
         sns: {
-            ig: "https://www.instagram.com/daniel_star_kim/"
+           ig: "https://www.instagram.com/daniel_star_kim/"
         },
         pledge: "#",
         decl: "#",
@@ -4285,7 +4285,7 @@ const candidates = [
         donation: "https://givemoney.kr/politicians/175/",
         dateAdded: "2026-04-20",
         coords: [
-            37.534,
+            37.5340,
             126.9886
         ]
     },
@@ -4382,7 +4382,7 @@ const candidates = [
         donation: "https://givemoney.kr/politicians/184",
         dateAdded: "2026-04-20",
         coords: [
-            35.136,
+            35.1360,
             126.7979
         ]
     },
@@ -4518,6 +4518,62 @@ const candidates = [
         ]
     },
     {
+        name: "민경록",
+        region: "경기 수원시",
+        showPreliminaryBadge: true,
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "수원시의원",
+        district: "바",
+        subRegion: "팔달구 매교동, 매산동, 고등동, 화서1동, 화서2동",
+        age: 52,
+        status: "예비후보",
+        bio: [
+            "전)팔달구 주민자치협의회 회장",
+            "전)팔달구 주민참여예산위 위원장"
+        ],
+        photo: "https://i.imgur.com/Ibo2ARg.png",
+        sns: {
+            fb: ""
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-04-27",
+        coords: [
+            37.280977,
+            127.000004
+        ]
+    },
+    {
+        name: "손영훈",
+        region: "충남 계룡시",
+        showPreliminaryBadge: true,
+        metropolitan: "충청남도",
+        category: "기초의원",
+        office: "계룡시의원",
+        district: "가",
+        subRegion: "두마면, 신도안면, 금암동",
+        age: 60,
+        status: "예비후보",
+        bio: [
+            "현)델파이어태치 대표",
+            "현)계룡시 황토길 걷기협회 회장"
+        ],
+        photo: "",
+        sns: {
+            fb: ""
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-04-27",
+        coords: [
+            36.274753,
+            127.253399
+        ]
+    },
+    {
         name: "최재혁",
         region: "서울 서대문구",
         metropolitan: "서울특별시",
@@ -4564,7 +4620,7 @@ const candidates = [
         dateAdded: "2026-04-23",
         coords: [
             37.543227,
-            126.87322
+            126.873220
         ]
     },
     {
@@ -4591,8 +4647,8 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-22",
         coords: [
-            37.3749,
-            126.729348
+           37.374900,
+           126.729348
         ]
     },
     {
@@ -4606,7 +4662,7 @@ const candidates = [
         status: "예비후보",
         bio: [
             "제8대 울산시의원",
-            "제6,7대 남구의회 의원",
+            "제6,7대 남구의회 의원", 
             "울산시의회의원 예산결산특별위원장"
         ],
         photo: "https://i.imgur.com/TbQkeLr.png",
@@ -4732,7 +4788,7 @@ const candidates = [
         dateAdded: "2026-04-23",
         coords: [
             35.535388,
-            129.32285
+            129.322850
         ]
     },
     {
@@ -4757,7 +4813,7 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-23",
         coords: [
-            35.49129,
+            35.491290,
             129.351269
         ]
     },
@@ -4783,7 +4839,7 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-23",
         coords: [
-            35.524458,
+            35.524458, 
             129.290415
         ]
     },
@@ -4816,7 +4872,7 @@ const candidates = [
             129.312083
         ]
     }
-];
+ ];
 
 
 
