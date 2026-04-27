@@ -603,7 +603,7 @@ const candidates = [
         dateAdded: "2026-04-24",
         coords: [
             36.650683,
-            127.48825
+            127.488250
         ]
     },
     {
@@ -702,7 +702,8 @@ const candidates = [
         metropolitan: "서울특별시",
         category: "기초의원",
         office: "강남구의원",
-        status: "공천확정",
+        status: "예비후보",
+        age: 26,
         subRegion: "개포제3동, 일원본동, 일원제1동",
         bio: [
             "서울시당 대변인",
@@ -710,7 +711,7 @@ const candidates = [
             "한국자동차연구원 연구원",
             "전) 소프트웨어/AI 강사"
         ],
-        photo: "",
+        photo: "https://i.imgur.com/QhIoPls.png",
         district: "마",
         sns: {
             fb: "#",
@@ -718,7 +719,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "https://www.instagram.com/p/DUll53qEl7Z/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
-        donation: "#",
+        donation: "https://givemoney.kr/politicians/124",
         dateAdded: "2026-02-05",
         coords: [
             37.4813,
@@ -2702,7 +2703,8 @@ const candidates = [
         metropolitan: "경상북도",
         category: "기초의원",
         office: "포항시의회",
-        status: "공천확정",
+        status: "예비후보",
+        age: 73,
         district: "바",
         subRegion: "북구 장량동",
         bio: [
@@ -3328,7 +3330,7 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-24",
         coords: [
-            37.207775,
+            37.207775, 
             127.056313
         ]
     },
@@ -3908,8 +3910,8 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-23",
         coords: [
-            37.528145,
-            126.916286
+           37.528145,
+           126.916286
         ]
     },
     {
@@ -3982,7 +3984,7 @@ const candidates = [
         ],
         photo: "https://i.imgur.com/v1UfClC.png",
         sns: {
-            ig: "https://www.instagram.com/daniel_star_kim/"
+           ig: "https://www.instagram.com/daniel_star_kim/"
         },
         pledge: "#",
         decl: "#",
@@ -4285,7 +4287,7 @@ const candidates = [
         donation: "https://givemoney.kr/politicians/175/",
         dateAdded: "2026-04-20",
         coords: [
-            37.534,
+            37.5340,
             126.9886
         ]
     },
@@ -4382,7 +4384,7 @@ const candidates = [
         donation: "https://givemoney.kr/politicians/184",
         dateAdded: "2026-04-20",
         coords: [
-            35.136,
+            35.1360,
             126.7979
         ]
     },
@@ -4439,22 +4441,24 @@ const candidates = [
         region: "경기 과천시",
         metropolitan: "경기도",
         category: "기초단체장",
-        visibility: "preliminary",
+        showPreliminaryBadge: true,
+        age: 53,
+        gender: "f",
         office: "과천시장",
-        status: "출마예정",
+        status: "예비후보",
         bio: [
             "제7,8대 과천시의원",
             "제8대 과천시의회 의장(후기)",
             "제8대 과천시의회 부의장(전기)"
         ],
-        photo: "https://i.imgur.com/K2eldve.jpeg",
+        photo: "https://i.imgur.com/sA6Zbmx.png",
         sns: {
             fb: "https://www.facebook.com/keumran.go/"
         },
         pledge: "#",
         decl: "#",
         donation: "#",
-        dateAdded: "2026-04-20",
+        dateAdded: "2026-04-27",
         coords: [
             37.4292,
             126.9876
@@ -4620,7 +4624,7 @@ const candidates = [
         dateAdded: "2026-04-23",
         coords: [
             37.543227,
-            126.87322
+            126.873220
         ]
     },
     {
@@ -4633,7 +4637,7 @@ const candidates = [
         district: "마",
         subRegion: "정왕3동, 정왕4동, 배곧1동, 배곧2동",
         age: 59,
-        status: "출마선언",
+        status: "예비후보",
         bio: [
             "제9대 시흥시의회 의원",
             "(주) 주능스틸 대표이사"
@@ -4647,8 +4651,36 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-22",
         coords: [
-            37.3749,
-            126.729348
+           37.374900,
+           126.729348
+        ]
+    },
+    {
+        name: "김영수",
+        region: "경기 시흥시",
+        showPreliminaryBadge: true,
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "시흥시의원",
+        district: "마",
+        subRegion: "정왕3동, 정왕4동, 배곧1동, 배곧2동",
+        age: 42,
+        status: "예비후보",
+        bio: [
+            "<span style='letter-spacing:-0.12em;'>전) 패스트파이브 파이브스팟 서비스기획 총괄</span>",
+            "<span style='letter-spacing:-0.12em;'>전) 라운즈(ROUNZ) 서비스기획팀 팀장</span>",
+        ],
+        photo: "",
+        sns: {
+            fb: ""
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-04-27",
+        coords: [
+           37.374910,
+           126.729349
         ]
     },
     {
@@ -4662,7 +4694,7 @@ const candidates = [
         status: "예비후보",
         bio: [
             "제8대 울산시의원",
-            "제6,7대 남구의회 의원",
+            "제6,7대 남구의회 의원", 
             "울산시의회의원 예산결산특별위원장"
         ],
         photo: "https://i.imgur.com/TbQkeLr.png",
@@ -4739,7 +4771,9 @@ const candidates = [
     },
     {
         name: "김소라",
-        visibility: "preliminary",
+        showPreliminaryBadge: true,
+        age: 52,
+        gender: "f",
         region: "울산광역시",
         metropolitan: "울산광역시",
         shortMetro: "울산",
@@ -4747,10 +4781,11 @@ const candidates = [
         constituencyFull: "남구 제6선거구",
         category: "광역의원",
         office: "울산시의원",
-        status: "출마예정",
+        status: "예비후보",
         subRegion: "대현동, 선암동",
         bio: [
-            "현) 대현동 주민자치위원장"
+            "현) 대현동 체육회 회장",
+            "전) 대현동 주민자치위원장"
         ],
         photo: "",
         sns: {
@@ -4759,7 +4794,7 @@ const candidates = [
         pledge: "#",
         decl: "#",
         donation: "#",
-        dateAdded: "2026-04-23",
+        dateAdded: "2026-04-27",
         coords: [
             35.491296,
             129.351261
@@ -4767,16 +4802,18 @@ const candidates = [
     },
     {
         name: "정일경",
-        visibility: "preliminary",
+        showPreliminaryBadge: true,
+        age: 30,
         region: "울산 남구",
         metropolitan: "울산광역시",
         category: "기초의원",
         office: "남구의원",
         district: "마",
         subRegion: "달동, 수암동",
-        status: "출마예정",
+        status: "예비후보",
         bio: [
-            "남구 마선거구 출마예정"
+            "<span style='letter-spacing:-0.12em;'>현)한국자유총연맹 울산남구지회 달동위원회 회원</span>",
+            "<span style='letter-spacing:-0.12em;'>전)울산과학대학교 총학생회 기획부장</span>"
         ],
         photo: "",
         sns: {
@@ -4785,24 +4822,26 @@ const candidates = [
         pledge: "#",
         decl: "#",
         donation: "#",
-        dateAdded: "2026-04-23",
+        dateAdded: "2026-04-27",
         coords: [
             35.535388,
-            129.32285
+            129.322850
         ]
     },
     {
         name: "김근우",
-        visibility: "preliminary",
+        showPreliminaryBadge: true,
+        age: 45,
         region: "울산 남구",
         metropolitan: "울산광역시",
         category: "기초의원",
         office: "남구의원",
         district: "바",
         subRegion: "대현동, 선암동",
-        status: "출마예정",
+        status: "예비후보",
         bio: [
-            "현) 울산 강남라이온스 회장"
+            "현) 울산 강남라이온스 회장",
+            "현) 울산 청담로타리클럽회원"
         ],
         photo: "",
         sns: {
@@ -4811,15 +4850,17 @@ const candidates = [
         pledge: "#",
         decl: "#",
         donation: "#",
-        dateAdded: "2026-04-23",
+        dateAdded: "2026-04-27",
         coords: [
-            35.49129,
+            35.491290,
             129.351269
         ]
     },
     {
         name: "박소영",
-        visibility: "preliminary",
+        showPreliminaryBadge: true,
+        age: 48,
+        gender: "f",
         region: "울산 남구",
         metropolitan: "울산광역시",
         category: "기초의원",
@@ -4828,7 +4869,8 @@ const candidates = [
         subRegion: "신정4동, 옥동",
         status: "출마예정",
         bio: [
-            "현) 신정4동 주민자치위원회 사무국장"
+            "현) 신정4동 주민자치위원회 사무국장",
+            "현) 신정4동 체육회 재무국장"
         ],
         photo: "",
         sns: {
@@ -4837,9 +4879,9 @@ const candidates = [
         pledge: "#",
         decl: "#",
         donation: "#",
-        dateAdded: "2026-04-23",
+        dateAdded: "2026-04-27",
         coords: [
-            35.524458,
+            35.524458, 
             129.290415
         ]
     },
@@ -4872,7 +4914,7 @@ const candidates = [
             129.312083
         ]
     }
-];
+ ];
 
 
 
