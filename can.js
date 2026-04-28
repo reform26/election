@@ -604,7 +604,7 @@ const candidates = [
         dateAdded: "2026-04-24",
         coords: [
             36.650683,
-            127.48825
+            127.488250
         ]
     },
     {
@@ -1204,7 +1204,7 @@ const candidates = [
             "전) 서울대학교병원 근무"
         ],
         photo: "https://i.imgur.com/lR9f7RW.png",
-        district: "마",
+        district: "라",
         sns: {
             fb: "#"
         },
@@ -1231,7 +1231,7 @@ const candidates = [
             "오오더블유 대표"
         ],
         photo: "https://i.imgur.com/ltw22IP.jpeg",
-        district: "아",
+        district: "사",
         sns: {
             fb: "#",
             ig: "https://www.instagram.com/_oneofwon"
@@ -1280,13 +1280,13 @@ const candidates = [
         office: "강동구의원",
         age: 31,
         status: "예비후보",
-        subRegion: "성내1·2·3동, 둔촌제1·2동",
+        subRegion: "길동, 둔촌제1동, 둔촌제2동",
         bio: [
             "서울시당 환경위원장",
             "개혁신당 21대 대선 위기대응팀"
         ],
         photo: "",
-        district: "바",
+        district: "사",
         sns: {
             fb: "https://www.facebook.com/profile.php?id=61557084968016",
             ig: "https://www.instagram.com/dunchon_reform/"
@@ -1369,9 +1369,9 @@ const candidates = [
             "달서구 갑 당협위원장 직무대행"
         ],
         photo: "https://i.imgur.com/tDOB9Rh.jpeg",
-        district: "나",
+        district: "다",
         sns: {
-            fb: "#"
+            fb: "https://www.facebook.com/bagjong.gil.681338"
         },
         pledge: "#",
         decl: "https://www.youtube.com/live/ixdTcenUjMw?si=62KazlMWdC6ciOpY",
@@ -1662,7 +1662,7 @@ const candidates = [
         sns: {
             fb: "#",
             ig: "https://www.instagram.com/official_yongjun",
-            blog: "https://blog.naver.com/onedaylife97"
+            blog : "https://blog.naver.com/onedaylife97"
         },
         pledge: "#",
         decl: "https://rallypoint.kr/board/politics-free/224918",
@@ -2710,7 +2710,7 @@ const candidates = [
         status: "예비후보",
         age: 73,
         district: "바",
-        subRegion: "북구 장량동",
+        subRegion: "북구 장량동(장성동)",
         bio: [
             "제5-9대 포항시의회 의원 (5선)",
             "포항시 북구 당협위원장"
@@ -2824,7 +2824,7 @@ const candidates = [
         category: "기초의원",
         office: "익산시의회",
         status: "공천확정",
-        subRegion: "남중동, 신동, 오산면",
+        subRegion: "영등2동, 신동, 오산면",
         bio: [
             "익산시 다선거구 공천확정"
         ],
@@ -2988,18 +2988,18 @@ const candidates = [
         office: "강동구의회",
         age: 39,
         status: "예비후보",
-        subRegion: "천호1동, 천호3동",
+        subRegion: "성내제1동, 성내제2동, 성내제3동",
         bio: [
             "서울시당 대변인",
             "개혁신당 강동구 지역발전특위 부위원장"
         ],
         photo: "https://i.imgur.com/XAloD7H.png",
-        district: "라",
+        district: "바",
         sns: {
             fb: "https://www.facebook.com/profile.php?id=61576886771004",
             ig: "https://www.instagram.com/jminwoo712",
             yt: "https://www.youtube.com/@tomygod123",
-            blog: "https://blog.naver.com/jminwoo712"
+            blog : "https://blog.naver.com/jminwoo712"
         },
         pledge: "#",
         decl: "#",
@@ -3073,7 +3073,7 @@ const candidates = [
         category: "기초의원",
         office: "영주시의회",
         status: "공천확정",
-        subRegion: "휴천1동, 휴천2동",
+        subRegion: "휴천2동, 휴천3동",
         bio: [
             "영주시 마선거구 공천확정"
         ],
@@ -3339,7 +3339,7 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-24",
         coords: [
-            37.207775,
+            37.207775, 
             127.056313
         ]
     },
@@ -3920,8 +3920,8 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-23",
         coords: [
-            37.528145,
-            126.916286
+           37.528145,
+           126.916286
         ]
     },
     {
@@ -3994,7 +3994,7 @@ const candidates = [
         ],
         photo: "https://i.imgur.com/v1UfClC.png",
         sns: {
-            ig: "https://www.instagram.com/daniel_star_kim/"
+           ig: "https://www.instagram.com/daniel_star_kim/"
         },
         pledge: "#",
         decl: "#",
@@ -4297,7 +4297,7 @@ const candidates = [
         donation: "https://givemoney.kr/politicians/175/",
         dateAdded: "2026-04-20",
         coords: [
-            37.534,
+            37.5340,
             126.9886
         ]
     },
@@ -4390,14 +4390,14 @@ const candidates = [
         ],
         photo: "https://i.imgur.com/OXhWgZh.png",
         sns: {
-            ig: "https://www.instagram.com/mini_l.e.e/"
-        },
+          ig : "https://www.instagram.com/mini_l.e.e/"
+          },
         pledge: "#",
         decl: "#",
         donation: "https://givemoney.kr/politicians/184",
         dateAdded: "2026-04-20",
         coords: [
-            35.136,
+            35.1360,
             126.7979
         ]
     },
@@ -4467,7 +4467,7 @@ const candidates = [
         photo: "https://i.imgur.com/sA6Zbmx.png",
         sns: {
             fb: "https://www.facebook.com/keumran.go/",
-            blog: "https://blog.naver.com/mulan1997"
+            blog : "https://blog.naver.com/mulan1997"
         },
         pledge: "#",
         decl: "#",
@@ -4638,7 +4638,7 @@ const candidates = [
         dateAdded: "2026-04-23",
         coords: [
             37.543227,
-            126.87322
+            126.873220
         ]
     },
     {
@@ -4665,8 +4665,8 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-22",
         coords: [
-            37.3749,
-            126.729348
+           37.374900,
+           126.729348
         ]
     },
     {
@@ -4682,7 +4682,7 @@ const candidates = [
         status: "예비후보",
         bio: [
             "<span style='letter-spacing:-0.12em;'>전) 패스트파이브 파이브스팟 서비스기획 총괄</span>",
-            "<span style='letter-spacing:-0.12em;'>전) 라운즈(ROUNZ) 서비스기획팀 팀장</span>"
+            "<span style='letter-spacing:-0.12em;'>전) 라운즈(ROUNZ) 서비스기획팀 팀장</span>",
         ],
         photo: "",
         sns: {
@@ -4693,8 +4693,8 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-27",
         coords: [
-            37.37491,
-            126.729349
+           37.374910,
+           126.729349
         ]
     },
     {
@@ -4708,12 +4708,13 @@ const candidates = [
         status: "예비후보",
         bio: [
             "제8대 울산시의원",
-            "제6,7대 남구의회 의원",
+            "제6,7대 남구의회 의원", 
             "울산시의회의원 예산결산특별위원장"
         ],
         photo: "https://i.imgur.com/TbQkeLr.png",
         sns: {
-            fb: "https://www.facebook.com/banginsup/"
+            fb: "https://www.facebook.com/bangja1234",
+            ig: "https://www.instagram.com/bang_in_seob"
         },
         pledge: "#",
         decl: "#",
@@ -4839,7 +4840,7 @@ const candidates = [
         dateAdded: "2026-04-27",
         coords: [
             35.535388,
-            129.32285
+            129.322850
         ]
     },
     {
@@ -4866,7 +4867,7 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-27",
         coords: [
-            35.49129,
+            35.491290,
             129.351269
         ]
     },
@@ -4895,7 +4896,7 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-27",
         coords: [
-            35.524458,
+            35.524458, 
             129.290415
         ]
     },
@@ -4928,7 +4929,7 @@ const candidates = [
             129.312083
         ]
     }
-];
+ ];
 
 
 
