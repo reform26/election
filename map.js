@@ -6,6 +6,10 @@ let leafletMarkers = [];
 let leafletLoaded = false;
 let currentMapCategory = '전체';
 
+// ── 접속자 위치 (Geolocation) ──
+let userLocation = null;          // [lat, lng] | null
+let userLocationMarker = null;    // L.circleMarker
+
 // ── Nominatim 지오코딩 쿼리 생성 ──
 function buildGeoQuery(cand) {
     const cat = cand.category;
@@ -104,6 +108,48 @@ async function getCoords(cand, cache) {
     return null;
 }
 
+// ── 접속자 위치 가져오기 (Promise 래핑) ──
+function fetchUserLocation() {
+    return new Promise((resolve) => {
+        if (!navigator.geolocation) { resolve(null); return; }
+        navigator.geolocation.getCurrentPosition(
+            (pos) => resolve([pos.coords.latitude, pos.coords.longitude]),
+            ()    => resolve(null),   // 거부·오류 시 null 반환 (기본 뷰로 폴백)
+            { timeout: 6000, maximumAge: 60000 }
+        );
+    });
+}
+
+// ── 접속자 위치 마커 표시 ──
+function placeUserMarker(latlng) {
+    if (userLocationMarker) { userLocationMarker.remove(); userLocationMarker = null; }
+    if (!latlng || !leafletMap) return;
+
+    // 외곽 pulse 원
+    const pulse = L.circleMarker(latlng, {
+        radius: 18, color: '#38bdf8', weight: 2,
+        fillColor: '#38bdf8', fillOpacity: 0.15,
+    }).addTo(leafletMap);
+
+    // 내부 점
+    const dot = L.circleMarker(latlng, {
+        radius: 7, color: '#fff', weight: 2,
+        fillColor: '#0ea5e9', fillOpacity: 1,
+    }).bindPopup(
+        `<div style="background:#0f172a;padding:10px 12px;font-family:'Pretendard','Noto Sans KR',sans-serif;font-size:0.8rem;color:#e2e8f0;white-space:nowrap;">
+            📍 <strong style="color:#38bdf8;">현재 내 위치</strong>
+        </div>`,
+        { maxWidth: 200 }
+    ).addTo(leafletMap);
+
+    // 두 마커를 함께 관리하기 위해 layer group 사용
+    userLocationMarker = L.layerGroup([pulse, dot]).addTo(leafletMap);
+    // layerGroup에 remove()를 직접 쓸 수 있도록 override
+    userLocationMarker.remove = () => {
+        pulse.remove(); dot.remove();
+    };
+}
+
 // ── 지도 열기 ──
 window.openAllCandidatesMap = function() {
     const overlay = document.getElementById('all-candidates-map-overlay');
@@ -124,15 +170,37 @@ window.openAllCandidatesMap = function() {
 window.closeAllCandidatesMap = function() {
     document.getElementById('all-candidates-map-overlay').style.display = 'none';
     document.body.style.overflow = '';
+    // 프로필 모달 z-index 원복
+    var pm = document.getElementById('profile-modal-overlay');
+    if (pm) pm.style.zIndex = '1000';
 };
 
-function initLeafletMap() {
+// ── Leaflet 지도 초기화 ──
+async function initLeafletMap() {
+    // 위치 권한 요청을 지도 초기화 전에 미리 시작
+    const locPromise = fetchUserLocation();
+
+    // 일단 전국 뷰로 지도 생성
     leafletMap = L.map('all-candidates-leaflet-map', {
         center: [36.5, 127.8], zoom: 7, zoomControl: true,
     });
     L.tileLayer('https://tiles.osm.kr/hot/{z}/{x}/{y}.png', {
         attribution: '© <a href="https://osm.kr/">OSM Korea</a> contributors', maxZoom: 19,
     }).addTo(leafletMap);
+
+    // 위치 결과 대기
+    const subtitle = document.getElementById('all-map-subtitle');
+    subtitle.innerText = '내 위치를 확인하는 중...';
+
+    userLocation = await locPromise;
+
+    if (userLocation) {
+        // 위치 획득 성공 → 해당 위치로 줌
+        leafletMap.setView(userLocation, 12);
+        placeUserMarker(userLocation);
+    }
+    // 위치 거부·실패 시 전국 뷰 그대로 유지
+
     loadAndPlaceMarkers();
 }
 
@@ -169,7 +237,9 @@ async function loadAndPlaceMarkers() {
     }
 
     saveCache(cache);
-    subtitle.innerText = `${placed}명 표시 중${pending.length > 0 ? ` (좌표 없음 ${pending.length}명)` : ' ✓'} · 마커를 클릭하면 상세 정보`;
+
+    const locNote = userLocation ? ' 📍 내 위치 기준 확대' : '';
+    subtitle.innerText = `${placed}명 표시 중${pending.length > 0 ? ` (좌표 없음 ${pending.length}명)` : ' ✓'}${locNote} · 마커를 클릭하면 상세 정보`;
 }
 
 const _coordCount = {};
@@ -236,13 +306,29 @@ function addMarker(cand, coords, colorMap, sizeMap) {
     }
     const officeLabel = getOfficeLabel(cand);
 
+    // 이름에 작은따옴표가 있을 경우 이스케이프
+    const escapedName = cand.name.replace(/'/g, "\\'");
+
     const popupHtml = `
-        <div style="background:#0f172a;padding:12px 14px;min-width:170px;font-family:'Pretendard','Noto Sans KR',sans-serif;">
+        <div style="background:#0f172a;padding:12px 14px;min-width:180px;font-family:'Pretendard','Noto Sans KR',sans-serif;">
             <div style="font-size:1rem;font-weight:900;color:#FF6600;margin-bottom:3px;">${cand.name}</div>
             <div style="font-size:0.75rem;font-weight:700;color:#e2e8f0;">${officeLabel}${districtText}</div>
             <div style="font-size:0.7rem;color:#64748b;margin-top:2px;">${cand.region}</div>
             ${subRegionText}
             <div style="margin-top:6px;font-size:0.68rem;font-weight:800;color:white;">${statusText}</div>
+            <button
+                onclick="(function(){ if(leafletMap) leafletMap.closePopup(); if(typeof openProfileModal==='function'){ openProfileModal('${escapedName}'); var pm=document.getElementById('profile-modal-overlay'); if(pm) pm.style.zIndex='4000'; } })()"
+                style="
+                    margin-top:10px; width:100%; padding:6px 0;
+                    background:#FF6600; color:#fff;
+                    border:none; border-radius:6px;
+                    font-size:0.75rem; font-weight:800;
+                    cursor:pointer; letter-spacing:0.04em;
+                    transition:background 0.15s;
+                "
+                onmouseover="this.style.background='#e55a00'"
+                onmouseout="this.style.background='#FF6600'"
+            >상세보기 →</button>
         </div>`;
 
     const marker = L.marker([lat, lng], { icon })
@@ -272,3 +358,14 @@ document.addEventListener('keydown', function(e) {
 document.getElementById('all-candidates-map-overlay').addEventListener('click', function(e) {
     if (e.target === this) closeAllCandidatesMap();
 });
+
+// 프로필 모달이 닫힐 때(active 클래스 제거) z-index 원복
+(function() {
+    const pm = document.getElementById('profile-modal-overlay');
+    if (!pm) return;
+    new MutationObserver(function() {
+        if (!pm.classList.contains('active')) {
+            pm.style.zIndex = '1000';
+        }
+    }).observe(pm, { attributes: true, attributeFilter: ['class'] });
+})();
