@@ -1441,7 +1441,7 @@
         </div>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="can.js?v=0429.02" defer></script>   <script src="data1.js?v=0223.06" defer></script> <script src="search.js?v=0317.02" defer></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="can.js?v=0429.04" defer></script>   <script src="data1.js?v=0223.06" defer></script> <script src="search.js?v=0317.02" defer></script>
     <script>
         let currentModalCandidateName = '';
         let showOnlyConfirmed = false;
@@ -1830,7 +1830,17 @@
         }
 
         /* 유틸리티 함수 */
-        const councilSort = (a, b) => (a.region || "").localeCompare(b.region || "") || (a.district || "").localeCompare(b.district || "");
+        const councilSort = (a, b) => {
+            const regionCmp = (a.region || "").localeCompare(b.region || "");
+            if (regionCmp !== 0) return regionCmp;
+            // 같은 지역(시) 안에서 비례 후보는 맨 뒤로
+            const isAPro = a.constituency === "비례" || a.district === "비례";
+            const isBPro = b.constituency === "비례" || b.district === "비례";
+            if (isAPro !== isBPro) return isAPro ? 1 : -1;
+            // 같은 지역 비례 후보끼리: listOrder 순번으로 정렬
+            if (isAPro && isBPro) return (a.listOrder || 999) - (b.listOrder || 999);
+            return (a.district || "").localeCompare(b.district || "");
+        };
 
         function updateSummary() {
             const getCount = (cat) => candidates.filter(c => c.visibility !== "hidden" && c.visibility !== "preliminary" && c.category === cat).length;
@@ -2103,6 +2113,13 @@
                 const isProB = b.constituency === "비례";
                 if (isProA && !isProB) return 1;  
                 if (!isProA && isProB) return -1; 
+                // 같은 지역 비례 후보끼리: listOrder 순번으로 정렬
+                if (isProA && isProB) {
+                    const metroA = a.metropolitan || "";
+                    const metroB = b.metropolitan || "";
+                    if (metroA !== metroB) return metroA.localeCompare(metroB, 'ko');
+                    return (a.listOrder || 999) - (b.listOrder || 999);
+                }
                 return (a.district || a.constituencyFull || "").localeCompare(b.district || b.constituencyFull || "");
             });
             
@@ -2188,6 +2205,8 @@
                         const isAPro = a.constituency === "비례" || a.district === "비례";
                         const isBPro = b.constituency === "비례" || b.district === "비례";
                         if (isAPro !== isBPro) return isAPro ? 1 : -1;
+                        // 같은 지역 비례 후보끼리: listOrder 순번으로 정렬
+                        if (isAPro && isBPro) return (a.listOrder || 999) - (b.listOrder || 999);
                         
                         const nameA = (a.region || "") + (a.district || a.constituencyFull || "");
                         const nameB = (b.region || "") + (b.district || b.constituencyFull || "");
@@ -2307,6 +2326,9 @@
                     leftTagText = (c.shortMetro || c.region);
                 }
                 let rightTagText = c.district || (c.constituency === "비례" ? "비례" : "");
+                if ((c.constituency === "비례" || c.district === "비례") && c.listOrder) {
+                    rightTagText = `비례 ${c.listOrder}`;
+                }
                 let districtTag = rightTagText ? `<div class="district-tag dark:bg-slate-900 dark:text-orange-50 dark:border-orange-500">${rightTagText}</div>` : "";
                 const displayOffice = getCleanOffice(c);
                 return `
@@ -2352,6 +2374,9 @@
                 leftTagText = (c.shortMetro || c.region);
             }
             let rightTagText = c.district || (c.constituency === "비례" ? "비례" : "");
+            if ((c.constituency === "비례" || c.district === "비례") && c.listOrder) {
+                rightTagText = `비례 ${c.listOrder}`;
+            }
             let districtTag = rightTagText ? `<div class="district-tag dark:bg-slate-900 dark:text-orange-50 dark:border-orange-500">${rightTagText}</div>` : "";
             const isNoPhoto = !c.photo || c.photo.trim() === "";
             const fit = c.cardFit || "cover";
