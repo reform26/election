@@ -4591,7 +4591,8 @@ const candidates = [
         photo: "https://i.imgur.com/oAztGUW.png",
         sns: {
             ig: "https://www.instagram.com/kimyoojae69/",
-            fb: "https://www.facebook.com/profile.php?id=61583520560182"
+            fb: "https://www.facebook.com/profile.php?id=61583520560182",
+            blog: "https://blog.naver.com/kimyoonjae_"
         },
         pledge: "#",
         decl: "#",
