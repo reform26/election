@@ -1442,7 +1442,7 @@
         </div>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="can.js?v=0505.09" defer></script>   <script src="data1.js?v=0504.01" defer></script> <script src="search.js?v=0317.02" defer></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="can.js?v=0506.01" defer></script>   <script src="data1.js?v=0504.01" defer></script> <script src="search.js?v=0317.02" defer></script>
     <script>
         let currentModalCandidateName = '';
         let showOnlyConfirmed = false;
@@ -1966,6 +1966,7 @@
             else if (c.name === "주이삭") displayOfficeLabel = `서울특별시의회 서대문구 제1선거구 ${statusLabel}`;
             else if (c.name === "박상혁") displayOfficeLabel = `서울특별시의회 서초구 제1선거구 ${statusLabel}`;
             else if (c.name === "류근윤") displayOfficeLabel = `충청북도의회 청주시 제13선거구 ${statusLabel}`;
+            else if (c.name === "이장희") displayOfficeLabel = `충청북도의회 청주시 제11선거구 ${statusLabel}`;
             else if (c.name === "이동완") displayOfficeLabel = `경상북도의회 경주시 제4선거구 ${statusLabel}`;
             else if (c.name === "한범수") displayOfficeLabel = `서울특별시의회 영등포구 제2선거구 ${statusLabel}`;
             else if (c.name === "장경석") displayOfficeLabel = `인천광역시의회 옹진군 선거구 ${statusLabel}`;
@@ -2125,10 +2126,10 @@
             });
             
             const provCouncilSeoul = provCouncilCands.filter(c => c.metropolitan === "서울특별시");
-            const provCouncilGyeonggi = provCouncilCands.filter(c => c.metropolitan === "경기도");
             const provCouncilUlsan = provCouncilCands.filter(c => c.metropolitan === "울산광역시");
             const provCouncilJeju = provCouncilCands.filter(c => c.metropolitan === "제주특별자치도");
-            const provCouncilOthers = provCouncilCands.filter(c => !["서울특별시","경기도","울산광역시","제주특별자치도"].includes(c.metropolitan));
+            const provCouncilChungbuk = provCouncilCands.filter(c => c.metropolitan === "충청북도");
+            const provCouncilOthers = provCouncilCands.filter(c => !["서울특별시","울산광역시","제주특별자치도","충청북도"].includes(c.metropolitan));
 
             const localExecSort = (a, b) => (regionPriority[a.metropolitan] || 99) - (regionPriority[b.metropolitan] || 99) || (a.region || "").localeCompare(b.region || "");
             const localExecSeoul = filtered.filter(c => c.category === "기초단체장" && c.metropolitan === "서울특별시").sort(localExecSort);
@@ -2169,8 +2170,8 @@
                     <h2 class="section-title">광역의회의원</h2>
                     ${provCouncilSeoul.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">서울특별시</h3><div class="grid-responsive">${provCouncilSeoul.map(createCard).join('')}</div></div>` : ''}
                     ${provCouncilUlsan.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">울산광역시</h3><div class="grid-responsive">${provCouncilUlsan.map(createCard).join('')}</div></div>` : ''}
-                    ${provCouncilGyeonggi.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">경기도</h3><div class="grid-responsive">${provCouncilGyeonggi.map(createCard).join('')}</div></div>` : ''}
                     ${provCouncilJeju.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">제주특별자치도</h3><div class="grid-responsive">${provCouncilJeju.map(createCard).join('')}</div></div>` : ''}
+                    ${provCouncilChungbuk.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">충청북도</h3><div class="grid-responsive">${provCouncilChungbuk.map(createCard).join('')}</div></div>` : ''}
                     ${provCouncilOthers.length > 0 ? `<div><h3 class="sub-section-title">기타 지역</h3><div class="grid-responsive">${provCouncilOthers.map(createCard).join('')}</div></div>` : ''}
                 </section>
                 <section id="local-council" class="mb-16 scroll-mt-24">
