@@ -559,7 +559,7 @@ const candidates = [
         category: "광역의원",
         office: "서울시의원",
         status: "예비후보",
-        age : 57,
+        age: 57,
         subRegion: "잠원동, 반포1동, 반포3동, 반포4동",
         bio: [
             "제11대 서울특별시의회 의원",
@@ -604,7 +604,7 @@ const candidates = [
         dateAdded: "2026-04-24",
         coords: [
             36.650683,
-            127.488250
+            127.48825
         ]
     },
     {
@@ -783,7 +783,7 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-29",
         coords: [
-            37.516900,
+            37.5169,
             127.037203
         ]
     },
@@ -1840,7 +1840,7 @@ const candidates = [
         sns: {
             fb: "#",
             ig: "https://www.instagram.com/official_yongjun",
-            blog : "https://blog.naver.com/onedaylife97"
+            blog: "https://blog.naver.com/onedaylife97"
         },
         pledge: "#",
         decl: "https://rallypoint.kr/board/politics-free/224918",
@@ -2047,7 +2047,7 @@ const candidates = [
         dateAdded: "2026-02-05",
         coords: [
             37.281491,
-            127.017640
+            127.01764
         ]
     },
     {
@@ -2435,7 +2435,7 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-29",
         coords: [
-            37.388296, 
+            37.388296,
             126.967436
         ]
     },
@@ -3238,7 +3238,7 @@ const candidates = [
             fb: "https://www.facebook.com/profile.php?id=61576886771004",
             ig: "https://www.instagram.com/jminwoo712",
             yt: "https://www.youtube.com/@tomygod123",
-            blog : "https://blog.naver.com/jminwoo712"
+            blog: "https://blog.naver.com/jminwoo712"
         },
         pledge: "#",
         decl: "#",
@@ -3583,7 +3583,7 @@ const candidates = [
         donation: "https://givemoney.kr/politicians/216",
         dateAdded: "2026-04-24",
         coords: [
-            37.207775, 
+            37.207775,
             127.056313
         ]
     },
@@ -3626,7 +3626,7 @@ const candidates = [
         constituency: "비례",
         district: "비례",
         bio: [
-            "수원시 비례대표 출마예정",
+            "수원시 비례대표 출마예정"
         ],
         photo: "#",
         sns: {
@@ -3985,8 +3985,8 @@ const candidates = [
         ],
         photo: "",
         sns: {
-           fb : "https://www.facebook.com/james.shine.589"
-           },
+            fb: "https://www.facebook.com/james.shine.589"
+        },
         pledge: "#",
         decl: "#",
         donation: "#",
@@ -4120,7 +4120,7 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-05-04",
         coords: [
-            35.228326, 
+            35.228326,
             128.889524
         ]
     },
@@ -4253,8 +4253,8 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-23",
         coords: [
-           37.528145,
-           126.916286
+            37.528145,
+            126.916286
         ]
     },
     {
@@ -4328,7 +4328,7 @@ const candidates = [
         ],
         photo: "https://i.imgur.com/v1UfClC.png",
         sns: {
-           ig: "https://www.instagram.com/daniel_star_kim/"
+            ig: "https://www.instagram.com/daniel_star_kim/"
         },
         pledge: "#",
         decl: "#",
@@ -4635,7 +4635,7 @@ const candidates = [
         donation: "https://givemoney.kr/politicians/175/",
         dateAdded: "2026-04-20",
         coords: [
-            37.5340,
+            37.534,
             126.9886
         ]
     },
@@ -4728,15 +4728,15 @@ const candidates = [
         ],
         photo: "https://i.imgur.com/OXhWgZh.png",
         sns: {
-          ig : "https://www.instagram.com/mini_l.e.e/",
-          site : "https://litt.ly/mini_l.e.e"
-          },
+            ig: "https://www.instagram.com/mini_l.e.e/",
+            site: "https://litt.ly/mini_l.e.e"
+        },
         pledge: "#",
         decl: "#",
         donation: "https://givemoney.kr/politicians/184",
         dateAdded: "2026-04-20",
         coords: [
-            35.1360,
+            35.136,
             126.7979
         ]
     },
@@ -4806,7 +4806,7 @@ const candidates = [
         photo: "https://i.imgur.com/sA6Zbmx.png",
         sns: {
             fb: "https://www.facebook.com/keumran.go/",
-            blog : "https://blog.naver.com/mulan1997"
+            blog: "https://blog.naver.com/mulan1997"
         },
         pledge: "#",
         decl: "#",
@@ -4978,7 +4978,7 @@ const candidates = [
         dateAdded: "2026-04-23",
         coords: [
             37.543227,
-            126.873220
+            126.87322
         ]
     },
     {
@@ -5004,8 +5004,8 @@ const candidates = [
         donation: "https://givemoney.kr/politicians/212",
         dateAdded: "2026-04-22",
         coords: [
-           37.374900,
-           126.729348
+            37.3749,
+            126.729348
         ]
     },
     {
@@ -5021,7 +5021,7 @@ const candidates = [
         status: "예비후보",
         bio: [
             "<span style='letter-spacing:-0.12em;'>전) 패스트파이브 파이브스팟 서비스기획 총괄</span>",
-            "<span style='letter-spacing:-0.12em;'>전) 라운즈(ROUNZ) 서비스기획팀 팀장</span>",
+            "<span style='letter-spacing:-0.12em;'>전) 라운즈(ROUNZ) 서비스기획팀 팀장</span>"
         ],
         photo: "https://i.imgur.com/CLkAeVL.png",
         sns: {
@@ -5032,8 +5032,8 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-27",
         coords: [
-           37.374910,
-           126.729349
+            37.37491,
+            126.729349
         ]
     },
     {
@@ -5046,7 +5046,7 @@ const candidates = [
         status: "예비후보",
         bio: [
             "제8대 울산시의원",
-            "제6,7대 남구의회 의원", 
+            "제6,7대 남구의회 의원",
             "울산시의회의원 예산결산특별위원장"
         ],
         photo: "https://i.imgur.com/TbQkeLr.png",
@@ -5071,7 +5071,7 @@ const candidates = [
         category: "기초단체장",
         office: "서천군수",
         status: "예비후보",
-        age : 53,
+        age: 53,
         bio: [
             "전)충남도의회 예산정책담당관",
             "전) 국회의원 보좌관"
@@ -5201,7 +5201,7 @@ const candidates = [
         dateAdded: "2026-04-27",
         coords: [
             35.535388,
-            129.322850
+            129.32285
         ]
     },
     {
@@ -5227,7 +5227,7 @@ const candidates = [
         donation: "https://givemoney.kr/politicians/208",
         dateAdded: "2026-04-27",
         coords: [
-            35.491290,
+            35.49129,
             129.351269
         ]
     },
@@ -5255,7 +5255,7 @@ const candidates = [
         donation: "https://givemoney.kr/politicians/211",
         dateAdded: "2026-04-27",
         coords: [
-            35.524458, 
+            35.524458,
             129.290415
         ]
     },
@@ -5288,7 +5288,7 @@ const candidates = [
             129.312083
         ]
     }
- ];
+];
 
 
 
