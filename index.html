@@ -1442,7 +1442,7 @@
         </div>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="can.js?v=0505.07" defer></script>   <script src="data1.js?v=0504.01" defer></script> <script src="search.js?v=0317.02" defer></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="can.js?v=0505.08" defer></script>   <script src="data1.js?v=0504.01" defer></script> <script src="search.js?v=0317.02" defer></script>
     <script>
         let currentModalCandidateName = '';
         let showOnlyConfirmed = false;
@@ -2846,7 +2846,7 @@
                             const polygons = f.geometry.type === "Polygon" ? [f.geometry.coordinates] : f.geometry.coordinates;
                             polygons.forEach(poly => (Array.isArray(poly[0][0]) ? poly : [poly]).forEach(ring => ring.forEach(c => {
                                 if (c[0] < minX) minX = c[0]; if (c[0] > maxX) maxX = c[0];
-                                if (c[1] < minY) minY = 36.8; if (c[1] > maxY) maxY = c[1];
+                                if (c[1] < minY) minY = c[1]; if (c[1] > maxY) maxY = c[1];
                             })));
                         });
                         setMapBounds({ minX, maxX, minY, maxY });
