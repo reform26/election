@@ -720,6 +720,7 @@
                 <button onclick="closeNoticePopup()" style="width:28px;height:28px;border-radius:8px;background:#f5f5f5;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:14px;color:#888;font-weight:700;" class="dark:bg-slate-700 dark:text-slate-300">✕</button>
             </div>
             <div style="padding:14px 18px;overflow-y:auto;display:flex;flex-direction:column;gap:5px;">
+                <div class="notice-popup-item"><div class="notice-popup-left"><span class="notice-popup-badge">제23차</span><span class="notice-popup-count">8명</span><span class="notice-popup-date">05.07.</span></div><a href="https://rallypoint.kr/board/notice/231250" target="_blank" class="notice-popup-link">공고보기 →</a></div>
                 <div class="notice-popup-item"><div class="notice-popup-left"><span class="notice-popup-badge">제22차</span><span class="notice-popup-count">5명</span><span class="notice-popup-date">05.02.</span></div><a href="https://rallypoint.kr/board/notice/230843" target="_blank" class="notice-popup-link">공고보기 →</a></div>
                 <div class="notice-popup-item"><div class="notice-popup-left"><span class="notice-popup-badge">제21차</span><span class="notice-popup-count">16명</span><span class="notice-popup-date">04.28.</span></div><a href="https://rallypoint.kr/board/notice/230661" target="_blank" class="notice-popup-link">공고보기 →</a></div>
                 <div class="notice-popup-item"><div class="notice-popup-left"><span class="notice-popup-badge">제20차</span><span class="notice-popup-count">1명</span><span class="notice-popup-date">04.27.</span></div><a href="https://rallypoint.kr/board/notice/230578" target="_blank" class="notice-popup-link">공고보기 →</a></div>
@@ -1442,7 +1443,7 @@
         </div>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="can.js?v=0506.04" defer></script>   <script src="data1.js?v=0504.01" defer></script> <script src="search.js?v=0317.02" defer></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="can.js?v=0506.05" defer></script>   <script src="data1.js?v=0504.01" defer></script> <script src="search.js?v=0317.02" defer></script>
     <script>
         let currentModalCandidateName = '';
         let showOnlyConfirmed = false;
@@ -1964,6 +1965,7 @@
             else if (c.name === "최현석") displayOfficeLabel = `서울특별시의회 송파구 제2선거구 ${statusLabel}`;
             else if (c.name === "강인수") displayOfficeLabel = `서울특별시의회 강남구 제1선거구 ${statusLabel}`;
             else if (c.name === "주이삭") displayOfficeLabel = `서울특별시의회 서대문구 제1선거구 ${statusLabel}`;
+            else if (c.name === "이종태") displayOfficeLabel = `서울특별시의회 강동구 제2선거구 ${statusLabel}`;
             else if (c.name === "박상혁") displayOfficeLabel = `서울특별시의회 서초구 제1선거구 ${statusLabel}`;
             else if (c.name === "류근윤") displayOfficeLabel = `충청북도의회 청주시 제13선거구 ${statusLabel}`;
             else if (c.name === "이장희") displayOfficeLabel = `충청북도의회 청주시 제11선거구 ${statusLabel}`;
@@ -2353,7 +2355,7 @@
                 `;
             }
 
-            const isTightBio = ["김태수", "고재윤", "이강민", "오정대", "우영훈", "최윤석", "구성도", "박성진", "주한송", "최제일", "심용진", "박종길", "박진우", "황은재", "송원근", "이호엽", "하용준", "김영민", "손승범", "김주연", "주이삭", "조현조", "박형군", "고금란", "김영민", "김효숙", "민영진", "민경록", "채송준", "권민찬", "이민희", "김윤재", "조응천", "이성진", "조순자", "오세철", "최봉환", "김성준", "하헌휘", "김희성", "박현수", "이민수", "이규민", "이은창", "김성우", "황시현", "이해성", "김민식"].includes(c.name);
+            const isTightBio = ["김태수", "고재윤", "이강민", "오정대", "우영훈", "최윤석", "구성도", "박성진", "주한송", "최제일", "심용진", "박종길", "박진우", "황은재", "송원근", "이호엽", "하용준", "김영민", "손승범", "김주연", "주이삭", "조현조", "길기영", "구가환", "박형군", "고금란", "김영민", "김효숙", "민영진", "민경록", "채송준", "권민찬", "이민희", "김윤재", "조응천", "이성진", "조순자", "오세철", "최봉환", "김성준", "하헌휘", "김희성", "박현수", "이민수", "이규민", "이은창", "김성우", "황시현", "이해성", "김민식"].includes(c.name);
             const isTightSpacing = ["우영훈", "김태수", "심용진", "김주연","이진현"].includes(c.name);
             let styles = [];
             if (isTightBio || ["조동운", "김민식", "박철현", "류태하", "이용우", "이재원", "김병진", "양성혁", "양준모", "김주연", "주이삭", "김태수", "이규민", "이진현"].includes(c.name)) {
