@@ -1443,7 +1443,7 @@
         </div>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="can.js?v=0506.08" defer></script>   <script src="data1.js?v=0504.01" defer></script> <script src="search.js?v=0317.02" defer></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="can.js?v=0507.01" defer></script>   <script src="data1.js?v=0504.01" defer></script> <script src="search.js?v=0317.02" defer></script>
     <script>
         let currentModalCandidateName = '';
         let showOnlyConfirmed = false;
@@ -1965,6 +1965,7 @@
             else if (c.name === "최현석") displayOfficeLabel = `서울특별시의회 송파구 제2선거구 ${statusLabel}`;
             else if (c.name === "강인수") displayOfficeLabel = `서울특별시의회 강남구 제1선거구 ${statusLabel}`;
             else if (c.name === "주이삭") displayOfficeLabel = `서울특별시의회 서대문구 제1선거구 ${statusLabel}`;
+            else if (c.name === "김동칠") displayOfficeLabel = `국회의원 재보궐선거 울산광역시 남구 갑 선거구 ${statusLabel}`;
             else if (c.name === "이종태") displayOfficeLabel = `서울특별시의회 강동구 제2선거구 ${statusLabel}`;
             else if (c.name === "박상혁") displayOfficeLabel = `서울특별시의회 서초구 제1선거구 ${statusLabel}`;
             else if (c.name === "류근윤") displayOfficeLabel = `충청북도의회 청주시 제13선거구 ${statusLabel}`;
@@ -2203,22 +2204,26 @@
             let html = '<div class="mb-16">';
             Object.keys(regionPriority).forEach(m => {
                 const regionalCandidates = filtered.filter(c => c.metropolitan === m || c.region === m).sort((a, b) => {
-                    const catOrder = {"광역단체장": 1, "기초단체장": 2, "광역의원": 3, "기초의원": 4};
-                    const catDiff = (catOrder[a.category] || 5) - (catOrder[b.category] || 5);
+                    const catOrder = {"재보궐선거": 1, "광역단체장": 2, "기초단체장": 3, "광역의원": 4, "기초의원": 5};
+                    const catDiff = (catOrder[a.category] || 9) - (catOrder[b.category] || 9);
                     if (catDiff !== 0) return catDiff;
 
-                    if (a.category === "광역의원" || a.category === "기초의원") {
-                        const isAPro = a.constituency === "비례" || a.district === "비례";
-                        const isBPro = b.constituency === "비례" || b.district === "비례";
-                        if (isAPro !== isBPro) return isAPro ? 1 : -1;
-                        // 같은 지역 비례 후보끼리: listOrder 순번으로 정렬
-                        if (isAPro && isBPro) return (a.listOrder || 999) - (b.listOrder || 999);
-                        
-                        const nameA = (a.region || "") + (a.district || a.constituencyFull || "");
-                        const nameB = (b.region || "") + (b.district || b.constituencyFull || "");
-                        return nameA.localeCompare(nameB, 'ko');
+                    // 비례 후보는 맨 뒤, 비례끼리는 listOrder로 정렬
+                    const isAPro = a.constituency === "비례" || a.district === "비례";
+                    const isBPro = b.constituency === "비례" || b.district === "비례";
+                    if (isAPro !== isBPro) return isAPro ? 1 : -1;
+                    if (isAPro && isBPro) return (a.listOrder || 999) - (b.listOrder || 999);
+
+                    // 카테고리 내 선거구 기준 ㄱㄴㄷ 정렬
+                    function getDistrictKey(c) {
+                        if (c.category === "재보궐선거") return (c.district || c.region || "");
+                        if (c.category === "광역단체장") return (c.office || c.region || "");
+                        if (c.category === "기초단체장") return (c.office || c.region || "");
+                        if (c.category === "광역의원") return (c.district || c.constituencyFull || "");
+                        if (c.category === "기초의원") return (c.region || "") + " " + (c.district || "");
+                        return (c.region || "") + (c.district || "");
                     }
-                    return (a.name || "").localeCompare(b.name || "", 'ko');
+                    return getDistrictKey(a).localeCompare(getDistrictKey(b), 'ko');
                 });
                 if(regionalCandidates.length > 0) {
                     html += `<section id="region-${m}" class="mb-12 scroll-mt-24"><h2 class="section-title">${m}</h2><div class="grid-responsive">${regionalCandidates.map(createCard).join('')}</div></section>`;

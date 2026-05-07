@@ -587,7 +587,7 @@ const candidates = [
         category: "광역의원",
         office: "서울시의원",
         status: "예비후보",
-        age: 57,
+        age : 57,
         subRegion: "잠원동, 반포1동, 반포3동, 반포4동",
         bio: [
             "제11대 서울특별시의회 의원",
@@ -616,7 +616,7 @@ const candidates = [
         category: "광역의원",
         office: "서울시의원",
         status: "예비후보",
-        age: 68,
+        age : 68,
         subRegion: "상일제1동, 명일제1동, 명일제2동",
         bio: [
             "제11대 서울특별시의회 의원",
@@ -662,7 +662,7 @@ const candidates = [
         dateAdded: "2026-04-24",
         coords: [
             36.650683,
-            127.48825
+            127.488250
         ]
     },
     {
@@ -842,7 +842,7 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-29",
         coords: [
-            37.5169,
+            37.516900,
             127.037203
         ]
     },
@@ -1955,7 +1955,7 @@ const candidates = [
         sns: {
             fb: "#",
             ig: "https://www.instagram.com/official_yongjun",
-            blog: "https://blog.naver.com/onedaylife97"
+            blog : "https://blog.naver.com/onedaylife97"
         },
         pledge: "#",
         decl: "https://rallypoint.kr/board/politics-free/224918",
@@ -2189,7 +2189,7 @@ const candidates = [
         dateAdded: "2026-02-05",
         coords: [
             37.281491,
-            127.01764
+            127.017640
         ]
     },
     {
@@ -2286,10 +2286,12 @@ const candidates = [
         metropolitan: "경기도",
         category: "기초의원",
         office: "성남시의원",
-        status: "공천확정",
+        status: "예비후보",
+        age: 34,
         subRegion: "분당구 분당동, 수내3동, 정자2동, 정자3동, 구미동",
         bio: [
-            "성남시의회 타선거구 공천확정"
+            "경기도당 성남시 뉴미디어전략특위 위원장",
+            "현)그린웹서비스 영상콘텐츠 제작자"
         ],
         photo: "",
         district: "차",
@@ -2298,7 +2300,7 @@ const candidates = [
         },
         pledge: "#",
         decl: "#",
-        donation: "#",
+        donation: "https://givemoney.kr/politicians/71",
         dateAdded: "2026-02-19",
         coords: [
             37.3737,
@@ -2577,7 +2579,7 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-29",
         coords: [
-            37.388296,
+            37.388296, 
             126.967436
         ]
     },
@@ -3380,7 +3382,7 @@ const candidates = [
             fb: "https://www.facebook.com/profile.php?id=61576886771004",
             ig: "https://www.instagram.com/jminwoo712",
             yt: "https://www.youtube.com/@tomygod123",
-            blog: "https://blog.naver.com/jminwoo712"
+            blog : "https://blog.naver.com/jminwoo712"
         },
         pledge: "#",
         decl: "#",
@@ -3727,7 +3729,7 @@ const candidates = [
         donation: "https://givemoney.kr/politicians/216",
         dateAdded: "2026-04-24",
         coords: [
-            37.207775,
+            37.207775, 
             127.056313
         ]
     },
@@ -3770,7 +3772,7 @@ const candidates = [
         constituency: "비례",
         district: "비례",
         bio: [
-            "수원시 비례대표 출마예정"
+            "수원시 비례대표 출마예정",
         ],
         photo: "#",
         sns: {
@@ -4129,8 +4131,8 @@ const candidates = [
         ],
         photo: "",
         sns: {
-            fb: "https://www.facebook.com/james.shine.589"
-        },
+           fb : "https://www.facebook.com/james.shine.589"
+           },
         pledge: "#",
         decl: "#",
         donation: "#",
@@ -4264,7 +4266,7 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-05-04",
         coords: [
-            35.228326,
+            35.228326, 
             128.889524
         ]
     },
@@ -4397,8 +4399,8 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-23",
         coords: [
-            37.528145,
-            126.916286
+           37.528145,
+           126.916286
         ]
     },
     {
@@ -4438,7 +4440,7 @@ const candidates = [
             "개혁신당 고양시 지역발전특위 부위원장",
             "경기도당 AI특위 위원장"
         ],
-        photo: "https://i.imgur.com/ByAEkGu.png",
+        photo: "https://i.imgur.com/47jyev2.png",
         district: "아",
         sns: {
             fb: "https://www.facebook.com/profile.php?id=61580710135949",
@@ -4472,7 +4474,7 @@ const candidates = [
         ],
         photo: "https://i.imgur.com/v1UfClC.png",
         sns: {
-            ig: "https://www.instagram.com/daniel_star_kim/"
+           ig: "https://www.instagram.com/daniel_star_kim/"
         },
         pledge: "#",
         decl: "#",
@@ -4608,14 +4610,14 @@ const candidates = [
             ig: "https://www.instagram.com/parkilha55",
             yt: "https://www.youtube.com/@parkilhatv",
             blog: "https://blog.naver.com/parkilha55"
-        },
+               },
         pledge: "#",
         decl: "#",
         donation: "#",
         dateAdded: "2026-05-06",
         coords: [
             37.50668,
-            126.93928
+            126.939280
         ]
     },
     {
@@ -4658,9 +4660,9 @@ const candidates = [
         ],
         photo: "https://i.imgur.com/4fFOf0Y.png",
         sns: {
-            fb: "https://www.facebook.com/politicohj",
-            ig: ""
-        },
+            fb : "https://www.facebook.com/politicohj",
+            ig : ""
+            },
         pledge: "#",
         decl: "#",
         donation: "https://givemoney.kr/politicians/230",
@@ -4688,9 +4690,9 @@ const candidates = [
         ],
         photo: "https://i.imgur.com/6FR2PFa.png",
         sns: {
-            fb: "",
-            ig: ""
-        },
+            fb : "",
+            ig : ""
+            },
         pledge: "#",
         decl: "#",
         donation: "#",
@@ -4863,7 +4865,7 @@ const candidates = [
         donation: "https://givemoney.kr/politicians/175/",
         dateAdded: "2026-04-20",
         coords: [
-            37.534,
+            37.5340,
             126.9886
         ]
     },
@@ -4956,15 +4958,15 @@ const candidates = [
         ],
         photo: "https://i.imgur.com/OXhWgZh.png",
         sns: {
-            ig: "https://www.instagram.com/mini_l.e.e/",
-            site: "https://litt.ly/mini_l.e.e"
-        },
+          ig : "https://www.instagram.com/mini_l.e.e/",
+          site : "https://litt.ly/mini_l.e.e"
+          },
         pledge: "#",
         decl: "#",
         donation: "https://givemoney.kr/politicians/184",
         dateAdded: "2026-04-20",
         coords: [
-            35.136,
+            35.1360,
             126.7979
         ]
     },
@@ -5034,7 +5036,7 @@ const candidates = [
         photo: "https://i.imgur.com/sA6Zbmx.png",
         sns: {
             fb: "https://www.facebook.com/keumran.go/",
-            blog: "https://blog.naver.com/mulan1997"
+            blog : "https://blog.naver.com/mulan1997"
         },
         pledge: "#",
         decl: "#",
@@ -5208,7 +5210,7 @@ const candidates = [
         dateAdded: "2026-04-23",
         coords: [
             37.543227,
-            126.87322
+            126.873220
         ]
     },
     {
@@ -5234,8 +5236,8 @@ const candidates = [
         donation: "https://givemoney.kr/politicians/212",
         dateAdded: "2026-04-22",
         coords: [
-            37.3749,
-            126.729348
+           37.374900,
+           126.729348
         ]
     },
     {
@@ -5251,7 +5253,7 @@ const candidates = [
         status: "예비후보",
         bio: [
             "<span style='letter-spacing:-0.12em;'>전) 패스트파이브 파이브스팟 서비스기획 총괄</span>",
-            "<span style='letter-spacing:-0.12em;'>전) 라운즈(ROUNZ) 서비스기획팀 팀장</span>"
+            "<span style='letter-spacing:-0.12em;'>전) 라운즈(ROUNZ) 서비스기획팀 팀장</span>",
         ],
         photo: "https://i.imgur.com/CLkAeVL.png",
         sns: {
@@ -5262,8 +5264,8 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-27",
         coords: [
-            37.37491,
-            126.729349
+           37.374910,
+           126.729349
         ]
     },
     {
@@ -5276,7 +5278,7 @@ const candidates = [
         status: "예비후보",
         bio: [
             "제8대 울산시의원",
-            "제6,7대 남구의회 의원",
+            "제6,7대 남구의회 의원", 
             "울산시의회의원 예산결산특별위원장"
         ],
         photo: "https://i.imgur.com/TbQkeLr.png",
@@ -5301,7 +5303,7 @@ const candidates = [
         category: "기초단체장",
         office: "서천군수",
         status: "예비후보",
-        age: 53,
+        age : 53,
         bio: [
             "전)충남도의회 예산정책담당관",
             "전) 국회의원 보좌관"
@@ -5431,7 +5433,7 @@ const candidates = [
         dateAdded: "2026-04-27",
         coords: [
             35.535388,
-            129.32285
+            129.322850
         ]
     },
     {
@@ -5457,7 +5459,7 @@ const candidates = [
         donation: "https://givemoney.kr/politicians/208",
         dateAdded: "2026-04-27",
         coords: [
-            35.49129,
+            35.491290,
             129.351269
         ]
     },
@@ -5485,26 +5487,27 @@ const candidates = [
         donation: "https://givemoney.kr/politicians/211",
         dateAdded: "2026-04-27",
         coords: [
-            35.524458,
+            35.524458, 
             129.290415
         ]
     },
     {
         name: "김동칠",
-        visibility: "preliminary",
         region: "울산",
         metropolitan: "울산광역시",
+        showPreliminaryBadge: true,
         category: "재보궐선거",
         office: "재보궐선거",
         district: "남구 갑",
         subRegion: "신정1동, 신정2동, 신정3동, 신정4동, 신정5동, 삼호동, 무거동, 옥동",
-        status: "출마예정",
+        age: 61,
+        status: "예비후보",
         bio: [
             "제8대 울산시의원",
             "제6대 남구의원",
-            "울산광역시당위원장"
+            "울산광역시당 위원장"
         ],
-        photo: "https://i.imgur.com/1JAap79.png",
+        photo: "https://i.imgur.com/3MJHnue.png",
         sns: {
             fb: "https://www.facebook.com/dongchil0252",
             blog: "https://blog.naver.com/dongchil777"
@@ -5512,13 +5515,13 @@ const candidates = [
         pledge: "#",
         decl: "#",
         donation: "#",
-        dateAdded: "2026-04-23",
+        dateAdded: "2026-05-07",
         coords: [
             35.537743,
             129.312083
         ]
     }
-];
+ ];
 
 
 
