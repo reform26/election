@@ -263,7 +263,18 @@ function addMarker(cand, coords, colorMap, sizeMap) {
     });
 
     const isConfirmed = (["공천확정","후보"].includes(cand.status)) && cand.name !== "이수찬" && cand.name !== "김성민";
-    const statusText = isConfirmed ? '🟠 공천확정' : (cand.decl && cand.decl !== '#' ? '📢 출마선언' : '📝 출마예정');
+    let statusText;
+    if (isConfirmed) {
+        statusText = '<span style="color:#FF6600;">🟠 공천확정</span>';
+    } else if (cand.status === '후보') {
+        statusText = '<span style="color:#f59e0b;">🏅 본후보</span>';
+    } else if (cand.status === '예비후보') {
+        statusText = '<span style="color:#60a5fa;">📋 예비후보</span>';
+    } else if (cand.status === '출마선언') {
+        statusText = '<span style="color:#a78bfa;">📢 출마선언</span>';
+    } else {
+        statusText = '<span style="color:#94a3b8;">📝 출마예정</span>';
+    }
     const districtText = cand.district ? ` ${cand.district}선거구` : '';
     const subRegionText = cand.subRegion
         ? `<div style="color:#94a3b8;font-size:0.66rem;margin-top:4px;line-height:1.6;">${cand.subRegion.replace(/,\s*/g,' · ')}</div>`
@@ -272,9 +283,15 @@ function addMarker(cand, coords, colorMap, sizeMap) {
     // 직책/의회명 표시
     // 광역·기초단체장: office 필드 그대로 (예: "서울특별시장", "관악구청장")
     // 광역·기초의원: region 필드에서 의회명 직접 생성 (office 필드는 불규칙해서 사용 안 함)
+    // 재보궐선거: metropolitan → 시의회명, district로 선거구 표시
     function getOfficeLabel(c) {
         if (c.category === '광역단체장' || c.category === '기초단체장') {
             return c.office || c.category;
+        }
+        if (c.category === '재보궐선거') {
+            // office 필드가 있고 '재보궐선거'가 아닌 값이면 그대로 사용
+            if (c.office && c.office !== '재보궐선거') return c.office;
+            return '재보궐 후보';
         }
         if (c.category === '광역의원' || c.category === '기초의원') {
             const region = c.region || '';
@@ -313,9 +330,9 @@ function addMarker(cand, coords, colorMap, sizeMap) {
         <div style="background:#0f172a;padding:12px 14px;min-width:180px;font-family:'Pretendard','Noto Sans KR',sans-serif;">
             <div style="font-size:1rem;font-weight:900;color:#FF6600;margin-bottom:3px;">${cand.name}</div>
             <div style="font-size:0.75rem;font-weight:700;color:#e2e8f0;">${officeLabel}${districtText}</div>
-            <div style="font-size:0.7rem;color:#64748b;margin-top:2px;">${cand.region}</div>
+            <div style="font-size:0.7rem;color:#64748b;margin-top:2px;">${cand.metropolitan ? cand.metropolitan : cand.region}</div>
             ${subRegionText}
-            <div style="margin-top:6px;font-size:0.68rem;font-weight:800;color:white;">${statusText}</div>
+            <div style="margin-top:6px;font-size:0.68rem;font-weight:800;">${statusText}</div>
             <button
                 onclick="(function(){ if(leafletMap) leafletMap.closePopup(); if(typeof openProfileModal==='function'){ openProfileModal('${escapedName}'); var pm=document.getElementById('profile-modal-overlay'); if(pm) pm.style.zIndex='4000'; } })()"
                 style="

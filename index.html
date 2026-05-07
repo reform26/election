@@ -1179,6 +1179,7 @@
                 <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
                     <div style="display:flex; gap:5px; flex-wrap:wrap;" id="map-category-filters">
                         <button onclick="filterMapCategory('전체')" class="map-filter-btn active" data-cat="전체">전체</button>
+                        <button onclick="filterMapCategory('재보궐선거')" class="map-filter-btn" data-cat="재보궐선거">재보궐선거</button>
                         <button onclick="filterMapCategory('광역단체장')" class="map-filter-btn" data-cat="광역단체장">광역단체장</button>
                         <button onclick="filterMapCategory('기초단체장')" class="map-filter-btn" data-cat="기초단체장">기초단체장</button>
                         <button onclick="filterMapCategory('광역의원')" class="map-filter-btn" data-cat="광역의원">광역의원</button>
@@ -1240,7 +1241,7 @@
         .cat-재보궐선거 { background: #805ad5; }
     </style>
 
-    <script src="map.js?v=0324.02" defer></script>
+    <script src="map.js?v=0324.03" defer></script>
 
     <!-- ══════════════ 후보자 SNS 섹션 (sns.js가 동적으로 렌더링) ══════════════ -->
     <div id="sns-feed-section"></div>
@@ -1443,7 +1444,7 @@
         </div>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="can.js?v=0507.01" defer></script>   <script src="data1.js?v=0504.01" defer></script> <script src="search.js?v=0317.02" defer></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="can.js?v=0507.02" defer></script>   <script src="data1.js?v=0504.01" defer></script> <script src="search.js?v=0317.02" defer></script>
     <script>
         let currentModalCandidateName = '';
         let showOnlyConfirmed = false;
