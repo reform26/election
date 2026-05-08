@@ -216,6 +216,8 @@ async function loadAndPlaceMarkers() {
     const cands = (window.candidates || []).filter(c =>
         c.visibility !== 'hidden' &&
         c.visibility !== 'preliminary' &&
+        c.constituency !== '비례' &&
+        c.district !== '비례' &&
         (currentMapCategory === '전체' || c.category === currentMapCategory)
     );
 
