@@ -944,7 +944,7 @@
                 <div id="d-day-badge" class="rh-dday">D-000</div>
                 <div class="rh-update-badge">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    <span id="last-update-date">최종 업데이트 : 2026. 05. 04.</span>
+                    <span id="last-update-date">최종 업데이트 : 2026. 05. 08.</span>
                 </div>
             </div>
         </div>
@@ -1444,7 +1444,7 @@
         </div>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="can.js?v=0507.11" defer></script>   <script src="data1.js?v=0504.01" defer></script> <script src="search.js?v=0317.02" defer></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="can.js?v=0507.12" defer></script>   <script src="data1.js?v=0504.01" defer></script> <script src="search.js?v=0317.02" defer></script>
     <script>
         let currentModalCandidateName = '';
         let showOnlyConfirmed = false;
@@ -2151,11 +2151,14 @@
             const daejeonCands = filterByMetro("대전광역시");
             const ulsanCands = filterByMetro("울산광역시");
             const gyeonggiCands = filterByMetro("경기도");
+            const gangwonCands = filterByMetro("강원특별자치도");
+            const chungbukCands = filterByMetro("충청북도");
             const chungnamCands = filterByMetro("충청남도");
+            const jeonnamgwangjuCands = filterByMetro("전남광주통합특별시");
+            const jeonbukCands = filterByMetro("전북특별자치도");
             const gyeongbukCands = filterByMetro("경상북도");
             const gyeongnamCands = filterByMetro("경상남도");
-            const gangwonCands = filterByMetro("강원특별자치도");
-            const excluded = ["서울특별시","부산광역시", "대구광역시", "대전광역시", "인천광역시", "울산광역시", "경기도", "경상북도", "충청남도", "경상남도", "강원특별자치도"];
+            const excluded = ["서울특별시","부산광역시","대구광역시","대전광역시","인천광역시","울산광역시","경기도","강원특별자치도","충청북도","충청남도","전남광주통합특별시","전북특별자치도","경상북도","경상남도"];
             const otherCands = filtered.filter(c => !excluded.includes(c.metropolitan) && c.category === "기초의원").sort((a, b) => (regionPriority[a.metropolitan] || 99) - (regionPriority[b.metropolitan] || 99) || councilSort(a, b));
 
             container.innerHTML = `
@@ -2188,7 +2191,10 @@
                     ${ulsanCands.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">울산광역시</h3><div class="grid-responsive">${ulsanCands.map(createCard).join('')}</div></div>` : ''}
                     ${gyeonggiCands.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">경기도</h3><div class="grid-responsive">${gyeonggiCands.map(createCard).join('')}</div></div>` : ''}
                     ${gangwonCands.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">강원특별자치도</h3><div class="grid-responsive">${gangwonCands.map(createCard).join('')}</div></div>` : ''}
+                    ${chungbukCands.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">충청북도</h3><div class="grid-responsive">${chungbukCands.map(createCard).join('')}</div></div>` : ''}
                     ${chungnamCands.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">충청남도</h3><div class="grid-responsive">${chungnamCands.map(createCard).join('')}</div></div>` : ''}
+                    ${jeonnamgwangjuCands.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">광주전남통합특별시</h3><div class="grid-responsive">${jeonnamgwangjuCands.map(createCard).join('')}</div></div>` : ''}
+                    ${jeonbukCands.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">전북특별자치도</h3><div class="grid-responsive">${jeonbukCands.map(createCard).join('')}</div></div>` : ''}
                     ${gyeongbukCands.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">경상북도</h3><div class="grid-responsive">${gyeongbukCands.map(createCard).join('')}</div></div>` : ''}
                     ${gyeongnamCands.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">경상남도</h3><div class="grid-responsive">${gyeongnamCands.map(createCard).join('')}</div></div>` : ''}
                     ${otherCands.length > 0 ? `<div><h3 class="sub-section-title">기타 지역</h3><div class="grid-responsive">${otherCands.map(createCard).join('')}</div></div>` : ''}
