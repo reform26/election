@@ -184,8 +184,9 @@ async function initLeafletMap() {
     leafletMap = L.map('all-candidates-leaflet-map', {
         center: [36.5, 127.8], zoom: 7, zoomControl: true,
     });
-    L.tileLayer('https://tiles.osm.kr/hot/{z}/{x}/{y}.png', {
-        attribution: '© <a href="https://osm.kr/">OSM Korea</a> contributors', maxZoom: 19,
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        maxZoom: 19,
     }).addTo(leafletMap);
 
     // 위치 결과 대기
