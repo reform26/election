@@ -1446,7 +1446,7 @@
         </div>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="can.js?v=0509.02" defer></script>   <script src="data1.js?v=0504.01" defer></script> <script src="search.js?v=0317.02" defer></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="can.js?v=0509.03" defer></script>   <script src="data1.js?v=0504.01" defer></script> <script src="search.js?v=0317.02" defer></script>
     <script>
         let currentModalCandidateName = '';
         let showOnlyConfirmed = false;
@@ -1985,7 +1985,8 @@
             else if (c.name === "방군심") displayOfficeLabel = `제주특별자치도의회 비례대표 1번 ${statusLabel}`;
             else if (c.name === "박은경") displayOfficeLabel = `제주특별자치도의회 비례대표 2번 ${statusLabel}`;
             else if (c.name === "김동칠") displayOfficeLabel = `국회의원 재보궐선거 울산광역시 남구 갑 선거구 ${statusLabel}`;
-            else if (c.name === "이은창") displayOfficeLabel = `국회의원 재보궐선거 충청남도 공주·부여·청양 선거구 ${statusLabel}`;
+            else if (c.name === "이은창") displayOfficeLabel = `국회의원 재보궐선거 충청남도 공주시·부여군·청양군 선거구 ${statusLabel}`;
+            else if (c.name === "김성열") displayOfficeLabel = `국회의원 재보궐선거 경기도 하남시 갑 선거구 ${statusLabel}`;
             else if (c.name === "문인수") displayOfficeLabel = `국회의원 재보궐선거 경기도 안산시 갑 선거구 ${statusLabel}`;
             else if (c.name === "이종태") displayOfficeLabel = `서울특별시의회 강동구 제2선거구 ${statusLabel}`;
             else if (c.name === "박상혁") displayOfficeLabel = `서울특별시의회 서초구 제1선거구 ${statusLabel}`;
@@ -2190,17 +2191,17 @@
             const busanCands = filterByMetro("부산광역시");
             const daeguCands = filterByMetro("대구광역시");
             const incheonCands = filterByMetro("인천광역시");
+            const jeonnamgwangjuCands = filterByMetro("전남광주통합특별시");
             const daejeonCands = filterByMetro("대전광역시");
             const ulsanCands = filterByMetro("울산광역시");
             const gyeonggiCands = filterByMetro("경기도");
             const gangwonCands = filterByMetro("강원특별자치도");
             const chungbukCands = filterByMetro("충청북도");
             const chungnamCands = filterByMetro("충청남도");
-            const jeonnamgwangjuCands = filterByMetro("전남광주통합특별시");
             const jeonbukCands = filterByMetro("전북특별자치도");
             const gyeongbukCands = filterByMetro("경상북도");
             const gyeongnamCands = filterByMetro("경상남도");
-            const excluded = ["서울특별시","부산광역시","대구광역시","대전광역시","인천광역시","울산광역시","경기도","강원특별자치도","충청북도","충청남도","전남광주통합특별시","전북특별자치도","경상북도","경상남도"];
+            const excluded = ["서울특별시","부산광역시","대구광역시","인천광역시","전남광주통합특별시","대전광역시","울산광역시","경기도","강원특별자치도","충청북도","충청남도","전북특별자치도","경상북도","경상남도"];
             const otherCands = filtered.filter(c => !excluded.includes(c.metropolitan) && c.category === "기초의원").sort((a, b) => (regionPriority[a.metropolitan] || 99) - (regionPriority[b.metropolitan] || 99) || councilSort(a, b));
 
             container.innerHTML = `
@@ -2232,13 +2233,13 @@
                     ${busanCands.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">부산광역시</h3><div class="grid-responsive">${busanCands.map(createCard).join('')}</div></div>` : ''}
                     ${daeguCands.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">대구광역시</h3><div class="grid-responsive">${daeguCands.map(createCard).join('')}</div></div>` : ''}
                     ${incheonCands.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">인천광역시</h3><div class="grid-responsive">${incheonCands.map(createCard).join('')}</div></div>` : ''}
+                    ${jeonnamgwangjuCands.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">전남광주통합특별시</h3><div class="grid-responsive">${jeonnamgwangjuCands.map(createCard).join('')}</div></div>` : ''}
                     ${daejeonCands.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">대전광역시</h3><div class="grid-responsive">${daejeonCands.map(createCard).join('')}</div></div>` : ''}
                     ${ulsanCands.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">울산광역시</h3><div class="grid-responsive">${ulsanCands.map(createCard).join('')}</div></div>` : ''}
                     ${gyeonggiCands.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">경기도</h3><div class="grid-responsive">${gyeonggiCands.map(createCard).join('')}</div></div>` : ''}
                     ${gangwonCands.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">강원특별자치도</h3><div class="grid-responsive">${gangwonCands.map(createCard).join('')}</div></div>` : ''}
                     ${chungbukCands.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">충청북도</h3><div class="grid-responsive">${chungbukCands.map(createCard).join('')}</div></div>` : ''}
                     ${chungnamCands.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">충청남도</h3><div class="grid-responsive">${chungnamCands.map(createCard).join('')}</div></div>` : ''}
-                    ${jeonnamgwangjuCands.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">광주전남통합특별시</h3><div class="grid-responsive">${jeonnamgwangjuCands.map(createCard).join('')}</div></div>` : ''}
                     ${jeonbukCands.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">전북특별자치도</h3><div class="grid-responsive">${jeonbukCands.map(createCard).join('')}</div></div>` : ''}
                     ${gyeongbukCands.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">경상북도</h3><div class="grid-responsive">${gyeongbukCands.map(createCard).join('')}</div></div>` : ''}
                     ${gyeongnamCands.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">경상남도</h3><div class="grid-responsive">${gyeongnamCands.map(createCard).join('')}</div></div>` : ''}
@@ -2412,7 +2413,7 @@
                 `;
             }
 
-            const isTightBio = ["김태수", "고재윤", "이강민", "오정대", "우영훈", "최윤석", "구성도", "박성진", "주한송", "최제일", "심용진", "박종길", "박진우", "황은재", "송원근", "이호엽", "하용준", "김영민", "손승범", "김주연", "주이삭", "조현조", "길기영", "구가환", "박형군", "고금란", "김영민", "김효숙", "민영진", "민경록", "채송준", "권민찬", "이민희", "김윤재", "조응천", "이성진", "조순자", "오세철", "최봉환", "김성준", "하헌휘", "김희성", "박현수", "이민수", "이규민", "이은창", "김성우", "황시현", "이해성", "김민식"].includes(c.name);
+            const isTightBio = ["김태수", "고재윤", "이강민", "오정대", "우영훈", "최윤석", "구성도", "박성진", "주한송", "최제일", "심용진", "박종길", "박진우", "황은재", "송원근", "이호엽", "하용준", "김영민", "손승범", "김주연", "주이삭", "조현조", "김성열", "길기영", "구가환", "박형군", "고금란", "김영민", "김효숙", "민영진", "민경록", "채송준", "권민찬", "이민희", "김윤재", "조응천", "이성진", "조순자", "오세철", "최봉환", "김성준", "하헌휘", "김희성", "박현수", "이민수", "이규민", "이은창", "김성우", "황시현", "이해성", "김민식"].includes(c.name);
             const isTightSpacing = ["우영훈", "김태수", "심용진", "김주연","이진현"].includes(c.name);
             let styles = [];
             if (isTightBio || ["조동운", "김민식", "박철현", "류태하", "이용우", "이재원", "김병진", "양성혁", "양준모", "김주연", "주이삭", "김태수", "이규민", "이진현"].includes(c.name)) {
