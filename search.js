@@ -169,6 +169,7 @@
         const cityDongs = cityInfo.dongs;
 
         const matched = candidates.filter(c => {
+            if (c.visibility === "hidden") return false;
             switch (c.category) {
                 case "광역단체장":
                     return c.region === metropolitan;
@@ -232,19 +233,19 @@
             const cityFull = `${short} ${city}`;
             const districtLetter = districtName.match(/([가-힣]+)선거구$/)?.[1];
 
-            const 광역단체장 = candidates.filter(c => c.category === "광역단체장" && c.region === metropolitan);
-            const 기초단체장 = candidates.filter(c => c.category === "기초단체장" && c.region === cityFull);
+            const 광역단체장 = candidates.filter(c => c.visibility !== "hidden" && c.category === "광역단체장" && c.region === metropolitan);
+            const 기초단체장 = candidates.filter(c => c.visibility !== "hidden" && c.category === "기초단체장" && c.region === cityFull);
             const 광역지역구의원 = candidates.filter(c =>
-                c.category === "광역의원" && c.metropolitan === metropolitan &&
+                c.visibility !== "hidden" && c.category === "광역의원" && c.metropolitan === metropolitan &&
                 c.constituency !== "비례" && isProvCouncilMatchDong(c, q, dongs, city, isExactMode)
             );
             const 광역비례의원 = candidates.filter(c =>
-                c.category === "광역의원" && c.metropolitan === metropolitan && c.constituency === "비례"
+                c.visibility !== "hidden" && c.category === "광역의원" && c.metropolitan === metropolitan && c.constituency === "비례"
             );
             const 광역의원 = [...광역지역구의원, ...광역비례의원];
 
             const 기초의원 = candidates.filter(c => {
-                if (c.category !== "기초의원" || c.region !== cityFull) return false;
+                if (c.visibility === "hidden" || c.category !== "기초의원" || c.region !== cityFull) return false;
                 const parts = (c.subRegion || '').split(/[,，、]\s*/);
                 const dongHit = parts.some(sd => dongMatch(sd.trim(), q, isExactMode)) ||
                                 dongs.some(dong => parts.some(sd => dongMatch(sd.trim(), dong, true)));
@@ -319,10 +320,10 @@
     function getAutocompleteSuggestions(q) {
         if (!q) return [];
         if (AUTOCOMPLETE_DICT.length === 0) initAutocomplete();
-        
-        const qNorm = q.replace(/\s+/g, ''); // 띄어쓰기 무시
+
+        const qNorm = q.replace(/\s+/g, '');
         const isCho = /^[ㄱ-ㅎ]+$/.test(qNorm);
-        
+
         const matches = [];
         for (const item of AUTOCOMPLETE_DICT) {
             let matched = false;
@@ -335,8 +336,29 @@
                 }
             }
             if (matched) matches.push(item);
-            if (matches.length >= 8) break; // 최대 8개까지만 추천
+            if (matches.length >= 6) break; // 지역 추천은 최대 6개
         }
+
+        // 후보 이름 자동완성 추가
+        if (isLikelyName(qNorm)) {
+            const nameMatches = candidates.filter(c => {
+                if (c.visibility === "hidden") return false;
+                const name = (c.name || '').replace(/\s+/g, '');
+                return isCho ? getChosung(name).includes(qNorm) : name.includes(qNorm);
+            }).slice(0, 4);
+
+            for (const c of nameMatches) {
+                if (matches.length >= 8) break;
+                matches.push({
+                    type: 'candidate',
+                    searchVal: c.name,
+                    displayText: c.name,
+                    searchable: [c.name],
+                    desc: `${c.office || c.category} · ${c.region}`
+                });
+            }
+        }
+
         return matches;
     }
 
@@ -361,9 +383,15 @@
         }
 
         const html = suggestions.map(s => {
-            const icon = s.type === 'city' ? 'building-2' : 'map-pin';
+            const isCandidate = s.type === 'candidate';
+            const clickFn = isCandidate
+                ? `executeNameSearch('${s.searchVal.replace(/'/g, "\\'")}')`
+                : `executeAutocomplete('${s.searchVal.replace(/'/g, "\\'")}')`;
+            const badgeHtml = isCandidate
+                ? `<span class="text-[10px] font-black text-white bg-[#FF6600] rounded px-1.5 py-0.5 flex-shrink-0">후보</span>`
+                : '';
             return `
-            <button onclick="executeAutocomplete('${s.searchVal}')" class="flex items-center gap-3 w-full text-left bg-white dark:bg-slate-900 border-2 border-transparent hover:border-[#FF6600] hover:bg-orange-50 dark:hover:bg-orange-900/20 rounded-xl px-3 py-2 transition-all group">
+            <button onclick="${clickFn}" class="flex items-center gap-3 w-full text-left bg-white dark:bg-slate-900 border-2 border-transparent hover:border-[#FF6600] hover:bg-orange-50 dark:hover:bg-orange-900/20 rounded-xl px-3 py-2 transition-all group">
                 <div class="bg-gray-100 dark:bg-slate-800 group-hover:bg-[#FF6600] p-1.5 rounded-lg transition-colors flex-shrink-0">
                     
                 </div>
@@ -371,7 +399,7 @@
                     <span class="text-sm font-bold text-gray-900 dark:text-white truncate">${s.displayText}</span>
                     <span class="text-[11px] text-gray-400 dark:text-slate-500 font-medium truncate">${s.desc}</span>
                 </div>
-                
+                ${badgeHtml}
             </button>`;
         }).join('');
 
@@ -387,6 +415,61 @@
         if (input) input.value = val;
         performDongSearch(val);
     };
+
+    window.executeNameSearch = function(name) {
+        const input = document.getElementById('dong-search-input');
+        if (input) input.value = name;
+        applyNameSearchResult(name);
+    };
+
+    function applyNameSearchResult(query) {
+        const resultEl = document.getElementById('dong-search-result');
+        const matched = searchByName(query);
+        if (!matched.length) {
+            if (resultEl) resultEl.innerHTML = `
+            <div class="flex flex-col items-center justify-center py-6 text-center">
+                <p class="text-sm font-black text-gray-400">'${query}'(을)를 찾지 못했어요</p>
+                <p class="text-xs text-gray-300 dark:text-slate-600 mt-1">정확한 이름을 입력해 주세요</p>
+            </div>`;
+            return;
+        }
+        if (resultEl) {
+            resultEl.innerHTML = `
+            <div class="bg-orange-50 dark:bg-orange-900/20 rounded-xl px-3 py-2 mb-1">
+                <div class="flex items-center gap-2">
+                    <span class="text-xs font-black text-gray-700 dark:text-slate-200">🔍 이름 검색: '${query}'</span>
+                    <span class="text-[10px] text-gray-400">· 후보 ${matched.length}명</span>
+                </div>
+                <p class="text-[10px] text-gray-400 mt-2">↓ 아래 목록이 검색 결과로 필터링됩니다</p>
+            </div>`;
+        }
+        const labelText = `'${query}' 이름 검색 · 후보 ${matched.length}명`;
+        window.applySearchFilter(matched);
+        showBannerAndScroll(labelText);
+    }
+
+    // ── 8-0. 후보 이름 검색 ────────────────────────────────────
+    function searchByName(q) {
+        const qNorm = q.replace(/\s+/g, '');
+        const isCho = /^[ㄱ-ㅎ]+$/.test(qNorm);
+        const matched = candidates.filter(c => {
+            if (c.visibility === "hidden") return false;
+            const name = (c.name || '').replace(/\s+/g, '');
+            if (isCho) {
+                return getChosung(name).includes(qNorm);
+            }
+            return name.includes(qNorm);
+        });
+        return matched;
+    }
+
+    function isLikelyName(q) {
+        // 동/구/시/군으로 끝나지 않고, 초성이거나 2~4글자 한글이면 이름 가능성
+        if (/[동구시군]$/.test(q)) return false;
+        if (/\d/.test(q)) return false;
+        const isCho = /^[ㄱ-ㅎ]+$/.test(q);
+        return isCho || (q.length >= 2 && q.length <= 5 && /^[가-힣]+$/.test(q));
+    }
 
     // ── 8. 메인 검색 진입점 및 필터 관리 ──────────────────────
     window.searchByDong = function (query) {
@@ -773,6 +856,11 @@ return;
         const result = window.searchByDong(query);
 
         if (!result || !result.found) {
+            // 지역 검색 실패 시 이름 검색 시도
+            if (isLikelyName(query.trim())) {
+                applyNameSearchResult(query.trim());
+                return;
+            }
             resultEl.innerHTML = `
             <div class="flex flex-col items-center justify-center py-6 text-center">
                 <div class="bg-gray-100 dark:bg-slate-700 rounded-xl p-3 mb-2">
