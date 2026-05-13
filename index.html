@@ -669,6 +669,7 @@
 
         /* SNS 피드 스타일은 sns.js에서 동적으로 주입됩니다 */
     </style>
+    <script src="can.js?v=0512.07"></script>
 </head>
 <body id="top" class="p-0">
     <!-- ── 로딩 화면 ── -->
@@ -953,11 +954,7 @@
             </div>
         </div>
 
-        <!-- 2. 공천심사 시스템 버튼 -->
-        <a href="https://apply.reformparty.kr/" target="_blank" class="rh-apply-btn">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            개혁신당 온라인 공천 심사 시스템 들어가기
-        </a>
+
 
         <!-- 3. 주의사항 카드 -->
         <div class="rh-notice">
@@ -1043,6 +1040,96 @@
 
 
         <!-- 5-1. 예비후보 통계 카드 -->
+        <!-- 5-0. 본후보자 통계 카드 -->
+        <div id="cand-main-stats-card" style="border:0.5px solid rgba(255,102,0,0.3); border-radius:14px; padding:14px 16px;" class="bg-white dark:bg-slate-800">
+            <div style="display:flex; align-items:center; gap:6px; margin-bottom:12px;">
+                <span style="font-size:11px; font-weight:900; color:#1a1a00; background:#FFD600; border:1px solid rgba(0,0,0,0.12); border-radius:6px; padding:2px 8px;">⭐ 본후보자 통계</span>
+            </div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px; margin-bottom:10px;">
+                <div style="border-radius:8px; padding:8px 10px;" class="bg-slate-50 dark:bg-slate-700">
+                    <div style="font-size:9px; font-weight:700; margin-bottom:2px; letter-spacing:0.03em;" class="text-slate-400 dark:text-slate-500">후보자 수</div>
+                    <div style="font-size:20px; font-weight:800; line-height:1.1;" class="text-slate-900 dark:text-slate-100"><span id="cms-total-num">-</span><span style="font-size:12px; font-weight:500; color:#94a3b8;">명</span></div>
+                </div>
+                <div style="border-radius:8px; padding:8px 10px;" class="bg-slate-50 dark:bg-slate-700">
+                    <div style="font-size:9px; font-weight:700; margin-bottom:2px; letter-spacing:0.03em;" class="text-slate-400 dark:text-slate-500">평균 연령</div>
+                    <div style="font-size:20px; font-weight:800; line-height:1.1;" class="text-slate-900 dark:text-slate-100"><span id="cms-age-num">-</span><span style="font-size:12px; font-weight:500;" class="text-slate-400 dark:text-slate-500">세</span></div>
+                </div>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:7px;">
+                <div style="display:flex; align-items:center; gap:8px;">
+                    <div style="font-size:10px; font-weight:700; width:40px; flex-shrink:0;" class="text-slate-500 dark:text-slate-400">여성</div>
+                    <div style="flex:1; height:8px; border-radius:99px; overflow:hidden; position:relative;" class="bg-slate-200 dark:bg-slate-600">
+                        <div id="cms-gender-bar" style="height:100%; border-radius:99px; background:#e879a0; position:absolute; left:0; top:0; width:0%; transition:width 0.6s ease;"></div>
+                    </div>
+                    <div id="cms-gender-pct" style="font-size:10px; font-weight:700; width:38px; text-align:right; flex-shrink:0;" class="text-slate-500 dark:text-slate-400">-</div>
+                </div>
+                <div style="display:flex; align-items:center; gap:8px;">
+                    <div style="font-size:10px; font-weight:700; width:40px; flex-shrink:0;" class="text-slate-500 dark:text-slate-400">2030</div>
+                    <div style="flex:1; height:8px; border-radius:99px; overflow:hidden; position:relative;" class="bg-slate-200 dark:bg-slate-600">
+                        <div id="cms-youth-bar" style="height:100%; border-radius:99px; background:#FF6600; position:absolute; left:0; top:0; width:0%; transition:width 0.6s ease;"></div>
+                    </div>
+                    <div id="cms-youth-pct" style="font-size:10px; font-weight:700; width:38px; text-align:right; flex-shrink:0;" class="text-slate-500 dark:text-slate-400">-</div>
+                </div>
+            </div>
+            <hr style="border:none; margin:10px 0;" class="border-t border-slate-200 dark:border-slate-600">
+            <div id="cms-age-grid" style="display:grid; grid-template-columns:repeat(3,1fr); gap:5px;">
+                <div id="cms-age-10" style="background:#fff4ee; border-radius:8px; padding:5px 8px; display:flex; align-items:center; justify-content:space-between; gap:4px;">
+                    <span style="font-size:9px; font-weight:700; color:#FF6600; white-space:nowrap;" class="age-label-text">20대이하</span>
+                    <span style="font-size:13px; font-weight:800; color:#FF6600; white-space:nowrap;" class="age-val-text">-<span style="font-size:9px; font-weight:500; color:#FF6600;" class="age-unit-text">명</span></span>
+                </div>
+                <div id="cms-age-30" style="background:#fff4ee; border-radius:8px; padding:5px 8px; display:flex; align-items:center; justify-content:space-between; gap:4px;">
+                    <span style="font-size:9px; font-weight:700; color:#FF6600; white-space:nowrap;" class="age-label-text">30대</span>
+                    <span style="font-size:13px; font-weight:800; color:#FF6600; white-space:nowrap;" class="age-val-text">-<span style="font-size:9px; font-weight:500; color:#FF6600;" class="age-unit-text">명</span></span>
+                </div>
+                <div id="cms-age-40" style="border-radius:8px; padding:5px 8px; display:flex; align-items:center; justify-content:space-between; gap:4px;" class="bg-slate-50 dark:bg-slate-700">
+                    <span style="font-size:9px; font-weight:700; white-space:nowrap;" class="age-label-text text-slate-400 dark:text-slate-500">40대</span>
+                    <span style="font-size:13px; font-weight:800; white-space:nowrap;" class="age-val-text text-slate-900 dark:text-slate-100">-<span style="font-size:9px; font-weight:500; color:#94a3b8;" class="age-unit-text">명</span></span>
+                </div>
+                <div id="cms-age-50" style="border-radius:8px; padding:5px 8px; display:flex; align-items:center; justify-content:space-between; gap:4px;" class="bg-slate-50 dark:bg-slate-700">
+                    <span style="font-size:9px; font-weight:700; white-space:nowrap;" class="age-label-text text-slate-400 dark:text-slate-500">50대</span>
+                    <span style="font-size:13px; font-weight:800; white-space:nowrap;" class="age-val-text text-slate-900 dark:text-slate-100">-<span style="font-size:9px; font-weight:500; color:#94a3b8;" class="age-unit-text">명</span></span>
+                </div>
+                <div id="cms-age-60" style="border-radius:8px; padding:5px 8px; display:flex; align-items:center; justify-content:space-between; gap:4px;" class="bg-slate-50 dark:bg-slate-700">
+                    <span style="font-size:9px; font-weight:700; white-space:nowrap;" class="age-label-text text-slate-400 dark:text-slate-500">60대</span>
+                    <span style="font-size:13px; font-weight:800; white-space:nowrap;" class="age-val-text text-slate-900 dark:text-slate-100">-<span style="font-size:9px; font-weight:500; color:#94a3b8;" class="age-unit-text">명</span></span>
+                </div>
+                <div id="cms-age-70" style="border-radius:8px; padding:5px 8px; display:flex; align-items:center; justify-content:space-between; gap:4px;" class="bg-slate-50 dark:bg-slate-700">
+                    <span style="font-size:9px; font-weight:700; white-space:nowrap;" class="age-label-text text-slate-400 dark:text-slate-500">70대이상</span>
+                    <span style="font-size:13px; font-weight:800; white-space:nowrap;" class="age-val-text text-slate-900 dark:text-slate-100">-<span style="font-size:9px; font-weight:500; color:#94a3b8;" class="age-unit-text">명</span></span>
+                </div>
+            </div>
+
+            <!-- 카테고리별 분류 -->
+            <hr style="border:none; margin:10px 0;" class="border-t border-slate-200 dark:border-slate-600">
+            <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:5px;">
+                <div style="border-radius:7px; padding:7px 4px; text-align:center; background:rgba(255,102,0,0.08);">
+                    <div style="font-size:10px; font-weight:700; margin-bottom:3px; letter-spacing:0.02em;" class="text-slate-400 dark:text-slate-500">재보궐</div>
+                    <div style="font-size:18px; font-weight:900; line-height:1; color:#FF6600;"><span id="cms-by">0</span></div>
+                </div>
+                <div style="border-radius:7px; padding:7px 4px; text-align:center; background:rgba(255,102,0,0.08);">
+                    <div style="font-size:10px; font-weight:700; margin-bottom:3px; letter-spacing:0.02em;" class="text-slate-400 dark:text-slate-500">광역단체</div>
+                    <div style="font-size:18px; font-weight:900; line-height:1; color:#FF6600;"><span id="cms-prov-exec">0</span></div>
+                </div>
+                <div style="border-radius:7px; padding:7px 4px; text-align:center; background:rgba(255,102,0,0.08);">
+                    <div style="font-size:10px; font-weight:700; margin-bottom:3px; letter-spacing:0.02em;" class="text-slate-400 dark:text-slate-500">기초단체</div>
+                    <div style="font-size:18px; font-weight:900; line-height:1; color:#FF6600;"><span id="cms-local-exec">0</span></div>
+                </div>
+                <div style="border-radius:7px; padding:7px 4px; text-align:center; background:rgba(255,102,0,0.08);">
+                    <div style="font-size:10px; font-weight:700; margin-bottom:3px; letter-spacing:0.02em;" class="text-slate-400 dark:text-slate-500">광역의회</div>
+                    <div style="font-size:18px; font-weight:900; line-height:1; color:#FF6600;"><span id="cms-prov-council">0</span></div>
+                </div>
+                <div style="border-radius:7px; padding:7px 4px; text-align:center; background:rgba(255,102,0,0.08);">
+                    <div style="font-size:10px; font-weight:700; margin-bottom:3px; letter-spacing:0.02em;" class="text-slate-400 dark:text-slate-500">기초의회</div>
+                    <div style="font-size:18px; font-weight:900; line-height:1; color:#FF6600;"><span id="cms-local-council">0</span></div>
+                </div>
+            </div>
+
+            <!-- 지역별 현황 -->
+            <hr style="border:none; margin:10px 0;" class="border-t border-slate-200 dark:border-slate-600">
+            <div style="font-size:11px; font-weight:900; color:#FF6600; background:#fff4ee; border:1px solid rgba(255,102,0,0.3); border-radius:6px; padding:2px 8px; display:inline-block; margin-bottom:8px;">지역별 현황</div>
+            <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:4px;" id="cms-region-grid"></div>
+        </div>
+
         <div id="prelim-stats-card" style="border:0.5px solid rgba(10,26,61,0.2); border-radius:14px; padding:14px 16px;" class="bg-white dark:bg-slate-800">
             <div style="display:flex; align-items:center; gap:6px; margin-bottom:12px;">
                 <span style="font-size:11px; font-weight:900; color:#0a1a3d; background:#f0f3fa; border:1px solid #0a1a3d; border-radius:6px; padding:2px 8px;">예비후보자 통계</span>
@@ -1448,7 +1535,7 @@
         </div>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="can.js?v=0512.07" defer></script>   <script src="data1.js?v=0504.01" defer></script> <script src="search.js?v=0317.03" defer></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>   <script src="data1.js?v=0504.01" defer></script> <script src="search.js?v=0317.03" defer></script>
     <script>
         let currentModalCandidateName = '';
         let showOnlyConfirmed = false;
@@ -1531,7 +1618,7 @@
         /* 필터링된 후보자 목록 반환 */
         function getFilteredCandidates() {
             // hidden 제외, preliminary는 카드는 표시하되 카운트에서 제외
-            let filtered = candidates.filter(c => c.visibility !== "hidden");
+            let filtered = window.candidates.filter(c => c.visibility !== "hidden");
             if (showOnlyConfirmed) {
                 filtered = filtered.filter(c => (["공천확정","후보"].includes(c.status) || (c.status === "예비후보" && c.preliminary !== true)));
             }
@@ -1699,7 +1786,7 @@
             const name = currentModalCandidateName;
             if(!name) return;
     
-            const c = candidates.find(cand => cand.name === name);
+            const c = window.candidates.find(cand => cand.name === name);
             if (!c) return;
 
             let roleLabel = "";
@@ -1850,13 +1937,13 @@
         };
 
         function updateSummary() {
-            const getCount = (cat) => candidates.filter(c => c.visibility !== "hidden" && c.visibility !== "preliminary" && c.category === cat).length;
+            const getCount = (cat) => window.candidates.filter(c => c.visibility !== "hidden" && c.visibility !== "preliminary" && c.category === cat).length;
             const byCount    = getCount("재보궐선거");
             const provExec   = getCount("광역단체장");
             const localExec  = getCount("기초단체장");
             const provCounc  = getCount("광역의원");
             const localCounc = getCount("기초의원");
-            const total      = candidates.filter(c => c.visibility !== "hidden" && c.visibility !== "preliminary").length;
+            const total      = window.candidates.filter(c => c.visibility !== "hidden" && c.visibility !== "preliminary").length;
 
             // footer
             const footerEls = {
@@ -1884,8 +1971,8 @@
                     "경상남도": "경남", "제주특별자치도": "제주"
                 };
                 let gridHtml = '';
-                Object.keys(regionPriority).forEach(region => {
-                    const count = candidates.filter(c => c.visibility !== "hidden" && c.visibility !== "preliminary" && (c.metropolitan === region || c.region === region)).length;
+                Object.keys(window.regionPriority).forEach(region => {
+                    const count = window.candidates.filter(c => c.visibility !== "hidden" && c.visibility !== "preliminary" && (c.metropolitan === region || c.region === region)).length;
                     gridHtml += `<div class="region-box cursor-pointer" onclick="renderRegionView('${region}')"><span class="text-gray-500 dark:text-slate-400" style="font-size:11px;font-weight:700;">${shortNameMap[region]}</span><span style="font-size:14px;font-weight:900;" class="${count > 0 ? 'text-[#FF6600]' : 'text-gray-400 dark:text-slate-500'}">${count}</span></div>`;
                 });
                 regionGrid.innerHTML = gridHtml;
@@ -1953,7 +2040,7 @@
         }
 
         function openProfileModal(name) {
-            const c = candidates.find(cand => cand.name === name);
+            const c = window.candidates.find(cand => cand.name === name);
             if (!c) return;
             document.getElementById('modal-name').innerText = c.name;
             currentModalCandidateName = c.name;
@@ -2150,7 +2237,7 @@
             const byElectionCands = filtered.filter(c => c.category === "재보궐선거").sort((a, b) => {
                 const getPri = (c) => {
                     const name = c.metropolitan || c.region || "";
-                    if (regionPriority[name]) return regionPriority[name];
+                    if (window.regionPriority[name]) return window.regionPriority[name];
                     // 약칭 대응 매핑
                     const mapping = {
                         "서울": "서울특별시", "부산": "부산광역시", "대구": "대구광역시",
@@ -2159,15 +2246,15 @@
                         "충북": "충청북도", "충남": "충청남도", "전북": "전북특별자치도",
                         "경북": "경상북도", "경남": "경상남도", "제주": "제주특별자치도"
                     };
-                    return regionPriority[mapping[name]] || 99;
+                    return window.regionPriority[mapping[name]] || 99;
                 };
                 return getPri(a) - getPri(b);
             });
 
             
             const provCouncilCands = filtered.filter(c => c.category === "광역의원").sort((a, b) => {
-                const priA = regionPriority[a.metropolitan] || 99;
-                const priB = regionPriority[b.metropolitan] || 99;
+                const priA = window.regionPriority[a.metropolitan] || 99;
+                const priB = window.regionPriority[b.metropolitan] || 99;
                 if (priA !== priB) return priA - priB;
                 const isProA = a.constituency === "비례";
                 const isProB = b.constituency === "비례";
@@ -2192,7 +2279,7 @@
             const provCouncilGyeongbuk = provCouncilCands.filter(c => c.metropolitan === "경상북도");
             const provCouncilOthers = provCouncilCands.filter(c => !["서울특별시","울산광역시","제주특별자치도","충청북도","대구광역시","경기도","경상북도"].includes(c.metropolitan));
 
-            const localExecSort = (a, b) => (regionPriority[a.metropolitan] || 99) - (regionPriority[b.metropolitan] || 99) || (a.region || "").localeCompare(b.region || "");
+            const localExecSort = (a, b) => (window.regionPriority[a.metropolitan] || 99) - (window.regionPriority[b.metropolitan] || 99) || (a.region || "").localeCompare(b.region || "");
             const localExecSeoul = filtered.filter(c => c.category === "기초단체장" && c.metropolitan === "서울특별시").sort(localExecSort);
             const localExecGyeonggi = filtered.filter(c => c.category === "기초단체장" && c.metropolitan === "경기도").sort(localExecSort);
             const localExecGangwon = filtered.filter(c => c.category === "기초단체장" && c.metropolitan === "강원특별자치도").sort(localExecSort);
@@ -2216,7 +2303,7 @@
             const gyeongbukCands = filterByMetro("경상북도");
             const gyeongnamCands = filterByMetro("경상남도");
             const excluded = ["서울특별시","부산광역시","대구광역시","인천광역시","전남광주통합특별시","대전광역시","울산광역시","경기도","강원특별자치도","충청북도","충청남도","전북특별자치도","경상북도","경상남도"];
-            const otherCands = filtered.filter(c => !excluded.includes(c.metropolitan) && c.category === "기초의원").sort((a, b) => (regionPriority[a.metropolitan] || 99) - (regionPriority[b.metropolitan] || 99) || councilSort(a, b));
+            const otherCands = filtered.filter(c => !excluded.includes(c.metropolitan) && c.category === "기초의원").sort((a, b) => (window.regionPriority[a.metropolitan] || 99) - (window.regionPriority[b.metropolitan] || 99) || councilSort(a, b));
 
             container.innerHTML = `
                 ${byElectionCands.length > 0 ? `<section id="by-election" class="scroll-mt-24"><h2 class="section-title">재보궐선거</h2><div class="grid-responsive">${byElectionCands.map(createCard).join('')}</div></section>` : ''}
@@ -2269,7 +2356,7 @@
             const container = document.getElementById('content-area');
             const filtered = getFilteredCandidates();
             let html = '<div class="mb-16">';
-            Object.keys(regionPriority).forEach(m => {
+            Object.keys(window.regionPriority).forEach(m => {
                 const regionalCandidates = filtered.filter(c => c.metropolitan === m || c.region === m).sort((a, b) => {
                     const catOrder = {"재보궐선거": 1, "광역단체장": 2, "기초단체장": 3, "광역의원": 4, "기초의원": 5};
                     const catDiff = (catOrder[a.category] || 9) - (catOrder[b.category] || 9);
@@ -2309,6 +2396,110 @@
 
         document.addEventListener('DOMContentLoaded', function() {
             initDarkMode();
+
+            // 5월 16일(한국시간) 이후 후보자통계·예비후보자통계 숨김
+            (function() {
+                const now = new Date();
+                // 한국 시간(KST = UTC+9) 기준 날짜 계산
+                const kstOffset = 9 * 60; // 분
+                const kstNow = new Date(now.getTime() + (kstOffset + now.getTimezoneOffset()) * 60000);
+                const hideFrom = new Date('2026-05-16T00:00:00');
+                if (kstNow >= hideFrom) {
+                    ['prelim-stats-card', 'cand-stats-card'].forEach(function(id) {
+                        const el = document.getElementById(id);
+                        if (el) el.style.display = 'none';
+                    });
+                }
+            })();
+
+            // 본후보자 통계 카드 계산
+            (function() {
+                const cands = (window.candidates || []).filter(c => c.visibility !== "hidden" && c.visibility !== "preliminary" && c.status === "후보");
+                const total = cands.length;
+                const withAge = cands.filter(c => c.age != null);
+                const avgAge = withAge.length ? (withAge.reduce((s,c) => s + c.age, 0) / withAge.length) : 0;
+                const female = cands.filter(c => c.gender === "f").length;
+                const femalePct = total ? (female / total * 100).toFixed(1) : "0.0";
+                const youth = withAge.filter(c => c.age >= 10 && c.age <= 39).length;
+                const youthPct = total ? (youth / total * 100).toFixed(1) : "0.0";
+
+                const age10 = withAge.filter(c => c.age <= 29).length;
+                const age30 = withAge.filter(c => c.age >= 30 && c.age <= 39).length;
+                const age40 = withAge.filter(c => c.age >= 40 && c.age <= 49).length;
+                const age50 = withAge.filter(c => c.age >= 50 && c.age <= 59).length;
+                const age60 = withAge.filter(c => c.age >= 60 && c.age <= 69).length;
+                const age70 = withAge.filter(c => c.age >= 70).length;
+
+                const getCount = (cat) => cands.filter(c => c.category === cat).length;
+
+                const setEl = (id, val) => { const el = document.getElementById(id); if (el) el.innerText = val; };
+
+                setEl("cms-total-num", total);
+                setEl("cms-age-num", avgAge.toFixed(1));
+
+                const setAge = (id, val, isYouth) => {
+                    const el = document.getElementById(id);
+                    if (!el) return;
+                    const color = isYouth ? "#FF6600" : "#94a3b8";
+                    el.querySelector("span:last-child").innerHTML = val + `<span style="font-size:9px;font-weight:500;color:${color};">명</span>`;
+                };
+                setAge("cms-age-10", age10, true);
+                setAge("cms-age-30", age30, true);
+                setAge("cms-age-40", age40, false);
+                setAge("cms-age-50", age50, false);
+                setAge("cms-age-60", age60, false);
+                setAge("cms-age-70", age70, false);
+
+                setEl("cms-by",           getCount("재보궐선거"));
+                setEl("cms-prov-exec",    getCount("광역단체장"));
+                setEl("cms-local-exec",   getCount("기초단체장"));
+                setEl("cms-prov-council", getCount("광역의원"));
+                setEl("cms-local-council",getCount("기초의원"));
+
+                // 지역별 현황
+                const shortNameMap = {
+                    "서울특별시": "서울", "부산광역시": "부산", "대구광역시": "대구",
+                    "인천광역시": "인천", "전남광주통합특별시": "전남광주", "대전광역시": "대전",
+                    "울산광역시": "울산", "세종특별자치시": "세종", "경기도": "경기",
+                    "강원특별자치도": "강원", "충청북도": "충북", "충청남도": "충남",
+                    "전북특별자치도": "전북", "경상북도": "경북",
+                    "경상남도": "경남", "제주특별자치도": "제주"
+                };
+                const regionPriorityLocal = {
+                    "서울특별시": 1, "부산광역시": 2, "대구광역시": 3, "인천광역시": 4,
+                    "전남광주통합특별시": 5, "대전광역시": 6, "울산광역시": 7, "세종특별자치시": 8,
+                    "경기도": 9, "강원특별자치도": 10, "충청북도": 11, "충청남도": 12,
+                    "전북특별자치도": 13, "경상북도": 14, "경상남도": 15, "제주특별자치도": 16
+                };
+                const regionGrid = document.getElementById("cms-region-grid");
+                if (regionGrid) {
+                    let gridHtml = "";
+                    Object.keys(regionPriorityLocal).forEach(region => {
+                        const count = cands.filter(c => c.metropolitan === region || c.region === region).length;
+                        gridHtml += `<div style="border-radius:7px;padding:5px 4px;display:flex;align-items:center;justify-content:space-between;gap:4px;background:${count>0?'#fff4ee':'rgba(248,249,250,1)'};" class="dark:bg-slate-700">
+                            <span style="font-size:10px;font-weight:700;${count>0?'color:#FF6600;':''}" class="${count>0?'':'text-slate-400 dark:text-slate-500'}">${shortNameMap[region]}</span>
+                            <span style="font-size:13px;font-weight:900;${count>0?'color:#FF6600;':''}" class="${count>0?'':'text-slate-300 dark:text-slate-600'}">${count}</span>
+                        </div>`;
+                    });
+                    regionGrid.innerHTML = gridHtml;
+                }
+
+                // 0명이면 카드 숨김
+                const card = document.getElementById("cand-main-stats-card");
+                if (card && total === 0) card.style.display = "none";
+
+                setTimeout(() => {
+                    const gBar = document.getElementById("cms-gender-bar");
+                    const gPct = document.getElementById("cms-gender-pct");
+                    const yBar = document.getElementById("cms-youth-bar");
+                    const yPct = document.getElementById("cms-youth-pct");
+                    if (gBar) gBar.style.width = femalePct + "%";
+                    if (gPct) gPct.innerText = femalePct + "%";
+                    if (yBar) yBar.style.width = youthPct + "%";
+                    if (yPct) yPct.innerText = youthPct + "%";
+                }, 300);
+            })();
+
             // 예비후보 통계 카드 계산
             (function() {
                 const prelim = (window.candidates || []).filter(c => c.visibility !== "hidden" && c.visibility !== "preliminary" && (c.status === "예비후보" || c.showPreliminaryBadge === true));
@@ -2364,7 +2555,7 @@
             const params = new URLSearchParams(window.location.search);
             const candidateName = params.get('candidate');
             if (candidateName) {
-                const target = candidates.find(c => c.name === candidateName);
+                const target = window.candidates.find(c => c.name === candidateName);
                 if (target) {
                     openProfileModal(candidateName);
                 }
@@ -2732,7 +2923,7 @@
                 if (!selectedDistrictInfo || !selectedDistrictInfo.district) return [];
                 const guName = selectedDistrictInfo.gu;
                 const distIdPart = selectedDistrictInfo.district.split(' ')[1]?.replace('선거구', '') || "";
-                return candidates.filter(can => 
+                return window.candidates.filter(can => 
                     !can.hidden &&
                     can.category === "기초의원" && 
                     can.metropolitan === "서울특별시" && 
@@ -2795,7 +2986,7 @@
                                     const dongName = parts[2] || "";
                                     const distName = findDistrictName(guName, dongName);
                                     const isSelected = selectedDistrictInfo && selectedDistrictInfo.district === distName;
-                                    const hasCandidateInDist = distName && candidates.some(c => 
+                                    const hasCandidateInDist = distName && window.candidates.some(c => 
                                         c.visibility !== "hidden" &&
                                         c.visibility !== "preliminary" &&
                                         c.category === "기초의원" && 
@@ -2967,7 +3158,7 @@
 
             const getDistColor = (dName) => {
                 if (!dName) return document.documentElement.classList.contains('dark') ? "#020617" : "#fcf9f6";
-                const hasCandidate = candidates.some(c => 
+                const hasCandidate = window.candidates.some(c => 
                     c.visibility !== "hidden" &&
                     c.visibility !== "preliminary" &&
                     c.category === "기초의원" && 
@@ -2991,7 +3182,7 @@
             const matchedCandidatesMap = useMemo(() => {
                 if (!selectedDistrict) return [];
                 const [selCity] = selectedDistrict.split(' ');
-                return candidates.filter(can => {
+                return window.candidates.filter(can => {
                     if (can.hidden || can.category !== "기초의원" || can.metropolitan !== "경기도") return false;
                     const candidateCity = can.region.split(' ').pop();
                     const isCorrectCity = candidateCity === selCity;
