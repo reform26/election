@@ -1102,23 +1102,23 @@
             <!-- 카테고리별 분류 -->
             <hr style="border:none; margin:10px 0;" class="border-t border-slate-200 dark:border-slate-600">
             <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:5px;">
-                <div style="border-radius:7px; padding:7px 4px; text-align:center; background:rgba(255,102,0,0.08);">
+                <div onclick="scrollToId('by-election')" style="border-radius:7px; padding:7px 4px; text-align:center; background:rgba(255,102,0,0.08); cursor:pointer; transition:all .15s;" class="hover:bg-orange-100 dark:hover:bg-slate-700">
                     <div style="font-size:10px; font-weight:700; margin-bottom:3px; letter-spacing:0.02em;" class="text-slate-400 dark:text-slate-500">재보궐</div>
                     <div style="font-size:18px; font-weight:900; line-height:1; color:#FF6600;"><span id="cms-by">0</span></div>
                 </div>
-                <div style="border-radius:7px; padding:7px 4px; text-align:center; background:rgba(255,102,0,0.08);">
+                <div onclick="scrollToId('provincial-exec')" style="border-radius:7px; padding:7px 4px; text-align:center; background:rgba(255,102,0,0.08); cursor:pointer; transition:all .15s;" class="hover:bg-orange-100 dark:hover:bg-slate-700">
                     <div style="font-size:10px; font-weight:700; margin-bottom:3px; letter-spacing:0.02em;" class="text-slate-400 dark:text-slate-500">광역단체</div>
                     <div style="font-size:18px; font-weight:900; line-height:1; color:#FF6600;"><span id="cms-prov-exec">0</span></div>
                 </div>
-                <div style="border-radius:7px; padding:7px 4px; text-align:center; background:rgba(255,102,0,0.08);">
+                <div onclick="scrollToId('local-exec')" style="border-radius:7px; padding:7px 4px; text-align:center; background:rgba(255,102,0,0.08); cursor:pointer; transition:all .15s;" class="hover:bg-orange-100 dark:hover:bg-slate-700">
                     <div style="font-size:10px; font-weight:700; margin-bottom:3px; letter-spacing:0.02em;" class="text-slate-400 dark:text-slate-500">기초단체</div>
                     <div style="font-size:18px; font-weight:900; line-height:1; color:#FF6600;"><span id="cms-local-exec">0</span></div>
                 </div>
-                <div style="border-radius:7px; padding:7px 4px; text-align:center; background:rgba(255,102,0,0.08);">
+                <div onclick="scrollToId('provincial-council')" style="border-radius:7px; padding:7px 4px; text-align:center; background:rgba(255,102,0,0.08); cursor:pointer; transition:all .15s;" class="hover:bg-orange-100 dark:hover:bg-slate-700">
                     <div style="font-size:10px; font-weight:700; margin-bottom:3px; letter-spacing:0.02em;" class="text-slate-400 dark:text-slate-500">광역의회</div>
                     <div style="font-size:18px; font-weight:900; line-height:1; color:#FF6600;"><span id="cms-prov-council">0</span></div>
                 </div>
-                <div style="border-radius:7px; padding:7px 4px; text-align:center; background:rgba(255,102,0,0.08);">
+                <div onclick="scrollToId('local-council')" style="border-radius:7px; padding:7px 4px; text-align:center; background:rgba(255,102,0,0.08); cursor:pointer; transition:all .15s;" class="hover:bg-orange-100 dark:hover:bg-slate-700">
                     <div style="font-size:10px; font-weight:700; margin-bottom:3px; letter-spacing:0.02em;" class="text-slate-400 dark:text-slate-500">기초의회</div>
                     <div style="font-size:18px; font-weight:900; line-height:1; color:#FF6600;"><span id="cms-local-council">0</span></div>
                 </div>
@@ -2476,7 +2476,7 @@
                     let gridHtml = "";
                     Object.keys(regionPriorityLocal).forEach(region => {
                         const count = cands.filter(c => c.metropolitan === region || c.region === region).length;
-                        gridHtml += `<div style="border-radius:7px;padding:5px 4px;display:flex;align-items:center;justify-content:space-between;gap:4px;background:${count>0?'#fff4ee':'rgba(248,249,250,1)'};" class="dark:bg-slate-700">
+                        gridHtml += `<div onclick="renderRegionView('${region}')" style="border-radius:7px;padding:5px 4px;display:flex;align-items:center;justify-content:space-between;gap:4px;background:${count>0?'#fff4ee':'rgba(248,249,250,1)'};cursor:pointer;transition:all .15s;" class="dark:bg-slate-700 hover:border hover:border-orange-400">
                             <span style="font-size:10px;font-weight:700;${count>0?'color:#FF6600;':''}" class="${count>0?'':'text-slate-400 dark:text-slate-500'}">${shortNameMap[region]}</span>
                             <span style="font-size:13px;font-weight:900;${count>0?'color:#FF6600;':''}" class="${count>0?'':'text-slate-300 dark:text-slate-600'}">${count}</span>
                         </div>`;
@@ -2662,7 +2662,7 @@
             
             const isPreliminary = (c.status === "예비후보" || c.showPreliminaryBadge === true);
             const isCandidate = (c.status === "후보");
-            const isConfirmed = (["공천확정","후보"].includes(c.status) || (c.status === "예비후보" && c.preliminary !== true && !c.showPreliminaryBadge));
+            const isConfirmed = (c.status === "공천확정" || (c.status === "예비후보" && c.preliminary !== true && !c.showPreliminaryBadge)) && !isCandidate;
             const confirmedBadge = isConfirmed ? `<div class="confirmed-badge"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="badge-full">공천 확정</span><span class="badge-short">공천</span></div>` : "";
             const preliminaryBadge = isPreliminary ? `<div class="preliminary-badge"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#0a1a3d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><span class="badge-full">예비후보</span><span class="badge-short">예비</span></div>` : "";
             const candidateBadge = isCandidate ? `<div class="candidate-badge"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1a1a00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="badge-full">본후보</span><span class="badge-short">후보</span></div>` : "";
