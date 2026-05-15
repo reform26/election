@@ -628,7 +628,7 @@ const candidates = [
         category: "광역의원",
         office: "서울시의원",
         status: "후보",
-        age : 57,
+        age: 57,
         subRegion: "잠원동, 반포1동, 반포3동, 반포4동",
         bio: [
             "제11대 서울특별시의회 의원",
@@ -657,7 +657,7 @@ const candidates = [
         category: "광역의원",
         office: "서울시의원",
         status: "후보",
-        age : 68,
+        age: 68,
         subRegion: "상일제1동, 명일제1동, 명일제2동",
         bio: [
             "제11대 서울특별시의회 의원",
@@ -688,7 +688,7 @@ const candidates = [
         age: 43,
         constituency: "비례",
         district: "비례",
-        listOrder : 1,
+        listOrder: 1,
         bio: [
             "개혁연구원장 직무대행",
             "개혁신당 대변인",
@@ -715,7 +715,7 @@ const candidates = [
         age: 40,
         constituency: "비례",
         district: "비례",
-        listOrder : 2,
+        listOrder: 2,
         bio: [
             "(주)세이보리 벤처스 대표이사",
             "<span style='letter-spacing:-0.12em;'>전)Kearney(글로벌 전략 컨실팅펌)시니어컨설턴트</span>"
@@ -741,7 +741,7 @@ const candidates = [
         constituency: "비례",
         district: "비례",
         visibility: "hidden",
-        listOrder : 3,
+        listOrder: 3,
         bio: [
             "이대서울병원 연구원",
             "21대대선 선대본 강남캠프 부단장"
@@ -768,7 +768,7 @@ const candidates = [
         gender: "f",
         constituency: "비례",
         district: "비례",
-        listOrder : 1,
+        listOrder: 1,
         bio: [
             "온병원 간호과장",
             "전)동의과학대 간호학과 조교수"
@@ -795,7 +795,7 @@ const candidates = [
         age: 52,
         constituency: "비례",
         district: "비례",
-        listOrder : 1,
+        listOrder: 1,
         gender: "f",
         bio: [
             "대구시당 홍보위원",
@@ -822,7 +822,7 @@ const candidates = [
         constituency: "비례",
         district: "비례",
         age: 43,
-        listOrder : 2,
+        listOrder: 2,
         bio: [
             "진성학법률사무소 변호사",
             "대구고등법원 국선변호인",
@@ -853,7 +853,7 @@ const candidates = [
         district: "비례",
         age: 36,
         gender: "f",
-        listOrder : 1,
+        listOrder: 1,
         bio: [
             "전)(주)영그룹컴퍼니 대표",
             "LG 전자 엠버서더 크리에이터"
@@ -884,7 +884,7 @@ const candidates = [
         gender: "f",
         constituency: "비례",
         district: "비례",
-        listOrder : 1,
+        listOrder: 1,
         bio: [
             "법무법인 응원 변호사",
             "현)중소벤처기업부 스타트업 법률자문단 자문변호사"
@@ -912,7 +912,7 @@ const candidates = [
         age: 71,
         constituency: "비례",
         district: "비례",
-        listOrder : 2,
+        listOrder: 2,
         bio: [
             "남양주시 을 당협위원장",
             "경기도당 윤리위원장",
@@ -941,7 +941,7 @@ const candidates = [
         district: "비례",
         gender: "f",
         age: 57,
-        listOrder : 1,
+        listOrder: 1,
         bio: [
             "포항시 북 당협 여성위원장",
             "21대대선 선대위 포항캠프 여성본부장"
@@ -966,7 +966,7 @@ const candidates = [
         status: "후보",
         constituency: "비례",
         district: "비례",
-        listOrder : 2,
+        listOrder: 2,
         bio: [
             "포항시 남구·울릉군 당협위원장",
             "전) 경상북도당 위원장"
@@ -993,7 +993,7 @@ const candidates = [
         district: "비례",
         gender: "f",
         age: 58,
-        listOrder : 1,
+        listOrder: 1,
         bio: [
             "제6,7대 남해군의회 의원"
         ],
@@ -1019,7 +1019,7 @@ const candidates = [
         age: 42,
         constituency: "비례",
         district: "비례",
-        listOrder : 1,
+        listOrder: 1,
         bio: [
             "장애인거주시설이용자 부모회 제주지부장",
             "현) 푸른고래센터 이사"
@@ -1046,7 +1046,7 @@ const candidates = [
         district: "비례",
         gender: "f",
         age: 67,
-        listOrder : 2,
+        listOrder: 2,
         bio: [
             "제11대 제주도의회 의원",
             "전) 제주관광대 관광경영과 겸임교수"
@@ -1087,7 +1087,7 @@ const candidates = [
         dateAdded: "2026-04-24",
         coords: [
             36.650683,
-            127.488250
+            127.48825
         ]
     },
     {
@@ -1239,7 +1239,7 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-29",
         coords: [
-            37.516900,
+            37.5169,
             127.037203
         ]
     },
@@ -2124,7 +2124,7 @@ const candidates = [
         photo: "",
         district: "바",
         sns: {
-            fb: "",
+            fb: ""
         },
         pledge: "#",
         decl: "#",
@@ -2246,8 +2246,8 @@ const candidates = [
         donation: "https://givemoney.kr/politicians/238",
         dateAdded: "2026-05-08",
         coords: [
-            37.477910,
-            126.608150
+            37.47791,
+            126.60815
         ]
     },
     {
@@ -2329,7 +2329,7 @@ const candidates = [
         sns: {
             fb: "#",
             ig: "https://www.instagram.com/official_yongjun",
-            blog : "https://blog.naver.com/onedaylife97"
+            blog: "https://blog.naver.com/onedaylife97"
         },
         pledge: "#",
         decl: "https://rallypoint.kr/board/politics-free/224918",
@@ -2567,7 +2567,7 @@ const candidates = [
         dateAdded: "2026-02-05",
         coords: [
             37.281491,
-            127.017640
+            127.01764
         ]
     },
     {
@@ -2620,7 +2620,7 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-05-15",
         coords: [
-            37.272720,
+            37.27272,
             127.058063
         ]
     },
@@ -3012,7 +3012,7 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-04-29",
         coords: [
-            37.388296, 
+            37.388296,
             126.967436
         ]
     },
@@ -3820,7 +3820,7 @@ const candidates = [
             fb: "https://www.facebook.com/profile.php?id=61576886771004",
             ig: "https://www.instagram.com/jminwoo712",
             yt: "https://www.youtube.com/@tomygod123",
-            blog : "https://blog.naver.com/jminwoo712"
+            blog: "https://blog.naver.com/jminwoo712"
         },
         pledge: "#",
         decl: "#",
@@ -4147,7 +4147,7 @@ const candidates = [
         donation: "https://givemoney.kr/politicians/216",
         dateAdded: "2026-04-24",
         coords: [
-            37.207775, 
+            37.207775,
             127.056313
         ]
     },
@@ -4162,7 +4162,7 @@ const candidates = [
         gender: "f",
         constituency: "비례",
         district: "비례",
-        listOrder : 1,
+        listOrder: 1,
         bio: [
             "전)제9대 동작구의회 의원",
             "현) 마을발전소 사회적협동조합 활동가"
@@ -4177,7 +4177,7 @@ const candidates = [
         decl: "#",
         donation: "#",
         dateAdded: "2026-05-11",
-        coords: [ ]
+        coords: []
     },
     {
         name: "오나리",
@@ -4190,9 +4190,9 @@ const candidates = [
         age: 46,
         constituency: "비례",
         district: "비례",
-        listOrder : 1,
+        listOrder: 1,
         bio: [
-            "전)수원갑 정희윤후보 AI홍보위원장",
+            "전)수원갑 정희윤후보 AI홍보위원장"
         ],
         photo: "https://i.imgur.com/Ua1CHWx.png",
         sns: {
@@ -4202,7 +4202,7 @@ const candidates = [
         decl: "#",
         donation: "#",
         dateAdded: "2026-05-11",
-        coords: [ ]
+        coords: []
     },
     {
         name: "남경태",
@@ -4214,9 +4214,9 @@ const candidates = [
         visibility: "hidden",
         constituency: "비례",
         district: "비례",
-        listOrder : 2,
+        listOrder: 2,
         bio: [
-            "현) 삼성전자 사원",
+            "현) 삼성전자 사원"
         ],
         photo: "",
         sns: {
@@ -4226,7 +4226,7 @@ const candidates = [
         decl: "#",
         donation: "#",
         dateAdded: "2026-05-11",
-        coords: [ ]
+        coords: []
     },
     {
         name: "박유진",
@@ -4239,9 +4239,9 @@ const candidates = [
         age: 47,
         constituency: "비례",
         district: "비례",
-        listOrder : 1,
+        listOrder: 1,
         bio: [
-            "라이프타임(주) 대표이사",
+            "라이프타임(주) 대표이사"
         ],
         photo: "https://i.imgur.com/iTU1aAU.png",
         sns: {
@@ -4251,7 +4251,7 @@ const candidates = [
         decl: "#",
         donation: "#",
         dateAdded: "2026-05-11",
-        coords: [ ]
+        coords: []
     },
     {
         name: "배영희",
@@ -4264,7 +4264,7 @@ const candidates = [
         gender: "f",
         constituency: "비례",
         district: "비례",
-        listOrder : 1,
+        listOrder: 1,
         bio: [
             "요양보호사",
             "전) 하나로유통대표"
@@ -4277,7 +4277,7 @@ const candidates = [
         decl: "#",
         donation: "#",
         dateAdded: "2026-05-11",
-        coords: [ ]
+        coords: []
     },
     {
         name: "전아름",
@@ -4289,9 +4289,9 @@ const candidates = [
         constituency: "비례",
         visibility: "hidden",
         district: "비례",
-        listOrder : 1,
+        listOrder: 1,
         bio: [
-            "현) 휴앤유병원 간호사",
+            "현) 휴앤유병원 간호사"
         ],
         photo: "",
         sns: {
@@ -4301,7 +4301,7 @@ const candidates = [
         decl: "#",
         donation: "#",
         dateAdded: "2026-05-11",
-        coords: [ ]
+        coords: []
     },
     {
         name: "정재식",
@@ -4313,9 +4313,9 @@ const candidates = [
         constituency: "비례",
         visibility: "hidden",
         district: "비례",
-        listOrder : 2,
+        listOrder: 2,
         bio: [
-            "현) 와이피피(주) 차장",
+            "현) 와이피피(주) 차장"
         ],
         photo: "",
         sns: {
@@ -4325,7 +4325,7 @@ const candidates = [
         decl: "#",
         donation: "#",
         dateAdded: "2026-05-11",
-        coords: [ ]
+        coords: []
     },
     {
         name: "나혜정",
@@ -4338,7 +4338,7 @@ const candidates = [
         gender: "f",
         constituency: "비례",
         district: "비례",
-        listOrder : 1,
+        listOrder: 1,
         bio: [
             "전)인천대학교 초빙교수",
             "전)인천전문대학교 겸임교수"
@@ -4351,7 +4351,7 @@ const candidates = [
         decl: "#",
         donation: "#",
         dateAdded: "2026-05-11",
-        coords: [ ]
+        coords: []
     },
     {
         name: "홍승희",
@@ -4364,7 +4364,7 @@ const candidates = [
         district: "비례",
         age: 55,
         gender: "f",
-        listOrder : 1,
+        listOrder: 1,
         bio: [
             "전)포항 북구 당협위원회 사무원",
             "현)흥해여성의용소방대 단원"
@@ -4377,7 +4377,7 @@ const candidates = [
         decl: "#",
         donation: "#",
         dateAdded: "2026-05-11",
-        coords: [ ]
+        coords: []
     },
     {
         name: "안현정",
@@ -4390,10 +4390,10 @@ const candidates = [
         district: "비례",
         age: 32,
         gender: "f",
-        listOrder : 1,
+        listOrder: 1,
         bio: [
             "경상남도당 홍보위원장",
-            "함안요가연합회 대표",
+            "함안요가연합회 대표"
         ],
         photo: "https://i.imgur.com/xwv77zq.png",
         sns: {
@@ -4403,7 +4403,7 @@ const candidates = [
         decl: "#",
         donation: "#",
         dateAdded: "2026-05-11",
-        coords: [ ]
+        coords: []
     },
     {
         name: "이지연",
@@ -4416,7 +4416,7 @@ const candidates = [
         district: "비례",
         age: 33,
         gender: "f",
-        listOrder : 2,
+        listOrder: 2,
         bio: [
             "지연이네 용원냉삼집 대표",
             "전)(주)흥아마린 해사팀 사무직원"
@@ -4429,7 +4429,7 @@ const candidates = [
         decl: "#",
         donation: "#",
         dateAdded: "2026-05-11",
-        coords: [ ]
+        coords: []
     },
     {
         name: "서명교",
@@ -4724,7 +4724,7 @@ const candidates = [
         bio: [
             "<span style='letter-spacing:-0.12em;'>현) 민주평통연수구협의회 자문위원</span>",
             "<span style='letter-spacing:-0.10em;'>현) 인천시주민참여예산위원</span>",
-            "<span style='letter-spacing:-0.12em;'>전) 인천광역시교육청 학생참여위원회 위원장</span>",
+            "<span style='letter-spacing:-0.12em;'>전) 인천광역시교육청 학생참여위원회 위원장</span>"
         ],
         photo: "https://i.imgur.com/QmkqRrR.png",
         district: "다",
@@ -4737,7 +4737,7 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-05-13",
         coords: [
-            37.400480,
+            37.40048,
             126.670143
         ]
     },
@@ -4892,7 +4892,7 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-05-04",
         coords: [
-            35.228326, 
+            35.228326,
             128.889524
         ]
     },
@@ -5029,8 +5029,8 @@ const candidates = [
         donation: "https://givemoney.kr/politicians/190",
         dateAdded: "2026-04-23",
         coords: [
-           37.528145,
-           126.916286
+            37.528145,
+            126.916286
         ]
     },
     {
@@ -5104,7 +5104,7 @@ const candidates = [
         ],
         photo: "https://i.imgur.com/Dknpldq.png",
         sns: {
-           ig: "https://www.instagram.com/daniel_star_kim/"
+            ig: "https://www.instagram.com/daniel_star_kim/"
         },
         pledge: "#",
         decl: "#",
@@ -5218,14 +5218,14 @@ const candidates = [
             ig: "https://www.instagram.com/parkilha55",
             yt: "https://www.youtube.com/@parkilhatv",
             blog: "https://blog.naver.com/parkilha55"
-               },
+        },
         pledge: "#",
         decl: "#",
         donation: "https://givemoney.kr/politicians/239",
         dateAdded: "2026-05-08",
         coords: [
             37.50668,
-            126.939280
+            126.93928
         ]
     },
     {
@@ -5268,9 +5268,9 @@ const candidates = [
         ],
         photo: "https://i.imgur.com/4fFOf0Y.png",
         sns: {
-            fb : "https://www.facebook.com/politicohj",
-            ig : ""
-            },
+            fb: "https://www.facebook.com/politicohj",
+            ig: ""
+        },
         pledge: "#",
         decl: "#",
         donation: "https://givemoney.kr/politicians/230",
@@ -5299,9 +5299,9 @@ const candidates = [
         ],
         photo: "https://i.imgur.com/6FR2PFa.png",
         sns: {
-            fb : "",
-            ig : ""
-            },
+            fb: "",
+            ig: ""
+        },
         pledge: "#",
         decl: "#",
         donation: "#",
@@ -5424,7 +5424,7 @@ const candidates = [
         donation: "#",
         dateAdded: "2026-05-09",
         coords: [
-            37.534940,
+            37.53494,
             127.200995
         ]
     },
@@ -5535,7 +5535,7 @@ const candidates = [
         donation: "https://givemoney.kr/politicians/175/",
         dateAdded: "2026-04-20",
         coords: [
-            37.5340,
+            37.534,
             126.9886
         ]
     },
@@ -5629,15 +5629,15 @@ const candidates = [
         ],
         photo: "https://i.imgur.com/OXhWgZh.png",
         sns: {
-          ig : "https://www.instagram.com/mini_l.e.e/",
-          site : "https://litt.ly/mini_l.e.e"
-          },
+            ig: "https://www.instagram.com/mini_l.e.e/",
+            site: "https://litt.ly/mini_l.e.e"
+        },
         pledge: "#",
         decl: "#",
         donation: "https://givemoney.kr/politicians/184",
         dateAdded: "2026-04-20",
         coords: [
-            35.1360,
+            35.136,
             126.7979
         ]
     },
@@ -5683,8 +5683,8 @@ const candidates = [
         ],
         photo: "https://i.imgur.com/HGJNxnr.png",
         sns: {
-           fb: "https://www.facebook.com/jungsungkyu/?locale=ko_KR"
-             },
+            fb: "https://www.facebook.com/jungsungkyu/?locale=ko_KR"
+        },
         pledge: "#",
         decl: "#",
         donation: "https://givemoney.kr/politicians/243",
@@ -5738,7 +5738,7 @@ const candidates = [
         sns: {
             fb: "https://www.facebook.com/keumran.go/",
             yt: "https://www.youtube.com/@gogeumranTV",
-            blog : "https://blog.naver.com/mulan1997"
+            blog: "https://blog.naver.com/mulan1997"
         },
         pledge: "#",
         decl: "#",
@@ -5785,7 +5785,7 @@ const candidates = [
         office: "청주시의원",
         district: "마",
         age: 66,
-        subRegion: "서원구 사직제1동, 사직제2동, 모충동, 수곡제1동, 수곡제2동	",
+        subRegion: "서원구 사직제1동, 사직제2동, 모충동, 수곡제1동, 수곡제2동\t",
         status: "후보",
         bio: [
             "제1-3대 통합청주시의원(5선)",
@@ -5884,7 +5884,7 @@ const candidates = [
         dateAdded: "2026-05-11",
         coords: [
             37.303406,
-            126.990960
+            126.99096
         ]
     },
     {
@@ -5967,7 +5967,7 @@ const candidates = [
         dateAdded: "2026-04-23",
         coords: [
             37.543227,
-            126.873220
+            126.87322
         ]
     },
     {
@@ -5993,8 +5993,8 @@ const candidates = [
         donation: "https://givemoney.kr/politicians/212",
         dateAdded: "2026-04-22",
         coords: [
-           37.374900,
-           126.729348
+            37.3749,
+            126.729348
         ]
     },
     {
@@ -6007,7 +6007,7 @@ const candidates = [
         status: "후보",
         bio: [
             "제8대 울산시의원",
-            "제6,7대 남구의회 의원", 
+            "제6,7대 남구의회 의원",
             "울산시의회의원 예산결산특별위원장"
         ],
         photo: "https://i.imgur.com/OyhPEWj.png",
@@ -6032,7 +6032,7 @@ const candidates = [
         category: "기초단체장",
         office: "서천군수",
         status: "후보",
-        age : 53,
+        age: 53,
         bio: [
             "전)충남도의회 예산정책담당관",
             "전) 국회의원 보좌관"
@@ -6162,7 +6162,7 @@ const candidates = [
         dateAdded: "2026-04-27",
         coords: [
             35.535388,
-            129.322850
+            129.32285
         ]
     },
     {
@@ -6188,7 +6188,7 @@ const candidates = [
         donation: "https://givemoney.kr/politicians/208",
         dateAdded: "2026-04-27",
         coords: [
-            35.491290,
+            35.49129,
             129.351269
         ]
     },
@@ -6216,7 +6216,7 @@ const candidates = [
         donation: "https://givemoney.kr/politicians/211",
         dateAdded: "2026-04-27",
         coords: [
-            35.524458, 
+            35.524458,
             129.290415
         ]
     },
@@ -6279,7 +6279,7 @@ const candidates = [
             126.665644
         ]
     }
- ];
+];
 
 
 
