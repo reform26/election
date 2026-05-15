@@ -674,7 +674,7 @@
 
         /* SNS 피드 스타일은 sns.js에서 동적으로 주입됩니다 */
     </style>
-    <script src="can.js?v=0514.10"></script>
+    <script src="can.js?v=0515.01"></script>
 </head>
 <body id="top" class="p-0">
     <!-- ── 로딩 화면 ── -->
@@ -954,7 +954,7 @@
                 <div id="d-day-badge" class="rh-dday">D-000</div>
                 <div class="rh-update-badge">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    <span id="last-update-date">최종 업데이트 : 2026. 05. 11.</span>
+                    <span id="last-update-date">최종 업데이트 : 2026. 05. 15.</span>
                 </div>
             </div>
         </div>
@@ -2278,19 +2278,22 @@
             const provCouncilSeoul = provCouncilCands.filter(c => c.metropolitan === "서울특별시");
             const provCouncilUlsan = provCouncilCands.filter(c => c.metropolitan === "울산광역시");
             const provCouncilJeju = provCouncilCands.filter(c => c.metropolitan === "제주특별자치도");
-            const provCouncilChungbuk = provCouncilCands.filter(c => c.metropolitan === "충청북도");
+            const provCouncilChungcheong = provCouncilCands.filter(c => ["충청북도","충청남도","세종특별자치시"].includes(c.metropolitan));
             const provCouncilDaegu = provCouncilCands.filter(c => c.metropolitan === "대구광역시");
             const provCouncilGyeonggi = provCouncilCands.filter(c => c.metropolitan === "경기도");
+            const provCouncilBusanGyeongnam = provCouncilCands.filter(c => ["부산광역시","경상남도"].includes(c.metropolitan));
             const provCouncilGyeongbuk = provCouncilCands.filter(c => c.metropolitan === "경상북도");
-            const provCouncilOthers = provCouncilCands.filter(c => !["서울특별시","울산광역시","제주특별자치도","충청북도","대구광역시","경기도","경상북도"].includes(c.metropolitan));
+            const provCouncilIncheon = provCouncilCands.filter(c => c.metropolitan === "인천광역시");
+            const provCouncilOthers = provCouncilCands.filter(c => !["서울특별시","울산광역시","제주특별자치도","충청북도","충청남도","세종특별자치시","대구광역시","경기도","부산광역시","경상남도","경상북도","인천광역시"].includes(c.metropolitan));
 
             const localExecSort = (a, b) => (window.regionPriority[a.metropolitan] || 99) - (window.regionPriority[b.metropolitan] || 99) || (a.region || "").localeCompare(b.region || "");
             const localExecSeoul = filtered.filter(c => c.category === "기초단체장" && c.metropolitan === "서울특별시").sort(localExecSort);
             const localExecGyeonggi = filtered.filter(c => c.category === "기초단체장" && c.metropolitan === "경기도").sort(localExecSort);
             const localExecGangwon = filtered.filter(c => c.category === "기초단체장" && c.metropolitan === "강원특별자치도").sort(localExecSort);
             const localExecChungnam = filtered.filter(c => c.category === "기초단체장" && c.metropolitan === "충청남도").sort(localExecSort);
-            const localExecGyeongnam = filtered.filter(c => c.category === "기초단체장" && c.metropolitan === "경상남도").sort(localExecSort);
-            const localExecOthers = filtered.filter(c => c.category === "기초단체장" && !["서울특별시","경기도","강원특별자치도","충청남도","경상남도"].includes(c.metropolitan)).sort(localExecSort);
+            const _yeongnamNames = ["강명상", "최봉환", "방인섭", "조순자"];
+            const localExecYeongnam = filtered.filter(c => c.category === "기초단체장" && _yeongnamNames.includes(c.name)).sort(localExecSort);
+            const localExecOthers = filtered.filter(c => c.category === "기초단체장" && !["서울특별시","경기도","강원특별자치도","충청남도"].includes(c.metropolitan) && !_yeongnamNames.includes(c.name)).sort(localExecSort);
 
             const filterByMetro = (metro) => filtered.filter(c => c.category === "기초의원" && c.metropolitan === metro).sort(councilSort);
             const seoulCands = filterByMetro("서울특별시");
@@ -2319,16 +2322,18 @@
                     ${localExecGyeonggi.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">경기도</h3><div class="grid-responsive">${localExecGyeonggi.map(createCard).join('')}</div></div>` : ''}
                     ${localExecGangwon.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">강원특별자치도</h3><div class="grid-responsive">${localExecGangwon.map(createCard).join('')}</div></div>` : ''}
                     ${localExecChungnam.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">충청남도</h3><div class="grid-responsive">${localExecChungnam.map(createCard).join('')}</div></div>` : ''}
-                    ${localExecGyeongnam.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">경상남도</h3><div class="grid-responsive">${localExecGyeongnam.map(createCard).join('')}</div></div>` : ''}
+                    ${localExecYeongnam.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">영남지역</h3><div class="grid-responsive">${localExecYeongnam.map(createCard).join('')}</div></div>` : ''}
                     ${localExecOthers.length > 0 ? `<div><h3 class="sub-section-title">기타 지역</h3><div class="grid-responsive">${localExecOthers.map(createCard).join('')}</div></div>` : ''}
                 </section>
                 <section id="provincial-council" class="scroll-mt-24">
                     <h2 class="section-title">광역의회의원</h2>
                     ${provCouncilSeoul.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">서울특별시</h3><div class="grid-responsive">${provCouncilSeoul.map(createCard).join('')}</div></div>` : ''}
+                    ${provCouncilIncheon.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">인천광역시</h3><div class="grid-responsive">${provCouncilIncheon.map(createCard).join('')}</div></div>` : ''}
                     ${provCouncilDaegu.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">대구광역시</h3><div class="grid-responsive">${provCouncilDaegu.map(createCard).join('')}</div></div>` : ''}
                     ${provCouncilUlsan.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">울산광역시</h3><div class="grid-responsive">${provCouncilUlsan.map(createCard).join('')}</div></div>` : ''}
+                    ${provCouncilBusanGyeongnam.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">부산·경남</h3><div class="grid-responsive">${provCouncilBusanGyeongnam.map(createCard).join('')}</div></div>` : ''}
                     ${provCouncilGyeonggi.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">경기도</h3><div class="grid-responsive">${provCouncilGyeonggi.map(createCard).join('')}</div></div>` : ''}
-                    ${provCouncilChungbuk.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">충청북도</h3><div class="grid-responsive">${provCouncilChungbuk.map(createCard).join('')}</div></div>` : ''}
+                    ${provCouncilChungcheong.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">충청지역</h3><div class="grid-responsive">${provCouncilChungcheong.map(createCard).join('')}</div></div>` : ''}
                     ${provCouncilGyeongbuk.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">경상북도</h3><div class="grid-responsive">${provCouncilGyeongbuk.map(createCard).join('')}</div></div>` : ''}
                     ${provCouncilJeju.length > 0 ? `<div class="mb-8"><h3 class="sub-section-title">제주특별자치도</h3><div class="grid-responsive">${provCouncilJeju.map(createCard).join('')}</div></div>` : ''}
                     ${provCouncilOthers.length > 0 ? `<div><h3 class="sub-section-title">기타 지역</h3><div class="grid-responsive">${provCouncilOthers.map(createCard).join('')}</div></div>` : ''}
@@ -2623,7 +2628,7 @@
                 `;
             }
 
-            const isTightBio = ["김태수", "고재윤", "이강민", "오정대", "우영훈", "최윤석", "구성도", "박성진", "주한송", "최제일", "심용진", "박종길", "박진우", "황은재", "송원근", "이호엽", "하용준", "김영민", "손승범", "김주연", "주이삭", "조현조", "성진영", "김동광", "변재민", "정승연", "진성학", "김성열", "길기영", "구가환", "박형군", "고금란", "김영민", "김효숙", "민영진", "민경록", "채송준", "권민찬", "이민희", "김윤재", "조응천", "이성진", "조순자", "오세철", "최봉환", "김성준", "하헌휘", "김희성", "박현수", "이민수", "이규민", "이은창", "김성우", "황시현", "이해성", "김민식"].includes(c.name);
+            const isTightBio = ["김태수", "고재윤", "이강민", "오정대", "우영훈", "최윤석", "구성도", "박성진", "주한송", "최제일", "심용진", "박종길", "박진우", "황은재", "송원근", "이호엽", "하용준", "김영민", "손승범", "김주연", "주이삭", "조현조", "문모은", "성진영", "김동광", "변재민", "정승연", "진성학", "김성열", "길기영", "구가환", "박형군", "고금란", "김영민", "김효숙", "민영진", "민경록", "채송준", "권민찬", "이민희", "김윤재", "조응천", "이성진", "조순자", "오세철", "최봉환", "김성준", "하헌휘", "김희성", "박현수", "이민수", "이규민", "이은창", "김성우", "황시현", "이해성", "김민식"].includes(c.name);
             const isTightSpacing = ["우영훈", "김태수", "심용진", "김주연","이진현"].includes(c.name);
             let styles = [];
             if (isTightBio || ["조동운", "김민식", "박철현", "류태하", "이용우", "이재원", "김병진", "양성혁", "양준모", "김주연", "주이삭", "김태수", "이규민", "이진현"].includes(c.name)) {
