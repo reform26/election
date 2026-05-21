@@ -1941,6 +1941,169 @@
             return (a.district || "").localeCompare(b.district || "");
         };
 
+        // 서울특별시 자치구 순서 (공직선거법 별표 기준)
+        const SEOUL_GU_ORDER = [
+            "종로구","중구","용산구","성동구","광진구","동대문구","중랑구","성북구",
+            "강북구","도봉구","노원구","은평구","서대문구","마포구","양천구","강서구",
+            "구로구","금천구","영등포구","동작구","관악구","서초구","강남구","송파구","강동구"
+        ];
+        const getSeoulGuRank = (region) => {
+            const idx = SEOUL_GU_ORDER.findIndex(gu => (region || "").includes(gu));
+            return idx === -1 ? 999 : idx;
+        };
+        // 광역의원 district 예: "강남 1", "서대문 1" → 구 이름 추출
+        const getSeoulGuRankFromDistrict = (district) => {
+            if (!district || district === "비례") return 999;
+            const guName = district.replace(/\s+\d+$/, "") + "구";
+            const idx = SEOUL_GU_ORDER.findIndex(gu => gu === guName || gu.startsWith(district.replace(/\s+\d+$/, "")));
+            return idx === -1 ? 999 : idx;
+        };
+        const seoulExecSort = (a, b) => getSeoulGuRank(a.region) - getSeoulGuRank(b.region);
+        const seoulProvCouncilSort = (a, b) => {
+            const aP = a.district === "비례", bP = b.district === "비례";
+            if (aP !== bP) return aP ? 1 : -1;
+            if (aP && bP) return (a.listOrder || 999) - (b.listOrder || 999);
+            const rankDiff = getSeoulGuRankFromDistrict(a.district) - getSeoulGuRankFromDistrict(b.district);
+            if (rankDiff !== 0) return rankDiff;
+            return (a.district || "").localeCompare(b.district || "", "ko");
+        };
+        const seoulCouncilSort = (a, b) => {
+            const guDiff = getSeoulGuRank(a.region) - getSeoulGuRank(b.region);
+            if (guDiff !== 0) return guDiff;
+            const aP = isProportional(a), bP = isProportional(b);
+            if (aP !== bP) return aP ? 1 : -1;
+            if (aP && bP) return (a.listOrder || 999) - (b.listOrder || 999);
+            return (a.district || "").localeCompare(b.district || "", "ko");
+        };
+
+        // 대구광역시 구·군 순서
+        const DAEGU_GU_ORDER = [
+            "중구","동구","서구","남구","북구","수성구","달서구","달성군","군위군"
+        ];
+        const getDaeguGuRank = (region) => {
+            const idx = DAEGU_GU_ORDER.findIndex(gu => (region || "").includes(gu));
+            return idx === -1 ? 999 : idx;
+        };
+        const daeguCouncilSort = (a, b) => {
+            const guDiff = getDaeguGuRank(a.region) - getDaeguGuRank(b.region);
+            if (guDiff !== 0) return guDiff;
+            const aP = isProportional(a), bP = isProportional(b);
+            if (aP !== bP) return aP ? 1 : -1;
+            if (aP && bP) return (a.listOrder || 999) - (b.listOrder || 999);
+            return (a.district || "").localeCompare(b.district || "", "ko");
+        };
+
+        // 대전광역시 구 순서
+        const DAEJEON_GU_ORDER = ["동구","중구","서구","유성구","대덕구"];
+        const getDaejeonGuRank = (region) => {
+            const idx = DAEJEON_GU_ORDER.findIndex(gu => (region || "").includes(gu));
+            return idx === -1 ? 999 : idx;
+        };
+        const daejeonCouncilSort = (a, b) => {
+            const guDiff = getDaejeonGuRank(a.region) - getDaejeonGuRank(b.region);
+            if (guDiff !== 0) return guDiff;
+            const aP = isProportional(a), bP = isProportional(b);
+            if (aP !== bP) return aP ? 1 : -1;
+            if (aP && bP) return (a.listOrder || 999) - (b.listOrder || 999);
+            return (a.district || "").localeCompare(b.district || "", "ko");
+        };
+
+        // 전남광주통합특별시 구 순서
+        const GWANGJU_GU_ORDER = ["동구","서구","남구","북구","광산구"];
+        const getGwangjuGuRank = (region) => {
+            const idx = GWANGJU_GU_ORDER.findIndex(gu => (region || "").includes(gu));
+            return idx === -1 ? 999 : idx;
+        };
+        const gwangjuCouncilSort = (a, b) => {
+            const guDiff = getGwangjuGuRank(a.region) - getGwangjuGuRank(b.region);
+            if (guDiff !== 0) return guDiff;
+            const aP = isProportional(a), bP = isProportional(b);
+            if (aP !== bP) return aP ? 1 : -1;
+            if (aP && bP) return (a.listOrder || 999) - (b.listOrder || 999);
+            return (a.district || "").localeCompare(b.district || "", "ko");
+        };
+
+        // 부산광역시 구·군 순서
+        const BUSAN_GU_ORDER = [
+            "중구","서구","동구","영도구","부산진구","동래구","남구","북구",
+            "해운대구","사하구","금정구","강서구","연제구","수영구","사상구","기장군"
+        ];
+        const getBusanGuRank = (region) => {
+            const idx = BUSAN_GU_ORDER.findIndex(gu => (region || "").includes(gu));
+            return idx === -1 ? 999 : idx;
+        };
+        const busanCouncilSort = (a, b) => {
+            const guDiff = getBusanGuRank(a.region) - getBusanGuRank(b.region);
+            if (guDiff !== 0) return guDiff;
+            const aP = isProportional(a), bP = isProportional(b);
+            if (aP !== bP) return aP ? 1 : -1;
+            if (aP && bP) return (a.listOrder || 999) - (b.listOrder || 999);
+            return (a.district || "").localeCompare(b.district || "", "ko");
+        };
+
+        // 인천광역시 구·군 순서
+        const INCHEON_GU_ORDER = [
+            "강화군","옹진군","제물포구","미추홀구","연수구","남동구","부평구","계양구","서해구","영종구"
+        ];
+        const getIncheonGuRank = (region) => {
+            const idx = INCHEON_GU_ORDER.findIndex(gu => (region || "").includes(gu));
+            return idx === -1 ? 999 : idx;
+        };
+        const incheonCouncilSort = (a, b) => {
+            const guDiff = getIncheonGuRank(a.region) - getIncheonGuRank(b.region);
+            if (guDiff !== 0) return guDiff;
+            const aP = isProportional(a), bP = isProportional(b);
+            if (aP !== bP) return aP ? 1 : -1;
+            if (aP && bP) return (a.listOrder || 999) - (b.listOrder || 999);
+            return (a.district || "").localeCompare(b.district || "", "ko");
+        };
+
+        // 충청남도 시·군 순서
+        const CHUNGNAM_CITY_ORDER = [
+            "천안시","공주시","보령시","아산시","서산시","논산시","계룡시","당진시",
+            "금산군","부여군","서천군","청양군","홍성군","예산군","태안군"
+        ];
+        const getChungnamCityRank = (region) => {
+            const idx = CHUNGNAM_CITY_ORDER.findIndex(city => (region || "").includes(city));
+            return idx === -1 ? 999 : idx;
+        };
+        const chungnamExecSort = (a, b) => getChungnamCityRank(a.region) - getChungnamCityRank(b.region);
+        const chungnamCouncilSort = (a, b) => {
+            const cityDiff = getChungnamCityRank(a.region) - getChungnamCityRank(b.region);
+            if (cityDiff !== 0) return cityDiff;
+            const aP = isProportional(a), bP = isProportional(b);
+            if (aP !== bP) return aP ? 1 : -1;
+            if (aP && bP) return (a.listOrder || 999) - (b.listOrder || 999);
+            return (a.district || "").localeCompare(b.district || "", "ko");
+        };
+
+        // 경기도 시·군 순서 (경기도보 제7768호 기준)
+        const GYEONGGI_CITY_ORDER = [
+            "수원시","용인시","고양시","화성시","성남시","부천시","남양주시","안산시",
+            "평택시","안양시","시흥시","파주시","김포시","의정부시","광주시","하남시",
+            "양주시","광명시","군포시","오산시","이천시","안성시","구리시","포천시",
+            "의왕시","양평군","여주시","동두천시","과천시","가평군","연천군"
+        ];
+        const getGyeonggiCityRank = (region) => {
+            const idx = GYEONGGI_CITY_ORDER.findIndex(city => (region || "").includes(city));
+            return idx === -1 ? 999 : idx;
+        };
+        const isProportional = (c) => {
+            if (c.proportional === true) return true;
+            if (c.proportional === false) return false;
+            if (c.category === "기초의원" && !c.subRegion) return true;
+            return false;
+        };
+        const gyeonggiExecSort = (a, b) => getGyeonggiCityRank(a.region) - getGyeonggiCityRank(b.region);
+        const gyeonggiCouncilSort = (a, b) => {
+            const cityDiff = getGyeonggiCityRank(a.region) - getGyeonggiCityRank(b.region);
+            if (cityDiff !== 0) return cityDiff;
+            const aP = isProportional(a), bP = isProportional(b);
+            if (aP !== bP) return aP ? 1 : -1;
+            if (aP && bP) return (a.listOrder || 999) - (b.listOrder || 999);
+            return (a.district || "").localeCompare(b.district || "", "ko");
+        };
+
         function updateSummary() {
             const getCount = (cat) => window.candidates.filter(c => c.visibility !== "hidden" && c.visibility !== "preliminary" && c.category === cat).length;
             const byCount    = getCount("재보궐선거");
@@ -2275,7 +2438,7 @@
                 return (a.district || a.constituencyFull || "").localeCompare(b.district || b.constituencyFull || "");
             });
             
-            const provCouncilSeoul = provCouncilCands.filter(c => c.metropolitan === "서울특별시");
+            const provCouncilSeoul = provCouncilCands.filter(c => c.metropolitan === "서울특별시").sort(seoulProvCouncilSort);
             const provCouncilUlsan = provCouncilCands.filter(c => c.metropolitan === "울산광역시");
             const provCouncilJeju = provCouncilCands.filter(c => c.metropolitan === "제주특별자치도");
             const provCouncilChungcheong = provCouncilCands.filter(c => ["충청북도","충청남도","세종특별자치시"].includes(c.metropolitan));
@@ -2287,26 +2450,26 @@
             const provCouncilOthers = provCouncilCands.filter(c => !["서울특별시","울산광역시","제주특별자치도","충청북도","충청남도","세종특별자치시","대구광역시","경기도","부산광역시","경상남도","경상북도","인천광역시"].includes(c.metropolitan));
 
             const localExecSort = (a, b) => (window.regionPriority[a.metropolitan] || 99) - (window.regionPriority[b.metropolitan] || 99) || (a.region || "").localeCompare(b.region || "");
-            const localExecSeoul = filtered.filter(c => c.category === "기초단체장" && c.metropolitan === "서울특별시").sort(localExecSort);
-            const localExecGyeonggi = filtered.filter(c => c.category === "기초단체장" && c.metropolitan === "경기도").sort(localExecSort);
+            const localExecSeoul = filtered.filter(c => c.category === "기초단체장" && c.metropolitan === "서울특별시").sort(seoulExecSort);
+            const localExecGyeonggi = filtered.filter(c => c.category === "기초단체장" && c.metropolitan === "경기도").sort(gyeonggiExecSort);
             const localExecGangwon = filtered.filter(c => c.category === "기초단체장" && c.metropolitan === "강원특별자치도").sort(localExecSort);
-            const localExecChungnam = filtered.filter(c => c.category === "기초단체장" && c.metropolitan === "충청남도").sort(localExecSort);
+            const localExecChungnam = filtered.filter(c => c.category === "기초단체장" && c.metropolitan === "충청남도").sort(chungnamExecSort);
             const _yeongnamNames = ["강명상", "최봉환", "방인섭", "조순자"];
             const localExecYeongnam = filtered.filter(c => c.category === "기초단체장" && _yeongnamNames.includes(c.name)).sort(localExecSort);
             const localExecOthers = filtered.filter(c => c.category === "기초단체장" && !["서울특별시","경기도","강원특별자치도","충청남도"].includes(c.metropolitan) && !_yeongnamNames.includes(c.name)).sort(localExecSort);
 
             const filterByMetro = (metro) => filtered.filter(c => c.category === "기초의원" && c.metropolitan === metro).sort(councilSort);
-            const seoulCands = filterByMetro("서울특별시");
-            const busanCands = filterByMetro("부산광역시");
-            const daeguCands = filterByMetro("대구광역시");
-            const incheonCands = filterByMetro("인천광역시");
-            const jeonnamgwangjuCands = filterByMetro("전남광주통합특별시");
-            const daejeonCands = filterByMetro("대전광역시");
+            const seoulCands = filtered.filter(c => c.category === "기초의원" && c.metropolitan === "서울특별시").sort(seoulCouncilSort);
+            const busanCands = filtered.filter(c => c.category === "기초의원" && c.metropolitan === "부산광역시").sort(busanCouncilSort);
+            const daeguCands = filtered.filter(c => c.category === "기초의원" && c.metropolitan === "대구광역시").sort(daeguCouncilSort);
+            const incheonCands = filtered.filter(c => c.category === "기초의원" && c.metropolitan === "인천광역시").sort(incheonCouncilSort);
+            const jeonnamgwangjuCands = filtered.filter(c => c.category === "기초의원" && c.metropolitan === "전남광주통합특별시").sort(gwangjuCouncilSort);
+            const daejeonCands = filtered.filter(c => c.category === "기초의원" && c.metropolitan === "대전광역시").sort(daejeonCouncilSort);
             const ulsanCands = filterByMetro("울산광역시");
-            const gyeonggiCands = filterByMetro("경기도");
+            const gyeonggiCands = filtered.filter(c => c.category === "기초의원" && c.metropolitan === "경기도").sort(gyeonggiCouncilSort);
             const gangwonCands = filterByMetro("강원특별자치도");
             const chungbukCands = filterByMetro("충청북도");
-            const chungnamCands = filterByMetro("충청남도");
+            const chungnamCands = filtered.filter(c => c.category === "기초의원" && c.metropolitan === "충청남도").sort(chungnamCouncilSort);
             const jeonbukCands = filterByMetro("전북특별자치도");
             const gyeongbukCands = filterByMetro("경상북도");
             const gyeongnamCands = filterByMetro("경상남도");
