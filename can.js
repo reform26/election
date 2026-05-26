@@ -4668,6 +4668,7 @@ const candidates = [
         category: "기초의원",
         office: "포항시의회",
         status: "후보",
+        visibility: "hidden",
         constituency: "비례",
         district: "비례",
         age: 55,
