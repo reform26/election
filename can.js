@@ -2818,6 +2818,7 @@ const candidates = [
         office: "용인시의회",
         status: "후보",
         district: "라",
+        visibility: "hidden",
         age: 72,
         subRegion: "기흥구 신갈동, 영덕1동, 영덕2동, 기흥동, 서농동",
         bio: [
