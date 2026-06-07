@@ -1,0 +1,6265 @@
+// can.js - 개혁신당 2026 지방선거 후보자 데이터
+
+const regionPriority = {
+    "서울특별시": 1, "부산광역시": 2, "대구광역시": 3, "인천광역시": 4,
+    "전남광주통합특별시": 5, "대전광역시": 6, "울산광역시": 7, "세종특별자치시": 8,
+    "경기도": 9, "강원특별자치도": 10, "충청북도": 11, "충청남도": 12,
+    "전북특별자치도": 13, "경상북도": 14, "경상남도": 15,
+    "제주특별자치도": 16
+};
+
+const candidates = [
+    {
+        name: "김정철",
+        region: "서울특별시",
+        category: "광역단체장",
+        office: "서울특별시장",
+        age: 49,
+        status: "후보",
+        slogan: "김정철과 서울의 기적을 함께 만들어요.",
+        bio: [
+            "개혁신당 최고위원",
+            "법무법인 우리 대표변호사"
+        ],
+        photo: "https://i.imgur.com/EyejZgC.png",
+        sns: {
+            fb: "https://www.facebook.com/gimjeongcheol.869066/",
+            ig: "https://www.instagram.com/seoul_kjc/",
+            yt: "https://www.youtube.com/@%EA%B9%80%EC%A0%95%EC%B2%A0%EB%B3%80%ED%98%B8%EC%82%AC",
+            site: "https://www.xn--4k0bx30cygd.kr/"
+        },
+        pledge: "https://www.xn--4k0bx30cygd.kr/",
+        decl: "https://daily.hankooki.com/news/articleView.html?idxno=1247318",
+        donation: "https://givemoney.kr/politicians/141",
+        dateAdded: "2025-11-25",
+        coords: [
+            37.5663,
+            126.9779
+        ]
+    },
+    {
+        name: "정이한",
+        region: "부산광역시",
+        category: "광역단체장",
+        office: "부산광역시장",
+        age: 37,
+        status: "후보",
+        bio: [
+            "부산광역시당 위원장 직무대행",
+            "개혁신당 중앙당 대변인"
+        ],
+        photo: "https://cdn.seoulfn.com/news/photo/202511/612324_411809_430.jpg",
+        sns: {
+            fb: "https://www.facebook.com/jeong21official",
+            ig: "https://www.instagram.com/jeong21_official",
+            yt: "https://www.youtube.com/@jeong21tv"
+        },
+        pledge: "#",
+        decl: "https://youtube.com/shorts/M88-dOI_Uz4?si=YjhleHQGtMmJBVPF",
+        donation: "https://givemoney.kr/politicians/142",
+        dateAdded: "2025-11-25",
+        coords: [
+            35.1798,
+            129.075
+        ]
+    },
+    {
+        name: "이수찬",
+        region: "대구광역시",
+        category: "광역단체장",
+        office: "대구광역시장",
+        age: 58,
+        status: "후보",
+        bio: [
+            "대구광역시당 위원장"
+        ],
+        photo: "https://i.imgur.com/1FbAb5u.jpeg",
+        sns: {
+            fb: "https://www.facebook.com/profile.php?id=1000045002273835",
+            ig: "https://www.instagram.com/i.isucan/",
+            yt: "https://www.youtube.com/@%EB%8C%80%EA%B5%AC%EC%8B%9C%EB%AF%BC_%EC%9D%B4%EC%88%98%EC%B0%AC",
+            blog: "https://blog.naver.com/daeguchani"
+        },
+        pledge: "#",
+        decl: "https://www.youtube.com/live/ixdTcenUjMw?si=62KazlMWdC6ciOpY",
+        donation: "https://givemoney.kr/politicians/144",
+        dateAdded: "2026-02-06",
+        coords: [
+            35.8714,
+            128.6014
+        ]
+    },
+    {
+        name: "이기붕",
+        region: "인천광역시",
+        category: "광역단체장",
+        office: "인천광역시장",
+        age: 63,
+        status: "후보",
+        bio: [
+            "인천광역시당 위원장",
+            "전) 연세대학교 객원교수"
+        ],
+        photo: "https://i.imgur.com/aNqvWiU.jpeg",
+        sns: {
+            fb: "https://www.facebook.com/keebung",
+            ig: "https://www.instagram.com/keebung_lee/",
+            yt: "https://www.youtube.com/@rheekeebung"
+        },
+        pledge: "#",
+        decl: "https://www.youtube.com/watch?v=vB47J90zQ00",
+        donation: "https://givemoney.kr/politicians/248",
+        dateAdded: "2025-12-01",
+        coords: [
+            37.4563,
+            126.7052
+        ]
+    },
+    {
+        name: "강희린",
+        region: "대전광역시",
+        category: "광역단체장",
+        office: "대전광역시장",
+        age: 29,
+        status: "후보",
+        bio: [
+            "대전광역시당 위원장"
+        ],
+        photo: "https://i.imgur.com/XzwcEPW.png",
+        cardFit: "cover",
+        sns: {
+            fb: "https://www.facebook.com/ganghuilin.2025/",
+            ig: "https://www.instagram.com/korria1/",
+            yt: "https://www.youtube.com/@%EA%B0%95%ED%9D%AC%EB%A6%B0-q8h",
+            blog: "https://blog.naver.com/korria1/224142918612"
+        },
+        pledge: "https://policy.reformparty.kr/map?region_code=30&election_type=metro_mayor",
+        decl: "https://www.cctoday.co.kr/news/articleView.html?idxno=2225440",
+        donation: "https://givemoney.kr/politicians/146",
+        dateAdded: "2026-01-17",
+        coords: [
+            36.3504,
+            127.3845
+        ]
+    },
+    {
+        name: "하헌휘",
+        region: "세종특별자치시",
+        category: "광역단체장",
+        office: "세종특별자치시장",
+        age: 39,
+        slogan: "하헌휘와 함께 다시 뛰는 세종시",
+        status: "후보",
+        bio: [
+            "세종특별자치시당 창준위장",
+            "세종시 갑 당협위원장",
+            "<span style='letter-spacing:-0.12em;'>'변호사 하헌휘 법률사무소' 대표변호사</span>"
+        ],
+        photo: "https://i.imgur.com/Z8LzmnG.png",
+        sns: {
+            fb: "https://www.facebook.com/p/%ED%95%98%ED%97%8C%ED%9C%98-61562035792083/",
+            ig: "https://www.instagram.com/reform_lawyer/",
+            yt: "https://www.youtube.com/@%EC%84%B8%EC%A2%85%ED%95%98%ED%97%8C%ED%9C%98%EB%B3%80%ED%98%B8%EC%82%AC"
+        },
+        pledge: "#",
+        decl: "https://www.youtube.com/watch?v=JcjbnGq3rN8",
+        donation: "https://givemoney.kr/politicians/145",
+        dateAdded: "2025-12-05",
+        coords: [
+            36.4801,
+            127.289
+        ]
+    },
+    {
+        name: "조응천",
+        region: "경기도",
+        category: "광역단체장",
+        office: "경기도지사",
+        status: "후보",
+        age: 63,
+        bio: [
+            "제20, 21대 국회의원",
+            "전) 대통령비서실 민정수석실 공직기강비서관",
+            "전) 개혁신당 최고위원"
+        ],
+        photo: "https://i.imgur.com/EYGyWSA.png",
+        sns: {
+            yt: "https://youtube.com/chopros",
+            ig: "https://instagram.com/chopros",
+            fb: "https://facebook.com/chopros",
+            blog: "https://blog.naver.com/chopros/"
+        },
+        pledge: "#",
+        decl: "https://www.facebook.com/share/p/17ofr3YfrJ/",
+        donation: "https://givemoney.kr/politicians/221",
+        dateAdded: "2026-05-02",
+        coords: [
+            37.289058,
+            127.053435
+        ]
+    },
+    {
+        name: "이용우",
+        region: "서울 강동구",
+        metropolitan: "서울특별시",
+        category: "기초단체장",
+        office: "강동구청장",
+        age: 39,
+        status: "후보",
+        bio: [
+            "강동구 을 당협위원장",
+            "<span style='letter-spacing:-0.12em;'>개혁신당 강동구 지역발전특위 위원장</span>",
+            "21대 대선 일정기획부단장",
+            "전) 서울시당 수석대변인"
+        ],
+        photo: "https://i.imgur.com/moDKFx9.png",
+        sns: {
+            fb: "https://www.facebook.com/profile.php?id=61557084968016"
+        },
+        pledge: "#",
+        decl: "https://www.facebook.com/share/p/1a1XZmBRh2/",
+        donation: "https://givemoney.kr/politicians/129",
+        dateAdded: "2026-01-26",
+        coords: [
+            37.5301,
+            127.1238
+        ]
+    },
+    {
+        name: "정희윤",
+        region: "경기 수원시",
+        metropolitan: "경기도",
+        category: "기초단체장",
+        office: "수원시장",
+        age: 39,
+        status: "후보",
+        bio: [
+            "수원시 갑 당협위원장",
+            "경기도당 부위원장",
+            "경기도당 미래희망위원장"
+        ],
+        photo: "https://i.imgur.com/OuiAd60.png",
+        sns: {
+            fb: "https://www.facebook.com/jungdison?_rdr",
+            yt: "https://youtube.com/channel/UC3-CpPJnxTWi0oLAlNs7GRw?si=-YVfD0oAizDhXgxX"
+        },
+        pledge: "#",
+        decl: "https://www.youtube.com/watch?v=C7GBq2Rsd68&pp=ygUJ7KCV7Z2s7Jyk",
+        donation: "https://givemoney.kr/politicians/151",
+        dateAdded: "2026-02-12",
+        coords: [
+            37.2636,
+            127.0286
+        ]
+    },
+    {
+        name: "송창훈",
+        region: "경기 용인시",
+        metropolitan: "경기도",
+        category: "기초단체장",
+        office: "용인시장",
+        status: "후보",
+        age: 31,
+        bio: [
+            "용인시 정 당협위원장",
+            "현)가천대학교 기계공학부 겸임교수"
+        ],
+        photo: "https://i.imgur.com/czv11rh.png",
+        sns: {
+            fb: "https://www.facebook.com/profile.php?id=100004103197128",
+            ig: "https://www.instagram.com/song_c_h_/"
+        },
+        pledge: "#",
+        decl: "https://www.youtube.com/watch?v=MZHron4TMO4",
+        donation: "https://givemoney.kr/politicians/147",
+        dateAdded: "2026-01-05",
+        coords: [
+            37.2411,
+            127.1775
+        ]
+    },
+    {
+        name: "신현철",
+        region: "경기 고양시",
+        metropolitan: "경기도",
+        category: "기초단체장",
+        office: "고양시장",
+        slogan: "고양시민이 정책결정자입니다. 잘 사는 고양시민이 직접 만들어야 합니다.",
+        status: "후보",
+        age: 58,
+        bio: [
+            "제9대 고양시의회 부의장",
+            "제9대 고양시의원",
+            "전)애플공인교육센터 대표"
+        ],
+        photo: "https://i.imgur.com/3c0ZlqO.png",
+        sns: {
+            fb: "https://www.facebook.com/bundopro/",
+            ig: "https://www.instagram.com/bundopro/",
+            yt: "https://www.youtube.com/@%EC%8B%A0%ED%98%84%EC%B2%A0%EA%B3%A0%EC%96%91%EC%8B%9C%EC%9E%A5"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/153",
+        dateAdded: "2026-03-19",
+        coords: [
+            37.6584,
+            126.8324
+        ]
+    },
+    {
+        name: "전성균",
+        region: "경기 화성시",
+        metropolitan: "경기도",
+        category: "기초단체장",
+        office: "화성시장",
+        age: 36,
+        status: "후보",
+        bio: [
+            "제9대 화성시의원",
+            "경기도당 위원장",
+            "전) 개혁신당 최고위원"
+        ],
+        photo: "https://i.imgur.com/gc9TjpX.png",
+        sns: {
+            fb: "https://www.facebook.com/seonggyun.jeon.7",
+            ig: "https://www.instagram.com/jeonsk_reform/",
+            yt: "https://www.youtube.com/@resetkorea_revolution"
+        },
+        pledge: "#",
+        decl: "https://www.youtube.com/watch?v=MZHron4TMO4",
+        donation: "https://givemoney.kr/politicians/170",
+        dateAdded: "2026-01-05",
+        coords: [
+            37.1994,
+            126.8317
+        ]
+    },
+    {
+        name: "송진영",
+        region: "경기 오산시",
+        metropolitan: "경기도",
+        category: "기초단체장",
+        office: "오산시장",
+        age: 54,
+        gender: "f",
+        status: "후보",
+        bio: [
+            "제9대 오산시의원",
+            "전)총신대학교 겸임교수"
+        ],
+        photo: "https://www.osancouncil.go.kr/attach/member/CT_9/172376d6ff7bcbc7a6a038add9585f95.jpg",
+        sns: {
+            fb: "https://www.facebook.com/osminjun/about/?_rdr"
+        },
+        pledge: "#",
+        decl: "https://www.getnews.co.kr/news/articleView.html?idxno=670154",
+        donation: "https://givemoney.kr/politicians/149",
+        dateAdded: "2026-01-23",
+        coords: [
+            37.1499,
+            127.0771
+        ]
+    },
+    {
+        name: "고금란",
+        region: "경기 과천시",
+        metropolitan: "경기도",
+        category: "기초단체장",
+        age: 53,
+        gender: "f",
+        office: "과천시장",
+        status: "후보",
+        bio: [
+            "제7,8대 과천시의원",
+            "제8대 과천시의회 의장(후기)",
+            "개혁신당 대변인",
+            "의왕시·과천시 당협위원장"
+        ],
+        photo: "https://i.imgur.com/sA6Zbmx.png",
+        sns: {
+            fb: "https://www.facebook.com/keumran.go/",
+            yt: "https://www.youtube.com/@gogeumranTV",
+            blog: "https://blog.naver.com/mulan1997"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/217",
+        dateAdded: "2026-04-27",
+        coords: [
+            37.4292,
+            126.9876
+        ]
+    },
+    {
+        name: "이혜숙",
+        region: "서울 관악구",
+        metropolitan: "서울특별시",
+        category: "기초단체장",
+        office: "관악구청장",
+        age: 62,
+        gender: "f",
+        status: "후보",
+        bio: [
+            "관악구 갑 당협위원장",
+            "21대 대선 선대위 부대변인",
+            "정치컨설팅 공론 대표"
+        ],
+        photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQldYi95_jeH9ZscObQhU8SfeBkt7_id2CYecNX-bHuIl-NIOJ8r4XS_F4&s=10",
+        sns: {
+            fb: "https://www.facebook.com/yesleehaesuk",
+            ig: "https://www.instagram.com/hyeasooklee/"
+        },
+        pledge: "#",
+        decl: "https://youtu.be/b4ofl-SQGlU",
+        donation: "https://givemoney.kr/politicians/159",
+        dateAdded: "2026-01-01",
+        coords: [
+            37.4784,
+            126.9516
+        ]
+    },
+    {
+        name: "길기영",
+        region: "서울 중구",
+        metropolitan: "서울특별시",
+        category: "기초단체장",
+        office: "중구청장",
+        age: 65,
+        status: "후보",
+        bio: [
+            "제8, 9대 중구의회 의원(재선)",
+            "제9회 중구의회 의장(전반기)",
+            "<span style='letter-spacing:-0.12em;'>현)(재)사랑의장기기증운동본부 홍보대사</span>"
+        ],
+        photo: "https://i.imgur.com/20q2iHq.png",
+        sns: {
+            fb: "https://www.facebook.com/v.kiyoung/"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/228",
+        dateAdded: "2026-05-07",
+        coords: [
+            37.563733,
+            126.997444
+        ]
+    },
+    {
+        name: "김형우",
+        region: "강원 삼척시",
+        metropolitan: "강원특별자치도",
+        category: "기초단체장",
+        office: "삼척시장",
+        age: 69,
+        slogan: "72조원 국책사업 원전+방폐장 유치하여 소멸도시 삼척을 살리겠습니다.",
+        status: "후보",
+        bio: [
+            "전) 산업통상자원부",
+            "동해자유무역원 원장"
+        ],
+        photo: "https://i.imgur.com/r85Zjfb.png",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/150",
+        dateAdded: "2026-02-12",
+        coords: [
+            37.4502,
+            129.1653
+        ]
+    },
+    {
+        name: "김홍수",
+        region: "강원 동해시",
+        metropolitan: "강원특별자치도",
+        category: "기초단체장",
+        office: "동해시장",
+        age: 68,
+        status: "후보",
+        bio: [
+            "전) 민주평화통일자문회의 동해시협의회장",
+            "해군사랑 바다사랑 회장"
+        ],
+        photo: "https://i.imgur.com/Caknmnk.jpeg",
+        sns: {
+            fb: "https://www.facebook.com/gimhongsu.426192/"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/148",
+        dateAdded: "2026-02-19",
+        coords: [
+            37.5247,
+            129.1142
+        ]
+    },
+    {
+        name: "유관곤",
+        region: "충남 서산시",
+        metropolitan: "충청남도",
+        category: "기초단체장",
+        office: "서산시장",
+        age: 65,
+        status: "후보",
+        bio: [
+            "제5,6대 서산시의원",
+            "전)1,2대 서산태안한우축협 조합장"
+        ],
+        photo: "https://i.imgur.com/8K5tuia.png",
+        sns: {
+            fb: "",
+            ig: "https://www.instagram.com/yoo._.no4/"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/152",
+        dateAdded: "2026-03-05",
+        coords: [
+            36.7845,
+            126.4503
+        ]
+    },
+    {
+        name: "서운교",
+        region: "대구광역시",
+        metropolitan: "대구광역시",
+        shortMetro: "대구",
+        district: "수성구 3",
+        constituencyFull: "대구광역시의회 수성구 제3선거구",
+        category: "광역의원",
+        office: "대구시의회",
+        age: 33,
+        status: "후보",
+        subRegion: "고산1동, 고산2동, 고산3동",
+        bio: [
+            "공인노무사",
+            "'더클래스 노무사' 대표 노무사"
+        ],
+        photo: "https://i.imgur.com/qu4U613.png",
+        sns: {
+            fb: "#",
+            blog: "https://blog.naver.com/cpla1005"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/45",
+        dateAdded: "2026-02-12",
+        coords: [
+            35.8376,
+            128.6987
+        ]
+    },
+    {
+        name: "강인수",
+        region: "서울특별시",
+        metropolitan: "서울특별시",
+        shortMetro: "서울",
+        district: "강남구 1",
+        constituencyFull: "강남구 제1선거구",
+        category: "광역의원",
+        office: "서울시의원",
+        status: "후보",
+        age: 58,
+        subRegion: "신사동, 논현1동, 압구정동, 청담동",
+        bio: [
+            "서울시당 대변인",
+            "개혁신당 강남구 지역발전특위 위원장"
+        ],
+        photo: "https://i.imgur.com/880MdRU.png",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/46",
+        dateAdded: "2026-02-09",
+        coords: [
+            37.5219,
+            127.0209
+        ]
+    },
+    {
+        name: "주이삭",
+        region: "서울특별시",
+        metropolitan: "서울특별시",
+        shortMetro: "서울",
+        district: "서대문구 1",
+        constituencyFull: "서대문구 제1선거구",
+        category: "광역의원",
+        office: "서울시의원",
+        status: "후보",
+        age: 38,
+        subRegion: "충현동, 천연동, 북아현동, 신촌동",
+        bio: [
+            "제8, 9대 서대문구의원",
+            "개혁신당 최고위원",
+            "개혁신당 미래희망위원장",
+            "서울시당 정책자문위원장"
+        ],
+        photo: "https://i.imgur.com/TSkZWyU.png",
+        sns: {
+            fb: "https://www.facebook.com/ju.isaac.9",
+            ig: "https://www.instagram.com/isaactic_sdm",
+            yt: "https://www.youtube.com/@isaactic_sdm"
+        },
+        pledge: "#",
+        decl: "https://www.youtube.com/live/IAdVNF7Id1k?t=422s",
+        donation: "https://givemoney.kr/politicians/44",
+        dateAdded: "2026-02-16",
+        coords: [
+            37.5626,
+            126.962
+        ]
+    },
+    {
+        name: "문모은",
+        region: "서울특별시",
+        metropolitan: "서울특별시",
+        shortMetro: "서울",
+        district: "강북구 4",
+        constituencyFull: "강북구 제4선거구",
+        category: "광역의원",
+        office: "서울시의원",
+        age: 31,
+        gender: "f",
+        status: "후보",
+        subRegion: "미아동, 송중동, 번3동",
+        bio: [
+            "<span style='letter-spacing:-0.12em;'>개혁신당 강북구 지역발전특위 위원장</span>",
+            "인권운동가",
+            "<span style='letter-spacing:-0.12em;'>21대대선 강남캠프 선대위 미디어콘텐츠팀</span>"
+        ],
+        photo: "https://i.imgur.com/g0C1LyL.jpeg",
+        sns: {
+            fb: "https://www.facebook.com/bona.mun.5",
+            ig: "https://www.instagram.com/munmoeun/",
+            yt: "https://www.youtube.com/@munmoeun"
+        },
+        pledge: "#",
+        decl: "https://www.facebook.com/share/p/18nDStJ3d9/",
+        donation: "https://givemoney.kr/politicians/234",
+        dateAdded: "2026-05-08",
+        coords: [
+            37.619907,
+            127.041132
+        ]
+    },
+    {
+        name: "강득형",
+        region: "서울특별시",
+        metropolitan: "서울특별시",
+        shortMetro: "서울",
+        district: "강남구 4",
+        constituencyFull: "강남구 제4선거구",
+        category: "광역의원",
+        office: "서울시의원",
+        age: 55,
+        status: "후보",
+        subRegion: "일원본동, 일원1동, 일원2동, 세곡동, 수서동",
+        bio: [
+            "한국정책능력진흥원 평생교육사",
+            "전)서울시의원 후보"
+        ],
+        photo: "https://i.imgur.com/zmV9r4z.png",
+        sns: {
+            fb: "#",
+            ig: "https://www.instagram.com/gangdeughyeong/"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/235",
+        dateAdded: "2026-05-08",
+        coords: [
+            37.485847,
+            127.101176
+        ]
+    },
+    {
+        name: "박상혁",
+        region: "서울특별시",
+        metropolitan: "서울특별시",
+        shortMetro: "서울",
+        district: "서초구 1",
+        constituencyFull: "서초구 제1선거구",
+        category: "광역의원",
+        office: "서울시의원",
+        status: "후보",
+        age: 57,
+        subRegion: "잠원동, 반포1동, 반포3동, 반포4동",
+        bio: [
+            "제11대 서울특별시의회 의원",
+            "서울시의회 교육위원회 위원장"
+        ],
+        photo: "https://prod-api.givemoney.kr/v1/images/donation-groups/223/19e770ed-c8df-48f5-9b35-61be69186cb4.jpg",
+        sns: {
+            fb: "https://www.facebook.com/sanghyukpark2022/"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/223",
+        dateAdded: "2026-04-24",
+        coords: [
+            37.518708,
+            127.013847
+        ]
+    },
+    {
+        name: "이종태",
+        region: "서울특별시",
+        metropolitan: "서울특별시",
+        shortMetro: "서울",
+        district: "강동구 2",
+        constituencyFull: "강동구 제2선거구",
+        category: "광역의원",
+        office: "서울시의원",
+        status: "후보",
+        age: 68,
+        subRegion: "상일제1동, 명일제1동, 명일제2동",
+        bio: [
+            "제11대 서울특별시의회 의원",
+            "제6대 강동구의회 의원",
+            "전)시의회 예산정책위원회 위원장"
+        ],
+        photo: "https://i.imgur.com/IB6rOrD.png",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/227",
+        dateAdded: "2026-05-07",
+        coords: [
+            37.549837,
+            127.146525
+        ]
+    },
+    {
+        name: "김영임",
+        region: "서울",
+        metropolitan: "서울특별시",
+        shortMetro: "서울",
+        category: "광역의원",
+        office: "서울시의원",
+        status: "후보",
+        age: 43,
+        constituency: "비례",
+        district: "비례",
+        listOrder: 1,
+        bio: [
+            "개혁연구원장 직무대행",
+            "개혁신당 대변인",
+            "<span style='letter-spacing:-0.12em;'>21대대선 외신대변인 겸 과학기술 특보</span>"
+        ],
+        photo: "https://i.imgur.com/qYNGbOl.png",
+        sns: {
+            fb: "https://www.facebook.com/profile.php?id=61579024996478"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-05-08",
+        coords: []
+    },
+    {
+        name: "류창현",
+        region: "서울",
+        metropolitan: "서울특별시",
+        shortMetro: "서울",
+        category: "광역의원",
+        office: "서울시의원",
+        status: "후보",
+        age: 40,
+        constituency: "비례",
+        district: "비례",
+        listOrder: 2,
+        bio: [
+            "(주)세이보리 벤처스 대표이사",
+            "<span style='letter-spacing:-0.12em;'>전)Kearney(글로벌 전략 컨실팅펌)시니어컨설턴트</span>"
+        ],
+        photo: "https://info.nec.go.kr/photo_20260603/Gsg1100/Hb100164636/gicho/100164636.JPG?ver=2121036",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-05-08",
+        coords: []
+    },
+    {
+        name: "송효숙",
+        region: "서울",
+        metropolitan: "서울특별시",
+        shortMetro: "서울",
+        category: "광역의원",
+        office: "서울시의원",
+        status: "공천확정",
+        constituency: "비례",
+        district: "비례",
+        visibility: "hidden",
+        listOrder: 3,
+        bio: [
+            "이대서울병원 연구원",
+            "21대대선 선대본 강남캠프 부단장"
+        ],
+        photo: "",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-05-08",
+        coords: []
+    },
+    {
+        name: "정선애",
+        region: "부산",
+        metropolitan: "부산광역시",
+        shortMetro: "부산",
+        category: "광역의원",
+        office: "부산시의원",
+        status: "후보",
+        age: 44,
+        gender: "f",
+        constituency: "비례",
+        district: "비례",
+        listOrder: 1,
+        bio: [
+            "온병원 간호과장",
+            "전)동의과학대 간호학과 조교수"
+        ],
+        photo: "https://i.imgur.com/hHZRpes.png",
+        sns: {
+            fb: "#",
+            ig: "https://www.instagram.com/fishya2012/"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-05-09",
+        coords: []
+    },
+    {
+        name: "최이향",
+        region: "대구",
+        metropolitan: "대구광역시",
+        shortMetro: "대구",
+        category: "광역의원",
+        office: "대구시의원",
+        status: "후보",
+        age: 52,
+        constituency: "비례",
+        district: "비례",
+        listOrder: 1,
+        gender: "f",
+        bio: [
+            "대구시당 홍보위원",
+            "전)더블유비엠코리아 (주) 연구원"
+        ],
+        photo: "https://i.imgur.com/MQjWRmN.png",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-05-09",
+        coords: []
+    },
+    {
+        name: "진성학",
+        region: "대구",
+        metropolitan: "대구광역시",
+        shortMetro: "대구",
+        category: "광역의원",
+        office: "대구시의원",
+        status: "후보",
+        constituency: "비례",
+        district: "비례",
+        age: 43,
+        listOrder: 2,
+        bio: [
+            "진성학법률사무소 변호사",
+            "대구고등법원 국선변호인",
+            "대구지방법원 파산관재인",
+            "제20기 시험 법무사"
+        ],
+        photo: "https://info.nec.go.kr/photo_20260603/Gsg2700/Hb100164183/gicho/100164183.JPG?ver=2112213",
+        sns: {
+            fb: "#",
+            ig: "https://www.instagram.com/mindal_j/",
+            blog: "https://m.blog.naver.com/mindal1105"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-05-09",
+        coords: []
+    },
+    {
+        name: "유다영",
+        region: "울산",
+        metropolitan: "울산광역시",
+        shortMetro: "울산",
+        category: "광역의원",
+        office: "울산시의원",
+        status: "후보",
+        constituency: "비례",
+        district: "비례",
+        age: 36,
+        gender: "f",
+        listOrder: 1,
+        bio: [
+            "전)(주)영그룹컴퍼니 대표",
+            "LG 전자 엠버서더 크리에이터"
+        ],
+        photo: "https://i.imgur.com/rUveNf0.png",
+        sns: {
+            fb: "#",
+            ig: "https://www.instagram.com/young__aaa.a/",
+            yt: "https://www.youtube.com/@youngahome2482",
+            blog: "https://blog.naver.com/coco_fly",
+            site: "https://link.inpock.co.kr/youngahome"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-05-09",
+        coords: []
+    },
+    {
+        name: "임주영",
+        region: "경기",
+        metropolitan: "경기도",
+        shortMetro: "경기",
+        category: "광역의원",
+        office: "경기도의원",
+        status: "후보",
+        age: 47,
+        gender: "f",
+        constituency: "비례",
+        district: "비례",
+        listOrder: 1,
+        bio: [
+            "법무법인 응원 변호사",
+            "현)중소벤처기업부 스타트업 법률자문단 자문변호사"
+        ],
+        photo: "https://i.imgur.com/Uf6eAtG.png",
+        sns: {
+            fb: "#",
+            ig: "https://www.instagram.com/lawyer_jylim/",
+            blog: "https://m.blog.naver.com/lawyer_jylim"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-05-09",
+        coords: []
+    },
+    {
+        name: "안만규",
+        region: "경기",
+        metropolitan: "경기도",
+        shortMetro: "경기",
+        category: "광역의원",
+        office: "경기도의원",
+        status: "후보",
+        age: 71,
+        constituency: "비례",
+        district: "비례",
+        listOrder: 2,
+        bio: [
+            "남양주시 을 당협위원장",
+            "경기도당 윤리위원장",
+            "(주)남주건설 대표이사"
+        ],
+        photo: "https://i.imgur.com/dtbQy8V.png",
+        sns: {
+            fb: "https://www.facebook.com/mankyu1021",
+            blog: "https://blog.naver.com/mankyu1022"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-05-09",
+        coords: []
+    },
+    {
+        name: "정성임",
+        region: "경북",
+        metropolitan: "경상북도",
+        shortMetro: "경북",
+        category: "광역의원",
+        office: "경상북도의원",
+        status: "후보",
+        constituency: "비례",
+        district: "비례",
+        gender: "f",
+        age: 57,
+        listOrder: 1,
+        bio: [
+            "포항시 북 당협 여성위원장",
+            "21대대선 선대위 포항캠프 여성본부장"
+        ],
+        photo: "https://i.imgur.com/RoqraXC.png",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-05-11",
+        coords: []
+    },
+    {
+        name: "김봉환",
+        region: "경북",
+        metropolitan: "경상북도",
+        shortMetro: "경북",
+        category: "광역의원",
+        office: "경상북도의원",
+        status: "후보",
+        constituency: "비례",
+        district: "비례",
+        listOrder: 2,
+        bio: [
+            "포항시 남구·울릉군 당협위원장",
+            "전) 경상북도당 위원장"
+        ],
+        photo: "https://i.imgur.com/XtG0jq3.png",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-05-09",
+        coords: []
+    },
+    {
+        name: "김정숙",
+        region: "경남",
+        metropolitan: "경상남도",
+        shortMetro: "경남",
+        category: "광역의원",
+        office: "경상남도의원",
+        status: "후보",
+        constituency: "비례",
+        district: "비례",
+        gender: "f",
+        age: 58,
+        listOrder: 1,
+        bio: [
+            "제6,7대 남해군의회 의원"
+        ],
+        photo: "https://i.imgur.com/nUXYuA8.png",
+        sns: {
+            fb: "https://www.facebook.com/jeongsook.gim/#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-05-09",
+        coords: []
+    },
+    {
+        name: "방군심",
+        region: "제주",
+        metropolitan: "제주특별자치도",
+        shortMetro: "제주",
+        category: "광역의원",
+        office: "제주도의원",
+        status: "후보",
+        gender: "f",
+        age: 42,
+        constituency: "비례",
+        district: "비례",
+        listOrder: 1,
+        bio: [
+            "장애인거주시설이용자 부모회 제주지부장",
+            "현) 푸른고래센터 이사"
+        ],
+        photo: "https://i.imgur.com/Romeoza.png",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-05-09",
+        coords: []
+    },
+    {
+        name: "박은경",
+        region: "제주",
+        metropolitan: "제주특별자치도",
+        shortMetro: "제주",
+        category: "광역의원",
+        office: "제주도의원",
+        status: "후보",
+        constituency: "비례",
+        district: "비례",
+        gender: "f",
+        age: 67,
+        listOrder: 2,
+        bio: [
+            "제11대 제주도의회 의원",
+            "전) 제주관광대 관광경영과 겸임교수"
+        ],
+        photo: "https://i.imgur.com/01i105b.png",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-05-09",
+        coords: []
+    },
+    {
+        name: "류근윤",
+        region: "충청북도",
+        metropolitan: "충청북도",
+        shortMetro: "충북",
+        district: "청주시 13",
+        constituencyFull: "청주시 제13선거구",
+        category: "광역의원",
+        office: "충청북도 의원",
+        status: "후보",
+        subRegion: "우암동, 내덕제1동, 내덕제2동",
+        age: 63,
+        bio: [
+            "현) MG우암새마을금고 이사",
+            "전) 바르게살기운동 청주시협의회장"
+        ],
+        photo: "https://i.imgur.com/S0tsDjf.png",
+        sns: {
+            fb: "https://www.facebook.com/profile.php?id=61588134602444"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/201",
+        dateAdded: "2026-04-24",
+        coords: [
+            36.650683,
+            127.48825
+        ]
+    },
+    {
+        name: "이장희",
+        region: "충청북도",
+        metropolitan: "충청북도",
+        shortMetro: "충북",
+        district: "청주 11",
+        constituencyFull: "청주시 제11선거구",
+        category: "광역의원",
+        visibility: "hidden",
+        showPreliminaryBadge: true,
+        office: "충청북도 의원",
+        status: "예비후보",
+        age: 52,
+        subRegion: "청원구 내수면, 북이면, 오근장동",
+        bio: [
+            "현) 한농원이엔지 사장"
+        ],
+        photo: "",
+        sns: {
+            fb: "https://www.facebook.com/jangheui102/#",
+            ig: "https://www.instagram.com/jang_heui102/"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-05-06",
+        coords: [
+            36.688752,
+            127.481408
+        ]
+    },
+    {
+        name: "김순주",
+        region: "세종특별자치시",
+        metropolitan: "세종특별자치시",
+        shortMetro: "세종",
+        district: "4",
+        constituencyFull: "세종특별자치시 제4선거구",
+        category: "광역의원",
+        office: "세종시의회",
+        age: 53,
+        gender: "f",
+        status: "후보",
+        subRegion: "연기면, 연동면, 해밀동",
+        bio: [
+            "현)해밀(산울)동 체육회 이사",
+            "현) 방송통신대 세종·공주 학생회장"
+        ],
+        photo: "https://i.imgur.com/55u5JPA.png",
+        sns: {
+            fb: "https://www.facebook.com/gimsunju.64081/#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/48",
+        dateAdded: "2026-02-09",
+        coords: [
+            36.5036,
+            127.2543
+        ]
+    },
+    {
+        name: "이건우",
+        region: "제주특별자치도",
+        metropolitan: "제주특별자치도",
+        shortMetro: "제주",
+        district: "노형 을",
+        constituencyFull: "제주시 노형동 을 선거구",
+        category: "광역의원",
+        office: "제주도의원",
+        age: 33,
+        slogan: "변화의 시작! 감사합니다 이건우입니다",
+        status: "후보",
+        subRegion: "제주시 노형동 을",
+        bio: [
+            "개혁신당 노형동 지역발전특별위원장",
+            "부마정치연구소장"
+        ],
+        photo: "https://i.imgur.com/kvf3Ifn.png",
+        sns: {
+            fb: "#",
+            ig: "https://www.instagram.com/gw_jeju/"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/51",
+        dateAdded: "2026-02-05",
+        coords: [
+            33.4889,
+            126.4784
+        ]
+    },
+    {
+        name: "양해두",
+        region: "제주특별자치도",
+        metropolitan: "제주특별자치도",
+        shortMetro: "제주",
+        district: "외도·이호·도두",
+        category: "광역의원",
+        office: "제주도의원",
+        age: 49,
+        status: "후보",
+        subRegion: "제주시 외도동, 이호동, 도두동",
+        bio: [
+            "제주시 갑 당협위원장",
+            "제21대 대선 선대위 홍보부본부장"
+        ],
+        photo: "https://img2.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/202601/07/kbs/20260107150152592uwgk.jpg",
+        sns: {
+            fb: "https://www.facebook.com/profile.php?id=100007883867189#",
+            ig: "https://www.instagram.com/haeduyang/",
+            site: "https://yanghaedu.co/"
+        },
+        pledge: "#",
+        decl: "https://www.facebook.com/share/p/17qQErhuYr/",
+        donation: "https://givemoney.kr/politicians/49",
+        dateAdded: "2026-01-26",
+        coords: [
+            33.4976,
+            126.4358
+        ]
+    },
+    {
+        name: "채송준",
+        region: "서울 강남구",
+        metropolitan: "서울특별시",
+        category: "기초의원",
+        office: "강남구의원",
+        status: "후보",
+        subRegion: "논현2동, 역삼1동, 역삼2동",
+        age: 69,
+        bio: [
+            "현) 강남구소상공인연합회회장",
+            "<span style='letter-spacing:-0.15em;'>채송준 부동산랜드공인중개사사무소 공인중개사</span>",
+            "전) 역삼2동주민자치위원장"
+        ],
+        photo: "https://i.imgur.com/L0jUsZY.png",
+        district: "다",
+        sns: {
+            fb: "https://www.facebook.com/profile.php?id=100072527288679#",
+            yt: "https://www.youtube.com/channel/UCwVMOl-iVnEMDDn3vmpQwSw",
+            ig: "#",
+            blog: "https://blog.naver.com/chaichoi1"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/204",
+        dateAdded: "2026-04-29",
+        coords: [
+            37.5169,
+            127.037203
+        ]
+    },
+    {
+        name: "이규민",
+        region: "서울 강남구",
+        metropolitan: "서울특별시",
+        category: "기초의원",
+        office: "강남구의원",
+        status: "후보",
+        age: 26,
+        subRegion: "개포제3동, 일원본동, 일원제1동",
+        bio: [
+            "서울시당 대변인",
+            "<span style='letter-spacing:-0.12em;'>개혁신당 강남구 지역발전특위 부위원장</span>",
+            "한국자동차연구원 연구원",
+            "전) 소프트웨어/AI 강사"
+        ],
+        photo: "https://i.imgur.com/QhIoPls.png",
+        district: "마",
+        sns: {
+            fb: "#",
+            ig: "https://www.instagram.com/gm.lee_official/"
+        },
+        pledge: "#",
+        decl: "https://www.instagram.com/p/DUll53qEl7Z/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+        donation: "https://givemoney.kr/politicians/124",
+        dateAdded: "2026-02-05",
+        coords: [
+            37.4813,
+            127.0656
+        ]
+    },
+    {
+        name: "구성도",
+        region: "서울 강남구",
+        metropolitan: "서울특별시",
+        category: "기초의원",
+        office: "강남구의원",
+        age: 43,
+        slogan: "새로운 선택, 더 나은 강남의 미래",
+        status: "후보",
+        subRegion: "개포1동, 개포2동, 개포4동",
+        bio: [
+            "서울시당 대변인",
+            "<span style='letter-spacing:-0.14em;'>개혁신당 강남구 지역발전특위 부위원장</span>",
+            "(주)제일기연 대표이사"
+        ],
+        photo: "https://i.imgur.com/1EfSz6i.png",
+        district: "라",
+        sns: {
+            fb: "#",
+            ig: "https://www.instagram.com/9_sungdo/"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/126",
+        dateAdded: "2026-02-09",
+        coords: [
+            37.4823,
+            127.056
+        ]
+    },
+    {
+        name: "김동현",
+        region: "서울 강남구",
+        metropolitan: "서울특별시",
+        category: "기초의원",
+        office: "강남구의원",
+        age: 27,
+        slogan: "강남의 과거와 미래, 김동현입니다.",
+        status: "후보",
+        district: "자",
+        subRegion: "삼성1동, 삼성2동, 대치2동",
+        bio: [
+            "서울시당 대변인",
+            "<span style='letter-spacing:-0.14em;'>개혁신당 강남구 지역발전특위 부위원장</span>"
+        ],
+        photo: "https://i.imgur.com/uzVK2Vj.jpeg",
+        sns: {
+            blog: "https://m.blog.naver.com/PostList.naver?blogId=uada5633"
+        },
+        pledge: "#",
+        decl: "https://m.blog.naver.com/PostView.naver?blogId=uada5633&logNo=224121263655",
+        focus: "photo-face-focus",
+        donation: "https://givemoney.kr/politicians/122",
+        dateAdded: "2025-12-01",
+        coords: [
+            37.5088,
+            127.0571
+        ]
+    },
+    {
+        name: "김정훈",
+        region: "서울 동대문구",
+        metropolitan: "서울특별시",
+        category: "기초의원",
+        office: "동대문구의원",
+        age: 40,
+        slogan: "동대문구의 오늘보다 나은 내일 감사합니다. 김정훈입니다.",
+        status: "후보",
+        subRegion: "답십리2동, 장안1동, 장안2동",
+        bio: [
+            "서울시당 대변인",
+            "<span style='letter-spacing:-0.14em;'>개혁신당 동대문구 지역발전특위 부위원장</span>",
+            "전) 동대문구축구협회 사무국장"
+        ],
+        photo: "https://i.imgur.com/cH6JHd7.png",
+        district: "바",
+        sns: {
+            fb: "#",
+            ig: "https://www.instagram.com/orange.ddm/"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/91",
+        dateAdded: "2026-02-05",
+        coords: [
+            37.572,
+            127.0644
+        ]
+    },
+    {
+        name: "이호엽",
+        region: "서울 성북구",
+        metropolitan: "서울특별시",
+        category: "기초의원",
+        office: "기초의원",
+        age: 29,
+        slogan: "기다리던 미래의 시작, 준비된 이호엽과 함께해주셔서 감사합니다.",
+        status: "후보",
+        subRegion: "성북동, 삼선동, 동선동, 돈암제2동, 안암동, 보문동",
+        bio: [
+            "서울시당 대변인",
+            "<span style='letter-spacing:-0.12em;'>개혁신당 성북구 지역발전특위 부위원장</span>"
+        ],
+        photo: "https://i.imgur.com/dGEJZAi.jpeg",
+        district: "가",
+        sns: {
+            fb: "https://www.facebook.com/hoyup.lee/",
+            ig: "https://www.instagram.com/hoyup97/",
+            blog: "https://blog.naver.com/hyl005",
+            site: "https://hoyup.kr/"
+        },
+        pledge: "https://hoyup.kr/",
+        donation: "https://givemoney.kr/politicians/88",
+        dateAdded: "2026-02-12",
+        coords: [
+            37.5985,
+            127.0007
+        ]
+    },
+    {
+        name: "김성우",
+        region: "서울 서대문구",
+        metropolitan: "서울특별시",
+        category: "기초의원",
+        office: "기초의원",
+        age: 40,
+        slogan: "성실하게 우직하게, 구의원은 []번 김성우",
+        status: "후보",
+        subRegion: "북아현동, 신촌동, 천연동, 충현동",
+        bio: [
+            "우리부동산(북아현동) 공인중개사",
+            "북아현살집연구소 소장",
+            "<span style='letter-spacing:-0.12em;'>비타에듀,스카이에듀,오르비,파고다영어</span>",
+            "<span style='letter-spacing:-0.14em;'>개혁신당 서대문구 지역발전특위 부위원장</span>"
+        ],
+        photo: "https://i.imgur.com/n4gwdB3.png",
+        district: "가",
+        sns: {
+            blog: "https://blog.naver.com/manksw"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/90",
+        dateAdded: "2026-02-06",
+        coords: [
+            37.5602,
+            126.954
+        ]
+    },
+    {
+        name: "오상균",
+        region: "서울 성동구",
+        metropolitan: "서울특별시",
+        category: "기초의원",
+        office: "성동구의원",
+        age: 58,
+        status: "후보",
+        subRegion: "마장동, 사근동, 송정동, 용답동",
+        bio: [
+            "변리사",
+            "전) 정보통신부 서기관"
+        ],
+        photo: "https://i.imgur.com/89emGbq.jpeg",
+        district: "다",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/89",
+        dateAdded: "2026-01-26",
+        coords: [
+            37.5636,
+            127.0348
+        ]
+    },
+    {
+        name: "최성진",
+        region: "서울 구로구",
+        metropolitan: "서울특별시",
+        category: "기초의원",
+        office: "구로구의원",
+        age: 30,
+        status: "후보",
+        subRegion: "구로제3동, 구로제4동, 가리봉동",
+        bio: [
+            "서울시당 미래희망위원회 위원",
+            "국제개발협력 NGO 근무",
+            "WFK KOICA NGO 봉사단원 파견"
+        ],
+        photo: "https://secondteam-newways-feed.s3.ap-northeast-2.amazonaws.com/politicians/profiles/reformguro.webp",
+        district: "바",
+        sns: {
+            fb: "#",
+            blog: "https://blog.naver.com/reformguro"
+        },
+        pledge: "#",
+        decl: "https://rallypoint.kr/board/politics-free/224459",
+        donation: "https://givemoney.kr/politicians/93",
+        dateAdded: "2026-01-24",
+        coords: [
+            37.4853,
+            126.8868
+        ]
+    },
+    {
+        name: "고길주",
+        region: "서울 영등포구",
+        metropolitan: "서울특별시",
+        category: "기초의원",
+        office: "기초의원",
+        age: 32,
+        status: "후보",
+        subRegion: "신길 6동, 대림1동, 대림2동, 대림3동",
+        bio: [
+            "개혁신당 영등포구 지역발전특위 부위원장",
+            "배우"
+        ],
+        photo: "https://i.imgur.com/Z1SVjJ8.png",
+        district: "사",
+        sns: {
+            fb: "#",
+            ig: "https://www.instagram.com/reform_kogilju/"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/86",
+        dateAdded: "2026-02-05",
+        coords: [
+            37.491737,
+            126.902382
+        ]
+    },
+    {
+        name: "서준호",
+        visibility: "hidden",
+        region: "서울 용산구",
+        metropolitan: "서울특별시",
+        category: "기초의원",
+        office: "용산구의원",
+        status: "공천확정",
+        subRegion: "원효로제1동, 원효로제2동, 용문동",
+        bio: [
+            "용산구 나선거구 공천확정"
+        ],
+        photo: "",
+        district: "나",
+        sns: {
+            fb: "#",
+            yt: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-02-05",
+        coords: [
+            37.5418,
+            126.9723
+        ]
+    },
+    {
+        name: "정상필",
+        visibility: "hidden",
+        region: "서울 중랑구",
+        metropolitan: "서울특별시",
+        category: "기초의원",
+        office: "기초의원",
+        status: "공천확정",
+        subRegion: "면목4동, 면목7동",
+        bio: [
+            "서울시당 대변인"
+        ],
+        photo: "",
+        district: "나",
+        sns: {
+            fb: "#",
+            yt: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-02-05",
+        coords: [
+            37.573821,
+            127.086842
+        ]
+    },
+    {
+        name: "박성진",
+        region: "서울 노원구",
+        metropolitan: "서울특별시",
+        category: "기초의원",
+        office: "노원구의원",
+        age: 43,
+        slogan: "노원의 개혁을 위한 당당한 선택! 노원구의원 예비후보(상계 2,3•4,5동)",
+        status: "후보",
+        subRegion: "상계2동, 상계3동, 상계4동, 상계5동",
+        bio: [
+            "<span style='letter-spacing:-0.12em;'>개혁신당 노원구 지역발전특위 부위원장</span>",
+            "노동법률사무소 범아 대표(공인노무사)",
+            "<span style='letter-spacing:-0.12em;'>법무부 한국법교육센터 법교육전문강사</span>"
+        ],
+        photo: "https://i.imgur.com/RR3eBay.png",
+        district: "마",
+        sns: {
+            fb: "https://www.facebook.com/sungjin.park.524",
+            blog: "https://blog.naver.com/beomalaw"
+        },
+        pledge: "#",
+        decl: "https://rallypoint.kr/board/politics-free/225582",
+        donation: "https://givemoney.kr/politicians/92",
+        dateAdded: "2026-02-09",
+        coords: [
+            37.6565,
+            127.064
+        ]
+    },
+    {
+        name: "주한송",
+        visibility: "hidden",
+        region: "서울 도봉구",
+        metropolitan: "서울특별시",
+        category: "기초의원",
+        office: "도봉구의원",
+        status: "공천확정",
+        subRegion: "창1동, 창4동, 창5동",
+        bio: [
+            "도봉구 가선거구 공천확정"
+        ],
+        photo: "",
+        district: "가",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-02-09",
+        coords: [
+            37.6614,
+            127.0364
+        ]
+    },
+    {
+        name: "최제일",
+        slogan: "광진이 키운, 제일 잘 키운 최제일입니다.",
+        region: "서울 광진구",
+        metropolitan: "서울특별시",
+        category: "기초의원",
+        office: "광진구의원",
+        age: 27,
+        status: "후보",
+        subRegion: "능동, 구의2동, 광장동, 군자동",
+        bio: [
+            "서울시당 대변인",
+            "출판사 '도서출판 문각' 대표",
+            "<span style='letter-spacing:-0.12em;'>광진구 주민참여예산위 1분과 부위원장</span>",
+            "<span style='letter-spacing:-0.12em;'>(사)철기이범석장군기념사업회 청년위원</span>"
+        ],
+        photo: "https://i.imgur.com/miiK7Cq.jpeg",
+        district: "나",
+        sns: {
+            fb: "#",
+            ig: "https://www.instagram.com/bestchoi__",
+            yt: "https://www.youtube.com/@%EA%B4%91%EC%A7%84%EA%B5%AC%EC%9E%A5%ED%95%99%EC%83%9D%EC%B5%9C%EC%A0%9C%EC%9D%BC"
+        },
+        pledge: "#",
+        decl: "https://rallypoint.kr/board/politics-free/225625/",
+        donation: "https://givemoney.kr/politicians/117",
+        dateAdded: "2026-02-09",
+        coords: [
+            37.5503,
+            127.0866
+        ]
+    },
+    {
+        name: "김주연",
+        region: "서울 광진구",
+        metropolitan: "서울특별시",
+        category: "기초의원",
+        office: "광진구의원",
+        age: 35,
+        slogan: "광진, 조연이 아닌 주연으로!",
+        status: "후보",
+        subRegion: "자양제1동, 자양제2동, 구의제1동, 구의제3동",
+        bio: [
+            "서울시당 대변인",
+            "<span style='letter-spacing:-0.12em;'>개혁신당 광진구 지역발전특위 부위원장</span>",
+            "<span style='letter-spacing:-0.12em;'>21대 대선 서울시 선대위 환경위 위원</span>",
+            "<span style='letter-spacing:-0.18em;'>21대 대선 조직본부 강남캠프 자원봉사단원</span>"
+        ],
+        photo: "https://i.imgur.com/0cMZalE.jpeg",
+        district: "다",
+        sns: {
+            fb: "https://facebook.com/leadingkim6",
+            yt: "https://www.youtube.com/channel/UCdEJJkb_1spHDO5e2g0kuHQ"
+        },
+        pledge: "#",
+        decl: "https://rallypoint.kr/best/225947",
+        donation: "https://givemoney.kr/politicians/115",
+        dateAdded: "2026-01-26",
+        coords: [
+            37.5372,
+            127.0774
+        ]
+    },
+    {
+        name: "이진현",
+        region: "서울 광진구",
+        metropolitan: "서울특별시",
+        category: "기초의원",
+        office: "기초의원",
+        age: 28,
+        status: "후보",
+        subRegion: "화양동, 자양제3동, 자양제4동",
+        bio: [
+            "서울시당 대변인",
+            "<span style='letter-spacing:-0.12em;'>개혁신당 광진구 지역발전특위 부위원장</span>",
+            "21대 대선 중앙당 홍보국 주임"
+        ],
+        photo: "https://prod-api.givemoney.kr/v1/images/donation-groups/113/94cc88f9-7967-4673-8217-1974c448e18f.jpg",
+        district: "라",
+        sns: {
+            fb: "https://www.facebook.com/profile.php?id=100004762395806",
+            ig: "https://www.instagram.com/diff_politics/",
+            yt: "https://www.youtube.com/@different-politics"
+        },
+        pledge: "#",
+        decl: "https://rallypoint.kr/board/politics-free/227187",
+        donation: "https://givemoney.kr/politicians/113",
+        dateAdded: "2026-01-26",
+        coords: [
+            37.543,
+            127.0702
+        ]
+    },
+    {
+        name: "박범근",
+        region: "서울 관악구",
+        metropolitan: "서울특별시",
+        category: "기초의원",
+        office: "기초의원",
+        age: 33,
+        status: "후보",
+        slogan: "관악 위상 상승! 이제부턴 관마용성!",
+        subRegion: "신사동, 조원동, 미성동",
+        bio: [
+            "약사",
+            "전) 서울특별시 공무원",
+            "전) 서울대학교병원 근무"
+        ],
+        photo: "https://i.imgur.com/lR9f7RW.png",
+        district: "라",
+        sns: {
+            fb: "#",
+            ig: "https://www.instagram.com/from_beomkeun/"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/120",
+        dateAdded: "2026-01-26",
+        coords: [
+            37.485507,
+            126.918955
+        ]
+    },
+    {
+        name: "민영진",
+        region: "서울 관악구",
+        metropolitan: "서울특별시",
+        category: "기초의원",
+        office: "기초의원",
+        age: 60,
+        status: "후보",
+        subRegion: "냔향동, 난곡동",
+        bio: [
+            "제7,8,9대 관악구의회 의원(3선)",
+            "제9대 관악구의회 부의장(전반기)",
+            "현)피해자통합지원 사회적협동조합 자문위원"
+        ],
+        photo: "https://i.imgur.com/6ALhcEU.png",
+        district: "마",
+        sns: {
+            fb: "https://www.facebook.com/min.yeongjin.983411/"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/231",
+        dateAdded: "2026-05-04",
+        coords: [
+            37.462052,
+            126.918176
+        ]
+    },
+    {
+        name: "구자민",
+        region: "서울 관악구",
+        metropolitan: "서울특별시",
+        category: "기초의원",
+        office: "기초의원",
+        age: 37,
+        status: "후보",
+        subRegion: "낙성대동, 인헌동, 남현동, 행운동",
+        bio: [
+            "제9대 관악구의회 의원",
+            "전)블리자드엔터테인먼트 Webservice PM"
+        ],
+        photo: "https://i.imgur.com/oS82W4a.png",
+        district: "나",
+        sns: {
+            fb: "https://www.facebook.com/jjinjamin",
+            ig: "https://www.instagram.com/act_jm"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/229",
+        dateAdded: "2026-05-04",
+        coords: [
+            37.475486,
+            126.958093
+        ]
+    },
+    {
+        name: "구가환",
+        region: "서울 관악구",
+        metropolitan: "서울특별시",
+        category: "기초의원",
+        office: "기초의원",
+        status: "후보",
+        age: 66,
+        subRegion: "중앙동, 청룡동, 성현동, 청림동",
+        bio: [
+            "제9대 관악구의회 의원",
+            "전) 관악새마을금고 이사",
+            "전) 관악구 배드민턴협회 협회장",
+            "전) 관악구 체육회 이사"
+        ],
+        photo: "https://www.ga21c.seoul.kr/attach/member/BO/09/d4a51606563cdd14a13f7c8936d0e7d9bcf7be140ad1a15ed0c48e06504c01d1.jpg",
+        district: "다",
+        sns: {
+            fb: "https://www.facebook.com/gam596031"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/232",
+        dateAdded: "2026-05-07",
+        coords: [
+            37.478607,
+            126.946241
+        ]
+    },
+    {
+        name: "원동철",
+        region: "서울 관악구",
+        metropolitan: "서울특별시",
+        category: "기초의원",
+        office: "관악구의원",
+        age: 34,
+        status: "후보",
+        subRegion: "삼성동, 대학동",
+        bio: [
+            "배우",
+            "오오더블유 대표"
+        ],
+        photo: "https://i.imgur.com/ltw22IP.jpeg",
+        district: "사",
+        sns: {
+            fb: "#",
+            ig: "https://www.instagram.com/_oneofwon"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/118",
+        dateAdded: "2026-01-26",
+        coords: [
+            37.4683,
+            126.9484
+        ]
+    },
+    {
+        name: "장성혁",
+        region: "서울 송파구",
+        metropolitan: "서울특별시",
+        category: "기초의원",
+        office: "송파구의원",
+        age: 38,
+        slogan: "송파에 부는 기분 좋은 변화, 장성혁과 함께 만들어 주십시오.",
+        status: "후보",
+        subRegion: "풍납1동, 풍납2동, 잠실4동, 잠실6동",
+        bio: [
+            "개혁신당 송파구 지역발전특위 부위원장"
+        ],
+        photo: "https://i.imgur.com/Gf4IEYo.jpeg",
+        district: "가",
+        sns: {
+            ig: ""
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/87",
+        dateAdded: "2026-02-19",
+        coords: [
+            37.5268,
+            127.1201
+        ]
+    },
+    {
+        name: "김영민",
+        region: "서울 강동구",
+        metropolitan: "서울특별시",
+        category: "기초의원",
+        office: "강동구의원",
+        age: 31,
+        status: "후보",
+        subRegion: "길동, 둔촌제1동, 둔촌제2동",
+        bio: [
+            "개혁신당 강동구(을) 부위원장",
+            "서울시당 환경위원장",
+            "개혁신당 21대 대선 위기대응팀",
+            "前) 삼성물산 공채 (조경 실무)"
+        ],
+        photo: "https://i.imgur.com/Uo3yHx9.jpeg",
+        district: "사",
+        sns: {
+            fb: "https://www.facebook.com/profile.php?id=61557084968016",
+            ig: "https://www.instagram.com/dunchon_reform/"
+        },
+        pledge: "#",
+        decl: "https://www.facebook.com/share/p/1ArwBtor8u/",
+        donation: "https://givemoney.kr/politicians/76",
+        dateAdded: "2026-02-15",
+        coords: [
+            37.5328,
+            127.1295
+        ]
+    },
+    {
+        name: "조연우",
+        region: "부산 기장군",
+        metropolitan: "부산광역시",
+        category: "기초의원",
+        office: "기장군의원",
+        status: "후보",
+        age: 30,
+        subRegion: "정관읍, 장안읍",
+        bio: [
+            "부산시당 대변인",
+            "(주)티제이앤앤에스 대리"
+        ],
+        photo: "https://i.imgur.com/iXUZMlW.png",
+        district: "다",
+        sns: {
+            fb: "#"
+        },
+        pledge: "https://policy.reformparty.kr/map?region_code=26&election_type=local_council&district_code=26%3A%EA%B8%B0%EC%9E%A5%EA%B5%B0%3A%EB%8B%A4%EC%84%A0%EA%B1%B0%EA%B5%AC",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/136",
+        dateAdded: "2026-02-05",
+        coords: [
+            35.3123,
+            129.1854
+        ]
+    },
+    {
+        name: "백성민",
+        visibility: "hidden",
+        region: "부산 남구",
+        metropolitan: "부산광역시",
+        category: "기초의원",
+        office: "남구의원",
+        status: "공천확정",
+        subRegion: "용호1동, 용호2동, 용호3동, 용호4동",
+        bio: [
+            "남구의회 마선거구 공천확정"
+        ],
+        photo: "",
+        district: "마",
+        sns: {
+            ig: ""
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-02-19",
+        coords: [
+            35.1199,
+            129.1059
+        ]
+    },
+    {
+        name: "박종길",
+        region: "대구 달서구",
+        metropolitan: "대구광역시",
+        category: "기초의원",
+        office: "달서구의원",
+        age: 66,
+        status: "후보",
+        subRegion: "이곡1동, 이곡2동, 신당동",
+        bio: [
+            "제8, 9대 달서구의원 (재선)",
+            "<span style='letter-spacing:-0.15em;'>전) 제9대 달서구의회 복지문화위원장</span>",
+            "<span style='letter-spacing:-0.15em;'>전) 제8대 달서구의회 윤리특별위원장</span>",
+            "달서구 갑 당협위원장 직무대행"
+        ],
+        photo: "https://i.imgur.com/tDOB9Rh.jpeg",
+        district: "다",
+        sns: {
+            fb: "https://www.facebook.com/bagjong.gil.681338"
+        },
+        pledge: "#",
+        decl: "https://www.youtube.com/live/ixdTcenUjMw?si=62KazlMWdC6ciOpY",
+        donation: "https://givemoney.kr/politicians/110",
+        dateAdded: "2026-02-12",
+        coords: [
+            35.8444,
+            128.5161
+        ]
+    },
+    {
+        name: "우영훈",
+        region: "대구 달성군",
+        metropolitan: "대구광역시",
+        category: "기초의원",
+        office: "달성군의원",
+        age: 50,
+        status: "후보",
+        subRegion: "화원읍, 가창면",
+        bio: [
+            "<span style='letter-spacing:-0.15em;'>개혁신당 지역발전특위 부위원장</span>",
+            "국제라이온스협회 특별위원장",
+            "국제라이온스협회 분과위원장",
+            "국제라이온스협회 영진L 14대 회장"
+        ],
+        photo: "https://i.imgur.com/amHTRAa.jpeg",
+        district: "가",
+        sns: {
+            fb: "https://www.facebook.com/wooyounghoon",
+            ig: "https://www.instagram.com/wooyounghoon"
+        },
+        pledge: "#",
+        decl: "https://www.facebook.com/share/p/17tdaEkjL5/",
+        donation: "https://givemoney.kr/politicians/111",
+        dateAdded: "2026-01-26",
+        coords: [
+            35.8122,
+            128.5012
+        ]
+    },
+    {
+        name: "우성원",
+        region: "대구 달성군",
+        metropolitan: "대구광역시",
+        category: "기초의원",
+        office: "달성군의원",
+        slogan: "우성원이 보수의 심장이자 대구의 뿌리 달성에 개혁의 깃발을 꽂겠습니다.",
+        status: "후보",
+        age: 35,
+        subRegion: "유가읍, 현풍읍, 구지면",
+        bio: [
+            "달성군 당협위원장",
+            "전) 달성군4-H연합회장"
+        ],
+        photo: "https://i.imgur.com/Bi2Owdi.png",
+        district: "다",
+        sns: {
+            fb: "https://www.facebook.com/seongwon.woo.3/",
+            ig: "https://www.instagram.com/seongwon._.farm",
+            yt: "https://www.youtube.com/channel/UCL2JP6XXtMkhrA9WG3U3XPA",
+            site: "https://litt.ly/seongwon._.farm"
+        },
+        pledge: "#",
+        decl: "https://www.facebook.com/share/p/1D9hTEiQjh/",
+        donation: "https://givemoney.kr/politicians/112",
+        dateAdded: "2026-01-26",
+        coords: [
+            35.680902,
+            128.452612
+        ]
+    },
+    {
+        name: "박철현",
+        region: "대구 동구",
+        metropolitan: "대구광역시",
+        category: "기초의원",
+        office: "동구의원",
+        age: 35,
+        status: "후보",
+        subRegion: "신천1·2동, 신천3동, 신천4동, 효목1동, 효목2동",
+        bio: [
+            "대구시당 인재위원장",
+            "개혁신당 지역발전특별위 부위원장",
+            "전)공군부사관"
+        ],
+        photo: "https://i.imgur.com/mO3SSUc.png",
+        district: "다",
+        sns: {
+            ig: "https://www.instagram.com/park___cheol_hyeon/"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/114",
+        dateAdded: "2026-01-26",
+        coords: [
+            35.8614,
+            128.6082
+        ]
+    },
+    {
+        name: "오태훈",
+        region: "대구 수성구",
+        metropolitan: "대구광역시",
+        category: "기초의원",
+        office: "수성구의원",
+        age: 32,
+        slogan: "대구에 개혁보수의 길을 열겠습니다.",
+        status: "후보",
+        subRegion: "고산1동, 고산2동, 고산3동",
+        bio: [
+            "대구시당 대변인"
+        ],
+        photo: "https://i.imgur.com/b5WsxIp.png",
+        district: "라",
+        sns: {
+            fb: "https://www.facebook.com/profile.php?id=100022505341306",
+            ig: "https://www.instagram.com/suseong_taehun",
+            site: "https://litt.ly/ohtaehun"
+        },
+        pledge: "#",
+        decl: "https://www.facebook.com/share/p/1BkSL7Bw2c/",
+        donation: "https://givemoney.kr/politicians/116",
+        dateAdded: "2026-01-26",
+        coords: [
+            35.8376,
+            128.6987
+        ]
+    },
+    {
+        name: "서경덕",
+        region: "대구 달서구",
+        metropolitan: "대구광역시",
+        category: "기초의원",
+        office: "수성구의원",
+        status: "공천확정",
+        visibility: "hidden",
+        subRegion: "상인3동 도원동",
+        bio: [
+            "달서구 가 선거구 공천확정"
+        ],
+        photo: "",
+        district: "바",
+        sns: {
+            fb: ""
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-05-11",
+        coords: [
+            35.854335,
+            128.538931
+        ]
+    },
+    {
+        name: "최윤석",
+        region: "대구 수성구",
+        metropolitan: "대구광역시",
+        category: "기초의원",
+        office: "수성구의원",
+        age: 42,
+        slogan: "아이가 행복한 새로운 수성구. 감사합니다 최윤석입니다.",
+        status: "후보",
+        district: "마",
+        subRegion: "중동, 상동, 두산동, 수성1가동, 수성2.3가동, 수성4가동",
+        bio: [
+            "대구시당 정책위원장",
+            "대한약사회 대외협력본부장"
+        ],
+        photo: "https://i.imgur.com/pOJY2HW.png",
+        sns: {
+            fb: "https://www.facebook.com/yoonseok.choi.98",
+            ig: "https://www.instagram.com/rapaellchoi/",
+            yt: "https://www.youtube.com/channel/UCmKX7csNyGkPKzrv3ol11WA"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/119",
+        dateAdded: "2026-02-09",
+        coords: [
+            35.8611,
+            128.6332
+        ]
+    },
+    {
+        name: "성진영",
+        region: "대구 중구",
+        metropolitan: "대구광역시",
+        category: "기초의원",
+        office: "중구의원",
+        age: 25,
+        status: "후보",
+        subRegion: "동인동, 삼덕동, 성내1동, 남산1동, 대봉1동, 대봉2동",
+        bio: [
+            "<span style='letter-spacing:-0.15em;'>개혁신당 중구 지역발전특위 부위원장</span>",
+            "대구시당 미래희망위원회 위원",
+            "캠퍼스지부 경북대학교 지부장"
+        ],
+        photo: "https://i.imgur.com/fHwNOji.png",
+        district: "가",
+        sns: {
+            ig: "https://www.instagram.com/jyseong_gyeongsan/",
+            blog: "https://blog.naver.com/gom_mal"
+        },
+        pledge: "#",
+        decl: "https://rallypoint.kr/board/politics-free/222667",
+        donation: "https://givemoney.kr/politicians/121",
+        dateAdded: "2026-02-12",
+        coords: [
+            35.8727,
+            128.5972
+        ]
+    },
+    {
+        name: "강신학",
+        region: "인천 연수구",
+        metropolitan: "인천광역시",
+        category: "기초의원",
+        office: "연수구의원",
+        age: 57,
+        status: "후보",
+        subRegion: "송도2동, 송도5동",
+        bio: [
+            "인천시당 부위원장",
+            "인천시당 소상공인·전략분과위원장"
+        ],
+        photo: "https://i.imgur.com/fd8NVNE.jpeg",
+        district: "마",
+        sns: {
+            fb: "https://www.facebook.com/kangsh1"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/67",
+        dateAdded: "2026-01-26",
+        coords: [
+            37.3914,
+            126.6583
+        ]
+    },
+    {
+        name: "이종호",
+        region: "인천 제물포구",
+        metropolitan: "인천광역시",
+        category: "기초의원",
+        office: "제물포구의원",
+        status: "후보",
+        age: 57,
+        subRegion: "신포동, 연안동, 신흥동, 도원동, 율목동, 동인천동, 개항동",
+        bio: [
+            "제8,9대 인천 중구의회 의원",
+            "제9대 후반기 중구의회 의장"
+        ],
+        photo: "https://i.imgur.com/kqwYUWu.png",
+        district: "가",
+        sns: {
+            fb: "https://www.facebook.com/p/%EC%9D%B4%EC%A2%85%ED%98%B8-100022195162914/",
+            yt: "https://www.youtube.com/channel/UCsonnCrawywLRSjbpR_Guiw",
+            site: "https://leejongho.kr/"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/238",
+        dateAdded: "2026-05-08",
+        coords: [
+            37.47791,
+            126.60815
+        ]
+    },
+    {
+        name: "이성실",
+        slogan: "정치인보다 행정가로/번호보다 이름으로 이성실입니다. 감사합니다",
+        region: "인천 연수구",
+        metropolitan: "인천광역시",
+        category: "기초의원",
+        office: "연수구의원",
+        age: 31,
+        status: "후보",
+        subRegion: "송도1동, 송도3동",
+        bio: [
+            "개혁신당 연수구 지역발전특위 부위원장"
+        ],
+        photo: "https://i.imgur.com/iNFNRAu.jpeg",
+        district: "라",
+        sns: {
+            fb: "https://www.facebook.com/profile.php?id=61588067463081",
+            ig: "https://www.instagram.com/yeonsu.lss/"
+        },
+        pledge: "#",
+        decl: "https://www.instagram.com/p/DU-ZrFOkQ8k",
+        donation: "https://givemoney.kr/politicians/66",
+        dateAdded: "2026-02-05",
+        coords: [
+            37.3833,
+            126.652
+        ]
+    },
+    {
+        name: "강민제",
+        region: "인천 남동구",
+        metropolitan: "인천광역시",
+        category: "기초의원",
+        office: "남동구의원",
+        slogan: "강한 추진력, 민생을 위해, 제대로 일할 강민제 입니다.",
+        age: 41,
+        status: "후보",
+        subRegion: "구월1동, 구월3동, 구월4동, 남촌도림동, 간석1동, 간석4동",
+        bio: [
+            "개혁신당 남동구 지역발전특위 부위원장",
+            "물리치료사"
+        ],
+        photo: "https://i.imgur.com/RXjG4uN.jpeg",
+        district: "가",
+        sns: {
+            fb: "#",
+            ig: "https://www.instagram.com/special.m.j/",
+            yt: "https://www.youtube.com/@Minje_Solver",
+            blog: "https://blog.naver.com/kmj42"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/70",
+        dateAdded: "2026-02-09",
+        coords: [
+            37.4519,
+            126.7249
+        ]
+    },
+    {
+        name: "하용준",
+        region: "대전 동구",
+        metropolitan: "대전광역시",
+        category: "기초의원",
+        office: "기초의원",
+        age: 29,
+        slogan: "대전 동구, 새로운 변화의 시작을 주민들과 함께 만들어 가겠습니다.",
+        status: "후보",
+        subRegion: "판암1동, 판암2동, 대청동, 용운동, 대동, 자양동",
+        bio: [
+            "<span style='letter-spacing:-0.15em;'>개혁신당 대전동구 지역발전특위 부위원장</span>",
+            "대전시당 민생경제특위 위원장",
+            "대전시당 자문위원"
+        ],
+        photo: "https://i.imgur.com/G5zWHas.png",
+        district: "나",
+        sns: {
+            fb: "#",
+            ig: "https://www.instagram.com/official_yongjun",
+            blog: "https://blog.naver.com/onedaylife97"
+        },
+        pledge: "#",
+        decl: "https://rallypoint.kr/board/politics-free/224918",
+        donation: "https://givemoney.kr/politicians/125",
+        dateAdded: "2026-01-31",
+        coords: [
+            36.3153,
+            127.468
+        ]
+    },
+    {
+        name: "윤양수",
+        region: "대전 중구",
+        metropolitan: "대전광역시",
+        category: "기초의원",
+        office: "기초의원",
+        status: "공천확정",
+        visibility: "hidden",
+        subRegion: "유천1동, 유천2동, 산성동, 문화1동, 문화2동",
+        bio: [
+            "제9대 중구의회 의원",
+            "제9대 중구의회 전반기의장",
+            "전) 대전 자치구의회의장협의회장"
+        ],
+        photo: "https://i.imgur.com/gHeJfQY.png",
+        district: "다",
+        sns: {
+            fb: "https://www.facebook.com/profile.php?id=100022534449062"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-05-07",
+        coords: [
+            36.315741,
+            127.392683
+        ]
+    },
+    {
+        name: "박현겸",
+        region: "대전 동구",
+        metropolitan: "대전광역시",
+        category: "기초의원",
+        office: "동구의원",
+        age: 24,
+        slogan: "미래를 이끌 청년 공학자, 박현겸입니다.",
+        status: "후보",
+        subRegion: "중앙동, 효동, 삼성동, 홍도동, 삼성동, 산내동",
+        bio: [
+            "대전시당 미래희망위원장"
+        ],
+        photo: "https://i.imgur.com/TVxC1Kl.jpeg",
+        district: "가",
+        sns: {
+            ig: "https://www.instagram.com/white46ant/"
+        },
+        pledge: "#",
+        decl: "https://www.youtube.com/watch?v=uyHmrX9hypw",
+        donation: "https://givemoney.kr/politicians/123",
+        dateAdded: "2025-12-01",
+        coords: [
+            36.3504,
+            127.4546
+        ]
+    },
+    {
+        name: "조동운",
+        region: "대전 서구",
+        metropolitan: "대전광역시",
+        category: "기초의원",
+        office: "서구의원",
+        age: 64,
+        status: "후보",
+        subRegion: "가수원동, 관저1동, 관저2동, 기성동, 도안동",
+        bio: [
+            "서구 을 당협위원장",
+            "전) 경찰대학 경찰학과 교수",
+            "한국경찰연구원 원장",
+            "법학박사"
+        ],
+        photo: "https://i.imgur.com/q8Z5Mst.png",
+        district: "다",
+        sns: {
+            fb: "https://www.facebook.com/c2716898",
+            ig: "https://www.instagram.com/c2716898/"
+        },
+        pledge: "#",
+        decl: "https://www.youtube.com/watch?v=uyHmrX9hypw",
+        donation: "https://givemoney.kr/politicians/131",
+        dateAdded: "2025-12-01",
+        coords: [
+            36.3321,
+            127.3647
+        ]
+    },
+    {
+        name: "김영욱",
+        region: "대전 서구",
+        metropolitan: "대전광역시",
+        category: "기초의원",
+        office: "서구의원",
+        age: 19,
+        status: "후보",
+        subRegion: "복수동, 도마1동, 도마2동, 정림동",
+        bio: [
+            "대전시당 부위원장",
+            "대전시당 노동특별위원장"
+        ],
+        photo: "https://i.imgur.com/l5dmme8.png",
+        district: "가",
+        sns: {
+            fb: "https://www.facebook.com/profile.php?id=61587860510753",
+            ig: "https://www.instagram.com/saveourdaejeon_97/"
+        },
+        pledge: "#",
+        decl: "https://www.facebook.com/share/p/1GH8hcS9o2/",
+        donation: "https://givemoney.kr/politicians/127",
+        dateAdded: "2026-01-30",
+        coords: [
+            36.3462,
+            127.3926
+        ]
+    },
+    {
+        name: "윤서진",
+        region: "대전 유성구",
+        metropolitan: "대전광역시",
+        category: "기초의원",
+        office: "유성구의원",
+        age: 24,
+        gender: "f",
+        status: "후보",
+        subRegion: "온천1동, 온천2동, 노은1동",
+        bio: [
+            "중앙당 미래희망위원회 위원",
+            "대전시당 부위원장",
+            "제35대 KAIST 학부 총학생회장"
+        ],
+        photo: "https://i.imgur.com/N24OK0K.jpeg",
+        district: "나",
+        sns: {
+            ig: "https://www.instagram.com/seojin_ys/"
+        },
+        pledge: "#",
+        decl: "https://www.youtube.com/watch?v=YBVriZc5RQc",
+        donation: "https://givemoney.kr/politicians/130",
+        dateAdded: "2026-01-17",
+        coords: [
+            36.3659,
+            127.3424
+        ]
+    },
+    {
+        name: "박진우",
+        region: "광주 동구",
+        metropolitan: "전남광주통합특별시",
+        category: "기초의원",
+        office: "동구의원",
+        age: 32,
+        status: "후보",
+        subRegion: "충장동, 동명동, 계림1동, 계림2동, 산수1동, 산수2동",
+        bio: [
+            "광주광역시당 부위원장",
+            "<span style='letter-spacing:-0.15em;'>개혁신당 광주시 지역발전특위 부위원장</span>",
+            "<span style='letter-spacing:-0.12em;'>전)동구·남구 을 당협위원장</span>",
+            "21대 대선 선대위 홍보부본부장"
+        ],
+        photo: "https://i.imgur.com/mEqyEjD.png",
+        district: "가",
+        sns: {
+            fb: "https://www.facebook.com/jinu.park.77/about",
+            ig: "https://www.instagram.com/1jwpark/",
+            yt: "https://www.youtube.com/@jinu_park"
+        },
+        donation: "https://givemoney.kr/politicians/109",
+        dateAdded: "2026-01-26",
+        coords: [
+            35.148,
+            126.9156
+        ]
+    },
+    {
+        name: "이재형",
+        region: "경기 수원시",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "수원시의원",
+        age: 64,
+        status: "후보",
+        subRegion: "영통구 영통1동, 원천동",
+        bio: [
+            "현)제12대 수원시의회 의원",
+            "전)농심 충청호남물류총괄 팀장"
+        ],
+        photo: "https://i.imgur.com/B3cSmiv.png",
+        district: "자",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-05-15",
+        coords: [
+            37.27272,
+            127.058063
+        ]
+    },
+    {
+        name: "황승빈",
+        region: "경기 수원시",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "수원시의원",
+        age: 25,
+        status: "후보",
+        subRegion: "영통구 영통2동, 영통3동, 망포1동, 망포2동",
+        bio: [
+            "<span style='letter-spacing:-0.12em;'>개혁신당 수원시 지역발전특위 부위원장</span>",
+            "경기도당 수원시교통특별위 위원장"
+        ],
+        photo: "https://i.imgur.com/kMbaiCJ.jpeg",
+        district: "파",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/73",
+        dateAdded: "2026-01-26",
+        coords: [
+            37.2541,
+            127.0686
+        ]
+    },
+    {
+        name: "노만래",
+        region: "경기 수원시",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "수원시의원",
+        district: "다",
+        age: 54,
+        subRegion: "장안구 정자1동, 정자2동, 정자3동",
+        status: "후보",
+        bio: [
+            "현)국민탐정 행정",
+            "전)수원중부경찰서 강력형사"
+        ],
+        photo: "https://i.imgur.com/l18kJiD.png",
+        sns: {
+            fb: "https://www.facebook.com/nomanlae/"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/245",
+        dateAdded: "2026-05-11",
+        coords: [
+            37.303406,
+            126.99096
+        ]
+    },
+    {
+        name: "민경록",
+        region: "경기 수원시",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "수원시의원",
+        district: "바",
+        subRegion: "팔달구 매교동, 매산동, 고등동, 화서1동, 화서2동, 세류1동",
+        age: 52,
+        status: "후보",
+        bio: [
+            "민샘수학학원 원장",
+            "수원시주민자치자문위 고문",
+            "전)팔달구 주민자치협의회 회장",
+            "전)팔달구 주민참여예산위 위원장"
+        ],
+        photo: "https://i.imgur.com/Ibo2ARg.png",
+        sns: {
+            fb: "https://www.facebook.com/profile.php?id=100001678590297"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/218",
+        dateAdded: "2026-04-27",
+        coords: [
+            37.280977,
+            127.000004
+        ]
+    },
+    {
+        name: "김동광",
+        region: "경기 수원시",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "수원시의원",
+        status: "후보",
+        age: 44,
+        subRegion: "팔달구 행궁동, 지동, 우만1동, 우만2동, 인계동",
+        bio: [
+            "<span style='letter-spacing:-0.12em;'>개혁신당 수원시발전특위 부위원장</span>",
+            "<span style='letter-spacing:-0.12em;'>현) 수원시청 노동조합 사무국장</span>",
+            "<span style='letter-spacing:-0.12em;'>전) (주)글램핑코리아 대표이사</span>",
+            "전) 법무법인 다산 근무"
+        ],
+        photo: "https://i.imgur.com/ELPE5HN.png",
+        district: "사",
+        sns: {
+            fb: "#",
+            ig: "https://www.instagram.com/dongflash"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/58",
+        dateAdded: "2026-02-05",
+        coords: [
+            37.281491,
+            127.01764
+        ]
+    },
+    {
+        name: "오나리",
+        region: "경기 수원시",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "수원시의회",
+        status: "후보",
+        gender: "f",
+        age: 46,
+        constituency: "비례",
+        district: "비례",
+        listOrder: 1,
+        bio: [
+            "전)수원갑 정희윤후보 AI홍보위원장"
+        ],
+        photo: "https://i.imgur.com/Ua1CHWx.png",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-05-11",
+        coords: []
+    },
+    {
+        name: "남경태",
+        region: "경기 수원시",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "수원시의회",
+        status: "공천확정",
+        visibility: "hidden",
+        constituency: "비례",
+        district: "비례",
+        listOrder: 2,
+        bio: [
+            "현) 삼성전자 사원"
+        ],
+        photo: "",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-05-11",
+        coords: []
+    },
+    {
+        name: "박창현",
+        visibility: "hidden",
+        region: "경기 용인시",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "용인시의원",
+        status: "공천확정",
+        subRegion: "기흥구 구성동, 마북동, 동백1동, 동백2동",
+        bio: [
+            "용인시의회 차선거구 공천확정"
+        ],
+        photo: "",
+        district: "차",
+        sns: {
+            ig: ""
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-02-19",
+        coords: [
+            37.2641,
+            127.1418
+        ]
+    },
+    {
+        name: "우태주",
+        region: "경기 용인시",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "용인시의회",
+        status: "후보",
+        age: 78,
+        district: "카",
+        subRegion: "기흥구 보정동, 죽전1동, 죽전2동, 죽전3동, 상현2동",
+        bio: [
+            "제6대 경기도의원",
+            "전) 국회의장 민원비서관(2급)"
+        ],
+        photo: "https://i.imgur.com/Ap8MoCP.png",
+        sns: {},
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/187",
+        dateAdded: "2026-04-20",
+        coords: [
+            37.3317,
+            127.1225
+        ]
+    },
+    {
+        name: "정성규",
+        region: "경기 용인시",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "용인시의회",
+        status: "후보",
+        district: "라",
+        visibility: "hidden",
+        age: 72,
+        subRegion: "기흥구 신갈동, 영덕1동, 영덕2동, 기흥동, 서농동",
+        bio: [
+            "명지대 SMU 새마을대학원장",
+            "<span style='letter-spacing:-0.12em;'>전)서용인새마을금고 초대이사장</span>",
+            "<span style='letter-spacing:-0.12em;'>전)5대 용인시사회복지협의회 회장</span>"
+        ],
+        photo: "https://i.imgur.com/HGJNxnr.png",
+        sns: {
+            fb: "https://www.facebook.com/jungsungkyu/?locale=ko_KR"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/243",
+        dateAdded: "2026-05-11",
+        coords: [
+            37.232446,
+            127.078431
+        ]
+    },
+    {
+        name: "이승도",
+        region: "경기 용인시",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "용인시의원",
+        age: 35,
+        status: "후보",
+        subRegion: "수지구 상현1동, 상현3동, 성복동",
+        bio: [
+            "현) 개발도사 대표",
+            "전) 삼성전자 개발팀"
+        ],
+        photo: "https://i.imgur.com/3CE3csj.png",
+        district: "사",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/85",
+        dateAdded: "2026-01-26",
+        coords: [
+            37.301125,
+            127.072028
+        ]
+    },
+    {
+        name: "정민재",
+        region: "경기 고양시",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "고양시의회",
+        age: 26,
+        status: "후보",
+        subRegion: "일산동구 정발산동, 풍산동, 장항1동, 장항2동",
+        bio: [
+            "개혁신당 고양시 지역발전특위 부위원장",
+            "경기도당 AI특위 위원장"
+        ],
+        photo: "https://i.imgur.com/47jyev2.png",
+        district: "아",
+        sns: {
+            fb: "https://www.facebook.com/profile.php?id=61580710135949",
+            ig: "https://www.instagram.com/jungmj.ilsan/",
+            yt: "https://www.youtube.com/channel/UCRPvsYs0bujxX1B9-O90htg/posts?pvf=CAI%253D",
+            site: "https://www.jungmj.site/"
+        },
+        pledge: "https://policy.reformparty.kr/map?region_code=41&election_type=local_council&district_code=41%3A%EA%B3%A0%EC%96%91%EC%8B%9C%EC%9D%BC%EC%82%B0%EB%8F%99%EA%B5%AC%3A%EC%95%84%EC%84%A0%EA%B1%B0%EA%B5%AC",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/107",
+        dateAdded: "2026-03-12",
+        coords: [
+            37.669667,
+            126.777791
+        ]
+    },
+    {
+        name: "김성욱",
+        region: "경기 화성시",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "화성시의회",
+        status: "후보",
+        age: 39,
+        district: "다",
+        subRegion: "동탄구 동탄1동, 동탄2동, 동탄5동",
+        bio: [
+            "<span style='letter-spacing:-0.15em;'>개혁신당 화성시 지역발전특위 부위원장<span/>",
+            "<span style='letter-spacing:-0.15em;'>경기도당 화성시 주거환경혁신 특위 위원장<span/>",
+            "디에스케이인테리어 대표"
+        ],
+        photo: "https://i.imgur.com/Dknpldq.png",
+        sns: {
+            ig: "https://www.instagram.com/daniel_star_kim/"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/188",
+        dateAdded: "2026-04-09",
+        coords: [
+            37.191534,
+            127.073829
+        ]
+    },
+    {
+        name: "김기현",
+        region: "경기 화성시",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "화성시의회",
+        status: "후보",
+        age: 46,
+        subRegion: "동탄구 동탄4동, 동탄6동, 동탄8동",
+        bio: [
+            "현) 르노코리아 중앙연구소 재직",
+            "현) 민주평통 자문위원",
+            "광비콤 원안사수 비대위 운영위원"
+        ],
+        photo: "https://i.imgur.com/gs8LLSZ.png",
+        district: "라",
+        sns: {
+            fb: "https://www.facebook.com/profile.php?id=61554596722898",
+            ig: "https://www.instagram.com/dongtan_ssanai/",
+            yt: "https://www.youtube.com/channel/UCnGoEVZBtyafCLEq6JFbLlw"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/213",
+        dateAdded: "2026-04-24",
+        coords: [
+            37.191131,
+            127.090138
+        ]
+    },
+    {
+        name: "이우주",
+        region: "경기 화성시",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "화성시의회",
+        status: "후보",
+        age: 43,
+        gender: "f",
+        subRegion: "동탄구 동탄7동, 동탄9동",
+        bio: [
+            "현) 리프앤라인대표",
+            "현) 경희대학교 산업디자인학과 강사"
+        ],
+        photo: "https://i.imgur.com/dl5mOPV.png",
+        district: "마",
+        sns: {
+            fb: "#",
+            ig: "https://www.instagram.com/wooju4u",
+            yt: "https://www.youtube.com/@개혁신당이우주"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/214",
+        dateAdded: "2026-04-23",
+        coords: [
+            37.170497,
+            127.102412
+        ]
+    },
+    {
+        name: "이세원",
+        region: "경기 화성시",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "화성시의회",
+        status: "후보",
+        age: 33,
+        subRegion: "병점구 반월동, 동탄구 동탄3동",
+        bio: [
+            "경기도당 생활민원대응 위원장",
+            "현) 트랜스코스모스코리아 재직중"
+        ],
+        photo: "https://i.imgur.com/WjcQpem.png",
+        district: "아",
+        sns: {
+            fb: "#",
+            ig: "https://www.instagram.com/2_bird_0/"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/216",
+        dateAdded: "2026-04-24",
+        coords: [
+            37.207775,
+            127.056313
+        ]
+    },
+    {
+        name: "오태석",
+        region: "경기 화성시",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "화성시의원",
+        age: 37,
+        status: "후보",
+        subRegion: "효행구 봉담읍, 기배동",
+        bio: [
+            "민주평화통일자문회의 자문위원",
+            "뉴케이팝댄스학원 원장"
+        ],
+        photo: "https://i.imgur.com/JztC0G2.jpeg",
+        district: "바",
+        sns: {
+            fb: "#",
+            blog: "https://blog.naver.com/01696265977",
+            ig: "https://www.instagram.com/thinkingofts/"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/97",
+        dateAdded: "2026-01-26",
+        coords: [
+            37.2175,
+            126.9147
+        ]
+    },
+    {
+        name: "박유진",
+        region: "경기 화성시",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "화성시의회",
+        status: "후보",
+        gender: "f",
+        age: 47,
+        constituency: "비례",
+        district: "비례",
+        listOrder: 1,
+        bio: [
+            "라이프타임(주) 대표이사"
+        ],
+        photo: "https://i.imgur.com/iTU1aAU.png",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-05-11",
+        coords: []
+    },
+    {
+        name: "홍승우",
+        slogan: "생활 가까이, 우리 동네를 바꾸겠습니다 홍승우입니다.",
+        region: "경기 성남시",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "성남시의원",
+        status: "후보",
+        age: 34,
+        subRegion: "분당구 분당동, 수내3동, 정자2동, 정자3동, 구미동",
+        bio: [
+            "경기도당 성남시 뉴미디어전략특위 위원장",
+            "현)그린웹서비스 영상콘텐츠 제작자"
+        ],
+        photo: "https://i.imgur.com/3j2phAB.png",
+        district: "차",
+        sns: {
+            ig: ""
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/71",
+        dateAdded: "2026-02-19",
+        coords: [
+            37.3737,
+            127.115
+        ]
+    },
+    {
+        name: "오정대",
+        region: "경기 성남시",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "성남시의원",
+        age: 38,
+        slogan: "매너리즘 정치보다 알고리즘 정치를!",
+        status: "후보",
+        subRegion: "분당구 이매1동, 이매2동, 삼평동",
+        bio: [
+            "<span style='letter-spacing:-0.12em;'>경기도당 성남시 스마트모빌리티 혁신위원장</span>",
+            "도로교통사고감정사",
+            "유튜브 '운전하는곰돌' 운영"
+        ],
+        photo: "https://i.imgur.com/KkRzwWU.jpeg",
+        district: "바",
+        sns: {
+            yt: "https://www.youtube.com/@d_gomdol/featured",
+            ig: "https://www.instagram.com/d_gomdol",
+            site: "https://animated-panda-cb9b93.netlify.app"
+        },
+        pledge: "https://policy.reformparty.kr/map?region_code=41&election_type=local_council&district_code=41%3A%EC%84%B1%EB%82%A8%EC%8B%9C%EB%B6%84%EB%8B%B9%EA%B5%AC",
+        decl: "https://rallypoint.kr/board/politics-free/227927",
+        donation: "https://givemoney.kr/politicians/69",
+        dateAdded: "2026-01-31",
+        coords: [
+            37.3992,
+            127.1297
+        ]
+    },
+    {
+        name: "김병진",
+        region: "경기 성남시",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "성남시의회",
+        age: 31,
+        slogan: "중원구의 새로운 선택!",
+        status: "후보",
+        district: "마",
+        subRegion: "중원구 중앙동, 금광1동, 금광2동, 은행1동, 은행2동",
+        bio: [
+            "개혁신당 성남시 지역발전특위 부위원장",
+            "경기도당 성남시 행정안전특위 위원장"
+        ],
+        photo: "https://i.imgur.com/VPIRCz2.png",
+        sns: {
+            fb: "#",
+            ig: "https://www.instagram.com/sns.kbj/"
+        },
+        pledge: "https://policy.reformparty.kr/map?region_code=41&election_type=local_council&district_code=41%3A%EC%84%B1%EB%82%A8%EC%8B%9C%EC%A4%91%EC%9B%90%EA%B5%AC%3A%EC%82%AC%EC%84%A0%EA%B1%B0%EA%B5%AC",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/68",
+        dateAdded: "2026-02-09",
+        coords: [
+            37.4437,
+            127.1376
+        ]
+    },
+    {
+        name: "조병찬",
+        visibility: "hidden",
+        region: "경기 부천시",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "부천시의원",
+        status: "공천확정",
+        subRegion: "소사구 범박동, 괴안동, 역곡3동, 옥길동",
+        bio: [
+            "구로 보스톤미치과 대표원장",
+            "치과의사"
+        ],
+        photo: "",
+        district: "아",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-01-26",
+        coords: [
+            37.4787,
+            126.786
+        ]
+    },
+    {
+        name: "정유경",
+        region: "경기 부천시",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "부천시의원",
+        gender: "f",
+        age: 65,
+        status: "후보",
+        subRegion: "소사구 범박동, 옥길동, 역곡3동, 괴안동",
+        bio: [
+            "<span style='letter-spacing:-0.12em;'>개혁신당 부천시 지역발전특위 부위원장</span>",
+            "전) 경기중앙신문 본부장"
+        ],
+        photo: "https://i.imgur.com/7x7aNdF.png",
+        district: "사",
+        sns: {
+            fb: "https://www.facebook.com/jeong.yugyeong.830224/"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/244",
+        dateAdded: "2026-05-09",
+        coords: [
+            37.466253,
+            126.824052
+        ]
+    },
+    {
+        name: "김태수",
+        region: "경기 부천시",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "부천시의원",
+        age: 33,
+        slogan: "청년 정치신인이 만드는 부천의 내일, 함께해 주십시오. 감사합니다.",
+        status: "후보",
+        subRegion: "원미구 중1동, 중2동, 중3동, 중4동, 약대동",
+        bio: [
+            "<span style='letter-spacing:-0.12em;'>개혁신당 부천시 지역발전특위 부위원장</span>",
+            "<span style='letter-spacing:-0.12em;'>경기도당 부천시 도시정비특위 위원장</span>",
+            "<span style='letter-spacing:-0.12em;'>현 현대흥립통합재건축추준비위 위원장</span>",
+            "전 에어아시아재팬 항공승무원"
+        ],
+        photo: "https://i.imgur.com/JROiWlJ.png",
+        district: "마",
+        sns: {
+            fb: "https://www.facebook.com/share/1B6fqnbu3X/",
+            ig: "https://www.instagram.com/bucheon_tezz/",
+            yt: "https://www.youtube.com/@%EB%B6%80%EC%B2%9C%EA%B9%80%ED%83%9C%EC%88%98",
+            blog: "https://blog.naver.com/bucheon_tezz"
+        },
+        pledge: "#",
+        decl: "https://blog.naver.com/bucheon_tezz/224160408956",
+        donation: "https://givemoney.kr/politicians/65",
+        dateAdded: "2026-01-26",
+        coords: [
+            37.5046,
+            126.762
+        ]
+    },
+    {
+        name: "전아름",
+        region: "경기 부천시",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "부천시의회",
+        status: "공천확정",
+        constituency: "비례",
+        visibility: "hidden",
+        district: "비례",
+        listOrder: 1,
+        bio: [
+            "현) 휴앤유병원 간호사"
+        ],
+        photo: "",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-05-11",
+        coords: []
+    },
+    {
+        name: "정재식",
+        region: "경기 부천시",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "부천시의회",
+        status: "공천확정",
+        constituency: "비례",
+        visibility: "hidden",
+        district: "비례",
+        listOrder: 2,
+        bio: [
+            "현) 와이피피(주) 차장"
+        ],
+        photo: "",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-05-11",
+        coords: []
+    },
+    {
+        name: "박윤옥",
+        region: "경기 남양주시",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "남양주시의원",
+        gender: "f",
+        age: 56,
+        status: "후보",
+        subRegion: "수동면, 화도읍",
+        bio: [
+            "제9대 남양주시의원",
+            "남양주시의회 복지환경부위원장",
+            "경기도당 수석부위원장"
+        ],
+        photo: "https://i.imgur.com/1BgeW2l.png",
+        district: "가",
+        sns: {
+            fb: "https://www.facebook.com/profile.php?id=100009520359078"
+        },
+        pledge: "#",
+        decl: "https://www.gnnews.org/news/articleView.html?idxno=11383",
+        donation: "https://givemoney.kr/politicians/60",
+        dateAdded: "2026-02-05",
+        coords: [
+            37.6877,
+            127.3012
+        ]
+    },
+    {
+        name: "최종열",
+        region: "경기 남양주시",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "기초의원",
+        age: 52,
+        status: "후보",
+        subRegion: "와부읍, 조안면, 금곡동, 진건읍, 퇴계원읍",
+        bio: [
+            "경기도당 남양주시 경제특위 위원장",
+            "지엔에스파트너스 교육이사",
+            "전)신한대, 명지전문대 겸임조교수"
+        ],
+        photo: "https://i.imgur.com/5YjOj5F.png",
+        district: "사",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/64",
+        dateAdded: "2026-02-12",
+        coords: [
+            37.6634,
+            127.184
+        ]
+    },
+    {
+        name: "김용인",
+        region: "경기 남양주시",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "남양주시의원",
+        age: 30,
+        status: "후보",
+        subRegion: "진접읍",
+        bio: [
+            "경기도당 남양주시 행정안전상공특위 위원장",
+            "전) 드림청년단 공동대표"
+        ],
+        photo: "https://i.imgur.com/jx3Jl8x.png",
+        district: "다",
+        sns: {
+            fb: "https://www.facebook.com/profile.php?id=100015815942147",
+            ig: ""
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/62",
+        dateAdded: "2026-02-19",
+        coords: [
+            37.7206,
+            127.2034
+        ]
+    },
+    {
+        name: "최진형",
+        region: "경기 안산시",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "안산시의원",
+        age: 27,
+        slogan: "안산이 키운 용기 있는 정치인. 미래를 바꾸는 선택, 지금 함께해주십시오.",
+        status: "후보",
+        subRegion: "상록구 본오3동, 사동, 사이동, 해양동",
+        bio: [
+            "개혁신당 안산시 지역발전특위 부위원장"
+        ],
+        photo: "https://i.imgur.com/dwYubSe.png",
+        district: "가",
+        sns: {
+            ig: "https://www.instagram.com/jhchoi_ansan4/",
+            yt: "https://www.youtube.com/channel/UCyOl6VoS7EGd3xbk_Vbbynw"
+        },
+        pledge: "#",
+        decl: "https://rallypoint.kr/board/politics-free/223063",
+        donation: "https://givemoney.kr/politicians/75",
+        dateAdded: "2026-01-26",
+        coords: [
+            37.3313,
+            126.8237
+        ]
+    },
+    {
+        name: "이재범",
+        region: "경기 평택시",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "평택시의회",
+        status: "후보",
+        age: 34,
+        subRegion: "동삭동, 비전1동",
+        bio: [
+            "<span style='letter-spacing:-0.12em;'>개혁신당 평택시 지역발전특위 부위원장</span>",
+            "<span style='letter-spacing:-0.12em;'>현)에프이아이코리아 반도체 분석설비 엔지니어</span>"
+        ],
+        photo: "https://i.imgur.com/O14H0y2.png",
+        district: "라",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/100",
+        dateAdded: "2026-03-09",
+        coords: [
+            37.016211,
+            127.100061
+        ]
+    },
+    {
+        name: "박승민",
+        region: "경기 평택시",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "평택시의회",
+        visibility: "hidden",
+        status: "공천확정",
+        subRegion: "팽성읍, 고덕면, 고덕동",
+        bio: [
+            "평택시 사선거구 공천확정"
+        ],
+        photo: "https://prod-api.givemoney.kr/v1/images/donation-groups/101/483cad71-b332-4149-91d0-38639a8791d7.jpg",
+        district: "사",
+        sns: {
+            fb: "#",
+            ig: "https://www.instagram.com/fmpark0213/"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-03-05",
+        coords: [
+            36.9658,
+            127.0861
+        ]
+    },
+    {
+        name: "신찬호",
+        region: "경기 안양시",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "안양시의회",
+        status: "후보",
+        age: 27,
+        subRegion: "동안구 갈산동, 귀인동, 범계동, 평안동, 평촌동",
+        bio: [
+            "경기도당 안양시 미래혁신정책 특위 위원장"
+        ],
+        photo: "https://i.imgur.com/TA52oQ9.png",
+        district: "사",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-03-19",
+        coords: [
+            37.3943,
+            126.9568
+        ]
+    },
+    {
+        name: "이천은",
+        region: "경기 안양시",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "안양시의원",
+        age: 39,
+        slogan: "인공지능 시대, 준비된 전문가! 활력 넘치는 안양! 이천은 입니다",
+        status: "후보",
+        district: "바",
+        subRegion: "동안구 달안동, 부림동, 인덕원동, 관양동",
+        bio: [
+            "<span style='letter-spacing:-0.12em;'>개혁신당 안양시 지역발전특위 부위원장</span>",
+            "<span style='letter-spacing:-0.12em;'>경기도당 안양시 AI미래전략특위 위원장</span>"
+        ],
+        photo: "https://i.imgur.com/FJsBrQ1.png",
+        sns: {
+            ig: "https://www.instagram.com/pyeongchonman?igsh=ZWY1dzBvZm1oYWVy",
+            yt: "https://www.youtube.com/@pyeongchonman"
+        },
+        pledge: "https://policy.reformparty.kr/map?region_code=41&election_type=local_council&district_code=41%3A%EC%95%88%EC%96%91%EC%8B%9C%EB%8F%99%EC%95%88%EA%B5%AC%3A%EC%95%88%EC%96%91%EC%8B%9C%EB%B0%94%EC%84%A0%EA%B1%B0%EA%B5%AC",
+        decl: "https://www.instagram.com/p/DT9qrWckb3S/?igsh=MWtjcGlzOHk4MncxNg%3D%3D",
+        donation: "https://givemoney.kr/politicians/77",
+        dateAdded: "2025-12-01",
+        coords: [
+            37.3975,
+            126.9553
+        ]
+    },
+    {
+        name: "박원길",
+        region: "경기 안양시",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "안양시의원",
+        age: 66,
+        status: "후보",
+        subRegion: "동안구 호계1동, 호계2동, 호계3동, 신촌동",
+        bio: [
+            "전) 대주건설 경기 개발본부장"
+        ],
+        photo: "https://i.imgur.com/3EiNqFR.png",
+        district: "아",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/80",
+        dateAdded: "2026-01-26",
+        coords: [
+            37.3946,
+            126.9735
+        ]
+    },
+    {
+        name: "김주우",
+        region: "경기 시흥시",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "시흥시의회",
+        age: 41,
+        status: "후보",
+        subRegion: "대야동, 매화동, 목감동, 과림동",
+        bio: [
+            "보드리봄 (주) 대표이사"
+        ],
+        photo: "https://i.imgur.com/4jqyRRH.png",
+        district: "나",
+        sns: {
+            fb: "https://www.facebook.com/JooWooKim",
+            ig: "https://www.instagram.com/kimjoowoo/",
+            blog: "https://blog.naver.com/kimjoowoo"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/102",
+        dateAdded: "2026-03-05",
+        coords: [
+            37.383296,
+            126.846225
+        ]
+    },
+    {
+        name: "이봉관",
+        region: "경기 시흥시",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "시흥시의원",
+        district: "마",
+        subRegion: "정왕3동, 정왕4동, 배곧1동, 배곧2동, 거북섬동",
+        age: 59,
+        status: "후보",
+        bio: [
+            "제9대 시흥시의회 의원",
+            "(주) 주능스틸 대표이사"
+        ],
+        photo: "https://i.imgur.com/hoCvmRa.png",
+        sns: {
+            fb: ""
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/212",
+        dateAdded: "2026-04-22",
+        coords: [
+            37.3749,
+            126.729348
+        ]
+    },
+    {
+        name: "양준모",
+        region: "경기 파주시",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "파주시의회",
+        age: 32,
+        status: "후보",
+        district: "마",
+        slogan: "파주의 불편한 생활문제부터 바꾸겠습니다. 감사합니다.",
+        subRegion: "파주읍, 월룡면, 조리읍, 광탄면, 금촌1동, 금촌2동, 금촌3동",
+        bio: [
+            "<span style='letter-spacing:-0.12em;'>개혁신당 파주시 지역발전특위 부위원장</span>",
+            "<span style='letter-spacing:-0.12em;'>경기도당 파주시 시민생활특위 위원장</span>",
+            "<span style='letter-spacing:-0.12em;'>한국애견미용학원연합회 회장</span>"
+        ],
+        photo: "https://i.imgur.com/Tas6tYA.png",
+        sns: {
+            fb: "#",
+            ig: "https://www.instagram.com/cmzkfn369/"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/95",
+        dateAdded: "2026-02-09",
+        coords: [
+            37.8288,
+            126.7933
+        ]
+    },
+    {
+        name: "심명보",
+        region: "경기 김포시",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "김포시의회",
+        age: 25,
+        status: "후보",
+        subRegion: "구래동, 대곶면, 양촌읍, 월곶면, 통진읍, 하성면",
+        bio: [
+            "농업인"
+        ],
+        photo: "https://i.imgur.com/BitDtPw.png",
+        district: "다",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/157",
+        dateAdded: "2026-03-19",
+        coords: [
+            37.697904,
+            126.609086
+        ]
+    },
+    {
+        name: "나혜정",
+        region: "경기 김포시",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "김포시의회",
+        status: "후보",
+        age: 69,
+        gender: "f",
+        constituency: "비례",
+        district: "비례",
+        listOrder: 1,
+        bio: [
+            "전)인천대학교 초빙교수",
+            "전)인천전문대학교 겸임교수"
+        ],
+        photo: "https://i.imgur.com/1anDrQ4.png",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-05-11",
+        coords: []
+    },
+    {
+        name: "장준휘",
+        region: "경기 의정부시",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "의정부시의회",
+        status: "후보",
+        age: 34,
+        subRegion: "송산1동, 송산2동, 송산3동, 고산동",
+        bio: [
+            "개혁신당 의정부시(을) 지역발전특위 부위원장",
+            "생명공학 연구원"
+        ],
+        photo: "https://i.imgur.com/j9o6o20.jpeg",
+        district: "라",
+        sns: {
+            fb: "#",
+            ig: "https://www.instagram.com/dr.jang_ujb/"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/103",
+        dateAdded: "2026-03-05",
+        coords: [
+            37.738211,
+            127.089271
+        ]
+    },
+    {
+        name: "심재현",
+        region: "경기 양주시",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "양주시의원",
+        age: 43,
+        visibility: "hidden",
+        status: "예비후보",
+        subRegion: "회천1동, 옥정1동, 옥정2동",
+        bio: [
+            "법원감정인",
+            "양주시 공공건축가"
+        ],
+        photo: "",
+        district: "다",
+        sns: {
+            fb: "#",
+            ig: "https://www.instagram.com/simjh2026/"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/82",
+        dateAdded: "2026-02-05",
+        coords: [
+            37.8183,
+            127.0031
+        ]
+    },
+    {
+        name: "박현수",
+        region: "경기 이천시",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "이천시의회",
+        status: "예비후보",
+        visibility: "hidden",
+        age: 28,
+        subRegion: "대월면, 모가면, 부발읍, 설성면, 율면, 장호원읍, 호법면",
+        bio: [
+            "<span style='letter-spacing:-0.12em;'>개혁신당 이천시 지역균형인프라특위 위원장</span>",
+            "<span style='letter-spacing:-0.12em;'>개혁신당 이천시 지역발전특위 부위원장</span>",
+            "전) 공군 장교"
+        ],
+        photo: "https://i.imgur.com/GN9IlQf.png",
+        district: "다",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/99",
+        dateAdded: "2026-02-27",
+        coords: [
+            37.2789,
+            127.4431
+        ]
+    },
+    {
+        name: "박현호",
+        region: "경기 의왕시",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "의왕시의회",
+        status: "후보",
+        age: 30,
+        subRegion: "고천동, 부곡동, 오전동",
+        bio: [
+            "제9대 의왕시의원"
+        ],
+        photo: "https://i.imgur.com/9C5nDVE.png",
+        district: "가",
+        sns: {
+            yt: "https://www.youtube.com/channel/UCCsmS-7qC5zsCs9DDx_xkbg",
+            fb: "https://www.facebook.com/changehh95",
+            ig: "https://www.instagram.com/changehh95/",
+            blog: "https://changehh95.tistory.com/"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/154",
+        dateAdded: "2026-03-19",
+        coords: [
+            37.3449,
+            126.9681
+        ]
+    },
+    {
+        name: "양성혁",
+        region: "경기 의왕시",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "의왕시의회",
+        age: 32,
+        status: "후보",
+        district: "나",
+        subRegion: "내손1동, 내손2동, 청계동",
+        bio: [
+            "현) 공인회계사",
+            "현) 의왕시 공동주택관리 전문감사관"
+        ],
+        photo: "https://i.imgur.com/TTJzxMC.png",
+        sns: {
+            fb: "#",
+            ig: "https://www.instagram.com/seonghyuckyang/"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/94",
+        dateAdded: "2026-02-09",
+        coords: [
+            37.3497,
+            126.9681
+        ]
+    },
+    {
+        name: "조현수",
+        visibility: "hidden",
+        region: "경기 여주시",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "기초의원",
+        status: "공천확정",
+        subRegion: "흥천면, 금사면, 산북면, 대신면, 중앙동, 오학동",
+        bio: [
+            "여주시 나선거구 공천확정"
+        ],
+        photo: "",
+        district: "나",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-02-12",
+        coords: [
+            37.3327,
+            127.6798
+        ]
+    },
+    {
+        name: "전선화",
+        region: "경기 과천시",
+        metropolitan: "경기도",
+        category: "기초의원",
+        office: "과천시의회",
+        status: "예비후보",
+        visibility: "hidden",
+        showPreliminaryBadge: true,
+        age: 41,
+        subRegion: "갈현동, 문원동, 부림동, 원문동",
+        bio: [
+            "전)갈현동 단설중교 신설 추진위원장",
+            "전)과천 갈현초교 운영위원장"
+        ],
+        photo: "",
+        district: "나",
+        sns: {
+            fb: "#",
+            ig: "https://www.instagram.com/junsunhwalove/"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-05-08",
+        coords: [
+            37.4292,
+            126.9879
+        ]
+    },
+    {
+        name: "전상현",
+        slogan: "함께 하는 밝은 도시 전상현 입니다 감사합니다",
+        region: "강원 원주시",
+        metropolitan: "강원특별자치도",
+        category: "기초의원",
+        office: "춘천시의원",
+        age: 33,
+        status: "후보",
+        subRegion: "지정면, 호저면, 우산동(1,19,20,22,23,25,26통)",
+        bio: [
+            "현)원주 육민관고등학교 총동문회 대외협력국 차장"
+        ],
+        photo: "https://i.imgur.com/VU1whW9.jpeg",
+        district: "나",
+        sns: {
+            fb: "#",
+            ig: "https://www.instagram.com/wonju_.sh"
+        },
+        pledge: "#",
+        decl: "https://rallypoint.kr/board/politics-free/225573?searchType=0&currentPage=1",
+        donation: "https://givemoney.kr/politicians/54",
+        dateAdded: "2026-01-26",
+        coords: [
+            37.3009,
+            127.8398
+        ]
+    },
+    {
+        name: "최태영",
+        region: "강원 춘천시",
+        metropolitan: "강원특별자치도",
+        category: "기초의원",
+        office: "춘천시의원",
+        age: 25,
+        slogan: "내일이 기대되는 정치 감사합니다 최태영입니다.",
+        status: "후보",
+        subRegion: "효자2동, 석사동",
+        bio: [
+            "캠퍼스지부 강원스테이션 리더장",
+            "캠퍼스지부 강원대학교 지부장"
+        ],
+        photo: "https://i.imgur.com/eeRt5rd.jpeg",
+        cardPos: "center 15%",
+        cardScale: "1.25",
+        district: "라",
+        sns: {
+            fb: "https://www.facebook.com/choetaeyeong.979932/",
+            ig: "https://www.instagram.com/taeyoung_choe/",
+            blog: "https://blog.naver.com/taeyoung_choe"
+        },
+        pledge: "https://policy.reformparty.kr/map?region_code=42&election_type=local_council&district_code=42%3A%EC%B6%98%EC%B2%9C%EC%8B%9C",
+        decl: "https://rallypoint.kr/board/politics-free/223910",
+        donation: "https://givemoney.kr/politicians/56",
+        dateAdded: "2026-02-05",
+        coords: [
+            37.8646,
+            127.7361
+        ]
+    },
+    {
+        name: "이강민",
+        region: "충남 천안시",
+        metropolitan: "충청남도",
+        category: "기초의원",
+        office: "천안시의원",
+        age: 39,
+        slogan: "오늘보다 나은 내일을 만드는 이강민입니다.",
+        status: "후보",
+        subRegion: "서북구 불당1동, 불당2동",
+        bio: [
+            "충남도당 수석부위원장",
+            "개혁신당 지역발전특위 부위원장",
+            "21대 대선 충남 선대본부 위원",
+            "충남개혁정책네트워크 대표"
+        ],
+        photo: "https://i.imgur.com/oytlGpq.png",
+        district: "라",
+        cardFit: "cover",
+        cardPos: "center 15%",
+        sns: {
+            fb: "https://www.facebook.com/leekangmin4473",
+            blog: "https://blog.naver.com/buldang_leekangmin",
+            yt: "https://www.youtube.com/channel/UCUC5ttFtQfNRCqANIffAalg",
+            site: "https://litt.ly/leekangmin"
+        },
+        pledge: "#",
+        decl: "https://rallypoint.kr/board/politics-free/223549",
+        donation: "https://givemoney.kr/politicians/53",
+        dateAdded: "2025-12-01",
+        coords: [
+            36.807091,
+            127.110328
+        ]
+    },
+    {
+        name: "이해성",
+        region: "충남 천안시",
+        metropolitan: "충청남도",
+        category: "기초의원",
+        office: "천안시의원",
+        age: 27,
+        status: "후보",
+        subRegion: "서북구 성거읍, 부성1동",
+        bio: [
+            "충남도당 부위원장",
+            "충남도당 사무처장",
+            "충남도당 대변인",
+            "21대 대선 충남선대위 상황실장"
+        ],
+        photo: "https://i.imgur.com/fqfARBT.png",
+        cardFit: "contain",
+        cardPos: "center 0%",
+        cardScale: "1",
+        district: "바",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/160",
+        dateAdded: "2026-02-05",
+        coords: [
+            36.7972,
+            127.1214
+        ]
+    },
+    {
+        name: "손승범",
+        region: "충남 천안시",
+        metropolitan: "충청남도",
+        category: "기초의원",
+        office: "천안시의원",
+        age: 22,
+        slogan: "천안을 사랑하는 용기있는 선택, 손승범입니다",
+        status: "후보",
+        subRegion: "동남구 봉명동, 성정1동, 성정2동, 문성동",
+        bio: [
+            "충남도당 부위원장",
+            "충남도당 대변인",
+            "전) 충남도당 대학생 대변인"
+        ],
+        photo: "https://i.imgur.com/tgnxWFB.png",
+        district: "다",
+        sns: {
+            ig: "https://www.instagram.com/sonseungbeom2004/",
+            fb: "https://www.facebook.com/sonseungbeom2004",
+            yt: "https://www.youtube.com/@%EC%86%90%EC%8A%B9%EB%B2%942004",
+            site: "https://linktr.ee/seungbeom2004?utm_source=ig&utm_medium=social&utm_content=link_in_bio"
+        },
+        pledge: "#",
+        decl: "https://rallypoint.kr/board/politics-free/225934",
+        donation: "https://givemoney.kr/politicians/52",
+        dateAdded: "2026-02-15",
+        coords: [
+            36.8098,
+            127.1458
+        ]
+    },
+    {
+        name: "황시현",
+        region: "충남 천안시",
+        metropolitan: "충청남도",
+        category: "기초의원",
+        office: "천안시의원",
+        subRegion: "부성2동",
+        visibility: "hidden",
+        bio: [
+            "충남도당 공보팀장",
+            "21대 대선 충남 선대본 홍보위원",
+            "충남청년개발혁신회의 의장",
+            "청년 커뮤니티 '청연' 대표"
+        ],
+        photo: "https://i.imgur.com/3yWK8BF.png",
+        district: "사",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "https://rallypoint.kr/board/politics-free/223942",
+        donation: "#",
+        dateAdded: "2026-01-15",
+        coords: [
+            36.8418,
+            127.135
+        ]
+    },
+    {
+        name: "고재윤",
+        region: "충남 당진시",
+        metropolitan: "충청남도",
+        category: "기초의원",
+        office: "당진시의원",
+        age: 19,
+        status: "후보",
+        subRegion: "고대면, 석문면, 당진1동, 당진3동",
+        bio: [
+            "충남도당 부위원장,대변인",
+            "대전시당 정책,자문위원",
+            "21대 대선 충남 선대본부 위원",
+            "자원봉사단체 청춘 대표"
+        ],
+        photo: "https://i.imgur.com/Fyk1Di8.png",
+        district: "라",
+        sns: {
+            fb: "https://www.facebook.com/profile.php?id=100075309062913",
+            ig: "https://www.instagram.com/yn._.jae/",
+            blog: "https://m.blog.naver.com/kojy9402?tab=1",
+            site: "https://litt.ly/gojaeyun"
+        },
+        pledge: "#",
+        decl: "https://www.instagram.com/reel/DUaehbcAUci/?igsh=M2Y5aWdreGsxM2Zi",
+        donation: "https://givemoney.kr/politicians/57",
+        dateAdded: "2026-02-05",
+        coords: [
+            36.9782,
+            126.6481
+        ]
+    },
+    {
+        name: "김관호",
+        region: "충남 아산시",
+        metropolitan: "충청남도",
+        category: "기초의원",
+        office: "아산시의원",
+        age: 28,
+        status: "후보",
+        subRegion: "배방읍(세교리, 장재리, 휴대리), 탕정면",
+        bio: [
+            "충남도당 대변인",
+            "개혁신당 아산시 지역발전특위 부위원장"
+        ],
+        photo: "https://i.imgur.com/5hnVo9Y.jpeg",
+        district: "라",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/163",
+        dateAdded: "2026-03-23",
+        coords: [
+            36.807656,
+            127.063715
+        ]
+    },
+    {
+        name: "조순자",
+        region: "경북 구미시",
+        metropolitan: "경상북도",
+        category: "기초단체장",
+        office: "구미시장",
+        age: 60,
+        gender: "f",
+        status: "후보",
+        bio: [
+            "<span style='letter-spacing:-0.12em;'>21대 대선 경북도당 선대위 조직특보</span>",
+            "<span style='letter-spacing:-0.12em;'>전) 금성정밀 구미공장 5급사원</span>",
+            "<span style='letter-spacing:-0.12em;'>전)구미시립도서관 인문학강좌 강사</span>",
+            "<span style='letter-spacing:-0.12em;'>전)구미시 관내 중등미술기간제 및 강사</span>"
+        ],
+        photo: "https://i.imgur.com/El45oNM.png",
+        sns: {
+            fb: "https://www.facebook.com/profile.php?id=61573236698515"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/169",
+        dateAdded: "2026-04-07",
+        coords: [
+            36.1195,
+            128.3446
+        ]
+    },
+    {
+        name: "류태하",
+        region: "경북 구미시",
+        metropolitan: "경상북도",
+        category: "기초의원",
+        office: "구미시의원",
+        age: 40,
+        slogan: "그동안 소외되었던 능력있는 분들이 참여하는 정치 생태계를 만들겠습니다.",
+        status: "후보",
+        subRegion: "인동동, 진미동",
+        bio: [
+            "구미시 을 당협위원장",
+            "제21대 대선 선대위 홍보부본부장"
+        ],
+        photo: "https://i.imgur.com/KD5O2X3.jpeg",
+        district: "자",
+        sns: {
+            fb: "https://www.facebook.com/taeha2026",
+            blog: "https://blog.naver.com/reformgumi"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/139",
+        dateAdded: "2026-02-05",
+        coords: [
+            36.1055,
+            128.4211
+        ]
+    },
+    {
+        name: "이동현",
+        visibility: "hidden",
+        region: "경북 구미시",
+        metropolitan: "경상북도",
+        category: "기초의원",
+        office: "구미시의회",
+        status: "공천확정",
+        district: "마",
+        subRegion: "상모사곡동, 임오동",
+        bio: [
+            "구미시 마선거구 공천확정"
+        ],
+        photo: "",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-02-09",
+        coords: [
+            36.0978,
+            128.4053
+        ]
+    },
+    {
+        name: "김성조",
+        region: "경북 포항시",
+        metropolitan: "경상북도",
+        category: "기초의원",
+        office: "포항시의회",
+        status: "후보",
+        age: 73,
+        district: "바",
+        subRegion: "북구 장량동(장성동)",
+        bio: [
+            "제5-9대 포항시의회 의원 (5선)",
+            "포항시 북구 당협위원장"
+        ],
+        photo: "https://i.imgur.com/fvcpYIy.png",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/133",
+        dateAdded: "2026-02-09",
+        coords: [
+            36.0607,
+            129.3654
+        ]
+    },
+    {
+        name: "정진호",
+        slogan: "한울본부와 함께 만드는 울진의 미래도시 감사합니다 정진호입니다.",
+        region: "경북 울진군",
+        metropolitan: "경상북도",
+        category: "기초의원",
+        office: "울진군의원",
+        status: "후보",
+        age: 66,
+        subRegion: "북면, 죽변면",
+        bio: [
+            "현) 풍경채 대표",
+            "전) 국가철도공단 시설장비사무소 산업안전관리담당자"
+        ],
+        photo: "https://i.imgur.com/yxkrZiM.png",
+        district: "나",
+        sns: {
+            fb: "#",
+            ig: "https://www.instagram.com/jinho6472/"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/140",
+        dateAdded: "2026-01-26",
+        coords: [
+            37.0538,
+            129.3945
+        ]
+    },
+    {
+        name: "황은재",
+        region: "충북 청주시",
+        metropolitan: "충청북도",
+        category: "기초의원",
+        office: "청주시의회",
+        age: 25,
+        status: "후보",
+        subRegion: "흥덕구 가경동, 복대제2동",
+        bio: [
+            "<span style='letter-spacing:-0.12em;'>개혁신당 청주 지역발전특위 부위원장</span>",
+            "캠퍼스지부 충북대학교 지부장",
+            "중앙당 미래희망위원회 기획부",
+            "전) 개혁신당 세종 선대위 홍보위원"
+        ],
+        photo: "https://i.imgur.com/KUQkhm6.png",
+        district: "차",
+        sns: {
+            fb: "#",
+            ig: "https://www.instagram.com/with_eunjae/",
+            blog: "https://blog.naver.com/ej823456",
+            site: "https://litt.ly/newcheongju.kr"
+        },
+        pledge: "https://litt.ly/newcheongju.kr",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/50",
+        dateAdded: "2026-02-27",
+        coords: [
+            36.6295,
+            127.4619
+        ]
+    },
+    {
+        name: "김대성",
+        region: "전북 익산시",
+        metropolitan: "전북특별자치도",
+        category: "기초의원",
+        office: "익산시의회",
+        visibility: "hidden",
+        status: "공천확정",
+        subRegion: "영등2동, 신동, 오산면",
+        bio: [
+            "익산시 다선거구 공천확정"
+        ],
+        photo: "",
+        district: "다",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-02-27",
+        coords: [
+            35.9417,
+            126.9491
+        ]
+    },
+    {
+        name: "고윤주",
+        visibility: "hidden",
+        region: "서울 광진구",
+        metropolitan: "서울특별시",
+        category: "기초의원",
+        office: "광진구의회",
+        status: "출마예정",
+        subRegion: "중곡제1동, 중곡제2동, 중곡제3동, 중곡제4동",
+        bio: [
+            "광진구 가선거구 출마예정"
+        ],
+        photo: "",
+        district: "가",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-03-02",
+        coords: [
+            37.5602,
+            127.0826
+        ]
+    },
+    {
+        name: "김성준",
+        region: "서울 강동구",
+        metropolitan: "서울특별시",
+        category: "기초의원",
+        office: "강동구의회",
+        age: 39,
+        status: "후보",
+        slogan: "미래를 여는 강동의 선택",
+        subRegion: "천호2동",
+        bio: [
+            "개혁신당 강동(을) 사무국장",
+            "<span style='letter-spacing:-0.12em;'>개혁신당 강동구 지역발전특위 부위원장</span>",
+            "전) 개혁신당 서울시당 대변인",
+            "IT 스타트업 로지컬리 대표"
+        ],
+        photo: "https://bvrgouhhibsqwfdmndwq.supabase.co/storage/v1/object/public/candidates/photos/kim-sungjun-v3.webp",
+        district: "마",
+        sns: {
+            fb: "https://www.facebook.com/sjkim705/"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/78",
+        dateAdded: "2026-03-09",
+        coords: [
+            37.5527,
+            127.1603
+        ]
+    },
+    {
+        name: "신무연",
+        region: "서울 강동구",
+        metropolitan: "서울특별시",
+        category: "기초의원",
+        gender: "f",
+        visibility: "hidden",
+        showPreliminaryBadge: true,
+        office: "강동구의회",
+        age: 67,
+        status: "예비후보",
+        subRegion: "상일1동, 상일2동, 명일2동",
+        bio: [
+            "제7,8대 강동구의회의원",
+            "전)강동구청옴부즈만위원"
+        ],
+        photo: "https://i.imgur.com/xdbicd1.png",
+        district: "나",
+        sns: {
+            fb: "https://www.facebook.com/sinmuyeon/#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-05-04",
+        coords: [
+            37.5528,
+            127.1605
+        ]
+    },
+    {
+        name: "정민우",
+        region: "서울 강동구",
+        metropolitan: "서울특별시",
+        category: "기초의원",
+        office: "강동구의회",
+        age: 39,
+        status: "후보",
+        subRegion: "성내제1동, 성내제2동, 성내제3동",
+        bio: [
+            "서울시당 대변인",
+            "개혁신당 강동구 지역발전특위 부위원장"
+        ],
+        photo: "https://i.imgur.com/XAloD7H.png",
+        district: "바",
+        sns: {
+            fb: "https://www.facebook.com/profile.php?id=61576886771004",
+            ig: "https://www.instagram.com/jminwoo712",
+            yt: "https://www.youtube.com/@tomygod123",
+            blog: "https://blog.naver.com/jminwoo712"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/74",
+        dateAdded: "2026-03-09",
+        coords: [
+            37.5407,
+            127.1295
+        ]
+    },
+    {
+        name: "김민식",
+        region: "인천 서해구",
+        metropolitan: "인천광역시",
+        category: "기초의원",
+        office: "서해구의회",
+        age: 37,
+        slogan: "체감이 가능한 개혁",
+        status: "후보",
+        subRegion: "가정1동, 가정2동, 가정3동, 신현원창동",
+        bio: [
+            "<span style='letter-spacing:-0.15em;'>현) 유비케어 산업안전보건위 근로자대표</span>",
+            "루원호반베르디움 동대표",
+            "유비케어 IT인프라 구축담당",
+            "전)천안아산통합센터 ITS업무운영"
+        ],
+        photo: "https://i.imgur.com/Gy1fbgP.png",
+        district: "다",
+        sns: {
+            fb: "#",
+            ig: "https://www.instagram.com/minculcate_"
+        },
+        pledge: "https://policy.reformparty.kr/map?region_code=28&election_type=local_council&district_code=28%3A%EC%84%9C%EA%B5%AC%3A%EB%8B%A4%EC%84%A0%EA%B1%B0%EA%B5%AC",
+        decl: "https://rallypoint.kr/board/politics-free/227363",
+        donation: "https://givemoney.kr/politicians/84",
+        dateAdded: "2026-03-09",
+        coords: [
+            37.5396,
+            126.6718
+        ]
+    },
+    {
+        name: "홍웅표",
+        region: "경북 영주시",
+        metropolitan: "경상북도",
+        category: "기초의원",
+        office: "영주시의회",
+        status: "공천확정",
+        visibility: "hidden",
+        subRegion: "휴천2동, 휴천3동",
+        bio: [
+            "영주시 마선거구 공천확정"
+        ],
+        photo: "",
+        district: "마",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-03-09",
+        coords: [
+            36.8043,
+            128.6178
+        ]
+    },
+    {
+        name: "양현성",
+        region: "서울 강남구",
+        metropolitan: "서울특별시",
+        category: "기초의원",
+        office: "강남구의회",
+        age: 28,
+        slogan: "젊은 힘으로 젊은 강남 최선을 다하겠습니다",
+        status: "후보",
+        subRegion: "압구정동, 청담동",
+        bio: [
+            "개혁신당 강남구 지역발전특위 부위원장",
+            "2026년 강남 청년네트워크 위원"
+        ],
+        photo: "https://i.imgur.com/RlsQD6c.png",
+        district: "나",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/72",
+        dateAdded: "2026-03-12",
+        coords: [
+            37.5271,
+            127.0355
+        ]
+    },
+    {
+        name: "조현조",
+        region: "부산 금정구",
+        metropolitan: "부산광역시",
+        category: "기초의원",
+        office: "금정구의회",
+        age: 34,
+        status: "후보",
+        district: "가",
+        subRegion: "서제1동, 서제2동, 서제3동, 금사회동동, 부곡제1동, 부곡제4동",
+        bio: [
+            "부산시당 대외협력위원장",
+            "(주)에이치제이그룹 대표이사",
+            "(사)해맑음회 이사",
+            "금정구 중소기업발전협의회 회원"
+        ],
+        photo: "https://i.imgur.com/SsVCSGq.png",
+        sns: {
+            fb: "#",
+            ig: "https://www.instagram.com/p/DUrps6WDy1D/",
+            yt: "https://www.youtube.com/channel/UC6UXv_-vsGSuenD91U4K-5g"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/174",
+        dateAdded: "2026-04-02",
+        coords: [
+            35.226919,
+            129.11925
+        ]
+    },
+    {
+        name: "권민찬",
+        region: "부산 금정구",
+        metropolitan: "부산광역시",
+        category: "기초의원",
+        office: "금정구의회",
+        age: 19,
+        slogan: "가장 젊고 가장 새로운 정치인 권민찬 입니다 감사합니다!",
+        status: "후보",
+        subRegion: "장전제1동, 청룡노포동, 구서제1동, 금성동",
+        bio: [
+            "부산시당 대변인",
+            "개혁신당 금정구 지역발전특위 부위원장",
+            "부산시당 윤리위원장"
+        ],
+        photo: "https://i.imgur.com/Aaw6U4B.png",
+        district: "다",
+        sns: {
+            fb: "#",
+            ig: "https://www.instagram.com/kwonminchan_reformparty/"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/132",
+        dateAdded: "2026-03-12",
+        coords: [
+            35.2375,
+            129.0927
+        ]
+    },
+    {
+        name: "신유림",
+        region: "부산 부산진구",
+        metropolitan: "부산광역시",
+        category: "기초의원",
+        office: "부산진구의회",
+        age: 24,
+        gender: "f",
+        status: "후보",
+        district: "가",
+        subRegion: "부전제1동, 양정제1동, 양정제2동",
+        bio: [
+            "부산시당 대변인",
+            "부산시당 여성위원장"
+        ],
+        photo: "https://i.imgur.com/bcMkD9n.png",
+        sns: {
+            fb: "https://www.facebook.com/profile.php?id=61572125019695",
+            ig: "https://www.instagram.com/urim._.shin/"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/180",
+        dateAdded: "2026-04-08",
+        coords: [
+            35.162858,
+            129.058927
+        ]
+    },
+    {
+        name: "김영림",
+        region: "서울 동작구",
+        metropolitan: "서울특별시",
+        category: "기초의원",
+        office: "동작구의회",
+        age: 52,
+        status: "후보",
+        gender: "f",
+        constituency: "비례",
+        district: "비례",
+        listOrder: 1,
+        bio: [
+            "전)제9대 동작구의회 의원",
+            "현) 마을발전소 사회적협동조합 활동가"
+        ],
+        photo: "https://i.imgur.com/yPigHTv.png",
+        sns: {
+            fb: "https://www.facebook.com/0202lim",
+            ig: "https://www.instagram.com/0202.lim/",
+            blog: "https://blog.naver.com/0202_lim"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-05-11",
+        coords: []
+    },
+    {
+        name: "배영희",
+        region: "대구 수성구",
+        metropolitan: "대구광역시",
+        category: "기초의원",
+        office: "수성구의회",
+        status: "후보",
+        age: 56,
+        gender: "f",
+        constituency: "비례",
+        district: "비례",
+        listOrder: 1,
+        bio: [
+            "요양보호사",
+            "전) 하나로유통대표"
+        ],
+        photo: "https://i.imgur.com/bhnba5B.png",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-05-11",
+        coords: []
+    },
+    {
+        name: "홍승희",
+        region: "경북 포항시",
+        metropolitan: "경상북도",
+        category: "기초의원",
+        office: "포항시의회",
+        status: "후보",
+        visibility: "hidden",
+        constituency: "비례",
+        district: "비례",
+        age: 55,
+        gender: "f",
+        listOrder: 1,
+        bio: [
+            "전)포항 북구 당협위원회 사무원",
+            "현)흥해여성의용소방대 단원"
+        ],
+        photo: "https://i.imgur.com/8w8g14I.png",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-05-11",
+        coords: []
+    },
+    {
+        name: "안현정",
+        region: "경남 창원시",
+        metropolitan: "경상남도",
+        category: "기초의원",
+        office: "창원시의회",
+        status: "후보",
+        constituency: "비례",
+        district: "비례",
+        age: 32,
+        gender: "f",
+        listOrder: 1,
+        bio: [
+            "경상남도당 홍보위원장",
+            "함안요가연합회 대표"
+        ],
+        photo: "https://i.imgur.com/xwv77zq.png",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-05-11",
+        coords: []
+    },
+    {
+        name: "이지연",
+        region: "경남 창원시",
+        metropolitan: "경상남도",
+        category: "기초의원",
+        office: "창원시의회",
+        status: "후보",
+        constituency: "비례",
+        district: "비례",
+        age: 33,
+        gender: "f",
+        listOrder: 2,
+        bio: [
+            "지연이네 용원냉삼집 대표",
+            "전)(주)흥아마린 해사팀 사무직원"
+        ],
+        photo: "https://i.imgur.com/P9avVBg.png",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-05-11",
+        coords: []
+    },
+    {
+        name: "서명교",
+        region: "대구 수성구",
+        metropolitan: "대구광역시",
+        category: "기초의원",
+        office: "수성구의회",
+        age: 29,
+        status: "후보",
+        subRegion: "범어1동, 범어4동, 황금1동, 황금2동",
+        bio: [
+            "<span style='letter-spacing:-0.12em;'>개혁신당 수성구 지역발전특위 부위원장</span>",
+            "<span style='letter-spacing:-0.12em;'>전)제73대 한국대학스키연맹 총 학생위원장</span>"
+        ],
+        photo: "https://i.imgur.com/KalZzHE.png",
+        district: "가",
+        sns: {
+            fb: "#",
+            ig: "https://www.instagram.com/myungkyo_seo/"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/155",
+        dateAdded: "2026-03-19",
+        coords: [
+            35.8588,
+            128.6305
+        ]
+    },
+    {
+        name: "이민수",
+        region: "서울 동작구",
+        metropolitan: "서울특별시",
+        category: "기초의원",
+        office: "동작구의회",
+        age: 64,
+        status: "후보",
+        subRegion: "노량진제1동, 노량진제2동",
+        bio: [
+            "사회복지사(2급)",
+            "IT 유지보수 전문가",
+            "IT 유지보수 노조위원장 역임",
+            "<span style='letter-spacing:-0.15em;'>본동 11번지 지주공동개발 비대위원장</span>"
+        ],
+        photo: "https://i.imgur.com/4UIPbCj.png",
+        district: "가",
+        sns: {
+            fb: "https://www.facebook.com/profile.php?id=100004207876709"
+        },
+        pledge: "https://minsulee-ev-iaaouguy.manus.space/?utm_id=97757_v0_s00_e230_tv2_tp1_a1demonyk85dr9",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/165",
+        dateAdded: "2026-04-01",
+        coords: [
+            37.5133,
+            126.9422
+        ]
+    },
+    {
+        name: "김효숙",
+        region: "서울 동작구",
+        metropolitan: "서울특별시",
+        category: "기초의원",
+        office: "동작구의회",
+        status: "후보",
+        age: 71,
+        gender: "f",
+        subRegion: "상도제2동, 상도제4동",
+        bio: [
+            "제9대 동작구의회 의원",
+            "현)동작구의회 예결특위 위원장",
+            "전)동작문화원 이사",
+            "전)춘천지검 강릉지청 근무"
+        ],
+        photo: "https://i.imgur.com/eCrKahk.png",
+        district: "나",
+        sns: {
+            fb: "https://www.facebook.com/hyosug.kim.7"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/205",
+        dateAdded: "2026-04-29",
+        coords: [
+            37.499292,
+            126.941122
+        ]
+    },
+    {
+        name: "민경희",
+        region: "서울 동작구",
+        metropolitan: "서울특별시",
+        category: "기초의원",
+        office: "동작구의회",
+        gender: "f",
+        age: 54,
+        status: "후보",
+        subRegion: "상도제3동, 대방동",
+        bio: [
+            "제8,9대 동작구의회 의원",
+            "9대 전반기 행정재무위원장",
+            "민 아트갤러리 대표"
+        ],
+        photo: "https://i.imgur.com/Aqhh2tZ.png",
+        district: "다",
+        sns: {
+            fb: "https://www.facebook.com/mingyeonghui.824385"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/236",
+        dateAdded: "2026-05-08",
+        coords: [
+            37.505984,
+            126.927824
+        ]
+    },
+    {
+        name: "민경준",
+        region: "서울 중랑구",
+        metropolitan: "서울특별시",
+        category: "기초의원",
+        office: "중랑구의회",
+        age: 31,
+        status: "후보",
+        subRegion: "면목본동, 면목제2동, 면목제5동, 상봉제2동",
+        bio: [
+            "개혁신당 중랑구 지역발전특위 부위원장"
+        ],
+        photo: "https://i.imgur.com/sHjUWdN.png",
+        district: "다",
+        sns: {
+            fb: "#",
+            ig: "https://www.instagram.com/min.reform.jgn/"
+        },
+        pledge: "https://policy.reformparty.kr/map?region_code=11&election_type=local_council&district_code=11%3A%EC%A4%91%EB%9E%91%EA%B5%AC%3A%EB%8B%A4%EC%84%A0%EA%B1%B0%EA%B5%AC",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/156",
+        dateAdded: "2026-03-19",
+        coords: [
+            37.6066,
+            127.0928
+        ]
+    },
+    {
+        name: "이영자",
+        region: "인천 연수구",
+        metropolitan: "인천광역시",
+        category: "기초의원",
+        office: "연수구의회",
+        age: 62,
+        gender: "f",
+        status: "후보",
+        subRegion: "옥련2동, 연수1동, 청학동",
+        bio: [
+            "전) 인천대 겸임교수",
+            "전) 한국가족상담교육연구소 선임연구원"
+        ],
+        photo: "https://i.imgur.com/O08k8oX.png",
+        district: "가",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/195",
+        dateAdded: "2026-03-25",
+        coords: [
+            37.424756,
+            126.681048
+        ]
+    },
+    {
+        name: "변재민",
+        region: "인천 연수구",
+        metropolitan: "인천광역시",
+        category: "기초의원",
+        office: "연수구의회",
+        age: 19,
+        status: "후보",
+        subRegion: "옥련1동, 동춘1동, 동춘2동",
+        bio: [
+            "<span style='letter-spacing:-0.12em;'>현) 민주평통연수구협의회 자문위원</span>",
+            "<span style='letter-spacing:-0.10em;'>현) 인천시주민참여예산위원</span>",
+            "<span style='letter-spacing:-0.12em;'>전) 인천광역시교육청 학생참여위원회 위원장</span>"
+        ],
+        photo: "https://i.imgur.com/QmkqRrR.png",
+        district: "다",
+        sns: {
+            fb: "#",
+            ig: "https://www.instagram.com/byun.jm/"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-05-13",
+        coords: [
+            37.40048,
+            126.670143
+        ]
+    },
+    {
+        name: "정민기",
+        region: "서울 중랑구",
+        metropolitan: "서울특별시",
+        category: "기초의원",
+        office: "중랑구의원",
+        status: "후보",
+        age: 37,
+        district: "바",
+        subRegion: "상봉제1동, 신내제2동",
+        bio: [
+            "개혁신당 중랑구지역발전특위 부위원장",
+            "현)닷플래너 MICE1팀 팀장"
+        ],
+        photo: "https://i.imgur.com/ad53yjc.png",
+        sns: {},
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/161",
+        dateAdded: "2026-03-26",
+        coords: [
+            37.599874,
+            127.0872
+        ]
+    },
+    {
+        name: "주쾌식",
+        region: "경남 창녕군",
+        metropolitan: "경상남도",
+        category: "기초의원",
+        office: "창녕군의원",
+        status: "공천확정",
+        visibility: "hidden",
+        district: "다",
+        subRegion: "남지읍, 길곡면, 부곡면",
+        bio: [
+            "창녕군 다선거구 공천확정"
+        ],
+        photo: "",
+        sns: {},
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-03-26",
+        coords: [
+            35.391285,
+            128.473618
+        ]
+    },
+    {
+        name: "한민희",
+        region: "충남 계룡시",
+        metropolitan: "충청남도",
+        category: "기초의원",
+        office: "계룡시의회",
+        age: 60,
+        status: "후보",
+        district: "나",
+        subRegion: "엄사면",
+        bio: [
+            "<span style='letter-spacing:-0.05em;'>현) 광역철도 엄사역신설(구신도역)양정-파라디아간 철도복개추진위원장</span>"
+        ],
+        photo: "https://i.imgur.com/LThHraB.png",
+        sns: {},
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/166/",
+        dateAdded: "2026-04-01",
+        coords: [
+            36.285695,
+            127.238092
+        ]
+    },
+    {
+        name: "김희성",
+        region: "경남 김해시",
+        metropolitan: "경상남도",
+        category: "기초의원",
+        office: "김해시의회",
+        age: 64,
+        status: "후보",
+        district: "다",
+        subRegion: "동상동, 부원동, 활천동",
+        bio: [
+            "전) 제5·8대 김해시의원(재선)",
+            "사)대한파크골프연합회 부산경남본부장",
+            "지지테크 대표"
+        ],
+        photo: "https://prod-api.givemoney.kr/v1/images/donation-groups/193/8d413054-d78a-44e3-9e10-0525a17a4ca0.jpg",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/193",
+        dateAdded: "2026-04-01",
+        coords: [
+            35.234549,
+            128.885038
+        ]
+    },
+    {
+        name: "강명상",
+        region: "경남 창원시",
+        metropolitan: "경상남도",
+        category: "기초단체장",
+        office: "창원시장",
+        age: 53,
+        status: "후보",
+        bio: [
+            "현) 365병원 병원장",
+            "현) 365창원경제 연구원 원장"
+        ],
+        photo: "https://i.imgur.com/tTBE7If.png",
+        sns: {
+            fb: "https://www.facebook.com/p/%EA%B0%95%EB%AA%85%EC%83%81-61555386117076/",
+            blog: "https://blog.naver.com/kangms9096"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/194",
+        dateAdded: "2026-04-07",
+        coords: [
+            35.2281,
+            128.6811
+        ]
+    },
+    {
+        name: "한완희",
+        region: "경남 김해시",
+        metropolitan: "경상남도",
+        category: "기초단체장",
+        office: "김해시장",
+        age: 46,
+        visibility: "hidden",
+        status: "예비후보",
+        showPreliminaryBadge: true,
+        bio: [
+            "김해시 한림면 신전마을 이장",
+            "김해시 주민참여예산 위원",
+            "전) 법무부 초대 노조위원장"
+        ],
+        photo: "http://cdn.knnews.co.kr/edb/nimages/2026/05/2026050413504576587.png",
+        sns: {
+            fb: "https://www.facebook.com/hanwanhui"
+        },
+        pledge: "#",
+        decl: "https://www.facebook.com/share/p/14k7jxgTzMR/",
+        donation: "#",
+        dateAdded: "2026-05-04",
+        coords: [
+            35.228326,
+            128.889524
+        ]
+    },
+    {
+        name: "이창원",
+        region: "충남 논산시",
+        metropolitan: "충청남도",
+        category: "기초단체장",
+        office: "논산시장",
+        age: 68,
+        status: "후보",
+        bio: [
+            "세무사 이창원사무소 대표",
+            "정치인"
+        ],
+        photo: "https://i.imgur.com/vC7qQxi.png",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/168",
+        dateAdded: "2026-04-03",
+        coords: [
+            36.1878,
+            127.0988
+        ]
+    },
+    {
+        name: "고귀한",
+        region: "부산 연제구",
+        metropolitan: "부산광역시",
+        category: "기초의원",
+        office: "연제구의회",
+        age: 35,
+        status: "후보",
+        district: "가",
+        subRegion: "거제제1동, 거제제2동, 거제제3동, 거제제4동",
+        bio: [
+            "부산시당 대변인",
+            "부산시당 소상공인위원장",
+            "전) 카페 원플러스원 본부장"
+        ],
+        photo: "https://i.imgur.com/KZCwUre.png",
+        sns: {
+            fb: "#",
+            ig: "https://www.instagram.com/gwihantv/"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/181",
+        dateAdded: "2026-04-08",
+        coords: [
+            35.192102,
+            129.076298
+        ]
+    },
+    {
+        name: "문현진",
+        region: "경남 김해시",
+        metropolitan: "경상남도",
+        category: "기초의원",
+        office: "김해시의회",
+        age: 39,
+        status: "후보",
+        district: "사",
+        subRegion: "내외동",
+        bio: [
+            "국민체육진흥공단 경륜선수",
+            "현)그린닥터스 경상남도 청년단장",
+            "현)국제종교연합 체육이사"
+        ],
+        photo: "https://i.imgur.com/3nEWaQQ.png",
+        sns: {
+            fb: "#",
+            ig: "https://www.instagram.com/moonbest11/"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/186",
+        dateAdded: "2026-04-08",
+        coords: [
+            35.236296,
+            128.863128
+        ]
+    },
+    {
+        name: "양시훈",
+        region: "경기",
+        metropolitan: "경기도",
+        category: "광역의원",
+        office: "경기도의회",
+        status: "후보",
+        age: 31,
+        district: "화성시 5",
+        subRegion: "동탄구 동탄7동, 동탄9동",
+        bio: [
+            "개혁신당 화성시 지역발전특위 위원장"
+        ],
+        photo: "https://i.imgur.com/9bIX5mL.png",
+        sns: {
+            ig: "https://www.instagram.com/dongtan7.9/",
+            yt: "https://www.youtube.com/@%EB%8F%99%ED%83%8494"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/171",
+        dateAdded: "2026-04-09",
+        coords: [
+            37.177619,
+            127.131971
+        ]
+    },
+    {
+        name: "한범수",
+        region: "서울",
+        metropolitan: "서울특별시",
+        category: "광역의원",
+        office: "서울시의회",
+        status: "후보",
+        age: 36,
+        district: "영등포구 2",
+        subRegion: "영등포동, 당산제1동, 당산제2동, 양평제1동, 양평제2동",
+        bio: [
+            "현)보라매병원 임상강사",
+            "정형외과 의사"
+        ],
+        photo: "https://i.imgur.com/7EoquSC.png",
+        sns: {
+            ig: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/190",
+        dateAdded: "2026-04-23",
+        coords: [
+            37.528145,
+            126.916286
+        ]
+    },
+    {
+        name: "황종일",
+        region: "경기",
+        metropolitan: "경기도",
+        category: "광역의원",
+        office: "경기도의회",
+        status: "공천확정",
+        district: "수원 3",
+        visibility: "hidden",
+        subRegion: "장안구 율천동, 권선구 서둔동, 구운동, 입북동",
+        bio: [
+            "수원시 제3선거구 공천확정"
+        ],
+        photo: "",
+        sns: {},
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-04-09",
+        coords: [
+            37.29692,
+            126.97489
+        ]
+    },
+    {
+        name: "오다겸",
+        region: "부산 사하구",
+        metropolitan: "부산광역시",
+        category: "기초의원",
+        age: 56,
+        gender: "f",
+        office: "사하구의회",
+        status: "후보",
+        district: "마",
+        subRegion: "다대제1동, 다대제2동",
+        bio: [
+            "전) 제 6,7대 사하구의원(재선)",
+            "전) 사하구의회 부의장",
+            "부산광역시당 수석 대변인"
+        ],
+        photo: "https://i.imgur.com/2oWVGW4.png",
+        sns: {
+            fb: "https://www.facebook.com/odagyeom.624975"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/222",
+        dateAdded: "2026-04-10",
+        coords: [
+            35.059062,
+            128.970823
+        ]
+    },
+    {
+        name: "최봉환",
+        region: "부산 금정구",
+        metropolitan: "부산광역시",
+        category: "기초단체장",
+        age: 66,
+        office: "금정구청장",
+        status: "후보",
+        bio: [
+            "제6~9대 금정구의원(4선)",
+            "<span style='letter-spacing:-0.12em;'>전)시군자치구의회 의장협의회 회장<span/>",
+            "제9대 금정구의회 전반기 의장",
+            "<span style='letter-spacing:-0.12em;'>개혁신당 부산시장 선대위 선대본부장<span/>"
+        ],
+        photo: "https://i.imgur.com/4uypBwQ.png",
+        sns: {
+            fb: "https://www.facebook.com/profile.php?id=100007951989026"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/226",
+        dateAdded: "2026-04-10",
+        coords: [
+            35.24302,
+            129.09241
+        ]
+    },
+    {
+        name: "김신재",
+        region: "부산 해운대구",
+        metropolitan: "부산광역시",
+        category: "기초의원",
+        office: "해운대구의회",
+        age: 33,
+        status: "후보",
+        district: "다",
+        subRegion: "중제2동, 좌제2동, 송정동",
+        bio: [
+            "부산시당 청년위원장",
+            "부산시당 대변인",
+            "(재) 그린닥터스 상임이사"
+        ],
+        photo: "https://i.imgur.com/Sn7BLkH.png",
+        sns: {
+            fb: "#",
+            ig: "https://www.instagram.com/sinjae_official/"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/182",
+        dateAdded: "2026-04-14",
+        coords: [
+            35.182109,
+            129.201291
+        ]
+    },
+    {
+        name: "박일하",
+        region: "서울 동작구",
+        metropolitan: "서울특별시",
+        category: "기초단체장",
+        office: "동작구청장",
+        status: "후보",
+        age: 62,
+        bio: [
+            "현) 제20대 서울 동작구청장",
+            "전) 국토교통부 원주지방국토관리청장"
+        ],
+        photo: "https://i.imgur.com/94EnPQ9.png",
+        sns: {
+            fb: "https://www.facebook.com/djparkilha",
+            ig: "https://www.instagram.com/parkilha55",
+            yt: "https://www.youtube.com/@parkilhatv",
+            blog: "https://blog.naver.com/parkilha55"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/239",
+        dateAdded: "2026-05-08",
+        coords: [
+            37.50668,
+            126.93928
+        ]
+    },
+    {
+        name: "안병두",
+        region: "서울 서초구",
+        metropolitan: "서울특별시",
+        category: "기초의원",
+        office: "서초구의회",
+        age: 69,
+        status: "후보",
+        district: "다",
+        subRegion: "서초1동, 서초3동, 방배2동, 방배3동",
+        bio: [
+            "제9대 서초구의회 의원"
+        ],
+        photo: "https://i.imgur.com/hHflRHJ.png",
+        sns: {},
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/178",
+        dateAdded: "2026-04-16",
+        coords: [
+            37.474885,
+            126.989041
+        ]
+    },
+    {
+        name: "이형준",
+        region: "서울 서초구",
+        metropolitan: "서울특별시",
+        category: "기초의원",
+        office: "서초구의회",
+        age: 36,
+        status: "후보",
+        district: "마",
+        subRegion: "양재제1동, 양재제2동, 내곡동",
+        bio: [
+            "제9대 서초구의회 의원",
+            "전) 국회의원 비서관"
+        ],
+        photo: "https://i.imgur.com/4fFOf0Y.png",
+        sns: {
+            fb: "https://www.facebook.com/politicohj",
+            ig: ""
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/230",
+        dateAdded: "2026-05-06",
+        coords: [
+            37.454174,
+            127.064274
+        ]
+    },
+    {
+        name: "박현군",
+        region: "부산 해운대구",
+        metropolitan: "부산광역시",
+        visibility: "hidden",
+        showPreliminaryBadge: true,
+        category: "기초의원",
+        office: "해운대구의회",
+        age: 55,
+        status: "예비후보",
+        district: "가",
+        subRegion: "우제1동, 중제1동",
+        bio: [
+            "<span style='letter-spacing:-0.12em;'>현)해운대구 우2동 바르게살기운동 위원장</span>",
+            "부산시 장애인 탁구협회 수석부회장",
+            "전)해운대구 구정 정책자문위원"
+        ],
+        photo: "https://i.imgur.com/6FR2PFa.png",
+        sns: {
+            fb: "",
+            ig: ""
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-05-06",
+        coords: [
+            35.167776,
+            129.157003
+        ]
+    },
+    {
+        name: "오세철",
+        region: "서울 서초구",
+        metropolitan: "서울특별시",
+        category: "기초의원",
+        office: "서초구의회",
+        age: 72,
+        status: "후보",
+        district: "가",
+        subRegion: "잠원동, 반포1동, 반포3동, 반포4동",
+        bio: [
+            "제7,8,9대 서초구의회 의원(3선)",
+            "제9대 서초구의회 전반기 의장",
+            "<span style='letter-spacing:-0.12em;'>8대 재정건설위원장(후기), 7대 운영위원장(전기)</span>"
+        ],
+        photo: "https://i.imgur.com/WpM8WGw.png",
+        sns: {},
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/177",
+        dateAdded: "2026-04-16",
+        coords: [
+            37.51539,
+            127.012946
+        ]
+    },
+    {
+        name: "이성진",
+        region: "충남 천안시",
+        metropolitan: "충청남도",
+        category: "기초단체장",
+        office: "천안시장",
+        status: "후보",
+        age: 46,
+        bio: [
+            "천안시 병 당협위원장",
+            "전) 충청남도당 위원장",
+            "전) 개혁신당 홍보부총장",
+            "21대 대선 홍보부본부장"
+        ],
+        photo: "https://i.imgur.com/g3zvOOa.png",
+        sns: {
+            yt: "https://www.youtube.com/@Leeseongjin24",
+            fb: "https://www.facebook.com/positivemoneel",
+            ig: "https://www.instagram.com/leeseong_"
+        },
+        pledge: "#",
+        decl: "https://news.tf.co.kr/read/national/2313050.htm",
+        donation: "https://givemoney.kr/politicians/233",
+        dateAdded: "2026-05-04",
+        coords: [
+            36.8151,
+            127.1139
+        ]
+    },
+    {
+        name: "이은창",
+        metropolitan: "충청남도",
+        region: "충남",
+        district: "공주·부여·청양",
+        category: "재보궐선거",
+        office: "재보궐선거",
+        status: "후보",
+        subRegion: "공주시, 부여군, 청양군 일원",
+        age: 43,
+        bio: [
+            "충청남도당 위원장 직무대행",
+            "공주·부여·청양 당협위원장",
+            "제6대 유성구의원",
+            "제21대 대선 선대위 대변인"
+        ],
+        photo: "https://i.imgur.com/yP4ncGr.png",
+        sns: {
+            fb: "https://www.facebook.com/profile.php?id=100002081097533",
+            ig: "https://www.instagram.com/eunchang_0100/",
+            yt: "https://www.youtube.com/@%EC%9D%B4%EC%9D%80%EC%B0%BD-l8u"
+        },
+        pledge: "#",
+        decl: "https://www.youtube.com/live/ykvvk-37iws?si=iGJ3virBz9tVUHMO&t=288",
+        donation: "https://givemoney.kr/politicians/143",
+        dateAdded: "2026-02-12",
+        coords: [
+            36.468596,
+            127.114446
+        ]
+    },
+    {
+        name: "김성열",
+        metropolitan: "경기도",
+        region: "경기",
+        district: "하남 갑",
+        category: "재보궐선거",
+        office: "재보궐선거",
+        status: "후보",
+        age: 43,
+        subRegion: "천현동, 신장1동, 신장2동, 덕풍1동, 덕풍2동, 감북동, 감일동, 위례동, 춘궁동, 초이동",
+        bio: [
+            "개혁신당 최고위원(지명)",
+            "전)양천구 갑 당협위원장",
+            "제21대 대선 선대위 대변인",
+            "전) 개혁신당 사무부총장"
+        ],
+        photo: "https://i.imgur.com/JNM9vTt.png",
+        sns: {
+            fb: "https://www.facebook.com/profile.php?id=61555831312760",
+            ig: "https://www.instagram.com/xury0719",
+            blog: "https://blog.naver.com/declaimer/"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/240",
+        dateAdded: "2026-05-09",
+        coords: [
+            37.53494,
+            127.200995
+        ]
+    },
+    {
+        name: "문인수",
+        metropolitan: "경기도",
+        region: "경기",
+        district: "안산 갑",
+        category: "재보궐선거",
+        office: "재보궐선거",
+        status: "후보",
+        age: 60,
+        subRegion: "상록구 사동, 사이동, 해양동, 본오1동, 본오2동, 본오3동, 반월동",
+        bio: [
+            "제5대 안산시의회 의원",
+            "현) (사)안산시 의정회 부회장",
+            "문건축사사무소 대표"
+        ],
+        photo: "https://i.imgur.com/aMOavQv.png",
+        sns: {
+            fb: "https://www.facebook.com/profile.php?id=100001844357534"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/242",
+        dateAdded: "2026-05-08",
+        coords: [
+            37.286526,
+            126.840963
+        ]
+    },
+    {
+        name: "조성한",
+        region: "대전 유성구",
+        metropolitan: "대전광역시",
+        category: "기초의원",
+        office: "유성구의회",
+        status: "후보",
+        age: 30,
+        district: "가",
+        subRegion: "상대동, 원신흥동, 진잠동, 학하동",
+        bio: [
+            "대전시당 사무처장",
+            "전) 중앙당 미래희망위원"
+        ],
+        photo: "https://i.imgur.com/bthUyZe.png",
+        sns: {
+            fb: "https://www.facebook.com/profile.php?id=100003241405728&ref=NONE_ig_profile_ac",
+            ig: "https://www.instagram.com/seonghan_star/",
+            yt: "https://www.youtube.com/@mang_mang_2"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/185",
+        dateAdded: "2026-04-18",
+        coords: [
+            36.337743,
+            127.343695
+        ]
+    },
+    {
+        name: "장경석",
+        region: "인천",
+        metropolitan: "인천광역시",
+        category: "광역의원",
+        office: "인천광역시의회",
+        status: "후보",
+        district: "옹진군",
+        age: 46,
+        subRegion: "북도면, 연평면, 덕적면, 자월면, 영흥면, 백령면, 대청면",
+        bio: [
+            "전) 옹진군청 정무소통비서"
+        ],
+        photo: "https://i.imgur.com/4qGORxc.png",
+        sns: {
+            fb: "https://www.facebook.com/jang.gyeongseog.724597"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/196",
+        dateAdded: "2026-04-18",
+        coords: [
+            37.4744,
+            126.6358
+        ]
+    },
+    {
+        name: "김윤재",
+        region: "서울 용산구",
+        metropolitan: "서울특별시",
+        category: "기초단체장",
+        office: "용산구청장",
+        age: 57,
+        status: "후보",
+        bio: [
+            "<span style='letter-spacing:-0.12em;'>개혁신당 당대표 정무특보</span>",
+            "한국부동산원 정비사업 자문위원",
+            "네오 용산연구소 대표"
+        ],
+        photo: "https://i.imgur.com/ULnfZik.png",
+        sns: {
+            ig: "https://www.instagram.com/kimyoojae69/",
+            fb: "https://www.facebook.com/profile.php?id=61583520560182",
+            blog: "https://blog.naver.com/kimyoonjae_"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/175/",
+        dateAdded: "2026-04-20",
+        coords: [
+            37.534,
+            126.9886
+        ]
+    },
+    {
+        name: "정찬옥",
+        region: "서울 성동구",
+        metropolitan: "서울특별시",
+        category: "기초단체장",
+        office: "성동구청장",
+        status: "후보",
+        age: 71,
+        bio: [
+            "제4,5대 성동구의원(재선)",
+            "제5대 성동구의회 의장(전반기)"
+        ],
+        photo: "https://i.imgur.com/f9qD3on.png",
+        sns: {
+            fb: "https://www.facebook.com/sdj8411"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/176",
+        dateAdded: "2026-04-20",
+        coords: [
+            37.5633,
+            127.0372
+        ]
+    },
+    {
+        name: "손승현",
+        region: "서울 용산구",
+        visibility: "hidden",
+        metropolitan: "서울특별시",
+        category: "기초의원",
+        office: "용산구의회",
+        status: "공천확정",
+        district: "다",
+        subRegion: "한강로동, 이촌제1동, 이촌제2동",
+        bio: [
+            "용산구한남동지역사회보장협의체 부위원장"
+        ],
+        photo: "",
+        sns: {},
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-04-20",
+        coords: [
+            37.5291,
+            126.9661
+        ]
+    },
+    {
+        name: "정세인",
+        region: "부산 동래구",
+        visibility: "hidden",
+        metropolitan: "부산광역시",
+        category: "기초의원",
+        office: "동래구의회",
+        status: "공천확정",
+        district: "라",
+        subRegion: "사직제1동, 사직제2동, 사직제3동",
+        bio: [
+            "동래구 라선거구 공천확정"
+        ],
+        photo: "",
+        sns: {},
+        pledge: "#",
+        decl: "#",
+        donation: "#",
+        dateAdded: "2026-04-20",
+        coords: [
+            35.1976,
+            129.0602
+        ]
+    },
+    {
+        name: "이민희",
+        region: "광주 광산구",
+        metropolitan: "전남광주통합특별시",
+        category: "기초의원",
+        office: "광산구의회",
+        status: "후보",
+        age: 31,
+        gender: "f",
+        district: "가",
+        subRegion: "송정1동, 송정2동, 도산동, 어룡동, 동곡동, 평동, 삼도동, 본량동",
+        bio: [
+            "개혁신당 광산구 지역발전특위 부위원장",
+            "전)정부세종청사 이든샘어린이집 담임교사"
+        ],
+        photo: "https://i.imgur.com/OXhWgZh.png",
+        sns: {
+            ig: "https://www.instagram.com/mini_l.e.e/",
+            site: "https://litt.ly/mini_l.e.e"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/184",
+        dateAdded: "2026-04-20",
+        coords: [
+            35.136,
+            126.7979
+        ]
+    },
+    {
+        name: "손득호",
+        region: "강원특별자치도 동해시",
+        metropolitan: "강원특별자치도",
+        category: "기초의원",
+        office: "동해시의회",
+        age: 49,
+        status: "후보",
+        district: "가",
+        subRegion: "송정동, 북삼동, 북평동, 삼화동",
+        bio: [
+            "아시아일보 기자 (프리랜서)",
+            "현) 광희고등학교 총동문회 부회장"
+        ],
+        photo: "https://i.imgur.com/9R3t6TQ.png",
+        sns: {},
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/189",
+        dateAdded: "2026-04-20",
+        coords: [
+            37.4787,
+            129.1275
+        ]
+    },
+    {
+        name: "이인숙",
+        region: "충북 청주시",
+        metropolitan: "충청북도",
+        category: "기초의원",
+        office: "청주시의원",
+        district: "하",
+        age: 57,
+        gender: "f",
+        subRegion: "청원구 율량·사천동",
+        status: "후보",
+        bio: [
+            "전)제3대 통합청주시의원",
+            "전)청주시의회 농업정책위원회 위원"
+        ],
+        photo: "https://i.imgur.com/wTRaaCa.png",
+        sns: {
+            fb: ""
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/202",
+        dateAdded: "2026-04-23",
+        coords: [
+            36.666867,
+            127.493236
+        ]
+    },
+    {
+        name: "이완복",
+        region: "충북 청주시",
+        metropolitan: "충청북도",
+        category: "기초의원",
+        office: "청주시의원",
+        district: "마",
+        age: 66,
+        subRegion: "서원구 사직제1동, 사직제2동, 모충동, 수곡제1동, 수곡제2동\t",
+        status: "후보",
+        bio: [
+            "제1-3대 통합청주시의원(5선)",
+            "제7,8대 청주시의원"
+        ],
+        photo: "https://i.imgur.com/4GApSdy.png",
+        sns: {
+            fb: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/237",
+        dateAdded: "2026-05-08",
+        coords: [
+            36.625143,
+            127.480449
+        ]
+    },
+    {
+        name: "서태모",
+        region: "충남 서산시",
+        metropolitan: "충청남도",
+        category: "기초의원",
+        office: "서산시의원",
+        district: "마",
+        subRegion: "음암면, 운산면, 해미면, 고북면",
+        age: 71,
+        status: "후보",
+        bio: [
+            "전) 경기도 명예감사관",
+            "전) 한국도로공사 자문위원(군포지사)"
+        ],
+        photo: "https://prod-api.givemoney.kr/v1/images/donation-groups/220/bbc9a482-6760-4c9b-8c0a-ca74fe55f7bb.jpg",
+        sns: {
+            fb: ""
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/220",
+        dateAdded: "2026-04-21",
+        coords: [
+            36.713353,
+            126.538322
+        ]
+    },
+    {
+        name: "손영훈",
+        region: "충남 계룡시",
+        metropolitan: "충청남도",
+        category: "기초의원",
+        office: "계룡시의원",
+        district: "가",
+        subRegion: "두마면, 신도안면, 금암동",
+        age: 60,
+        status: "후보",
+        bio: [
+            "현)델파이어태치 대표",
+            "현)계룡시 황토길 걷기협회 회장"
+        ],
+        photo: "https://i.imgur.com/wnA0eWH.png",
+        sns: {
+            fb: ""
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/219",
+        dateAdded: "2026-04-27",
+        coords: [
+            36.274753,
+            127.253399
+        ]
+    },
+    {
+        name: "최재혁",
+        region: "서울 서대문구",
+        metropolitan: "서울특별시",
+        category: "기초의원",
+        office: "서대문구의원",
+        district: "마",
+        subRegion: "남가좌제1동, 남가좌제2동, 북가좌제1동, 북가좌제2동",
+        status: "후보",
+        age: 56,
+        bio: [
+            "공인회계사",
+            "현) 영우회계법인",
+            "전) 한영회계법인"
+        ],
+        photo: "https://i.imgur.com/4avOUor.png",
+        sns: {
+            fb: ""
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/191",
+        dateAdded: "2026-04-23",
+        coords: [
+            37.570586,
+            126.917263
+        ]
+    },
+    {
+        name: "김범일",
+        region: "서울 양천구",
+        metropolitan: "서울특별시",
+        category: "기초의원",
+        office: "양천구의원",
+        district: "가",
+        subRegion: "목2동, 목3동",
+        status: "후보",
+        age: 32,
+        bio: [
+            "양천구 개혁신당 지역발전특위 부위원장",
+            "싸우스맨 대표"
+        ],
+        photo: "https://i.imgur.com/8mJiKwS.png",
+        sns: {
+            fb: "https://www.facebook.com/profile.php?id=61560613887803",
+            ig: "https://www.instagram.com/k_beomil/"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/192",
+        dateAdded: "2026-04-23",
+        coords: [
+            37.543227,
+            126.87322
+        ]
+    },
+    {
+        name: "방인섭",
+        region: "울산 남구",
+        metropolitan: "울산광역시",
+        category: "기초단체장",
+        age: 50,
+        office: "남구청장",
+        status: "후보",
+        bio: [
+            "제8대 울산시의원",
+            "제6,7대 남구의회 의원",
+            "울산시의회의원 예산결산특별위원장"
+        ],
+        photo: "https://i.imgur.com/OyhPEWj.png",
+        sns: {
+            fb: "https://www.facebook.com/bangja1234",
+            ig: "https://www.instagram.com/bang_in_seob",
+            yt: "https://www.youtube.com/@%EB%B0%A9%EC%9D%B8%EC%84%AD%EC%9D%B4%EB%88%84%EA%B3%A0"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/198",
+        dateAdded: "2026-04-22",
+        coords: [
+            35.5384,
+            129.3114
+        ]
+    },
+    {
+        name: "조중연",
+        region: "충남 서천군",
+        metropolitan: "충청남도",
+        category: "기초단체장",
+        office: "서천군수",
+        status: "후보",
+        age: 53,
+        bio: [
+            "전)충남도의회 예산정책담당관",
+            "전) 국회의원 보좌관"
+        ],
+        photo: "https://i.imgur.com/61qh2LG.png",
+        sns: {
+            fb: "https://www.facebook.com/p/%EC%A1%B0%EC%A4%91%EC%97%B0-100013984723847/",
+            ig: "#"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/197",
+        dateAdded: "2026-04-28",
+        coords: [
+            36.078139,
+            126.701842
+        ]
+    },
+    {
+        name: "김장호",
+        region: "울산광역시",
+        metropolitan: "울산광역시",
+        shortMetro: "울산",
+        district: "남구 4",
+        constituencyFull: "남구 제4선거구",
+        category: "광역의원",
+        office: "울산시의원",
+        status: "후보",
+        age: 47,
+        subRegion: "삼산동, 야음장생포동",
+        bio: [
+            "제8대 남구의회 의원",
+            "남구 의회운영부위원장"
+        ],
+        photo: "https://i.imgur.com/bEX5LCH.jpeg",
+        sns: {
+            fb: "https://www.facebook.com/gimjangho.792733"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/199",
+        dateAdded: "2026-04-24",
+        coords: [
+            35.504401,
+            129.374238
+        ]
+    },
+    {
+        name: "최신성",
+        region: "울산광역시",
+        metropolitan: "울산광역시",
+        shortMetro: "울산",
+        district: "남구 5",
+        constituencyFull: "남구 제5선거구",
+        category: "광역의원",
+        office: "울산시의원",
+        status: "후보",
+        subRegion: "달동, 수암동",
+        bio: [
+            "제7,8대 남구의회 의원",
+            "남구 의회운영위원장"
+        ],
+        photo: "https://i.imgur.com/xWhuZOQ.png",
+        sns: {
+            fb: ""
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/210",
+        dateAdded: "2026-04-23",
+        coords: [
+            35.535388,
+            129.322848
+        ]
+    },
+    {
+        name: "김소라",
+        age: 52,
+        gender: "f",
+        region: "울산광역시",
+        metropolitan: "울산광역시",
+        shortMetro: "울산",
+        district: "남구 6",
+        constituencyFull: "남구 제6선거구",
+        category: "광역의원",
+        office: "울산시의원",
+        status: "후보",
+        subRegion: "대현동, 선암동",
+        bio: [
+            "현) 대현동 체육회 회장",
+            "전) 대현동 주민자치위원장"
+        ],
+        photo: "https://i.imgur.com/eGHnmJg.png",
+        sns: {
+            fb: ""
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/209",
+        dateAdded: "2026-04-27",
+        coords: [
+            35.491296,
+            129.351261
+        ]
+    },
+    {
+        name: "정일경",
+        age: 30,
+        region: "울산 남구",
+        metropolitan: "울산광역시",
+        category: "기초의원",
+        office: "남구의원",
+        district: "마",
+        subRegion: "달동, 수암동",
+        status: "후보",
+        bio: [
+            "<span style='letter-spacing:-0.12em;'>현)한국자유총연맹 울산남구지회 달동위원회 회원</span>",
+            "<span style='letter-spacing:-0.12em;'>전)울산과학대학교 총학생회 기획부장</span>"
+        ],
+        photo: "https://i.imgur.com/HV3F5tm.png",
+        sns: {
+            fb: ""
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/207",
+        dateAdded: "2026-04-27",
+        coords: [
+            35.535388,
+            129.32285
+        ]
+    },
+    {
+        name: "김근우",
+        age: 45,
+        region: "울산 남구",
+        metropolitan: "울산광역시",
+        category: "기초의원",
+        office: "남구의원",
+        district: "바",
+        subRegion: "대현동, 선암동",
+        status: "후보",
+        bio: [
+            "현) 울산 강남라이온스 회장",
+            "현) 울산 청담로타리클럽회원"
+        ],
+        photo: "https://i.imgur.com/6Hx3L0k.png",
+        sns: {
+            fb: ""
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/208",
+        dateAdded: "2026-04-27",
+        coords: [
+            35.49129,
+            129.351269
+        ]
+    },
+    {
+        name: "박소영",
+        age: 48,
+        gender: "f",
+        region: "울산 남구",
+        metropolitan: "울산광역시",
+        category: "기초의원",
+        office: "남구의원",
+        district: "나",
+        subRegion: "신정4동, 옥동",
+        status: "후보",
+        bio: [
+            "현) 신정4동 주민자치위원회 사무국장",
+            "현) 신정4동 체육회 재무국장"
+        ],
+        photo: "https://i.imgur.com/GPS28rT.png",
+        sns: {
+            fb: ""
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/211",
+        dateAdded: "2026-04-27",
+        coords: [
+            35.524458,
+            129.290415
+        ]
+    },
+    {
+        name: "김동칠",
+        region: "울산",
+        metropolitan: "울산광역시",
+        category: "재보궐선거",
+        office: "재보궐선거",
+        district: "남구 갑",
+        subRegion: "신정1동, 신정2동, 신정3동, 신정4동, 신정5동, 삼호동, 무거동, 옥동",
+        age: 61,
+        status: "후보",
+        bio: [
+            "제8대 울산시의원",
+            "제6대 남구의원",
+            "울산광역시당 위원장"
+        ],
+        photo: "https://i.imgur.com/3MJHnue.png",
+        sns: {
+            fb: "https://www.facebook.com/dongchil0252",
+            blog: "https://blog.naver.com/dongchil777"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/241",
+        dateAdded: "2026-05-07",
+        coords: [
+            35.537743,
+            129.312083
+        ]
+    },
+    {
+        name: "정승연",
+        region: "인천",
+        metropolitan: "인천광역시",
+        category: "재보궐선거",
+        office: "재보궐선거",
+        district: "연수 갑",
+        subRegion: "옥련1동, 옥련2동, 선학동, 연수1동, 연수2동, 연수3동, 청학동, 동춘1동, 동춘2동, 동춘3동",
+        status: "후보",
+        age: 59,
+        bio: [
+            "전) 대통령비서실 정무2비서관",
+            "<span style='letter-spacing:-0.12em;'>전) 인하대학교 국제통상학부 교수</span>",
+            "<span style='letter-spacing:-0.12em;'>전) 외교통상부 통상교섭본부 민간자문위원</span>"
+        ],
+        photo: "https://i.imgur.com/hBL96VU.png",
+        sns: {
+            fb: "https://www.facebook.com/p/jeongsey",
+            ig: "https://www.instagram.com/jeongsey1966",
+            yt: "https://www.youtube.com/@tv-qv4tx"
+        },
+        pledge: "#",
+        decl: "#",
+        donation: "https://givemoney.kr/politicians/247",
+        dateAdded: "2026-05-12",
+        coords: [
+            37.424138,
+            126.665644
+        ]
+    }
+];
+
+
+
+window.candidates = candidates;
+window.regionPriority = regionPriority;
+
+
