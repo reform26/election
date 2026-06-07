@@ -643,6 +643,52 @@
   .dark .record-desc { color: rgba(255,255,255,0.75); }
 
   /* ── PROPORTIONAL TAB ── */
+  /* 서브탭 + 정렬 컨트롤 행 */
+  .prop-tab-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+  }
+
+  .prop-sort-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .prop-sort-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text3);
+    white-space: nowrap;
+  }
+
+  .prop-sort-select {
+    appearance: none;
+    -webkit-appearance: none;
+    background: var(--surface);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-sm);
+    padding: 7px 32px 7px 14px;
+    font-size: 12px;
+    font-weight: 700;
+    font-family: inherit;
+    color: var(--text);
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23888884' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    transition: border-color 0.2s;
+  }
+
+  .prop-sort-select:focus {
+    outline: none;
+    border-color: var(--orange);
+  }
+
   .subtab-toggle {
     display: flex;
     background: var(--surface);
@@ -650,7 +696,7 @@
     border-radius: var(--radius-sm);
     padding: 4px;
     width: fit-content;
-    margin-bottom: 28px;
+    margin-bottom: 0;
     gap: 4px;
   }
 
@@ -710,11 +756,95 @@
     color: var(--orange);
   }
 
+  /* ── 요약 배너 ── */
+  .prop-summary-banner {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 0;
+    margin-bottom: 22px;
+    overflow: hidden;
+  }
+
+  .prop-summary-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px 10px;
+    gap: 2px;
+    border-right: 1px solid var(--border);
+  }
+
+  .prop-summary-item:last-child {
+    border-right: none;
+  }
+
+  .prop-summary-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--text3);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .prop-summary-value {
+    font-size: 18px;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    color: var(--orange);
+    line-height: 1;
+  }
+
+  .prop-summary-value.muted {
+    color: var(--text2);
+  }
+
+  .prop-summary-sub {
+    font-size: 10px;
+    color: var(--text3);
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 120px;
+  }
+
+  /* ── 지도+차트 가로 레이아웃 ── */
+  .map-chart-row {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 8px;
+  }
+
+  @media (min-width: 900px) {
+    .map-chart-row {
+      flex-direction: row;
+      align-items: stretch;
+    }
+
+    .map-chart-row .map-col {
+      flex: 0 0 42%;
+      min-width: 0;
+    }
+
+    .map-chart-row .chart-col {
+      flex: 1 1 0;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
   /* 지도 랩퍼 및 SVG 스타일 */
   .map-wrap {
     width: 100%;
-    max-width: 800px;
-    margin: 0 auto 36px;
+    margin: 0 0 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2018,6 +2148,8 @@
     border-color: var(--orange);
   }
   .map-layer-btn.layer-absentee.active { background: #7c3aed; border-color: #7c3aed; }
+  .map-layer-btn.layer-early.active    { background: #2563eb; border-color: #2563eb; }
+  .map-layer-btn.layer-polling.active  { background: var(--orange); border-color: var(--orange); }
 
   /* ── 읍면동 툴팁 ── */
   .dong-tooltip {
@@ -2513,19 +2645,26 @@
       <div class="records-grid" id="records-grid"></div>
     </div>
 
-    <!-- 광역/기초 비례 기록 -->
-    <div class="records-section" id="prop-records-section" style="margin-top:0;">
-      <div class="records-glow"></div>
-      <div class="records-title">📊 비례대표 득표 기록</div>
-      <div class="records-grid" id="prop-records-grid"></div>
-    </div>
+    <!-- 광역/기초 비례 기록은 비례탭 하단으로 이동 -->
   </div>
 
   <!-- ── PROPORTIONAL ── -->
   <div id="tab-proportional" class="tab-content" role="tabpanel" aria-labelledby="nav-btn-proportional">
-    <div class="subtab-toggle">
-      <button class="subtab-btn active" data-subtab="regional">광역의원 비례 <span class="subtab-count" id="subtab-count-regional"></span></button>
-      <button class="subtab-btn" data-subtab="basic">기초의원 비례 <span class="subtab-count" id="subtab-count-basic"></span></button>
+
+    <!-- 서브탭 + 정렬 한 행 -->
+    <div class="prop-tab-header">
+      <div class="subtab-toggle">
+        <button class="subtab-btn active" data-subtab="regional">광역의원 비례 <span class="subtab-count" id="subtab-count-regional"></span></button>
+        <button class="subtab-btn" data-subtab="basic">기초의원 비례 <span class="subtab-count" id="subtab-count-basic"></span></button>
+      </div>
+      <div class="prop-sort-wrap">
+        <span class="prop-sort-label">정렬</span>
+        <select class="prop-sort-select" id="prop-sort-select" aria-label="비례 정렬 기준">
+          <option value="default">기본순</option>
+          <option value="rate-desc">득표율 높은순</option>
+          <option value="rate-asc">득표율 낮은순</option>
+        </select>
+      </div>
     </div>
 
     <div class="chart-card">
@@ -2534,16 +2673,50 @@
         <span id="chart-title-text">지역별 득표율 비교 (광역)</span>
       </div>
 
-      <!-- 지도 렌더링 영역 (D3.js) -->
-      <p style="font-size: 11px; color: var(--text3); margin-bottom: 20px;">* 지도에서 주황색으로 표시된 지역을 클릭하시면 구별/세부 지역별 상세 득표율을 확인하실 수 있습니다.</p>
-      <div class="map-wrap" id="korea-map-wrap" style="display: none;"></div>
+      <!-- 요약 배너 -->
+      <div class="prop-summary-banner" id="prop-summary-banner" style="display:none;">
+        <div class="prop-summary-item">
+          <span class="prop-summary-label">전국 평균</span>
+          <span class="prop-summary-value" id="prop-sum-avg">—</span>
+        </div>
+        <div class="prop-summary-item">
+          <span class="prop-summary-label">🔥 최고</span>
+          <span class="prop-summary-value" id="prop-sum-max">—</span>
+          <span class="prop-summary-sub" id="prop-sum-max-name"></span>
+        </div>
+        <div class="prop-summary-item">
+          <span class="prop-summary-label">최저</span>
+          <span class="prop-summary-value muted" id="prop-sum-min">—</span>
+          <span class="prop-summary-sub" id="prop-sum-min-name"></span>
+        </div>
+        <div class="prop-summary-item">
+          <span class="prop-summary-label">지역 수</span>
+          <span class="prop-summary-value muted" id="prop-sum-count">—</span>
+        </div>
+      </div>
 
-      <div class="bar-chart-wrap">
-        <div class="bar-chart" id="bar-chart"></div>
+      <!-- 지도(왼쪽) + 차트(오른쪽) 가로 배치 -->
+      <div class="map-chart-row">
+        <div class="map-col" id="map-col">
+          <p style="font-size: 11px; color: var(--text3); margin-bottom: 10px;">* 주황색 지역을 클릭하면 구별 상세 득표율을 확인할 수 있습니다.</p>
+          <div class="map-wrap" id="korea-map-wrap"></div>
+        </div>
+        <div class="chart-col">
+          <div class="bar-chart-wrap">
+            <div class="bar-chart" id="bar-chart"></div>
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="prop-grid" id="prop-grid"></div>
+
+    <!-- 비례 기록 (비례탭 하단으로 이동) -->
+    <div class="records-section" id="prop-records-section-tab" style="margin-top: 32px;">
+      <div class="records-glow"></div>
+      <div class="records-title">📊 비례대표 득표 기록</div>
+      <div class="records-grid" id="prop-records-grid-tab"></div>
+    </div>
   </div>
 
   <!-- ── CANDIDATES ── -->
@@ -3817,20 +3990,52 @@ function renderPropGrid(data) {
 function renderProportional() {
   const REGIONAL = (window.REGIONAL && window.REGIONAL.length) ? window.REGIONAL : [];
   const BASIC    = (window.BASIC    && window.BASIC.length)    ? window.BASIC    : [];
-  const data = propSubTab === 'regional' ? REGIONAL : BASIC;
+  let data = propSubTab === 'regional' ? REGIONAL : BASIC;
   document.getElementById('chart-title-text').textContent = `지역별 득표율 비교 (${propSubTab === 'regional' ? '광역' : '기초'})`;
-  
-  // 지도 숨김/표시 처리 (광역일때만 보임)
+
+  // 정렬 적용
+  const sortSel = document.getElementById('prop-sort-select');
+  const sortVal = sortSel ? sortSel.value : 'default';
+  if (sortVal === 'rate-desc') data = [...data].sort((a, b) => b.rate - a.rate);
+  else if (sortVal === 'rate-asc') data = [...data].sort((a, b) => a.rate - b.rate);
+
+  // 지도: 광역일 때만 map-col 표시
+  const mapCol = document.getElementById('map-col');
   const mapWrap = document.getElementById('korea-map-wrap');
   if (propSubTab === 'regional') {
+    if (mapCol) mapCol.style.display = '';
     mapWrap.style.display = 'flex';
-    initMap(); // D3 렌더링 호출
+    initMap();
   } else {
+    if (mapCol) mapCol.style.display = 'none';
     mapWrap.style.display = 'none';
+  }
+
+  // 요약 배너 업데이트
+  const withData = data.filter(d => d.rate > 0);
+  const banner = document.getElementById('prop-summary-banner');
+  if (banner) {
+    if (withData.length) {
+      const avg = (withData.reduce((s, d) => s + d.rate, 0) / withData.length).toFixed(2);
+      const maxItem = withData.reduce((a, b) => b.rate > a.rate ? b : a);
+      const minItem = withData.reduce((a, b) => b.rate < a.rate ? b : a);
+      document.getElementById('prop-sum-avg').textContent = avg + '%';
+      document.getElementById('prop-sum-max').textContent = maxItem.rate + '%';
+      document.getElementById('prop-sum-max-name').textContent = maxItem.name;
+      document.getElementById('prop-sum-min').textContent = minItem.rate + '%';
+      document.getElementById('prop-sum-min-name').textContent = minItem.name;
+      document.getElementById('prop-sum-count').textContent = withData.length + '곳';
+      banner.style.display = '';
+    } else {
+      banner.style.display = 'none';
+    }
   }
 
   renderBarChart(data);
   renderPropGrid(data);
+
+  // 비례탭 기록 렌더
+  renderPropRecordsTab();
 }
 
 function buildCandCardHTML(c) {
@@ -4032,19 +4237,51 @@ function buildStatsHTML(item, isProp) {
   return html;
 }
 
-function buildToggleHTML(item) {
+function buildLayerBtnsHTML(dataList) {
+  // votes 데이터가 하나라도 있어야 레이어 버튼 표시
+  const hasVotes = (dataList || []).some(n => n.votes && typeof n.votes === 'object');
+  if (!hasVotes) return '';
+  const hasAbsentee = (dataList || []).some(n => n.votes && n.votes.absentee);
+  const hasEarly    = (dataList || []).some(n => n.votes && n.votes.early);
+  const hasPolling  = (dataList || []).some(n => n.votes && n.votes.polling);
+  const btns = [
+    { layer: 'total',    label: '전체',      cls: '' },
+    hasPolling  ? { layer: 'polling',  label: '관내 당일', cls: 'layer-polling' }  : null,
+    hasEarly    ? { layer: 'early',    label: '관내 사전', cls: 'layer-early' }    : null,
+    hasAbsentee ? { layer: 'absentee', label: '관외 사전', cls: 'layer-absentee' } : null,
+  ].filter(Boolean);
+  if (btns.length <= 1) return '';
+  return `<div class="map-layer-toggle" id="modal-layer-toggle">
+    ${btns.map(b => `<button class="map-layer-btn ${b.cls} ${modalMapLayer === b.layer ? 'active' : ''}" data-layer="${b.layer}">${b.label}</button>`).join('')}
+  </div>`;
+}
+
+function buildToggleHTML(item, dataList, isProp) {
+  // 비례 모달은 renderModalMapNeighborhood/District가 map-layer-toggle을 직접 삽입하므로 중복 생성 방지
+  const layerBtns = isProp ? '' : buildLayerBtnsHTML(dataList);
   if (item.type === '광역' || item.type === '광역단체장') {
     return `
       <div class="view-toggle">
         <button class="view-btn ${modalViewMode === 'district'     ? 'active' : ''}" data-view="district">시군구별</button>
         <button class="view-btn ${modalViewMode === 'neighborhood' ? 'active' : ''}" data-view="neighborhood">읍면동별</button>
-      </div>`;
+      </div>
+      ${layerBtns}`;
   }
   if (item.type === '기초') {
     if (modalViewMode !== 'neighborhood') modalViewMode = 'neighborhood';
-    return '';
+    return layerBtns;
   }
-  return '';
+  // 후보자: 광역단체장·광역의회의원은 시군구/읍면동 뷰 토글 추가
+  const isBroad = item.type === '광역단체장' || item.type === '광역의회의원';
+  if (isBroad) {
+    return `
+      <div class="view-toggle">
+        <button class="view-btn ${modalViewMode === 'district'     ? 'active' : ''}" data-view="district">시군구별</button>
+        <button class="view-btn ${modalViewMode === 'neighborhood' ? 'active' : ''}" data-view="neighborhood">읍면동별</button>
+      </div>
+      ${layerBtns}`;
+  }
+  return layerBtns;
 }
 
 function buildVoteBreakdownHTML(n) {
@@ -4068,10 +4305,10 @@ function hasAbsenteeDiffInList(dataList) {
   return dataList.some(n => n.votes && n.votes.absentee && n.votes.polling);
 }
 
-// 레이어별 rate 추출 헬퍼
+// 레이어별 rate 추출 헬퍼 (isProp 무관하게 레이어 적용)
 function getLayerRateFromRow(n, isProp) {
-  if (!isProp) return n.rate ?? n.candidateRate ?? 0;
-  if (modalMapLayer === 'total')    return n.rate ?? 0;
+  const base = n.rate ?? n.candidateRate ?? 0;
+  if (modalMapLayer === 'total')    return base;
   if (modalMapLayer === 'polling')  return n.votes && n.votes.polling  ? n.votes.polling.rate  : null;
   if (modalMapLayer === 'early')    return n.votes && n.votes.early    ? n.votes.early.rate    : null;
   if (modalMapLayer === 'absentee') return n.votes && n.votes.absentee ? n.votes.absentee.rate : null;
@@ -4079,7 +4316,7 @@ function getLayerRateFromRow(n, isProp) {
     if (!n.votes || !n.votes.absentee || !n.votes.polling) return null;
     return +(n.votes.absentee.rate - n.votes.polling.rate).toFixed(2);
   }
-  return n.rate ?? 0;
+  return base;
 }
 
 function buildTableRowsHTML(dataList, avg, isProp) {
@@ -4107,13 +4344,13 @@ function buildTableRowsHTML(dataList, avg, isProp) {
         <td colspan="3" style="font-size:11px;color:var(--text3);text-align:center">데이터 없음</td>
       </tr>`;
     }
-    const diff     = isProp && !isDiff ? (rateVal - avg).toFixed(2) : null;
-    const isHigh   = diff !== null ? parseFloat(diff) >= 0 : rateVal >= 0;
-    const star     = isHigh && idx === 0 ? ' ⭐' : '';
-    const barPct   = ((Math.abs(rateVal) / maxRate) * 100).toFixed(2);
-    const rankCls   = idx < 3 ? '' : 'normal';
+    const diff       = modalMapLayer === 'total' ? (rateVal - avg).toFixed(2) : null;
+    const isHigh     = diff !== null ? parseFloat(diff) >= 0 : rateVal >= 0;
+    const star       = isHigh && idx === 0 ? ' ⭐' : '';
+    const barPct     = ((Math.abs(rateVal) / maxRate) * 100).toFixed(2);
+    const rankCls    = idx < 3 ? '' : 'normal';
     const rankLabel  = idx === 0 ? '1위' : idx === 1 ? '2위' : idx === 2 ? '3위' : `${idx+1}`;
-    const hasVotes   = isProp && n.votes && typeof n.votes === 'object';
+    const hasVotes   = n.votes && typeof n.votes === 'object';
     const rowId      = `vbr-${idx}`;
     const expandBtn  = hasVotes
       ? `<button class="td-expand-btn" data-target="${rowId}" title="투표유형 세부보기">▾</button>`
@@ -4228,7 +4465,7 @@ function renderModalBody(item, isProp) {
   const rawList = modalViewMode === 'district'
     ? (item.districts     || [])
     : (item.neighborhoods || []);
-  const dataList = rawList; // 정렬은 buildTableRowsHTML 내부에서 레이어 기준으로 수행
+  const dataList = rawList;
   const avg = isProp ? item.rate : item.voteRate;
 
   // 기초 비례는 name이 "서울 동작구" 형태 → 첫 단어로 시도명 추출
@@ -4241,7 +4478,7 @@ function renderModalBody(item, isProp) {
 
   document.getElementById('modal-body').innerHTML = `
     <div class="modal-stats">${buildStatsHTML(item, isProp)}</div>
-    ${buildToggleHTML(item)}
+    ${buildToggleHTML(item, dataList, isProp)}
     ${showMap ? `<div class="modal-map-wrap" id="modal-map-wrap" style="height:${modalViewMode === 'neighborhood' ? '380px' : '280px'}"></div>` : ''}
     ${buildModalTableHTML(dataList, avg, isProp)}
     <p class="modal-footer-note">* 본 데이터는 제9회 전국동시지방선거 공식 개표 확정치를 기준으로 합니다.</p>`;
@@ -4252,13 +4489,29 @@ function renderModalBody(item, isProp) {
     renderModalMap(item);
   }
 
+  // 시군구/읍면동 뷰 전환
   document.querySelectorAll('.view-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       modalViewMode = btn.dataset.view;
-      modalMapLayer = 'total'; // 뷰 전환 시 레이어 초기화
+      modalMapLayer = 'total';
       renderModalBody(item, isProp);
     });
   });
+
+  // 투표 유형 레이어 버튼 (전체/관내당일/관내사전/관외사전)
+  const layerToggle = document.getElementById('modal-layer-toggle');
+  if (layerToggle) {
+    layerToggle.addEventListener('click', e => {
+      const btn = e.target.closest('.map-layer-btn');
+      if (!btn) return;
+      modalMapLayer = btn.dataset.layer;
+      // 활성 버튼 스타일
+      layerToggle.querySelectorAll('.map-layer-btn').forEach(b => b.classList.toggle('active', b === btn));
+      // 테이블만 교체 (지도 없으므로 전체 재렌더 불필요)
+      const tableWrap = document.querySelector('#modal-body .modal-table-wrap');
+      if (tableWrap) tableWrap.outerHTML = buildModalTableHTML(dataList, avg, isProp);
+    });
+  }
 
   // 투표유형 세부 확장 버튼
   document.getElementById('modal-body').addEventListener('click', e => {
@@ -4759,11 +5012,15 @@ function renderRecords() {
   ).join('');
 }
 
-// ── 비례 기록 ───────────────────────────────────────────
-function renderPropRecords() {
-  const grid = document.getElementById('prop-records-grid');
+// ── 비례탭 기록 (비례탭 하단) ───────────────────────────
+function renderPropRecordsTab() {
+  const grid = document.getElementById('prop-records-grid-tab');
   if (!grid) return;
+  renderPropRecordsInto(grid);
+}
 
+// ── 비례 기록 (공통 렌더 로직) ──────────────────────────
+function renderPropRecordsInto(grid) {
   const allProp = [...(REGIONAL || []), ...(BASIC || [])];
   const withData = allProp.filter(d => d.rate > 0);
 
@@ -4779,67 +5036,28 @@ function renderPropRecords() {
   }
 
   const cards = [];
-
-  // 광역 최고 득표율
   const regional = (REGIONAL || []).filter(d => d.rate > 0);
   if (regional.length) {
     const best = regional.reduce((a, b) => b.rate > a.rate ? b : a);
     const worst = regional.reduce((a, b) => b.rate < a.rate ? b : a);
     const avg = +(regional.reduce((s, d) => s + d.rate, 0) / regional.length).toFixed(2);
-
-    cards.push({
-      cls: 'record-card-orange',
-      icon: '🏛️',
-      label: '광역의원 비례 최고 득표율',
-      value: `${best.rate}%`,
-      desc: `${escapeHTML(best.name)} · 전국 평균 ${avg}%`,
-    });
-    cards.push({
-      cls: 'record-card-blue',
-      icon: '📉',
-      label: '광역의원 비례 최저 득표율',
-      value: `${worst.rate}%`,
-      desc: `${escapeHTML(worst.name)} · ${regional.length}개 지역 집계`,
-    });
-
-    // 광역별 최고 득표 읍면동 (광역마다 카드 1장, 관외사전투표 제외)
+    cards.push({ cls: 'record-card-orange', icon: '🏛️', label: '광역의원 비례 최고 득표율', value: `${best.rate}%`, desc: `${escapeHTML(best.name)} · 전국 평균 ${avg}%` });
+    cards.push({ cls: 'record-card-blue',   icon: '📉', label: '광역의원 비례 최저 득표율', value: `${worst.rate}%`, desc: `${escapeHTML(worst.name)} · ${regional.length}개 지역 집계` });
     regional.forEach(r => {
       const nhs = (r.neighborhoods || []).filter(n => n.rate > 0);
       if (!nhs.length) return;
       const nhsExcludeAbsentee = nhs.filter(n => !n.name.includes('관외사전'));
-      const topNh = (nhsExcludeAbsentee.length ? nhsExcludeAbsentee : nhs)
-        .reduce((a, b) => b.rate > a.rate ? b : a);
-      cards.push({
-        cls: 'record-card-orange',
-        icon: '📍',
-        label: `${escapeHTML(r.name)} 최고 득표 읍면동`,
-        value: `${escapeHTML(topNh.name)} ${topNh.rate}%`,
-        desc: `${r.name} 광역의원 비례 · ${nhsExcludeAbsentee.length}개 읍면동 집계`,
-      });
+      const topNh = (nhsExcludeAbsentee.length ? nhsExcludeAbsentee : nhs).reduce((a, b) => b.rate > a.rate ? b : a);
+      cards.push({ cls: 'record-card-orange', icon: '📍', label: `${escapeHTML(r.name)} 최고 득표 읍면동`, value: `${escapeHTML(topNh.name)} ${topNh.rate}%`, desc: `${r.name} 광역의원 비례 · ${nhsExcludeAbsentee.length}개 읍면동 집계` });
     });
   }
-
-  // 기초 최고 득표율
   const basic = (BASIC || []).filter(d => d.rate > 0);
   if (basic.length) {
     const best = basic.reduce((a, b) => b.rate > a.rate ? b : a);
     const worst = basic.reduce((a, b) => b.rate < a.rate ? b : a);
     const avg = +(basic.reduce((s, d) => s + d.rate, 0) / basic.length).toFixed(2);
-
-    cards.push({
-      cls: 'record-card-purple',
-      icon: '🏢',
-      label: '기초의원 비례 최고 득표율',
-      value: `${best.rate}%`,
-      desc: `${escapeHTML(best.name)} · 전국 평균 ${avg}%`,
-    });
-    cards.push({
-      cls: 'record-card-blue',
-      icon: '📉',
-      label: '기초의원 비례 최저 득표율',
-      value: `${worst.rate}%`,
-      desc: `${escapeHTML(worst.name)} · ${basic.length}개 지역 집계`,
-    });
+    cards.push({ cls: 'record-card-purple', icon: '🏢', label: '기초의원 비례 최고 득표율', value: `${best.rate}%`, desc: `${escapeHTML(best.name)} · 전국 평균 ${avg}%` });
+    cards.push({ cls: 'record-card-blue',   icon: '📉', label: '기초의원 비례 최저 득표율', value: `${worst.rate}%`, desc: `${escapeHTML(worst.name)} · ${basic.length}개 지역 집계` });
   }
 
   grid.innerHTML = cards.map(c => `
@@ -4855,6 +5073,14 @@ function renderPropRecords() {
 // ── INIT ──────────────────────────────────────────────
 initTheme();
 initEvents();
+
+// 비례 정렬 select 이벤트
+(function() {
+  const sel = document.getElementById('prop-sort-select');
+  if (sel) sel.addEventListener('change', () => {
+    if (activeTab === 'proportional') renderProportional();
+  });
+})();
 
 const initTab = ['home', 'proportional', 'candidates'].includes(location.hash.slice(1))
   ? location.hash.slice(1)
@@ -4872,7 +5098,6 @@ const initTab = ['home', 'proportional', 'candidates'].includes(location.hash.sl
 
 renderHomeStats();
 renderRecords();
-renderPropRecords();
 renderTopHit();
 switchTab(initTab, false);
 renderCandidates();
