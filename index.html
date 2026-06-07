@@ -52,26 +52,11 @@
         .delay-200 { animation-delay: 0.2s; }
         .delay-300 { animation-delay: 0.3s; }
         
-        .modal-enter {
-            animation: modal-in 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-        @keyframes modal-in {
-            from { opacity: 0; transform: scale(0.9) translateY(10px); }
-            to { opacity: 1; transform: scale(1) translateY(0); }
-        }
-
-        .dark .force-white-dark {
-            color: #ffffff !important;
-        }
-        .dark .force-orange-dark {
-            color: #fb923c !important; /* orange-400 */
-        }
-        .dark .force-light-gray-dark {
-            color: #f1f5f9 !important; /* slate-100 */
-        }
+        .dark .force-white-dark { color: #ffffff !important; }
+        .dark .force-orange-dark { color: #fb923c !important; }
+        .dark .force-light-gray-dark { color: #f1f5f9 !important; }
     </style>
     <script>
-        // 초기 다크모드 설정
         if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
         } else {
@@ -90,7 +75,6 @@
                 <span class="text-lg md:text-xl font-bold tracking-tight text-slate-800 dark:text-white">개혁 2026</span>
             </div>
             
-            <!-- 다크모드 토글 버튼 -->
             <button id="theme-toggle" class="p-2.5 rounded-xl bg-white/50 dark:bg-slate-800/50 border border-orange-100 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:scale-110 active:scale-95 transition-all">
                 <i data-lucide="sun" id="sun-icon" class="w-5 h-5 hidden"></i>
                 <i data-lucide="moon" id="moon-icon" class="w-5 h-5 hidden"></i>
@@ -114,18 +98,18 @@
             </p>
 
             <div class="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 animate-fade-up delay-200 mb-10 w-full px-2">
-                <!-- 왼쪽 버튼: 지방선거 결과 보기 (모달 실행) -->
-                <button id="btn-results" class="group relative w-full md:w-80 h-20 md:h-24 bg-orange-600 dark:bg-orange-500 text-white rounded-2xl shadow-xl shadow-orange-600/20 overflow-hidden transition-all hover:scale-[1.02] active:scale-[0.98] flex items-center justify-between px-6 md:px-8">
+                <!-- 결과 보기 버튼 -->
+                <a href="https://restep.cc/results/" class="group relative w-full md:w-80 h-20 md:h-24 bg-orange-600 dark:bg-orange-500 text-white rounded-2xl shadow-xl shadow-orange-600/20 overflow-hidden transition-all hover:scale-[1.02] active:scale-[0.98] flex items-center justify-between px-6 md:px-8">
                     <div class="flex flex-col items-start text-left">
-                        <span class="text-[10px] md:text-xs opacity-95 font-bold tracking-tight mb-0.5">- 준비중: 개표완료후 공개예정 -</span>
+                        <span class="text-[10px] md:text-xs opacity-95 font-bold tracking-tight mb-0.5">ELECTION RESULTS</span>
                         <span class="text-lg md:text-xl font-bold">지방선거 결과 보기</span>
                     </div>
                     <div class="w-10 h-10 md:w-12 md:h-12 bg-white/20 rounded-full flex items-center justify-center group-hover:bg-white/30 transition-colors">
                         <i data-lucide="bar-chart-3" class="w-5 h-5 md:w-6 md:h-6 text-white"></i>
                     </div>
-                </button>
+                </a>
 
-                <!-- 오른쪽 버튼: 후보자 명단 보기 (외부 링크) -->
+                <!-- 후보자 명단 버튼 -->
                 <a href="https://restep.cc/can/" class="group relative w-full md:w-80 h-20 md:h-24 bg-white dark:bg-slate-800 text-slate-800 dark:text-white rounded-2xl border border-orange-100 dark:border-slate-700 shadow-lg shadow-orange-100/50 dark:shadow-none overflow-hidden transition-all hover:scale-[1.02] active:scale-[0.98] flex items-center justify-between px-6 md:px-8">
                     <div class="flex flex-col items-start text-left">
                         <span class="text-[10px] md:text-xs text-orange-500 dark:text-orange-400 font-bold tracking-wider">CANDIDATE INFO</span>
@@ -151,24 +135,6 @@
         </div>
     </main>
 
-    <div id="modal-overlay" class="fixed inset-0 z-[100] bg-slate-900/60 dark:bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6 hidden opacity-0 transition-opacity duration-300">
-        <div id="modal-content" class="bg-white dark:bg-slate-900 w-full max-w-sm md:max-w-md rounded-[2rem] shadow-2xl overflow-hidden transform transition-all duration-300">
-            <div class="p-6 md:p-8 text-center">
-                <div class="w-16 h-16 md:w-20 md:h-20 bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <i data-lucide="construction" class="w-8 h-8 md:w-10 md:h-10"></i>
-                </div>
-                <h3 class="text-xl md:text-2xl font-bold text-slate-900 dark:text-white mb-2">서비스 준비 중입니다</h3>
-                <p class="text-sm md:text-base text-slate-600 dark:text-slate-300 mb-8 leading-relaxed px-4">
-                    지방선거 결과 페이지는<br/>
-                    <strong class="text-orange-600 dark:text-orange-500 font-bold">개표완료후 정리하여 오픈할 예정</strong>입니다.
-                </p>
-                <button id="modal-close" class="w-full py-4 bg-slate-900 dark:bg-orange-600 text-white rounded-2xl font-semibold hover:bg-slate-800 dark:hover:bg-orange-500 active:scale-95 transition-all">
-                    확인하였습니다
-                </button>
-            </div>
-        </div>
-    </div>
-
     <script>
         lucide.createIcons();
 
@@ -191,31 +157,6 @@
             document.documentElement.classList.toggle('dark');
             localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
             updateThemeIcons();
-        });
-
-        const modalOverlay = document.getElementById('modal-overlay');
-        const modalContent = document.getElementById('modal-content');
-        const btnResults = document.getElementById('btn-results');
-        const btnClose = document.getElementById('modal-close');
-
-        function showModal() {
-            modalOverlay.classList.remove('hidden');
-            setTimeout(() => {
-                modalOverlay.classList.add('opacity-100');
-                modalContent.classList.add('modal-enter');
-            }, 10);
-        }
-
-        function hideModal() {
-            modalOverlay.classList.remove('opacity-100');
-            modalContent.classList.remove('modal-enter');
-            setTimeout(() => modalOverlay.classList.add('hidden'), 300);
-        }
-
-        btnResults.addEventListener('click', showModal);
-        btnClose.addEventListener('click', hideModal);
-        modalOverlay.addEventListener('click', (e) => {
-            if (e.target === modalOverlay) hideModal();
         });
     </script>
 </body>
