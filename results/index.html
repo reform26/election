@@ -1543,6 +1543,10 @@
     transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1);
   }
 
+  @media (min-width: 1024px) {
+    .modal-box { max-width: 1160px; }
+  }
+
   @media (min-width: 768px) {
     .modal-box {
       border-radius: 36px;
@@ -1552,6 +1556,203 @@
     }
 
     .modal-backdrop.open .modal-box { transform: scale(1); }
+  }
+
+  /* ── PC 2컬럼 레이아웃 ── */
+  .modal-pc-layout {
+    display: contents; /* 모바일: 구조만 유지, flex 영향 없음 */
+  }
+
+  .modal-left-panel { display: none; }
+
+  @media (min-width: 1024px) {
+    .modal-box {
+      max-width: 1160px;
+      max-height: 88vh;
+      height: 88vh;
+      flex-direction: column; /* 헤더(모바일)는 숨기고 pc-layout이 전체 차지 */
+    }
+
+    /* 모바일 헤더 숨기기 */
+    #modal-header-mobile { display: none; }
+
+    /* PC 레이아웃: 좌우 flex */
+    .modal-pc-layout {
+      display: flex;
+      flex-direction: row;
+      flex: 1;
+      min-height: 0;
+      overflow: hidden;
+    }
+
+    /* 왼쪽 패널 */
+    .modal-left-panel {
+      display: flex;
+      flex-direction: column;
+      width: 280px;
+      min-width: 280px;
+      background: var(--surface);
+      border-right: 1px solid var(--border);
+      border-radius: 36px 0 0 36px;
+      overflow-y: auto;
+      padding: 28px 24px;
+      position: relative;
+      flex-shrink: 0;
+      transition: background 0.3s;
+    }
+
+    .modal-left-top {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .modal-photo-pc {
+      width: 100% !important;
+      height: auto !important;
+      aspect-ratio: 3 / 4 !important;
+      border-radius: 18px !important;
+      border: 2px solid var(--border-strong) !important;
+      flex-shrink: 0;
+    }
+
+    .modal-left-name {
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      color: var(--text);
+      line-height: 1.2;
+    }
+
+    .modal-left-sub {
+      font-size: 12px;
+      color: var(--text3);
+      font-weight: 600;
+    }
+
+    /* 왼쪽 통계 영역 */
+    .modal-left-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1;
+    }
+
+    /* 기존 modal-stats를 왼쪽에서 세로 방향으로 */
+    .modal-left-stats .modal-stats {
+      flex-direction: column;
+      border-radius: var(--radius-md);
+    }
+
+    .modal-left-stats .modal-stat {
+      border-right: none !important;
+    }
+
+    .modal-left-stats .modal-stat + .modal-stat {
+      border-top: 1px solid var(--border) !important;
+      border-left: none !important;
+    }
+
+    .modal-left-stats .modal-stat:first-child {
+      border-right: none !important;
+    }
+
+    /* 닫기 버튼 (PC용) */
+    .modal-close-pc {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+    }
+
+    /* 오른쪽 본문 */
+    .modal-body {
+      flex: 1;
+      min-width: 0;
+      overflow-y: auto;
+      padding: 28px 32px;
+      border-radius: 0 36px 36px 0;
+    }
+
+    /* 오른쪽에선 modal-stats 숨기기 (왼쪽에 이미 표시됨) */
+    #modal-body > .modal-stats { display: none; }
+
+    /* 비례 왼쪽 추가 정보 */
+    .modal-left-prop-extra {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+    }
+
+    .prop-extra-block { display: flex; flex-direction: column; gap: 6px; }
+
+    .prop-extra-title {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text3);
+    }
+
+    .prop-extra-seat {
+      font-size: 13px;
+      font-weight: 700;
+      padding: 8px 12px;
+      border-radius: 10px;
+    }
+    .prop-extra-seat.has-seat { background: var(--orange-light); color: var(--orange); }
+    .prop-extra-seat.no-seat  { background: var(--surface2); color: var(--text3); }
+
+    .prop-extra-rank {
+      font-size: 18px;
+      font-weight: 900;
+      color: var(--text);
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+    }
+    .prop-extra-rank span { font-size: 12px; font-weight: 600; color: var(--text3); }
+
+    .prop-extra-diff {
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+    }
+    .prop-extra-diff.above { color: var(--orange); }
+    .prop-extra-diff.below { color: var(--blue); }
+    .prop-extra-avg { font-size: 11px; font-weight: 500; color: var(--text3); }
+
+    .prop-extra-nhs { display: flex; flex-direction: column; gap: 6px; }
+    .prop-extra-nh {
+      display: grid;
+      grid-template-columns: 16px 1fr auto auto;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+    }
+    .prop-extra-nh-rank {
+      font-size: 10px; font-weight: 800; color: var(--text3);
+      width: 16px; text-align: center;
+    }
+    .prop-extra-nh-name {
+      font-weight: 600; color: var(--text2);
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .prop-extra-nh-bar-wrap {
+      height: 4px; background: var(--surface2); border-radius: 2px; width: 100%; min-width: 30px;
+    }
+    .prop-extra-nh-bar {
+      height: 100%; background: var(--orange); border-radius: 2px; max-width: 100%;
+    }
+    .prop-extra-nh-rate {
+      font-weight: 700; color: var(--orange); font-size: 11px; white-space: nowrap;
+    }
   }
 
   .modal-backdrop.open .modal-box { transform: translateY(0); }
@@ -3001,7 +3202,8 @@
 <!-- Modal -->
 <div class="modal-backdrop" id="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
   <div class="modal-box" id="modal-box">
-    <div class="modal-header">
+    <!-- 모바일/태블릿: 기존 헤더 (PC에서는 숨김) -->
+    <div class="modal-header" id="modal-header-mobile">
       <div class="modal-header-left">
         <div class="modal-photo" id="modal-photo">
           <span class="modal-photo-initial" id="modal-initial"></span>
@@ -3017,7 +3219,25 @@
         <button class="modal-close" id="modal-close" aria-label="닫기">✕</button>
       </div>
     </div>
-    <div class="modal-body" id="modal-body"></div>
+    <!-- PC 전용 레이아웃 컨테이너 -->
+    <div class="modal-pc-layout">
+      <!-- 왼쪽 패널: 사진 + 이름 + 통계 -->
+      <div class="modal-left-panel" id="modal-left-panel">
+        <div class="modal-left-top">
+          <div class="modal-photo modal-photo-pc" id="modal-photo-pc">
+            <span class="modal-photo-initial" id="modal-initial-pc"></span>
+            <span class="modal-photo-text">사진 준비중</span>
+          </div>
+          <div class="modal-winner-badge" id="modal-winner-badge-pc" style="display:none">🏆 당선</div>
+          <div class="modal-left-name" id="modal-left-name"></div>
+          <div class="modal-left-sub" id="modal-left-sub"></div>
+        </div>
+        <div class="modal-left-stats" id="modal-left-stats"></div>
+        <button class="modal-close modal-close-pc" id="modal-close-pc" aria-label="닫기">✕</button>
+      </div>
+      <!-- 오른쪽 패널: 본문 -->
+      <div class="modal-body" id="modal-body"></div>
+    </div>
   </div>
 </div>
 
@@ -3026,7 +3246,7 @@
 window.candidates = window.candidates || [];
 </script>
 <script src="can.js" onerror="console.warn('can.js not found, using empty candidates')"></script>
-<script src="results.js?v=0528.02" onerror="console.warn('results.js not found, skipping results')" onload="window._resultsLoaded = true"></script>
+<script src="results.js?v=0528.03" onerror="console.warn('results.js not found, skipping results')" onload="window._resultsLoaded = true"></script>
 <script>
 // ── DATA ──────────────────────────────────────────────
 // ── 투표 유형 헬퍼 ───────────────────────────────────────
@@ -3450,7 +3670,10 @@ async function renderModalMapDistrict(item) {
   const wrap = document.getElementById('modal-map-wrap');
   if (!wrap) return;
 
-  const sidoCd = SIGUNGU_CODES[item.name];
+  // 비례 광역: item.name = "서울"
+  // 광역단체장 후보: item.name = "홍길동", item.region = "서울"
+  const nameForCode = (item.type === '광역단체장' ? item.region : null) || item.name;
+  const sidoCd = SIGUNGU_CODES[nameForCode];
   if (!sidoCd) { wrap.style.display = 'none'; return; }
 
   wrap.style.display = 'flex';
@@ -3559,13 +3782,20 @@ async function renderModalMapDistrict(item) {
           const matched = Object.keys(absenteeFallback).find(prefix => {
             const normPrefix = prefix.replace(/_/g, ''); // 언더스코어 제거
             const normDName  = d.name.replace(/_/g, '');
+            // "시(市)" 삽입 정규화:
+            // neighborhoods: "수원장안구" / districts: "수원시장안구"
+            // normDName에서 "시/군"을 제거한 버전과도 비교
+            const dNameNoSi = normDName.replace(/시(?=[가-힣]+[구군]$)/, '').replace(/군(?=[가-힣]+[구]$)/, '');
             return (
               d.name === prefix ||
               d.name.startsWith(prefix) ||
               d.name.endsWith(prefix) ||
               normDName === normPrefix ||
               normDName.startsWith(normPrefix) ||
-              normDName.endsWith(normPrefix)
+              normDName.endsWith(normPrefix) ||
+              dNameNoSi === normPrefix ||
+              dNameNoSi.startsWith(normPrefix) ||
+              dNameNoSi.endsWith(normPrefix)
             );
           });
           if (matched !== undefined) val = absenteeFallback[matched];
@@ -3780,8 +4010,11 @@ async function renderModalMapNeighborhood(item) {
   const wrap = document.getElementById('modal-map-wrap');
   if (!wrap) return;
 
-  // 기초 비례는 item.name이 "서울 동작구" 형태 → 첫 단어로 시도명 추출
-  const sidoName = SIDO_CODES[item.name] ? item.name : item.name.split(' ')[0];
+  // 비례 기초: item.name = "서울 동작구"
+  // 기초단체장 후보: item.name = "홍길동", item.region = "경기 화성시"
+  // → region 우선, 없으면 name에서 추출
+  const nameForSido = (item.type === '기초단체장' ? item.region : null) || item.name;
+  const sidoName = SIDO_CODES[nameForSido] ? nameForSido : nameForSido.split(' ')[0];
   const sidoCd = SIDO_CODES[sidoName];
   if (!sidoCd) { wrap.style.display = 'none'; return; }
 
@@ -3863,16 +4096,14 @@ async function renderModalMapNeighborhood(item) {
 
   // 기초: 구/시 단위 필터 (화성시만세구 등 붙어있는 형태 대응)
   let displayFeatures = allFeatures;
-  if (item.type === '기초' && item.name.includes(' ')) {
-    const nameParts = item.name.trim().split(/\s+/);
-    // "서울 강동구" → sidoName="서울", guName="강동구"
-    // "경기 화성시" → sidoName="경기", guName="화성시"
+  const regionForFilter = item.type === '기초단체장' ? item.region : item.name;
+  if ((item.type === '기초' || item.type === '기초단체장') && regionForFilter && regionForFilter.includes(' ')) {
+    const nameParts = regionForFilter.trim().split(/\s+/);
+    // "서울 강동구" → guName="강동구" / "경기 화성시" → guName="화성시"
     const guName = nameParts.slice(1).join(' ');
     const filtered = allFeatures.filter(f => {
       const parts = (f.properties.adm_nm || '').trim().split(/\s+/);
       if (parts.length < 2) return false;
-      // adm_nm 예: "서울특별시 강동구 암사동"
-      // parts[1]이 구 이름, 또는 parts[2]가 구 이름인 경우 모두 허용
       return parts.some(p => p === guName || p.startsWith(guName));
     });
     if (filtered.length > 0) displayFeatures = filtered;
@@ -3880,16 +4111,72 @@ async function renderModalMapNeighborhood(item) {
 
   // ── 레이어별 값 계산 ─────────────────────────────────────
   const neighborhoods = item.neighborhoods || [];
-  // 동 이름 → neighborhood 객체 맵 (원본 키 + 정규화 키 모두 등록)
+
+  // ── 동명 중복 감지 ───────────────────────────────────────
+  // n.name 기준 동명 빈도 카운트 (예: "신사동" → 2)
+  const _nameCnt = {};
+  neighborhoods.forEach(n => { _nameCnt[n.name] = (_nameCnt[n.name] || 0) + 1; });
+
+  // nhMap: GeoJSON adm_nm 전체 경로(정규화) → neighborhood 객체
+  // admDisplayMap: adm_nm 전체 경로 → 화면 표시 이름
   const nhMap = {};
+  const admDisplayMap = {};
+
+  // ── 구 이름 태깅 ─────────────────────────────────────────
+  // "구명_관외사전투표" 항목으로 현재 구를 추적하여 각 neighborhood에 _gu 부여
+  let _currentGu = '';
   neighborhoods.forEach(n => {
-    nhMap[n.name] = n;
-    // "제N동" ↔ "N동" 양방향 호환
-    const normName = n.name.replace(/제(\d)/g, '$1');
-    if (normName !== n.name) nhMap[normName] = n;
-    const revName = n.name.replace(/^(\D+)(\d)/, '$1제$2');
-    if (revName !== n.name) nhMap[revName] = n;
+    const absenteeMatch = n.name.match(/^(.+?)_관외사전투표$/);
+    if (absenteeMatch) {
+      const guShort = absenteeMatch[1];
+      _currentGu = (guShort.endsWith('구') || guShort.endsWith('시') || guShort.endsWith('군'))
+        ? guShort : guShort + '구';
+    } else {
+      n._gu = _currentGu;
+    }
   });
+
+  // nhByName: 동 이름(단독) + "구+동" 복합키 → neighborhood 객체
+  const norm = s => s.replace(/제(\d)/g, '$1');
+  const nhByName = {};
+  neighborhoods.forEach(n => {
+    if (n.name.endsWith('관외사전투표')) return;
+    nhByName[n.name] = n;
+    nhByName[norm(n.name)] = n;
+    const rev = n.name.replace(/^(\D+)(\d)/, '$1제$2');
+    if (rev !== n.name) nhByName[rev] = n;
+    // 구+동 복합키 — 중복 동명 구분 핵심
+    if (n._gu) {
+      nhByName[n._gu + ' ' + n.name] = n;
+      nhByName[n._gu + ' ' + norm(n.name)] = n;
+    }
+  });
+
+  // GeoJSON sggnm(구 이름) 기반 복합키 추가 등록 함수
+  // (displayFeatures 로드 후 호출)
+  function buildSggnmKeys(features) {
+    features.forEach(f => {
+      const sggnm = (f.properties.sggnm || '').trim(); // "관악구", "강남구"
+      const last  = (f.properties.adm_nm || '').trim().split(/\s+/).pop();
+      if (!sggnm || !last) return;
+      const compositeKey = sggnm + ' ' + last;  // "관악구 신사동"
+      const normKey      = sggnm + ' ' + norm(last);
+      // nhByName에 복합키가 없으면 _gu 기반 복합키로 보완 등록
+      // (이미 있으면 덮어쓰지 않음 — _gu 태깅이 더 정확)
+      if (!nhByName[compositeKey]) {
+        // sggnm과 일치하는 _gu를 가진 nh 찾기
+        const nh = neighborhoods.find(n =>
+          !n.name.endsWith('관외사전투표') &&
+          n._gu === sggnm &&
+          (n.name === last || norm(n.name) === norm(last))
+        );
+        if (nh) {
+          nhByName[compositeKey] = nh;
+          nhByName[normKey]      = nh;
+        }
+      }
+    });
+  }
 
   function getLayerRate(n) {
     if (!n) return undefined;
@@ -3953,38 +4240,61 @@ async function renderModalMapNeighborhood(item) {
   svg.call(zoom).on('dblclick.zoom', null);
   addModalZoomCtrl(wrap, svg, zoom);
 
+  // getDongName: adm_nm 전체 경로를 nhMap 조회 키로 반환 (중복 동명 구분 핵심)
+  // adm_nm 예: "서울특별시 강남구 신사동"
   function getDongName(d) {
-    const parts = (d.properties.adm_nm || '').trim().split(/\s+/);
-    // 1순위: 마지막 단어 (동/읍/면 이름)
-    const last = parts[parts.length - 1];
-    if (nhMap[last] !== undefined) return last;
+    const admNm  = (d.properties.adm_nm  || '').trim();
+    const sggnm  = (d.properties.sggnm   || '').trim(); // "강남구" — GeoJSON 직접 제공
+    // 이미 nhMap에 등록된 경우 즉시 반환
+    if (nhMap[admNm] !== undefined) return admNm;
 
-    // 2순위: "구/시 동" (끝 2단어 조합)
-    if (parts.length >= 2) {
-      const twoWord = parts[parts.length-2] + ' ' + parts[parts.length-1];
-      if (nhMap[twoWord] !== undefined) return twoWord;
+    const parts = admNm.split(/\s+/);
+    const last  = parts[parts.length - 1]; // "신사동"
+
+    // 탐색 우선순위:
+    // 1) sggnm+동 복합키 — GeoJSON이 직접 제공하는 구 이름 (가장 정확)
+    // 2) adm_nm 끝 2단어 복합키 fallback
+    // 3) 단독 동명 / 정규화 변형
+    const candidates = [
+      sggnm ? sggnm + ' ' + last       : null,  // "강남구 신사동"  ← 핵심
+      sggnm ? sggnm + ' ' + norm(last) : null,
+      last,
+      norm(last),
+      parts.length >= 2 ? parts[parts.length-2] + ' ' + last : null,
+    ].filter(Boolean);
+
+    let matchedNh = null;
+    for (const c of candidates) {
+      if (nhByName[c]) { matchedNh = nhByName[c]; break; }
+    }
+    // fallback: 제N동↔N동 정규화만 (suffix 전체 매칭은 오매칭 위험으로 제거)
+    if (!matchedNh) {
+      const normLast = norm(last);
+      if (nhByName[normLast]) matchedNh = nhByName[normLast];
     }
 
-    // 3순위: "시 구 동" (끝 3단어 조합)
-    if (parts.length >= 3) {
-      const threeWord = parts[parts.length-3] + ' ' + parts[parts.length-2] + ' ' + parts[parts.length-1];
-      if (nhMap[threeWord] !== undefined) return threeWord;
+    // adm_nm 전체를 키로 nhMap에 등록 (이후 재호출 시 O(1))
+    nhMap[admNm] = matchedNh || null;
+
+    // 표시명 계산: 동명이 중복이면 "구+동", 고유하면 동 이름만
+    if (matchedNh) {
+      const displayName = (_nameCnt[matchedNh.name] || 0) > 1 && sggnm
+        ? sggnm + ' ' + matchedNh.name  // "강남구 신사동"
+        : matchedNh.name;
+      admDisplayMap[admNm] = displayName;
+    } else {
+      admDisplayMap[admNm] = last;
     }
 
-    // 4순위: nhMap 키를 순회하며 adm_nm 끝부분이 키와 일치하는지 확인
-    // (예: nhMap 키가 "암사1동"인데 GeoJSON은 "암사제1동" 같은 표기 차이 대응)
-    const admNm = (d.properties.adm_nm || '').trim();
-    for (const key of Object.keys(nhMap)) {
-      // 정규화: 숫자+동 형태 비교 ("암사1동" ↔ "암사제1동")
-      const normKey = key.replace(/제(\d)/g, '$1');
-      const normAdm = admNm.replace(/제(\d)/g, '$1');
-      if (normAdm.endsWith(normKey) || normAdm.endsWith(key)) return key;
-    }
-
-    // 매칭 실패 시 마지막 단어 반환 (회색으로 표시됨)
-    return last;
+    return admNm;
   }
 
+  // 표시명 반환 헬퍼
+  function getDongDisplay(admNm) {
+    return admDisplayMap[admNm] || (admNm.split(/\s+/).pop());
+  }
+
+  buildSggnmKeys(displayFeatures);
   const paths = zg.selectAll('path.dong-path')
     .data(displayFeatures)
     .enter().append('path')
@@ -4000,6 +4310,7 @@ async function renderModalMapNeighborhood(item) {
       return hasData ? noDataFill : defaultFill;
     })
     .style('cursor','pointer');
+  // title은 툴팁 이벤트로 대체
 
   // ── 향상된 툴팁 ──────────────────────────────────────────
   let pinnedDong = null;
@@ -4040,6 +4351,7 @@ async function renderModalMapNeighborhood(item) {
 
   function showTooltip(event, d, pinned) {
     const nm = getDongName(d);
+    const displayNm = getDongDisplay(nm);
     const nh = nhMap[nm];
     const layerVal = getLayerRate(nh);
     const [mx, my] = d3.pointer(event, wrap);
@@ -4059,12 +4371,12 @@ async function renderModalMapNeighborhood(item) {
       .style('left',`${tx}px`)
       .style('top',`${ty}px`)
       .html(nh
-        ? `<div class="dt-name">${nm}</div>
+        ? `<div class="dt-name">${displayNm}</div>
            ${layerLabel}
            <div class="dt-rate">${rateDisplay}<span class="dt-unit"> </span></div>
            ${buildVotesHTML(nh)}
            ${pinned ? '<div class="dt-pin">📌 고정됨 · 다시 클릭해 해제</div>' : ''}`
-        : `<div class="dt-name" style="color:var(--text2)">${nm}</div>
+        : `<div class="dt-name" style="color:var(--text2)">${displayNm}</div>
            <div class="dt-nodata">데이터 없음</div>`);
   }
 
@@ -4137,6 +4449,17 @@ async function renderModalMapNeighborhood(item) {
 
 // 기존 renderModalMap → 내부에서 mode에 따라 분기
 async function renderModalMap(item) {
+  // 광역단체장: 항상 시군구(district) 지도
+  if (item.type === '광역단체장') {
+    await renderModalMapDistrict(item);
+    return;
+  }
+  // 기초단체장: 항상 읍면동(neighborhood) 지도
+  if (item.type === '기초단체장') {
+    await renderModalMapNeighborhood(item);
+    return;
+  }
+  // 비례 (광역/기초): 뷰모드에 따라 분기
   if (modalViewMode === 'neighborhood') {
     await renderModalMapNeighborhood(item);
   } else {
@@ -4525,6 +4848,72 @@ function buildStatsHTML(item, isProp) {
   return html;
 }
 
+function buildPropLeftPanelExtra(item) {
+  const parts = [];
+
+  // 1. 의석 정보
+  const seatIcon = item.seats > 0 ? '🏛️' : '—';
+  const seatLabel = item.seats > 0 ? `${item.seats}석 확보` : '의석 미확보';
+  const seatCls   = item.seats > 0 ? 'prop-extra-seat has-seat' : 'prop-extra-seat no-seat';
+  parts.push(`
+    <div class="prop-extra-block">
+      <div class="prop-extra-title">의석 결과</div>
+      <div class="${seatCls}">${seatIcon} ${escapeHTML(seatLabel)}</div>
+    </div>`);
+
+  // 2. 지역 전국 순위 (같은 type의 데이터셋에서 rate 기준)
+  const dataset = item.type === '광역' ? (window.REGIONAL || []) : (window.BASIC || []);
+  if (dataset.length > 1) {
+    const sorted = [...dataset].filter(d => d.rate > 0).sort((a, b) => b.rate - a.rate);
+    const rank = sorted.findIndex(d => d.name === item.name) + 1;
+    if (rank > 0) {
+      const medal = rank === 1 ? '🥇' : rank === 2 ? '🥈' : rank === 3 ? '🥉' : `${rank}위`;
+      const rankDisplay = rank <= 3 ? medal : `${rank}위`;
+      parts.push(`
+        <div class="prop-extra-block">
+          <div class="prop-extra-title">${item.type === '광역' ? '광역' : '기초'} 중 득표율 순위</div>
+          <div class="prop-extra-rank">${rankDisplay} <span>/ ${sorted.length}개 지역</span></div>
+        </div>`);
+      // 평균 대비
+      const avg = +(dataset.filter(d=>d.rate>0).reduce((s,d)=>s+d.rate,0)/dataset.filter(d=>d.rate>0).length).toFixed(2);
+      const diff = +(item.rate - avg).toFixed(2);
+      const diffStr = diff >= 0 ? `▲ +${diff}%p` : `▼ ${diff}%p`;
+      const diffCls = diff >= 0 ? 'above' : 'below';
+      parts.push(`
+        <div class="prop-extra-block">
+          <div class="prop-extra-title">전체 평균 대비</div>
+          <div class="prop-extra-diff ${diffCls}">${diffStr} <span class="prop-extra-avg">(평균 ${avg}%)</span></div>
+        </div>`);
+    }
+  }
+
+  // 3. 상위 읍면동 TOP 5
+  const nhs = (item.neighborhoods || [])
+    .filter(n => n.rate > 0 && !n.name.includes('관외사전') && !n.name.includes('_관외'))
+    .sort((a, b) => b.rate - a.rate)
+    .slice(0, 5);
+  if (nhs.length) {
+    const topRate = nhs[0].rate;
+    parts.push(`
+      <div class="prop-extra-block">
+        <div class="prop-extra-title">읍면동 상위 득표지</div>
+        <div class="prop-extra-nhs">
+          ${nhs.map((n, i) => `
+            <div class="prop-extra-nh">
+              <span class="prop-extra-nh-rank">${i+1}</span>
+              <span class="prop-extra-nh-name">${escapeHTML(n.name)}</span>
+              <div class="prop-extra-nh-bar-wrap">
+                <div class="prop-extra-nh-bar" style="width:${((n.rate/topRate)*100).toFixed(1)}%"></div>
+              </div>
+              <span class="prop-extra-nh-rate">${n.rate}%</span>
+            </div>`).join('')}
+        </div>
+      </div>`);
+  }
+
+  return parts.join('');
+}
+
 function buildLayerBtnsHTML(dataList) {
   // votes 데이터가 하나라도 있어야 레이어 버튼 표시
   const hasVotes = (dataList || []).some(n => n.votes && typeof n.votes === 'object');
@@ -4547,6 +4936,8 @@ function buildLayerBtnsHTML(dataList) {
 function buildToggleHTML(item, dataList, isProp) {
   // 비례 모달은 renderModalMapNeighborhood/District가 map-layer-toggle을 직접 삽입하므로 중복 생성 방지
   const layerBtns = isProp ? '' : buildLayerBtnsHTML(dataList);
+
+  // 광역 계열 (비례 광역 / 광역단체장): 시군구/읍면동 토글
   if (item.type === '광역' || item.type === '광역단체장') {
     return `
       <div class="view-toggle">
@@ -4555,19 +4946,10 @@ function buildToggleHTML(item, dataList, isProp) {
       </div>
       ${layerBtns}`;
   }
-  if (item.type === '기초') {
+  // 기초 계열 (비례 기초 / 기초단체장): 읍면동 고정
+  if (item.type === '기초' || item.type === '기초단체장') {
     if (modalViewMode !== 'neighborhood') modalViewMode = 'neighborhood';
     return layerBtns;
-  }
-  // 후보자: 광역단체장·광역의회의원은 시군구/읍면동 뷰 토글 추가
-  const isBroad = item.type === '광역단체장' || item.type === '광역의회의원';
-  if (isBroad) {
-    return `
-      <div class="view-toggle">
-        <button class="view-btn ${modalViewMode === 'district'     ? 'active' : ''}" data-view="district">시군구별</button>
-        <button class="view-btn ${modalViewMode === 'neighborhood' ? 'active' : ''}" data-view="neighborhood">읍면동별</button>
-      </div>
-      ${layerBtns}`;
   }
   return layerBtns;
 }
@@ -4873,7 +5255,27 @@ function renderModalBody(item, isProp) {
     const first = it.name.split(' ')[0];
     return SIDO_CODES[first] ? first : null;
   }
-  const showMap = isProp && (item.type === '광역' || item.type === '기초') && getSidoName(item);
+
+  // 비례 광역/기초: 기존 조건
+  const isPropMap = isProp && (item.type === '광역' || item.type === '기초') && getSidoName(item);
+
+  // 광역단체장: 시도 단위 시군구 지도 (districts 데이터 있을 때)
+  const isGwangyeokMap = !isProp && item.type === '광역단체장'
+    && SIGUNGU_CODES[item.region]
+    && (item.districts || []).length > 0;
+
+  // 기초단체장: 읍면동 단위 지도 (neighborhoods 데이터 있을 때)
+  const isGichoCandMap = !isProp && item.type === '기초단체장'
+    && item.region && item.region.includes(' ')
+    && SIDO_CODES[item.region.split(' ')[0]]
+    && (item.neighborhoods || []).length > 0;
+
+  const showMap = isPropMap || isGwangyeokMap || isGichoCandMap;
+
+  // 광역단체장은 기본 뷰를 district로
+  if (isGwangyeokMap && modalViewMode !== 'district' && modalViewMode !== 'neighborhood') {
+    modalViewMode = 'district';
+  }
 
   document.getElementById('modal-body').innerHTML = `
     <div class="modal-stats">${buildStatsHTML(item, isProp)}</div>
@@ -4886,6 +5288,15 @@ function renderModalBody(item, isProp) {
   runCountUpsIn(document.getElementById('modal-body'));
 
   if (showMap) renderModalMap(item);
+
+  // PC 왼쪽 통계 패널 갱신
+  const pcStats2 = document.getElementById('modal-left-stats');
+  const bodyStats2 = document.querySelector('#modal-body .modal-stats');
+  if (pcStats2 && bodyStats2) {
+    pcStats2.innerHTML = '';
+    pcStats2.appendChild(bodyStats2.cloneNode(true));
+    runCountUpsIn(pcStats2);
+  }
 
   // 뷰 전환 버튼
   document.querySelectorAll('.view-btn').forEach(btn => {
@@ -4955,20 +5366,37 @@ function renderModalBody(item, isProp) {
 }
 
 function updateModalPhoto(item, isWinner) {
+  // 모바일 헤더
   document.getElementById('modal-initial').textContent =
     item.name ? item.name.slice(0, 1) : '?';
-
   const badge = document.getElementById('modal-winner-badge');
   badge.style.display = isWinner ? 'flex' : 'none';
 
+  // PC 왼쪽 패널 사진
+  const pcInitial = document.getElementById('modal-initial-pc');
+  if (pcInitial) pcInitial.textContent = item.name ? item.name.slice(0, 1) : '?';
+  const pcBadge = document.getElementById('modal-winner-badge-pc');
+  if (pcBadge) pcBadge.style.display = isWinner ? 'flex' : 'none';
+
   if (!item.imageUrl) return;
 
+  // 모바일 사진
   const photo = document.getElementById('modal-photo');
   const img   = document.createElement('img');
   img.src = escapeHTML(item.imageUrl);
   img.alt = escapeHTML(item.name);
   photo.innerHTML = '';
   photo.appendChild(img);
+
+  // PC 사진
+  const pcPhoto = document.getElementById('modal-photo-pc');
+  if (pcPhoto) {
+    const img2 = document.createElement('img');
+    img2.src = escapeHTML(item.imageUrl);
+    img2.alt = escapeHTML(item.name);
+    pcPhoto.innerHTML = '';
+    pcPhoto.appendChild(img2);
+  }
 }
 
 function openModal(item, isProp) {
@@ -4977,22 +5405,63 @@ function openModal(item, isProp) {
   modalTrigger        = document.activeElement;
   modalTableSort      = { col: 'rate', dir: 'desc' };
 
+  // 뷰모드 초기화: 광역단체장 → district, 그 외 → neighborhood
+  if (!isProp && item.type === '광역단체장') {
+    modalViewMode = 'district';
+  } else if (!isProp && item.type === '기초단체장') {
+    modalViewMode = 'neighborhood';
+  }
+
   const isWinner = !isProp && item.result === '당선';
 
   document.getElementById('modal-photo').style.display = isProp ? 'none' : '';
+  const pcPhoto = document.getElementById('modal-photo-pc');
+  if (pcPhoto) pcPhoto.style.display = isProp ? 'none' : '';
 
   updateModalPhoto(item, isWinner);
 
+  // 모바일 헤더
   document.getElementById('modal-title').innerHTML =
     `<span class="modal-title-label">상세 리포트</span><span class="modal-title-name">${escapeHTML(item.name)}</span>`;
   document.getElementById('modal-subtitle').textContent = item.region || item.type;
 
+  // PC 왼쪽 패널 이름/지역
+  const pcName = document.getElementById('modal-left-name');
+  const pcSub  = document.getElementById('modal-left-sub');
+  if (pcName) pcName.textContent = item.name;
+  if (pcSub)  pcSub.textContent  = item.region || item.type;
+
   renderModalBody(item, isProp);
+
+  // PC 왼쪽 패널에 통계 복사 (modal-body 렌더 후)
+  const pcStats = document.getElementById('modal-left-stats');
+  const bodyStats = document.querySelector('#modal-body .modal-stats');
+  if (pcStats && bodyStats) {
+    pcStats.innerHTML = '';
+    pcStats.appendChild(bodyStats.cloneNode(true));
+    runCountUpsIn(pcStats);
+  }
+
+  // 비례 모달 전용: 왼쪽 하단 추가 정보
+  if (isProp && pcStats) {
+    const extraHTML = buildPropLeftPanelExtra(item);
+    if (extraHTML) {
+      const extra = document.createElement('div');
+      extra.className = 'modal-left-prop-extra';
+      extra.innerHTML = extraHTML;
+      pcStats.appendChild(extra);
+    }
+  }
 
   const backdrop = document.getElementById('modal-backdrop');
   backdrop.classList.add('open');
   backdrop.setAttribute('aria-hidden', 'false');
   document.body.style.overflow = 'hidden';
+
+  // PC 닫기 버튼도 연결
+  const pcClose = document.getElementById('modal-close-pc');
+  if (pcClose) pcClose.onclick = closeModal;
+
   setTimeout(() => document.getElementById('modal-close').focus(), 50);
 }
 
