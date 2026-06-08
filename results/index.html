@@ -70,8 +70,8 @@
     --border: rgba(255,255,255,0.08);
     --border-strong: rgba(255,255,255,0.14);
     --text: #f0efe8;
-    --text2: #9b9b94;
-    --text3: #9b9b94;
+    --text2: #c2c0b6;
+    --text3: #7a7a72;
     --orange-light: #2a1500;
   }
 
@@ -160,7 +160,7 @@
   }
 
   .nav-logo-text span {
-    font-size: 11px;
+    font-size: 12px;
     color: var(--orange);
     font-weight: 700;
     letter-spacing: 0.1em;
@@ -378,7 +378,7 @@
     background: #111110;
     color: #fff;
     border-radius: 100px;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 700;
     letter-spacing: 0.03em;
     text-transform: uppercase;
@@ -390,7 +390,7 @@
     display: flex;
     align-items: center;
     gap: 6px;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 700;
     color: var(--green);
   }
@@ -481,9 +481,9 @@
   }
 
   .stat-label {
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 700;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.01em;
     opacity: 0.8;
     margin-bottom: 6px;
   }
@@ -508,7 +508,7 @@
     border-top: 1px solid rgba(255,255,255,0.2);
     display: flex;
     justify-content: space-between;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 500;
   }
 
@@ -538,14 +538,14 @@
   }
 
   .stat-sub {
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 700;
     color: var(--green);
     margin-top: 6px;
   }
 
   .stat-sub-gray {
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 500;
     color: var(--text3);
     margin-top: 6px;
@@ -580,7 +580,7 @@
   }
 
   .records-title {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 900;
     letter-spacing: -0.03em;
     margin-bottom: 28px;
@@ -624,8 +624,7 @@
   .record-label {
     font-size: 13px;
     font-weight: 700;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
+    letter-spacing: 0.01em;
     margin-bottom: 5px;
   }
 
@@ -637,9 +636,9 @@
 
   .record-desc {
     font-size: 12px;
-    color: rgba(255,255,255,0.9);
+    color: rgba(255,255,255,0.75);
   }
-  .dark .record-desc { color: rgba(255,255,255,0.9); }
+  .dark .record-desc { color: rgba(255,255,255,0.65); }
 
   /* ── PROPORTIONAL TAB ── */
   /* 서브탭 + 정렬 컨트롤 행 */
@@ -659,7 +658,7 @@
   }
 
   .prop-sort-label {
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 700;
     color: var(--text3);
     white-space: nowrap;
@@ -712,13 +711,18 @@
     gap: 6px;
   }
 
+  .subtab-btn:focus-visible {
+    outline: 2px solid var(--orange);
+    outline-offset: 2px;
+  }
+
   .subtab-btn.active {
     background: var(--orange);
     color: #fff;
   }
 
   .subtab-count {
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 700;
     padding: 1px 6px;
     border-radius: 10px;
@@ -783,11 +787,10 @@
   }
 
   .prop-summary-label {
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 700;
     color: var(--text3);
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
+    letter-spacing: 0.01em;
     white-space: nowrap;
   }
 
@@ -804,7 +807,7 @@
   }
 
   .prop-summary-sub {
-    font-size: 11px;
+    font-size: 12px;
     color: var(--text3);
     font-weight: 500;
     white-space: nowrap;
@@ -924,7 +927,7 @@
     position: absolute;
     right: calc(100% + 6px);
     left: auto;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 700;
     color: var(--text3);
     transform: translateY(50%);
@@ -946,7 +949,7 @@
   .chart-avg-label {
     position: absolute;
     right: 0;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 700;
     color: var(--orange);
     transform: translateY(-100%);
@@ -966,7 +969,7 @@
   }
 
   .bar-label-top {
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 700;
     color: var(--text2);
     white-space: nowrap;
@@ -988,7 +991,7 @@
   }
 
   .bar-bar.below-avg {
-    opacity: 0.38;
+    opacity: 0.55;
   }
 
   .bar-bar:hover { opacity: 0.8; }
@@ -1049,7 +1052,7 @@
   }
 
   .prop-card-sub {
-    font-size: 11px;
+    font-size: 12px;
     color: var(--text3);
     font-weight: 700;
     letter-spacing: 0.02em;
@@ -1061,7 +1064,7 @@
   .seat-badge {
     padding: 4px 12px;
     border-radius: 100px;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 700;
   }
 
@@ -1104,7 +1107,7 @@
     display: flex;
     align-items: center;
     gap: 7px;
-    font-size: 11px;
+    font-size: 12px;
   }
 
   .prop-card-mini-nh-name {
@@ -1142,7 +1145,7 @@
   }
 
   .prop-card-mini-nh-rate {
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 700;
     color: var(--text3);
     white-space: nowrap;
@@ -1192,6 +1195,11 @@
     transition: background 0.2s, color 0.2s, border-color 0.2s;
   }
 
+  .filter-btn:focus-visible {
+    outline: 2px solid var(--orange);
+    outline-offset: 2px;
+  }
+
   .filter-btn.active {
     background: var(--orange-dark);
     color: #fff;
@@ -1202,6 +1210,12 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
+  }
+
+  @media (max-width: 359px) {
+    .cand-grid {
+      grid-template-columns: 1fr;
+    }
   }
 
   @media (min-width: 768px) {
@@ -1354,7 +1368,7 @@
     right: 10px;
     background: var(--orange);
     color: #fff;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 700;
     padding: 5px 11px;
     border-radius: 100px;
@@ -1382,13 +1396,14 @@
     display: flex;
     align-items: center;
     gap: 4px;
-    background: var(--orange-dark);
+    background: var(--green);
     color: #fff;
     padding: 4px 10px;
     border-radius: 100px;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 700;
-    animation: bounce 0.5s ease-out 3;
+    animation: bounce 0.5s ease-out 2;
+    animation-fill-mode: both;
   }
 
   @keyframes bounce {
@@ -1399,7 +1414,7 @@
   .badge-reimb {
     padding: 3px 8px;
     border-radius: 100px;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 700;
     color: #fff;
     white-space: nowrap;
@@ -1409,7 +1424,7 @@
   .badge-sky { background: var(--sky); }
 
   .cand-type {
-    font-size: 11px;
+    font-size: 12px;
     color: var(--orange);
     font-weight: 700;
     letter-spacing: 0.06em;
@@ -1441,6 +1456,11 @@
     .prop-card:active { border-color: var(--orange); transform: scale(0.98); }
     .hof-card:active  { border-color: var(--orange); transform: scale(0.98); }
     .tophit-row:active { border-color: rgba(255,102,0,0.4); transform: translateX(2px); }
+
+    /* 탭 후 hover 잔류 방지: focus-visible 없는 상태로 blur되면 리셋 */
+    .cand-card:not(:focus-within):not(:active) { border-color: var(--border); }
+    .prop-card:not(:focus-within):not(:active) { border-color: var(--border); }
+    .hof-card:not(:focus-within):not(:active)  { border-color: var(--border); }
   }
 
   .cand-region {
@@ -1468,14 +1488,14 @@
   .cand-vote-left span { display: block; }
 
   .cand-vote-label {
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 700;
     color: var(--text3);
     letter-spacing: 0.02em;
   }
 
   .cand-vote-count {
-    font-size: 11px;
+    font-size: 12px;
     color: var(--text3);
     margin-top: 2px;
   }
@@ -1589,16 +1609,19 @@
     .modal-left-panel {
       display: flex;
       flex-direction: column;
-      width: 280px;
-      min-width: 280px;
+      width: 260px;
+      min-width: 260px;
       background: var(--surface);
       border-right: 1px solid var(--border);
       border-radius: 36px 0 0 36px;
       overflow-y: auto;
-      padding: 28px 24px;
+      overflow-x: hidden;
+      padding: 20px 20px;
       position: relative;
       flex-shrink: 0;
       transition: background 0.3s;
+      scrollbar-width: thin;
+      scrollbar-color: var(--border-strong) transparent;
     }
 
     .modal-left-top {
@@ -1606,38 +1629,43 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
-      gap: 10px;
-      margin-bottom: 20px;
+      gap: 6px;
+      margin-bottom: 12px;
     }
 
     .modal-photo-pc {
       width: 100% !important;
-      height: auto !important;
       aspect-ratio: 3 / 4 !important;
-      border-radius: 18px !important;
+      object-fit: cover !important;
+      object-position: top center !important;
+      border-radius: 12px !important;
       border: 2px solid var(--border-strong) !important;
       flex-shrink: 0;
+      overflow: hidden;
     }
 
     .modal-left-name {
       font-size: 22px;
       font-weight: 900;
-      letter-spacing: -0.04em;
+      letter-spacing: -0.03em;
       color: var(--text);
       line-height: 1.2;
+      word-break: keep-all;
     }
 
     .modal-left-sub {
-      font-size: 12px;
+      font-size: 15px;
       color: var(--text3);
-      font-weight: 600;
+      font-weight: 500;
+      word-break: keep-all;
+      line-height: 1.4;
     }
 
     /* 왼쪽 통계 영역 */
     .modal-left-stats {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 0;
       flex: 1;
     }
 
@@ -1648,7 +1676,27 @@
     }
 
     .modal-left-stats .modal-stat {
+      padding: 10px 14px !important;
       border-right: none !important;
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      gap: 8px !important;
+    }
+
+    .modal-left-stats .modal-stat-label {
+      margin-bottom: 0 !important;
+      flex-shrink: 0;
+    }
+
+    .modal-left-stats .modal-stat-value {
+      font-size: 20px !important;
+      text-align: right;
+    }
+
+    .modal-left-stats .modal-stat-value.text-dark {
+      font-size: 18px !important;
     }
 
     .modal-left-stats .modal-stat + .modal-stat {
@@ -1663,8 +1711,8 @@
     /* 닫기 버튼 (PC용) */
     .modal-close-pc {
       position: absolute;
-      top: 16px;
-      right: 16px;
+      top: 12px;
+      right: 12px;
     }
 
     /* 오른쪽 본문 */
@@ -1683,19 +1731,18 @@
     .modal-left-prop-extra {
       display: flex;
       flex-direction: column;
-      gap: 14px;
-      margin-top: 14px;
-      padding-top: 14px;
+      gap: 10px;
+      margin-top: 10px;
+      padding-top: 10px;
       border-top: 1px solid var(--border);
     }
 
     .prop-extra-block { display: flex; flex-direction: column; gap: 6px; }
 
     .prop-extra-title {
-      font-size: 10px;
+      font-size: 12px;
       font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
+      letter-spacing: 0.01em;
       color: var(--text3);
     }
 
@@ -1726,7 +1773,7 @@
     }
     .prop-extra-diff.above { color: var(--orange); }
     .prop-extra-diff.below { color: var(--blue); }
-    .prop-extra-avg { font-size: 11px; font-weight: 500; color: var(--text3); }
+    .prop-extra-avg { font-size: 12px; font-weight: 500; color: var(--text3); }
 
     .prop-extra-nhs { display: flex; flex-direction: column; gap: 6px; }
     .prop-extra-nh {
@@ -1734,10 +1781,10 @@
       grid-template-columns: 16px 1fr auto auto;
       align-items: center;
       gap: 6px;
-      font-size: 11px;
+      font-size: 12px;
     }
     .prop-extra-nh-rank {
-      font-size: 10px; font-weight: 800; color: var(--text3);
+      font-size: 12px; font-weight: 800; color: var(--text3);
       width: 16px; text-align: center;
     }
     .prop-extra-nh-name {
@@ -1751,7 +1798,7 @@
       height: 100%; background: var(--orange); border-radius: 2px; max-width: 100%;
     }
     .prop-extra-nh-rate {
-      font-weight: 700; color: var(--orange); font-size: 11px; white-space: nowrap;
+      font-weight: 700; color: var(--orange); font-size: 12px; white-space: nowrap;
     }
   }
 
@@ -1760,7 +1807,7 @@
   .modal-header {
     background: var(--surface);
     border-bottom: 1px solid var(--border);
-    padding: 24px 24px 0;
+    padding: 20px 20px 0;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -1772,7 +1819,7 @@
   .modal-header-left {
     display: flex;
     align-items: flex-end;
-    gap: 24px;
+    gap: 16px;
     min-width: 0;
     flex: 1;
   }
@@ -1791,11 +1838,11 @@
   }
 
   .modal-photo {
-    width: 130px;
-    height: 155px;
-    border-radius: 18px 18px 0 0;
+    width: 90px;
+    aspect-ratio: 3 / 4;
+    border-radius: 14px 14px 0 0;
     border: 2px solid var(--border-strong);
-    border-bottom: none;
+    border-bottom: 2px solid var(--surface);
     overflow: hidden;
     flex-shrink: 0;
     position: relative;
@@ -1808,13 +1855,22 @@
 
   @media (min-width: 768px) {
     .modal-photo {
-      width: 160px;
-      height: 190px;
+      width: 180px;
+      aspect-ratio: 3 / 4;
       border-radius: 22px 22px 0 0;
+      border: 2px solid var(--border-strong);
+      border-bottom: none;
     }
   }
 
-  .modal-photo img { width: 100%; height: 100%; object-fit: cover; }
+  .modal-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    aspect-ratio: 3 / 4;
+    display: block;
+  }
 
   .modal-photo-initial {
     font-size: 60px; font-weight: 900;
@@ -1823,7 +1879,7 @@
   }
 
   .modal-photo-text {
-    font-size: 11px; font-weight: 600;
+    font-size: 12px; font-weight: 600;
     color: var(--orange);
     opacity: 0.8;
     margin-top: 4px;
@@ -1831,18 +1887,19 @@
   }
 
   .modal-winner-badge {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 5px;
     background: var(--orange);
     color: #fff;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 700;
-    padding: 7px 14px;
+    padding: 4px 10px;
     border-radius: 100px;
     white-space: nowrap;
     letter-spacing: 0.02em;
-    box-shadow: 0 4px 12px rgba(255,102,0,0.35);
+    box-shadow: 0 2px 8px rgba(255,102,0,0.3);
+    align-self: flex-start;
   }
 
   .modal-title {
@@ -1853,7 +1910,7 @@
   }
 
   .modal-title-label {
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 700;
     color: var(--orange);
     letter-spacing: 0.04em;
@@ -1920,7 +1977,7 @@
   .view-btn {
     padding: 7px 18px;
     border-radius: 9px;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 700;
     border: none;
     cursor: pointer;
@@ -1967,11 +2024,10 @@
   }
 
   .modal-stat-label {
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 700;
     color: var(--text3);
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.01em;
     margin-bottom: 6px;
   }
 
@@ -1992,7 +2048,7 @@
     display: flex;
     align-items: center;
     gap: 6px;
-    padding: 10px 16px;
+    padding: 8px 14px;
     border-left: 1px solid var(--border);
     flex-shrink: 0;
   }
@@ -2030,7 +2086,7 @@
   @media (min-width: 480px) {
     .modal-stat-reimb .label {
       display: block;
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 700;
       color: rgba(255,255,255,0.85);
       text-transform: uppercase;
@@ -2107,7 +2163,7 @@
 
   th {
     padding: 12px 16px;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 700;
     color: var(--text3);
     text-transform: uppercase;
@@ -2142,7 +2198,7 @@
     background: var(--orange);
     color: #fff;
     border-radius: 6px;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 900;
     margin-right: 8px;
     flex-shrink: 0;
@@ -2170,12 +2226,12 @@
     gap: 3px;
     padding: 4px 10px;
     border-radius: 100px;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 700;
     white-space: nowrap;
   }
 
-  .diff-badge.up { background: #eff6ff; color: var(--blue); }
+  .diff-badge.up { background: rgba(37,99,235,0.08); color: var(--blue); }
   .diff-badge.down { background: var(--surface2); color: var(--text3); }
 
   .dark .diff-badge.up { background: rgba(37,99,235,0.2); color: #93c5fd; }
@@ -2189,7 +2245,7 @@
 
   .modal-footer-note {
     text-align: center;
-    font-size: 11px;
+    font-size: 12px;
     color: var(--text3);
     padding-bottom: 8px;
     line-height: 1.6;
@@ -2256,8 +2312,9 @@
 
   .hof-section { margin-top: 32px; }
   .hof-title {
-    font-size: 18px; font-weight: 900; letter-spacing: -0.03em;
+    font-size: 16px; font-weight: 700; letter-spacing: -0.02em;
     margin-bottom: 20px; display: flex; align-items: center; gap: 8px;
+    color: var(--text2);
   }
   .hof-grid {
     display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;
@@ -2276,16 +2333,16 @@
     transform: translateY(-2px);
   }
   .hof-card-type {
-    font-size: 11px; font-weight: 700; color: var(--orange);
+    font-size: 12px; font-weight: 700; color: var(--orange);
     letter-spacing: 0.02em; text-transform: uppercase; line-height: 1.4;
   }
   .hof-card-name { font-size: 16px; font-weight: 900; letter-spacing: -0.03em; }
-  .hof-card-region { font-size: 11px; color: var(--text2); line-height: 1.4; }
+  .hof-card-region { font-size: 12px; color: var(--text2); line-height: 1.4; }
   .hof-card-rate {
     margin-top: 6px; font-size: 13px; font-weight: 900; color: var(--orange);
     display: flex; align-items: center; gap: 4px;
   }
-  .hof-card-rate span { font-size: 11px; font-weight: 500; color: var(--text3); }
+  .hof-card-rate span { font-size: 12px; font-weight: 500; color: var(--text3); }
 
   .empty-state {
     grid-column: 1 / -1; display: flex; flex-direction: column;
@@ -2303,7 +2360,7 @@
     margin-bottom: 20px; gap: 12px; flex-wrap: wrap;
   }
   .cand-sort-wrap { display: flex; align-items: center; gap: 8px; }
-  .cand-sort-label { font-size: 11px; font-weight: 700; color: var(--text3); white-space: nowrap; }
+  .cand-sort-label { font-size: 12px; font-weight: 700; color: var(--text3); white-space: nowrap; }
   .cand-sort-select {
     appearance: none; -webkit-appearance: none; background: var(--surface);
     border: 1px solid var(--border-strong); border-radius: var(--radius-sm);
@@ -2347,7 +2404,7 @@
   .search-clear.visible { opacity: 1; pointer-events: auto; }
   .search-clear:hover { background: var(--orange-light); color: var(--orange); }
 
-  .search-result-count { font-size: 11px; font-weight: 700; color: var(--text3); margin-bottom: 20px; }
+  .search-result-count { font-size: 12px; font-weight: 700; color: var(--text3); margin-bottom: 20px; }
   .search-result-count em { color: var(--orange); font-style: normal; }
 
   /* ── ZOOM CONTROLS ── */
@@ -2416,7 +2473,7 @@
   .map-layer-btn {
     padding: 5px 12px;
     border-radius: 8px;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 700;
     border: 1px solid var(--border-strong);
     background: var(--surface);
@@ -2427,6 +2484,10 @@
     white-space: nowrap;
   }
   .map-layer-btn:hover { border-color: var(--orange); color: var(--orange); }
+  .map-layer-btn:focus-visible {
+    outline: 2px solid var(--orange);
+    outline-offset: 2px;
+  }
   .map-layer-btn.active {
     background: var(--orange);
     color: #fff;
@@ -2435,6 +2496,17 @@
   .map-layer-btn.layer-absentee.active { background: #7c3aed; border-color: #7c3aed; }
   .map-layer-btn.layer-early.active    { background: #2563eb; border-color: #2563eb; }
   .map-layer-btn.layer-polling.active  { background: var(--orange); border-color: var(--orange); }
+
+  .layer-icon {
+    font-size: 9px;
+    margin-right: 5px;
+    opacity: 0.85;
+    line-height: 1;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .map-layer-btn.active .layer-icon { opacity: 1; }
+  .map-layer-btn:not(.active) .layer-icon { color: var(--text3); }
 
   /* ── 읍면동 툴팁 ── */
   .dong-tooltip {
@@ -2481,7 +2553,7 @@
     justify-content: space-between;
     align-items: center;
     gap: 10px;
-    font-size: 11px;
+    font-size: 12px;
   }
   .dt-vote-label {
     color: var(--text3);
@@ -2497,7 +2569,7 @@
   .dt-vote-val.absentee-high { color: #7c3aed; }
   .dt-badge {
     display: inline-block;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 700;
     padding: 1px 6px;
     border-radius: 4px;
@@ -2509,13 +2581,13 @@
   .dt-badge-early { background: #dbeafe; color: #2563eb; }
   .dark .dt-badge-early { background: #1e3a5f; color: #93c5fd; }
   .dt-nodata {
-    font-size: 11px;
+    font-size: 12px;
     color: var(--text3);
     font-weight: 500;
   }
   .dt-pin {
     margin-top: 6px;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 600;
     color: var(--text3);
     letter-spacing: 0.01em;
@@ -2540,7 +2612,7 @@
   }
   .td-vote-item { display: flex; flex-direction: column; gap: 2px; }
   .td-vote-item-label {
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 700;
     color: var(--text3);
     text-transform: uppercase;
@@ -2552,7 +2624,7 @@
     letter-spacing: -0.02em;
   }
   .td-vote-item-count {
-    font-size: 11px;
+    font-size: 12px;
     color: var(--text3);
     font-weight: 500;
   }
@@ -2582,12 +2654,13 @@
     margin-bottom: 14px;
   }
   .tophit-title {
-    font-size: 18px;
-    font-weight: 900;
-    letter-spacing: -0.03em;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text2);
   }
   .tophit-desc {
-    font-size: 11px;
+    font-size: 12px;
     color: var(--text3);
     font-weight: 600;
   }
@@ -2653,7 +2726,7 @@
     flex-shrink: 0;
   }
   .tophit-type-badge {
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 700;
     color: var(--orange);
     background: var(--orange-light);
@@ -2688,7 +2761,13 @@
   }
   @media (max-width: 480px) {
     .tophit-bar-wrap { display: none; }
-    .tophit-type-badge { display: none; }
+    .tophit-type-badge {
+      font-size: 11px;
+      padding: 2px 6px;
+    }
+    .tophit-rate {
+      font-size: 18px;
+    }
   }
   .tophit-bar-track {
     height: 6px;
@@ -2733,7 +2812,7 @@
     box-shadow: 0 4px 20px rgba(255,102,0,0.12);
   }
   .allcand-card-type {
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 700;
     color: var(--orange);
     letter-spacing: 0.02em;
@@ -2747,7 +2826,7 @@
     line-height: 1.2;
   }
   .allcand-card-region {
-    font-size: 11px;
+    font-size: 12px;
     color: var(--text2);
     line-height: 1.4;
     margin-top: 1px;
@@ -2769,7 +2848,7 @@
   .allcand-card-rate.is-winner-rate { color: var(--orange); }
   .allcand-card-rate.is-normal-rate { color: var(--text3); }
   .allcand-card-result {
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 700;
     padding: 3px 8px;
     border-radius: 100px;
@@ -2797,7 +2876,7 @@
   }
 
   .th-sort-icon {
-    font-size: 10px;
+    font-size: 12px;
     opacity: 0.4;
     margin-left: 3px;
     display: inline-block;
@@ -2809,7 +2888,7 @@
     color: var(--orange);
   }
   .td-count-unit {
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 500;
     color: var(--text3);
     margin-left: 2px;
@@ -2848,7 +2927,7 @@
   }
 
   .region-compare-sub {
-    font-size: 11px;
+    font-size: 12px;
     color: var(--text3);
     font-weight: 600;
   }
@@ -2871,7 +2950,7 @@
   }
 
   .rcv-group-label {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 700;
     color: var(--text3);
     white-space: nowrap;
@@ -3145,7 +3224,7 @@
       <!-- 지도(왼쪽) + 차트(오른쪽) 가로 배치 -->
       <div class="map-chart-row">
         <div class="map-col" id="map-col">
-          <p style="font-size: 11px; color: var(--text3); margin-bottom: 10px;">* 주황색 지역을 클릭하면 구별 상세 득표율을 확인할 수 있습니다.</p>
+          <p style="font-size: 12px; color: var(--text3); margin-bottom: 10px;">* 주황색 지역을 클릭하면 구별 상세 득표율을 확인할 수 있습니다.</p>
           <div class="map-wrap" id="korea-map-wrap"></div>
         </div>
         <div class="chart-col">
@@ -3246,7 +3325,7 @@
 window.candidates = window.candidates || [];
 </script>
 <script src="can.js" onerror="console.warn('can.js not found, using empty candidates')"></script>
-<script src="results.js?v=0528.04" onerror="console.warn('results.js not found, skipping results')" onload="window._resultsLoaded = true"></script>
+<script src="results.js?v=0528.05" onerror="console.warn('results.js not found, skipping results')" onload="window._resultsLoaded = true"></script>
 <script>
 // ── DATA ──────────────────────────────────────────────
 // ── 투표 유형 헬퍼 ───────────────────────────────────────
@@ -4018,7 +4097,7 @@ async function renderModalMapDistrict(item) {
     note.id = 'district-layer-note';
     note.style.cssText = `position:absolute;top:10px;left:50%;transform:translateX(-50%);
       background:${LAYER_COLORS[modalMapLayer] || 'var(--orange)'};color:#fff;
-      font-size:11px;font-weight:700;padding:4px 12px;border-radius:100px;
+      font-size:12px;font-weight:700;padding:4px 12px;border-radius:100px;
       pointer-events:none;white-space:nowrap;z-index:5;letter-spacing:0.04em;`;
     note.textContent = LAYER_LABELS[modalMapLayer] || '';
     wrap.style.position = 'relative';
@@ -4081,7 +4160,7 @@ async function renderModalMapNeighborhood(item) {
     <svg id="modal-map-svg" class="modal-map-svg"></svg>
     <div id="dong-loading" style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;pointer-events:none;">
       <div style="width:32px;height:32px;border:3px solid var(--border);border-top-color:var(--orange);border-radius:50%;animation:spin 0.8s linear infinite;"></div>
-      <span style="font-size:11px;font-weight:700;color:var(--text3);">읍면동 지도 불러오는 중…</span>
+      <span style="font-size:12px;font-weight:700;color:var(--text3);">읍면동 지도 불러오는 중…</span>
     </div>`;
 
   if (!document.getElementById('spin-style')) {
@@ -4366,7 +4445,7 @@ async function renderModalMapNeighborhood(item) {
       const badge = isAbsentee && nh.votes.polling && v.rate > nh.votes.polling.rate
         ? '<span class="dt-badge dt-badge-absentee">관외↑</span>' : '';
       const valCls = isAbsentee ? 'dt-vote-val absentee-high' : 'dt-vote-val';
-      const countTxt = v.count != null ? `<span style="color:var(--text3);font-size:9px;margin-left:3px">(${v.count.toLocaleString()}표)</span>` : '';
+      const countTxt = v.count != null ? `<span style="color:var(--text3);font-size:12px;margin-left:3px">(${v.count.toLocaleString()}표)</span>` : '';
       return `<div class="dt-vote-row">
         <span class="dt-vote-label">${VOTE_LABELS[k]}</span>
         <span class="${valCls}">${v.rate}%${countTxt}${badge}</span>
@@ -4389,7 +4468,7 @@ async function renderModalMapNeighborhood(item) {
     let rateDisplay = layerVal !== undefined ? `${layerVal}%` : null;
     let layerLabel = '';
     if (modalMapLayer === 'diff' && layerVal !== undefined) {
-      layerLabel = `<div style="font-size:10px;color:var(--text3);font-weight:600;margin-bottom:2px">관외−관내 차이</div>`;
+      layerLabel = `<div style="font-size:12px;color:var(--text3);font-weight:600;margin-bottom:2px">관외−관내 차이</div>`;
       rateDisplay = `${layerVal >= 0 ? '+' : ''}${layerVal}%`;
     }
 
@@ -4953,14 +5032,14 @@ function buildLayerBtnsHTML(dataList) {
   const hasEarly    = (dataList || []).some(n => n.votes && n.votes.early);
   const hasPolling  = (dataList || []).some(n => n.votes && n.votes.polling);
   const btns = [
-    { layer: 'total',    label: '전체',      cls: '' },
-    hasPolling  ? { layer: 'polling',  label: '관내 당일', cls: 'layer-polling' }  : null,
-    hasEarly    ? { layer: 'early',    label: '관내 사전', cls: 'layer-early' }    : null,
-    hasAbsentee ? { layer: 'absentee', label: '관외 사전', cls: 'layer-absentee' } : null,
+    { layer: 'total',    label: '전체',      cls: '',               icon: '◈' },
+    hasPolling  ? { layer: 'polling',  label: '관내 당일', cls: 'layer-polling',  icon: '●' } : null,
+    hasEarly    ? { layer: 'early',    label: '관내 사전', cls: 'layer-early',    icon: '■' } : null,
+    hasAbsentee ? { layer: 'absentee', label: '관외 사전', cls: 'layer-absentee', icon: '▲' } : null,
   ].filter(Boolean);
   if (btns.length <= 1) return '';
   return `<div class="map-layer-toggle" id="modal-layer-toggle">
-    ${btns.map(b => `<button class="map-layer-btn ${b.cls} ${modalMapLayer === b.layer ? 'active' : ''}" data-layer="${b.layer}">${b.label}</button>`).join('')}
+    ${btns.map(b => `<button class="map-layer-btn ${b.cls} ${modalMapLayer === b.layer ? 'active' : ''}" data-layer="${b.layer}"><span class="layer-icon" aria-hidden="true">${b.icon}</span>${b.label}</button>`).join('')}
   </div>`;
 }
 
@@ -5004,12 +5083,14 @@ function buildToggleHTML(item, dataList, isProp) {
       if (modalViewMode !== 'neighborhood') modalViewMode = 'neighborhood';
       return layerBtns;
     }
+    // 광역비례(isProp && type==='광역')의 시군구 보기에서는 레이어 버튼 숨김
+    const showLayerBtns = !(isProp && modalViewMode === 'district');
     return `
       <div class="view-toggle">
         <button class="view-btn ${modalViewMode === 'district'     ? 'active' : ''}" data-view="district">시군구별</button>
         <button class="view-btn ${modalViewMode === 'neighborhood' ? 'active' : ''}" data-view="neighborhood">읍면동별</button>
       </div>
-      ${layerBtns}`;
+      ${showLayerBtns ? layerBtns : ''}`;
   }
   // 기초 계열 (비례 기초 / 기초단체장): 읍면동 고정
   if (item.type === '기초' || item.type === '기초단체장') {
@@ -5114,7 +5195,7 @@ function buildTableRowsHTML(dataList, avg, isProp) {
       // 데이터 없는 행은 흐리게 표시
       return `<tr style="opacity:0.35">
         <td class="td-name"><span class="td-rank normal">—</span>${escapeHTML(n.name)}</td>
-        <td colspan="3" style="font-size:11px;color:var(--text3);text-align:center">데이터 없음</td>
+        <td colspan="3" style="font-size:12px;color:var(--text3);text-align:center">데이터 없음</td>
       </tr>`;
     }
     const diff       = modalMapLayer === 'total' ? (rateVal - avg).toFixed(2) : null;
@@ -5160,7 +5241,7 @@ function buildTableRowsHTML(dataList, avg, isProp) {
       // 레이어 모드: 평균 대비 대신 레이어 뱃지 표시
       const lbl = LAYER_BADGE_LABEL[modalMapLayer] || '';
       const clr = LAYER_BADGE_COLOR[modalMapLayer] || 'var(--orange)';
-      diffCell = `<td><span style="font-size:9px;font-weight:700;padding:2px 7px;border-radius:100px;background:${clr};color:#fff">${lbl}</span></td>`;
+      diffCell = `<td><span style="font-size:12px;font-weight:700;padding:2px 7px;border-radius:100px;background:${clr};color:#fff">${lbl}</span></td>`;
     }
 
     // 관외↑↓ 열 (전체 레이어에서만)
@@ -5468,6 +5549,7 @@ function updateModalPhoto(item, isWinner) {
   const img   = document.createElement('img');
   img.src = escapeHTML(item.imageUrl);
   img.alt = escapeHTML(item.name);
+  img.style.cssText = 'width:100%;height:100%;object-fit:cover;object-position:top center;display:block;';
   photo.innerHTML = '';
   photo.appendChild(img);
 
@@ -5477,6 +5559,7 @@ function updateModalPhoto(item, isWinner) {
     const img2 = document.createElement('img');
     img2.src = escapeHTML(item.imageUrl);
     img2.alt = escapeHTML(item.name);
+    img2.style.cssText = 'width:100%;height:100%;object-fit:cover;object-position:top center;display:block;';
     pcPhoto.innerHTML = '';
     pcPhoto.appendChild(img2);
   }
@@ -5890,7 +5973,7 @@ function renderAllCandidates() {
     const isWinner = c.result === '당선';
     const reimb = getReimb(c.voteRate, c.result);
     const reimbHTML = reimb
-      ? `<span class="badge-reimb badge-${escapeHTML(reimb.cls)}" style="font-size:9px;padding:2px 6px;">${escapeHTML(reimb.label)}</span>`
+      ? `<span class="badge-reimb badge-${escapeHTML(reimb.cls)}" style="font-size:12px;padding:2px 6px;">${escapeHTML(reimb.label)}</span>`
       : '';
     return `
       <div class="allcand-card ${isWinner ? 'is-winner' : ''}" role="button" tabindex="0" data-cand-id="${c.id}" aria-label="${escapeHTML(c.name)} ${escapeHTML(c.region)} ${c.voteRate}% ${isWinner ? '당선' : '낙선'}">
