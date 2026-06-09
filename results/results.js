@@ -6250,891 +6250,1285 @@ var REGIONAL = [
       {name:'강동구', rate:3.67, votes:10338}
     ],
 neighborhoods: [
-      { name: '종로_관외사전투표', rate: 4.60,
-        votes: { absentee: { rate: 4.60, count: 403 } } },
-      { name: '청운효자동', rate: 3.16,
-        votes: { polling: { rate: 3.39, count: 122 }, early: { rate: 2.80, count: 64 } } },
-      { name: '사직동', rate: 3.64,
-        votes: { polling: { rate: 3.79, count: 113 }, early: { rate: 3.29, count: 42 } } },
-      { name: '삼청동', rate: 2.23,
-        votes: { polling: { rate: 2.19, count: 16 }, early: { rate: 2.33, count: 7 } } },
-      { name: '부암동', rate: 2.87,
-        votes: { polling: { rate: 3.25, count: 102 }, early: { rate: 1.91, count: 24 } } },
-      { name: '평창동', rate: 2.40,
-        votes: { polling: { rate: 2.20, count: 133 }, early: { rate: 2.88, count: 69 } } },
-      { name: '무악동', rate: 3.90,
-        votes: { polling: { rate: 4.37, count: 119 }, early: { rate: 3.09, count: 49 } } },
-      { name: '교남동', rate: 4.49,
-        votes: { polling: { rate: 4.84, count: 167 }, early: { rate: 3.81, count: 67 } } },
-      { name: '가회동', rate: 2.71,
-        votes: { polling: { rate: 3.46, count: 39 }, early: { rate: 1.60, count: 12 } } },
-      { name: '종로1·2·3·4가동', rate: 3.68,
-        votes: { polling: { rate: 4.95, count: 94 }, early: { rate: 1.00, count: 9 } } },
-      { name: '종로5·6가동', rate: 5.04,
-        votes: { polling: { rate: 6.16, count: 100 }, early: { rate: 2.64, count: 20 } } },
-      { name: '이화동', rate: 3.89,
-        votes: { polling: { rate: 4.43, count: 101 }, early: { rate: 2.92, count: 37 } } },
-      { name: '혜화동', rate: 5.95,
-        votes: { polling: { rate: 6.20, count: 329 }, early: { rate: 5.51, count: 160 } } },
-      { name: '창신제1동', rate: 2.43,
-        votes: { polling: { rate: 2.99, count: 42 }, early: { rate: 1.89, count: 27 } } },
-      { name: '창신제2동', rate: 1.34,
-        votes: { polling: { rate: 1.31, count: 30 }, early: { rate: 1.38, count: 19 } } },
-      { name: '창신제3동', rate: 2.51,
-        votes: { polling: { rate: 2.50, count: 49 }, early: { rate: 2.53, count: 33 } } },
-      { name: '숭인제1동', rate: 2.44,
-        votes: { polling: { rate: 2.81, count: 49 }, early: { rate: 1.83, count: 19 } } },
-      { name: '숭인제2동', rate: 3.31,
-        votes: { polling: { rate: 3.60, count: 115 }, early: { rate: 2.74, count: 44 } } },
-{ name: '중_관외사전투표', rate: 4.88,
-        votes: { absentee: { rate: 4.88, count: 461 } } },
-      { name: '소공동', rate: 4.41,
-        votes: { polling: { rate: 3.25, count: 24 }, early: { rate: 7.54, count: 30 } } },
-      { name: '회현동', rate: 3.49,
-        votes: { polling: { rate: 3.78, count: 52 }, early: { rate: 2.91, count: 19 } } },
-      { name: '명동', rate: 4.04,
-        votes: { polling: { rate: 4.49, count: 29 }, early: { rate: 2.91, count: 10 } } },
-      { name: '필동', rate: 2.88,
-        votes: { polling: { rate: 2.74, count: 41 }, early: { rate: 3.28, count: 26 } } },
-      { name: '장충동', rate: 2.58,
-        votes: { polling: { rate: 1.93, count: 31 }, early: { rate: 4.04, count: 26 } } },
-      { name: '광희동', rate: 2.53,
-        votes: { polling: { rate: 3.15, count: 63 }, early: { rate: 1.33, count: 7 } } },
-      { name: '을지로동', rate: 4.21,
-        votes: { polling: { rate: 3.71, count: 39 }, early: { rate: 5.90, count: 36 } } },
-      { name: '신당동', rate: 2.56,
-        votes: { polling: { rate: 2.29, count: 57 }, early: { rate: 3.21, count: 33 } } },
-      { name: '다산동', rate: 3.10,
-        votes: { polling: { rate: 2.74, count: 122 }, early: { rate: 4.06, count: 68 } } },
-      { name: '약수동', rate: 3.39,
-        votes: { polling: { rate: 3.28, count: 213 }, early: { rate: 3.75, count: 85 } } },
-      { name: '청구동', rate: 3.62,
-        votes: { polling: { rate: 2.85, count: 134 }, early: { rate: 5.96, count: 81 } } },
-      { name: '신당제5동', rate: 3.11,
-        votes: { polling: { rate: 2.45, count: 76 }, early: { rate: 4.50, count: 83 } } },
-      { name: '동화동', rate: 3.53,
-        votes: { polling: { rate: 2.73, count: 98 }, early: { rate: 5.14, count: 93 } } },
-      { name: '황학동', rate: 3.16,
-        votes: { polling: { rate: 3.14, count: 147 }, early: { rate: 3.21, count: 58 } } },
-      { name: '중림동', rate: 4.69,
-        votes: { polling: { rate: 4.23, count: 186 }, early: { rate: 6.00, count: 142 } } },
-{ name: '용산_관외사전투표', rate: 4.33,
-        votes: { absentee: { rate: 4.33, count: 625 } } },
-      { name: '후암동', rate: 2.97,
-        votes: { polling: { rate: 2.50, count: 249 }, early: { rate: 4.10, count: 110 } } },
-      { name: '용산2가동', rate: 3.53,
-        votes: { polling: { rate: 4.88, count: 124 }, early: { rate: 1.03, count: 16 } } },
-      { name: '남영동', rate: 3.56,
-        votes: { polling: { rate: 3.49, count: 75 }, early: { rate: 3.77, count: 29 } } },
-      { name: '청파동', rate: 3.44,
-        votes: { polling: { rate: 3.39, count: 206 }, early: { rate: 3.56, count: 88 } } },
-      { name: '원효로제1동', rate: 4.22,
-        votes: { polling: { rate: 4.41, count: 261 }, early: { rate: 3.65, count: 105 } } },
-      { name: '원효로제2동', rate: 4.09,
-        votes: { polling: { rate: 3.84, count: 188 }, early: { rate: 4.70, count: 90 } } },
-      { name: '효창동', rate: 3.96,
-        votes: { polling: { rate: 3.82, count: 139 }, early: { rate: 4.29, count: 89 } } },
-      { name: '용문동', rate: 3.49,
-        votes: { polling: { rate: 3.56, count: 138 }, early: { rate: 3.33, count: 78 } } },
-      { name: '한강로동', rate: 6.00,
-        votes: { polling: { rate: 6.52, count: 515 }, early: { rate: 4.22, count: 102 } } },
-      { name: '이촌제1동', rate: 6.64,
-        votes: { polling: { rate: 7.27, count: 686 }, early: { rate: 4.90, count: 185 } } },
-      { name: '이촌제2동', rate: 5.76,
-        votes: { polling: { rate: 6.44, count: 212 }, early: { rate: 3.79, count: 44 } } },
-      { name: '이태원제1동', rate: 5.89,
-        votes: { polling: { rate: 6.72, count: 125 }, early: { rate: 3.84, count: 26 } } },
-      { name: '이태원제2동', rate: 5.10,
-        votes: { polling: { rate: 6.08, count: 169 }, early: { rate: 2.90, count: 33 } } },
-      { name: '한남동', rate: 6.62,
-        votes: { polling: { rate: 7.21, count: 331 }, early: { rate: 4.34, count: 50 } } },
-      { name: '서빙고동', rate: 6.36,
-        votes: { polling: { rate: 6.99, count: 310 }, early: { rate: 3.82, count: 41 } } },
-      { name: '보광동', rate: 5.02,
-        votes: { polling: { rate: 6.13, count: 99 }, early: { rate: 3.80, count: 47 } } },
-{ name: '성동_관외사전투표', rate: 4.41,
-        votes: { absentee: { rate: 4.41, count: 776 } } },
-      { name: '금호1가동', rate: 3.60,
-        votes: { polling: { rate: 3.44, count: 187 }, early: { rate: 3.79, count: 75 } } },
-      { name: '금호2·3가동', rate: 3.53,
-        votes: { polling: { rate: 3.61, count: 275 }, early: { rate: 3.39, count: 97 } } },
-      { name: '금호4가동', rate: 3.53,
-        votes: { polling: { rate: 3.06, count: 153 }, early: { rate: 4.25, count: 113 } } },
-      { name: '옥수동', rate: 4.03,
-        votes: { polling: { rate: 4.10, count: 410 }, early: { rate: 3.82, count: 124 } } },
-      { name: '왕십리도선동', rate: 3.60,
-        votes: { polling: { rate: 3.78, count: 361 }, early: { rate: 3.22, count: 105 } } },
-      { name: '왕십리제2동', rate: 3.32,
-        votes: { polling: { rate: 3.17, count: 186 }, early: { rate: 3.64, count: 104 } } },
-      { name: '행당제1동', rate: 4.09,
-        votes: { polling: { rate: 4.03, count: 240 }, early: { rate: 4.23, count: 87 } } },
-      { name: '행당제2동', rate: 4.38,
-        votes: { polling: { rate: 3.80, count: 318 }, early: { rate: 5.67, count: 204 } } },
-      { name: '마장동', rate: 3.65,
-        votes: { polling: { rate: 3.67, count: 307 }, early: { rate: 3.59, count: 108 } } },
-      { name: '사근동', rate: 2.37,
-        votes: { polling: { rate: 2.19, count: 87 }, early: { rate: 2.89, count: 41 } } },
-      { name: '송정동', rate: 2.76,
-        votes: { polling: { rate: 2.71, count: 83 }, early: { rate: 2.95, count: 42 } } },
-      { name: '용답동', rate: 3.60,
-        votes: { polling: { rate: 3.59, count: 152 }, early: { rate: 3.61, count: 77 } } },
-      { name: '응봉동', rate: 2.89,
-        votes: { polling: { rate: 2.87, count: 144 }, early: { rate: 2.94, count: 71 } } },
-      { name: '성수1가제1동', rate: 3.79,
-        votes: { polling: { rate: 3.26, count: 176 }, early: { rate: 5.48, count: 101 } } },
-      { name: '성수1가제2동', rate: 4.37,
-        votes: { polling: { rate: 3.86, count: 223 }, early: { rate: 5.95, count: 160 } } },
-      { name: '성수2가제1동', rate: 3.21,
-        votes: { polling: { rate: 2.26, count: 102 }, early: { rate: 5.05, count: 128 } } },
-      { name: '성수2가제3동', rate: 3.59,
-        votes: { polling: { rate: 3.71, count: 131 }, early: { rate: 3.35, count: 58 } } },
-{ name: '광진_관외사전투표', rate: 4.88,
-        votes: { absentee: { rate: 4.88, count: 827 } } },
-      { name: '중곡제1동', rate: 2.37,
-        votes: { polling: { rate: 2.38, count: 118 }, early: { rate: 2.34, count: 78 } } },
-      { name: '중곡제2동', rate: 3.21,
-        votes: { polling: { rate: 2.65, count: 172 }, early: { rate: 4.38, count: 151 } } },
-      { name: '중곡제3동', rate: 3.05,
-        votes: { polling: { rate: 2.85, count: 148 }, early: { rate: 3.56, count: 90 } } },
-      { name: '중곡제4동', rate: 3.07,
-        votes: { polling: { rate: 2.72, count: 266 }, early: { rate: 3.99, count: 176 } } },
-      { name: '능동', rate: 3.74,
-        votes: { polling: { rate: 3.17, count: 124 }, early: { rate: 4.95, count: 91 } } },
-      { name: '구의제1동', rate: 3.58,
-        votes: { polling: { rate: 2.92, count: 224 }, early: { rate: 4.97, count: 199 } } },
-      { name: '구의제2동', rate: 3.78,
-        votes: { polling: { rate: 3.19, count: 283 }, early: { rate: 5.23, count: 193 } } },
-      { name: '구의제3동', rate: 4.12,
-        votes: { polling: { rate: 3.45, count: 365 }, early: { rate: 5.57, count: 272 } } },
-      { name: '광장동', rate: 4.81,
-        votes: { polling: { rate: 3.84, count: 469 }, early: { rate: 7.49, count: 326 } } },
-      { name: '자양제1동', rate: 3.52,
-        votes: { polling: { rate: 2.95, count: 207 }, early: { rate: 4.38, count: 201 } } },
-      { name: '자양제2동', rate: 3.41,
-        votes: { polling: { rate: 2.75, count: 259 }, early: { rate: 5.44, count: 168 } } },
-      { name: '자양제3동', rate: 3.59,
-        votes: { polling: { rate: 2.94, count: 287 }, early: { rate: 4.91, count: 239 } } },
-      { name: '자양제4동', rate: 3.56,
-        votes: { polling: { rate: 2.63, count: 189 }, early: { rate: 5.41, count: 195 } } },
-      { name: '화양동', rate: 3.02,
-        votes: { polling: { rate: 2.44, count: 179 }, early: { rate: 4.58, count: 126 } } },
-      { name: '군자동', rate: 2.90,
-        votes: { polling: { rate: 2.73, count: 169 }, early: { rate: 3.25, count: 89 } } },
-{ name: '동대문_관외사전투표', rate: 4.88,
-        votes: { absentee: { rate: 4.88, count: 1252 } } },
-      { name: '신설동', rate: 3.75,
-        votes: { polling: { rate: 3.45, count: 184 }, early: { rate: 4.54, count: 84 } } },
-      { name: '용두동', rate: 3.53,
-        votes: { polling: { rate: 3.15, count: 238 }, early: { rate: 4.23, count: 169 } } },
-      { name: '제기동', rate: 3.39,
-        votes: { polling: { rate: 2.70, count: 211 }, early: { rate: 4.88, count: 162 } } },
-      { name: '청량리동', rate: 3.28,
-        votes: { polling: { rate: 2.82, count: 190 }, early: { rate: 4.69, count: 119 } } },
-      { name: '회기동', rate: 3.53,
-        votes: { polling: { rate: 2.53, count: 82 }, early: { rate: 4.89, count: 111 } } },
-      { name: '휘경제1동', rate: 3.90,
-        votes: { polling: { rate: 3.14, count: 173 }, early: { rate: 5.51, count: 140 } } },
-      { name: '휘경제2동', rate: 3.84,
-        votes: { polling: { rate: 3.43, count: 307 }, early: { rate: 5.86, count: 110 } } },
-      { name: '이문제1동', rate: 3.80,
-        votes: { polling: { rate: 3.58, count: 446 }, early: { rate: 5.02, count: 113 } } },
-      { name: '이문제2동', rate: 3.73,
-        votes: { polling: { rate: 3.19, count: 215 }, early: { rate: 4.86, count: 154 } } },
-      { name: '전농제1동', rate: 3.54,
-        votes: { polling: { rate: 3.42, count: 416 }, early: { rate: 3.97, count: 137 } } },
-      { name: '전농제2동', rate: 3.68,
-        votes: { polling: { rate: 3.11, count: 190 }, early: { rate: 4.75, count: 161 } } },
-      { name: '답십리제1동', rate: 3.76,
-        votes: { polling: { rate: 3.24, count: 330 }, early: { rate: 5.18, count: 188 } } },
-      { name: '답십리제2동', rate: 3.27,
-        votes: { polling: { rate: 3.10, count: 317 }, early: { rate: 3.93, count: 151 } } },
-      { name: '장안제1동', rate: 3.57,
-        votes: { polling: { rate: 3.46, count: 460 }, early: { rate: 3.96, count: 220 } } },
-      { name: '장안제2동', rate: 3.51,
-        votes: { polling: { rate: 3.18, count: 369 }, early: { rate: 4.43, count: 182 } } },
-{ name: '중랑_관외사전투표', rate: 4.88,
-        votes: { absentee: { rate: 4.88, count: 939 } } },
-      { name: '면목본동', rate: 2.69,
-        votes: { polling: { rate: 2.27, count: 210 }, early: { rate: 3.42, count: 194 } } },
-      { name: '면목제2동', rate: 2.88,
-        votes: { polling: { rate: 2.37, count: 159 }, early: { rate: 3.96, count: 139 } } },
-      { name: '면목제3·8동', rate: 3.10,
-        votes: { polling: { rate: 3.05, count: 231 }, early: { rate: 3.27, count: 102 } } },
-      { name: '면목제4동', rate: 3.49,
-        votes: { polling: { rate: 2.90, count: 164 }, early: { rate: 5.11, count: 112 } } },
-      { name: '면목제5동', rate: 3.22,
-        votes: { polling: { rate: 2.76, count: 123 }, early: { rate: 4.07, count: 104 } } },
-      { name: '면목제7동', rate: 3.18,
-        votes: { polling: { rate: 2.49, count: 160 }, early: { rate: 4.15, count: 187 } } },
-      { name: '상봉제1동', rate: 3.97,
-        votes: { polling: { rate: 3.37, count: 254 }, early: { rate: 6.02, count: 149 } } },
-      { name: '상봉제2동', rate: 2.91,
-        votes: { polling: { rate: 2.34, count: 151 }, early: { rate: 3.97, count: 141 } } },
-      { name: '중화제1동', rate: 3.10,
-        votes: { polling: { rate: 2.86, count: 161 }, early: { rate: 3.59, count: 104 } } },
-      { name: '중화제2동', rate: 3.17,
-        votes: { polling: { rate: 2.92, count: 242 }, early: { rate: 3.75, count: 149 } } },
-      { name: '묵제1동', rate: 3.93,
-        votes: { polling: { rate: 3.39, count: 389 }, early: { rate: 5.32, count: 235 } } },
-      { name: '묵제2동', rate: 3.40,
-        votes: { polling: { rate: 2.87, count: 159 }, early: { rate: 4.12, count: 166 } } },
-      { name: '망우본동', rate: 3.51,
-        votes: { polling: { rate: 3.18, count: 409 }, early: { rate: 4.38, count: 218 } } },
-      { name: '망우제3동', rate: 2.68,
-        votes: { polling: { rate: 1.95, count: 93 }, early: { rate: 3.87, count: 114 } } },
-      { name: '신내제1동', rate: 3.63,
-        votes: { polling: { rate: 3.48, count: 476 }, early: { rate: 4.25, count: 179 } } },
-      { name: '신내제2동', rate: 3.87,
-        votes: { polling: { rate: 3.39, count: 248 }, early: { rate: 4.71, count: 215 } } },
-{ name: '성북_관외사전투표', rate: 6.34,
-        votes: { absentee: { rate: 6.34, count: 1953 } } },
-      { name: '성북동', rate: 3.65,
-        votes: { polling: { rate: 3.65, count: 232 }, early: { rate: 3.66, count: 277 } } },
-      { name: '삼선동', rate: 5.64,
-        votes: { polling: { rate: 4.67, count: 310 }, early: { rate: 7.72, count: 379 } } },
-      { name: '동선동', rate: 4.65,
-        votes: { polling: { rate: 3.90, count: 189 }, early: { rate: 7.09, count: 124 } } },
-      { name: '돈암제1동', rate: 4.21,
-        votes: { polling: { rate: 3.38, count: 174 }, early: { rate: 6.42, count: 135 } } },
-      { name: '돈암제2동', rate: 6.54,
-        votes: { polling: { rate: 5.58, count: 475 }, early: { rate: 9.56, count: 262 } } },
-      { name: '안암동', rate: 4.31,
-        votes: { polling: { rate: 3.60, count: 190 }, early: { rate: 5.74, count: 144 } } },
-      { name: '보문동', rate: 4.79,
-        votes: { polling: { rate: 3.93, count: 177 }, early: { rate: 6.58, count: 164 } } },
-      { name: '정릉제1동', rate: 4.97,
-        votes: { polling: { rate: 4.79, count: 289 }, early: { rate: 5.34, count: 223 } } },
-      { name: '정릉제2동', rate: 4.48,
-        votes: { polling: { rate: 4.15, count: 268 }, early: { rate: 5.22, count: 191 } } },
-      { name: '정릉제3동', rate: 3.35,
-        votes: { polling: { rate: 2.87, count: 113 }, early: { rate: 4.30, count: 84 } } },
-      { name: '정릉제4동', rate: 4.95,
-        votes: { polling: { rate: 4.16, count: 317 }, early: { rate: 6.63, count: 270 } } },
-      { name: '길음제1동', rate: 5.89,
-        votes: { polling: { rate: 5.24, count: 653 }, early: { rate: 7.89, count: 362 } } },
-      { name: '길음제2동', rate: 4.65,
-        votes: { polling: { rate: 4.13, count: 318 }, early: { rate: 6.27, count: 184 } } },
-      { name: '종암동', rate: 4.43,
-        votes: { polling: { rate: 3.80, count: 496 }, early: { rate: 6.07, count: 345 } } },
-      { name: '월곡제1동', rate: 4.55,
-        votes: { polling: { rate: 3.89, count: 332 }, early: { rate: 6.23, count: 240 } } },
-      { name: '월곡제2동', rate: 4.29,
-        votes: { polling: { rate: 4.07, count: 270 }, early: { rate: 5.04, count: 129 } } },
-      { name: '장위제1동', rate: 3.61,
-        votes: { polling: { rate: 3.37, count: 253 }, early: { rate: 4.19, count: 132 } } },
-      { name: '장위제2동', rate: 2.79,
-        votes: { polling: { rate: 2.76, count: 149 }, early: { rate: 2.88, count: 47 } } },
-      { name: '장위제3동', rate: 4.76,
-        votes: { polling: { rate: 3.92, count: 273 }, early: { rate: 7.53, count: 174 } } },
-      { name: '석관동', rate: 3.39,
-        votes: { polling: { rate: 2.93, count: 342 }, early: { rate: 5.02, count: 188 } } },
-{ name: '강북_관외사전투표', rate: 4.88,
-        votes: { absentee: { rate: 4.88, count: 889 } } },
-      { name: '삼양동', rate: 3.70,
-        votes: { polling: { rate: 3.22, count: 258 }, early: { rate: 4.54, count: 161 } } },
-      { name: '미아동', rate: 3.45,
-        votes: { polling: { rate: 3.00, count: 195 }, early: { rate: 4.22, count: 162 } } },
-      { name: '송중동', rate: 4.01,
-        votes: { polling: { rate: 3.73, count: 329 }, early: { rate: 4.86, count: 165 } } },
-      { name: '송천동', rate: 3.16,
-        votes: { polling: { rate: 2.78, count: 210 }, early: { rate: 3.97, count: 144 } } },
-      { name: '삼각산동', rate: 5.27,
-        votes: { polling: { rate: 4.52, count: 499 }, early: { rate: 7.29, count: 290 } } },
-      { name: '번1동', rate: 3.93,
-        votes: { polling: { rate: 3.32, count: 156 }, early: { rate: 4.85, count: 151 } } },
-      { name: '번2동', rate: 3.32,
-        votes: { polling: { rate: 2.66, count: 127 }, early: { rate: 4.60, count: 99 } } },
-      { name: '번3동', rate: 3.23,
-        votes: { polling: { rate: 2.82, count: 144 }, early: { rate: 4.02, count: 110 } } },
-      { name: '수유1동', rate: 3.31,
-        votes: { polling: { rate: 2.71, count: 150 }, early: { rate: 4.31, count: 144 } } },
-      { name: '수유2동', rate: 3.84,
-        votes: { polling: { rate: 3.29, count: 200 }, early: { rate: 4.69, count: 181 } } },
-      { name: '수유3동', rate: 2.93,
-        votes: { polling: { rate: 2.83, count: 201 }, early: { rate: 3.51, count: 75 } } },
-      { name: '우이동', rate: 4.12,
-        votes: { polling: { rate: 3.33, count: 201 }, early: { rate: 5.57, count: 181 } } },
-      { name: '인수동', rate: 3.52,
-        votes: { polling: { rate: 2.54, count: 207 }, early: { rate: 5.29, count: 233 } } },
-{ name: '도봉_관외사전투표', rate: 4.88,
-        votes: { absentee: { rate: 4.88, count: 1149 } } },
-      { name: '쌍문1동', rate: 2.76,
-        votes: { polling: { rate: 2.25, count: 144 }, early: { rate: 3.99, count: 73 } } },
-      { name: '쌍문2동', rate: 2.70,
-        votes: { polling: { rate: 2.24, count: 131 }, early: { rate: 3.51, count: 72 } } },
-      { name: '쌍문3동', rate: 2.77,
-        votes: { polling: { rate: 2.37, count: 120 }, early: { rate: 3.63, count: 73 } } },
-      { name: '쌍문4동', rate: 3.67,
-        votes: { polling: { rate: 3.42, count: 188 }, early: { rate: 4.29, count: 118 } } },
-      { name: '방학1동', rate: 2.92,
-        votes: { polling: { rate: 2.45, count: 215 }, early: { rate: 3.86, count: 142 } } },
-      { name: '방학2동', rate: 2.75,
-        votes: { polling: { rate: 2.41, count: 127 }, early: { rate: 3.43, count: 107 } } },
-      { name: '방학3동', rate: 4.18,
-        votes: { polling: { rate: 3.48, count: 295 }, early: { rate: 5.76, count: 297 } } },
-      { name: '창1동', rate: 4.52,
-        votes: { polling: { rate: 3.58, count: 275 }, early: { rate: 6.66, count: 247 } } },
-      { name: '창2동', rate: 3.18,
-        votes: { polling: { rate: 2.75, count: 248 }, early: { rate: 3.98, count: 188 } } },
-      { name: '창3동', rate: 3.75,
-        votes: { polling: { rate: 3.25, count: 124 }, early: { rate: 4.54, count: 99 } } },
-      { name: '창4동', rate: 4.85,
-        votes: { polling: { rate: 4.12, count: 420 }, early: { rate: 6.84, count: 279 } } },
-      { name: '창5동', rate: 3.99,
-        votes: { polling: { rate: 3.06, count: 255 }, early: { rate: 5.91, count: 253 } } },
-      { name: '도봉1동', rate: 3.49,
-        votes: { polling: { rate: 2.92, count: 201 }, early: { rate: 4.52, count: 176 } } },
-      { name: '도봉2동', rate: 3.75,
-        votes: { polling: { rate: 3.45, count: 350 }, early: { rate: 4.31, count: 140 } } },
-{ name: '노원_관외사전투표', rate: 4.88,
-        votes: { absentee: { rate: 4.88, count: 1920 } } },
-      { name: '월계1동', rate: 3.42,
-        votes: { polling: { rate: 2.76, count: 196 }, early: { rate: 4.63, count: 179 } } },
-      { name: '월계2동', rate: 3.35,
-        votes: { polling: { rate: 2.85, count: 253 }, early: { rate: 4.60, count: 164 } } },
-      { name: '월계3동', rate: 3.30,
-        votes: { polling: { rate: 3.06, count: 356 }, early: { rate: 4.49, count: 114 } } },
-      { name: '공릉1동', rate: 3.55,
-        votes: { polling: { rate: 2.97, count: 373 }, early: { rate: 5.08, count: 277 } } },
-      { name: '공릉2동', rate: 4.23,
-        votes: { polling: { rate: 3.67, count: 548 }, early: { rate: 5.82, count: 318 } } },
-      { name: '하계1동', rate: 4.68,
-        votes: { polling: { rate: 4.12, count: 383 }, early: { rate: 6.64, count: 199 } } },
-      { name: '하계2동', rate: 5.16,
-        votes: { polling: { rate: 4.54, count: 354 }, early: { rate: 6.70, count: 204 } } },
-      { name: '중계본동', rate: 5.91,
-        votes: { polling: { rate: 4.69, count: 342 }, early: { rate: 8.93, count: 264 } } },
-      { name: '중계1동', rate: 6.24,
-        votes: { polling: { rate: 4.81, count: 388 }, early: { rate: 9.33, count: 350 } } },
-      { name: '중계2·3동', rate: 4.61,
-        votes: { polling: { rate: 3.90, count: 466 }, early: { rate: 6.32, count: 309 } } },
-      { name: '중계4동', rate: 4.36,
-        votes: { polling: { rate: 3.62, count: 237 }, early: { rate: 5.97, count: 179 } } },
-      { name: '상계1동', rate: 4.18,
-        votes: { polling: { rate: 3.39, count: 429 }, early: { rate: 5.94, count: 334 } } },
-      { name: '상계2동', rate: 4.52,
-        votes: { polling: { rate: 3.54, count: 217 }, early: { rate: 6.26, count: 216 } } },
-      { name: '상계3·4동', rate: 4.64,
-        votes: { polling: { rate: 4.24, count: 418 }, early: { rate: 5.93, count: 171 } } },
-      { name: '상계5동', rate: 3.65,
-        votes: { polling: { rate: 2.87, count: 224 }, early: { rate: 5.43, count: 188 } } },
-      { name: '상계6·7동', rate: 4.51,
-        votes: { polling: { rate: 3.69, count: 448 }, early: { rate: 7.44, count: 252 } } },
-      { name: '상계8동', rate: 5.01,
-        votes: { polling: { rate: 4.03, count: 292 }, early: { rate: 6.91, count: 258 } } },
-      { name: '상계9동', rate: 4.53,
-        votes: { polling: { rate: 3.79, count: 267 }, early: { rate: 5.95, count: 199 } } },
-      { name: '상계10동', rate: 4.25,
-        votes: { polling: { rate: 3.82, count: 240 }, early: { rate: 5.19, count: 167 } } },
-{ name: '은평_관외사전투표', rate: 4.88,
-        votes: { absentee: { rate: 4.88, count: 1896 } } },
-      { name: '녹번동', rate: 4.36,
-        votes: { polling: { rate: 3.48, count: 381 }, early: { rate: 6.20, count: 346 } } },
-      { name: '응암제1동', rate: 4.39,
-        votes: { polling: { rate: 3.72, count: 391 }, early: { rate: 6.14, count: 271 } } },
-      { name: '응암제2동', rate: 4.82,
-        votes: { polling: { rate: 4.30, count: 386 }, early: { rate: 6.34, count: 203 } } },
-      { name: '응암제3동', rate: 3.45,
-        votes: { polling: { rate: 2.75, count: 180 }, early: { rate: 4.55, count: 210 } } },
-      { name: '역촌동', rate: 3.75,
-        votes: { polling: { rate: 3.28, count: 453 }, early: { rate: 4.52, count: 325 } } },
-      { name: '신사제1동', rate: 4.06,
-        votes: { polling: { rate: 3.09, count: 231 }, early: { rate: 5.28, count: 288 } } },
-      { name: '신사제2동', rate: 3.96,
-        votes: { polling: { rate: 3.47, count: 210 }, early: { rate: 5.34, count: 135 } } },
-      { name: '증산동', rate: 4.73,
-        votes: { polling: { rate: 3.74, count: 191 }, early: { rate: 6.47, count: 189 } } },
-      { name: '수색동', rate: 4.76,
-        votes: { polling: { rate: 4.24, count: 310 }, early: { rate: 5.82, count: 233 } } },
-      { name: '불광제1동', rate: 4.57,
-        votes: { polling: { rate: 4.01, count: 512 }, early: { rate: 6.36, count: 256 } } },
-      { name: '불광제2동', rate: 3.88,
-        votes: { polling: { rate: 3.43, count: 295 }, early: { rate: 4.84, count: 191 } } },
-      { name: '갈현제1동', rate: 3.79,
-        votes: { polling: { rate: 3.00, count: 123 }, early: { rate: 4.93, count: 123 } } },
-      { name: '갈현제2동', rate: 3.66,
-        votes: { polling: { rate: 3.46, count: 282 }, early: { rate: 4.12, count: 187 } } },
-      { name: '구산동', rate: 4.35,
-        votes: { polling: { rate: 3.70, count: 341 }, early: { rate: 5.76, count: 267 } } },
-      { name: '대조동', rate: 3.46,
-        votes: { polling: { rate: 2.99, count: 256 }, early: { rate: 4.50, count: 177 } } },
-      { name: '진관동', rate: 6.13,
-        votes: { polling: { rate: 5.31, count: 1012 }, early: { rate: 8.01, count: 684 } } },
-{ name: '서대문_관외사전투표', rate: 4.88,
-        votes: { absentee: { rate: 4.88, count: 1920 } } },
-      { name: '충현동', rate: 4.09,
-        votes: { polling: { rate: 3.55, count: 233 }, early: { rate: 6.00, count: 116 } } },
-      { name: '천연동', rate: 5.01,
-        votes: { polling: { rate: 4.19, count: 257 }, early: { rate: 6.55, count: 199 } } },
-      { name: '북아현동', rate: 4.31,
-        votes: { polling: { rate: 3.57, count: 194 }, early: { rate: 5.64, count: 169 } } },
-      { name: '신촌동', rate: 3.27,
-        votes: { polling: { rate: 2.71, count: 181 }, early: { rate: 5.96, count: 90 } } },
-      { name: '연희동', rate: 4.38,
-        votes: { polling: { rate: 3.58, count: 423 }, early: { rate: 7.03, count: 252 } } },
-      { name: '홍제제1동', rate: 4.56,
-        votes: { polling: { rate: 3.65, count: 352 }, early: { rate: 8.05, count: 200 } } },
-      { name: '홍제제2동', rate: 4.92,
-        votes: { polling: { rate: 3.61, count: 164 }, early: { rate: 7.03, count: 203 } } },
-      { name: '홍제제3동', rate: 4.00,
-        votes: { polling: { rate: 3.21, count: 202 }, early: { rate: 5.85, count: 158 } } },
-      { name: '홍은제1동', rate: 4.81,
-        votes: { polling: { rate: 3.82, count: 321 }, early: { rate: 6.74, count: 290 } } },
-      { name: '홍은제2동', rate: 4.28,
-        votes: { polling: { rate: 3.52, count: 319 }, early: { rate: 6.47, count: 203 } } },
-      { name: '남가좌제1동', rate: 5.56,
-        votes: { polling: { rate: 4.15, count: 256 }, early: { rate: 7.56, count: 329 } } },
-      { name: '남가좌제2동', rate: 4.20,
-        votes: { polling: { rate: 3.86, count: 378 }, early: { rate: 5.22, count: 171 } } },
-      { name: '북가좌제1동', rate: 5.39,
-        votes: { polling: { rate: 4.09, count: 241 }, early: { rate: 7.21, count: 302 } } },
-      { name: '북가좌제2동', rate: 3.51,
-        votes: { polling: { rate: 3.14, count: 312 }, early: { rate: 4.31, count: 198 } } },
-{ name: '마포_관외사전투표', rate: 4.88,
-        votes: { absentee: { rate: 4.88, count: 1920 } } },
-      { name: '공덕동', rate: 3.45,
-        votes: { polling: { rate: 3.12, count: 415 }, early: { rate: 5.06, count: 166 } } },
-      { name: '아현동', rate: 4.55,
-        votes: { polling: { rate: 3.93, count: 411 }, early: { rate: 6.63, count: 222 } } },
-      { name: '도화동', rate: 4.43,
-        votes: { polling: { rate: 3.74, count: 301 }, early: { rate: 6.32, count: 205 } } },
-      { name: '용강동', rate: 4.32,
-        votes: { polling: { rate: 3.71, count: 285 }, early: { rate: 5.81, count: 199 } } },
-      { name: '대흥동', rate: 3.90,
-        votes: { polling: { rate: 3.32, count: 156 }, early: { rate: 5.37, count: 105 } } },
-      { name: '염리동', rate: 4.73,
-        votes: { polling: { rate: 3.93, count: 219 }, early: { rate: 6.32, count: 178 } } },
-      { name: '신수동', rate: 4.73,
-        votes: { polling: { rate: 3.86, count: 301 }, early: { rate: 7.05, count: 219 } } },
-      { name: '서강동', rate: 4.71,
-        votes: { polling: { rate: 3.68, count: 328 }, early: { rate: 7.33, count: 254 } } },
-      { name: '서교동', rate: 4.32,
-        votes: { polling: { rate: 3.42, count: 257 }, early: { rate: 6.96, count: 176 } } },
-      { name: '합정동', rate: 4.32,
-        votes: { polling: { rate: 3.15, count: 171 }, early: { rate: 6.65, count: 181 } } },
-      { name: '망원1동', rate: 4.05,
-        votes: { polling: { rate: 3.53, count: 214 }, early: { rate: 5.17, count: 176 } } },
-      { name: '망원2동', rate: 4.59,
-        votes: { polling: { rate: 3.85, count: 235 }, early: { rate: 6.06, count: 189 } } },
-      { name: '연남동', rate: 4.71,
-        votes: { polling: { rate: 3.72, count: 172 }, early: { rate: 6.44, count: 171 } } },
-      { name: '성산1동', rate: 4.55,
-        votes: { polling: { rate: 3.66, count: 213 }, early: { rate: 6.77, count: 170 } } },
-      { name: '성산2동', rate: 5.12,
-        votes: { polling: { rate: 4.30, count: 612 }, early: { rate: 7.53, count: 359 } } },
-      { name: '상암동', rate: 5.93,
-        votes: { polling: { rate: 5.56, count: 610 }, early: { rate: 7.00, count: 261 } } },
-{ name: '양천_관외사전투표', rate: 4.88,
-        votes: { absentee: { rate: 4.88, count: 1896 } } },
-      { name: '목1동', rate: 4.16,
-        votes: { polling: { rate: 3.40, count: 381 }, early: { rate: 6.84, count: 192 } } },
-      { name: '목2동', rate: 4.24,
-        votes: { polling: { rate: 3.80, count: 369 }, early: { rate: 5.25, count: 238 } } },
-      { name: '목3동', rate: 3.44,
-        votes: { polling: { rate: 2.94, count: 201 }, early: { rate: 4.54, count: 150 } } },
-      { name: '목4동', rate: 4.62,
-        votes: { polling: { rate: 3.96, count: 311 }, early: { rate: 6.05, count: 243 } } },
-      { name: '목5동', rate: 4.50,
-        votes: { polling: { rate: 3.69, count: 545 }, early: { rate: 7.00, count: 353 } } },
-      { name: '신월1동', rate: 3.04,
-        votes: { polling: { rate: 2.72, count: 167 }, early: { rate: 3.84, count: 107 } } },
-      { name: '신월2동', rate: 3.15,
-        votes: { polling: { rate: 2.76, count: 183 }, early: { rate: 4.02, count: 126 } } },
-      { name: '신월3동', rate: 2.31,
-        votes: { polling: { rate: 1.86, count: 72 }, early: { rate: 3.12, count: 65 } } },
-      { name: '신월4동', rate: 3.05,
-        votes: { polling: { rate: 2.97, count: 171 }, early: { rate: 3.20, count: 97 } } },
-      { name: '신월5동', rate: 3.31,
-        votes: { polling: { rate: 2.56, count: 99 }, early: { rate: 4.31, count: 125 } } },
-      { name: '신월6동', rate: 4.04,
-        votes: { polling: { rate: 2.58, count: 123 }, early: { rate: 6.25, count: 198 } } },
-      { name: '신월7동', rate: 3.28,
-        votes: { polling: { rate: 2.52, count: 164 }, early: { rate: 5.04, count: 142 } } },
-      { name: '신정1동', rate: 4.68,
-        votes: { polling: { rate: 3.93, count: 276 }, early: { rate: 7.07, count: 165 } } },
-      { name: '신정2동', rate: 5.38,
-        votes: { polling: { rate: 4.04, count: 238 }, early: { rate: 7.12, count: 304 } } },
-      { name: '신정3동', rate: 4.53,
-        votes: { polling: { rate: 4.16, count: 756 }, early: { rate: 6.40, count: 232 } } },
-      { name: '신정4동', rate: 3.36,
-        votes: { polling: { rate: 2.85, count: 314 }, early: { rate: 4.65, count: 200 } } },
-      { name: '신정6동', rate: 5.01,
-        votes: { polling: { rate: 4.18, count: 409 }, early: { rate: 7.92, count: 222 } } },
-      { name: '신정7동', rate: 4.48,
-        votes: { polling: { rate: 4.07, count: 459 }, early: { rate: 6.41, count: 174 } } },
-{ name: '강서_관외사전투표', rate: 4.67,
-        votes: { absentee: { rate: 4.67, count: 1149 } } },
-      { name: '염창동', rate: 3.59,
-        votes: { polling: { rate: 2.71, count: 695 }, early: { rate: 5.48, count: 441 } } },
-      { name: '등촌제1동', rate: 4.81,
-        votes: { polling: { rate: 4.14, count: 330 }, early: { rate: 6.22, count: 262 } } },
-      { name: '등촌제2동', rate: 4.51,
-        votes: { polling: { rate: 3.54, count: 223 }, early: { rate: 6.31, count: 213 } } },
-      { name: '등촌제3동', rate: 4.59,
-        votes: { polling: { rate: 4.02, count: 449 }, early: { rate: 6.16, count: 253 } } },
-      { name: '화곡본동', rate: 3.39,
-        votes: { polling: { rate: 2.79, count: 240 }, early: { rate: 4.64, count: 209 } } },
-      { name: '화곡제1동', rate: 3.68,
-        votes: { polling: { rate: 3.20, count: 477 }, early: { rate: 4.84, count: 259 } } },
-      { name: '화곡제2동', rate: 4.06,
-        votes: { polling: { rate: 3.65, count: 166 }, early: { rate: 5.09, count: 130 } } },
-      { name: '화곡제3동', rate: 3.60,
-        votes: { polling: { rate: 3.26, count: 253 }, early: { rate: 4.63, count: 136 } } },
-      { name: '화곡제4동', rate: 3.39,
-        votes: { polling: { rate: 2.82, count: 151 }, early: { rate: 5.16, count: 149 } } },
-      { name: '화곡제6동', rate: 4.07,
-        votes: { polling: { rate: 3.31, count: 276 }, early: { rate: 5.53, count: 234 } } },
-      { name: '화곡제8동', rate: 4.35,
-        votes: { polling: { rate: 3.69, count: 247 }, early: { rate: 5.52, count: 259 } } },
-      { name: '우장산동', rate: 4.45,
-        votes: { polling: { rate: 3.86, count: 583 }, early: { rate: 6.53, count: 294 } } },
-      { name: '가양제1동', rate: 4.99,
-        votes: { polling: { rate: 4.27, count: 497 }, early: { rate: 7.30, count: 252 } } },
-      { name: '가양제2동', rate: 4.72,
-        votes: { polling: { rate: 3.30, count: 178 }, early: { rate: 7.47, count: 191 } } },
-      { name: '가양제3동', rate: 3.66,
-        votes: { polling: { rate: 2.84, count: 151 }, early: { rate: 5.08, count: 138 } } },
-      { name: '발산제1동', rate: 5.43,
-        votes: { polling: { rate: 4.45, count: 566 }, early: { rate: 7.79, count: 380 } } },
-      { name: '공항동', rate: 5.02,
-        votes: { polling: { rate: 4.55, count: 439 }, early: { rate: 6.17, count: 213 } } },
-      { name: '방화제1동', rate: 5.14,
-        votes: { polling: { rate: 4.42, count: 629 }, early: { rate: 6.73, count: 411 } } },
-      { name: '방화제2동', rate: 3.66,
-        votes: { polling: { rate: 2.89, count: 222 }, early: { rate: 5.27, count: 197 } } },
-      { name: '방화제3동', rate: 4.90,
-        votes: { polling: { rate: 3.93, count: 301 }, early: { rate: 6.87, count: 263 } } },
-{ name: '구로_관외사전투표', rate: 4.88,
-        votes: { absentee: { rate: 4.88, count: 1666 } } },
-      { name: '신도림동', rate: 3.52,
-        votes: { polling: { rate: 3.23, count: 432 }, early: { rate: 4.05, count: 569 } } },
-      { name: '구로제1동', rate: 3.25,
-        votes: { polling: { rate: 2.76, count: 259 }, early: { rate: 4.39, count: 287 } } },
-      { name: '구로제2동', rate: 3.63,
-        votes: { polling: { rate: 3.10, count: 212 }, early: { rate: 5.00, count: 133 } } },
-      { name: '구로제3동', rate: 4.68,
-        votes: { polling: { rate: 3.72, count: 273 }, early: { rate: 6.57, count: 245 } } },
-      { name: '구로제4동', rate: 3.21,
-        votes: { polling: { rate: 2.92, count: 173 }, early: { rate: 3.99, count: 86 } } },
-      { name: '구로제5동', rate: 4.33,
-        votes: { polling: { rate: 3.56, count: 380 }, early: { rate: 6.70, count: 235 } } },
-      { name: '가리봉동', rate: 2.63,
-        votes: { polling: { rate: 2.21, count: 53 }, early: { rate: 3.53, count: 43 } } },
-      { name: '고척제1동', rate: 4.65,
-        votes: { polling: { rate: 3.65, count: 337 }, early: { rate: 6.63, count: 308 } } },
-      { name: '고척제2동', rate: 4.02,
-        votes: { polling: { rate: 3.20, count: 286 }, early: { rate: 6.18, count: 214 } } },
-      { name: '개봉제1동', rate: 3.80,
-        votes: { polling: { rate: 3.44, count: 415 }, early: { rate: 4.78, count: 216 } } },
-      { name: '개봉제2동', rate: 4.08,
-        votes: { polling: { rate: 3.06, count: 353 }, early: { rate: 6.34, count: 307 } } },
-      { name: '개봉제3동', rate: 3.49,
-        votes: { polling: { rate: 3.32, count: 205 }, early: { rate: 3.91, count: 115 } } },
-      { name: '오류제1동', rate: 3.66,
-        votes: { polling: { rate: 3.05, count: 237 }, early: { rate: 4.65, count: 190 } } },
-      { name: '오류제2동', rate: 4.33,
-        votes: { polling: { rate: 3.66, count: 483 }, early: { rate: 6.24, count: 281 } } },
-      { name: '수궁동', rate: 3.85,
-        votes: { polling: { rate: 3.22, count: 273 }, early: { rate: 5.61, count: 172 } } },
-      { name: '항동', rate: 6.56,
-        votes: { polling: { rate: 5.37, count: 267 }, early: { rate: 8.52, count: 273 } } },
-{ name: '금천_관외사전투표', rate: 4.88,
-        votes: { absentee: { rate: 4.88, count: 747 } } },
-      { name: '가산동', rate: 3.19,
-        votes: { polling: { rate: 2.80, count: 224 }, early: { rate: 4.02, count: 142 } } },
-      { name: '독산제1동', rate: 3.77,
-        votes: { polling: { rate: 3.73, count: 634 }, early: { rate: 4.44, count: 187 } } },
-      { name: '독산제2동', rate: 3.72,
-        votes: { polling: { rate: 3.10, count: 154 }, early: { rate: 4.88, count: 124 } } },
-      { name: '독산제3동', rate: 3.10,
-        votes: { polling: { rate: 2.49, count: 178 }, early: { rate: 4.24, count: 157 } } },
-      { name: '독산제4동', rate: 2.95,
-        votes: { polling: { rate: 2.82, count: 116 }, early: { rate: 3.23, count: 87 } } },
-      { name: '시흥제1동', rate: 3.62,
-        votes: { polling: { rate: 3.26, count: 326 }, early: { rate: 4.44, count: 190 } } },
-      { name: '시흥제2동', rate: 4.10,
-        votes: { polling: { rate: 3.40, count: 246 }, early: { rate: 5.61, count: 178 } } },
-      { name: '시흥제3동', rate: 3.84,
-        votes: { polling: { rate: 3.67, count: 126 }, early: { rate: 4.14, count: 83 } } },
-      { name: '시흥제4동', rate: 3.04,
-        votes: { polling: { rate: 2.85, count: 174 }, early: { rate: 3.51, count: 100 } } },
-      { name: '시흥제5동', rate: 3.14,
-        votes: { polling: { rate: 2.50, count: 126 }, early: { rate: 4.17, count: 149 } } },
-{ name: '영등포_관외사전투표', rate: 4.88,
-        votes: { absentee: { rate: 4.88, count: 1602 } } },
-      { name: '영등포본동', rate: 3.57,
-        votes: { polling: { rate: 3.28, count: 249 }, early: { rate: 4.69, count: 135 } } },
-      { name: '영등포동', rate: 3.12,
-        votes: { polling: { rate: 2.53, count: 259 }, early: { rate: 4.58, count: 160 } } },
-      { name: '여의동', rate: 3.25,
-        votes: { polling: { rate: 2.40, count: 333 }, early: { rate: 6.30, count: 243 } } },
-      { name: '당산제1동', rate: 3.93,
-        votes: { polling: { rate: 3.37, count: 264 }, early: { rate: 5.47, count: 149 } } },
-      { name: '당산제2동', rate: 4.30,
-        votes: { polling: { rate: 3.60, count: 511 }, early: { rate: 6.76, count: 266 } } },
-      { name: '도림동', rate: 4.02,
-        votes: { polling: { rate: 3.44, count: 203 }, early: { rate: 5.17, count: 148 } } },
-      { name: '문래동', rate: 5.27,
-        votes: { polling: { rate: 4.49, count: 544 }, early: { rate: 7.70, count: 289 } } },
-      { name: '양평제1동', rate: 4.24,
-        votes: { polling: { rate: 3.17, count: 199 }, early: { rate: 6.64, count: 212 } } },
-      { name: '양평제2동', rate: 4.45,
-        votes: { polling: { rate: 3.86, count: 310 }, early: { rate: 5.98, count: 203 } } },
-      { name: '신길제1동', rate: 3.80,
-        votes: { polling: { rate: 3.39, count: 224 }, early: { rate: 4.96, count: 114 } } },
-      { name: '신길제3동', rate: 3.73,
-        votes: { polling: { rate: 3.28, count: 194 }, early: { rate: 4.64, count: 101 } } },
-      { name: '신길제4동', rate: 3.83,
-        votes: { polling: { rate: 3.36, count: 149 }, early: { rate: 4.65, count: 77 } } },
-      { name: '신길제5동', rate: 4.36,
-        votes: { polling: { rate: 3.52, count: 118 }, early: { rate: 5.91, count: 94 } } },
-      { name: '신길제6동', rate: 4.21,
-        votes: { polling: { rate: 3.14, count: 199 }, early: { rate: 6.42, count: 196 } } },
-      { name: '신길제7동', rate: 4.09,
-        votes: { polling: { rate: 3.71, count: 268 }, early: { rate: 5.36, count: 111 } } },
-      { name: '대림제1동', rate: 4.48,
-        votes: { polling: { rate: 3.99, count: 172 }, early: { rate: 5.43, count: 138 } } },
-      { name: '대림제2동', rate: 3.82,
-        votes: { polling: { rate: 3.40, count: 133 }, early: { rate: 4.57, count: 87 } } },
-      { name: '대림제3동', rate: 4.16,
-        votes: { polling: { rate: 3.66, count: 284 }, early: { rate: 5.61, count: 153 } } },
-{ name: '동작_관외사전투표', rate: 5.37,
-        votes: { absentee: { rate: 5.37, count: 1566 } } },
-      { name: '노량진제1동', rate: 4.15,
-        votes: { polling: { rate: 3.73, count: 486 }, early: { rate: 5.11, count: 133 } } },
-      { name: '노량진제2동', rate: 4.14,
-        votes: { polling: { rate: 2.95, count: 70 }, early: { rate: 5.17, count: 105 } } },
-      { name: '상도제1동', rate: 4.14,
-        votes: { polling: { rate: 3.44, count: 553 }, early: { rate: 5.68, count: 358 } } },
-      { name: '상도제2동', rate: 4.64,
-        votes: { polling: { rate: 3.91, count: 361 }, early: { rate: 6.20, count: 252 } } },
-      { name: '상도제3동', rate: 3.49,
-        votes: { polling: { rate: 2.95, count: 226 }, early: { rate: 4.40, count: 202 } } },
-      { name: '상도제4동', rate: 4.34,
-        votes: { polling: { rate: 3.42, count: 292 }, early: { rate: 5.92, count: 275 } } },
-      { name: '흑석동', rate: 4.45,
-        votes: { polling: { rate: 3.59, count: 389 }, early: { rate: 6.44, count: 280 } } },
-      { name: '사당제1동', rate: 3.31,
-        votes: { polling: { rate: 3.01, count: 225 }, early: { rate: 3.86, count: 112 } } },
-      { name: '사당제2동', rate: 3.98,
-        votes: { polling: { rate: 3.16, count: 315 }, early: { rate: 5.48, count: 277 } } },
-      { name: '사당제3동', rate: 3.65,
-        votes: { polling: { rate: 2.91, count: 247 }, early: { rate: 5.46, count: 165 } } },
-      { name: '사당제4동', rate: 3.89,
-        votes: { polling: { rate: 3.23, count: 150 }, early: { rate: 5.25, count: 124 } } },
-      { name: '사당제5동', rate: 4.09,
-        votes: { polling: { rate: 3.32, count: 172 }, early: { rate: 5.86, count: 130 } } },
-      { name: '대방동', rate: 4.44,
-        votes: { polling: { rate: 3.96, count: 451 }, early: { rate: 5.67, count: 233 } } },
-      { name: '신대방제1동', rate: 4.54,
-        votes: { polling: { rate: 3.91, count: 326 }, early: { rate: 6.36, count: 188 } } },
-      { name: '신대방제2동', rate: 4.46,
-        votes: { polling: { rate: 3.85, count: 281 }, early: { rate: 6.17, count: 189 } } },
-{ name: '관악_관외사전투표', rate: 4.88,
-        votes: { absentee: { rate: 4.88, count: 1749 } } },
-      { name: '보라매동', rate: 4.09,
-        votes: { polling: { rate: 3.49, count: 263 }, early: { rate: 5.09, count: 159 } } },
-      { name: '은천동', rate: 4.79,
-        votes: { polling: { rate: 3.99, count: 428 }, early: { rate: 6.32, count: 313 } } },
-      { name: '성현동', rate: 4.67,
-        votes: { polling: { rate: 3.76, count: 442 }, early: { rate: 7.26, count: 283 } } },
-      { name: '중앙동', rate: 3.73,
-        votes: { polling: { rate: 3.41, count: 158 }, early: { rate: 4.39, count: 140 } } },
-      { name: '청림동', rate: 3.86,
-        votes: { polling: { rate: 3.25, count: 137 }, early: { rate: 5.51, count: 128 } } },
-      { name: '행운동', rate: 4.08,
-        votes: { polling: { rate: 3.28, count: 347 }, early: { rate: 5.56, count: 210 } } },
-      { name: '청룡동', rate: 4.02,
-        votes: { polling: { rate: 3.08, count: 390 }, early: { rate: 5.25, count: 231 } } },
-      { name: '낙성대동', rate: 4.02,
-        votes: { polling: { rate: 3.44, count: 204 }, early: { rate: 5.02, count: 119 } } },
-      { name: '인헌동', rate: 4.65,
-        votes: { polling: { rate: 3.83, count: 333 }, early: { rate: 5.72, count: 319 } } },
-      { name: '남현동', rate: 4.30,
-        votes: { polling: { rate: 3.12, count: 186 }, early: { rate: 6.34, count: 197 } } },
-      { name: '신림동', rate: 3.00,
-        votes: { polling: { rate: 2.39, count: 151 }, early: { rate: 4.46, count: 131 } } },
-      { name: '신사동', rate: 3.95,
-        votes: { polling: { rate: 3.07, count: 154 }, early: { rate: 5.58, count: 217 } } },
-      { name: '조원동', rate: 4.03,
-        votes: { polling: { rate: 3.18, count: 166 }, early: { rate: 5.75, count: 184 } } },
-      { name: '미성동', rate: 4.67,
-        votes: { polling: { rate: 3.84, count: 306 }, early: { rate: 6.48, count: 263 } } },
-      { name: '난곡동', rate: 3.73,
-        votes: { polling: { rate: 3.22, count: 228 }, early: { rate: 4.88, count: 202 } } },
-      { name: '난향동', rate: 3.76,
-        votes: { polling: { rate: 3.63, count: 207 }, early: { rate: 4.08, count: 181 } } },
-      { name: '서원동', rate: 4.03,
-        votes: { polling: { rate: 3.11, count: 211 }, early: { rate: 6.04, count: 241 } } },
-      { name: '신원동', rate: 3.59,
-        votes: { polling: { rate: 2.57, count: 126 }, early: { rate: 5.50, count: 157 } } },
-      { name: '서림동', rate: 4.14,
-        votes: { polling: { rate: 3.39, count: 253 }, early: { rate: 6.79, count: 242 } } },
-      { name: '삼성동', rate: 4.02,
-        votes: { polling: { rate: 3.49, count: 249 }, early: { rate: 4.94, count: 178 } } },
-      { name: '대학동', rate: 4.31,
-        votes: { polling: { rate: 3.42, count: 247 }, early: { rate: 6.08, count: 240 } } },
-{ name: "서초_관외사전투표", rate: 4.88, votes: { absentee: { rate: 4.88, count: 1602 } } },
-    { name: "서초1동", rate: 3.08, votes: { polling: { rate: 2.29, count: 168 }, early: { rate: 5.21, count: 141 } } },
-    { name: "서초2동", rate: 2.94, votes: { polling: { rate: 2.07, count: 186 }, early: { rate: 4.53, count: 182 } } },
-    { name: "서초3동", rate: 2.97, votes: { polling: { rate: 2.14, count: 210 }, early: { rate: 4.97, count: 168 } } },
-    { name: "서초4동", rate: 1.95, votes: { polling: { rate: 1.66, count: 201 }, early: { rate: 3.23, count: 167 } } },
-    { name: "잠원동", rate: 2.26, votes: { polling: { rate: 1.71, count: 215 }, early: { rate: 3.84, count: 178 } } },
-    { name: "반포본동", rate: 3.00, votes: { polling: { rate: 1.39, count: 1 }, early: { rate: 4.55, count: 2 } } },
-    { name: "반포1동", rate: 2.37, votes: { polling: { rate: 2.05, count: 236 }, early: { rate: 3.86, count: 225 } } },
-    { name: "반포2동", rate: 1.51, votes: { polling: { rate: 1.44, count: 151 }, early: { rate: 1.67, count: 177 } } },
-    { name: "반포3동", rate: 1.45, votes: { polling: { rate: 1.45, count: 147 }, early: { rate: 1.47, count: 118 } } },
-    { name: "반포4동", rate: 1.32, votes: { polling: { rate: 1.32, count: 151 }, early: { rate: 1.32, count: 114 } } },
-    { name: "방배본동", rate: 1.74, votes: { polling: { rate: 1.51, count: 110 }, early: { rate: 2.13, count: 111 } } },
-    { name: "방배1동", rate: 1.47, votes: { polling: { rate: 1.46, count: 136 }, early: { rate: 1.47, count: 135 } } },
-    { name: "방배2동", rate: 2.03, votes: { polling: { rate: 2.03, count: 131 }, early: { rate: 2.03, count: 177 } } },
-    { name: "방배3동", rate: 1.24, votes: { polling: { rate: 1.24, count: 164 }, early: { rate: 1.24, count: 103 } } },
-    { name: "방배4동", rate: 2.07, votes: { polling: { rate: 2.07, count: 139 }, early: { rate: 2.07, count: 144 } } },
-    { name: "양재1동", rate: 2.59, votes: { polling: { rate: 2.59, count: 155 }, early: { rate: 2.59, count: 131 } } },
-    { name: "양재2동", rate: 2.38, votes: { polling: { rate: 2.38, count: 147 }, early: { rate: 2.38, count: 153 } } },
-    { name: "내곡동", rate: 1.69, votes: { polling: { rate: 1.69, count: 136 }, early: { rate: 1.69, count: 112 } } },
-{ name: '강남_관외사전투표', rate: 4.88,
-        votes: { absentee: { rate: 4.88, count: 1631 } } },
-      { name: '신사동', rate: 4.45,
-        votes: { polling: { rate: 3.53, count: 400 }, early: { rate: 6.27, count: 53 } } },
-      { name: '논현1동', rate: 4.85,
-        votes: { polling: { rate: 4.67, count: 259 }, early: { rate: 5.48, count: 60 } } },
-      { name: '논현2동', rate: 4.96,
-        votes: { polling: { rate: 4.79, count: 469 }, early: { rate: 5.51, count: 55 } } },
-      { name: '압구정동', rate: 1.83,
-        votes: { polling: { rate: 1.83, count: 301 }, early: { rate: 1.83, count: 31 } } },
-      { name: '청담동', rate: 4.48,
-        votes: { polling: { rate: 4.48, count: 351 }, early: { rate: 4.48, count: 67 } } },
-      { name: '삼성1동', rate: 4.28,
-        votes: { polling: { rate: 4.28, count: 243 }, early: { rate: 4.28, count: 49 } } },
-      { name: '삼성2동', rate: 4.30,
-        votes: { polling: { rate: 4.30, count: 382 }, early: { rate: 4.30, count: 49 } } },
-      { name: '대치1동', rate: 3.56,
-        votes: { polling: { rate: 3.56, count: 212 }, early: { rate: 3.56, count: 29 } } },
-      { name: '대치2동', rate: 3.86,
-        votes: { polling: { rate: 3.86, count: 423 }, early: { rate: 3.86, count: 24 } } },
-      { name: '대치4동', rate: 6.34,
-        votes: { polling: { rate: 6.34, count: 284 }, early: { rate: 6.34, count: 28 } } },
-      { name: '역삼1동', rate: 6.07,
-        votes: { polling: { rate: 6.07, count: 546 }, early: { rate: 6.07, count: 30 } } },
-      { name: '역삼2동', rate: 4.77,
-        votes: { polling: { rate: 4.77, count: 472 }, early: { rate: 4.77, count: 41 } } },
-      { name: '도곡1동', rate: 4.77,
-        votes: { polling: { rate: 4.77, count: 216 }, early: { rate: 4.77, count: 19 } } },
-      { name: '도곡2동', rate: 3.61,
-        votes: { polling: { rate: 3.61, count: 258 }, early: { rate: 3.61, count: 11 } } },
-      { name: '개포1동', rate: 5.48,
-        votes: { polling: { rate: 5.48, count: 252 }, early: { rate: 5.48, count: 31 } } },
-      { name: '개포2동', rate: 4.75,
-        votes: { polling: { rate: 4.75, count: 212 }, early: { rate: 4.75, count: 28 } } },
-      { name: '개포3동', rate: 4.88,
-        votes: { polling: { rate: 4.88, count: 246 }, early: { rate: 4.88, count: 37 } } },
-      { name: '개포4동', rate: 5.96,
-        votes: { polling: { rate: 5.96, count: 269 }, early: { rate: 5.96, count: 33 } } },
-      { name: '일원본동', rate: 6.13,
-        votes: { polling: { rate: 6.13, count: 264 }, early: { rate: 6.13, count: 33 } } },
-      { name: '일원1동', rate: 6.64,
-        votes: { polling: { rate: 6.64, count: 153 }, early: { rate: 6.64, count: 25 } } },
-      { name: '수서동', rate: 6.78,
-        votes: { polling: { rate: 6.78, count: 165 }, early: { rate: 6.78, count: 26 } } },
-      { name: '세곡동', rate: 4.90,
-        votes: { polling: { rate: 4.90, count: 436 }, early: { rate: 4.90, count: 68 } } },
-{ name: '송파_관외사전투표', rate: 4.88,
-        votes: { absentee: { rate: 4.88, count: 1954 } } },
-      { name: '풍납1동', rate: 3.31,
-        votes: { polling: { rate: 2.83, count: 100 }, early: { rate: 3.96, count: 97 } } },
-      { name: '풍납2동', rate: 3.82,
-        votes: { polling: { rate: 3.04, count: 219 }, early: { rate: 5.54, count: 239 } } },
-      { name: '거여1동', rate: 3.59,
-        votes: { polling: { rate: 2.87, count: 119 }, early: { rate: 5.14, count: 99 } } },
-      { name: '거여2동', rate: 3.68,
-        votes: { polling: { rate: 3.23, count: 268 }, early: { rate: 5.14, count: 176 } } },
-      { name: '마천1동', rate: 2.94,
-        votes: { polling: { rate: 2.42, count: 132 }, early: { rate: 4.31, count: 95 } } },
-      { name: '마천2동', rate: 3.05,
-        votes: { polling: { rate: 2.14, count: 159 }, early: { rate: 5.25, count: 122 } } },
-      { name: '방이1동', rate: 3.87,
-        votes: { polling: { rate: 3.12, count: 143 }, early: { rate: 6.40, count: 165 } } },
-      { name: '방이2동', rate: 4.02,
-        votes: { polling: { rate: 2.53, count: 237 }, early: { rate: 10.88, count: 323 } } },
-      { name: '오륜동', rate: 4.19,
-        votes: { polling: { rate: 2.73, count: 172 }, early: { rate: 7.64, count: 221 } } },
-      { name: '오금동', rate: 4.84,
-        votes: { polling: { rate: 3.10, count: 445 }, early: { rate: 10.15, count: 714 } } },
-      { name: '송파1동', rate: 4.54,
-        votes: { polling: { rate: 2.86, count: 226 }, early: { rate: 9.38, count: 431 } } },
-      { name: '송파2동', rate: 4.81,
-        votes: { polling: { rate: 2.76, count: 195 }, early: { rate: 12.39, count: 271 } } },
-      { name: '석촌동', rate: 4.41,
-        votes: { polling: { rate: 2.65, count: 260 }, early: { rate: 10.42, count: 533 } } },
-      { name: '삼전동', rate: 4.25,
-        votes: { polling: { rate: 2.60, count: 243 }, early: { rate: 10.23, count: 584 } } },
-      { name: '가락본동', rate: 3.86,
-        votes: { polling: { rate: 2.70, count: 231 }, early: { rate: 7.23, count: 562 } } },
-      { name: '가락1동', rate: 4.05,
-        votes: { polling: { rate: 2.84, count: 287 }, early: { rate: 7.93, count: 323 } } },
-      { name: '가락2동', rate: 3.92,
-        votes: { polling: { rate: 3.23, count: 349 }, early: { rate: 5.76, count: 413 } } },
-      { name: '문정1동', rate: 3.47,
-        votes: { polling: { rate: 2.58, count: 186 }, early: { rate: 6.48, count: 452 } } },
-      { name: '문정2동', rate: 3.65,
-        votes: { polling: { rate: 2.57, count: 315 }, early: { rate: 8.79, count: 291 } } },
-      { name: '장지동', rate: 3.91,
-        votes: { polling: { rate: 3.12, count: 356 }, early: { rate: 6.94, count: 851 } } },
-      { name: '잠실본동', rate: 3.39,
-        votes: { polling: { rate: 2.16, count: 188 }, early: { rate: 7.37, count: 494 } } },
-      { name: '잠실2동', rate: 3.95,
-        votes: { polling: { rate: 3.19, count: 408 }, early: { rate: 7.76, count: 413 } } },
-      { name: '잠실3동', rate: 3.91,
-        votes: { polling: { rate: 2.71, count: 325 }, early: { rate: 8.44, count: 238 } } },
-      { name: '잠실4동', rate: 4.29,
-        votes: { polling: { rate: 3.15, count: 397 }, early: { rate: 9.77, count: 513 } } },
-      { name: '잠실6동', rate: 4.39,
-        votes: { polling: { rate: 2.49, count: 148 }, early: { rate: 10.45, count: 331 } } },
-      { name: '잠실7동', rate: 4.41,
-        votes: { polling: { rate: 2.45, count: 88 }, early: { rate: 10.35, count: 181 } } },
-      { name: '위례동', rate: 4.88,
-        votes: { polling: { rate: 4.46, count: 688 }, early: { rate: 6.42, count: 401 } } },
-{ name: '강동_관외사전투표', rate: 4.88,
-        votes: { absentee: { rate: 4.88, count: 1453 } } },
-      { name: '강일동', rate: 4.16,
-        votes: { polling: { rate: 3.33, count: 455 }, early: { rate: 6.25, count: 625 } } },
-      { name: '상일제1동', rate: 3.19,
-        votes: { polling: { rate: 2.52, count: 591 }, early: { rate: 6.41, count: 307 } } },
-      { name: '상일제2동', rate: 2.80,
-        votes: { polling: { rate: 2.34, count: 185 }, early: { rate: 7.05, count: 137 } } },
-      { name: '명일제1동', rate: 4.12,
-        votes: { polling: { rate: 2.36, count: 267 }, early: { rate: 6.29, count: 252 } } },
-      { name: '명일제2동', rate: 3.14,
-        votes: { polling: { rate: 2.38, count: 256 }, early: { rate: 6.78, count: 154 } } },
-      { name: '고덕제1동', rate: 4.79,
-        votes: { polling: { rate: 3.73, count: 298 }, early: { rate: 6.90, count: 247 } } },
-      { name: '고덕제2동', rate: 3.96,
-        votes: { polling: { rate: 3.29, count: 330 }, early: { rate: 5.45, count: 166 } } },
-      { name: '암사제1동', rate: 3.25,
-        votes: { polling: { rate: 2.78, count: 309 }, early: { rate: 4.24, count: 181 } } },
-      { name: '암사제2동', rate: 3.59,
-        votes: { polling: { rate: 2.88, count: 143 }, early: { rate: 4.43, count: 177 } } },
-      { name: '암사제3동', rate: 4.09,
-        votes: { polling: { rate: 3.44, count: 226 }, early: { rate: 5.43, count: 172 } } },
-      { name: '천호제1동', rate: 2.83,
-        votes: { polling: { rate: 2.45, count: 200 }, early: { rate: 3.70, count: 131 } } },
-      { name: '천호제2동', rate: 4.33,
-        votes: { polling: { rate: 3.32, count: 336 }, early: { rate: 7.37, count: 185 } } },
-      { name: '천호제3동', rate: 3.46,
-        votes: { polling: { rate: 2.90, count: 290 }, early: { rate: 4.97, count: 158 } } },
-      { name: '성내제1동', rate: 5.25,
-        votes: { polling: { rate: 3.56, count: 235 }, early: { rate: 12.39, count: 175 } } },
-      { name: '성내제2동', rate: 4.13,
-        votes: { polling: { rate: 2.95, count: 175 }, early: { rate: 8.57, count: 168 } } },
-      { name: '성내제3동', rate: 4.41,
-        votes: { polling: { rate: 3.19, count: 232 }, early: { rate: 8.44, count: 192 } } },
-      { name: '길동', rate: 4.38,
-        votes: { polling: { rate: 3.08, count: 452 }, early: { rate: 8.01, count: 246 } } },
-      { name: '둔촌제1동', rate: 5.86,
-        votes: { polling: { rate: 4.43, count: 443 }, early: { rate: 12.01, count: 328 } } },
-      { name: '둔촌제2동', rate: 3.93,
-        votes: { polling: { rate: 3.28, count: 310 }, early: { rate: 5.84, count: 213 } } }
+{
+    "name": "종로구_관외사전투표",
+    "rate": 4.56,
+    "votes": {
+      "absentee": { "rate": 4.56, "count": 403 }
+    }
+  },
+  {
+    "name": "청운효자동",
+    "rate": 3.11,
+    "votes": {
+      "polling": { "rate": 3.33, "count": 122 },
+      "early": { "rate": 2.76, "count": 64 }
+    }
+  },
+  {
+    "name": "사직동",
+    "rate": 3.60,
+    "votes": {
+      "polling": { "rate": 3.75, "count": 113 },
+      "early": { "rate": 3.24, "count": 42 }
+    }
+  },
+  {
+    "name": "삼청동",
+    "rate": 2.19,
+    "votes": {
+      "polling": { "rate": 2.15, "count": 16 },
+      "early": { "rate": 2.30, "count": 7 }
+    }
+  },
+  {
+    "name": "부암동",
+    "rate": 2.84,
+    "votes": {
+      "polling": { "rate": 3.22, "count": 102 },
+      "early": { "rate": 1.90, "count": 24 }
+    }
+  },
+  {
+    "name": "평창동",
+    "rate": 2.37,
+    "votes": {
+      "polling": { "rate": 2.18, "count": 133 },
+      "early": { "rate": 2.86, "count": 69 }
+    }
+  },
+  {
+    "name": "무악동",
+    "rate": 3.86,
+    "votes": {
+      "polling": { "rate": 4.33, "count": 119 },
+      "early": { "rate": 3.06, "count": 49 }
+    }
+  },
+  {
+    "name": "교남동",
+    "rate": 4.43,
+    "votes": {
+      "polling": { "rate": 4.77, "count": 167 },
+      "early": { "rate": 3.77, "count": 67 }
+    }
+  },
+  {
+    "name": "가회동",
+    "rate": 2.68,
+    "votes": {
+      "polling": { "rate": 3.42, "count": 39 },
+      "early": { "rate": 1.57, "count": 12 }
+    }
+  },
+  {
+    "name": "종로1·2·3·4가동",
+    "rate": 3.61,
+    "votes": {
+      "polling": { "rate": 3.82, "count": 74 },
+      "early": { "rate": 3.16, "count": 29 }
+    }
+  },
+  {
+    "name": "종로5·6가동",
+    "rate": 4.97,
+    "votes": {
+      "polling": { "rate": 6.08, "count": 100 },
+      "early": { "rate": 2.60, "count": 20 }
+    }
+  },
+  {
+    "name": "이화동",
+    "rate": 3.81,
+    "votes": {
+      "polling": { "rate": 4.32, "count": 101 },
+      "early": { "rate": 2.88, "count": 37 }
+    }
+  },
+  {
+    "name": "혜화동",
+    "rate": 5.86,
+    "votes": {
+      "polling": { "rate": 6.08, "count": 329 },
+      "early": { "rate": 5.44, "count": 160 }
+    }
+  },
+  {
+    "name": "창신제1동",
+    "rate": 2.40,
+    "votes": {
+      "polling": { "rate": 2.95, "count": 42 },
+      "early": { "rate": 1.86, "count": 27 }
+    }
+  },
+  {
+    "name": "창신제2동",
+    "rate": 1.31,
+    "votes": {
+      "polling": { "rate": 1.28, "count": 30 },
+      "early": { "rate": 1.37, "count": 19 }
+    }
+  },
+  {
+    "name": "창신제3동",
+    "rate": 2.48,
+    "votes": {
+      "polling": { "rate": 2.46, "count": 49 },
+      "early": { "rate": 2.50, "count": 33 }
+    }
+  },
+  {
+    "name": "숭인제1동",
+    "rate": 2.41,
+    "votes": {
+      "polling": { "rate": 2.76, "count": 49 },
+      "early": { "rate": 1.81, "count": 19 }
+    }
+  },
+  {
+    "name": "숭인제2동",
+    "rate": 3.27,
+    "votes": {
+      "polling": { "rate": 3.53, "count": 115 },
+      "early": { "rate": 2.73, "count": 44 }
+    }
+  },
+ {
+    "name": "중구_관외사전투표",
+    "rate": 3.83,
+    "votes": {
+      "absentee": { "rate": 3.83, "count": 352 }
+    }
+  },
+  {
+    "name": "소공동",
+    "rate": 4.28,
+    "votes": {
+      "polling": { "rate": 4.51, "count": 33 },
+      "early": { "rate": 3.85, "count": 15 }
+    }
+  },
+  {
+    "name": "회현동",
+    "rate": 3.57,
+    "votes": {
+      "polling": { "rate": 3.35, "count": 45 },
+      "early": { "rate": 4.04, "count": 26 }
+    }
+  },
+  {
+    "name": "명동",
+    "rate": 2.56,
+    "votes": {
+      "polling": { "rate": 3.46, "count": 22 },
+      "early": { "rate": 0.88, "count": 3 }
+    }
+  },
+  {
+    "name": "필동",
+    "rate": 4.04,
+    "votes": {
+      "polling": { "rate": 4.21, "count": 62 },
+      "early": { "rate": 3.74, "count": 29 }
+    }
+  },
+  {
+    "name": "장충동",
+    "rate": 4.51,
+    "votes": {
+      "polling": { "rate": 4.87, "count": 76 },
+      "early": { "rate": 3.63, "count": 23 }
+    }
+  },
+  {
+    "name": "광희동",
+    "rate": 4.63,
+    "votes": {
+      "polling": { "rate": 4.68, "count": 92 },
+      "early": { "rate": 4.47, "count": 23 }
+    }
+  },
+  {
+    "name": "을지로동",
+    "rate": 4.98,
+    "votes": {
+      "polling": { "rate": 4.99, "count": 52 },
+      "early": { "rate": 4.97, "count": 30 }
+    }
+  },
+  {
+    "name": "신당동",
+    "rate": 2.61,
+    "votes": {
+      "polling": { "rate": 2.58, "count": 63 },
+      "early": { "rate": 2.67, "count": 27 }
+    }
+  },
+  {
+    "name": "다산동",
+    "rate": 2.62,
+    "votes": {
+      "polling": { "rate": 2.82, "count": 123 },
+      "early": { "rate": 2.11, "count": 35 }
+    }
+  },
+  {
+    "name": "약수동",
+    "rate": 3.15,
+    "votes": {
+      "polling": { "rate": 3.33, "count": 213 },
+      "early": { "rate": 2.65, "count": 60 }
+    }
+  },
+  {
+    "name": "청구동",
+    "rate": 4.16,
+    "votes": {
+      "polling": { "rate": 4.24, "count": 196 },
+      "early": { "rate": 3.89, "count": 52 }
+    }
+  },
+  {
+    "name": "신당제5동",
+    "rate": 3,
+    "votes": {
+      "polling": { "rate": 3.16, "count": 96 },
+      "early": { "rate": 2.76, "count": 57 }
+    }
+  },
+  {
+    "name": "동화동",
+    "rate": 3.18,
+    "votes": {
+      "polling": { "rate": 3.59, "count": 127 },
+      "early": { "rate": 2.41, "count": 45 }
+    }
+  },
+  {
+    "name": "황학동",
+    "rate": 3.73,
+    "votes": {
+      "polling": { "rate": 3.77, "count": 176 },
+      "early": { "rate": 3.65, "count": 66 }
+    }
+  },
+  {
+    "name": "중림동",
+    "rate": 4.7,
+    "votes": {
+      "polling": { "rate": 4.71, "count": 207 },
+      "early": { "rate": 4.68, "count": 87 }
+    }
+  },
+  {
+    "name": "용산구_관외사전투표",
+    "rate": 4.33,
+    "votes": {
+      "absentee": { "rate": 4.33, "count": 625 }
+    }
+  },
+  {
+    "name": "후암동",
+    "rate": 2.96,
+    "votes": {
+      "polling": { "rate": 3.03, "count": 149 },
+      "early": { "rate": 2.83, "count": 76 }
+    }
+  },
+  {
+    "name": "용산2가동",
+    "rate": 2.43,
+    "votes": {
+      "polling": { "rate": 2.52, "count": 65 },
+      "early": { "rate": 2.27, "count": 36 }
+    }
+  },
+  {
+    "name": "남영동",
+    "rate": 3.47,
+    "votes": {
+      "polling": { "rate": 3.67, "count": 80 },
+      "early": { "rate": 2.93, "count": 23 }
+    }
+  },
+  {
+    "name": "청파동",
+    "rate": 3.31,
+    "votes": {
+      "polling": { "rate": 3.49, "count": 216 },
+      "early": { "rate": 2.86, "count": 71 }
+    }
+  },
+  {
+    "name": "원효로제1동",
+    "rate": 4.17,
+    "votes": {
+      "polling": { "rate": 3.73, "count": 223 },
+      "early": { "rate": 5.12, "count": 143 }
+    }
+  },
+  {
+    "name": "원효로제2동",
+    "rate": 3.49,
+    "votes": {
+      "polling": { "rate": 3.58, "count": 178 },
+      "early": { "rate": 3.25, "count": 63 }
+    }
+  },
+  {
+    "name": "효창동",
+    "rate": 3.69,
+    "votes": {
+      "polling": { "rate": 3.53, "count": 129 },
+      "early": { "rate": 3.96, "count": 82 }
+    }
+  },
+  {
+    "name": "용문동",
+    "rate": 3.34,
+    "votes": {
+      "polling": { "rate": 3.27, "count": 128 },
+      "early": { "rate": 3.46, "count": 82 }
+    }
+  },
+  {
+    "name": "한강로동",
+    "rate": 4.69,
+    "votes": {
+      "polling": { "rate": 4.58, "count": 362 },
+      "early": { "rate": 5.03, "count": 123 }
+    }
+  },
+  {
+    "name": "이촌제1동",
+    "rate": 4.53,
+    "votes": {
+      "polling": { "rate": 4.50, "count": 425 },
+      "early": { "rate": 4.61, "count": 177 }
+    }
+  },
+  {
+    "name": "이촌제2동",
+    "rate": 3.01,
+    "votes": {
+      "polling": { "rate": 3.02, "count": 101 },
+      "early": { "rate": 2.98, "count": 35 }
+    }
+  },
+  {
+    "name": "이태원제1동",
+    "rate": 3.03,
+    "votes": {
+      "polling": { "rate": 3.07, "count": 58 },
+      "early": { "rate": 2.94, "count": 20 }
+    }
+  },
+  {
+    "name": "이태원제2동",
+    "rate": 2.59,
+    "votes": {
+      "polling": { "rate": 2.73, "count": 77 },
+      "early": { "rate": 2.26, "count": 26 }
+    }
+  },
+  {
+    "name": "한남동",
+    "rate": 2.53,
+    "votes": {
+      "polling": { "rate": 2.39, "count": 110 },
+      "early": { "rate": 3.08, "count": 36 }
+    }
+  },
+  {
+    "name": "서빙고동",
+    "rate": 3.19,
+    "votes": {
+      "polling": { "rate": 3.48, "count": 156 },
+      "early": { "rate": 2.01, "count": 22 }
+    }
+  },
+  {
+    "name": "보광동",
+    "rate": 2.41,
+    "votes": {
+      "polling": { "rate": 2.54, "count": 42 },
+      "early": { "rate": 2.23, "count": 28 }
+    }
+  },
+{
+    "name": "성동구_관외사전투표",
+    "rate": 4.34,
+    "votes": {
+      "absentee": { "rate": 4.34, "count": 764 }
+    }
+  },
+  {
+    "name": "금호1가동",
+    "rate": 3.06,
+    "votes": {
+      "polling": { "rate": 3.15, "count": 174 },
+      "early": { "rate": 2.76, "count": 47 }
+    }
+  },
+  {
+    "name": "금호2·3가동",
+    "rate": 3.23,
+    "votes": {
+      "polling": { "rate": 3.57, "count": 275 },
+      "early": { "rate": 2.39, "count": 72 }
+    }
+  },
+  {
+    "name": "금호4가동",
+    "rate": 3.49,
+    "votes": {
+      "polling": { "rate": 4.13, "count": 209 },
+      "early": { "rate": 2.29, "count": 62 }
+    }
+  },
+  {
+    "name": "옥수동",
+    "rate": 3.99,
+    "votes": {
+      "polling": { "rate": 4.05, "count": 410 },
+      "early": { "rate": 3.79, "count": 124 }
+    }
+  },
+  {
+    "name": "왕십리도선동",
+    "rate": 3.57,
+    "votes": {
+      "polling": { "rate": 3.73, "count": 361 },
+      "early": { "rate": 3.11, "count": 105 }
+    }
+  },
+  {
+    "name": "왕십리제2동",
+    "rate": 3.26,
+    "votes": {
+      "polling": { "rate": 3.13, "count": 186 },
+      "early": { "rate": 3.54, "count": 104 }
+    }
+  },
+  {
+    "name": "행당제1동",
+    "rate": 3.87,
+    "votes": {
+      "polling": { "rate": 3.97, "count": 240 },
+      "early": { "rate": 3.61, "count": 87 }
+    }
+  },
+  {
+    "name": "행당제2동",
+    "rate": 3.57,
+    "votes": {
+      "polling": { "rate": 3.73, "count": 318 },
+      "early": { "rate": 3.21, "count": 116 }
+    }
+  },
+  {
+    "name": "마장동",
+    "rate": 3.59,
+    "votes": {
+      "polling": { "rate": 3.60, "count": 307 },
+      "early": { "rate": 3.54, "count": 108 }
+    }
+  },
+  {
+    "name": "사근동",
+    "rate": 6.90,
+    "votes": {
+      "polling": { "rate": 7.22, "count": 294 },
+      "early": { "rate": 6.02, "count": 87 }
+    }
+  },
+  {
+    "name": "송정동",
+    "rate": 2.72,
+    "votes": {
+      "polling": { "rate": 2.66, "count": 83 },
+      "early": { "rate": 2.84, "count": 41 }
+    }
+  },
+  {
+    "name": "용답동",
+    "rate": 3.61,
+    "votes": {
+      "polling": { "rate": 3.52, "count": 152 },
+      "early": { "rate": 3.78, "count": 82 }
+    }
+  },
+  {
+    "name": "응봉동",
+    "rate": 2.86,
+    "votes": {
+      "polling": { "rate": 2.85, "count": 144 },
+      "early": { "rate": 2.89, "count": 71 }
+    }
+  },
+  {
+    "name": "성수1가제1동",
+    "rate": 3.22,
+    "votes": {
+      "polling": { "rate": 3.23, "count": 176 },
+      "early": { "rate": 3.22, "count": 60 }
+    }
+  },
+  {
+    "name": "성수1가제2동",
+    "rate": 3.69,
+    "votes": {
+      "polling": { "rate": 3.79, "count": 223 },
+      "early": { "rate": 3.47, "count": 93 }
+    }
+  },
+  {
+    "name": "성수2가제1동",
+    "rate": 2.19,
+    "votes": {
+      "polling": { "rate": 2.22, "count": 102 },
+      "early": { "rate": 2.14, "count": 55 }
+    }
+  },
+  {
+    "name": "성수2가제3동",
+    "rate": 3.56,
+    "votes": {
+      "polling": { "rate": 3.68, "count": 131 },
+      "early": { "rate": 3.33, "count": 58 }
+    }
+  },
+{
+    "name": "광진구_관외사전투표",
+    "rate": 4.02,
+    "votes": {
+      "absentee": { "rate": 4.02, "count": 804 }
+    }
+  },
+  {
+    "name": "중곡제1동",
+    "rate": 2.89,
+    "votes": {
+      "polling": { "rate": 2.85, "count": 141 },
+      "early": { "rate": 2.95, "count": 78 }
+    }
+  },
+  {
+    "name": "중곡제2동",
+    "rate": 2.57,
+    "votes": {
+      "polling": { "rate": 2.79, "count": 185 },
+      "early": { "rate": 2.15, "count": 74 }
+    }
+  },
+  {
+    "name": "중곡제3동",
+    "rate": 2.31,
+    "votes": {
+      "polling": { "rate": 2.38, "count": 126 },
+      "early": { "rate": 2.17, "count": 54 }
+    }
+  },
+  {
+    "name": "중곡제4동",
+    "rate": 2.25,
+    "votes": {
+      "polling": { "rate": 2.45, "count": 244 },
+      "early": { "rate": 1.81, "count": 80 }
+    }
+  },
+  {
+    "name": "능동",
+    "rate": 3.28,
+    "votes": {
+      "polling": { "rate": 3.27, "count": 128 },
+      "early": { "rate": 3.31, "count": 61 }
+    }
+  },
+  {
+    "name": "구의제1동",
+    "rate": 4.24,
+    "votes": {
+      "polling": { "rate": 4.72, "count": 367 },
+      "early": { "rate": 3.30, "count": 133 }
+    }
+  },
+  {
+    "name": "구의제2동",
+    "rate": 2.80,
+    "votes": {
+      "polling": { "rate": 2.93, "count": 260 },
+      "early": { "rate": 2.49, "count": 92 }
+    }
+  },
+  {
+    "name": "구의제3동",
+    "rate": 3.43,
+    "votes": {
+      "polling": { "rate": 3.36, "count": 355 },
+      "early": { "rate": 3.58, "count": 176 }
+    }
+  },
+  {
+    "name": "광장동",
+    "rate": 4.34,
+    "votes": {
+      "polling": { "rate": 4.46, "count": 545 },
+      "early": { "rate": 4.00, "count": 174 }
+    }
+  },
+  {
+    "name": "자양제1동",
+    "rate": 3.13,
+    "votes": {
+      "polling": { "rate": 3.50, "count": 245 },
+      "early": { "rate": 2.57, "count": 118 }
+    }
+  },
+  {
+    "name": "자양제2동",
+    "rate": 3.21,
+    "votes": {
+      "polling": { "rate": 3.27, "count": 308 },
+      "early": { "rate": 3.04, "count": 94 }
+    }
+  },
+  {
+    "name": "자양제3동",
+    "rate": 3.67,
+    "votes": {
+      "polling": { "rate": 3.95, "count": 386 },
+      "early": { "rate": 3.13, "count": 152 }
+    }
+  },
+  {
+    "name": "자양제4동",
+    "rate": 3.67,
+    "votes": {
+      "polling": { "rate": 3.54, "count": 254 },
+      "early": { "rate": 3.94, "count": 142 }
+    }
+  },
+  {
+    "name": "화양동",
+    "rate": 5.27,
+    "votes": {
+      "polling": { "rate": 5.22, "count": 383 },
+      "early": { "rate": 5.42, "count": 149 }
+    }
+  },
+  {
+    "name": "군자동",
+    "rate": 3.51,
+    "votes": {
+      "polling": { "rate": 4.01, "count": 250 },
+      "early": { "rate": 2.33, "count": 62 }
+    }
+  },
+  {
+    "name": "동대문구_관외사전투표",
+    "rate": 4.63,
+    "votes": {
+      "absentee": { "rate": 4.63, "count": 1137 }
+    }
+  },
+  {
+    "name": "신설동",
+    "rate": 4.23,
+    "votes": {
+      "polling": { "rate": 4.56, "count": 247 },
+      "early": { "rate": 3.22, "count": 56 }
+    }
+  },
+  {
+    "name": "용두동",
+    "rate": 3.62,
+    "votes": {
+      "polling": { "rate": 4.10, "count": 314 },
+      "early": { "rate": 2.71, "count": 109 }
+    }
+  },
+  {
+    "name": "제기동",
+    "rate": 3.85,
+    "votes": {
+      "polling": { "rate": 4.22, "count": 331 },
+      "early": { "rate": 2.98, "count": 99 }
+    }
+  },
+  {
+    "name": "청량리동",
+    "rate": 2.36,
+    "votes": {
+      "polling": { "rate": 2.36, "count": 163 },
+      "early": { "rate": 2.37, "count": 60 }
+    }
+  },
+  {
+    "name": "회기동",
+    "rate": 6.05,
+    "votes": {
+      "polling": { "rate": 5.76, "count": 191 },
+      "early": { "rate": 6.47, "count": 147 }
+    }
+  },
+  {
+    "name": "휘경제1동",
+    "rate": 4.10,
+    "votes": {
+      "polling": { "rate": 4.42, "count": 248 },
+      "early": { "rate": 3.39, "count": 87 }
+    }
+  },
+  {
+    "name": "휘경제2동",
+    "rate": 4.18,
+    "votes": {
+      "polling": { "rate": 4.64, "count": 422 },
+      "early": { "rate": 1.99, "count": 38 }
+    }
+  },
+  {
+    "name": "이문제1동",
+    "rate": 4.84,
+    "votes": {
+      "polling": { "rate": 5.04, "count": 637 },
+      "early": { "rate": 3.70, "count": 84 }
+    }
+  },
+  {
+    "name": "이문제2동",
+    "rate": 2.79,
+    "votes": {
+      "polling": { "rate": 2.98, "count": 204 },
+      "early": { "rate": 2.37, "count": 76 }
+    }
+  },
+  {
+    "name": "전농제1동",
+    "rate": 3.25,
+    "votes": {
+      "polling": { "rate": 3.49, "count": 432 },
+      "early": { "rate": 2.40, "count": 84 }
+    }
+  },
+  {
+    "name": "전농제2동",
+    "rate": 2.17,
+    "votes": {
+      "polling": { "rate": 2.38, "count": 150 },
+      "early": { "rate": 1.77, "count": 60 }
+    }
+  },
+  {
+    "name": "답십리제1동",
+    "rate": 3.27,
+    "votes": {
+      "polling": { "rate": 3.52, "count": 364 },
+      "early": { "rate": 2.59, "count": 94 }
+    }
+  },
+  {
+    "name": "답십리제2동",
+    "rate": 2.72,
+    "votes": {
+      "polling": { "rate": 2.86, "count": 299 },
+      "early": { "rate": 2.34, "count": 90 }
+    }
+  },
+  {
+    "name": "장안제1동",
+    "rate": 2.79,
+    "votes": {
+      "polling": { "rate": 3.01, "count": 409 },
+      "early": { "rate": 2.23, "count": 124 }
+    }
+  },
+  {
+    "name": "장안제2동",
+    "rate": 2.72,
+    "votes": {
+      "polling": { "rate": 2.76, "count": 329 },
+      "early": { "rate": 2.63, "count": 108 }
+    }
+  },
+  {
+    "name": "중랑구_관외사전투표",
+    "rate": 3.42,
+    "votes": {
+      "absentee": { "rate": 3.42, "count": 867 }
+    }
+  },
+  {
+    "name": "면목본동",
+    "rate": 1.99,
+    "votes": {
+      "polling": { "rate": 2.03, "count": 188 },
+      "early": { "rate": 1.94, "count": 112 }
+    }
+  },
+  {
+    "name": "면목제2동",
+    "rate": 1.99,
+    "votes": {
+      "polling": { "rate": 2.01, "count": 137 },
+      "early": { "rate": 1.97, "count": 69 }
+    }
+  },
+  {
+    "name": "면목제3·8동",
+    "rate": 2.04,
+    "votes": {
+      "polling": { "rate": 2.26, "count": 172 },
+      "early": { "rate": 1.51, "count": 47 }
+    }
+  },
+  {
+    "name": "면목제4동",
+    "rate": 2.18,
+    "votes": {
+      "polling": { "rate": 2.31, "count": 131 },
+      "early": { "rate": 1.83, "count": 41 }
+    }
+  },
+  {
+    "name": "면목제5동",
+    "rate": 2.46,
+    "votes": {
+      "polling": { "rate": 2.79, "count": 125 },
+      "early": { "rate": 1.88, "count": 48 }
+    }
+  },
+  {
+    "name": "면목제7동",
+    "rate": 2.37,
+    "votes": {
+      "polling": { "rate": 2.70, "count": 173 },
+      "early": { "rate": 1.91, "count": 86 }
+    }
+  },
+  {
+    "name": "상봉제1동",
+    "rate": 2.74,
+    "votes": {
+      "polling": { "rate": 2.83, "count": 217 },
+      "early": { "rate": 2.47, "count": 61 }
+    }
+  },
+  {
+    "name": "상봉제2동",
+    "rate": 2.86,
+    "votes": {
+      "polling": { "rate": 3.14, "count": 203 },
+      "early": { "rate": 2.37, "count": 84 }
+    }
+  },
+  {
+    "name": "중화제1동",
+    "rate": 2.69,
+    "votes": {
+      "polling": { "rate": 2.92, "count": 165 },
+      "early": { "rate": 2.25, "count": 65 }
+    }
+  },
+  {
+    "name": "중화제2동",
+    "rate": 2.24,
+    "votes": {
+      "polling": { "rate": 2.20, "count": 184 },
+      "early": { "rate": 2.34, "count": 93 }
+    }
+  },
+  {
+    "name": "묵제1동",
+    "rate": 2.68,
+    "votes": {
+      "polling": { "rate": 2.90, "count": 332 },
+      "early": { "rate": 2.11, "count": 93 }
+    }
+  },
+  {
+    "name": "묵제2동",
+    "rate": 2.35,
+    "votes": {
+      "polling": { "rate": 2.45, "count": 135 },
+      "early": { "rate": 2.22, "count": 90 }
+    }
+  },
+  {
+    "name": "망우본동",
+    "rate": 2.14,
+    "votes": {
+      "polling": { "rate": 2.22, "count": 285 },
+      "early": { "rate": 1.92, "count": 96 }
+    }
+  },
+  {
+    "name": "망우제3동",
+    "rate": 1.71,
+    "votes": {
+      "polling": { "rate": 1.77, "count": 84 },
+      "early": { "rate": 1.61, "count": 48 }
+    }
+  },
+  {
+    "name": "신내제1동",
+    "rate": 2.42,
+    "votes": {
+      "polling": { "rate": 2.33, "count": 322 },
+      "early": { "rate": 2.71, "count": 115 }
+    }
+  },
+  {
+    "name": "신내제2동",
+    "rate": 2.69,
+    "votes": {
+      "polling": { "rate": 3.00, "count": 222 },
+      "early": { "rate": 2.17, "count": 99 }
+    }
+  },
+{ "name": "성북구_관외사전투표", "rate": 4.39, "votes": { "absentee": { "rate": 4.39, "count": 1334 } } },
+{ "name": "성북동", "rate": 3.47, "votes": { "polling": { "rate": 3.54, "count": 173 }, "early": { "rate": 3.34, "count": 102 } } },
+{ "name": "삼선동", "rate": 3.74, "votes": { "polling": { "rate": 4.10, "count": 292 }, "early": { "rate": 3.22, "count": 158 } } },
+{ "name": "동선동", "rate": 3.93, "votes": { "polling": { "rate": 4.21, "count": 204 }, "early": { "rate": 3.14, "count": 55 } } },
+{ "name": "돈암제1동", "rate": 3.53, "votes": { "polling": { "rate": 3.66, "count": 189 }, "early": { "rate": 3.21, "count": 67 } } },
+{ "name": "돈암제2동", "rate": 3.76, "votes": { "polling": { "rate": 3.91, "count": 327 }, "early": { "rate": 3.30, "count": 90 } } },
+{ "name": "안암동", "rate": 8.12, "votes": { "polling": { "rate": 8.71, "count": 458 }, "early": { "rate": 6.83, "count": 169 } } },
+{ "name": "보문동", "rate": 3.98, "votes": { "polling": { "rate": 3.82, "count": 174 }, "early": { "rate": 4.27, "count": 105 } } },
+{ "name": "정릉제1동", "rate": 3.01, "votes": { "polling": { "rate": 3.06, "count": 182 }, "early": { "rate": 2.90, "count": 83 } } },
+{ "name": "정릉제2동", "rate": 2.71, "votes": { "polling": { "rate": 2.77, "count": 179 }, "early": { "rate": 2.57, "count": 95 } } },
+{ "name": "정릉제3동", "rate": 3.14, "votes": { "polling": { "rate": 3.51, "count": 134 }, "early": { "rate": 2.43, "count": 47 } } },
+{ "name": "정릉제4동", "rate": 2.72, "votes": { "polling": { "rate": 3.12, "count": 238 }, "early": { "rate": 1.94, "count": 79 } } },
+{ "name": "길음제1동", "rate": 3.74, "votes": { "polling": { "rate": 3.77, "count": 469 }, "early": { "rate": 3.57, "count": 165 } } },
+{ "name": "길음제2동", "rate": 3.87, "votes": { "polling": { "rate": 3.88, "count": 299 }, "early": { "rate": 3.84, "count": 113 } } },
+{ "name": "종암동", "rate": 3.61, "votes": { "polling": { "rate": 3.79, "count": 494 }, "early": { "rate": 3.31, "count": 188 } } },
+{ "name": "월곡제1동", "rate": 2.97, "votes": { "polling": { "rate": 3.23, "count": 276 }, "early": { "rate": 2.44, "count": 94 } } },
+{ "name": "월곡제2동", "rate": 3.34, "votes": { "polling": { "rate": 3.27, "count": 217 }, "early": { "rate": 3.53, "count": 90 } } },
+{ "name": "장위제1동", "rate": 2.14, "votes": { "polling": { "rate": 2.52, "count": 186 }, "early": { "rate": 1.32, "count": 41 } } },
+{ "name": "장위제2동", "rate": 2.63, "votes": { "polling": { "rate": 2.77, "count": 147 }, "early": { "rate": 1.59, "count": 25 } } },
+{ "name": "장위제3동", "rate": 3.67, "votes": { "polling": { "rate": 3.72, "count": 259 }, "early": { "rate": 3.55, "count": 82 } } },
+{ "name": "석관동", "rate": 2.52, "votes": { "polling": { "rate": 2.64, "count": 309 }, "early": { "rate": 2.19, "count": 82 } } },
+{ "name": "강북구_관외사전투표", "rate": 3.00, "votes": { "absentee": { "rate": 3.00, "count": 525 } } },
+{ "name": "삼양동", "rate": 2.29, "votes": { "polling": { "rate": 2.38, "count": 187 }, "early": { "rate": 2.09, "count": 73 } } },
+{ "name": "미아동", "rate": 1.99, "votes": { "polling": { "rate": 2.14, "count": 139 }, "early": { "rate": 1.75, "count": 67 } } },
+{ "name": "송중동", "rate": 2.53, "votes": { "polling": { "rate": 2.69, "count": 237 }, "early": { "rate": 2.12, "count": 72 } } },
+{ "name": "송천동", "rate": 1.93, "votes": { "polling": { "rate": 2.06, "count": 156 }, "early": { "rate": 1.66, "count": 60 } } },
+{ "name": "삼각산동", "rate": 3.04, "votes": { "polling": { "rate": 3.26, "count": 360 }, "early": { "rate": 2.41, "count": 95 } } },
+{ "name": "번1동", "rate": 1.88, "votes": { "polling": { "rate": 1.89, "count": 89 }, "early": { "rate": 1.86, "count": 58 } } },
+{ "name": "번2동", "rate": 1.53, "votes": { "polling": { "rate": 1.76, "count": 84 }, "early": { "rate": 1.02, "count": 22 } } },
+{ "name": "번3동", "rate": 1.88, "votes": { "polling": { "rate": 2.03, "count": 104 }, "early": { "rate": 1.59, "count": 44 } } },
+{ "name": "수유1동", "rate": 1.79, "votes": { "polling": { "rate": 2.14, "count": 119 }, "early": { "rate": 1.19, "count": 40 } } },
+{ "name": "수유2동", "rate": 1.82, "votes": { "polling": { "rate": 1.91, "count": 116 }, "early": { "rate": 1.68, "count": 65 } } },
+{ "name": "수유3동", "rate": 2.09, "votes": { "polling": { "rate": 2.32, "count": 166 }, "early": { "rate": 1.28, "count": 27 } } },
+{ "name": "우이동", "rate": 1.86, "votes": { "polling": { "rate": 2.17, "count": 131 }, "early": { "rate": 1.28, "count": 42 } } },
+{ "name": "인수동", "rate": 1.82, "votes": { "polling": { "rate": 1.93, "count": 157 }, "early": { "rate": 1.63, "count": 72 } } },
+{ "name": "도봉구_관외사전투표", "rate": 3.71, "votes": { "absentee": { "rate": 3.71, "count": 728 } } },
+{ "name": "쌍문1동", "rate": 2.04, "votes": { "polling": { "rate": 2.26, "count": 145 }, "early": { "rate": 1.55, "count": 47 } } },
+{ "name": "쌍문2동", "rate": 2.38, "votes": { "polling": { "rate": 2.37, "count": 138 }, "early": { "rate": 2.40, "count": 66 } } },
+{ "name": "쌍문3동", "rate": 2.52, "votes": { "polling": { "rate": 2.48, "count": 126 }, "early": { "rate": 2.59, "count": 74 } } },
+{ "name": "쌍문4동", "rate": 2.67, "votes": { "polling": { "rate": 2.73, "count": 164 }, "early": { "rate": 2.55, "count": 74 } } },
+{ "name": "방학1동", "rate": 2.27, "votes": { "polling": { "rate": 2.54, "count": 226 }, "early": { "rate": 1.62, "count": 59 } } },
+{ "name": "방학2동", "rate": 1.63, "votes": { "polling": { "rate": 1.95, "count": 103 }, "early": { "rate": 1.09, "count": 34 } } },
+{ "name": "방학3동", "rate": 2.71, "votes": { "polling": { "rate": 2.59, "count": 219 }, "early": { "rate": 2.90, "count": 150 } } },
+{ "name": "창1동", "rate": 2.89, "votes": { "polling": { "rate": 2.88, "count": 223 }, "early": { "rate": 2.89, "count": 106 } } },
+{ "name": "창2동", "rate": 2.28, "votes": { "polling": { "rate": 2.52, "count": 223 }, "early": { "rate": 1.83, "count": 85 } } },
+{ "name": "창3동", "rate": 2.04, "votes": { "polling": { "rate": 2.32, "count": 88 }, "early": { "rate": 1.51, "count": 31 } } },
+{ "name": "창4동", "rate": 3.07, "votes": { "polling": { "rate": 3.01, "count": 307 }, "early": { "rate": 3.22, "count": 131 } } },
+{ "name": "창5동", "rate": 2.96, "votes": { "polling": { "rate": 2.93, "count": 244 }, "early": { "rate": 3.02, "count": 128 } } },
+{ "name": "도봉1동", "rate": 1.91, "votes": { "polling": { "rate": 1.93, "count": 130 }, "early": { "rate": 1.88, "count": 73 } } },
+{ "name": "도봉2동", "rate": 2.35, "votes": { "polling": { "rate": 2.53, "count": 257 }, "early": { "rate": 1.67, "count": 45 } } },
+{ "name": "노원구_관외사전투표", "rate": 4.67, "votes": { "absentee": { "rate": 4.67, "count": 1481 } } },
+{ "name": "월계1동", "rate": 3.58, "votes": { "polling": { "rate": 3.87, "count": 271 }, "early": { "rate": 3.02, "count": 115 } } },
+{ "name": "월계2동", "rate": 2.64, "votes": { "polling": { "rate": 2.89, "count": 251 }, "early": { "rate": 2.01, "count": 71 } } },
+{ "name": "월계3동", "rate": 3.01, "votes": { "polling": { "rate": 3.07, "count": 353 }, "early": { "rate": 2.71, "count": 68 } } },
+{ "name": "공릉1동", "rate": 3.51, "votes": { "polling": { "rate": 3.74, "count": 469 }, "early": { "rate": 2.99, "count": 163 } } },
+{ "name": "공릉2동", "rate": 3.52, "votes": { "polling": { "rate": 3.56, "count": 524 }, "early": { "rate": 3.42, "count": 187 } } },
+{ "name": "하계1동", "rate": 4.13, "votes": { "polling": { "rate": 4.19, "count": 389 }, "early": { "rate": 3.94, "count": 116 } } },
+{ "name": "하계2동", "rate": 3.64, "votes": { "polling": { "rate": 3.65, "count": 280 }, "early": { "rate": 3.60, "count": 109 } } },
+{ "name": "중계본동", "rate": 3.64, "votes": { "polling": { "rate": 3.92, "count": 282 }, "early": { "rate": 2.97, "count": 87 } } },
+{ "name": "중계1동", "rate": 4.69, "votes": { "polling": { "rate": 4.65, "count": 372 }, "early": { "rate": 4.77, "count": 178 } } },
+{ "name": "중계2·3동", "rate": 2.99, "votes": { "polling": { "rate": 3.04, "count": 355 }, "early": { "rate": 2.88, "count": 139 } } },
+{ "name": "중계4동", "rate": 3.27, "votes": { "polling": { "rate": 3.60, "count": 232 }, "early": { "rate": 2.56, "count": 76 } } },
+{ "name": "상계1동", "rate": 3.32, "votes": { "polling": { "rate": 3.41, "count": 425 }, "early": { "rate": 3.10, "count": 172 } } },
+{ "name": "상계2동", "rate": 3.76, "votes": { "polling": { "rate": 3.94, "count": 238 }, "early": { "rate": 3.43, "count": 117 } } },
+{ "name": "상계3·4동", "rate": 3.14, "votes": { "polling": { "rate": 3.40, "count": 331 }, "early": { "rate": 2.23, "count": 62 } } },
+{ "name": "상계5동", "rate": 3.36, "votes": { "polling": { "rate": 3.58, "count": 274 }, "early": { "rate": 2.88, "count": 99 } } },
+{ "name": "상계6·7동", "rate": 3.78, "votes": { "polling": { "rate": 3.90, "count": 469 }, "early": { "rate": 3.33, "count": 112 } } },
+{ "name": "상계8동", "rate": 4.71, "votes": { "polling": { "rate": 4.56, "count": 325 }, "early": { "rate": 4.96, "count": 185 } } },
+{ "name": "상계9동", "rate": 4.35, "votes": { "polling": { "rate": 4.19, "count": 286 }, "early": { "rate": 4.70, "count": 156 } } },
+{ "name": "상계10동", "rate": 4.09, "votes": { "polling": { "rate": 3.98, "count": 250 }, "early": { "rate": 4.30, "count": 137 } } },
+{ "name": "은평구_관외사전투표", "rate": 3.46, "votes": { "absentee": { "rate": 3.46, "count": 1153 } } },
+{ "name": "녹번동", "rate": 2.77, "votes": { "polling": { "rate": 3.06, "count": 335 }, "early": { "rate": 2.20, "count": 122 } } },
+{ "name": "응암제1동", "rate": 2.76, "votes": { "polling": { "rate": 3.03, "count": 319 }, "early": { "rate": 2.11, "count": 92 } } },
+{ "name": "응암제2동", "rate": 2.79, "votes": { "polling": { "rate": 3.19, "count": 284 }, "early": { "rate": 1.66, "count": 53 } } },
+{ "name": "응암제3동", "rate": 1.72, "votes": { "polling": { "rate": 1.66, "count": 109 }, "early": { "rate": 1.80, "count": 82 } } },
+{ "name": "역촌동", "rate": 1.88, "votes": { "polling": { "rate": 1.98, "count": 269 }, "early": { "rate": 1.67, "count": 120 } } },
+{ "name": "신사제1동", "rate": 1.99, "votes": { "polling": { "rate": 2.19, "count": 162 }, "early": { "rate": 1.70, "count": 92 } } },
+{ "name": "신사제2동", "rate": 2.74, "votes": { "polling": { "rate": 2.71, "count": 164 }, "early": { "rate": 2.83, "count": 71 } } },
+{ "name": "증산동", "rate": 3.10, "votes": { "polling": { "rate": 3.29, "count": 166 }, "early": { "rate": 2.77, "count": 80 } } },
+{ "name": "수색동", "rate": 4.03, "votes": { "polling": { "rate": 4.23, "count": 309 }, "early": { "rate": 3.66, "count": 145 } } },
+{ "name": "불광제1동", "rate": 2.90, "votes": { "polling": { "rate": 3.11, "count": 392 }, "early": { "rate": 2.23, "count": 89 } } },
+{ "name": "불광제2동", "rate": 1.99, "votes": { "polling": { "rate": 2.22, "count": 187 }, "early": { "rate": 1.49, "count": 58 } } },
+{ "name": "갈현제1동", "rate": 2.23, "votes": { "polling": { "rate": 2.12, "count": 86 }, "early": { "rate": 2.40, "count": 59 } } },
+{ "name": "갈현제2동", "rate": 2.40, "votes": { "polling": { "rate": 2.66, "count": 217 }, "early": { "rate": 1.90, "count": 85 } } },
+{ "name": "구산동", "rate": 2.28, "votes": { "polling": { "rate": 2.39, "count": 221 }, "early": { "rate": 2.03, "count": 94 } } },
+{ "name": "대조동", "rate": 3.08, "votes": { "polling": { "rate": 3.19, "count": 269 }, "early": { "rate": 2.84, "count": 110 } } },
+{ "name": "진관동", "rate": 3.58, "votes": { "polling": { "rate": 3.68, "count": 695 }, "early": { "rate": 3.35, "count": 285 } } },
+{ "name": "서대문구_관외사전투표", "rate": 4.81, "votes": { "absentee": { "rate": 4.81, "count": 1093 } } },
+{ "name": "충현동", "rate": 5.26, "votes": { "polling": { "rate": 5.60, "count": 383 }, "early": { "rate": 4.04, "count": 78 } } },
+{ "name": "천연동", "rate": 5.75, "votes": { "polling": { "rate": 5.97, "count": 371 }, "early": { "rate": 5.28, "count": 152 } } },
+{ "name": "북아현동", "rate": 6.02, "votes": { "polling": { "rate": 6.68, "count": 357 }, "early": { "rate": 4.83, "count": 143 } } },
+{ "name": "신촌동", "rate": 6.57, "votes": { "polling": { "rate": 6.40, "count": 427 }, "early": { "rate": 7.29, "count": 110 } } },
+{ "name": "연희동", "rate": 4.55, "votes": { "polling": { "rate": 4.79, "count": 556 }, "early": { "rate": 3.79, "count": 135 } } },
+{ "name": "홍제제1동", "rate": 3.23, "votes": { "polling": { "rate": 3.18, "count": 303 }, "early": { "rate": 3.42, "count": 84 } } },
+{ "name": "홍제제2동", "rate": 3.97, "votes": { "polling": { "rate": 4.17, "count": 186 }, "early": { "rate": 3.67, "count": 106 } } },
+{ "name": "홍제제3동", "rate": 3.41, "votes": { "polling": { "rate": 3.53, "count": 219 }, "early": { "rate": 3.14, "count": 84 } } },
+{ "name": "홍은제1동", "rate": 2.99, "votes": { "polling": { "rate": 3.13, "count": 259 }, "early": { "rate": 2.73, "count": 116 } } },
+{ "name": "홍은제2동", "rate": 2.77, "votes": { "polling": { "rate": 3.01, "count": 269 }, "early": { "rate": 2.07, "count": 64 } } },
+{ "name": "남가좌제1동", "rate": 3.98, "votes": { "polling": { "rate": 4.15, "count": 253 }, "early": { "rate": 3.74, "count": 161 } } },
+{ "name": "남가좌제2동", "rate": 3.33, "votes": { "polling": { "rate": 3.58, "count": 344 }, "early": { "rate": 2.57, "count": 83 } } },
+{ "name": "북가좌제1동", "rate": 3.65, "votes": { "polling": { "rate": 4.04, "count": 233 }, "early": { "rate": 3.10, "count": 128 } } },
+{ "name": "북가좌제2동", "rate": 2.23, "votes": { "polling": { "rate": 2.46, "count": 239 }, "early": { "rate": 1.75, "count": 79 } } },
+{ "name": "마포구_관외사전투표", "rate": 4.39, "votes": { "absentee": { "rate": 4.39, "count": 1252 } } },
+{ "name": "공덕동", "rate": 3.47, "votes": { "polling": { "rate": 3.64, "count": 485 }, "early": { "rate": 2.80, "count": 91 } } },
+{ "name": "아현동", "rate": 4.61, "votes": { "polling": { "rate": 4.79, "count": 502 }, "early": { "rate": 4.03, "count": 134 } } },
+{ "name": "도화동", "rate": 3.91, "votes": { "polling": { "rate": 3.97, "count": 320 }, "early": { "rate": 3.76, "count": 121 } } },
+{ "name": "용강동", "rate": 4.14, "votes": { "polling": { "rate": 4.50, "count": 346 }, "early": { "rate": 3.31, "count": 113 } } },
+{ "name": "대흥동", "rate": 5.47, "votes": { "polling": { "rate": 5.53, "count": 259 }, "early": { "rate": 5.33, "count": 103 } } },
+{ "name": "염리동", "rate": 4.26, "votes": { "polling": { "rate": 4.45, "count": 245 }, "early": { "rate": 3.89, "count": 109 } } },
+{ "name": "신수동", "rate": 4.13, "votes": { "polling": { "rate": 4.29, "count": 334 }, "early": { "rate": 3.72, "count": 114 } } },
+{ "name": "서강동", "rate": 4.10, "votes": { "polling": { "rate": 4.29, "count": 377 }, "early": { "rate": 3.62, "count": 124 } } },
+{ "name": "서교동", "rate": 3.68, "votes": { "polling": { "rate": 3.86, "count": 285 }, "early": { "rate": 3.16, "count": 79 } } },
+{ "name": "합정동", "rate": 2.96, "votes": { "polling": { "rate": 3.23, "count": 173 }, "early": { "rate": 2.42, "count": 65 } } },
+{ "name": "망원1동", "rate": 2.75, "votes": { "polling": { "rate": 2.92, "count": 177 }, "early": { "rate": 2.46, "count": 84 } } },
+{ "name": "망원2동", "rate": 2.47, "votes": { "polling": { "rate": 2.76, "count": 166 }, "early": { "rate": 1.91, "count": 59 } } },
+{ "name": "연남동", "rate": 2.79, "votes": { "polling": { "rate": 3.02, "count": 138 }, "early": { "rate": 2.40, "count": 63 } } },
+{ "name": "성산1동", "rate": 2.72, "votes": { "polling": { "rate": 2.93, "count": 171 }, "early": { "rate": 2.19, "count": 55 } } },
+{ "name": "성산2동", "rate": 3.14, "votes": { "polling": { "rate": 3.33, "count": 467 }, "early": { "rate": 2.57, "count": 122 } } },
+{ "name": "상암동", "rate": 3.33, "votes": { "polling": { "rate": 3.50, "count": 379 }, "early": { "rate": 2.84, "count": 105 } } },
+{ "name": "양천구_관외사전투표", "rate": 4.20, "votes": { "absentee": { "rate": 4.20, "count": 1200 } } },
+{ "name": "목1동", "rate": 4.07, "votes": { "polling": { "rate": 4.19, "count": 456 }, "early": { "rate": 3.56, "count": 99 } } },
+{ "name": "목2동", "rate": 3.66, "votes": { "polling": { "rate": 3.89, "count": 379 }, "early": { "rate": 3.15, "count": 141 } } },
+{ "name": "목3동", "rate": 2.98, "votes": { "polling": { "rate": 3.10, "count": 211 }, "early": { "rate": 2.71, "count": 89 } } },
+{ "name": "목4동", "rate": 3.38, "votes": { "polling": { "rate": 3.33, "count": 262 }, "early": { "rate": 3.48, "count": 138 } } },
+{ "name": "목5동", "rate": 4.54, "votes": { "polling": { "rate": 4.80, "count": 711 }, "early": { "rate": 3.76, "count": 188 } } },
+{ "name": "신월1동", "rate": 1.66, "votes": { "polling": { "rate": 1.82, "count": 112 }, "early": { "rate": 1.28, "count": 35 } } },
+{ "name": "신월2동", "rate": 2.24, "votes": { "polling": { "rate": 2.32, "count": 153 }, "early": { "rate": 2.04, "count": 64 } } },
+{ "name": "신월3동", "rate": 1.59, "votes": { "polling": { "rate": 1.79, "count": 68 }, "early": { "rate": 1.20, "count": 25 } } },
+{ "name": "신월4동", "rate": 1.86, "votes": { "polling": { "rate": 1.85, "count": 105 }, "early": { "rate": 1.87, "count": 56 } } },
+{ "name": "신월5동", "rate": 1.84, "votes": { "polling": { "rate": 2.12, "count": 81 }, "early": { "rate": 1.47, "count": 42 } } },
+{ "name": "신월6동", "rate": 2.82, "votes": { "polling": { "rate": 2.90, "count": 137 }, "early": { "rate": 2.70, "count": 85 } } },
+{ "name": "신월7동", "rate": 2.23, "votes": { "polling": { "rate": 2.19, "count": 140 }, "early": { "rate": 2.33, "count": 65 } } },
+{ "name": "신정1동", "rate": 3.63, "votes": { "polling": { "rate": 3.61, "count": 254 }, "early": { "rate": 3.66, "count": 85 } } },
+{ "name": "신정2동", "rate": 3.52, "votes": { "polling": { "rate": 3.67, "count": 214 }, "early": { "rate": 3.32, "count": 140 } } },
+{ "name": "신정3동", "rate": 2.65, "votes": { "polling": { "rate": 2.76, "count": 498 }, "early": { "rate": 2.08, "count": 75 } } },
+{ "name": "신정4동", "rate": 2.63, "votes": { "polling": { "rate": 2.77, "count": 300 }, "early": { "rate": 2.28, "count": 97 } } },
+{ "name": "신정6동", "rate": 4.13, "votes": { "polling": { "rate": 4.08, "count": 396 }, "early": { "rate": 4.32, "count": 120 } } },
+{ "name": "신정7동", "rate": 3.26, "votes": { "polling": { "rate": 3.23, "count": 365 }, "early": { "rate": 3.34, "count": 90 } } },
+{ "name": "강서구_관외사전투표", "rate": 3.84, "votes": { "absentee": { "rate": 3.84, "count": 1384 } } },
+{ "name": "염창동", "rate": 3.77, "votes": { "polling": { "rate": 3.95, "count": 594 }, "early": { "rate": 3.33, "count": 197 } } },
+{ "name": "등촌제1동", "rate": 3.91, "votes": { "polling": { "rate": 3.95, "count": 319 }, "early": { "rate": 3.85, "count": 162 } } },
+{ "name": "등촌제2동", "rate": 2.98, "votes": { "polling": { "rate": 3.15, "count": 201 }, "early": { "rate": 2.67, "count": 90 } } },
+{ "name": "등촌제3동", "rate": 2.78, "votes": { "polling": { "rate": 2.85, "count": 327 }, "early": { "rate": 2.57, "count": 107 } } },
+{ "name": "화곡본동", "rate": 2.41, "votes": { "polling": { "rate": 2.58, "count": 225 }, "early": { "rate": 2.09, "count": 94 } } },
+{ "name": "화곡제1동", "rate": 2.50, "votes": { "polling": { "rate": 2.55, "count": 381 }, "early": { "rate": 2.37, "count": 127 } } },
+{ "name": "화곡제2동", "rate": 1.96, "votes": { "polling": { "rate": 2.16, "count": 100 }, "early": { "rate": 1.62, "count": 45 } } },
+{ "name": "화곡제3동", "rate": 2.84, "votes": { "polling": { "rate": 3.05, "count": 240 }, "early": { "rate": 2.28, "count": 67 } } },
+{ "name": "화곡제4동", "rate": 1.90, "votes": { "polling": { "rate": 2.15, "count": 117 }, "early": { "rate": 1.52, "count": 54 } } },
+{ "name": "화곡제6동", "rate": 2.66, "votes": { "polling": { "rate": 2.87, "count": 242 }, "early": { "rate": 2.25, "count": 95 } } },
+{ "name": "화곡제8동", "rate": 2.03, "votes": { "polling": { "rate": 1.94, "count": 130 }, "early": { "rate": 2.14, "count": 106 } } },
+{ "name": "우장산동", "rate": 3.05, "votes": { "polling": { "rate": 3.25, "count": 490 }, "early": { "rate": 2.42, "count": 112 } } },
+{ "name": "가양제1동", "rate": 4.13, "votes": { "polling": { "rate": 4.15, "count": 490 }, "early": { "rate": 4.04, "count": 138 } } },
+{ "name": "가양제2동", "rate": 2.54, "votes": { "polling": { "rate": 2.41, "count": 130 }, "early": { "rate": 2.82, "count": 72 } } },
+{ "name": "가양제3동", "rate": 2.71, "votes": { "polling": { "rate": 2.55, "count": 135 }, "early": { "rate": 3.02, "count": 82 } } },
+{ "name": "발산제1동", "rate": 2.81, "votes": { "polling": { "rate": 2.90, "count": 369 }, "early": { "rate": 2.57, "count": 125 } } },
+{ "name": "공항동", "rate": 2.90, "votes": { "polling": { "rate": 2.99, "count": 289 }, "early": { "rate": 2.63, "count": 91 } } },
+{ "name": "방화제1동", "rate": 2.69, "votes": { "polling": { "rate": 2.93, "count": 416 }, "early": { "rate": 2.15, "count": 131 } } },
+{ "name": "방화제2동", "rate": 2.74, "votes": { "polling": { "rate": 2.88, "count": 222 }, "early": { "rate": 2.45, "count": 92 } } },
+{ "name": "방화제3동", "rate": 2.81, "votes": { "polling": { "rate": 2.73, "count": 213 }, "early": { "rate": 2.98, "count": 114 } } },
+{ "name": "구로구_관외사전투표", "rate": 4.38, "votes": { "absentee": { "rate": 4.38, "count": 1012 } } },
+{ "name": "신도림동", "rate": 4.49, "votes": { "polling": { "rate": 4.55, "count": 618 }, "early": { "rate": 4.35, "count": 243 } } },
+{ "name": "구로제1동", "rate": 4.00, "votes": { "polling": { "rate": 4.39, "count": 290 }, "early": { "rate": 3.39, "count": 143 } } },
+{ "name": "구로제2동", "rate": 2.35, "votes": { "polling": { "rate": 2.64, "count": 188 }, "early": { "rate": 1.58, "count": 42 } } },
+{ "name": "구로제3동", "rate": 4.40, "votes": { "polling": { "rate": 4.72, "count": 354 }, "early": { "rate": 3.77, "count": 143 } } },
+{ "name": "구로제4동", "rate": 2.63, "votes": { "polling": { "rate": 3.15, "count": 191 }, "early": { "rate": 1.22, "count": 27 } } },
+{ "name": "구로제5동", "rate": 3.79, "votes": { "polling": { "rate": 4.10, "count": 447 }, "early": { "rate": 2.85, "count": 100 } } },
+{ "name": "가리봉동", "rate": 3.15, "votes": { "polling": { "rate": 3.32, "count": 81 }, "early": { "rate": 2.79, "count": 34 } } },
+{ "name": "고척제1동", "rate": 3.63, "votes": { "polling": { "rate": 3.82, "count": 359 }, "early": { "rate": 3.26, "count": 153 } } },
+{ "name": "고척제2동", "rate": 2.28, "votes": { "polling": { "rate": 2.33, "count": 208 }, "early": { "rate": 2.17, "count": 76 } } },
+{ "name": "개봉제1동", "rate": 2.71, "votes": { "polling": { "rate": 3.06, "count": 369 }, "early": { "rate": 1.77, "count": 80 } } },
+{ "name": "개봉제2동", "rate": 2.80, "votes": { "polling": { "rate": 2.88, "count": 332 }, "early": { "rate": 2.59, "count": 127 } } },
+{ "name": "개봉제3동", "rate": 2.21, "votes": { "polling": { "rate": 2.51, "count": 157 }, "early": { "rate": 1.58, "count": 47 } } },
+{ "name": "오류제1동", "rate": 2.71, "votes": { "polling": { "rate": 2.72, "count": 211 }, "early": { "rate": 2.69, "count": 110 } } },
+{ "name": "오류제2동", "rate": 2.45, "votes": { "polling": { "rate": 2.51, "count": 328 }, "early": { "rate": 2.28, "count": 104 } } },
+{ "name": "수궁동", "rate": 2.09, "votes": { "polling": { "rate": 2.21, "count": 188 }, "early": { "rate": 1.75, "count": 54 } } },
+{ "name": "항동", "rate": 3.29, "votes": { "polling": { "rate": 3.38, "count": 169 }, "early": { "rate": 3.16, "count": 102 } } },
+{ "name": "금천구_관외사전투표", "rate": 3.28, "votes": { "absentee": { "rate": 3.28, "count": 498 } } },
+{ "name": "가산동", "rate": 4.57, "votes": { "polling": { "rate": 4.97, "count": 404 }, "early": { "rate": 3.65, "count": 129 } } },
+{ "name": "독산제1동", "rate": 3.77, "votes": { "polling": { "rate": 3.66, "count": 640 }, "early": { "rate": 4.25, "count": 179 } } },
+{ "name": "독산제2동", "rate": 2.07, "votes": { "polling": { "rate": 2.17, "count": 109 }, "early": { "rate": 1.89, "count": 48 } } },
+{ "name": "독산제3동", "rate": 1.85, "votes": { "polling": { "rate": 2.01, "count": 146 }, "early": { "rate": 1.54, "count": 57 } } },
+{ "name": "독산제4동", "rate": 1.96, "votes": { "polling": { "rate": 2.04, "count": 86 }, "early": { "rate": 1.84, "count": 52 } } },
+{ "name": "시흥제1동", "rate": 2.59, "votes": { "polling": { "rate": 2.81, "count": 285 }, "early": { "rate": 2.07, "count": 90 } } },
+{ "name": "시흥제2동", "rate": 2.15, "votes": { "polling": { "rate": 2.16, "count": 159 }, "early": { "rate": 2.11, "count": 67 } } },
+{ "name": "시흥제3동", "rate": 2.29, "votes": { "polling": { "rate": 2.60, "count": 91 }, "early": { "rate": 1.74, "count": 35 } } },
+{ "name": "시흥제4동", "rate": 1.85, "votes": { "polling": { "rate": 2.11, "count": 132 }, "early": { "rate": 1.30, "count": 38 } } },
+{ "name": "시흥제5동", "rate": 2.00, "votes": { "polling": { "rate": 2.14, "count": 110 }, "early": { "rate": 1.79, "count": 65 } } },
+{ "name": "영등포구_관외사전투표", "rate": 5.08, "votes": { "absentee": { "rate": 5.08, "count": 1484 } } },
+{ "name": "영등포본동", "rate": 3.11, "votes": { "polling": { "rate": 3.24, "count": 251 }, "early": { "rate": 2.78, "count": 80 } } },
+{ "name": "영등포동", "rate": 5.96, "votes": { "polling": { "rate": 6.07, "count": 615 }, "early": { "rate": 5.63, "count": 199 } } },
+{ "name": "여의동", "rate": 4.13, "votes": { "polling": { "rate": 3.93, "count": 545 }, "early": { "rate": 4.87, "count": 188 } } },
+{ "name": "당산제1동", "rate": 4.89, "votes": { "polling": { "rate": 4.78, "count": 380 }, "early": { "rate": 5.21, "count": 142 } } },
+{ "name": "당산제2동", "rate": 4.91, "votes": { "polling": { "rate": 4.83, "count": 695 }, "early": { "rate": 5.19, "count": 204 } } },
+{ "name": "도림동", "rate": 2.91, "votes": { "polling": { "rate": 2.94, "count": 175 }, "early": { "rate": 2.86, "count": 82 } } },
+{ "name": "문래동", "rate": 3.74, "votes": { "polling": { "rate": 3.99, "count": 490 }, "early": { "rate": 2.93, "count": 110 } } },
+{ "name": "양평제1동", "rate": 5.12, "votes": { "polling": { "rate": 5.30, "count": 345 }, "early": { "rate": 4.77, "count": 160 } } },
+{ "name": "양평제2동", "rate": 4.18, "votes": { "polling": { "rate": 4.08, "count": 341 }, "early": { "rate": 4.42, "count": 150 } } },
+{ "name": "신길제1동", "rate": 3.28, "votes": { "polling": { "rate": 3.32, "count": 219 }, "early": { "rate": 3.18, "count": 73 } } },
+{ "name": "신길제3동", "rate": 3.24, "votes": { "polling": { "rate": 3.17, "count": 187 }, "early": { "rate": 3.45, "count": 75 } } },
+{ "name": "신길제4동", "rate": 3.11, "votes": { "polling": { "rate": 3.40, "count": 153 }, "early": { "rate": 2.21, "count": 32 } } },
+{ "name": "신길제5동", "rate": 3.08, "votes": { "polling": { "rate": 3.42, "count": 115 }, "early": { "rate": 2.34, "count": 35 } } },
+{ "name": "신길제6동", "rate": 3.70, "votes": { "polling": { "rate": 4.00, "count": 253 }, "early": { "rate": 3.08, "count": 94 } } },
+{ "name": "신길제7동", "rate": 4.17, "votes": { "polling": { "rate": 4.31, "count": 311 }, "early": { "rate": 3.70, "count": 76 } } },
+{ "name": "대림제1동", "rate": 2.40, "votes": { "polling": { "rate": 2.29, "count": 100 }, "early": { "rate": 2.60, "count": 66 } } },
+{ "name": "대림제2동", "rate": 2.59, "votes": { "polling": { "rate": 2.74, "count": 110 }, "early": { "rate": 2.29, "count": 44 } } },
+{ "name": "대림제3동", "rate": 2.69, "votes": { "polling": { "rate": 2.71, "count": 210 }, "early": { "rate": 2.64, "count": 72 } } },
+{ "name": "동작구_관외사전투표", "rate": 6.33, "votes": { "absentee": { "rate": 6.33, "count": 2014 } } },
+{ "name": "노량진제1동", "rate": 6.29, "votes": { "polling": { "rate": 6.31, "count": 824 }, "early": { "rate": 6.18, "count": 161 } } },
+{ "name": "노량진제2동", "rate": 5.99, "votes": { "polling": { "rate": 5.86, "count": 143 }, "early": { "rate": 6.16, "count": 119 } } },
+{ "name": "상도제1동", "rate": 6.51, "votes": { "polling": { "rate": 6.57, "count": 1071 }, "early": { "rate": 6.34, "count": 404 } } },
+{ "name": "상도제2동", "rate": 6.54, "votes": { "polling": { "rate": 6.76, "count": 633 }, "early": { "rate": 6.02, "count": 244 } } },
+{ "name": "상도제3동", "rate": 4.41, "votes": { "polling": { "rate": 4.62, "count": 361 }, "early": { "rate": 4.08, "count": 206 } } },
+{ "name": "상도제4동", "rate": 5.45, "votes": { "polling": { "rate": 5.48, "count": 477 }, "early": { "rate": 5.41, "count": 251 } } },
+{ "name": "흑석동", "rate": 5.40, "votes": { "polling": { "rate": 5.30, "count": 582 }, "early": { "rate": 5.68, "count": 247 } } },
+{ "name": "사당제1동", "rate": 4.64, "votes": { "polling": { "rate": 4.76, "count": 370 }, "early": { "rate": 4.31, "count": 117 } } },
+{ "name": "사당제2동", "rate": 5.14, "votes": { "polling": { "rate": 5.41, "count": 545 }, "early": { "rate": 4.61, "count": 237 } } },
+{ "name": "사당제3동", "rate": 4.86, "votes": { "polling": { "rate": 4.92, "count": 424 }, "early": { "rate": 4.68, "count": 143 } } },
+{ "name": "사당제4동", "rate": 4.39, "votes": { "polling": { "rate": 4.24, "count": 201 }, "early": { "rate": 4.65, "count": 118 } } },
+{ "name": "사당제5동", "rate": 5.28, "votes": { "polling": { "rate": 5.17, "count": 267 }, "early": { "rate": 5.51, "count": 132 } } },
+{ "name": "대방동", "rate": 5.54, "votes": { "polling": { "rate": 5.61, "count": 650 }, "early": { "rate": 5.34, "count": 224 } } },
+{ "name": "신대방제1동", "rate": 4.23, "votes": { "polling": { "rate": 4.31, "count": 368 }, "early": { "rate": 3.99, "count": 121 } } },
+{ "name": "신대방제2동", "rate": 4.96, "votes": { "polling": { "rate": 5.03, "count": 386 }, "early": { "rate": 4.80, "count": 151 } } },
+{ "name": "관악구_관외사전투표", "rate": 5.64, "votes": { "absentee": { "rate": 5.64, "count": 1836 } } },
+{ "name": "보라매동", "rate": 3.40, "votes": { "polling": { "rate": 3.25, "count": 258 }, "early": { "rate": 3.78, "count": 119 } } },
+{ "name": "은천동", "rate": 3.88, "votes": { "polling": { "rate": 4.05, "count": 443 }, "early": { "rate": 3.49, "count": 169 } } },
+{ "name": "성현동", "rate": 4.19, "votes": { "polling": { "rate": 4.36, "count": 494 }, "early": { "rate": 3.69, "count": 144 } } },
+{ "name": "중앙동", "rate": 5.88, "votes": { "polling": { "rate": 6.14, "count": 288 }, "early": { "rate": 5.46, "count": 156 } } },
+{ "name": "청림동", "rate": 4.51, "votes": { "polling": { "rate": 4.96, "count": 277 }, "early": { "rate": 3.47, "count": 85 } } },
+{ "name": "행운동", "rate": 5.29, "votes": { "polling": { "rate": 5.31, "count": 536 }, "early": { "rate": 5.26, "count": 196 } } },
+{ "name": "청룡동", "rate": 5.69, "votes": { "polling": { "rate": 6.24, "count": 784 }, "early": { "rate": 4.12, "count": 182 } } },
+{ "name": "낙성대동", "rate": 7.59, "votes": { "polling": { "rate": 7.93, "count": 472 }, "early": { "rate": 6.73, "count": 161 } } },
+{ "name": "인헌동", "rate": 5.23, "votes": { "polling": { "rate": 5.63, "count": 473 }, "early": { "rate": 4.64, "count": 258 } } },
+{ "name": "남현동", "rate": 4.32, "votes": { "polling": { "rate": 4.47, "count": 263 }, "early": { "rate": 4.05, "count": 123 } } },
+{ "name": "신림동", "rate": 5.52, "votes": { "polling": { "rate": 5.76, "count": 370 }, "early": { "rate": 5.00, "count": 147 } } },
+{ "name": "신사동", "rate": 3.85, "votes": { "polling": { "rate": 3.90, "count": 255 }, "early": { "rate": 3.75, "count": 148 } } },
+{ "name": "조원동", "rate": 3.91, "votes": { "polling": { "rate": 4.26, "count": 270 }, "early": { "rate": 3.24, "count": 104 } } },
+{ "name": "미성동", "rate": 2.97, "votes": { "polling": { "rate": 3.33, "count": 325 }, "early": { "rate": 2.13, "count": 89 } } },
+{ "name": "난곡동", "rate": 3.22, "votes": { "polling": { "rate": 3.31, "count": 254 }, "early": { "rate": 3.04, "count": 108 } } },
+{ "name": "난향동", "rate": 3.25, "votes": { "polling": { "rate": 3.47, "count": 167 }, "early": { "rate": 2.85, "count": 74 } } },
+{ "name": "서원동", "rate": 4.36, "votes": { "polling": { "rate": 4.29, "count": 297 }, "early": { "rate": 4.55, "count": 130 } } },
+{ "name": "신원동", "rate": 3.84, "votes": { "polling": { "rate": 4.16, "count": 208 }, "early": { "rate": 3.35, "count": 108 } } },
+{ "name": "서림동", "rate": 5.07, "votes": { "polling": { "rate": 5.43, "count": 412 }, "early": { "rate": 3.78, "count": 79 } } },
+{ "name": "삼성동", "rate": 2.48, "votes": { "polling": { "rate": 2.60, "count": 190 }, "early": { "rate": 2.22, "count": 80 } } },
+{ "name": "대학동", "rate": 7.56, "votes": { "polling": { "rate": 8.07, "count": 595 }, "early": { "rate": 6.61, "count": 261 } } },
+{ "name": "서초구_관외사전투표", "rate": 5.41, "votes": { "absentee": { "rate": 5.41, "count": 1283 } } },
+{ "name": "서초1동", "rate": 4.21, "votes": { "polling": { "rate": 4.12, "count": 302 }, "early": { "rate": 4.45, "count": 120 } } },
+{ "name": "서초2동", "rate": 4.93, "votes": { "polling": { "rate": 4.66, "count": 435 }, "early": { "rate": 5.82, "count": 167 } } },
+{ "name": "서초3동", "rate": 4.30, "votes": { "polling": { "rate": 4.18, "count": 516 }, "early": { "rate": 4.71, "count": 163 } } },
+{ "name": "서초4동", "rate": 4.70, "votes": { "polling": { "rate": 4.40, "count": 533 }, "early": { "rate": 6.31, "count": 145 } } },
+{ "name": "잠원동", "rate": 5.31, "votes": { "polling": { "rate": 5.30, "count": 734 }, "early": { "rate": 5.36, "count": 196 } } },
+{ "name": "반포본동", "rate": 2.13, "votes": { "polling": { "rate": 5.77, "count": 3 }, "early": { "rate": 0.00, "count": 0 } } },
+{ "name": "반포1동", "rate": 4.64, "votes": { "polling": { "rate": 4.65, "count": 541 }, "early": { "rate": 4.61, "count": 154 } } },
+{ "name": "반포2동", "rate": 4.50, "votes": { "polling": { "rate": 4.43, "count": 470 }, "early": { "rate": 4.75, "count": 144 } } },
+{ "name": "반포3동", "rate": 5.08, "votes": { "polling": { "rate": 4.95, "count": 455 }, "early": { "rate": 5.48, "count": 169 } } },
+{ "name": "반포4동", "rate": 3.81, "votes": { "polling": { "rate": 3.86, "count": 262 }, "early": { "rate": 3.61, "count": 65 } } },
+{ "name": "방배본동", "rate": 3.77, "votes": { "polling": { "rate": 3.78, "count": 292 }, "early": { "rate": 3.74, "count": 104 } } },
+{ "name": "방배1동", "rate": 3.58, "votes": { "polling": { "rate": 3.66, "count": 227 }, "early": { "rate": 3.40, "count": 81 } } },
+{ "name": "방배2동", "rate": 3.77, "votes": { "polling": { "rate": 3.95, "count": 278 }, "early": { "rate": 3.29, "count": 84 } } },
+{ "name": "방배3동", "rate": 4.19, "votes": { "polling": { "rate": 3.87, "count": 231 }, "early": { "rate": 5.07, "count": 112 } } },
+{ "name": "방배4동", "rate": 3.84, "votes": { "polling": { "rate": 4.04, "count": 392 }, "early": { "rate": 3.29, "count": 112 } } },
+{ "name": "양재1동", "rate": 3.79, "votes": { "polling": { "rate": 4.02, "count": 660 }, "early": { "rate": 2.78, "count": 102 } } },
+{ "name": "양재2동", "rate": 4.32, "votes": { "polling": { "rate": 4.60, "count": 330 }, "early": { "rate": 3.80, "count": 143 } } },
+{ "name": "내곡동", "rate": 3.27, "votes": { "polling": { "rate": 3.55, "count": 218 }, "early": { "rate": 2.65, "count": 72 } } },
+// 관외사전투표
+{ "name": "강남구_관외사전투표", "rate": 5.49, "votes": { "absentee": { "rate": 5.49, "count": 1793 } } },
+// 동별 (polling = 선거일투표, early = 관내사전투표)
+{ "name": "신사동", "rate": 3.12, "votes": { "polling": { "rate": 2.95, "count": 177 }, "early": { "rate": 3.77, "count": 58 } } },
+{ "name": "논현1동", "rate": 3.39, "votes": { "polling": { "rate": 3.43, "count": 203 }, "early": { "rate": 3.25, "count": 60 } } },
+{ "name": "논현2동", "rate": 3.41, "votes": { "polling": { "rate": 3.39, "count": 227 }, "early": { "rate": 3.50, "count": 55 } } },
+{ "name": "압구정동", "rate": 4.28, "votes": { "polling": { "rate": 3.91, "count": 417 }, "early": { "rate": 6.22, "count": 123 } } },
+{ "name": "청담동", "rate": 3.77, "votes": { "polling": { "rate": 3.79, "count": 385 }, "early": { "rate": 3.68, "count": 67 } } },
+{ "name": "삼성1동", "rate": 4.04, "votes": { "polling": { "rate": 3.90, "count": 187 }, "early": { "rate": 4.50, "count": 64 } } },
+{ "name": "삼성2동", "rate": 4.65, "votes": { "polling": { "rate": 4.54, "count": 503 }, "early": { "rate": 5.07, "count": 145 } } },
+{ "name": "대치1동", "rate": 5.67, "votes": { "polling": { "rate": 5.56, "count": 497 }, "early": { "rate": 6.09, "count": 131 } } },
+{ "name": "대치2동", "rate": 5.21, "votes": { "polling": { "rate": 5.19, "count": 760 }, "early": { "rate": 5.31, "count": 167 } } },
+{ "name": "대치4동", "rate": 4.29, "votes": { "polling": { "rate": 4.04, "count": 213 }, "early": { "rate": 4.84, "count": 115 } } },
+{ "name": "역삼1동", "rate": 4.49, "votes": { "polling": { "rate": 4.29, "count": 420 }, "early": { "rate": 5.17, "count": 149 } } },
+{ "name": "역삼2동", "rate": 4.61, "votes": { "polling": { "rate": 4.57, "count": 547 }, "early": { "rate": 4.73, "count": 185 } } },
+{ "name": "도곡1동", "rate": 4.89, "votes": { "polling": { "rate": 4.72, "count": 365 }, "early": { "rate": 5.39, "count": 147 } } },
+{ "name": "도곡2동", "rate": 4.35, "votes": { "polling": { "rate": 4.25, "count": 549 }, "early": { "rate": 5.04, "count": 92 } } },
+{ "name": "개포1동", "rate": 4.98, "votes": { "polling": { "rate": 4.56, "count": 475 }, "early": { "rate": 6.21, "count": 219 } } },
+{ "name": "개포2동", "rate": 5.42, "votes": { "polling": { "rate": 5.55, "count": 842 }, "early": { "rate": 4.76, "count": 132 } } },
+{ "name": "개포3동", "rate": 4.35, "votes": { "polling": { "rate": 4.55, "count": 268 }, "early": { "rate": 3.90, "count": 103 } } },
+{ "name": "개포4동", "rate": 3.68, "votes": { "polling": { "rate": 3.65, "count": 295 }, "early": { "rate": 3.75, "count": 119 } } },
+{ "name": "일원본동", "rate": 4.66, "votes": { "polling": { "rate": 5.05, "count": 401 }, "early": { "rate": 3.78, "count": 133 } } },
+{ "name": "일원1동", "rate": 3.10, "votes": { "polling": { "rate": 3.36, "count": 173 }, "early": { "rate": 2.31, "count": 38 } } },
+{ "name": "수서동", "rate": 2.77, "votes": { "polling": { "rate": 2.78, "count": 154 }, "early": { "rate": 2.74, "count": 65 } } },
+{ "name": "세곡동", "rate": 3.71, "votes": { "polling": { "rate": 3.92, "count": 682 }, "early": { "rate": 2.94, "count": 136 } } },
+// 관외사전투표
+{ "name": "송파구_관외사전투표", "rate": 4.51, "votes": { "absentee": { "rate": 4.51, "count": 1833 } } },
+
+// 동별 (polling = 선거일투표, early = 관내사전투표)
+{ "name": "풍납1동", "rate": 3.27, "votes": { "polling": { "rate": 3.61, "count": 125 }, "early": { "rate": 2.78, "count": 67 } } },
+{ "name": "풍납2동", "rate": 4.13, "votes": { "polling": { "rate": 4.14, "count": 313 }, "early": { "rate": 4.11, "count": 175 } } },
+{ "name": "거여1동", "rate": 2.14, "votes": { "polling": { "rate": 2.20, "count": 90 }, "early": { "rate": 2.01, "count": 38 } } },
+{ "name": "거여2동", "rate": 2.95, "votes": { "polling": { "rate": 3.14, "count": 269 }, "early": { "rate": 2.45, "count": 83 } } },
+{ "name": "마천1동", "rate": 1.71, "votes": { "polling": { "rate": 1.58, "count": 86 }, "early": { "rate": 2.03, "count": 44 } } },
+{ "name": "마천2동", "rate": 1.97, "votes": { "polling": { "rate": 1.96, "count": 116 }, "early": { "rate": 2.00, "count": 63 } } },
+{ "name": "방이1동", "rate": 3.22, "votes": { "polling": { "rate": 3.19, "count": 171 }, "early": { "rate": 3.29, "count": 82 } } },
+{ "name": "방이2동", "rate": 3.88, "votes": { "polling": { "rate": 3.84, "count": 354 }, "early": { "rate": 4.03, "count": 118 } } },
+{ "name": "오륜동", "rate": 4.48, "votes": { "polling": { "rate": 4.49, "count": 295 }, "early": { "rate": 4.45, "count": 126 } } },
+{ "name": "오금동", "rate": 2.85, "votes": { "polling": { "rate": 2.80, "count": 397 }, "early": { "rate": 2.99, "count": 129 } } },
+{ "name": "송파1동", "rate": 3.30, "votes": { "polling": { "rate": 3.20, "count": 248 }, "early": { "rate": 3.52, "count": 135 } } },
+{ "name": "송파2동", "rate": 4.01, "votes": { "polling": { "rate": 3.97, "count": 278 }, "early": { "rate": 4.11, "count": 125 } } },
+{ "name": "석촌동", "rate": 3.39, "votes": { "polling": { "rate": 3.55, "count": 344 }, "early": { "rate": 3.03, "count": 130 } } },
+{ "name": "삼전동", "rate": 3.28, "votes": { "polling": { "rate": 3.37, "count": 311 }, "early": { "rate": 3.09, "count": 133 } } },
+{ "name": "가락본동", "rate": 3.83, "votes": { "polling": { "rate": 3.85, "count": 327 }, "early": { "rate": 3.76, "count": 121 } } },
+{ "name": "가락1동", "rate": 4.29, "votes": { "polling": { "rate": 4.05, "count": 407 }, "early": { "rate": 4.87, "count": 195 } } },
+{ "name": "가락2동", "rate": 3.34, "votes": { "polling": { "rate": 3.39, "count": 363 }, "early": { "rate": 3.14, "count": 97 } } },
+{ "name": "문정1동", "rate": 3.42, "votes": { "polling": { "rate": 3.33, "count": 238 }, "early": { "rate": 3.67, "count": 103 } } },
+{ "name": "문정2동", "rate": 4.71, "votes": { "polling": { "rate": 4.66, "count": 566 }, "early": { "rate": 4.96, "count": 111 } } },
+{ "name": "장지동", "rate": 3.54, "votes": { "polling": { "rate": 3.78, "count": 431 }, "early": { "rate": 2.93, "count": 131 } } },
+{ "name": "잠실본동", "rate": 3.46, "votes": { "polling": { "rate": 3.51, "count": 301 }, "early": { "rate": 3.36, "count": 137 } } },
+{ "name": "잠실2동", "rate": 4.81, "votes": { "polling": { "rate": 5.09, "count": 646 }, "early": { "rate": 3.99, "count": 172 } } },
+{ "name": "잠실3동", "rate": 3.66, "votes": { "polling": { "rate": 3.67, "count": 517 }, "early": { "rate": 3.59, "count": 101 } } },
+{ "name": "잠실4동", "rate": 5.40, "votes": { "polling": { "rate": 5.39, "count": 675 }, "early": { "rate": 5.43, "count": 223 } } },
+{ "name": "잠실6동", "rate": 4.42, "votes": { "polling": { "rate": 4.14, "count": 246 }, "early": { "rate": 4.99, "count": 146 } } },
+{ "name": "잠실7동", "rate": 4.42, "votes": { "polling": { "rate": 3.95, "count": 163 }, "early": { "rate": 5.63, "count": 89 } } },
+{ "name": "위례동", "rate": 4.05, "votes": { "polling": { "rate": 4.13, "count": 630 }, "early": { "rate": 3.80, "count": 182 } } },
+// 관외사전투표
+{ "name": "강동구_관외사전투표", "rate": 4.33, "votes": { "absentee": { "rate": 4.33, "count": 1309 } } },
+
+// 동별 (polling = 선거일투표, early = 관내사전투표)
+{ "name": "강일동", "rate": 2.85, "votes": { "polling": { "rate": 2.98, "count": 369 }, "early": { "rate": 2.53, "count": 129 } } },
+{ "name": "상일제1동", "rate": 4.40, "votes": { "polling": { "rate": 4.51, "count": 655 }, "early": { "rate": 4.09, "count": 194 } } },
+{ "name": "상일제2동", "rate": 3.56, "votes": { "polling": { "rate": 3.71, "count": 167 }, "early": { "rate": 3.23, "count": 63 } } },
+{ "name": "명일제1동", "rate": 3.64, "votes": { "polling": { "rate": 3.66, "count": 325 }, "early": { "rate": 3.59, "count": 143 } } },
+{ "name": "명일제2동", "rate": 3.84, "votes": { "polling": { "rate": 3.72, "count": 246 }, "early": { "rate": 4.22, "count": 95 } } },
+{ "name": "고덕제1동", "rate": 3.65, "votes": { "polling": { "rate": 3.83, "count": 306 }, "early": { "rate": 3.23, "count": 115 } } },
+{ "name": "고덕제2동", "rate": 3.70, "votes": { "polling": { "rate": 3.86, "count": 363 }, "early": { "rate": 3.21, "count": 97 } } },
+{ "name": "암사제1동", "rate": 2.55, "votes": { "polling": { "rate": 2.78, "count": 299 }, "early": { "rate": 1.94, "count": 82 } } },
+{ "name": "암사제2동", "rate": 3.54, "votes": { "polling": { "rate": 3.77, "count": 184 }, "early": { "rate": 3.26, "count": 129 } } },
+{ "name": "암사제3동", "rate": 3.54, "votes": { "polling": { "rate": 4.06, "count": 263 }, "early": { "rate": 2.48, "count": 78 } } },
+{ "name": "천호제1동", "rate": 2.44, "votes": { "polling": { "rate": 2.67, "count": 218 }, "early": { "rate": 1.89, "count": 66 } } },
+{ "name": "천호제2동", "rate": 3.51, "votes": { "polling": { "rate": 3.63, "count": 449 }, "early": { "rate": 3.19, "count": 150 } } },
+{ "name": "천호제3동", "rate": 3.61, "votes": { "polling": { "rate": 3.60, "count": 342 }, "early": { "rate": 3.63, "count": 115 } } },
+{ "name": "성내제1동", "rate": 3.84, "votes": { "polling": { "rate": 4.11, "count": 268 }, "early": { "rate": 3.31, "count": 109 } } },
+{ "name": "성내제2동", "rate": 3.72, "votes": { "polling": { "rate": 3.88, "count": 311 }, "early": { "rate": 3.40, "count": 134 } } },
+{ "name": "성내제3동", "rate": 3.10, "votes": { "polling": { "rate": 3.32, "count": 238 }, "early": { "rate": 2.71, "count": 109 } } },
+{ "name": "길동", "rate": 2.91, "votes": { "polling": { "rate": 2.97, "count": 491 }, "early": { "rate": 2.78, "count": 170 } } },
+{ "name": "둔촌제1동", "rate": 5.57, "votes": { "polling": { "rate": 5.54, "count": 717 }, "early": { "rate": 5.67, "count": 308 } } },
+{ "name": "둔촌제2동", "rate": 3.97, "votes": { "polling": { "rate": 4.21, "count": 397 }, "early": { "rate": 3.35, "count": 121 } } },
     ]
   },
 { name: '부산', rate: 2.52, votes: 44227, seats: 0, type: '광역',
