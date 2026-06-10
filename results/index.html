@@ -18,7 +18,7 @@
 <!-- Microsoft Clarity -->
 <script type="text/javascript">
   (function(c,l,a,r,i,t,y){
-    c[a]=c[l]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
     t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
     y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
   })(window, document, "clarity", "script", "v2ogrkuyk0");
@@ -606,12 +606,23 @@
     }
   }
 
+  @keyframes recordFadeIn {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
   .record-card {
     background: rgba(255,255,255,0.05);
     border: 1px solid rgba(255,255,255,0.08);
     border-radius: var(--radius-md);
     padding: 20px;
     transition: background 0.2s;
+    opacity: 0;
+  }
+  .record-card.visible {
+    animation: recordFadeIn 0.35s ease both;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .record-card, .record-card.visible { animation: none; opacity: 1; }
   }
 
   .record-card:hover { background: rgba(255,255,255,0.08); }
@@ -991,10 +1002,14 @@
   }
 
   .bar-bar.below-avg {
-    opacity: 0.55;
+    opacity: 0.72;
   }
 
   .bar-bar:hover { opacity: 0.8; }
+
+  .bar-group:hover .bar-bar { opacity: 0.75; transform: scaleY(1.03); transform-origin: bottom; }
+  .bar-group:hover .bar-name { color: var(--orange); }
+  .bar-group:active .bar-bar { opacity: 0.6; }
 
   .bar-name {
     font-size: 12px; font-weight: 700; color: var(--text2);
@@ -1024,6 +1039,10 @@
     }
   }
 
+  @keyframes propCardIn {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
   .prop-card {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -1031,6 +1050,13 @@
     padding: 28px;
     cursor: pointer;
     transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s, background 0.3s;
+    opacity: 0;
+  }
+  .prop-card.animated {
+    animation: propCardIn 0.4s ease both;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .prop-card, .prop-card.animated { animation: none; opacity: 1; }
   }
 
   .prop-card:hover {
@@ -1138,6 +1164,8 @@
     background: var(--orange);
     border-radius: 2px;
     opacity: 0.6;
+    width: 0;
+    transition: width 0.6s cubic-bezier(0.34,1.2,0.64,1);
   }
 
   .prop-card-mini-nh-fill.top1 {
@@ -1173,8 +1201,8 @@
     display: flex;
     gap: 10px;
     overflow-x: auto;
-    padding-bottom: 12px;
-    margin-bottom: 28px;
+    padding-bottom: 4px;
+    margin-bottom: 20px;
     scrollbar-width: none;
   }
 
@@ -1212,16 +1240,28 @@
     gap: 16px;
   }
 
-  @media (max-width: 359px) {
+  @media (max-width: 479px) {
     .cand-grid {
       grid-template-columns: 1fr;
     }
   }
 
+  @media (min-width: 480px) {
+    .cand-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
   @media (min-width: 768px) {
     .cand-grid {
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 20px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .cand-grid {
+      grid-template-columns: repeat(5, 1fr);
     }
   }
 
@@ -1456,6 +1496,10 @@
     .prop-card:active { border-color: var(--orange); transform: scale(0.98); }
     .hof-card:active  { border-color: var(--orange); transform: scale(0.98); }
     .tophit-row:active { border-color: rgba(255,102,0,0.4); transform: translateX(2px); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .tophit-row { animation: none; opacity: 1; }
+    .tophit-row.animated { animation: none; opacity: 1; }
 
     /* 탭 후 hover 잔류 방지: focus-visible 없는 상태로 blur되면 리셋 */
     .cand-card:not(:focus-within):not(:active) { border-color: var(--border); }
@@ -1507,7 +1551,7 @@
   }
 
   .cand-vote-rate.winner-rate { color: var(--orange); }
-  .cand-vote-rate.normal-rate { color: var(--text3); }
+  .cand-vote-rate.normal-rate { color: var(--text2); }
 
   .cand-arrow {
     position: absolute;
@@ -1553,14 +1597,15 @@
     background: var(--bg);
     width: 100%;
     max-width: 900px;
-    height: 90vh;
+    height: auto;
     max-height: 90vh;
     border-radius: 36px 36px 0 0;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     transform: translateY(40px);
-    transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1);
+    opacity: 0;
+    transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1), opacity 0.25s ease;
   }
 
   @media (min-width: 1024px) {
@@ -1572,10 +1617,11 @@
       border-radius: 36px;
       height: auto;
       max-height: 85vh;
-      transform: scale(0.96);
+      transform: scale(0.95) translateY(8px);
+      opacity: 0;
     }
 
-    .modal-backdrop.open .modal-box { transform: scale(1); }
+    .modal-backdrop.open .modal-box { transform: scale(1) translateY(0); opacity: 1; }
   }
 
   /* ── PC 2컬럼 레이아웃 ── */
@@ -1589,7 +1635,8 @@
     .modal-box {
       max-width: 1160px;
       max-height: 88vh;
-      height: 88vh;
+      height: auto;
+      min-height: 480px;
       flex-direction: column; /* 헤더(모바일)는 숨기고 pc-layout이 전체 차지 */
     }
 
@@ -1802,7 +1849,7 @@
     }
   }
 
-  .modal-backdrop.open .modal-box { transform: translateY(0); }
+  .modal-backdrop.open .modal-box { transform: translateY(0); opacity: 1; }
 
   .modal-header {
     background: var(--surface);
@@ -1846,7 +1893,7 @@
     overflow: hidden;
     flex-shrink: 0;
     position: relative;
-    background: linear-gradient(160deg, var(--orange-light) 0%, var(--surface2) 100%);
+    background: linear-gradient(160deg, #ff8533 0%, var(--orange-dark) 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1874,8 +1921,9 @@
 
   .modal-photo-initial {
     font-size: 60px; font-weight: 900;
-    color: var(--orange);
+    color: #fff;
     line-height: 1;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.18);
   }
 
   .modal-photo-text {
@@ -2055,6 +2103,8 @@
 
   .modal-stat-reimb.emerald { background: var(--emerald); }
   .modal-stat-reimb.sky     { background: var(--sky); }
+  .dark .modal-stat-reimb.emerald { background: #065f46; }
+  .dark .modal-stat-reimb.sky     { background: #0c4a6e; }
 
   .modal-map-wrap { width: 100%; height: 280px; background: var(--surface2); border-radius: var(--radius-lg); margin-bottom: 20px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; transition: height 0.3s ease; }
   .modal-map-svg { width: 100%; height: 100%; }
@@ -2669,6 +2719,10 @@
     flex-direction: column;
     gap: 8px;
   }
+  @keyframes slideRight {
+    from { opacity: 0; transform: translateX(-12px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
   .tophit-row {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -2679,6 +2733,10 @@
     gap: 14px;
     cursor: pointer;
     transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s, background 0.3s;
+    opacity: 0;
+  }
+  .tophit-row.animated {
+    animation: slideRight 0.35s ease both;
   }
   .tophit-row:hover {
     border-color: rgba(255,102,0,0.4);
@@ -3000,8 +3058,8 @@
     display: flex;
     gap: 6px;
     overflow-x: auto;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
+    padding-bottom: 4px;
+    margin-bottom: 12px;
     scrollbar-width: none;
     flex-wrap: nowrap;
   }
@@ -3057,6 +3115,76 @@
   .tophit-row:focus-visible {
     outline-offset: 3px;
     border-radius: var(--radius-md);
+  }
+
+  /* ── MODAL 이전/다음 버튼 ── */
+  .modal-nav-btns {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    padding: 10px 16px 14px;
+    flex-shrink: 0;
+    border-top: 1px solid var(--border);
+    background: var(--surface);
+  }
+
+  @media (min-width: 1024px) {
+    .modal-nav-btns {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      padding: 0;
+      border-top: none;
+      background: transparent;
+      z-index: 10;
+    }
+  }
+
+  .modal-nav-btn {
+    width: 36px;
+    height: 36px;
+    background: var(--surface2);
+    border: 1px solid var(--border-strong);
+    border-radius: 10px;
+    cursor: pointer;
+    color: var(--text2);
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s, color 0.15s, transform 0.1s;
+    font-family: inherit;
+  }
+
+  .modal-nav-btn:hover:not(:disabled) {
+    background: var(--orange-light);
+    color: var(--orange);
+    transform: scale(1.08);
+  }
+
+  .modal-nav-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+
+  /* 스와이프 힌트: 모바일에서 ← → 버튼 더 크게 */
+  @media (max-width: 767px) {
+    .modal-nav-btn {
+      width: 42px;
+      height: 42px;
+      font-size: 18px;
+      border-radius: 12px;
+    }
+  }
+
+  .modal-nav-count {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text3);
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
   }
 
   /* ── REDUCED MOTION ── */
@@ -3134,7 +3262,7 @@
   <!-- ── HOME ── -->
   <div id="tab-home" class="tab-content active" role="tabpanel" aria-labelledby="nav-btn-home">
     <div class="stats-grid">
-      <div class="stat-card-white" role="button" tabindex="0" data-goto="proportional" style="cursor:pointer" title="비례대표 득표 보기" aria-label="전국 정당 득표율 — 비례대표 득표 보기">
+      <div class="stat-card-white" role="button" tabindex="0" data-goto="candidates" data-filter-sort="rate-desc" style="cursor:pointer" title="득표율 높은순 후보 보기" aria-label="전국 정당 득표율 — 후보자별 결과 보기">
         <div class="stat-card-icon">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
         </div>
@@ -3144,7 +3272,7 @@
         </div>
         <div class="stat-sub" id="home-stat-party-sub">집계 중</div>
       </div>
-      <div class="stat-card-white" role="button" tabindex="0" data-goto="candidates" style="cursor:pointer" title="후보자별 결과 보기" aria-label="선거 비용 보전 — 후보자별 결과 보기">
+      <div class="stat-card-white" role="button" tabindex="0" data-goto="candidates" data-filter-sort="winner-first" style="cursor:pointer" title="당선자 먼저 후보 보기" aria-label="선거 비용 보전 — 후보자별 결과 보기">
         <div class="stat-card-icon stat-card-icon-blue">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
         </div>
@@ -3171,7 +3299,11 @@
       <div class="records-grid" id="records-grid"></div>
     </div>
 
-    <!-- 광역/기초 비례 기록은 비례탭 하단으로 이동 -->
+    <div class="records-section" id="prop-records-section-tab" style="margin-top: 32px;">
+      <div class="records-glow"></div>
+      <div class="records-title">📊 비례대표 득표 기록</div>
+      <div class="records-grid" id="prop-records-grid-tab"></div>
+    </div>
   </div>
 
   <!-- ── PROPORTIONAL ── -->
@@ -3237,12 +3369,6 @@
 
     <div class="prop-grid" id="prop-grid"></div>
 
-    <!-- 비례 기록 (비례탭 하단으로 이동) -->
-    <div class="records-section" id="prop-records-section-tab" style="margin-top: 32px;">
-      <div class="records-glow"></div>
-      <div class="records-title">📊 비례대표 득표 기록</div>
-      <div class="records-grid" id="prop-records-grid-tab"></div>
-    </div>
   </div>
 
   <!-- ── CANDIDATES ── -->
@@ -3317,6 +3443,12 @@
       <!-- 오른쪽 패널: 본문 -->
       <div class="modal-body" id="modal-body"></div>
     </div>
+    <!-- 이전/다음 후보 이동 버튼 — modal-body 아래에 위치해야 클릭 막힘 없음 -->
+    <div class="modal-nav-btns" id="modal-nav-btns" style="display:none">
+      <button class="modal-nav-btn" id="modal-nav-prev" aria-label="이전 후보">←</button>
+      <span class="modal-nav-count" id="modal-nav-count"></span>
+      <button class="modal-nav-btn" id="modal-nav-next" aria-label="다음 후보">→</button>
+    </div>
   </div>
 </div>
 
@@ -3325,7 +3457,7 @@
 window.candidates = window.candidates || [];
 </script>
 <script src="can.js" onerror="console.warn('can.js not found, using empty candidates')"></script>
-<script src="results.js?v=0528.06" onerror="console.warn('results.js not found, skipping results')" onload="window._resultsLoaded = true"></script>
+<script src="results.js?v=0610.01" onerror="console.warn('results.js not found, skipping results')" onload="window._resultsLoaded = true"></script>
 <script>
 // ── DATA ──────────────────────────────────────────────
 // ── 투표 유형 헬퍼 ───────────────────────────────────────
@@ -3417,8 +3549,34 @@ const CANDIDATES = window._CANDIDATES_FROM_CAN || [];
 
 if (typeof applyResults === 'function') {
   applyResults();
+  // applyResults 이후 전역 var 동기화 + 홈 스탯·비례 기록 갱신
+  setTimeout(function() {
+    if (window.REGIONAL && window.REGIONAL.length) REGIONAL = window.REGIONAL;
+    if (window.BASIC    && window.BASIC.length)    BASIC    = window.BASIC;
+    if (typeof renderHomeStats === 'function') renderHomeStats();
+    if (typeof renderPropRecordsTab === 'function') renderPropRecordsTab();
+    if (typeof runCountUps === 'function') runCountUps();
+  }, 0);
 } else {
+  // results.js가 나중에 로드될 경우를 대비해 폴링으로 applyResults 대기
   window._pendingApplyResults = true;
+  (function waitForApplyResults(attempts) {
+    if (attempts <= 0) return;
+    setTimeout(function() {
+      if (typeof applyResults === 'function') {
+        window._pendingApplyResults = false;
+        applyResults();
+        if (window.REGIONAL && window.REGIONAL.length) REGIONAL = window.REGIONAL;
+        if (window.BASIC    && window.BASIC.length)    BASIC    = window.BASIC;
+        if (typeof renderHomeStats     === 'function') renderHomeStats();
+        if (typeof renderPropRecordsTab=== 'function') renderPropRecordsTab();
+        if (typeof runCountUps         === 'function') runCountUps();
+        if (typeof renderCandidates    === 'function') renderCandidates();
+      } else {
+        waitForApplyResults(attempts - 1);
+      }
+    }, 300);
+  })(10);
 }
 
 // ── HELPERS ────────────────────────────────────────────
@@ -3469,6 +3627,9 @@ let modalViewMode    = 'neighborhood';
 let modalMapLayer    = 'total';   // 'total' | 'polling' | 'early' | 'absentee' | 'diff'
 let modalTrigger     = null;
 let modalTableSort   = { col: 'rate', dir: 'desc' };  // 모달 테이블 정렬 상태
+let modalNavList     = [];   // 현재 필터/정렬된 후보 목록 (이전/다음용)
+let modalNavIdx      = -1;   // 현재 모달 후보의 navList 인덱스
+let renderedCandList = [];   // renderCandidates()가 그린 순서 (셔플 포함) — _updateModalNav에서 공유
 // mapInitialized 제거 — initMap()은 항상 최신 데이터로 재렌더링
 
 // ── THEME ──────────────────────────────────────────────
@@ -3525,7 +3686,11 @@ function switchTab(tab, pushState = true) {
     renderCandidates();
     setTimeout(() => runCountUpsIn(document.getElementById('tab-candidates')), 100);
   }
-  if (tab === 'home') setTimeout(runCountUps, 200);
+  if (tab === 'home') {
+    if (typeof renderHomeStats === 'function') renderHomeStats();
+    if (typeof renderPropRecordsTab === 'function') renderPropRecordsTab();
+    setTimeout(runCountUps, 200);
+  }
   if (pushState) history.pushState({ tab }, '', `#${tab}`);
 }
 
@@ -3617,7 +3782,8 @@ async function initMap() {
   }
 
   // 줌 없음 — 광역 지도는 고정 표시
-  const zoomG = svg.append("g").attr("class", "map-zoom-group");
+  const zoomG = svg.append("g").attr("class", "map-zoom-group")
+    .style("opacity", 0);
 
   // 1. 지도 패스
   zoomG.selectAll("path")
@@ -3706,10 +3872,18 @@ async function initMap() {
     lgG.append("text").text(`${maxR}%`).attr("x", lgW).attr("y", lgH + 13).attr("text-anchor", "end").call(t => Object.entries(txtStyle).forEach(([k,v]) => t.style(k,v)));
     lgG.append("text").text("낮음 → 높음").attr("x", lgW / 2).attr("y", -4).attr("text-anchor", "middle").call(t => Object.entries(txtStyle).forEach(([k,v]) => t.style(k,v)));
   }
+
+  // zoomG fade-in
+  const prefersReducedMap = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReducedMap) {
+    zoomG.style("opacity", 1);
+  } else {
+    zoomG.transition().duration(400).ease(d3.easeCubicOut).style("opacity", 1);
+  }
 }
 
 // ── 공통 모달 줌 컨트롤 ─────────────────────────────────
-function addModalZoomCtrl(wrap, svg, zoom) {
+function addModalZoomCtrl(wrap, svg, zoom, zoomG) {
   const old = wrap.querySelector('.map-zoom-ctrl');
   if (old) old.remove();
   const ctrl = document.createElement('div');
@@ -3719,9 +3893,119 @@ function addModalZoomCtrl(wrap, svg, zoom) {
     <button class="map-zoom-btn mzb-out"   title="축소">−</button>
     <button class="map-zoom-btn mzb-reset" title="초기화" style="font-size:12px">⟳</button>`;
   wrap.appendChild(ctrl);
+  // 지도 전체 fade-in
+  if (zoomG) {
+    const prefersReducedMap = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMap) {
+      zoomG.style("opacity", 1);
+    } else {
+      zoomG.transition().duration(400).ease(d3.easeCubicOut).style("opacity", 1);
+    }
+  }
+
   ctrl.querySelector('.mzb-in').addEventListener('click',    () => svg.transition().duration(300).call(zoom.scaleBy, 1.6));
   ctrl.querySelector('.mzb-out').addEventListener('click',   () => svg.transition().duration(300).call(zoom.scaleBy, 0.625));
   ctrl.querySelector('.mzb-reset').addEventListener('click', () => svg.transition().duration(400).call(zoom.transform, d3.zoomIdentity));
+}
+
+// ── 인천 신구 행정동 매핑 (2026년 7월 1일 출범 기준) ──────────
+// 검단구: 서구에서 아라뱃길 북쪽으로 분리
+// 서해구: 서구 잔여 (아라뱃길 남쪽)
+// 영종구: 중구 영종도 지역
+// 제물포구: 중구 내륙 + 동구
+
+const INCHEON_NEW_GU_MAP = {
+  // 중구(28110) 영종도 행정동 → 영종구
+  '영종동': '영종구', '영종1동': '영종구', '영종2동': '영종구',
+  '운서1동': '영종구', '운서2동': '영종구', '용유동': '영종구',
+  // 중구(28110) 내륙 행정동 → 제물포구
+  '개항동': '제물포구', '도원동': '제물포구', '동인천동': '제물포구',
+  '신포동': '제물포구', '신흥동': '제물포구', '연안동': '제물포구', '율목동': '제물포구',
+  // 동구(28140) 전체 → 제물포구
+  '금창동': '제물포구', '만석동': '제물포구',
+  '송림1동': '제물포구', '송림2동': '제물포구', '송림3·5동': '제물포구',
+  '송림4동': '제물포구', '송림6동': '제물포구',
+  '송현1·2동': '제물포구', '송현3동': '제물포구',
+  '화수1·화평동': '제물포구', '화수2동': '제물포구',
+  // 서구(28260) 검단 지역 → 검단구
+  '검단동': '검단구', '당하동': '검단구', '마전동': '검단구',
+  '불로대곡동': '검단구', '원당동': '검단구', '오류왕길동': '검단구',
+  '아라1동': '검단구', '아라2동': '검단구',
+  // 서구(28260) 나머지 → 서해구
+  '가정1동': '서해구', '가정2동': '서해구', '가정3동': '서해구',
+  '가좌1동': '서해구', '가좌2동': '서해구', '가좌3동': '서해구', '가좌4동': '서해구',
+  '검암경서동': '서해구', '석남1동': '서해구', '석남2동': '서해구', '석남3동': '서해구',
+  '신현원창동': '서해구',
+  '연희동': '서해구', '청라1동': '서해구', '청라2동': '서해구', '청라3동': '서해구',
+};
+
+// 인천 신구 경계 캐시
+let incheonNewGuFeatures = null;
+
+// vuski ver20260401 데이터에서 인천 신구 경계 생성
+async function loadIncheonNewGuMap() {
+  if (incheonNewGuFeatures) return incheonNewGuFeatures;
+
+  // loadDongFeatures 재활용 (sido='28')
+  const dongFeatures = await loadDongFeatures('28');
+  if (!dongFeatures || !dongFeatures.length) return [];
+
+  // 동 이름 기준으로 신구별 그룹화
+  const guGroups = {};
+  dongFeatures.forEach(f => {
+    const sgg = String(f.properties.sgg || '');
+    const sggnm = f.properties.sggnm || '';
+    const admNm = (f.properties.adm_nm || '').split(/\s+/).pop(); // 마지막 토큰 = 동 이름
+    const dongName = admNm;
+
+    let newGuName;
+    if (INCHEON_NEW_GU_MAP[dongName]) {
+      newGuName = INCHEON_NEW_GU_MAP[dongName];
+    } else if (sgg === '28177') {
+      newGuName = '미추홀구';
+    } else if (sgg === '28185') {
+      newGuName = '연수구';
+    } else if (sgg === '28200') {
+      newGuName = '남동구';
+    } else if (sgg === '28237') {
+      newGuName = '부평구';
+    } else if (sgg === '28245') {
+      newGuName = '계양구';
+    } else if (sgg === '28710') {
+      newGuName = '강화군';
+    } else if (sgg === '28720') {
+      newGuName = '옹진군';
+    } else {
+      return; // 매핑 안 된 동은 스킵
+    }
+
+    if (!guGroups[newGuName]) guGroups[newGuName] = [];
+    guGroups[newGuName].push(f);
+  });
+
+  // 각 신구별로 MultiPolygon Feature 생성
+  incheonNewGuFeatures = Object.entries(guGroups).map(([guName, features]) => {
+    // 모든 폴리곤을 MultiPolygon으로 묶기
+    const allCoords = [];
+    features.forEach(f => {
+      const geom = f.geometry;
+      if (!geom) return;
+      if (geom.type === 'Polygon') {
+        allCoords.push(geom.coordinates);
+      } else if (geom.type === 'MultiPolygon') {
+        geom.coordinates.forEach(c => allCoords.push(c));
+      }
+    });
+    return {
+      type: 'Feature',
+      properties: { name: guName, code: 'incheon_new_' + guName },
+      geometry: allCoords.length === 1
+        ? { type: 'Polygon', coordinates: allCoords[0] }
+        : { type: 'MultiPolygon', coordinates: allCoords }
+    };
+  }).filter(f => f.geometry && f.geometry.coordinates && f.geometry.coordinates.length > 0);
+
+  return incheonNewGuFeatures;
 }
 
 // ── SIGUNGU MAP (모달용) ────────────────────────────────
@@ -3834,7 +4118,7 @@ async function renderModalMapGichoDistrict(item) {
   const zoomBeh = d3.zoom().scaleExtent([1, 10])
     .on('zoom', e => zg.attr('transform', e.transform));
   svgSel.call(zoomBeh).on('dblclick.zoom', null);
-  addModalZoomCtrl(wrapAfter, svgSel, zoomBeh);
+  addModalZoomCtrl(wrapAfter, svgSel, zoomBeh, zg);
 }
 
 // 시군구별 지도 (레이어 aware — absentee 클릭 시도 호출됨)
@@ -3844,7 +4128,10 @@ async function renderModalMapDistrict(item) {
 
   // 비례 광역: item.name = "서울"
   // 광역단체장 후보: item.name = "홍길동", item.region = "서울" (또는 직책명 포함)
-  const nameForCode = item.type === '광역단체장' ? getSidoFromItem(item) : item.name;
+  // 재보궐선거: item.region = "충남 공주·부여·청양" → 첫 토큰 "충남"
+  const nameForCode = (item.type === '광역단체장' || item.type === '재보궐선거')
+    ? getSidoFromItem(item)
+    : item.name;
   const sidoCd = SIGUNGU_CODES[nameForCode];
   if (!sidoCd) { wrap.style.display = 'none'; return; }
 
@@ -3858,8 +4145,41 @@ async function renderModalMapDistrict(item) {
   svg.attr("viewBox", `0 0 ${width} ${height}`);
   svg.html('<text x="50%" y="50%" text-anchor="middle" fill="var(--text3)" font-size="12">상세 지도를 불러오는 중...</text>');
 
-  const features = await loadSigunguMap();
-  const targetFeatures = features.filter(f => f.properties.code.startsWith(sidoCd));
+  // 인천의 경우 2026년 신구 경계 사용 (검단구/서해구/영종구/영종구/제물포구)
+  let targetFeatures;
+  if (nameForCode === '인천') {
+    targetFeatures = await loadIncheonNewGuMap();
+  } else {
+    const allFeatures = await loadSigunguMap();
+    targetFeatures = allFeatures.filter(f => f.properties.code.startsWith(sidoCd));
+  }
+
+  // 재보궐선거: 해당 시군구 폴리곤만 표시 (이은창 전용 — 시군구 지도)
+  // 시군구명 추출: neighborhoods "_관외사전투표" 접두사 우선, 없으면 _raw.district 파싱
+  if (item.type === '재보궐선거') {
+    const _rNeighborhoods = item.neighborhoods || [];
+    let _rSigunguNames = _rNeighborhoods
+      .filter(n => n.name.includes('_') && n.name.endsWith('관외사전투표'))
+      .map(n => n.name.replace(/_관외사전투표$/, ''));
+
+    if (_rSigunguNames.length === 0 && item._raw && item._raw.district) {
+      const distClean = item._raw.district.replace(/\s*[갑을병정]\s*$/, '').trim();
+      _rSigunguNames = distClean.split(/[·・,\s]+/).map(s => s.trim()).filter(Boolean);
+    }
+
+    if (_rSigunguNames.length > 0) {
+      const _rFiltered = targetFeatures.filter(f => {
+        const fname = (f.properties.name || '').trim();
+        return _rSigunguNames.some(sg => {
+          if (fname === sg) return true;
+          const sgBase = sg.replace(/[시군구]$/, '');
+          return fname.startsWith(sgBase) && fname !== sgBase;
+        });
+      });
+      if (_rFiltered.length > 0) targetFeatures = _rFiltered;
+    }
+  }
+
   if (targetFeatures.length === 0) { wrap.style.display = 'none'; return; }
 
   svg.html('');
@@ -3886,7 +4206,8 @@ async function renderModalMapDistrict(item) {
     return absenteeMap;
   }
 
-  if (item.districts) {
+  const effectiveDistricts = getEffectiveDistricts(item);
+  if (effectiveDistricts.length > 0) {
     // 관외사전 레이어 폴백용 맵 (neighborhoods 기반)
     const absenteeFallback = modalMapLayer === 'absentee'
       ? buildAbsenteeRateMapFromNeighborhoods() : {};
@@ -3900,7 +4221,7 @@ async function renderModalMapDistrict(item) {
     const MERGE_PREFIXES = ['화성시', '부천시', '성남시', '수원시', '안양시', '고양시', '용인시', '안산시']; // 병합 대상 시 목록
     const mergeAccum = {}; // { '화성시': { sum, count }, ... }
 
-    item.districts.forEach(d => {
+    effectiveDistricts.forEach(d => {
       let val = null;
       if (modalMapLayer === 'total') {
         val = d.rate;
@@ -3975,6 +4296,64 @@ async function renderModalMapDistrict(item) {
       }
     });
   }
+
+  // ── 인천 신구 전용: districts 없을 때 neighborhoods → 신구별 rate 집계 ──
+  if (nameForCode === '인천' && Object.keys(rateMap).length === 0) {
+    const guAccum = {}; // { '검단구': { sum, count }, ... }
+
+    (item.neighborhoods || []).forEach(n => {
+      const dongName = n.name;
+
+      // "_관외사전투표" 항목: 구 이름 직접 추출 (서구 → 서해구 변환 포함)
+      if (dongName.includes('_관외사전투표')) {
+        const rawGu = dongName.replace('_관외사전투표', '');
+        const mappedGu = rawGu === '서구' ? '서해구' : rawGu;
+        const rate = n.votes && n.votes.absentee ? n.votes.absentee.rate : n.rate;
+        if (rate != null) {
+          if (!guAccum[mappedGu]) guAccum[mappedGu] = { sum: 0, count: 0 };
+          guAccum[mappedGu].sum += rate;
+          guAccum[mappedGu].count += 1;
+        }
+        return;
+      }
+
+      // 일반 행정동: INCHEON_NEW_GU_MAP으로 신구 매핑
+      const newGu = INCHEON_NEW_GU_MAP[dongName];
+      if (!newGu) return;
+
+      let val = null;
+      if (modalMapLayer === 'total') {
+        val = n.rate;
+      } else if (modalMapLayer === 'early') {
+        val = n.votes && n.votes.early ? n.votes.early.rate : null;
+      } else if (modalMapLayer === 'polling') {
+        val = n.votes && n.votes.polling ? n.votes.polling.rate : null;
+      } else if (modalMapLayer === 'absentee') {
+        val = n.votes && n.votes.absentee ? n.votes.absentee.rate : null;
+      } else if (modalMapLayer === 'diff') {
+        val = (n.votes && n.votes.absentee && n.votes.polling)
+          ? +(n.votes.absentee.rate - n.votes.polling.rate).toFixed(2) : null;
+      } else {
+        val = n.rate;
+      }
+
+      if (val != null) {
+        if (!guAccum[newGu]) guAccum[newGu] = { sum: 0, count: 0 };
+        guAccum[newGu].sum += val;
+        guAccum[newGu].count += 1;
+      }
+    });
+
+    Object.entries(guAccum).forEach(([gu, acc]) => {
+      if (acc.count > 0) {
+        const avg = +(acc.sum / acc.count).toFixed(2);
+        rateMap[gu] = avg;
+        if (avg < minRate) minRate = avg;
+        if (avg > maxRate) maxRate = avg;
+      }
+    });
+  }
+
   if (minRate === Infinity) { minRate = 0; maxRate = 100; }
 
   const isDarkMode = document.body.classList.contains('dark');
@@ -4013,11 +4392,114 @@ async function renderModalMapDistrict(item) {
   // zoom 그룹 (역보정 zoom은 라벨 렌더링 후 아래에서 설정)
   const zg = svg.append('g');
 
-  zg.selectAll("path")
+  // 시군구명 → district 원본 데이터 매핑 (tooltip 상세 정보용)
+  const _MERGE_PFX = ['화성시', '부천시', '성남시', '수원시', '안양시', '고양시', '용인시', '안산시'];
+  const districtDataMap = {};
+  effectiveDistricts.forEach(d => {
+    districtDataMap[d.name] = d;
+    const mergeKey = _MERGE_PFX.find(p => d.name.startsWith(p) && d.name.length > p.length);
+    if (mergeKey && !districtDataMap[mergeKey]) districtDataMap[mergeKey] = d;
+  });
+
+  const distPaths = zg.selectAll("path")
     .data(targetFeatures)
     .enter().append("path").attr("d", path).attr("class", "district-path")
-    .style("fill", d => rateMap[d.properties.name] !== undefined ? colorScale(rateMap[d.properties.name]) : defaultFill)
-    .append("title").text(d => d.properties.name + (rateMap[d.properties.name] !== undefined ? ` (${rateMap[d.properties.name]}%)` : ''));
+    .style("fill", d => rateMap[d.properties.name] !== undefined ? colorScale(rateMap[d.properties.name]) : defaultFill);
+
+  // ── 시군구 tooltip ───────────────────────────────────────
+  let pinnedDistrict = null;
+  wrap.style.position = 'relative';
+
+  const distTooltip = d3.select(wrap).append('div')
+    .attr('class', 'dong-tooltip')
+    .style('position', 'absolute')
+    .style('pointer-events', 'none')
+    .style('opacity', '0')
+    .style('z-index', '20');
+
+  const DIST_VOTE_LABELS = { polling: '관내 당일', early: '관내 사전', absentee: '관외 사전', special: '거소·선상' };
+
+  function buildDistVotesHTML(dData) {
+    if (!dData || !dData.votes) return '';
+    const keys = ['polling', 'early', 'absentee', 'special'];
+    const rows = keys.filter(k => dData.votes[k] && dData.votes[k].rate != null).map(k => {
+      const v = dData.votes[k];
+      const badge = k === 'absentee' && dData.votes.polling && v.rate > dData.votes.polling.rate
+        ? '<span class="dt-badge dt-badge-absentee">관외↑</span>' : '';
+      const valCls = k === 'absentee' ? 'dt-vote-val absentee-high' : 'dt-vote-val';
+      const countTxt = v.count != null ? `<span style="color:var(--text3);font-size:12px;margin-left:3px">(${v.count.toLocaleString()}표)</span>` : '';
+      return `<div class="dt-vote-row"><span class="dt-vote-label">${DIST_VOTE_LABELS[k]}</span><span class="${valCls}">${v.rate}%${countTxt}${badge}</span></div>`;
+    }).join('');
+    return rows ? `<div class="dt-votes">${rows}</div>` : '';
+  }
+
+  function showDistTooltip(event, d, pinned) {
+    const nm = d.properties.name;
+    const val = rateMap[nm];
+    const dData = districtDataMap[nm];
+    const [mx, my] = d3.pointer(event, wrap);
+    const ttWidth = dData && dData.votes ? 200 : 150;
+    const tx = mx + 14 + ttWidth > width ? mx - ttWidth - 4 : mx + 14;
+    const ty = my - 60 < 0 ? my + 10 : my - 60;
+
+    let rateDisplay = val !== undefined ? `${val}%` : null;
+    let layerLabel = '';
+    if (modalMapLayer === 'diff' && val !== undefined) {
+      layerLabel = `<div style="font-size:12px;color:var(--text3);font-weight:600;margin-bottom:2px">관외−관내 차이</div>`;
+      rateDisplay = `${val >= 0 ? '+' : ''}${val}%`;
+    } else if (modalMapLayer === 'absentee') {
+      layerLabel = `<div style="font-size:12px;color:var(--text3);font-weight:600;margin-bottom:2px">관외 사전 득표율</div>`;
+    } else if (modalMapLayer === 'early') {
+      layerLabel = `<div style="font-size:12px;color:var(--text3);font-weight:600;margin-bottom:2px">관내 사전 득표율</div>`;
+    }
+
+    distTooltip
+      .style('opacity', '1')
+      .style('left', `${tx}px`)
+      .style('top', `${ty}px`)
+      .html(val !== undefined
+        ? `<div class="dt-name">${nm}</div>
+           ${layerLabel}
+           <div class="dt-rate">${rateDisplay}<span class="dt-unit"> </span></div>
+           ${buildDistVotesHTML(dData)}
+           ${pinned ? '<div class="dt-pin">📌 고정됨 · 다시 클릭해 해제</div>' : ''}`
+        : `<div class="dt-name" style="color:var(--text2)">${nm}</div>
+           <div class="dt-nodata">데이터 없음</div>`);
+  }
+
+  distPaths
+    .on('mousemove', function(event, d) {
+      const nm = d.properties.name;
+      if (pinnedDistrict && pinnedDistrict !== nm) return;
+      if (!pinnedDistrict) showDistTooltip(event, d, false);
+    })
+    .on('mouseleave', function(event, d) {
+      if (pinnedDistrict === d.properties.name) return;
+      distTooltip.style('opacity', '0');
+    })
+    .on('click', function(event, d) {
+      event.stopPropagation();
+      const nm = d.properties.name;
+      if (pinnedDistrict === nm) {
+        pinnedDistrict = null;
+        distTooltip.style('opacity', '0');
+        zg.selectAll('path.district-path').style('stroke', 'var(--surface)').style('stroke-width', '1px');
+      } else {
+        pinnedDistrict = nm;
+        showDistTooltip(event, d, true);
+        zg.selectAll('path.district-path')
+          .style('stroke', fd => fd.properties.name === nm ? '#ffffff' : 'var(--surface)')
+          .style('stroke-width', fd => fd.properties.name === nm ? '2px' : '1px');
+      }
+    });
+
+  svg.on('click.distunpin', function(event) {
+    if (event.target.tagName === 'svg' || event.target.tagName === 'g') {
+      pinnedDistrict = null;
+      distTooltip.style('opacity', '0');
+      zg.selectAll('path.district-path').style('stroke', 'var(--surface)').style('stroke-width', '1px');
+    }
+  });
 
   // 면적 기반 라벨 크기/표시 임계값 계산
   function getLabelConfig(feature) {
@@ -4085,7 +4567,7 @@ async function renderModalMapDistrict(item) {
     });
 
   svg.call(zoomFixed).on('dblclick.zoom', null);
-  addModalZoomCtrl(wrap, svg, zoomFixed);
+  addModalZoomCtrl(wrap, svg, zoomFixed, zg);
 
   // 관외사전 레이어일 때 지도 상단에 설명 레이블 표시
   const existingLayerNote = document.getElementById('district-layer-note');
@@ -4108,10 +4590,14 @@ async function renderModalMapDistrict(item) {
 // ── 읍면동 GeoJSON 캐시 (시도별 lazy fetch) ──────────────
 const _dongCache = {};        // sidoCd → features[]
 let _dongFetchPromise = null; // 전체 fetch 중복 방지용
+let _dongFetchFailed  = false; // 실패 플래그 (재시도 허용용)
 
 async function loadDongFeatures(sidoCd) {
   // 이미 해당 시도 캐시 있으면 즉시 반환
   if (_dongCache[sidoCd]) return _dongCache[sidoCd];
+
+  // 이전에 실패했으면 플래그 초기화 후 재시도 허용
+  if (_dongFetchFailed) _dongFetchFailed = false;
 
   // fetch 진행 중이면 그 Promise 재활용 (race condition 방지)
   if (!_dongFetchPromise) {
@@ -4130,6 +4616,7 @@ async function loadDongFeatures(sidoCd) {
       })
       .catch(e => {
         _dongFetchPromise = null;
+        _dongFetchFailed = true;
         console.error('읍면동 GeoJSON 로드 실패', e);
       });
   }
@@ -4146,8 +4633,9 @@ async function renderModalMapNeighborhood(item) {
   // 비례 기초: item.name = "서울 동작구"
   // 기초단체장 후보: item.name = "홍길동", item.region = "경기 화성시"
   // 광역단체장 후보: item.name = "홍길동", item.region = "서울" (또는 직책명 포함)
+  // 재보궐선거: item.name = "홍길동", item.region = "충남 공주·부여·청양"
   // → getSidoFromItem으로 시도명 정규화
-  const sidoName = (item.type === '기초단체장' || item.type === '광역단체장')
+  const sidoName = (item.type === '기초단체장' || item.type === '광역단체장' || item.type === '재보궐선거')
     ? getSidoFromItem(item)
     : (SIDO_CODES[item.name] ? item.name : item.name.split(' ')[0]);
   const sidoCd = SIDO_CODES[sidoName];
@@ -4215,8 +4703,49 @@ async function renderModalMapNeighborhood(item) {
     if (filtered.length > 0) displayFeatures = filtered;
   }
 
+  // 재보궐선거: 해당 시군구 읍면동만 표시
+  // 시군구명 추출 우선순위:
+  //   1) neighborhoods의 "XXX_관외사전투표" 접두사 (이은창처럼 여러 시군구)
+  //   2) _raw.district에서 "갑/을/병/정" 제거 후 시군구명 추출
+  if (item.type === '재보궐선거') {
+    const _jaebNeighborhoods = item.neighborhoods || [];
+
+    // 1) neighborhoods의 "_관외사전투표" 접두사로 시군구명 추출
+    let _sigunguNames = _jaebNeighborhoods
+      .filter(n => n.name.includes('_') && n.name.endsWith('관외사전투표'))
+      .map(n => n.name.replace(/_관외사전투표$/, ''));
+
+    // 2) neighborhoods에 시군구 접두사 없으면 _raw.district에서 추출
+    //    "하남 갑" → "하남시", "남구 갑" → "남구", "연수 갑" → "연수구"
+    if (_sigunguNames.length === 0 && item._raw && item._raw.district) {
+      const distClean = item._raw.district.replace(/\s*[갑을병정]\s*$/, '').trim();
+      // 여러 지역 구분자(·, ·) 처리
+      const distParts = distClean.split(/[·・,\s]+/).map(s => s.trim()).filter(Boolean);
+      _sigunguNames = distParts;
+    }
+
+    if (_sigunguNames.length > 0) {
+      // GeoJSON adm_nm 에서 시군구 토큰 매칭
+      // adm_nm 예: "경기도 하남시 천현동", "울산광역시 남구 신정1동"
+      // _sigunguNames: ["하남시"], ["남구"], ["연수구"], ["공주시","부여군","청양군"]
+      const _jaebFiltered = allFeatures.filter(f => {
+        const admParts = (f.properties.adm_nm || '').trim().split(/\s+/);
+        return _sigunguNames.some(sg => {
+          // 정확히 일치하는 토큰이 있으면 매칭
+          if (admParts.includes(sg)) return true;
+          // "하남" → "하남시" 처럼 시/군/구 없이 입력된 경우 부분 매칭
+          const sgNoSuffix = sg.replace(/[시군구]$/, '');
+          return admParts.some(p => p === sg || p.startsWith(sgNoSuffix) && p !== sgNoSuffix);
+        });
+      });
+      if (_jaebFiltered.length > 0) displayFeatures = _jaebFiltered;
+    }
+  }
+
   // ── 레이어별 값 계산 ─────────────────────────────────────
-  const neighborhoods = item.neighborhoods || [];
+  // 재보궐선거 중 이은창(id:146) 제외 후보는 관외사전 항목을 지도에서 숨김
+  const _hideAbsentee = item.type === '재보궐선거' && item.id !== 146;
+  const neighborhoods = (item.neighborhoods || []).filter(n => !(_hideAbsentee && n.votes && n.votes.absentee && !n.votes.polling && !n.votes.early));
 
   // ── 동명 중복 감지 ───────────────────────────────────────
   // n.name 기준 동명 빈도 카운트 (예: "신사동" → 2)
@@ -4344,7 +4873,7 @@ async function renderModalMapNeighborhood(item) {
   const zoom = d3.zoom().scaleExtent([1,12])
     .on('zoom', event => { zg.attr('transform', event.transform); });
   svg.call(zoom).on('dblclick.zoom', null);
-  addModalZoomCtrl(wrap, svg, zoom);
+  addModalZoomCtrl(wrap, svg, zoom, zg);
 
   // getDongName: adm_nm 전체 경로를 nhMap 조회 키로 반환 (중복 동명 구분 핵심)
   // adm_nm 예: "서울특별시 강남구 신사동"
@@ -4398,6 +4927,30 @@ async function renderModalMapNeighborhood(item) {
   // 표시명 반환 헬퍼
   function getDongDisplay(admNm) {
     return admDisplayMap[admNm] || (admNm.split(/\s+/).pop());
+  }
+
+  // 재보궐선거: neighborhoods에 없는 동 폴리곤은 아예 제거 (색칠된 동만 표시)
+  if (item.type === '재보궐선거' && neighborhoods.length > 0) {
+    buildSggnmKeys(displayFeatures); // 먼저 복합키 빌드
+    const _nhDongSet = new Set();
+    neighborhoods.forEach(n => {
+      if (n.name.endsWith('관외사전투표')) return;
+      _nhDongSet.add(n.name);
+      _nhDongSet.add(norm(n.name));
+      if (n._gu) {
+        _nhDongSet.add(n._gu + ' ' + n.name);
+        _nhDongSet.add(n._gu + ' ' + norm(n.name));
+      }
+    });
+    displayFeatures = displayFeatures.filter(f => {
+      const admNm = (f.properties.adm_nm || '').trim();
+      const sggnm = (f.properties.sggnm  || '').trim();
+      const last  = admNm.split(/\s+/).pop();
+      return _nhDongSet.has(last)
+        || _nhDongSet.has(norm(last))
+        || (sggnm && _nhDongSet.has(sggnm + ' ' + last))
+        || (sggnm && _nhDongSet.has(sggnm + ' ' + norm(last)));
+    });
   }
 
   buildSggnmKeys(displayFeatures);
@@ -4569,6 +5122,15 @@ async function renderModalMap(item) {
     await renderModalMapNeighborhood(item);
     return;
   }
+  // 재보궐선거: 이은창(id:146)은 뷰모드에 따라 시군구/읍면동, 나머지는 읍면동 고정
+  if (item.type === '재보궐선거') {
+    if (item.id === 146 && modalViewMode === 'district') {
+      await renderModalMapDistrict(item);
+    } else {
+      await renderModalMapNeighborhood(item);
+    }
+    return;
+  }
   // 비례 (광역/기초): 뷰모드에 따라 분기
   if (modalViewMode === 'neighborhood') {
     await renderModalMapNeighborhood(item);
@@ -4596,11 +5158,11 @@ function buildAvgLineHTML(avgRate, topVal) {
 
 function buildBarsHTML(data, topVal, avgRate) {
   const avg = parseFloat(avgRate);
-  return data.map(item => {
+  return data.map((item, idx) => {
     const pct = (item.rate / topVal) * 100;
     const isAbove = item.rate >= avg;
     return `
-      <div class="bar-group">
+      <div class="bar-group" data-bar-idx="${idx}" style="cursor:pointer;" title="${escapeHTML(item.name)} 상세보기">
         <span class="bar-label-top${isAbove ? ' above-avg' : ''}">${escapeHTML(String(item.rate))}%</span>
         <div class="bar-bar${isAbove ? '' : ' below-avg'}" style="height:${pct}%;"></div>
         <span class="bar-name">${escapeHTML(item.name)}</span>
@@ -4631,6 +5193,14 @@ function renderBarChart(data) {
       ${buildAvgLineHTML(avgRate, topVal)}
     </div>
     ${buildBarsHTML(data, topVal, avgRate)}`;
+
+  // 막대 클릭 → 바로 상세 모달 오픈
+  chart.addEventListener('click', function handleBarClick(e) {
+    const group = e.target.closest('.bar-group[data-bar-idx]');
+    if (!group) return;
+    const idx = parseInt(group.dataset.barIdx, 10);
+    if (!isNaN(idx) && data[idx]) openModal(data[idx], true);
+  });
 }
 
 function buildPropCardHTML(item, idx) {
@@ -4653,7 +5223,7 @@ function buildPropCardHTML(item, idx) {
         <div class="prop-card-mini-nh">
           <span class="prop-card-mini-nh-name${i === 0 ? ' top1' : ''}">${escapeHTML(n.name)}</span>
           <div class="prop-card-mini-nh-bar">
-            <div class="prop-card-mini-nh-fill${i === 0 ? ' top1' : ''}" style="width:${((n.rate / maxNhRate) * 100).toFixed(1)}%"></div>
+            <div class="prop-card-mini-nh-fill${i === 0 ? ' top1' : ''}" data-width="${((n.rate / maxNhRate) * 100).toFixed(1)}%" style="width:0%"></div>
           </div>
           <span class="prop-card-mini-nh-rate${i === 0 ? ' top1' : ''}">${n.rate}%</span>
         </div>`).join('')}
@@ -4677,7 +5247,16 @@ function buildPropCardHTML(item, idx) {
 }
 
 function renderPropGrid(data) {
-  document.getElementById('prop-grid').innerHTML = data.map(buildPropCardHTML).join('');
+  const grid = document.getElementById('prop-grid');
+  grid.innerHTML = data.map(buildPropCardHTML).join('');
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  grid.querySelectorAll('.prop-card').forEach((card, i) => {
+    if (prefersReduced) {
+      card.classList.add('animated');
+    } else {
+      setTimeout(() => card.classList.add('animated'), i * 55);
+    }
+  });
 }
 
 function renderProportional() {
@@ -4837,6 +5416,8 @@ function renderCandidates() {
     }
   }
 
+  renderedCandList = list; // 셔플 포함 순서를 저장 → _updateModalNav에서 사용
+
   const cnt = document.getElementById('search-result-count');
   if (searchQuery.trim()) {
     cnt.style.display = 'block';
@@ -4880,11 +5461,23 @@ function renderCandidatesLazy(list, grid) {
   if (_lazyObserver) { _lazyObserver.disconnect(); _lazyObserver = null; }
   grid.innerHTML = '';
 
-  const firstBatch = list.splice(0, LAZY_BATCH);
-  firstBatch.forEach(c => {
+  const firstBatch = list.slice(0, LAZY_BATCH);
+  list = list.slice(LAZY_BATCH);
+  const prefersReducedCand = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  firstBatch.forEach((c, i) => {
     const div = document.createElement('div');
     div.innerHTML = buildCandCardHTML(c);
-    grid.appendChild(div.firstElementChild);
+    const card = div.firstElementChild;
+    if (!prefersReducedCand) {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(12px)';
+      card.style.transition = 'opacity 0.28s ease, transform 0.28s ease';
+      setTimeout(() => {
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+      }, i * 40);
+    }
+    grid.appendChild(card);
   });
   runCountUpsIn(grid);
 
@@ -4903,7 +5496,8 @@ function renderCandidatesLazy(list, grid) {
       _lazyObserver = null;
       sentinel.remove();
 
-      const batch = list.splice(0, LAZY_BATCH);
+      const batch = list.slice(0, LAZY_BATCH);
+      list = list.slice(LAZY_BATCH);
       const frag = document.createDocumentFragment();
       batch.forEach(c => {
         const div = document.createElement('div');
@@ -4987,7 +5581,7 @@ function buildPropLeftPanelExtra(item) {
       // 평균 대비
       const avg = +(dataset.filter(d=>d.rate>0).reduce((s,d)=>s+d.rate,0)/dataset.filter(d=>d.rate>0).length).toFixed(2);
       const diff = +(item.rate - avg).toFixed(2);
-      const diffStr = diff >= 0 ? `▲ +${diff}%p` : `▼ ${diff}%p`;
+      const diffStr = diff >= 0 ? `▲ +${diff}%p` : `▼ -${Math.abs(diff)}%p`;
       const diffCls = diff >= 0 ? 'above' : 'below';
       parts.push(`
         <div class="prop-extra-block">
@@ -5072,7 +5666,12 @@ function isSejongItem(item) {
 
 function buildToggleHTML(item, dataList, isProp) {
   // neighborhoods 기준으로 레이어 버튼 생성 (비례/후보 모두 동일)
-  const neighborhoods = item.neighborhoods || dataList || [];
+  // 재보궐선거 중 이은창(id:146) 제외 후보는 관외사전 항목을 레이어 버튼에서 숨김
+  const _rawNeighborhoods = item.neighborhoods || dataList || [];
+  const _toggleHideAbsentee = item.type === '재보궐선거' && item.id !== 146;
+  const neighborhoods = _toggleHideAbsentee
+    ? _rawNeighborhoods.filter(n => !(n.votes && n.votes.absentee && !n.votes.polling && !n.votes.early))
+    : _rawNeighborhoods;
   const layerBtns = buildLayerBtnsHTML(neighborhoods);
 
   // 광역 계열 (비례 광역 / 광역단체장): 시군구/읍면동 토글
@@ -5094,6 +5693,19 @@ function buildToggleHTML(item, dataList, isProp) {
   }
   // 기초 계열 (비례 기초 / 기초단체장): 읍면동 고정
   if (item.type === '기초' || item.type === '기초단체장') {
+    if (modalViewMode !== 'neighborhood') modalViewMode = 'neighborhood';
+    return layerBtns;
+  }
+  // 재보궐선거: 이은창(id:146)은 시군구/읍면동 토글, 나머지는 읍면동 고정
+  if (item.type === '재보궐선거') {
+    if (item.id === 146) {
+      return `
+      <div class="view-toggle">
+        <button class="view-btn ${modalViewMode === 'district'     ? 'active' : ''}" data-view="district">시군구별</button>
+        <button class="view-btn ${modalViewMode === 'neighborhood' ? 'active' : ''}" data-view="neighborhood">읍면동별</button>
+      </div>
+      ${layerBtns}`;
+    }
     if (modalViewMode !== 'neighborhood') modalViewMode = 'neighborhood';
     return layerBtns;
   }
@@ -5366,9 +5978,60 @@ function buildModalTableHTML(dataList, avg, isProp) {
 // modal-body 위임 리스너 — openModal 시 한 번만 등록, 이후 item/isProp은 클로저로 갱신
 let _modalBodyListenerAttached = false;
 
+// neighborhoods 배열을 구별로 집계하여 districts 형식으로 반환
+function buildDistrictsFromNeighborhoods(neighborhoods) {
+  const guAccum = {}; // { guName: { sumT, cntT, sumP, cntP, sumE, cntE, sumA, cntA, sumACount, ... } }
+  const guOrder = [];
+  let _curGu = '';
+  (neighborhoods || []).forEach(n => {
+    const absenteeMatch = n.name.match(/^(.+?)_관외사전투표$/);
+    if (absenteeMatch) {
+      const raw = absenteeMatch[1];
+      _curGu = (raw.endsWith('구') || raw.endsWith('시') || raw.endsWith('군')) ? raw : raw + '구';
+      if (!guAccum[_curGu]) { guAccum[_curGu] = { sumT:0,cntT:0, sumP:0,cntP:0, sumE:0,cntE:0, sumA:0,cntA:0 }; guOrder.push(_curGu); }
+      const aRate = n.votes && n.votes.absentee ? n.votes.absentee.rate : n.rate;
+      if (aRate != null) { guAccum[_curGu].sumA += aRate; guAccum[_curGu].cntA++; }
+      return;
+    }
+    if (!_curGu) return;
+    if (!guAccum[_curGu]) { guAccum[_curGu] = { sumT:0,cntT:0, sumP:0,cntP:0, sumE:0,cntE:0, sumA:0,cntA:0 }; guOrder.push(_curGu); }
+    const acc = guAccum[_curGu];
+    if (n.rate != null) { acc.sumT += n.rate; acc.cntT++; }
+    if (n.votes && n.votes.polling  && n.votes.polling.rate  != null) { acc.sumP += n.votes.polling.rate;  acc.cntP++; }
+    if (n.votes && n.votes.early    && n.votes.early.rate    != null) { acc.sumE += n.votes.early.rate;    acc.cntE++; }
+    if (n.votes && n.votes.absentee && n.votes.absentee.rate != null) { acc.sumA += n.votes.absentee.rate; acc.cntA++; }
+  });
+  return guOrder.map(guName => {
+    const acc = guAccum[guName];
+    const avgT = acc.cntT > 0 ? +(acc.sumT / acc.cntT).toFixed(2) : null;
+    const avgP = acc.cntP > 0 ? +(acc.sumP / acc.cntP).toFixed(2) : null;
+    const avgE = acc.cntE > 0 ? +(acc.sumE / acc.cntE).toFixed(2) : null;
+    const avgA = acc.cntA > 0 ? +(acc.sumA / acc.cntA).toFixed(2) : null;
+    const d = { name: guName, rate: avgT };
+    if (avgP != null || avgE != null || avgA != null) {
+      d.votes = {};
+      if (avgP != null) d.votes.polling  = { rate: avgP };
+      if (avgE != null) d.votes.early    = { rate: avgE };
+      if (avgA != null) d.votes.absentee = { rate: avgA };
+    }
+    return d;
+  }).filter(d => d.rate !== null);
+}
+
+// 광역단체장 후보에서 districts가 비어 있고 neighborhoods가 있을 때
+// neighborhoods → 구별 집계를 _computedDistricts에 캐싱
+function getEffectiveDistricts(item) {
+  if ((item.districts || []).length > 0) return item.districts;
+  if (!item._computedDistricts) {
+    item._computedDistricts = buildDistrictsFromNeighborhoods(item.neighborhoods);
+  }
+  return item._computedDistricts;
+}
+
 function rebuildModalTable(item, isProp) {
+  const rawDistricts = getEffectiveDistricts(item);
   const dataList = modalViewMode === 'district'
-    ? (item.districts     || [])
+    ? rawDistricts
     : (item.neighborhoods || []);
   const avg = isProp ? item.rate : item.voteRate;
 
@@ -5395,8 +6058,9 @@ function renderModalBody(item, isProp) {
     modalViewMode = 'neighborhood';
   }
 
+  const rawDistricts = getEffectiveDistricts(item);
   const rawList = modalViewMode === 'district'
-    ? (item.districts     || [])
+    ? rawDistricts
     : (item.neighborhoods || []);
   const dataList = rawList;
   const avg = isProp ? item.rate : item.voteRate;
@@ -5415,7 +6079,7 @@ function renderModalBody(item, isProp) {
   const _gwangyeokSido = item.type === '광역단체장' ? getSidoFromItem(item) : null;
   const isGwangyeokMap = !isProp && item.type === '광역단체장'
     && _gwangyeokSido && SIGUNGU_CODES[_gwangyeokSido]
-    && ((item.districts || []).length > 0 || (item.neighborhoods || []).length > 0);
+    && (getEffectiveDistricts(item).length > 0 || (item.neighborhoods || []).length > 0);
 
   // 기초단체장: 읍면동 단위 지도 (neighborhoods 데이터 있을 때)
   const isGichoCandMap = !isProp && item.type === '기초단체장'
@@ -5423,10 +6087,19 @@ function renderModalBody(item, isProp) {
     && SIDO_CODES[item.region.split(' ')[0]]
     && (item.neighborhoods || []).length > 0;
 
-  const showMap = isPropMap || isGwangyeokMap || isGichoCandMap;
+  // 재보궐선거: neighborhoods 있으면 지도 표시
+  // 이은창(id:146)은 시군구+읍면동 토글, 나머지는 읍면동 고정
+  const isJaebogwolMap = !isProp && item.type === '재보궐선거'
+    && (item.neighborhoods || []).length > 0;
+
+  const showMap = isPropMap || isGwangyeokMap || isGichoCandMap || isJaebogwolMap;
 
   // 광역단체장은 기본 뷰를 district로
   if (isGwangyeokMap && modalViewMode !== 'district' && modalViewMode !== 'neighborhood') {
+    modalViewMode = 'district';
+  }
+  // 이은창(id:146) 재보궐은 기본 뷰를 district로
+  if (isJaebogwolMap && item.id === 146 && modalViewMode !== 'district' && modalViewMode !== 'neighborhood') {
     modalViewMode = 'district';
   }
 
@@ -5518,7 +6191,7 @@ function renderModalBody(item, isProp) {
     }
     // 현재 dataList 기준 테이블만 교체 (DOM 전체 재렌더 안 함)
     const currentList = modalViewMode === 'district'
-      ? (item.districts     || [])
+      ? getEffectiveDistricts(item)
       : (item.neighborhoods || []);
     const currentAvg = isProp ? item.rate : item.voteRate;
     const tableWrap = body.querySelector('.modal-table-wrap');
@@ -5531,10 +6204,10 @@ function renderModalBody(item, isProp) {
 
 function updateModalPhoto(item, isWinner) {
   // 모바일 헤더
-  document.getElementById('modal-initial').textContent =
-    item.name ? item.name.slice(0, 1) : '?';
+  const initialEl = document.getElementById('modal-initial');
+  if (initialEl) initialEl.textContent = item.name ? item.name.slice(0, 1) : '?';
   const badge = document.getElementById('modal-winner-badge');
-  badge.style.display = isWinner ? 'flex' : 'none';
+  if (badge) badge.style.display = isWinner ? 'flex' : 'none';
 
   // PC 왼쪽 패널 사진
   const pcInitial = document.getElementById('modal-initial-pc');
@@ -5542,26 +6215,43 @@ function updateModalPhoto(item, isWinner) {
   const pcBadge = document.getElementById('modal-winner-badge-pc');
   if (pcBadge) pcBadge.style.display = isWinner ? 'flex' : 'none';
 
-  if (!item.imageUrl) return;
-
   // 모바일 사진
   const photo = document.getElementById('modal-photo');
-  const img   = document.createElement('img');
-  img.src = escapeHTML(item.imageUrl);
-  img.alt = escapeHTML(item.name);
-  img.style.cssText = 'width:100%;height:100%;object-fit:cover;object-position:top center;display:block;';
-  photo.innerHTML = '';
-  photo.appendChild(img);
+  if (photo) {
+    if (item.imageUrl) {
+      const img = document.createElement('img');
+      img.src = escapeHTML(item.imageUrl);
+      img.alt = escapeHTML(item.name);
+      img.style.cssText = 'width:100%;height:100%;object-fit:cover;object-position:top center;display:block;';
+      // innerHTML 대신 img만 교체 — modal-initial span은 유지
+      photo.innerHTML = '';
+      photo.appendChild(img);
+      // modal-initial이 사라졌으므로 다시 추가 (hidden)
+      const span = document.createElement('span');
+      span.className = 'modal-photo-initial';
+      span.id = 'modal-initial';
+      span.textContent = item.name ? item.name.slice(0, 1) : '?';
+      span.style.display = 'none';
+      photo.appendChild(span);
+    } else {
+      // 이미지 없을 때: 기본 상태 복원
+      photo.innerHTML = `<span class="modal-photo-initial" id="modal-initial">${item.name ? item.name.slice(0,1) : '?'}</span><span class="modal-photo-text">사진 준비중</span>`;
+    }
+  }
 
   // PC 사진
   const pcPhoto = document.getElementById('modal-photo-pc');
   if (pcPhoto) {
-    const img2 = document.createElement('img');
-    img2.src = escapeHTML(item.imageUrl);
-    img2.alt = escapeHTML(item.name);
-    img2.style.cssText = 'width:100%;height:100%;object-fit:cover;object-position:top center;display:block;';
-    pcPhoto.innerHTML = '';
-    pcPhoto.appendChild(img2);
+    if (item.imageUrl) {
+      const img2 = document.createElement('img');
+      img2.src = escapeHTML(item.imageUrl);
+      img2.alt = escapeHTML(item.name);
+      img2.style.cssText = 'width:100%;height:100%;object-fit:cover;object-position:top center;display:block;';
+      pcPhoto.innerHTML = '';
+      pcPhoto.appendChild(img2);
+    } else {
+      pcPhoto.innerHTML = `<span class="modal-photo-initial" id="modal-initial-pc">${item.name ? item.name.slice(0,1) : '?'}</span><span class="modal-photo-text">사진 준비중</span>`;
+    }
   }
 }
 
@@ -5570,6 +6260,10 @@ function openModal(item, isProp) {
   isProportionalModal = isProp;
   modalTrigger        = document.activeElement;
   modalTableSort      = { col: 'rate', dir: 'desc' };
+
+  // URL 딥링크: #candidate-{id} 또는 #prop-{name}
+  const hashId = isProp ? `prop-${encodeURIComponent(item.name)}` : `candidate-${item.id}`;
+  history.pushState({ tab: activeTab, modal: hashId }, '', `#${hashId}`);
 
   // 뷰모드 초기화: 광역단체장 → district (세종은 neighborhood), 그 외 → neighborhood
   if (!isProp && item.type === '광역단체장') {
@@ -5628,7 +6322,53 @@ function openModal(item, isProp) {
   const pcClose = document.getElementById('modal-close-pc');
   if (pcClose) pcClose.onclick = closeModal;
 
+  // 이전/다음 버튼 업데이트
+  _updateModalNav(item, isProp);
+
   setTimeout(() => document.getElementById('modal-close').focus(), 50);
+}
+
+function _updateModalNav(item, isProp) {
+  const navBtns  = document.getElementById('modal-nav-btns');
+  const prevBtn  = document.getElementById('modal-nav-prev');
+  const nextBtn  = document.getElementById('modal-nav-next');
+  const countEl  = document.getElementById('modal-nav-count');
+  if (!navBtns) return;
+
+  // 비례 모달은 네비 숨김
+  if (isProp) { navBtns.style.display = 'none'; return; }
+
+  // renderCandidates()가 그린 순서를 그대로 사용 (셔플 포함)
+  // 탭이 candidates가 아닌 경우(홈·비례에서 열릴 때)는 fallback으로 재계산
+  let list;
+  if (renderedCandList.length > 0) {
+    list = renderedCandList;
+  } else {
+    list = filterType === '전체' ? [...CANDIDATES] : CANDIDATES.filter(c => c.type === filterType);
+    if (filterSido !== '전체') {
+      list = list.filter(c => {
+        const sido = (c._raw && c._raw.region) ? c._raw.region.trim().split(/\s+/)[0] : c.region.trim().split(/\s+/)[0];
+        return sido === filterSido;
+      });
+    }
+    if (searchQuery.trim()) {
+      const q = searchQuery.trim().toLowerCase();
+      list = list.filter(c => c.name.toLowerCase().includes(q) || c.region.toLowerCase().includes(q));
+    }
+    if (sortOrder === 'rate-desc') list.sort((a, b) => b.voteRate - a.voteRate);
+    else if (sortOrder === 'rate-asc') list.sort((a, b) => a.voteRate - b.voteRate);
+    else if (sortOrder === 'winner-first') list.sort((a, b) => (b.result === '당선' ? 1 : 0) - (a.result === '당선' ? 1 : 0));
+  }
+
+  modalNavList = list;
+  modalNavIdx  = list.findIndex(c => c.id === item.id);
+
+  if (list.length <= 1 || modalNavIdx === -1) { navBtns.style.display = 'none'; return; }
+
+  navBtns.style.display = 'flex';
+  prevBtn.disabled = modalNavIdx === 0;
+  nextBtn.disabled = modalNavIdx === list.length - 1;
+  countEl.textContent = `${modalNavIdx + 1} / ${list.length}`;
 }
 
 function closeModal() {
@@ -5640,6 +6380,9 @@ function closeModal() {
   const lt = document.getElementById('map-layer-toggle');
   if (lt) lt.remove();
   modalMapLayer = 'total';
+
+  // URL을 탭 해시로 복원
+  history.pushState({ tab: activeTab }, '', `#${activeTab}`);
 
   if (modalTrigger && typeof modalTrigger.focus === 'function') {
     setTimeout(() => modalTrigger.focus(), 50);
@@ -5683,6 +6426,30 @@ function initEvents() {
       setTimeout(() => runCountUpsIn(document.getElementById('tab-proportional')), 100);
     });
   });
+
+  // 미니바 트랜지션: prop-card.animated 후 width 적용
+  function animateMiniBarsFill(grid) {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    grid.querySelectorAll('.prop-card-mini-nh-fill[data-width]').forEach(el => {
+      if (prefersReduced) {
+        el.style.width = el.dataset.width;
+      } else {
+        requestAnimationFrame(() => {
+          el.style.width = el.dataset.width;
+        });
+      }
+    });
+  }
+  // prop-card가 animated 클래스 받은 후 미니바 애니메이션
+  const propGridEl = document.getElementById('prop-grid');
+  const miniBarObs = new MutationObserver(() => {
+    const cards = propGridEl.querySelectorAll('.prop-card.animated');
+    if (cards.length > 0) {
+      setTimeout(() => animateMiniBarsFill(propGridEl), 200);
+      miniBarObs.disconnect();
+    }
+  });
+  miniBarObs.observe(propGridEl, { subtree: true, attributeFilter: ['class'] });
 
   document.getElementById('prop-grid').addEventListener('click', e => {
     const card = e.target.closest('.prop-card');
@@ -5790,9 +6557,19 @@ function initEvents() {
   });
 
   document.querySelectorAll('[data-goto]').forEach(el => {
-    el.addEventListener('click', () => switchTab(el.dataset.goto));
+    const handler = () => {
+      const tab    = el.dataset.goto;
+      const filter = el.dataset.filter;      // 후보 탭 filterType (data-filter)
+      const sido   = el.dataset.filterSido;  // 후보 탭 filterSido (data-filter-sido)
+      const sort   = el.dataset.filterSort;  // 후보 탭 sortOrder  (data-filter-sort)
+      if (filter !== undefined) filterType = filter;
+      if (sido   !== undefined) filterSido = sido;
+      if (sort   !== undefined) sortOrder  = sort;
+      switchTab(tab);
+    };
+    el.addEventListener('click', handler);
     el.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); switchTab(el.dataset.goto); }
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handler(); }
     });
   });
 
@@ -5801,8 +6578,99 @@ function initEvents() {
     if (e.target === document.getElementById('modal-backdrop')) closeModal();
   });
   document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') closeModal();
+    const backdrop = document.getElementById('modal-backdrop');
+    if (!backdrop.classList.contains('open')) return;
+    if (e.key === 'Escape') { closeModal(); return; }
+    // 모달 열린 상태에서 ← → 키로 이전/다음 이동
+    if (e.key === 'ArrowLeft' && !isProportionalModal) {
+      e.preventDefault();
+      if (modalNavIdx > 0) {
+        const prev = modalNavList[modalNavIdx - 1];
+        modalViewMode = (prev.type === '광역단체장' && !isSejongItem(prev)) ? 'district' : 'neighborhood';
+        openModal(prev, false);
+      }
+    }
+    if (e.key === 'ArrowRight' && !isProportionalModal) {
+      e.preventDefault();
+      if (modalNavIdx < modalNavList.length - 1) {
+        const next = modalNavList[modalNavIdx + 1];
+        modalViewMode = (next.type === '광역단체장' && !isSejongItem(next)) ? 'district' : 'neighborhood';
+        openModal(next, false);
+      }
+    }
   });
+
+  // `/` 키: 후보 탭 검색창 포커스
+  document.addEventListener('keydown', e => {
+    if (e.key !== '/') return;
+    const tag = document.activeElement.tagName;
+    if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
+    const backdrop = document.getElementById('modal-backdrop');
+    if (backdrop.classList.contains('open')) return;
+    e.preventDefault();
+    switchTab('candidates');
+    setTimeout(() => {
+      const inp = document.getElementById('cand-search');
+      if (inp) inp.focus();
+    }, 80);
+  });
+
+  document.getElementById('modal-nav-prev').addEventListener('click', () => {
+    if (modalNavIdx <= 0) return;
+    const prev = modalNavList[modalNavIdx - 1];
+    modalViewMode = (prev.type === '광역단체장' && !isSejongItem(prev)) ? 'district' : 'neighborhood';
+    openModal(prev, false);
+  });
+
+  document.getElementById('modal-nav-next').addEventListener('click', () => {
+    if (modalNavIdx >= modalNavList.length - 1) return;
+    const next = modalNavList[modalNavIdx + 1];
+    modalViewMode = (next.type === '광역단체장' && !isSejongItem(next)) ? 'district' : 'neighborhood';
+    openModal(next, false);
+  });
+
+  // ── 모달 터치 스와이프 (후보자 카드 좌우 넘기기) ──
+  (function() {
+    const modalBox = document.getElementById('modal-box');
+    let swipeStartX = 0;
+    let swipeStartY = 0;
+    let swipeActive = false;
+
+    modalBox.addEventListener('touchstart', e => {
+      // 지도·스크롤 영역은 제외
+      if (e.target.closest('.modal-map-svg, .modal-table-scroll, .modal-body svg')) return;
+      swipeStartX = e.touches[0].clientX;
+      swipeStartY = e.touches[0].clientY;
+      swipeActive = true;
+    }, { passive: true });
+
+    modalBox.addEventListener('touchmove', e => {
+      if (!swipeActive) return;
+      const dx = e.touches[0].clientX - swipeStartX;
+      const dy = e.touches[0].clientY - swipeStartY;
+      // 수직 스크롤이 더 크면 스와이프 취소
+      if (Math.abs(dy) > Math.abs(dx)) { swipeActive = false; }
+    }, { passive: true });
+
+    modalBox.addEventListener('touchend', e => {
+      if (!swipeActive) return;
+      swipeActive = false;
+      if (isProportionalModal) return;
+      const dx = e.changedTouches[0].clientX - swipeStartX;
+      if (Math.abs(dx) < 60) return; // 너무 짧으면 무시
+      if (dx < 0 && modalNavIdx < modalNavList.length - 1) {
+        // 왼쪽 → 다음
+        const next = modalNavList[modalNavIdx + 1];
+        modalViewMode = (next.type === '광역단체장' && !isSejongItem(next)) ? 'district' : 'neighborhood';
+        openModal(next, false);
+      } else if (dx > 0 && modalNavIdx > 0) {
+        // 오른쪽 → 이전
+        const prev = modalNavList[modalNavIdx - 1];
+        modalViewMode = (prev.type === '광역단체장' && !isSejongItem(prev)) ? 'district' : 'neighborhood';
+        openModal(prev, false);
+      }
+    }, { passive: true });
+  })();
 
   document.getElementById('modal-backdrop').addEventListener('keydown', e => {
     if (e.key !== 'Tab') return;
@@ -5821,7 +6689,58 @@ function initEvents() {
   });
 
   window.addEventListener('popstate', e => {
-    const tab = (e.state && e.state.tab) || 'home';
+    const state = e.state || {};
+    const hash  = location.hash.slice(1);
+
+    // 모달이 열려있고 뒤로가기 → 모달 닫기만 (탭 전환 없이)
+    const backdrop = document.getElementById('modal-backdrop');
+    if (backdrop.classList.contains('open')) {
+      backdrop.classList.remove('open');
+      backdrop.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      const lt = document.getElementById('map-layer-toggle');
+      if (lt) lt.remove();
+      modalMapLayer = 'total';
+      if (modalTrigger && typeof modalTrigger.focus === 'function') {
+        setTimeout(() => modalTrigger.focus(), 50);
+      }
+      const modalPhoto = document.getElementById('modal-photo');
+      modalPhoto.style.display = '';
+      modalPhoto.innerHTML = `<span class="modal-photo-initial" id="modal-initial"></span><span class="modal-photo-text">사진 준비중</span>`;
+      const badge = document.getElementById('modal-winner-badge');
+      if (badge) badge.style.display = 'none';
+      return;
+    }
+
+    // 딥링크: candidate-{id}
+    if (hash.startsWith('candidate-')) {
+      const id = parseInt(hash.replace('candidate-', ''), 10);
+      const c  = CANDIDATES.find(x => x.id === id);
+      if (c) {
+        switchTab('candidates', false);
+        setTimeout(() => {
+          modalViewMode = (c.type === '광역단체장' && !isSejongItem(c)) ? 'district' : 'neighborhood';
+          openModal(c, false);
+        }, 50);
+        return;
+      }
+    }
+
+    // 딥링크: prop-{name}
+    if (hash.startsWith('prop-')) {
+      const name = decodeURIComponent(hash.replace('prop-', ''));
+      const _R = (window.REGIONAL && window.REGIONAL.length) ? window.REGIONAL : [];
+      const _B = (window.BASIC    && window.BASIC.length)    ? window.BASIC    : [];
+      const item = [..._R, ..._B].find(x => x.name === name);
+      if (item) {
+        switchTab('proportional', false);
+        setTimeout(() => openModal(item, true), 50);
+        return;
+      }
+    }
+
+    // 일반 탭 전환
+    const tab = state.tab || ['home','proportional','candidates'].find(t => t === hash) || 'home';
     switchTab(tab, false);
   });
 }
@@ -5885,8 +6804,9 @@ function renderHomeStats() {
 
   const partyRateEl = document.getElementById('home-stat-party-rate');
   const partySubEl  = document.getElementById('home-stat-party-sub');
-  if (partyRateEl && REGIONAL && REGIONAL.length) {
-    const ratesWithData = REGIONAL.filter(d => d.rate > 0);
+  const _REGIONAL_HOME = (window.REGIONAL && window.REGIONAL.length) ? window.REGIONAL : (REGIONAL || []);
+  if (partyRateEl && _REGIONAL_HOME.length) {
+    const ratesWithData = _REGIONAL_HOME.filter(d => d.rate > 0);
     if (ratesWithData.length) {
       const avg = +(ratesWithData.reduce((s, d) => s + d.rate, 0) / ratesWithData.length).toFixed(2);
       partyRateEl.dataset.countup   = avg;
@@ -5938,6 +6858,17 @@ function renderTopHit() {
         </div>
       </div>`;
   }).join('');
+
+  // stagger delay + JS 트리거 애니메이션 (탭 재진입 시 재생 방지)
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  el.querySelectorAll('.tophit-row').forEach((row, i) => {
+    if (prefersReduced) {
+      row.style.opacity = '1';
+    } else {
+      row.style.animationDelay = (i * 80) + 'ms';
+      requestAnimationFrame(() => row.classList.add('animated'));
+    }
+  });
 
   // 클릭 → 후보 모달
   el.querySelectorAll('.tophit-row').forEach(row => {
@@ -6109,6 +7040,24 @@ function renderRecords() {
       <div class="record-desc">${c.desc}</div>
     </div>`
   ).join('');
+
+  // IntersectionObserver: 뷰포트 진입 시 stagger fadeIn
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReduced) {
+    grid.querySelectorAll('.record-card').forEach(c => c.classList.add('visible'));
+  } else {
+    const obs = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const cards = grid.querySelectorAll('.record-card:not(.visible)');
+        cards.forEach((card, i) => {
+          setTimeout(() => card.classList.add('visible'), i * 60);
+        });
+        observer.disconnect();
+      });
+    }, { threshold: 0.1 });
+    obs.observe(grid);
+  }
 }
 
 // ── 비례탭 기록 (비례탭 하단) ───────────────────────────
@@ -6120,8 +7069,13 @@ function renderPropRecordsTab() {
 
 // ── 비례 기록 (공통 렌더 로직) ──────────────────────────
 function renderPropRecordsInto(grid) {
-  const allProp = [...(REGIONAL || []), ...(BASIC || [])];
+  const _REGIONAL = (window.REGIONAL && window.REGIONAL.length) ? window.REGIONAL : (REGIONAL || []);
+  const _BASIC    = (window.BASIC    && window.BASIC.length)    ? window.BASIC    : (BASIC    || []);
+  const allProp = [..._REGIONAL, ..._BASIC];
   const withData = allProp.filter(d => d.rate > 0);
+
+  // 디버그: 상태 표시 (확인 후 제거 가능)
+  grid.dataset.debug = `R:${_REGIONAL.length} B:${_BASIC.length} withData:${withData.length}`;
 
   if (!withData.length) {
     grid.innerHTML = `
@@ -6135,7 +7089,7 @@ function renderPropRecordsInto(grid) {
   }
 
   const cards = [];
-  const regional = (REGIONAL || []).filter(d => d.rate > 0);
+  const regional = _REGIONAL.filter(d => d.rate > 0);
   if (regional.length) {
     const best = regional.reduce((a, b) => b.rate > a.rate ? b : a);
     const worst = regional.reduce((a, b) => b.rate < a.rate ? b : a);
@@ -6150,7 +7104,7 @@ function renderPropRecordsInto(grid) {
       cards.push({ cls: 'record-card-orange', icon: '📍', label: `${escapeHTML(r.name)} 최고 득표 읍면동`, value: `${escapeHTML(topNh.name)} ${topNh.rate}%`, desc: `${r.name} 광역의원 비례 · ${nhsExcludeAbsentee.length}개 읍면동 집계` });
     });
   }
-  const basic = (BASIC || []).filter(d => d.rate > 0);
+  const basic = _BASIC.filter(d => d.rate > 0);
   if (basic.length) {
     const best = basic.reduce((a, b) => b.rate > a.rate ? b : a);
     const worst = basic.reduce((a, b) => b.rate < a.rate ? b : a);
@@ -6159,14 +7113,42 @@ function renderPropRecordsInto(grid) {
     cards.push({ cls: 'record-card-blue',   icon: '📉', label: '기초의원 비례 최저 득표율', value: `${worst.rate}%`, desc: `${escapeHTML(worst.name)} · ${basic.length}개 지역 집계` });
   }
 
-  grid.innerHTML = cards.map(c => `
+  try {
+    const html = cards.map(c => `
     <div class="record-card ${escapeHTML(c.cls)}">
       <div class="record-icon">${c.icon}</div>
       <div class="record-label">${c.label}</div>
       <div class="record-value">${c.value}</div>
       <div class="record-desc">${escapeHTML(c.desc || '')}</div>
     </div>`
-  ).join('');
+    ).join('');
+    grid.innerHTML = html;
+    // opacity:0 → visible 클래스 추가
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) {
+      grid.querySelectorAll('.record-card').forEach(c => c.classList.add('visible'));
+    } else {
+      const obs = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          grid.querySelectorAll('.record-card:not(.visible)').forEach((card, i) => {
+            setTimeout(() => card.classList.add('visible'), i * 60);
+          });
+          observer.disconnect();
+        });
+      }, { threshold: 0.1 });
+      obs.observe(grid);
+      // 이미 뷰포트에 있는 경우 폴백
+      setTimeout(() => {
+        grid.querySelectorAll('.record-card:not(.visible)').forEach((card, i) => {
+          setTimeout(() => card.classList.add('visible'), i * 60);
+        });
+      }, 300);
+    }
+  } catch(e) {
+    console.error('[PropRecords] Error:', e);
+    grid.innerHTML = '<div style="color:red;padding:20px">[오류] ' + e.message + '</div>';
+  }
 }
 
 // ── INIT ──────────────────────────────────────────────
@@ -6181,8 +7163,9 @@ initEvents();
   });
 })();
 
-const initTab = ['home', 'proportional', 'candidates'].includes(location.hash.slice(1))
-  ? location.hash.slice(1)
+const initHash = location.hash.slice(1);
+const initTab = ['home', 'proportional', 'candidates'].includes(initHash)
+  ? initHash
   : 'home';
 
 // 비례 탭 카운트 업데이트
@@ -6197,9 +7180,50 @@ const initTab = ['home', 'proportional', 'candidates'].includes(location.hash.sl
 
 renderHomeStats();
 renderRecords();
+renderPropRecordsTab();
 renderTopHit();
 switchTab(initTab, false);
 renderCandidates();
+
+// ── 초기 딥링크 처리 (페이지 직접 접근 시 모달 자동 오픈) ──
+(function() {
+  if (initHash.startsWith('candidate-')) {
+    const id = parseInt(initHash.replace('candidate-', ''), 10);
+    const c  = CANDIDATES.find(x => x.id === id);
+    if (c) setTimeout(() => {
+      modalViewMode = (c.type === '광역단체장' && !isSejongItem(c)) ? 'district' : 'neighborhood';
+      openModal(c, false);
+    }, 300);
+  } else if (initHash.startsWith('prop-')) {
+    const name = decodeURIComponent(initHash.replace('prop-', ''));
+    const _R = (window.REGIONAL && window.REGIONAL.length) ? window.REGIONAL : [];
+    const _B = (window.BASIC    && window.BASIC.length)    ? window.BASIC    : [];
+    const item = [..._R, ..._B].find(x => x.name === name);
+    if (item) setTimeout(() => openModal(item, true), 300);
+  }
+})();
+
+// ── 비례 기록 지연 렌더 폴백 ──────────────────────────────
+// results.js가 비동기로 REGIONAL/BASIC을 세팅하는 경우를 대비해
+// 100ms / 500ms / 1500ms 에 재시도
+(function() {
+  function tryRenderProp() {
+    var R = (window.REGIONAL && window.REGIONAL.length) ? window.REGIONAL : REGIONAL;
+    var B = (window.BASIC    && window.BASIC.length)    ? window.BASIC    : BASIC;
+    if ((R && R.length) || (B && B.length)) {
+      if (window.REGIONAL && window.REGIONAL.length) REGIONAL = window.REGIONAL;
+      if (window.BASIC    && window.BASIC.length)    BASIC    = window.BASIC;
+      renderHomeStats();
+      renderPropRecordsTab();
+      if (activeTab === 'home') runCountUps();
+      return true;
+    }
+    return false;
+  }
+  [100, 500, 1500, 3000].forEach(function(ms) {
+    setTimeout(tryRenderProp, ms);
+  });
+})();
 
 // ── 테이블 스크롤 끝 감지 → 페이드 힌트 제거 ──
 document.addEventListener('scroll', function(e) {
