@@ -4611,7 +4611,7 @@
 
       <div class="cross-controls">
         <div></div>
-        <div class="cross-view-btns">
+        <div class="cross-view-btns" style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
           <button class="b2b-view-btn" data-view="bar">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
             바 차트
@@ -4620,6 +4620,7 @@
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="7.5" r="1.5"/><circle cx="18.5" cy="5.5" r="1.5"/><circle cx="11.5" cy="11.5" r="1.5"/><circle cx="16.5" cy="15.5" r="1.5"/><circle cx="6.5" cy="17.5" r="1.5"/></svg>
             산점도
           </button>
+          <button class="scatter-log-toggle" id="b2b-log-toggle" title="로그 스케일 ON/OFF — 득표율 분포가 촘촘할 때 점 간격을 넓혀줍니다">로그 스케일 OFF</button>
         </div>
       </div>
 
@@ -4672,7 +4673,7 @@
             <button class="cross-level-tab" data-level="읍면동" role="tab">읍면동</button>
           </div>
         </div>
-        <div class="cross-view-btns">
+        <div class="cross-view-btns" style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
           <button class="cross-view-btn" data-view="bar">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
             바 차트
@@ -4681,6 +4682,7 @@
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="7.5" r="1.5"/><circle cx="18.5" cy="5.5" r="1.5"/><circle cx="11.5" cy="11.5" r="1.5"/><circle cx="16.5" cy="15.5" r="1.5"/><circle cx="6.5" cy="17.5" r="1.5"/></svg>
             산점도
           </button>
+          <button class="scatter-log-toggle" id="cross-log-toggle" title="로그 스케일 ON/OFF — 득표율 분포가 촘촘할 때 점 간격을 넓혀줍니다">로그 스케일 OFF</button>
         </div>
       </div>
 
@@ -4759,6 +4761,247 @@
         <svg class="cmp-accordion-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
       </button>
       <div class="cmp-accordion-body" id="acc-scatter-matrix-body" style="padding-top:20px;">
+
+<!-- ── 📖 용어 설명 패널 ── -->
+<div style="margin-bottom:20px;border-radius:14px;border:1px solid var(--border);overflow:hidden;background:var(--surface2);">
+  <button onclick="(function(btn){var body=btn.nextElementSibling;var chevron=btn.querySelector('.sm-panel-chevron');var isOpen=body.style.display!=='none';body.style.display=isOpen?'none':'block';chevron.style.transform=isOpen?'rotate(-90deg)':'rotate(0deg)';})(this)" style="width:100%;background:none;border:none;cursor:pointer;padding:16px 20px;display:flex;align-items:center;gap:8px;text-align:left;font-family:inherit;">
+    <span style="font-size:18px;">📖</span>
+    <span style="font-weight:800;color:var(--text);font-size:14px;flex:1;">처음 보시는 분을 위한 용어 설명</span>
+    <svg class="sm-panel-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--text3);flex-shrink:0;transition:transform .2s;transform:rotate(0deg)"><polyline points="6 9 12 15 18 9"/></svg>
+  </button>
+  <div style="display:block;padding:0 20px 18px;font-size:12px;line-height:1.8;color:var(--text2);">
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;">
+
+    <div style="background:var(--surface);border-radius:10px;padding:12px 14px;border:1px solid var(--border);">
+      <div style="font-weight:800;color:#534AB7;margin-bottom:5px;font-size:12px;">🔵 광역비례 득표율</div>
+      <div>광역의회(시·도의회) 비례대표 선거에서 <strong>개혁신당이 받은 표의 비율</strong>입니다. 후보 개인이 아닌 <em>정당 자체</em>에 투표한 결과입니다.</div>
+    </div>
+
+    <div style="background:var(--surface);border-radius:10px;padding:12px 14px;border:1px solid var(--border);">
+      <div style="font-weight:800;color:var(--orange);margin-bottom:5px;font-size:12px;">🟠 광역단체장 득표율</div>
+      <div>광역단체장(시장·도지사) 선거에서 <strong>개혁신당 후보가 받은 표의 비율</strong>입니다. 비례와 달리 후보 <em>개인</em>에 대한 평가가 반영됩니다.</div>
+    </div>
+
+    <div style="background:var(--surface);border-radius:10px;padding:12px 14px;border:1px solid var(--border);">
+      <div style="font-weight:800;color:#0F6E56;margin-bottom:5px;font-size:12px;">🟢 기초단체장 득표율</div>
+      <div>기초단체장(구청장·시장·군수) 선거에서 <strong>개혁신당 후보가 받은 득표율</strong>입니다. 가장 작은 행정 단위 선거로, 지역 밀착도가 높습니다.</div>
+    </div>
+
+    <div style="background:var(--surface);border-radius:10px;padding:12px 14px;border:1px solid var(--border);">
+      <div style="font-weight:800;color:var(--text);margin-bottom:5px;font-size:12px;">📍 점 하나 = 읍면동 하나</div>
+      <div>차트의 점 하나는 <strong>특정 읍면동(동네)</strong>의 데이터입니다. 점이 많을수록 그 구에 동네가 많다는 뜻입니다.</div>
+    </div>
+
+    <div style="background:var(--surface);border-radius:10px;padding:12px 14px;border:1px solid var(--border);">
+      <div style="font-weight:800;color:var(--text);margin-bottom:5px;font-size:12px;">📈 r값 (피어슨 상관계수)</div>
+      <div><strong>두 득표율이 얼마나 함께 움직이는지</strong>를 −1~+1 사이 숫자로 나타냅니다.<br>
+        <span style="color:#16a34a;font-weight:700;">r ≥ 0.7</span> → 강한 연관 (같이 오르내림)<br>
+        <span style="color:#d97706;font-weight:700;">0.4 ≤ r &lt; 0.7</span> → 중간 연관<br>
+        <span style="color:#6b7280;font-weight:700;">r &lt; 0.4</span> → 약한 연관 (독립적)
+      </div>
+    </div>
+
+    <div style="background:var(--surface);border-radius:10px;padding:12px 14px;border:1px solid var(--border);">
+      <div style="font-weight:800;color:var(--text);margin-bottom:5px;font-size:12px;">↗️ 추세선이란?</div>
+      <div>점들의 <strong>전체적인 방향</strong>을 한 줄로 요약한 선입니다. 선이 우상향(↗)이면 두 수치가 같이 높아지는 경향, 수평이면 서로 관계없다는 뜻입니다.</div>
+    </div>
+
+    <div style="background:var(--surface);border-radius:10px;padding:12px 14px;border:1px solid var(--border);">
+      <div style="font-weight:800;color:var(--text);margin-bottom:5px;font-size:12px;">📊 대각선 칸 (히스토그램)</div>
+      <div>3×3 행렬의 <strong>대각선에는 막대 그래프(히스토그램)</strong>가 표시됩니다. 그 지표의 득표율이 어떤 범위에 몇 개 동이 분포하는지 보여줍니다.</div>
+    </div>
+
+    <div style="background:var(--surface);border-radius:10px;padding:12px 14px;border:1px solid var(--border);">
+      <div style="font-weight:800;color:var(--text);margin-bottom:5px;font-size:12px;">🔢 3×3 행렬 읽는 법</div>
+      <div>세로축이 Y(↑), 가로축이 X(→)입니다. 예를 들어 <em>2행 1열</em>은 "광역단체장(Y축) vs 광역비례(X축)" 산점도입니다.</div>
+    </div>
+
+  </div>
+  </div>
+</div>
+<!-- ── 📊 분석 결과 패널 ── -->
+<div style="margin-bottom:20px;border-radius:14px;border:1px solid rgba(83,74,183,0.2);overflow:hidden;background:linear-gradient(135deg,rgba(83,74,183,0.06) 0%,rgba(15,110,86,0.05) 100%);">
+  <button onclick="(function(btn){var body=btn.nextElementSibling;var chevron=btn.querySelector('.sm-panel-chevron');var isOpen=body.style.display!=='none';body.style.display=isOpen?'none':'block';chevron.style.transform=isOpen?'rotate(-90deg)':'rotate(0deg)';})(this)" style="width:100%;background:none;border:none;cursor:pointer;padding:16px 20px;display:flex;align-items:center;gap:8px;text-align:left;font-family:inherit;">
+    <span style="font-size:18px;">🔬</span>
+    <span style="font-weight:800;color:var(--text);font-size:14px;flex:1;">r값 · 득표율 기반 분석 결과</span>
+    <svg class="sm-panel-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--text3);flex-shrink:0;transition:transform .2s;transform:rotate(-90deg)"><polyline points="6 9 12 15 18 9"/></svg>
+  </button>
+  <div style="display:none;padding:0 20px 18px;font-size:12px;line-height:1.8;color:var(--text2);">
+
+  <!-- 핵심 요약 -->
+  <div style="margin-bottom:16px;padding:12px 16px;background:var(--surface);border-radius:10px;border-left:3px solid #534AB7;">
+    <div style="font-weight:800;color:#534AB7;font-size:12px;margin-bottom:6px;">💡 핵심 요약</div>
+    <div>세 지표 사이의 상관관계는 <strong>지역·구에 따라 크게 달랐습니다.</strong> 동탄 신도시가 포함된 <strong>경기 화성시</strong>는 r = 0.997(비례↔단체장)로 거의 완벽한 동조 현상을 보였고, 반대로 <strong>서울 강동구</strong>는 비례↔단체장 r = −0.16으로 두 표심이 서로 반대로 움직이는 이례적 결과가 나왔습니다.</div>
+  </div>
+
+  <!-- 지역별 상세 -->
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;margin-bottom:16px;">
+
+    <!-- 서울 동작구 -->
+    <div style="background:var(--surface);border-radius:10px;padding:13px 15px;border:1px solid var(--border);">
+      <div style="font-weight:800;color:var(--text);font-size:12px;margin-bottom:8px;">📍 서울 동작구 <span style="font-weight:600;color:var(--text3);font-size:11px;">(n=15동)</span></div>
+      <div style="display:flex;flex-direction:column;gap:4px;margin-bottom:8px;">
+        <div style="display:flex;justify-content:space-between;">
+          <span>비례 ↔ 단체장</span><span style="font-weight:700;color:#d97706;">r = 0.457 · 중간 연관</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;">
+          <span>비례 ↔ 기초단체장</span><span style="font-weight:700;color:#d97706;">r = 0.584 · 중간 연관</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;">
+          <span>단체장 ↔ 기초단체장</span><span style="font-weight:700;color:#6b7280;">r = 0.388 · 약한 연관</span>
+        </div>
+      </div>
+      <div style="font-size:11px;color:var(--text3);border-top:1px solid var(--border);padding-top:7px;">비례 득표율은 광역·기초 후보 모두와 중간 수준의 연관성. 하지만 두 <em>후보끼리</em>의 연관은 낮아, 기초후보 개인 변수가 컸음을 시사합니다.</div>
+    </div>
+
+    <!-- 서울 관악구 -->
+    <div style="background:var(--surface);border-radius:10px;padding:13px 15px;border:1px solid var(--border);">
+      <div style="font-weight:800;color:var(--text);font-size:12px;margin-bottom:8px;">📍 서울 관악구 <span style="font-weight:600;color:var(--text3);font-size:11px;">(n=21동)</span></div>
+      <div style="display:flex;flex-direction:column;gap:4px;margin-bottom:8px;">
+        <div style="display:flex;justify-content:space-between;">
+          <span>비례 ↔ 단체장</span><span style="font-weight:700;color:#d97706;">r = 0.636 · 중간 연관</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;">
+          <span>비례 ↔ 기초단체장</span><span style="font-weight:700;color:#d97706;">r = 0.559 · 중간 연관</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;">
+          <span>단체장 ↔ 기초단체장</span><span style="font-weight:700;color:#16a34a;">r = 0.771 · 강한 연관</span>
+        </div>
+      </div>
+      <div style="font-size:11px;color:var(--text3);border-top:1px solid var(--border);padding-top:7px;">눈에 띄는 점은 <strong>광역·기초 후보 둘 다 잘 된 동이 거의 같다</strong>(r=0.771)는 것. 개혁신당 지지층이 어느 동에 몰려 있는지 명확히 드러납니다.</div>
+    </div>
+
+    <!-- 서울 강동구 -->
+    <div style="background:var(--surface);border-radius:10px;padding:13px 15px;border:1px solid rgba(255,102,0,0.25);">
+      <div style="font-weight:800;color:var(--orange);font-size:12px;margin-bottom:8px;">⚠️ 서울 강동구 <span style="font-weight:600;color:var(--text3);font-size:11px;">(n=19동)</span></div>
+      <div style="display:flex;flex-direction:column;gap:4px;margin-bottom:8px;">
+        <div style="display:flex;justify-content:space-between;">
+          <span>비례 ↔ 단체장</span><span style="font-weight:700;color:#993C1D;">r = −0.160 · 역(반대) 연관</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;">
+          <span>비례 ↔ 기초단체장</span><span style="font-weight:700;color:#6b7280;">r = 0.291 · 약한 연관</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;">
+          <span>단체장 ↔ 기초단체장</span><span style="font-weight:700;color:#d97706;">r = 0.548 · 중간 연관</span>
+        </div>
+      </div>
+      <div style="font-size:11px;color:var(--text3);border-top:1px solid var(--border);padding-top:7px;"><strong>비례가 높은 동일수록 단체장 득표율이 오히려 낮은</strong> 이례적 구도. 강동구 광역시장 후보의 선호 지역과 정당 지지 지역이 불일치했음을 의미합니다.</div>
+    </div>
+
+    <!-- 서울 성동구 -->
+    <div style="background:var(--surface);border-radius:10px;padding:13px 15px;border:1px solid rgba(16,163,74,0.25);">
+      <div style="font-weight:800;color:#16a34a;font-size:12px;margin-bottom:8px;">✅ 서울 성동구 <span style="font-weight:600;color:var(--text3);font-size:11px;">(n=17동)</span></div>
+      <div style="display:flex;flex-direction:column;gap:4px;margin-bottom:8px;">
+        <div style="display:flex;justify-content:space-between;">
+          <span>비례 ↔ 단체장</span><span style="font-weight:700;color:#16a34a;">r = 0.766 · 강한 연관</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;">
+          <span>비례 ↔ 기초단체장</span><span style="font-weight:700;color:#16a34a;">r = 0.763 · 강한 연관</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;">
+          <span>단체장 ↔ 기초단체장</span><span style="font-weight:700;color:#16a34a;">r = 0.708 · 강한 연관</span>
+        </div>
+      </div>
+      <div style="font-size:11px;color:var(--text3);border-top:1px solid var(--border);padding-top:7px;">서울에서 가장 균형 잡힌 결과. <strong>세 지표 모두 강한 상관</strong>으로, 성동구에서는 개혁신당 지지가 세 투표 모두에서 일관되게 나타났습니다.</div>
+    </div>
+
+    <!-- 서울 중구 -->
+    <div style="background:var(--surface);border-radius:10px;padding:13px 15px;border:1px solid var(--border);">
+      <div style="font-weight:800;color:var(--text);font-size:12px;margin-bottom:8px;">📍 서울 중구 <span style="font-weight:600;color:var(--text3);font-size:11px;">(n=15동)</span></div>
+      <div style="display:flex;flex-direction:column;gap:4px;margin-bottom:8px;">
+        <div style="display:flex;justify-content:space-between;">
+          <span>비례 ↔ 단체장</span><span style="font-weight:700;color:#6b7280;">r = 0.330 · 약한 연관</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;">
+          <span>비례 ↔ 기초단체장</span><span style="font-weight:700;color:#993C1D;">r = −0.652 · 강한 역연관</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;">
+          <span>단체장 ↔ 기초단체장</span><span style="font-weight:700;color:#6b7280;">r = 0.185 · 약한 연관</span>
+        </div>
+      </div>
+      <div style="font-size:11px;color:var(--text3);border-top:1px solid var(--border);padding-top:7px;"><strong>비례가 높은 동일수록 기초단체장 득표율이 낮았습니다</strong>(r=−0.652). 중구 기초후보의 지지층이 비례 지지층과 크게 달랐음을 보여줍니다.</div>
+    </div>
+
+    <!-- 부산 금정구 -->
+    <div style="background:var(--surface);border-radius:10px;padding:13px 15px;border:1px solid var(--border);">
+      <div style="font-weight:800;color:var(--text);font-size:12px;margin-bottom:8px;">📍 부산 금정구 <span style="font-weight:600;color:var(--text3);font-size:11px;">(n=16동)</span></div>
+      <div style="display:flex;flex-direction:column;gap:4px;margin-bottom:8px;">
+        <div style="display:flex;justify-content:space-between;">
+          <span>비례 ↔ 단체장</span><span style="font-weight:700;color:#16a34a;">r = 0.881 · 강한 연관</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;">
+          <span>비례 ↔ 기초단체장</span><span style="font-weight:700;color:#d97706;">r = 0.524 · 중간 연관</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;">
+          <span>단체장 ↔ 기초단체장</span><span style="font-weight:700;color:#d97706;">r = 0.476 · 중간 연관</span>
+        </div>
+      </div>
+      <div style="font-size:11px;color:var(--text3);border-top:1px solid var(--border);padding-top:7px;">부산에서 <strong>비례와 단체장의 동조가 가장 강했습니다</strong>. 정당 지지와 광역 후보 지지가 거의 같이 움직였고, 기초는 다소 독립적이었습니다.</div>
+    </div>
+
+    <!-- 경기 수원 -->
+    <div style="background:var(--surface);border-radius:10px;padding:13px 15px;border:1px solid rgba(16,163,74,0.25);">
+      <div style="font-weight:800;color:#16a34a;font-size:12px;margin-bottom:8px;">✅ 경기 수원시 <span style="font-weight:600;color:var(--text3);font-size:11px;">(n=44동)</span></div>
+      <div style="display:flex;flex-direction:column;gap:4px;margin-bottom:8px;">
+        <div style="display:flex;justify-content:space-between;">
+          <span>비례 ↔ 단체장</span><span style="font-weight:700;color:#16a34a;">r = 0.812 · 강한 연관</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;">
+          <span>비례 ↔ 기초단체장</span><span style="font-weight:700;color:#16a34a;">r = 0.855 · 강한 연관</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;">
+          <span>단체장 ↔ 기초단체장</span><span style="font-weight:700;color:#16a34a;">r = 0.774 · 강한 연관</span>
+        </div>
+      </div>
+      <div style="font-size:11px;color:var(--text3);border-top:1px solid var(--border);padding-top:7px;">44개 동이라는 충분한 표본에서도 <strong>세 지표 모두 강한 상관</strong>. 수원에서는 개혁신당에 우호적인 동은 모든 선거에서 고르게 높은 득표율을 기록했습니다.</div>
+    </div>
+
+    <!-- 경기 화성 -->
+    <div style="background:var(--surface);border-radius:10px;padding:13px 15px;border:1px solid rgba(83,74,183,0.3);">
+      <div style="font-weight:800;color:#534AB7;font-size:12px;margin-bottom:8px;">🏆 경기 화성시 <span style="font-weight:600;color:var(--text3);font-size:11px;">(n=29동)</span></div>
+      <div style="display:flex;flex-direction:column;gap:4px;margin-bottom:8px;">
+        <div style="display:flex;justify-content:space-between;">
+          <span>비례 ↔ 단체장</span><span style="font-weight:700;color:#16a34a;">r = <strong>0.997</strong> · 사실상 완전 동조</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;">
+          <span>비례 ↔ 기초단체장</span><span style="font-weight:700;color:#16a34a;">r = 0.979 · 강한 연관</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;">
+          <span>단체장 ↔ 기초단체장</span><span style="font-weight:700;color:#16a34a;">r = 0.968 · 강한 연관</span>
+        </div>
+      </div>
+      <div style="font-size:11px;color:var(--text3);border-top:1px solid var(--border);padding-top:7px;"><strong>전체 지역 중 가장 높은 상관관계</strong>. 동탄 신도시 동들이 세 선거 모두에서 거의 동일하게 높은 득표율을 기록해, 화성시는 개혁신당의 핵심 신도시 표밭임을 수치로 확인했습니다.</div>
+    </div>
+
+    <!-- 경기 고양 -->
+    <div style="background:var(--surface);border-radius:10px;padding:13px 15px;border:1px solid var(--border);">
+      <div style="font-weight:800;color:var(--text);font-size:12px;margin-bottom:8px;">📍 경기 고양시 <span style="font-weight:600;color:var(--text3);font-size:11px;">(n=44동)</span></div>
+      <div style="display:flex;flex-direction:column;gap:4px;margin-bottom:8px;">
+        <div style="display:flex;justify-content:space-between;">
+          <span>비례 ↔ 단체장</span><span style="font-weight:700;color:#16a34a;">r = 0.852 · 강한 연관</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;">
+          <span>비례 ↔ 기초단체장</span><span style="font-weight:700;color:#d97706;">r = 0.497 · 중간 연관</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;">
+          <span>단체장 ↔ 기초단체장</span><span style="font-weight:700;color:#d97706;">r = 0.483 · 중간 연관</span>
+        </div>
+      </div>
+      <div style="font-size:11px;color:var(--text3);border-top:1px solid var(--border);padding-top:7px;"><strong>비례와 단체장은 강하게 연동</strong>되어 있지만, 기초단체장과의 연관은 약합니다. 고양시 기초 후보들의 지지 지형이 광역 선거와 다소 달랐음을 의미합니다.</div>
+    </div>
+
+  </div>
+
+  <!-- 종합 결론 -->
+  <div style="padding:14px 16px;background:var(--surface);border-radius:10px;border-left:3px solid #0F6E56;font-size:12px;color:var(--text2);">
+    <div style="font-weight:800;color:#0F6E56;margin-bottom:6px;font-size:12px;">🏁 종합 결론</div>
+    <div style="line-height:1.9;">
+      <strong>경기 신도시(화성·수원·고양)</strong>는 세 지표가 강하게 동조하여, 개혁신당 지지가 선거 종류에 관계없이 일관적으로 높은 지역이 뚜렷합니다. 반면 <strong>서울 일부 구(강동·중구)</strong>에서는 비례 지지층과 후보 지지층이 불일치하는 현상이 발생했으며, 이는 해당 구 후보의 개인 요인이나 지역 사정이 크게 작용했을 가능성을 시사합니다. <strong>성동구</strong>는 서울에서 유일하게 세 지표 모두 r ≥ 0.7을 기록한 구로, 개혁신당의 서울 내 안정적 지지 기반으로 볼 수 있습니다.
+    </div>
+  </div>
+  </div>
+</div>
+
 <style>
 /* ── 산점도 행렬 전체 래퍼 ── */
 .sm-wrap {
@@ -4838,6 +5081,31 @@
 }
 
 /* 로그 스케일 토글 */
+/* ── 공통 로그 스케일 토글 (B2B / Cross 산점도) ── */
+.scatter-log-toggle {
+  font-size: 12px;
+  font-weight: 700;
+  font-family: inherit;
+  padding: 5px 13px;
+  border: 1.5px solid var(--border-strong);
+  border-radius: 100px;
+  background: var(--surface);
+  cursor: pointer;
+  color: var(--text3);
+  transition: all .2s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.scatter-log-toggle:hover {
+  border-color: #ca8a04;
+  color: #ca8a04;
+}
+.scatter-log-toggle.on {
+  background: rgba(234,179,8,0.10);
+  color: #ca8a04;
+  border-color: #ca8a04;
+}
+
 .sm-wrap .sm-log-toggle {
   font-size: 12px;
   font-weight: 700;
@@ -5468,7 +5736,7 @@ window.candidates = window.candidates || [];
 </script>
 <script src="can.js" onerror="console.warn('can.js not found, using empty candidates')"></script>
 <script src="results.js?v=0611.01" onerror="console.warn('results.js not found, skipping results')" onload="window._resultsLoaded = true"></script>
-<script src="renderCompare.js" onerror="console.warn('renderCompare.js not found')"></script>
+<script src="renderCompare.js?v=0611.01" onerror="console.warn('renderCompare.js not found')"></script>
 <script>
 // ── DATA ──────────────────────────────────────────────
 // ── 투표 유형 헬퍼 ───────────────────────────────────────
@@ -9451,6 +9719,8 @@ document.getElementById('modal-backdrop').addEventListener('transitionend', func
     container.innerHTML = html;
   }
 
+  var crossUseLog = false;
+
   function renderScatter(svgContainer, tooltip, points) {
     if (!svgContainer || typeof d3 === 'undefined') return;
     svgContainer.innerHTML = '';
@@ -9465,23 +9735,34 @@ document.getElementById('modal-backdrop').addEventListener('transitionend', func
     var H = innerH + margin.top + margin.bottom;
     var allCand = points.map(function (p) { return p.cand; });
     var allProp = points.map(function (p) { return p.prop; });
-    var xMin = Math.max(0, d3.min(allCand) * 0.9);
-    var xMax = d3.max(allCand) * 1.08;
-    var yMin = Math.max(0, d3.min(allProp) * 0.9);
-    var yMax = d3.max(allProp) * 1.08;
+
+    var sc = crossUseLog
+      ? function(v){ return Math.log10(Math.max(v, 0.01)); }
+      : function(v){ return v; };
+
+    var xRaw = allCand.map(sc), yRaw = allProp.map(sc);
+    var xMin = Math.max(crossUseLog ? sc(0.01) : 0, d3.min(xRaw) * 0.9);
+    var xMax = d3.max(xRaw) * 1.08;
+    var yMin = Math.max(crossUseLog ? sc(0.01) : 0, d3.min(yRaw) * 0.9);
+    var yMax = d3.max(yRaw) * 1.08;
     var xScale = d3.scaleLinear().domain([xMin, xMax]).range([0, innerW]);
     var yScale = d3.scaleLinear().domain([yMin, yMax]).range([innerH, 0]);
+
+    var fmtTick = crossUseLog
+      ? function(d){ return Math.pow(10, d).toFixed(1)+'%'; }
+      : function(d){ return d.toFixed(1)+'%'; };
+
     var svg = d3.select(svgContainer).append('svg').attr('width', W).attr('height', H).attr('class', 'cross-scatter-svg');
     var g = svg.append('g').attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
     g.append('g').attr('transform', 'translate(0,' + innerH + ')').call(d3.axisBottom(xScale).ticks(5).tickSize(-innerH).tickFormat('')).call(function(sel){ sel.selectAll('line').attr('stroke','var(--border)').attr('stroke-dasharray','3,3'); sel.select('.domain').remove(); });
     g.append('g').call(d3.axisLeft(yScale).ticks(5).tickSize(-innerW).tickFormat('')).call(function(sel){ sel.selectAll('line').attr('stroke','var(--border)').attr('stroke-dasharray','3,3'); sel.select('.domain').remove(); });
     var diagStart = Math.max(xMin, yMin), diagEnd = Math.min(xMax, yMax);
     if (diagStart < diagEnd) g.append('line').attr('x1',xScale(diagStart)).attr('y1',yScale(diagStart)).attr('x2',xScale(diagEnd)).attr('y2',yScale(diagEnd)).attr('stroke','var(--border-strong)').attr('stroke-width',1).attr('stroke-dasharray','5,3').attr('opacity',0.6);
-    g.append('g').attr('transform','translate(0,'+innerH+')').call(d3.axisBottom(xScale).ticks(5).tickFormat(function(d){return d.toFixed(1)+'%';})).call(function(sel){sel.selectAll('text').attr('fill','var(--text3)').attr('font-size','10px');sel.selectAll('line').attr('stroke','var(--border)');sel.select('.domain').attr('stroke','var(--border)');});
-    g.append('g').call(d3.axisLeft(yScale).ticks(5).tickFormat(function(d){return d.toFixed(1)+'%';})).call(function(sel){sel.selectAll('text').attr('fill','var(--text3)').attr('font-size','10px');sel.selectAll('line').attr('stroke','var(--border)');sel.select('.domain').attr('stroke','var(--border)');});
+    g.append('g').attr('transform','translate(0,'+innerH+')').call(d3.axisBottom(xScale).ticks(5).tickFormat(fmtTick)).call(function(sel){sel.selectAll('text').attr('fill','var(--text3)').attr('font-size','10px');sel.selectAll('line').attr('stroke','var(--border)');sel.select('.domain').attr('stroke','var(--border)');});
+    g.append('g').call(d3.axisLeft(yScale).ticks(5).tickFormat(fmtTick)).call(function(sel){sel.selectAll('text').attr('fill','var(--text3)').attr('font-size','10px');sel.selectAll('line').attr('stroke','var(--border)');sel.select('.domain').attr('stroke','var(--border)');});
     g.append('text').attr('x',innerW/2).attr('y',innerH+38).attr('text-anchor','middle').attr('fill','var(--text2)').attr('font-size','11px').attr('font-weight','700').text('단체장 득표율 (%)');
     g.append('text').attr('transform','rotate(-90)').attr('x',-innerH/2).attr('y',-38).attr('text-anchor','middle').attr('fill','var(--text2)').attr('font-size','11px').attr('font-weight','700').text('광역비례 득표율 (%)');
-    var pointGs = g.selectAll('.cross-dot').data(points).enter().append('g').attr('class','cross-dot').attr('transform',function(d){return 'translate('+xScale(d.cand)+','+yScale(d.prop)+')';});
+    var pointGs = g.selectAll('.cross-dot').data(points).enter().append('g').attr('class','cross-dot').attr('transform',function(d){return 'translate('+xScale(sc(d.cand))+','+yScale(sc(d.prop))+')';});
     pointGs.append('circle').attr('r',isDesktop?5:4).attr('fill',function(d){return d.prop>=d.cand?'var(--blue)':'var(--orange)';}).attr('opacity',0.75).attr('stroke','var(--surface)').attr('stroke-width',1);
     pointGs
       .on('mouseover touchstart', function(event, d) {
@@ -9583,6 +9864,16 @@ document.getElementById('modal-backdrop').addEventListener('transitionend', func
       });
     });
     window.addEventListener('resize', debounce(function(){ if(state.activeView==='scatter') render(); }, 200));
+
+    var crossLogBtn = document.getElementById('cross-log-toggle');
+    if (crossLogBtn) {
+      crossLogBtn.addEventListener('click', function() {
+        crossUseLog = !crossUseLog;
+        crossLogBtn.textContent = '로그 스케일 ' + (crossUseLog ? 'ON' : 'OFF');
+        crossLogBtn.classList.toggle('on', crossUseLog);
+        if (state.activeView === 'scatter') render();
+      });
+    }
   }
 
   function syncLevelTabs() { document.querySelectorAll('.cross-level-tab').forEach(function(b){b.classList.toggle('active',b.dataset.level===state.activeLevel);}); }
@@ -9671,6 +9962,8 @@ document.getElementById('modal-backdrop').addEventListener('transitionend', func
     container.innerHTML = html;
   }
 
+  var b2bUseLog = false;
+
   function renderB2BScatter(svgWrap, tooltipEl, rows) {
     if (!svgWrap || typeof d3 === 'undefined') return;
     svgWrap.innerHTML = '';
@@ -9683,21 +9976,32 @@ document.getElementById('modal-backdrop').addEventListener('transitionend', func
     var H = innerH + margin.top + margin.bottom;
     var allX = rows.map(function(p){ return p.regional; });
     var allY = rows.map(function(p){ return p.basic; });
-    var xMin = Math.max(0, d3.min(allX)*0.9), xMax = d3.max(allX)*1.08;
-    var yMin = Math.max(0, d3.min(allY)*0.9), yMax = d3.max(allY)*1.08;
+
+    var sc = b2bUseLog
+      ? function(v){ return Math.log10(Math.max(v, 0.01)); }
+      : function(v){ return v; };
+
+    var xRaw = allX.map(sc), yRaw = allY.map(sc);
+    var xMin = Math.max(b2bUseLog ? sc(0.01) : 0, d3.min(xRaw)*0.9), xMax = d3.max(xRaw)*1.08;
+    var yMin = Math.max(b2bUseLog ? sc(0.01) : 0, d3.min(yRaw)*0.9), yMax = d3.max(yRaw)*1.08;
     var xScale = d3.scaleLinear().domain([xMin, xMax]).range([0, innerW]);
     var yScale = d3.scaleLinear().domain([yMin, yMax]).range([innerH, 0]);
+
+    var fmtTick = b2bUseLog
+      ? function(d){ return Math.pow(10, d).toFixed(1)+'%'; }
+      : function(d){ return d.toFixed(1)+'%'; };
+
     var svg = d3.select(svgWrap).append('svg').attr('width', W).attr('height', H);
     var g = svg.append('g').attr('transform', 'translate('+margin.left+','+margin.top+')');
     g.append('g').attr('transform','translate(0,'+innerH+')').call(d3.axisBottom(xScale).ticks(5).tickSize(-innerH).tickFormat('')).call(function(s){s.selectAll('line').attr('stroke','var(--border)').attr('stroke-dasharray','3,3');s.select('.domain').remove();});
     g.append('g').call(d3.axisLeft(yScale).ticks(5).tickSize(-innerW).tickFormat('')).call(function(s){s.selectAll('line').attr('stroke','var(--border)').attr('stroke-dasharray','3,3');s.select('.domain').remove();});
     var dS = Math.max(xMin,yMin), dE = Math.min(xMax,yMax);
     if (dS < dE) g.append('line').attr('x1',xScale(dS)).attr('y1',yScale(dS)).attr('x2',xScale(dE)).attr('y2',yScale(dE)).attr('stroke','var(--border-strong)').attr('stroke-width',1).attr('stroke-dasharray','5,3').attr('opacity',0.6);
-    g.append('g').attr('transform','translate(0,'+innerH+')').call(d3.axisBottom(xScale).ticks(5).tickFormat(function(d){return d.toFixed(1)+'%';})).call(function(s){s.selectAll('text').attr('fill','var(--text3)').attr('font-size','10px');s.selectAll('line').attr('stroke','var(--border)');s.select('.domain').attr('stroke','var(--border)');});
-    g.append('g').call(d3.axisLeft(yScale).ticks(5).tickFormat(function(d){return d.toFixed(1)+'%';})).call(function(s){s.selectAll('text').attr('fill','var(--text3)').attr('font-size','10px');s.selectAll('line').attr('stroke','var(--border)');s.select('.domain').attr('stroke','var(--border)');});
+    g.append('g').attr('transform','translate(0,'+innerH+')').call(d3.axisBottom(xScale).ticks(5).tickFormat(fmtTick)).call(function(s){s.selectAll('text').attr('fill','var(--text3)').attr('font-size','10px');s.selectAll('line').attr('stroke','var(--border)');s.select('.domain').attr('stroke','var(--border)');});
+    g.append('g').call(d3.axisLeft(yScale).ticks(5).tickFormat(fmtTick)).call(function(s){s.selectAll('text').attr('fill','var(--text3)').attr('font-size','10px');s.selectAll('line').attr('stroke','var(--border)');s.select('.domain').attr('stroke','var(--border)');});
     g.append('text').attr('x',innerW/2).attr('y',innerH+38).attr('text-anchor','middle').attr('fill','var(--text2)').attr('font-size','11px').attr('font-weight','700').text('광역비례 득표율 (%)');
     g.append('text').attr('transform','rotate(-90)').attr('x',-innerH/2).attr('y',-38).attr('text-anchor','middle').attr('fill','var(--text2)').attr('font-size','11px').attr('font-weight','700').text('기초비례 득표율 (%)');
-    var pts = g.selectAll('.b2b-dot').data(rows).enter().append('g').attr('class','b2b-dot').attr('transform',function(d){return 'translate('+xScale(d.regional)+','+yScale(d.basic)+')';});
+    var pts = g.selectAll('.b2b-dot').data(rows).enter().append('g').attr('class','b2b-dot').attr('transform',function(d){return 'translate('+xScale(sc(d.regional))+','+yScale(sc(d.basic))+')';});
     pts.append('circle').attr('r', isDesktop?5:4).attr('fill',function(d){return d.basic>=d.regional?'var(--emerald)':'var(--blue)';}).attr('opacity',0.75).attr('stroke','var(--surface)').attr('stroke-width',1);
     pts.on('mouseover touchstart', function(event,d){
       if (!tooltipEl) return;
@@ -9765,6 +10069,15 @@ document.getElementById('modal-backdrop').addEventListener('transitionend', func
         renderB2B();
       });
     });
+    var b2bLogBtn = document.getElementById('b2b-log-toggle');
+    if (b2bLogBtn) {
+      b2bLogBtn.addEventListener('click', function() {
+        b2bUseLog = !b2bUseLog;
+        b2bLogBtn.textContent = '로그 스케일 ' + (b2bUseLog ? 'ON' : 'OFF');
+        b2bLogBtn.classList.toggle('on', b2bUseLog);
+        if (b2bState.activeView === 'scatter') renderB2B();
+      });
+    }
     window.addEventListener('resize', function(){ if(b2bState.activeView==='scatter') renderB2B(); });
     renderB2B();
   }

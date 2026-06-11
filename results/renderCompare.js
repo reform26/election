@@ -70,6 +70,9 @@
     return map;
   }
 
+  // 구별 단체장 득표율 계산 (읍면동 단순 평균)
+  // ⚠️ 주의: 읍면동별 투표수 차이를 반영하지 않는 단순 평균이므로
+  //          실제 구 집계 득표율과 다소 차이가 있을 수 있습니다.
   function buildCandDistrictRateMap(neighborhoods, regionKey) {
     var groups = {};
     var currentDist = null;
@@ -566,7 +569,7 @@
           (candAvg !== null ? [
             '<div style="width:1px;background:var(--border);flex-shrink:0;margin:2px 0;"></div>',
             '<div>',
-              '<div class="cmp-district-col-avg-label">단체장 평균</div>',
+              '<div class="cmp-district-col-avg-label">단체장 평균*</div>',
               '<div style="font-size:18px;font-weight:900;letter-spacing:-0.04em;color:var(--text2);line-height:1;">' + candAvg.toFixed(2) + '<span style="font-size:11px;font-weight:700;color:var(--text3);margin-left:1px;">%</span></div>',
             '</div>',
             (function(){
@@ -574,11 +577,12 @@
               var cls = hGap > 0 ? 'gap-badge-up' : hGap < 0 ? 'gap-badge-down' : 'gap-badge-eq';
               var sign = hGap > 0 ? '+' : '';
               var arrow = hGap > 0 ? '▲' : hGap < 0 ? '▼' : '≈';
-              return '<span class="gap-badge ' + cls + '" style="align-self:center;" title="비례 평균 − 단체장 평균">' + arrow + sign + hGap.toFixed(2) + '%p</span>';
+              return '<span class="gap-badge ' + cls + '" style="align-self:center;" title="비례 평균 − 단체장 평균 (단체장은 읍면동 단순 평균)">' + arrow + sign + hGap.toFixed(2) + '%p</span>';
             })(),
           ].join('') : ''),
         '</div>',
         (corrText ? '<div style="margin-top:6px;">' + corrText + '</div>' : ''),
+        (candAvg !== null ? '<div style="margin-top:5px;font-size:10px;color:var(--text3);">* 단체장 수치는 읍면동 단순 평균 (투표수 미가중)</div>' : ''),
       ].join('');
 
       return [
@@ -707,12 +711,12 @@
         sel.value = distNames[0];
       }
 
-      // 이벤트 바인딩 (인라인이라 매번 재바인딩)
-      sel.addEventListener('change', function () {
+      // 이벤트 바인딩 (인라인이라 매번 재바인딩 — onchange로 중복 방지)
+      sel.onchange = function () {
         dongSel[meta.regionKey] = sel.value || null;
         dongPage[meta.regionKey] = 1;
         renderDong();
-      });
+      };
     });
   }
 
@@ -933,7 +937,7 @@
   // ── 7. 공개 진입점 ───────────────────────────────────────────────
   function renderCompare() {
     // RESULTS / REGIONAL 이 아직 로드 안 됐을 경우 짧게 재시도
-    if ((!global.RESULTS || !global.RESULTS.length) && (!global.REGIONAL || !global.REGIONAL.length)) {
+    if ((!global.RESULTS || !global.RESULTS.length) || (!global.REGIONAL || !global.REGIONAL.length)) {
       setTimeout(renderCompare, 200);
       return;
     }
