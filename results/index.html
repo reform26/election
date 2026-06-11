@@ -4894,11 +4894,27 @@
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   padding: 14px;
-  transition: border-color .2s, box-shadow .2s;
+  transition: border-color .2s, box-shadow .2s, transform .15s;
+  cursor: pointer;
+  position: relative;
 }
 .sm-wrap .sm-cell:hover {
-  border-color: var(--border-strong);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  border-color: var(--orange);
+  box-shadow: 0 4px 20px rgba(255,102,0,0.12);
+  transform: translateY(-2px);
+}
+.sm-wrap .sm-cell::after {
+  content: '⛶';
+  position: absolute;
+  top: 8px; right: 10px;
+  font-size: 13px;
+  color: var(--text3);
+  opacity: 0;
+  transition: opacity .15s;
+  pointer-events: none;
+}
+.sm-wrap .sm-cell:hover::after {
+  opacity: 1;
 }
 
 /* 셀 레이블 (상관계수 포함) */
@@ -4952,6 +4968,10 @@
 .sm-wrap .sm-cell-label .r-strong { color: #0F6E56; font-weight: 800; }
 .sm-wrap .sm-cell-label .r-mid    { color: #534AB7; font-weight: 800; }
 .sm-wrap .sm-cell-label .r-weak   { color: #993C1D; font-weight: 800; }
+/* 모달에서도 사용 */
+.r-strong { color: #0F6E56; font-weight: 800; }
+.r-mid    { color: #534AB7; font-weight: 800; }
+.r-weak   { color: #993C1D; font-weight: 800; }
 
 /* 다크모드 */
 .dark .sm-wrap .sm-cell { background: var(--surface); }
@@ -5087,6 +5107,268 @@ function smInit(){
   });
   window._smInited=true;
 }
+
+// ── 산점도 행렬 셀 확대 모달 ──────────────────────────────────────────
+(function(){
+  // 모달 HTML 생성
+  var backdropEl = document.createElement('div');
+  backdropEl.id = 'sm-modal-backdrop';
+  backdropEl.style.cssText = [
+    'display:none;position:fixed;inset:0;z-index:9999;',
+    'background:rgba(0,0,0,0.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);',
+    'align-items:center;justify-content:center;padding:20px;',
+    'animation:smFadeIn .2s ease;'
+  ].join('');
+  backdropEl.innerHTML =
+    '<div id="sm-modal-box" style="'+[
+      'background:var(--surface);border-radius:20px;',
+      'border:1px solid var(--border);',
+      'max-width:780px;width:100%;max-height:90vh;overflow:hidden;',
+      'display:flex;flex-direction:column;',
+      'box-shadow:0 24px 80px rgba(0,0,0,0.22);',
+      'animation:smSlideUp .25s ease;'
+    ].join('')+'">'+
+      '<div id="sm-modal-header" style="'+[
+        'display:flex;align-items:center;justify-content:space-between;gap:12px;',
+        'padding:18px 22px 14px;border-bottom:1px solid var(--border);',
+        'flex-shrink:0;flex-wrap:wrap;'
+      ].join('')+'">'+
+        '<div id="sm-modal-title" style="font-size:15px;font-weight:800;color:var(--text);letter-spacing:-0.02em;line-height:1.4;flex:1;min-width:0;"></div>'+
+        '<div style="display:flex;align-items:center;gap:8px;flex-shrink:0;">'+
+          '<button id="sm-modal-log-btn" style="'+[
+            'display:none;',
+            'font-size:12px;font-weight:700;font-family:inherit;',
+            'padding:6px 14px;border-radius:100px;cursor:pointer;transition:all .2s;',
+            'border:1.5px solid var(--border-strong);background:var(--surface2);color:var(--text3);'
+          ].join('')+'">로그 OFF</button>'+
+          '<button id="sm-modal-close" style="'+[
+            'border:none;background:var(--surface2);cursor:pointer;',
+            'width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;',
+            'font-size:18px;color:var(--text2);flex-shrink:0;transition:background .2s;'
+          ].join('')+'">✕</button>'+
+        '</div>'+
+      '</div>'+
+      '<div id="sm-modal-body" style="flex:1;overflow-y:auto;padding:22px;">'+
+        '<div id="sm-modal-chart-wrap" style="position:relative;height:420px;width:100%;"></div>'+
+        '<div id="sm-modal-stats" style="margin-top:18px;display:flex;flex-wrap:wrap;gap:10px;"></div>'+
+        '<div id="sm-modal-table-wrap" style="margin-top:18px;max-height:260px;overflow-y:auto;border-radius:12px;border:1px solid var(--border);"></div>'+
+      '</div>'+
+    '</div>';
+
+  var styleEl = document.createElement('style');
+  styleEl.textContent = [
+    '@keyframes smFadeIn{from{opacity:0}to{opacity:1}}',
+    '@keyframes smSlideUp{from{transform:translateY(16px);opacity:0}to{transform:translateY(0);opacity:1}}',
+    '#sm-modal-close:hover{background:var(--orange-light)!important;color:var(--orange)!important;}',
+    '#sm-modal-backdrop{display:none!important;}',
+    '#sm-modal-backdrop.sm-open{display:flex!important;}',
+    '#sm-modal-log-btn:hover{border-color:#ca8a04!important;color:#ca8a04!important;}',
+    '#sm-modal-log-btn.on{background:rgba(234,179,8,0.1)!important;color:#ca8a04!important;border-color:#ca8a04!important;}',
+    '.sm-modal-pill{padding:6px 14px;border-radius:100px;font-size:12px;font-weight:700;background:var(--surface2);border:1px solid var(--border);color:var(--text2);}',
+    '.sm-modal-table{width:100%;border-collapse:collapse;font-size:12px;}',
+    '.sm-modal-table th{padding:9px 12px;text-align:left;font-size:11px;font-weight:700;color:var(--text3);background:var(--surface2);position:sticky;top:0;}',
+    '.sm-modal-table td{padding:8px 12px;border-top:1px solid var(--border);color:var(--text);}',
+    '.sm-modal-table tr:hover td{background:var(--surface2);}',
+  ].join('');
+  document.head.appendChild(styleEl);
+  document.body.appendChild(backdropEl);
+
+  var modalChart = null;
+  var smModalLog = false;       // 모달 전용 로그 상태
+  var _modalR = null, _modalC = null; // 현재 열린 셀 기억
+
+  // 로그 스케일 변환 (모달 전용 상태 사용)
+  function smModalSc(v){ return smModalLog ? Math.log10(Math.max(v,0.01)) : v; }
+
+  // 산점도 차트 재렌더 (로그 토글 시 호출)
+  function refreshModalChart() {
+    var data = (SM_RAW[smGu] || []).filter(function(d){ return d.prop>0&&d.basic>0; });
+    var axes = ['prop','metro','basic'];
+    var colors = ['#534AB7','#0F6E56','#993C1D'];
+    var r = _modalR, c = _modalC;
+    var xKey = axes[c], yKey = axes[r];
+    var chartWrap = document.getElementById('sm-modal-chart-wrap');
+    var statsEl = document.getElementById('sm-modal-stats');
+    chartWrap.innerHTML = '';
+    if (modalChart) { try { modalChart.destroy(); } catch(e){} modalChart = null; }
+
+    var xs = data.map(function(d){ return smModalSc(d[xKey]); });
+    var ys = data.map(function(d){ return smModalSc(d[yKey]); });
+    var rv = smPearson(xs, ys);
+    var rn = parseFloat(rv);
+    var rCls = Math.abs(rn)>=0.7?'r-strong':Math.abs(rn)>=0.4?'r-mid':'r-weak';
+    var rDesc = Math.abs(rn)>=0.7?'강한 연관':Math.abs(rn)>=0.4?'중간 연관':'약한 연관';
+    var lc = rn>0.7?'#0F6E56':rn>0.4?'#534AB7':'#993C1D';
+    var xShort = SM_LABELS[xKey].replace('(%)','').trim();
+    var yShort = SM_LABELS[yKey].replace('(%)','').trim();
+    // 타이틀 업데이트
+    document.getElementById('sm-modal-title').innerHTML =
+      '<span style="color:var(--text2)">↑ '+yShort+'</span>'+
+      '<span style="color:var(--text3)"> vs </span>'+
+      '<span style="color:var(--text2)">'+xShort+' →</span>  '+
+      '<span class="'+rCls+'" style="font-size:14px;">r = '+rv+'</span>'+
+      '<span style="font-size:12px;font-weight:600;color:var(--text3);margin-left:6px;">'+rDesc+'</span>';
+    var n = xs.length, mx = xs.reduce(function(a,b){return a+b;},0)/n, my = ys.reduce(function(a,b){return a+b;},0)/n;
+    var num=0,den=0;
+    xs.forEach(function(x,i){num+=(x-mx)*(ys[i]-my);den+=(x-mx)*(x-mx);});
+    var slope=den?num/den:0, intc=my-slope*mx;
+    var xmin=Math.min.apply(null,xs),xmax=Math.max.apply(null,xs),pad=(xmax-xmin)*0.05;
+    var cvs = document.createElement('canvas'); chartWrap.appendChild(cvs);
+    var tickFmt = function(v){ return smModalLog?'10^'+v.toFixed(1):v.toFixed(1)+'%'; };
+    var ttFmt = function(v){ return smModalLog?'10^'+v.toFixed(2):v.toFixed(2)+'%'; };
+    modalChart = new Chart(cvs, {
+      type:'scatter',
+      data:{datasets:[
+        {label:'동',data:data.map(function(d,i){return{x:xs[i],y:ys[i],dong:d.dong,xRaw:d[xKey],yRaw:d[yKey]};}),
+         backgroundColor:colors[0]+'66',borderColor:colors[0],pointRadius:5,pointHoverRadius:8},
+        {label:'추세선',data:[{x:xmin-pad,y:slope*(xmin-pad)+intc},{x:xmax+pad,y:slope*(xmax+pad)+intc}],
+         type:'line',borderColor:lc,borderWidth:2,pointRadius:0,fill:false}
+      ]},
+      options:{responsive:true,maintainAspectRatio:false,
+        plugins:{legend:{display:false},tooltip:{callbacks:{label:function(ctx){
+          if(ctx.datasetIndex===1) return null;
+          var d = ctx.raw;
+          return d.dong+': '+ttFmt(d.xRaw)+' / '+ttFmt(d.yRaw);
+        }}}},
+        scales:{
+          x:{title:{display:true,text:xShort+(smModalLog?' (log)':' (%)'),font:{size:12},color:'var(--text2)'},
+             ticks:{font:{size:11},color:'var(--text3)',callback:tickFmt},grid:{color:'var(--border)'}},
+          y:{title:{display:true,text:yShort+(smModalLog?' (log)':' (%)'),font:{size:12},color:'var(--text2)'},
+             ticks:{font:{size:11},color:'var(--text3)',callback:tickFmt},grid:{color:'var(--border)'}}
+        }}
+    });
+    // 통계 pills 업데이트
+    var xAvg = data.reduce(function(s,d){return s+d[xKey];},0)/n;
+    var yAvg = data.reduce(function(s,d){return s+d[yKey];},0)/n;
+    statsEl.innerHTML =
+      '<span class="sm-modal-pill">동 수: '+n+'개</span>'+
+      '<span class="sm-modal-pill">'+xShort+' 평균: <b style="color:'+colors[c]+'">'+xAvg.toFixed(2)+'%</b></span>'+
+      '<span class="sm-modal-pill">'+yShort+' 평균: <b style="color:'+colors[r]+'">'+yAvg.toFixed(2)+'%</b></span>';
+  }
+
+  function openSmModal(r, c) {
+    _modalR = r; _modalC = c;
+    var data = (SM_RAW[smGu] || []).filter(function(d){ return d.prop > 0 && d.basic > 0; });
+    var axes = ['prop','metro','basic'];
+    var colors = ['#534AB7','#0F6E56','#993C1D'];
+    var xKey = axes[c], yKey = axes[r];
+    var titleEl = document.getElementById('sm-modal-title');
+    var chartWrap = document.getElementById('sm-modal-chart-wrap');
+    var statsEl = document.getElementById('sm-modal-stats');
+    var tableWrap = document.getElementById('sm-modal-table-wrap');
+    var logBtn = document.getElementById('sm-modal-log-btn');
+    chartWrap.innerHTML = '';
+    statsEl.innerHTML = '';
+    tableWrap.innerHTML = '';
+    if (modalChart) { try { modalChart.destroy(); } catch(e){} modalChart = null; }
+
+    // 로그 버튼: 산점도만 표시, 히스토그램은 숨김
+    if (r === c) {
+      logBtn.style.display = 'none';
+    } else {
+      logBtn.style.display = '';
+      // 현재 그리드 로그 상태와 동기화
+      smModalLog = smUseLog;
+      logBtn.textContent = smModalLog ? '로그 ON' : '로그 OFF';
+      logBtn.classList.toggle('on', smModalLog);
+    }
+
+    if (r === c) {
+      // 히스토그램 확대
+      var vals = data.map(function(d){ return d[axes[r]]; });
+      var mean = (vals.reduce(function(a,b){return a+b;},0)/vals.length);
+      var minV = Math.min.apply(null,vals), maxV = Math.max.apply(null,vals);
+      var bins = 12, bw = (maxV-minV)/bins || 1;
+      var counts = new Array(bins).fill(0);
+      vals.forEach(function(v){ var i=Math.min(Math.floor((v-minV)/bw),bins-1); counts[i]++; });
+      var lbs = Array.from({length:bins},function(_,i){ return (minV+i*bw).toFixed(1); });
+      var modeIdx = counts.indexOf(Math.max.apply(null,counts));
+      titleEl.innerHTML = SM_LABELS[axes[r]] + ' <span style="color:var(--text3);font-weight:600;font-size:13px;">— ' + smGu + ' 득표율 분포</span>';
+      var cvs = document.createElement('canvas'); chartWrap.appendChild(cvs);
+      modalChart = new Chart(cvs, {
+        type:'bar',
+        data:{labels:lbs,datasets:[{data:counts,
+          backgroundColor:counts.map(function(_,i){return i===modeIdx?colors[r]:colors[r]+'77';}),
+          borderColor:colors[r],borderWidth:1.5,borderRadius:4}]},
+        options:{responsive:true,maintainAspectRatio:false,
+          plugins:{legend:{display:false},tooltip:{callbacks:{label:function(ctx){
+            return ctx.parsed.y+'개 동 ('+lbs[ctx.dataIndex]+'% ~ '+(parseFloat(lbs[ctx.dataIndex])+bw).toFixed(1)+'%)';
+          }}}},
+          scales:{
+            x:{ticks:{font:{size:11},color:'var(--text3)'},grid:{color:'var(--border)'}},
+            y:{beginAtZero:true,ticks:{font:{size:11},color:'var(--text3)'},grid:{color:'var(--border)'}}
+          }}
+      });
+      statsEl.innerHTML =
+        '<span class="sm-modal-pill">동 수: '+vals.length+'개</span>'+
+        '<span class="sm-modal-pill">평균: <b style="color:'+colors[r]+'">'+mean.toFixed(2)+'%</b></span>'+
+        '<span class="sm-modal-pill">최솟값: '+minV.toFixed(2)+'%</span>'+
+        '<span class="sm-modal-pill">최댓값: '+maxV.toFixed(2)+'%</span>'+
+        '<span class="sm-modal-pill">범위: '+(maxV-minV).toFixed(2)+'%p</span>';
+      var sorted = data.slice().sort(function(a,b){ return b[axes[r]] - a[axes[r]]; });
+      tableWrap.innerHTML = '<table class="sm-modal-table"><thead><tr>'+
+        '<th>#</th><th>동명</th><th>'+SM_LABELS[axes[r]]+'</th></tr></thead>'+
+        '<tbody>'+sorted.map(function(d,i){
+          return '<tr><td style="color:var(--text3)">'+(i+1)+'</td><td>'+d.dong+'</td>'+
+            '<td style="font-weight:700;color:'+colors[r]+'">'+d[axes[r]].toFixed(2)+'%</td></tr>';
+        }).join('')+'</tbody></table>';
+    } else {
+      // 산점도 확대 (refreshModalChart로 렌더)
+      var xShort2 = SM_LABELS[xKey].replace('(%)','').trim();
+      var yShort2 = SM_LABELS[yKey].replace('(%)','').trim();
+      refreshModalChart();
+      // 갭 테이블 (원본값 기준, 로그 무관)
+      var rows = data.map(function(d){
+        return {dong:d.dong, xRaw:d[xKey], yRaw:d[yKey], gap:d[yKey]-d[xKey]};
+      }).sort(function(a,b){return b.gap-a.gap;});
+      tableWrap.innerHTML = '<table class="sm-modal-table"><thead><tr>'+
+        '<th>#</th><th>동명</th>'+
+        '<th>'+xShort2+'</th>'+
+        '<th>'+yShort2+'</th>'+
+        '<th>차이</th></tr></thead>'+
+        '<tbody>'+rows.map(function(d,i){
+          var gapStr = (d.gap>=0?'+':'')+d.gap.toFixed(2)+'%p';
+          var gapColor = d.gap>=0?'#0F6E56':'#993C1D';
+          return '<tr><td style="color:var(--text3)">'+(i+1)+'</td><td>'+d.dong+'</td>'+
+            '<td style="color:'+colors[c]+'">'+d.xRaw.toFixed(2)+'%</td>'+
+            '<td style="color:'+colors[r]+'">'+d.yRaw.toFixed(2)+'%</td>'+
+            '<td style="font-weight:700;color:'+gapColor+'">'+gapStr+'</td></tr>';
+        }).join('')+'</tbody></table>';
+    }
+    backdropEl.classList.add('sm-open');
+  }
+
+  function closeSmModal() {
+    backdropEl.classList.remove('sm-open');
+    if (modalChart) { try { modalChart.destroy(); } catch(e){} modalChart = null; }
+  }
+
+  document.getElementById('sm-modal-close').addEventListener('click', closeSmModal);
+  backdropEl.addEventListener('click', function(e){ if(e.target === backdropEl) closeSmModal(); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeSmModal(); });
+
+  // 모달 로그 토글
+  document.getElementById('sm-modal-log-btn').addEventListener('click', function(){
+    smModalLog = !smModalLog;
+    this.textContent = smModalLog ? '로그 ON' : '로그 OFF';
+    this.classList.toggle('on', smModalLog);
+    refreshModalChart();
+  });
+
+  // smMatrix에 클릭 이벤트 주입 — smMatrix 호출 후 셀에 이벤트 연결
+  var origSmMatrix = smMatrix;
+  smMatrix = function() {
+    origSmMatrix();
+    var grid = document.getElementById('smMatrixGrid');
+    if (!grid) return;
+    var cells = grid.querySelectorAll('.sm-cell');
+    cells.forEach(function(cell, idx) {
+      var r = Math.floor(idx / 3);
+      var c = idx % 3;
+      cell.addEventListener('click', function() { openSmModal(r, c); });
+    });
+  };
+})();
 
 // 산점도 행렬 초기화는 initCompareAccordions() 에서 처리
 </script>
