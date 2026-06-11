@@ -651,6 +651,621 @@
   }
   .dark .record-desc { color: rgba(255,255,255,0.65); }
 
+  /* ══════════════════════════════════════════
+     비교 탭 (COMPARE TAB)
+     ══════════════════════════════════════════ */
+
+  /* 탭 헤더 */
+  .cmp-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+
+  /* 레벨 서브탭 (광역 / 시군구 / 읍면동) */
+  .cmp-level-toggle {
+    display: flex;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 4px;
+    gap: 4px;
+  }
+  .cmp-level-btn {
+    padding: 8px 22px;
+    border-radius: 9px;
+    font-size: 13px;
+    font-weight: 700;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: var(--text3);
+    font-family: inherit;
+    transition: background 0.2s, color 0.2s;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .cmp-level-btn.active {
+    background: var(--orange);
+    color: #fff;
+  }
+  .cmp-level-btn:focus-visible {
+    outline: 2px solid var(--orange);
+    outline-offset: 2px;
+  }
+
+  /* 광역 뷰 ────────────────────────── */
+  .cmp-overview-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+  .cmp-hero-card {
+    background: var(--surface);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 24px 22px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    cursor: default;
+  }
+  .cmp-hero-card:hover {
+    border-color: var(--orange);
+    box-shadow: 0 0 0 3px var(--orange-light);
+  }
+  .cmp-hero-name {
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    color: var(--text);
+    line-height: 1;
+  }
+  .cmp-hero-region {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text3);
+    letter-spacing: 0.02em;
+    margin-top: 3px;
+  }
+  .cmp-hero-rate {
+    font-size: 42px;
+    font-weight: 900;
+    letter-spacing: -0.05em;
+    color: var(--orange);
+    line-height: 1;
+  }
+  .cmp-hero-rate span {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text3);
+    margin-left: 2px;
+  }
+  .cmp-hero-bar-wrap {
+    height: 6px;
+    background: var(--surface2);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-top: 2px;
+  }
+  .cmp-hero-bar {
+    height: 100%;
+    background: var(--orange);
+    border-radius: 3px;
+    transition: width 0.7s cubic-bezier(0.23,1,0.32,1);
+  }
+  .cmp-hero-votes {
+    font-size: 12px;
+    color: var(--text3);
+    font-weight: 500;
+  }
+  .cmp-hero-votes strong {
+    color: var(--text2);
+    font-weight: 700;
+  }
+
+  /* 광역 뷰 — 전국 바 차트 ────────────── */
+  .cmp-bar-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 28px;
+    margin-bottom: 28px;
+  }
+  .cmp-section-title {
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .cmp-section-title svg { color: var(--orange); flex-shrink: 0; }
+
+  .cmp-bar-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+  .cmp-bar-row:last-child { margin-bottom: 0; }
+  .cmp-bar-label {
+    width: 60px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text2);
+    text-align: right;
+    flex-shrink: 0;
+  }
+  .cmp-bar-outer {
+    flex: 1;
+    height: 28px;
+    background: var(--surface2);
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+  }
+  .cmp-bar-fill {
+    height: 100%;
+    border-radius: 6px;
+    background: var(--orange);
+    transition: width 0.7s cubic-bezier(0.23,1,0.32,1);
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+  }
+  .cmp-bar-fill-text {
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    white-space: nowrap;
+  }
+  .cmp-bar-pct {
+    width: 52px;
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--orange);
+    flex-shrink: 0;
+  }
+
+  /* 시군구 뷰 ────────────────────────── */
+  .cmp-district-wrap {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+  .cmp-district-col {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+  .cmp-district-col-header {
+    padding: 16px 18px 14px;
+    border-bottom: 2px solid var(--border-strong);
+    background: var(--surface2);
+  }
+  .dark .cmp-district-col-header {
+    background: #1e1e1c;
+    border-bottom-color: rgba(255,255,255,0.18);
+  }
+  .cmp-district-col-name {
+    font-size: 16px;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    color: var(--text);
+  }
+  .cmp-district-col-region {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text3);
+    margin-top: 2px;
+  }
+  .cmp-district-col-avg {
+    font-size: 11px;
+    color: var(--orange);
+    font-weight: 700;
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  /* 헤더 평균 수치 강조 */
+  .cmp-district-col-avg-value {
+    font-size: 18px;
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    color: var(--orange);
+    line-height: 1;
+  }
+  .cmp-district-col-avg-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--text3);
+    letter-spacing: 0.03em;
+  }
+  /* 갭 배지 — CSS 변수 기반 (다크모드 대응) */
+  .gap-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 20px;
+    margin-left: 4px;
+    flex-shrink: 0;
+  }
+  .gap-badge-up {
+    background: rgba(37,99,235,0.10);
+    color: var(--blue);
+    border: 1px solid rgba(37,99,235,0.20);
+  }
+  .gap-badge-down {
+    background: rgba(255,102,0,0.10);
+    color: var(--orange);
+    border: 1px solid rgba(255,102,0,0.20);
+  }
+  .gap-badge-eq {
+    background: rgba(22,163,74,0.10);
+    color: var(--green);
+    border: 1px solid rgba(22,163,74,0.20);
+  }
+  .dark .gap-badge-up   { background: rgba(37,99,235,0.18); border-color: rgba(37,99,235,0.30); }
+  .dark .gap-badge-down { background: rgba(255,102,0,0.18);  border-color: rgba(255,102,0,0.30); }
+  .dark .gap-badge-eq   { background: rgba(22,163,74,0.18);  border-color: rgba(22,163,74,0.30); }
+
+  .cmp-district-list {
+    padding: 8px 0;
+    max-height: 520px;
+    overflow-y: auto;
+  }
+  /* ── 커스텀 툴팁 ── */
+  #cmp-tooltip {
+    position: fixed;
+    z-index: 9999;
+    pointer-events: none;
+    background: rgba(20,20,20,0.92);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 10px;
+    border-radius: 8px;
+    white-space: nowrap;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    opacity: 0;
+    transition: opacity 0.12s;
+    max-width: 280px;
+    white-space: pre-wrap;
+    word-break: keep-all;
+    line-height: 1.6;
+  }
+  #cmp-tooltip.visible { opacity: 1; }
+
+  .cmp-district-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    transition: background 0.15s;
+    cursor: pointer;
+    border-radius: 6px;
+    margin: 0 4px;
+  }
+  .cmp-district-item:hover { background: var(--surface2); }
+  .cmp-district-item-rank {
+    font-size: 10px;
+    font-weight: 800;
+    color: var(--text3);
+    width: 14px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+  /* 이름+배지를 세로로 묶는 컨테이너 */
+  .cmp-district-item-body {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .cmp-district-item-name {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 1.3;
+  }
+  .cmp-district-item-sub {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 10px;
+    color: var(--text3);
+    line-height: 1.2;
+  }
+  /* 바+rate 오른쪽 고정 */
+  .cmp-district-item-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 3px;
+    flex-shrink: 0;
+  }
+  .cmp-district-item-bar {
+    width: 48px;
+    height: 4px;
+    background: var(--surface2);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .cmp-district-item-bar-fill {
+    height: 100%;
+    background: var(--orange);
+    border-radius: 2px;
+  }
+  .cmp-district-item-rate {
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--orange);
+    line-height: 1;
+  }
+  .cmp-district-item.top1 .cmp-district-item-rank { color: #f59e0b; }
+  .cmp-district-item.top3 .cmp-district-item-rank { color: var(--orange); }
+  .cmp-district-item.top1 .cmp-district-item-rate { color: #f59e0b; }
+  .cmp-district-item.top1 { background: rgba(245,158,11,0.04); }
+
+  /* 시군구 정렬 컨트롤 */
+  .cmp-district-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .cmp-sort-btn {
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    border: 1px solid var(--border-strong);
+    background: var(--surface);
+    color: var(--text3);
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+  }
+  .cmp-sort-btn.active {
+    background: var(--orange);
+    color: #fff;
+    border-color: var(--orange);
+  }
+
+  /* 읍면동 뷰 ────────────────────────── */
+  .cmp-dong-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 22px;
+  }
+  .cmp-dong-selector-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .cmp-dong-selector-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text3);
+    white-space: nowrap;
+  }
+  .cmp-dong-select {
+    appearance: none;
+    -webkit-appearance: none;
+    background: var(--surface);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-sm);
+    padding: 7px 32px 7px 14px;
+    font-size: 12px;
+    font-weight: 700;
+    font-family: inherit;
+    color: var(--text);
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23888884' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    min-width: 160px;
+    max-width: 220px;
+  }
+  .cmp-dong-select:focus {
+    outline: none;
+    border-color: var(--orange);
+  }
+
+  .cmp-dong-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+  .cmp-dong-col {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+  .cmp-dong-col-header {
+    padding: 14px 16px 12px;
+    border-bottom: 2px solid var(--border-strong);
+    background: var(--surface2);
+  }
+  .dark .cmp-dong-col-header {
+    background: #1e1e1c;
+    border-bottom-color: rgba(255,255,255,0.18);
+  }
+  .cmp-dong-col-candidate {
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    color: var(--text);
+  }
+  .cmp-dong-col-district {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--orange);
+    margin-top: 2px;
+  }
+  .cmp-dong-list {
+    padding: 6px 0;
+    max-height: 480px;
+    overflow-y: auto;
+  }
+  .cmp-dong-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+  }
+  .cmp-dong-item-name {
+    flex: 1;
+    min-width: 0;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: default;
+  }
+  .cmp-dong-item:hover { background: var(--surface2); border-radius: 6px; }
+  .cmp-dong-item-bar {
+    width: 36px;
+    height: 4px;
+    background: var(--surface2);
+    border-radius: 2px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .cmp-dong-item-bar-fill {
+    height: 100%;
+    background: var(--orange);
+    border-radius: 2px;
+  }
+  .cmp-dong-item-rate {
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--orange);
+    width: 38px;
+    text-align: right;
+    flex-shrink: 0;
+  }
+  /* 사전/당일 세부 득표율 */
+  .cmp-dong-vote-detail {
+    display: flex;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    margin-top: 2px;
+    line-height: 1.3;
+  }
+  /* 더 보기 버튼 */
+  .cmp-dong-more-btn {
+    width: 100%;
+    margin-top: 8px;
+    padding: 9px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text2);
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+  }
+  .cmp-dong-more-btn:hover {
+    background: var(--surface) !important;
+    border-color: var(--orange) !important;
+    color: var(--orange) !important;
+  }
+  /* 읍면동 헤더 인라인 드롭다운 */
+  .cmp-dong-inline-select {
+    appearance: none;
+    -webkit-appearance: none;
+    background: var(--surface);
+    border: 1px solid var(--border-strong);
+    border-radius: 8px;
+    padding: 5px 26px 5px 10px;
+    font-size: 11px;
+    font-weight: 700;
+    font-family: inherit;
+    color: var(--text);
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%23888884' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    max-width: 100%;
+    margin-top: 6px;
+  }
+  .cmp-dong-inline-select:focus {
+    outline: none;
+    border-color: var(--orange);
+  }
+  /* 동 갭 배지 — CSS 변수 기반 */
+  .dong-gap-badge {
+    display: inline-flex;
+    align-items: center;
+    font-size: 10px;
+    font-weight: 700;
+    margin-left: 3px;
+    flex-shrink: 0;
+  }
+  .dong-gap-badge-up   { color: var(--blue); }
+  .dong-gap-badge-down { color: var(--orange); }
+
+  .cmp-dong-empty {
+    padding: 24px 16px;
+    font-size: 12px;
+    color: var(--text3);
+    text-align: center;
+  }
+
+  /* 공통 — 섹션 구분선 */
+  .cmp-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 24px 0;
+  }
+
+  /* 공통 — 반응형: 1200px 이하에서 스크롤 */
+  @media (max-width: 1100px) {
+    .cmp-overview-grid,
+    .cmp-district-wrap,
+    .cmp-dong-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 640px) {
+    .cmp-overview-grid,
+    .cmp-district-wrap,
+    .cmp-dong-grid {
+      grid-template-columns: 1fr;
+    }
+    .cmp-level-btn { padding: 8px 14px; font-size: 12px; }
+  }
+
   /* ── PROPORTIONAL TAB ── */
   /* 서브탭 + 정렬 컨트롤 행 */
   .prop-tab-header {
@@ -1242,7 +1857,17 @@
 
   @media (max-width: 479px) {
     .cand-grid {
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    .cand-info {
+      padding: 12px 12px 14px;
+    }
+    .cand-name {
+      font-size: clamp(14px, 4vw, 16px);
+    }
+    .cand-vote-rate {
+      font-size: 18px;
     }
   }
 
@@ -3198,6 +3823,513 @@
     }
   }
 
+  /* ── CROSS-COMPARISON SECTION ── */
+
+  /* ── 주요후보비교 아코디언 ─────────────────── */
+  .cmp-accordion {
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-bottom: 14px;
+    background: var(--surface);
+    transition: border-color 0.2s;
+  }
+  .cmp-accordion:last-child { margin-bottom: 0; }
+  .cmp-accordion.open { border-color: var(--border-strong); }
+
+  .cmp-accordion-trigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 22px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-family: inherit;
+    transition: background 0.15s;
+  }
+  .cmp-accordion-trigger:hover { background: var(--surface2); }
+
+  .cmp-accordion-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .cmp-accordion-icon.orange {
+    background: var(--orange-light);
+    color: var(--orange);
+    border: 1px solid rgba(255,102,0,0.15);
+  }
+  .cmp-accordion-icon.blue {
+    background: #eff6ff;
+    color: var(--blue);
+    border: 1px solid rgba(37,99,235,0.15);
+  }
+  .cmp-accordion-icon.emerald {
+    background: #ecfdf5;
+    color: var(--emerald);
+    border: 1px solid rgba(16,185,129,0.15);
+  }
+  .dark .cmp-accordion-icon.orange { background: #2a1500; border-color: rgba(255,102,0,0.2); }
+  .dark .cmp-accordion-icon.blue   { background: #0c1a33; border-color: rgba(37,99,235,0.2); }
+  .dark .cmp-accordion-icon.emerald{ background: #052e16; border-color: rgba(16,185,129,0.2); }
+
+  .cmp-accordion-label {
+    flex: 1;
+    min-width: 0;
+  }
+  .cmp-accordion-label strong {
+    display: block;
+    font-size: 15px;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    color: var(--text);
+    line-height: 1.2;
+  }
+  .cmp-accordion-label span {
+    display: block;
+    font-size: 12px;
+    color: var(--text3);
+    font-weight: 500;
+    margin-top: 2px;
+    line-height: 1.4;
+  }
+
+  .cmp-accordion-chevron {
+    flex-shrink: 0;
+    color: var(--text3);
+    transition: transform 0.25s cubic-bezier(0.23,1,0.32,1);
+  }
+  .cmp-accordion.open .cmp-accordion-chevron { transform: rotate(180deg); }
+
+  .cmp-accordion-body {
+    display: none;
+    padding: 0 22px 22px;
+    border-top: 1px solid var(--border);
+  }
+  .cmp-accordion.open .cmp-accordion-body { display: block; }
+
+  .cross-section {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+  }
+
+  .cross-section-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+
+  .cross-section-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: var(--orange-light);
+    color: var(--orange);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 1px solid rgba(255,102,0,0.15);
+  }
+
+  .cross-section-icon.blue {
+    background: #eff6ff;
+    color: var(--blue);
+    border-color: rgba(37,99,235,0.15);
+  }
+
+  .dark .cross-section-icon { background: #2a1500; border-color: rgba(255,102,0,0.2); }
+  .dark .cross-section-icon.blue { background: #0c1a33; border-color: rgba(37,99,235,0.2); }
+
+  .cross-section-header-text { flex: 1; min-width: 0; }
+
+  .cross-section-title {
+    font-size: 17px;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    color: var(--text);
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .cross-section-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 8px;
+    border-radius: 100px;
+    font-size: 10px;
+    font-weight: 700;
+    background: var(--orange-light);
+    color: var(--orange);
+    border: 1px solid rgba(255,102,0,0.2);
+    letter-spacing: 0.04em;
+  }
+
+  .dark .cross-section-badge { background: #2a1500; }
+
+  .cross-section-desc {
+    font-size: 13px;
+    color: var(--text3);
+    line-height: 1.6;
+  }
+
+  /* 지역 탭 */
+  .cross-region-tabs {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+
+  .cross-region-tab,
+  .b2b-pair-tab {
+    padding: 7px 16px;
+    border: 1px solid var(--border-strong);
+    background: var(--surface2);
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text2);
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s, border-color 0.15s, box-shadow 0.15s;
+    font-family: inherit;
+    letter-spacing: -0.01em;
+  }
+
+  .cross-region-tab.active,
+  .cross-region-tab:hover,
+  .b2b-pair-tab.active,
+  .b2b-pair-tab:hover {
+    background: var(--orange);
+    color: #fff;
+    border-color: var(--orange);
+    box-shadow: 0 2px 8px rgba(255,102,0,0.25);
+  }
+
+  /* 컨트롤 바 */
+  .cross-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+    padding: 10px 14px;
+    background: var(--surface2);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+  }
+
+  .cross-legend-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text2);
+    flex-wrap: wrap;
+  }
+
+  .cross-legend-dot {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text2);
+  }
+
+  .cross-legend-dot-circle {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: inline-block;
+  }
+
+  .cross-legend-dot.regional .cross-legend-dot-circle { background: var(--blue); }
+  .cross-legend-dot.basic    .cross-legend-dot-circle { background: var(--emerald); }
+  .cross-legend-dot.cand     .cross-legend-dot-circle { background: var(--orange); }
+  .cross-legend-dot.prop     .cross-legend-dot-circle { background: var(--blue); }
+
+  .cross-level-tabs {
+    display: flex;
+    gap: 3px;
+  }
+
+  .cross-level-tab {
+    padding: 5px 12px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text3);
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+    font-family: inherit;
+  }
+
+  .cross-level-tab.active {
+    background: var(--text);
+    color: var(--bg);
+    border-color: var(--text);
+  }
+
+  .cross-view-btns {
+    display: flex;
+    gap: 3px;
+  }
+
+  .cross-view-btn,
+  .b2b-view-btn {
+    padding: 5px 11px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text3);
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+    font-family: inherit;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .cross-view-btn.active,
+  .b2b-view-btn.active {
+    background: var(--orange-light);
+    color: var(--orange);
+    border-color: rgba(255,102,0,0.4);
+  }
+
+  .dark .cross-view-btn.active,
+  .dark .b2b-view-btn.active {
+    background: #2a1500;
+    color: #ff8533;
+  }
+
+  /* stat pills */
+  .cross-stat-pills {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+  }
+
+  .cross-stat-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 11px;
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 700;
+    background: var(--surface2);
+    color: var(--text2);
+    border: 1px solid var(--border);
+  }
+
+  .cross-stat-pill.cand {
+    background: #fff3eb;
+    color: var(--orange-dark);
+    border-color: rgba(255,102,0,0.2);
+  }
+
+  .dark .cross-stat-pill.cand {
+    background: #2a1500;
+    color: #ffaa66;
+    border-color: rgba(255,102,0,0.3);
+  }
+
+  .cross-stat-pill.prop {
+    background: #eff6ff;
+    color: var(--blue);
+    border-color: rgba(37,99,235,0.2);
+  }
+
+  .dark .cross-stat-pill.prop {
+    background: #0c1a33;
+    color: #93b4fa;
+    border-color: rgba(37,99,235,0.3);
+  }
+
+  /* 차트 컨테이너 */
+  .cross-chart-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 20px;
+    min-height: 160px;
+    overflow-x: auto;
+  }
+
+  /* 바 차트 */
+  .cross-bar-wrap { display: none; }
+  .cross-bar-wrap.visible { display: block; }
+
+  .cross-bar-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .cross-bar-row {
+    display: grid;
+    grid-template-columns: 100px 1fr auto;
+    align-items: center;
+    gap: 10px;
+  }
+
+  @media (min-width: 480px) {
+    .cross-bar-row { grid-template-columns: 130px 1fr auto; }
+  }
+
+  .cross-bar-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text2);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .cross-bar-pair {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .cross-bar-track {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 16px;
+  }
+
+  .cross-bar-fill-wrap {
+    flex: 1;
+    height: 8px;
+    background: var(--surface2);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .cross-bar-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.5s cubic-bezier(0.4,0,0.2,1);
+  }
+
+  .cross-bar-fill.cand { background: var(--orange); }
+  .cross-bar-fill.prop { background: var(--blue); }
+
+  .cross-bar-rate {
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+    width: 46px;
+    text-align: right;
+  }
+
+  .cross-bar-rate.cand { color: var(--orange); }
+  .cross-bar-rate.prop { color: var(--blue); }
+
+  .cross-bar-diff {
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+    min-width: 52px;
+    text-align: right;
+  }
+
+  .cross-bar-diff.above { color: var(--blue); }
+  .cross-bar-diff.below { color: var(--orange); }
+
+  /* 산점도 */
+  .cross-scatter-wrap { display: none; }
+  .cross-scatter-wrap.visible { display: block; }
+
+  .cross-scatter-svg { overflow: visible; }
+
+  #cross-scatter-tooltip {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    background: var(--surface);
+    border: 1px solid var(--border-strong);
+    border-radius: 10px;
+    padding: 10px 14px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    pointer-events: none;
+    font-size: 12px;
+    min-width: 140px;
+  }
+
+  #cross-scatter-tooltip .tt-name {
+    font-weight: 700;
+    font-size: 13px;
+    margin-bottom: 4px;
+    color: var(--text);
+  }
+
+  #cross-scatter-tooltip .tt-cand { color: var(--orange); font-weight: 600; }
+  #cross-scatter-tooltip .tt-prop { color: var(--blue); font-weight: 600; }
+
+  /* legend */
+  .cross-legend {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+  }
+
+  .cross-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text2);
+  }
+
+  .cross-legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .cross-legend-dot.cand { background: var(--orange); }
+  .cross-legend-dot.prop { background: var(--blue); }
+  .cross-legend-line {
+    width: 20px;
+    height: 2px;
+    border-top: 2px dashed var(--border-strong);
+    flex-shrink: 0;
+  }
+
+  .cross-empty {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--text3);
+    font-size: 14px;
+  }
+
 </style>
 </head>
 <body>
@@ -3238,6 +4370,11 @@
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
       <span class="label-mobile">후보</span>
       <span class="label-desktop">후보자별 결과</span>
+    </button>
+    <button class="nav-btn" id="nav-btn-compare" data-tab="compare" role="tab" aria-selected="false" aria-controls="tab-compare">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+      <span class="label-mobile">비교</span>
+      <span class="label-desktop">주요 후보 비교</span>
     </button>
     <a href="https://restep.cc/can/" target="_blank" rel="noopener noreferrer" class="nav-btn nav-btn-link">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
@@ -3371,6 +4508,594 @@
 
   </div>
 
+  <!-- ── COMPARE ── -->
+  <div id="tab-compare" class="tab-content" role="tabpanel" aria-labelledby="nav-btn-compare">
+
+    <!-- ── 섹션 1: 주요 후보 득표율 비교 ── -->
+    <div class="cmp-accordion" id="acc-candidates">
+      <button class="cmp-accordion-trigger" aria-expanded="false" aria-controls="acc-candidates-body">
+        <span class="cmp-accordion-icon orange">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </span>
+        <span class="cmp-accordion-label">
+          <strong>주요 후보 득표율 비교</strong>
+          <span>광역·시군구·읍면동 단위별 단체장 후보 득표율 및 비례 갭 분석</span>
+        </span>
+        <svg class="cmp-accordion-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="cmp-accordion-body" id="acc-candidates-body">
+        <!-- 레벨 서브탭 + 정렬 컨트롤 -->
+        <div class="cmp-header" style="margin-top:16px;">
+          <div class="cmp-level-toggle" role="tablist" aria-label="비교 단위">
+            <button class="cmp-level-btn active" data-level="overview" role="tab">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              광역
+            </button>
+            <button class="cmp-level-btn" data-level="district" role="tab">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+              시군구
+            </button>
+            <button class="cmp-level-btn" data-level="dong" role="tab">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              읍면동
+            </button>
+          </div>
+          <div id="cmp-district-sort-wrap" style="display:none;" class="cmp-district-controls">
+            <label for="cmp-sort-select" style="font-size:12px;font-weight:700;color:var(--text3);white-space:nowrap;">정렬</label>
+            <select id="cmp-sort-select" class="cmp-dong-select" style="min-width:140px;max-width:180px;" aria-label="정렬 기준 선택">
+              <option value="desc" selected>비례 높은순</option>
+              <option value="asc">비례 낮은순</option>
+              <option value="gap-desc">갭 큰순</option>
+              <option value="gap-asc">갭 작은순</option>
+              <option value="cand-desc">단체장 높은순</option>
+            </select>
+          </div>
+          <div id="cmp-dong-ctrl-wrap" style="display:none;"></div>
+        </div>
+
+        <!-- 광역 뷰 -->
+        <div id="cmp-view-overview">
+          <div class="cmp-overview-grid" id="cmp-hero-grid"></div>
+          <div class="cmp-bar-section">
+            <div class="cmp-section-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+              득표율 직접 비교
+            </div>
+            <div id="cmp-bar-chart"></div>
+          </div>
+        </div>
+
+        <!-- 시군구 뷰 -->
+        <div id="cmp-view-district" style="display:none;">
+          <div class="cmp-district-wrap" id="cmp-district-grid"></div>
+        </div>
+
+        <!-- 읍면동 뷰 -->
+        <div id="cmp-view-dong" style="display:none;">
+          <div class="cmp-dong-grid" id="cmp-dong-grid"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 섹션 2: 광역비례 × 기초비례 교차 비교 ── -->
+    <div class="cmp-accordion" id="acc-b2b">
+      <button class="cmp-accordion-trigger" aria-expanded="false" aria-controls="acc-b2b-body">
+        <span class="cmp-accordion-icon emerald">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </span>
+        <span class="cmp-accordion-label">
+          <strong>광역비례 × 기초비례 득표율 비교</strong>
+          <span>같은 읍면동 안에서 광역의회 비례와 기초의회 비례 득표율 비교 · 읍면동 단위</span>
+        </span>
+        <svg class="cmp-accordion-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="cmp-accordion-body" id="acc-b2b-body" style="padding-top:20px;">
+        <div>
+
+      <div class="cross-region-tabs" role="tablist" aria-label="비교 쌍 선택">
+        <button class="b2b-pair-tab active" data-pair="서울-동작구" role="tab">서울 × 동작구</button>
+        <button class="b2b-pair-tab" data-pair="경기-수원시" role="tab">경기 × 수원시</button>
+        <button class="b2b-pair-tab" data-pair="경기-김포시" role="tab">경기 × 김포시</button>
+        <button class="b2b-pair-tab" data-pair="경기-화성시" role="tab">경기 × 화성시</button>
+        <button class="b2b-pair-tab" data-pair="대구-수성구" role="tab">대구 × 수성구</button>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+        <span style="display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:700;color:var(--text2);white-space:nowrap;">
+          <svg width="9" height="9" viewBox="0 0 9 9"><circle cx="4.5" cy="4.5" r="4.5" fill="var(--blue)"/></svg>광역비례
+        </span>
+        <span style="display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:700;color:var(--text2);white-space:nowrap;">
+          <svg width="9" height="9" viewBox="0 0 9 9"><circle cx="4.5" cy="4.5" r="4.5" fill="var(--emerald)"/></svg>기초비례
+        </span>
+      </div>
+
+      <div class="cross-controls">
+        <div></div>
+        <div class="cross-view-btns">
+          <button class="b2b-view-btn" data-view="bar">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            바 차트
+          </button>
+          <button class="b2b-view-btn active" data-view="scatter">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="7.5" r="1.5"/><circle cx="18.5" cy="5.5" r="1.5"/><circle cx="11.5" cy="11.5" r="1.5"/><circle cx="16.5" cy="15.5" r="1.5"/><circle cx="6.5" cy="17.5" r="1.5"/></svg>
+            산점도
+          </button>
+        </div>
+      </div>
+
+      <div class="cross-stat-pills" id="b2b-stat-pills"></div>
+
+      <div class="cross-chart-box">
+        <div id="b2b-bar-wrap" class="cross-bar-wrap"></div>
+        <div id="b2b-scatter-wrap" class="cross-scatter-wrap visible">
+          <div style="margin-bottom:14px;padding:14px 16px;background:var(--surface2);border-radius:12px;border:1px solid var(--border);font-size:12px;line-height:1.75;color:var(--text2);">
+            <div style="font-weight:700;color:var(--text);margin-bottom:6px;font-size:13px;">📈 산점도 읽는 법</div>
+            가로축은 <strong style="color:var(--blue)">광역비례</strong>, 세로축은 <strong style="color:var(--emerald)">기초비례</strong> 득표율입니다.
+            점선은 두 득표율이 같은 선 — 선 위는 기초비례 우세, 아래는 광역비례 우세 지역입니다.
+            <span style="color:var(--text3);font-size:11px;display:block;margin-top:6px;">💡 점에 마우스를 올리면 읍면동별 상세 득표율을 확인할 수 있습니다.</span>
+          </div>
+          <div id="b2b-scatter-svg-wrap"></div>
+        </div>
+      </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 섹션 3: 단체장 × 광역비례 교차 비교 ── -->
+    <div class="cmp-accordion" id="acc-cross">
+      <button class="cmp-accordion-trigger" aria-expanded="false" aria-controls="acc-cross-body">
+        <span class="cmp-accordion-icon blue">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="18" r="3"/><circle cx="16" cy="6" r="3"/><line x1="8" y1="15" x2="8" y2="6"/><line x1="16" y1="18" x2="16" y2="9"/></svg>
+        </span>
+        <span class="cmp-accordion-label">
+          <strong>단체장 × 광역비례 득표율 교차 비교</strong>
+          <span>후보 개인 득표율과 정당 비례 득표율을 지역·단위별로 교차 분석</span>
+        </span>
+        <svg class="cmp-accordion-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="cmp-accordion-body" id="acc-cross-body" style="padding-top:20px;">
+
+      <!-- 지역 탭 -->
+      <div class="cross-region-tabs" role="tablist" aria-label="지역 선택">
+        <button class="cross-region-tab active" data-region="서울" role="tab">서울 (김정철)</button>
+        <button class="cross-region-tab" data-region="부산" role="tab">부산 (정이한)</button>
+        <button class="cross-region-tab" data-region="대구" role="tab">대구 (이수찬)</button>
+        <button class="cross-region-tab" data-region="경기" role="tab">경기 (조응천)</button>
+      </div>
+
+      <!-- 레벨·뷰 컨트롤 -->
+      <div class="cross-controls">
+        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+          <div class="cross-level-tabs" role="tablist" aria-label="집계 단위">
+            <button class="cross-level-tab" data-level="광역" role="tab">광역 전체</button>
+            <button class="cross-level-tab active" data-level="시군구" role="tab">시군구</button>
+            <button class="cross-level-tab" data-level="읍면동" role="tab">읍면동</button>
+          </div>
+        </div>
+        <div class="cross-view-btns">
+          <button class="cross-view-btn" data-view="bar">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            바 차트
+          </button>
+          <button class="cross-view-btn active" data-view="scatter">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="7.5" r="1.5"/><circle cx="18.5" cy="5.5" r="1.5"/><circle cx="11.5" cy="11.5" r="1.5"/><circle cx="16.5" cy="15.5" r="1.5"/><circle cx="6.5" cy="17.5" r="1.5"/></svg>
+            산점도
+          </button>
+        </div>
+      </div>
+
+      <!-- 통계 pill -->
+      <div class="cross-stat-pills" id="cross-stat-pills"></div>
+
+      <!-- 범례 -->
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;flex-wrap:wrap;">
+        <span style="display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:700;color:var(--text2);white-space:nowrap;">
+          <svg width="9" height="9" viewBox="0 0 9 9"><circle cx="4.5" cy="4.5" r="4.5" fill="var(--orange)"/></svg>단체장 득표율
+        </span>
+        <span style="display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:700;color:var(--text2);white-space:nowrap;">
+          <svg width="9" height="9" viewBox="0 0 9 9"><circle cx="4.5" cy="4.5" r="4.5" fill="var(--blue)"/></svg>광역비례 득표율
+        </span>
+        <span id="cross-scatter-legend-diag" style="display:none;font-size:12px;font-weight:700;color:var(--text3);">── 비례=단체장 기준선</span>
+      </div>
+
+      <!-- 차트 영역 -->
+      <div class="cross-chart-box">
+        <div id="cross-bar-wrap" class="cross-bar-wrap"></div>
+        <div id="cross-scatter-wrap" class="cross-scatter-wrap visible">
+          <!-- 산점도 설명 패널 -->
+          <div id="cross-scatter-guide" style="
+            margin-bottom:14px;
+            padding:14px 16px;
+            background:var(--surface2);
+            border-radius:12px;
+            border:1px solid var(--border);
+            font-size:12px;
+            line-height:1.7;
+            color:var(--text2);
+          ">
+            <div style="font-weight:700;color:var(--text);margin-bottom:8px;font-size:13px;">📈 산점도 읽는 법</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px 20px;">
+              <div>
+                <span style="font-weight:700;color:var(--text);">점 하나 = 지역 하나</span><br>
+                각 점은 구·시·읍면동 한 곳을 나타냅니다.<br>
+                가로축은 단체장 득표율, 세로축은 광역비례 득표율입니다.
+              </div>
+              <div>
+                <span style="font-weight:700;color:var(--text);">점 색깔의 의미</span><br>
+                <span style="color:var(--blue);font-weight:600;">🔵 파란 점</span> — 비례가 단체장보다 높은 곳<br>
+                <span style="color:var(--orange);font-weight:600;">🟠 주황 점</span> — 단체장이 비례보다 높은 곳
+              </div>
+              <div>
+                <span style="font-weight:700;color:var(--text);">대각선 기준선</span><br>
+                점선 대각선은 <em>비례=단체장</em>이 되는 선입니다.<br>
+                선 위쪽은 비례 우세, 아래쪽은 단체장 우세 지역입니다.
+              </div>
+              <div>
+                <span style="font-weight:700;color:var(--text);">흩어진 정도의 의미</span><br>
+                점들이 대각선 근처에 모일수록 단체장·비례 득표율이<br>
+                함께 움직이는 지역이 많다는 뜻입니다.
+              </div>
+            </div>
+            <div style="margin-top:8px;padding-top:8px;border-top:1px solid var(--border);color:var(--text3);font-size:11px;">
+              💡 점에 마우스를 올리면 해당 지역의 단체장·비례 득표율을 확인할 수 있습니다.
+            </div>
+          </div>
+          <div id="cross-scatter-svg-wrap"></div>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <!-- ── 섹션 4: 광역비례·광역단체장·기초단체장 3방향 산점도 행렬 ── -->
+    <div class="cmp-accordion" id="acc-scatter-matrix">
+      <button class="cmp-accordion-trigger" aria-expanded="false" aria-controls="acc-scatter-matrix-body">
+        <span class="cmp-accordion-icon blue">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="7.5" cy="7.5" r="1.5"/><circle cx="18.5" cy="5.5" r="1.5"/><circle cx="11.5" cy="11.5" r="1.5"/><circle cx="16.5" cy="15.5" r="1.5"/><circle cx="6.5" cy="17.5" r="1.5"/></svg>
+        </span>
+        <span class="cmp-accordion-label">
+          <strong>광역비례 · 광역단체장 · 기초단체장 3방향 산점도 행렬</strong>
+          <span>동별 득표율 데이터를 구/시별로 선택해 세 지표 간 상관관계를 비교</span>
+        </span>
+        <svg class="cmp-accordion-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="cmp-accordion-body" id="acc-scatter-matrix-body" style="padding-top:20px;">
+<style>
+/* ── 산점도 행렬 전체 래퍼 ── */
+.sm-wrap {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* ── 컨트롤 바 ── */
+.sm-wrap .sm-controls {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+  align-items: center;
+  padding: 12px 16px;
+  background: var(--surface2);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+}
+
+/* 지역 버튼 (서울/부산/경기) */
+.sm-wrap .sm-region-btn {
+  padding: 7px 18px;
+  border: 1.5px solid var(--border-strong);
+  border-radius: 100px;
+  background: var(--surface);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: inherit;
+  color: var(--text3);
+  transition: all .2s;
+  letter-spacing: -0.01em;
+}
+.sm-wrap .sm-region-btn:hover {
+  border-color: var(--orange);
+  color: var(--orange);
+}
+.sm-wrap .sm-region-btn.active {
+  background: var(--orange);
+  color: #fff;
+  border-color: var(--orange);
+  box-shadow: 0 2px 8px rgba(255,102,0,0.25);
+}
+
+/* 구 선택 버튼 그룹 */
+.sm-wrap .sm-gu-sel {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+  padding: 4px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  width: fit-content;
+}
+.sm-wrap .sm-gu-btn {
+  padding: 6px 14px;
+  border: none;
+  border-radius: 9px;
+  background: transparent;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: inherit;
+  color: var(--text3);
+  transition: all .15s;
+}
+.sm-wrap .sm-gu-btn:hover {
+  background: var(--surface);
+  color: var(--text2);
+}
+.sm-wrap .sm-gu-btn.active {
+  background: var(--orange);
+  color: #fff;
+  box-shadow: 0 1px 4px rgba(255,102,0,0.2);
+}
+
+/* 로그 스케일 토글 */
+.sm-wrap .sm-log-toggle {
+  font-size: 12px;
+  font-weight: 700;
+  font-family: inherit;
+  padding: 6px 14px;
+  border: 1.5px solid var(--border-strong);
+  border-radius: 100px;
+  background: var(--surface);
+  cursor: pointer;
+  color: var(--text3);
+  margin-left: auto;
+  transition: all .2s;
+}
+.sm-wrap .sm-log-toggle:hover {
+  border-color: #ca8a04;
+  color: #ca8a04;
+}
+.sm-wrap .sm-log-toggle.on {
+  background: rgba(234,179,8,0.1);
+  color: #ca8a04;
+  border-color: #ca8a04;
+}
+
+/* 정보 바 */
+.sm-wrap .sm-info-bar {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text3);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  letter-spacing: -0.01em;
+}
+.sm-wrap .sm-info-bar::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 14px;
+  background: var(--orange);
+  border-radius: 2px;
+}
+
+/* ── 3×3 행렬 그리드 ── */
+.sm-wrap .sm-matrix-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+/* 개별 셀 */
+.sm-wrap .sm-cell {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  transition: border-color .2s, box-shadow .2s;
+}
+.sm-wrap .sm-cell:hover {
+  border-color: var(--border-strong);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+
+/* 셀 레이블 (상관계수 포함) */
+.sm-wrap .sm-cell-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text3);
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+  line-height: 1.5;
+}
+
+/* 대각선 셀 (히스토그램) */
+.sm-wrap .sm-diag-cell {
+  background: linear-gradient(135deg, var(--surface2) 0%, var(--surface) 100%);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 165px;
+  position: relative;
+  overflow: hidden;
+}
+.sm-wrap .sm-diag-cell::before {
+  content: '';
+  position: absolute;
+  top: -20px; right: -20px;
+  width: 80px; height: 80px;
+  background: var(--orange);
+  border-radius: 50%;
+  opacity: 0.04;
+}
+.sm-wrap .sm-diag-title {
+  font-size: 14px;
+  font-weight: 900;
+  text-align: center;
+  line-height: 1.4;
+  color: var(--text);
+  letter-spacing: -0.03em;
+  margin-bottom: 2px;
+}
+.sm-wrap .sm-diag-sub {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--orange);
+  margin-top: 2px;
+}
+
+/* r 값 강조 색상 */
+.sm-wrap .sm-cell-label .r-strong { color: #0F6E56; font-weight: 800; }
+.sm-wrap .sm-cell-label .r-mid    { color: #534AB7; font-weight: 800; }
+.sm-wrap .sm-cell-label .r-weak   { color: #993C1D; font-weight: 800; }
+
+/* 다크모드 */
+.dark .sm-wrap .sm-cell { background: var(--surface); }
+.dark .sm-wrap .sm-diag-cell { background: linear-gradient(135deg, var(--surface2) 0%, var(--surface) 100%); }
+.dark .sm-wrap .sm-region-btn.active { box-shadow: 0 2px 8px rgba(255,102,0,0.35); }
+</style>
+<div class="sm-wrap">
+  <div class="sm-controls">
+    <button class="sm-region-btn active" data-smregion="서울">서울</button>
+    <button class="sm-region-btn" data-smregion="부산">부산</button>
+    <button class="sm-region-btn" data-smregion="경기">경기</button>
+    <button class="sm-log-toggle" id="smLogToggle">로그 스케일 OFF</button>
+  </div>
+  <div class="sm-gu-sel" id="smGuSel"></div>
+  <div class="sm-info-bar" id="smInfoBar"></div>
+  <div class="sm-matrix-grid" id="smMatrixGrid"></div>
+</div>
+<script>
+var SM_RAW={"서울-동작구":[{"dong":"노량진제1동","prop":6.33,"metro":1.33,"basic":24.67},{"dong":"노량진제2동","prop":5.71,"metro":1.51,"basic":24.78},{"dong":"대방동","prop":5.77,"metro":1.37,"basic":21.41},{"dong":"사당제1동","prop":5.24,"metro":1.33,"basic":17.86},{"dong":"사당제2동","prop":4.79,"metro":0.99,"basic":16.49},{"dong":"사당제3동","prop":4.74,"metro":0.84,"basic":17.87},{"dong":"사당제4동","prop":4.74,"metro":0.92,"basic":16.61},{"dong":"사당제5동","prop":5.52,"metro":1.08,"basic":19.97},{"dong":"상도제1동","prop":5.32,"metro":1.32,"basic":18.18},{"dong":"상도제2동","prop":5.73,"metro":1.26,"basic":26.33},{"dong":"상도제3동","prop":5.47,"metro":1.28,"basic":14.51},{"dong":"상도제4동","prop":5.43,"metro":1.24,"basic":21.76},{"dong":"신대방제1동","prop":4.37,"metro":1.17,"basic":16.03},{"dong":"신대방제2동","prop":4.87,"metro":1.03,"basic":20.56},{"dong":"흑석동","prop":5.2,"metro":0.91,"basic":17.88}],"서울-관악구":[{"dong":"봉천제10동","prop":4.22,"metro":1.52,"basic":17.87},{"dong":"봉천제11동","prop":4.11,"metro":1.44,"basic":16.85},{"dong":"봉천제3동","prop":5.72,"metro":1.54,"basic":20.19},{"dong":"봉천제4동","prop":4.84,"metro":1.24,"basic":16.31},{"dong":"봉천제5동","prop":4.2,"metro":1.3,"basic":17.77},{"dong":"봉천제6동","prop":4.65,"metro":1.31,"basic":18.68},{"dong":"봉천제7동","prop":4.44,"metro":1.27,"basic":18.72},{"dong":"봉천제8동","prop":4.48,"metro":1.3,"basic":18.34},{"dong":"봉천제9동","prop":4.79,"metro":1.66,"basic":20.58},{"dong":"보라매동","prop":5.18,"metro":1.18,"basic":17.46},{"dong":"서림동","prop":5.37,"metro":1.44,"basic":18.29},{"dong":"서원동","prop":4.72,"metro":1.35,"basic":17.78},{"dong":"성현동","prop":4.13,"metro":0.98,"basic":16.01},{"dong":"신림동","prop":5.04,"metro":1.36,"basic":18.97},{"dong":"신사동","prop":4.84,"metro":1.47,"basic":19.69},{"dong":"은천동","prop":4.51,"metro":1.05,"basic":17.83},{"dong":"조원동","prop":4.74,"metro":1.18,"basic":19.43},{"dong":"중앙동","prop":5.65,"metro":1.79,"basic":21.73},{"dong":"청림동","prop":3.97,"metro":0.88,"basic":15.33},{"dong":"청룡동","prop":4.89,"metro":1.4,"basic":18.87},{"dong":"행운동","prop":5.14,"metro":1.49,"basic":20.22}],"서울-강동구":[{"dong":"강일동","prop":4.14,"metro":0.85,"basic":14.2},{"dong":"고덕제1동","prop":3.99,"metro":0.88,"basic":12.64},{"dong":"고덕제2동","prop":3.65,"metro":0.82,"basic":13.14},{"dong":"길동","prop":3.82,"metro":0.82,"basic":13.04},{"dong":"둔촌제1동","prop":4.72,"metro":0.68,"basic":13.42},{"dong":"둔촌제2동","prop":4.17,"metro":0.87,"basic":14.64},{"dong":"명일제1동","prop":3.78,"metro":0.84,"basic":12.81},{"dong":"명일제2동","prop":3.7,"metro":0.84,"basic":13.18},{"dong":"상일제1동","prop":3.43,"metro":0.92,"basic":12.42},{"dong":"상일제2동","prop":3.91,"metro":0.9,"basic":14.26},{"dong":"성내제1동","prop":3.84,"metro":0.86,"basic":12.75},{"dong":"성내제2동","prop":3.77,"metro":0.81,"basic":12.62},{"dong":"성내제3동","prop":3.88,"metro":0.89,"basic":13.3},{"dong":"암사제1동","prop":4.0,"metro":0.84,"basic":13.7},{"dong":"암사제2동","prop":4.49,"metro":0.89,"basic":14.23},{"dong":"암사제3동","prop":4.23,"metro":0.91,"basic":14.57},{"dong":"천호제1동","prop":3.61,"metro":0.79,"basic":12.24},{"dong":"천호제2동","prop":3.81,"metro":0.76,"basic":12.33},{"dong":"천호제3동","prop":4.14,"metro":0.89,"basic":14.52}],"서울-성동구":[{"dong":"금호1가동","prop":3.72,"metro":0.76,"basic":14.37},{"dong":"금호2.3가동","prop":3.65,"metro":0.83,"basic":14.01},{"dong":"금호4가동","prop":3.64,"metro":0.82,"basic":13.89},{"dong":"마장동","prop":3.43,"metro":0.64,"basic":14.8},{"dong":"사근동","prop":3.47,"metro":0.73,"basic":14.22},{"dong":"성수1가제1동","prop":4.03,"metro":0.87,"basic":14.89},{"dong":"성수1가제2동","prop":4.03,"metro":0.87,"basic":14.3},{"dong":"성수2가제1동","prop":4.2,"metro":0.82,"basic":15.52},{"dong":"성수2가제3동","prop":3.82,"metro":0.78,"basic":15.0},{"dong":"송정동","prop":3.37,"metro":0.69,"basic":14.27},{"dong":"옥수동","prop":4.05,"metro":0.87,"basic":16.28},{"dong":"용답동","prop":3.34,"metro":0.63,"basic":14.54},{"dong":"왕십리제2동","prop":3.67,"metro":0.73,"basic":15.94},{"dong":"왕십리도선동","prop":3.43,"metro":0.59,"basic":15.28},{"dong":"행당제1동","prop":3.58,"metro":0.72,"basic":13.71},{"dong":"행당제2동","prop":3.82,"metro":0.81,"basic":15.3},{"dong":"홍익동","prop":3.27,"metro":0.68,"basic":14.08}],"서울-중구":[{"dong":"광희동","prop":3.17,"metro":0.77,"basic":17.27},{"dong":"다산동","prop":3.74,"metro":0.72,"basic":18.05},{"dong":"덕수궁길동","prop":3.41,"metro":0.79,"basic":14.8},{"dong":"명동","prop":3.55,"metro":0.85,"basic":18.4},{"dong":"무학봉황동","prop":3.85,"metro":0.83,"basic":17.26},{"dong":"소공동","prop":3.49,"metro":0.88,"basic":18.05},{"dong":"신당동","prop":3.69,"metro":0.79,"basic":17.51},{"dong":"신당제5동","prop":3.64,"metro":0.87,"basic":16.36},{"dong":"약수동","prop":3.98,"metro":0.89,"basic":17.57},{"dong":"을지로동","prop":3.79,"metro":0.88,"basic":14.58},{"dong":"장충동","prop":3.52,"metro":0.89,"basic":17.51},{"dong":"청구동","prop":3.42,"metro":0.84,"basic":15.57},{"dong":"태평로1가동","prop":3.68,"metro":0.93,"basic":16.63},{"dong":"태평로2가동","prop":3.17,"metro":0.86,"basic":13.99},{"dong":"회현동","prop":3.31,"metro":0.77,"basic":14.77}],"서울-용산구":[{"dong":"갈월동","prop":3.36,"metro":0.75,"basic":20.99},{"dong":"남영동","prop":3.91,"metro":0.82,"basic":22.22},{"dong":"동빙고동","prop":3.81,"metro":0.79,"basic":18.61},{"dong":"보광동","prop":3.6,"metro":0.8,"basic":20.29},{"dong":"서빙고동","prop":3.91,"metro":0.78,"basic":19.44},{"dong":"용문동","prop":3.48,"metro":0.8,"basic":20.84},{"dong":"용산2가동","prop":3.4,"metro":0.77,"basic":21.78},{"dong":"원효로제1동","prop":3.49,"metro":0.81,"basic":20.43},{"dong":"원효로제2동","prop":3.64,"metro":0.84,"basic":20.99},{"dong":"이촌제1동","prop":3.83,"metro":0.76,"basic":21.72},{"dong":"이촌제2동","prop":4.18,"metro":0.79,"basic":24.33},{"dong":"이태원제1동","prop":4.12,"metro":0.89,"basic":23.15},{"dong":"이태원제2동","prop":3.72,"metro":0.81,"basic":20.83},{"dong":"청파동","prop":3.45,"metro":0.81,"basic":18.78},{"dong":"한강로동","prop":3.69,"metro":0.79,"basic":22.08},{"dong":"후암동","prop":3.49,"metro":0.83,"basic":20.47}],"부산-금정구":[{"dong":"구서제1동","prop":3.46,"metro":2.15,"basic":2.38},{"dong":"구서제2동","prop":3.49,"metro":2.14,"basic":2.19},{"dong":"금사회동동","prop":2.55,"metro":1.63,"basic":1.84},{"dong":"남산동","prop":2.73,"metro":1.77,"basic":1.9},{"dong":"노포동","prop":2.62,"metro":1.8,"basic":1.95},{"dong":"두실동","prop":3.53,"metro":2.1,"basic":2.35},{"dong":"부곡제1동","prop":3.41,"metro":2.16,"basic":2.41},{"dong":"부곡제2동","prop":3.54,"metro":2.0,"basic":2.47},{"dong":"부곡제3동","prop":3.34,"metro":2.0,"basic":2.21},{"dong":"부곡제4동","prop":3.41,"metro":2.02,"basic":2.25},{"dong":"서동","prop":2.72,"metro":1.88,"basic":1.87},{"dong":"서제1동","prop":2.2,"metro":1.78,"basic":1.78},{"dong":"서제2동","prop":2.12,"metro":1.6,"basic":1.31},{"dong":"서제3동","prop":2.21,"metro":1.68,"basic":1.52},{"dong":"장전제1동","prop":3.67,"metro":2.2,"basic":2.75},{"dong":"장전제2동","prop":3.88,"metro":2.29,"basic":2.71}],"경기-수원시":[{"dong":"곡선동","prop":4.31,"metro":3.57,"basic":6.41},{"dong":"구운동","prop":3.24,"metro":2.96,"basic":4.63},{"dong":"금곡동","prop":3.48,"metro":2.94,"basic":4.94},{"dong":"매교동","prop":4.53,"metro":4.46,"basic":6.17},{"dong":"매산로제1동","prop":4.77,"metro":4.59,"basic":6.73},{"dong":"매산로제2동","prop":4.55,"metro":4.44,"basic":6.04},{"dong":"매산로제3동","prop":4.59,"metro":4.5,"basic":6.26},{"dong":"매탄제1동","prop":5.22,"metro":4.76,"basic":8.61},{"dong":"매탄제3동","prop":4.71,"metro":4.58,"basic":7.76},{"dong":"매탄제4동","prop":5.12,"metro":5.01,"basic":9.17},{"dong":"연무동","prop":3.01,"metro":2.67,"basic":4.16},{"dong":"영화동","prop":2.67,"metro":2.3,"basic":3.77},{"dong":"율천동","prop":5.58,"metro":4.83,"basic":7.27},{"dong":"인계동","prop":5.04,"metro":4.84,"basic":6.82},{"dong":"조원제1동","prop":3.12,"metro":2.75,"basic":4.21},{"dong":"조원제2동","prop":3.69,"metro":3.2,"basic":5.14},{"dong":"파장동","prop":3.2,"metro":2.85,"basic":4.37},{"dong":"평동","prop":3.14,"metro":2.74,"basic":4.6},{"dong":"행궁동","prop":2.97,"metro":2.7,"basic":3.72},{"dong":"호매실동","prop":3.36,"metro":2.65,"basic":4.61},{"dong":"화서제1동","prop":3.36,"metro":3.01,"basic":4.88},{"dong":"화서제2동","prop":3.71,"metro":3.3,"basic":5.13},{"dong":"권선제1동","prop":4.18,"metro":3.85,"basic":6.02},{"dong":"권선제2동","prop":4.29,"metro":4.27,"basic":6.62},{"dong":"세류제2동","prop":2.54,"metro":2.2,"basic":3.74},{"dong":"세류제3동","prop":2.42,"metro":2.17,"basic":3.65},{"dong":"서둔동","prop":3.11,"metro":2.84,"basic":4.55},{"dong":"입북동","prop":3.43,"metro":3.19,"basic":5.06},{"dong":"정자제1동","prop":3.47,"metro":3.17,"basic":5.17},{"dong":"정자제2동","prop":3.76,"metro":3.38,"basic":5.68},{"dong":"정자제3동","prop":4.34,"metro":3.8,"basic":6.22},{"dong":"지동","prop":2.73,"metro":2.48,"basic":3.89},{"dong":"우만제1동","prop":4.46,"metro":4.4,"basic":6.79},{"dong":"우만제2동","prop":4.43,"metro":4.54,"basic":6.89},{"dong":"영통동","prop":6.99,"metro":6.23,"basic":10.89},{"dong":"원천동","prop":5.75,"metro":5.34,"basic":8.57},{"dong":"이의동","prop":6.06,"metro":5.58,"basic":10.09},{"dong":"망포제1동","prop":5.56,"metro":5.2,"basic":8.89},{"dong":"망포제2동","prop":5.84,"metro":5.42,"basic":9.32},{"dong":"태장동","prop":5.6,"metro":5.13,"basic":8.89},{"dong":"광교1동","prop":6.08,"metro":5.58,"basic":10.06},{"dong":"광교2동","prop":6.97,"metro":6.4,"basic":11.63},{"dong":"하동","prop":4.51,"metro":4.3,"basic":6.64}],"경기-고양시":[{"dong":"가좌동","prop":3.25,"metro":2.42,"basic":5.04},{"dong":"강매동","prop":2.75,"metro":2.09,"basic":4.57},{"dong":"고양동","prop":3.15,"metro":2.2,"basic":4.77},{"dong":"능곡동","prop":2.7,"metro":2.19,"basic":4.64},{"dong":"대화동","prop":3.21,"metro":2.57,"basic":5.36},{"dong":"덕이동","prop":3.14,"metro":2.34,"basic":5.35},{"dong":"도내동","prop":3.07,"metro":2.27,"basic":4.3},{"dong":"마두제1동","prop":3.34,"metro":2.6,"basic":5.46},{"dong":"마두제2동","prop":3.49,"metro":2.67,"basic":5.43},{"dong":"백석제1동","prop":3.66,"metro":2.7,"basic":5.52},{"dong":"백석제2동","prop":3.27,"metro":2.47,"basic":5.4},{"dong":"벽제관산동","prop":2.29,"metro":1.88,"basic":3.72},{"dong":"별빛동","prop":3.49,"metro":2.72,"basic":5.77},{"dong":"사리현동","prop":2.07,"metro":1.67,"basic":3.47},{"dong":"성사제1동","prop":3.0,"metro":2.4,"basic":4.86},{"dong":"성사제2동","prop":2.93,"metro":2.3,"basic":4.7},{"dong":"식사동","prop":3.56,"metro":2.87,"basic":5.62},{"dong":"오금동","prop":2.65,"metro":2.01,"basic":4.38},{"dong":"원당동","prop":2.62,"metro":2.05,"basic":4.13},{"dong":"원흥동","prop":3.36,"metro":2.63,"basic":5.62},{"dong":"장항동","prop":3.08,"metro":2.48,"basic":5.49},{"dong":"주교동","prop":2.0,"metro":1.62,"basic":3.48},{"dong":"중산동","prop":3.41,"metro":2.64,"basic":5.73},{"dong":"지축동","prop":3.62,"metro":2.68,"basic":5.77},{"dong":"탄현동","prop":3.08,"metro":2.46,"basic":5.09},{"dong":"풍동","prop":3.37,"metro":2.59,"basic":5.62},{"dong":"행신제1동","prop":3.12,"metro":2.35,"basic":4.86},{"dong":"행신제2동","prop":2.88,"metro":2.22,"basic":4.86},{"dong":"행신제3동","prop":3.4,"metro":2.55,"basic":5.6},{"dong":"행주내동","prop":2.31,"metro":1.93,"basic":3.81},{"dong":"화전동","prop":2.3,"metro":1.81,"basic":4.05},{"dong":"화정제1동","prop":3.27,"metro":2.55,"basic":5.5},{"dong":"화정제2동","prop":3.26,"metro":2.51,"basic":5.17},{"dong":"풍산동","prop":3.35,"metro":2.62,"basic":5.44},{"dong":"중앙동","prop":2.87,"metro":2.38,"basic":5.21},{"dong":"강촌동","prop":3.07,"metro":2.38,"basic":5.32},{"dong":"문촌동","prop":2.92,"metro":2.42,"basic":5.13},{"dong":"노루목동","prop":3.05,"metro":2.45,"basic":5.07},{"dong":"정발산동","prop":3.44,"metro":2.68,"basic":5.84},{"dong":"장대동","prop":3.31,"metro":2.59,"basic":5.47},{"dong":"주엽제1동","prop":3.41,"metro":2.72,"basic":5.87},{"dong":"주엽제2동","prop":3.37,"metro":2.65,"basic":5.72}],"경기-용인시":[{"dong":"기흥동","prop":4.2,"metro":3.44,"basic":6.3},{"dong":"동백동","prop":4.36,"metro":3.59,"basic":6.38},{"dong":"마북동","prop":3.75,"metro":3.23,"basic":5.71},{"dong":"보정동","prop":4.74,"metro":4.19,"basic":7.83},{"dong":"상현제1동","prop":4.43,"metro":3.95,"basic":6.86},{"dong":"상현제2동","prop":4.49,"metro":3.99,"basic":6.95},{"dong":"상현제3동","prop":4.65,"metro":4.12,"basic":7.41},{"dong":"성복동","prop":4.87,"metro":4.33,"basic":7.37},{"dong":"수지동","prop":4.61,"metro":4.09,"basic":7.11},{"dong":"신봉동","prop":4.57,"metro":3.97,"basic":6.78},{"dong":"죽전제1동","prop":4.53,"metro":4.06,"basic":6.96},{"dong":"죽전제2동","prop":4.66,"metro":4.11,"basic":7.22},{"dong":"포곡읍","prop":2.47,"metro":2.19,"basic":3.84},{"dong":"모현읍","prop":2.47,"metro":2.16,"basic":3.44},{"dong":"역북동","prop":2.8,"metro":2.42,"basic":4.21},{"dong":"삼가동","prop":2.24,"metro":1.96,"basic":3.21},{"dong":"유방동","prop":2.92,"metro":2.52,"basic":4.26},{"dong":"남사읍","prop":2.62,"metro":2.22,"basic":3.57},{"dong":"이동읍","prop":2.47,"metro":2.06,"basic":3.5}],"경기-화성시":[{"dong":"능동","prop":4.05,"metro":3.27,"basic":7.73},{"dong":"반송동","prop":6.86,"metro":5.95,"basic":16.99},{"dong":"병점제1동","prop":5.44,"metro":4.69,"basic":11.36},{"dong":"병점제2동","prop":5.55,"metro":4.86,"basic":11.05},{"dong":"봉담읍","prop":2.89,"metro":2.5,"basic":5.98},{"dong":"비봉면","prop":2.59,"metro":2.3,"basic":5.0},{"dong":"새솔동","prop":5.17,"metro":4.14,"basic":9.97},{"dong":"석우동","prop":7.28,"metro":6.19,"basic":15.98},{"dong":"서신면","prop":2.51,"metro":2.25,"basic":4.5},{"dong":"송산면","prop":2.58,"metro":2.24,"basic":4.48},{"dong":"안녕동","prop":4.55,"metro":3.99,"basic":10.06},{"dong":"영천동","prop":4.92,"metro":4.23,"basic":9.32},{"dong":"오산동","prop":4.49,"metro":3.93,"basic":9.41},{"dong":"우정읍","prop":2.6,"metro":2.25,"basic":4.74},{"dong":"위봉동","prop":5.27,"metro":4.34,"basic":10.18},{"dong":"진안동","prop":4.89,"metro":4.24,"basic":9.21},{"dong":"태안읍","prop":2.79,"metro":2.45,"basic":5.33},{"dong":"향남읍","prop":3.17,"metro":2.84,"basic":6.3},{"dong":"화산동","prop":5.3,"metro":4.36,"basic":9.93},{"dong":"황계동","prop":4.15,"metro":3.55,"basic":8.59},{"dong":"청계동","prop":7.62,"metro":6.34,"basic":18.6},{"dong":"동탄제1동","prop":13.12,"metro":11.94,"basic":28.75},{"dong":"동탄제2동","prop":12.05,"metro":10.44,"basic":25.66},{"dong":"동탄제3동","prop":11.17,"metro":9.58,"basic":24.0},{"dong":"동탄제4동","prop":12.28,"metro":10.36,"basic":25.73},{"dong":"동탄제5동","prop":12.62,"metro":10.88,"basic":26.47},{"dong":"동탄제6동","prop":14.14,"metro":12.17,"basic":30.02},{"dong":"동탄제7동","prop":14.18,"metro":12.07,"basic":29.73},{"dong":"동탄제8동","prop":13.98,"metro":12.0,"basic":30.09}],"경기-오산시":[{"dong":"남촌동","prop":3.41,"metro":3.15,"basic":5.16},{"dong":"대원동","prop":3.41,"metro":3.1,"basic":5.19},{"dong":"세마동","prop":3.9,"metro":3.47,"basic":5.52},{"dong":"신장동","prop":3.66,"metro":3.34,"basic":5.7},{"dong":"오산동","prop":3.36,"metro":2.96,"basic":5.21},{"dong":"원동","prop":3.0,"metro":2.73,"basic":4.83},{"dong":"청호동","prop":3.97,"metro":3.55,"basic":6.09},{"dong":"중앙동","prop":3.5,"metro":3.09,"basic":5.47}],"경기-과천시":[{"dong":"갈현동","prop":4.37,"metro":4.02,"basic":7.3},{"dong":"과천동","prop":4.86,"metro":4.38,"basic":8.25},{"dong":"관문동","prop":4.66,"metro":4.27,"basic":7.8},{"dong":"별양동","prop":5.0,"metro":4.57,"basic":8.73},{"dong":"문원동","prop":5.2,"metro":4.75,"basic":9.03},{"dong":"부림동","prop":5.57,"metro":5.08,"basic":9.96},{"dong":"중앙동","prop":5.44,"metro":5.0,"basic":9.36}]};
+var SM_GROUPS={"서울":["서울-동작구","서울-관악구","서울-강동구","서울-성동구","서울-중구","서울-용산구"],"부산":["부산-금정구"],"경기":["경기-수원시","경기-고양시","경기-용인시","경기-화성시","경기-오산시","경기-과천시"]};
+var SM_LABELS={prop:"광역비례(%)",metro:"광역단체장(%)",basic:"기초단체장(%)"};
+var smRegion="서울",smGu="서울-동작구",smUseLog=false,smCharts={};
+
+function smPearson(xs,ys){var n=xs.length;if(n<2)return"0";var mx=xs.reduce(function(a,b){return a+b;},0)/n,my=ys.reduce(function(a,b){return a+b;},0)/n,num=0,dx=0,dy=0;for(var i=0;i<n;i++){num+=(xs[i]-mx)*(ys[i]-my);dx+=(xs[i]-mx)*(xs[i]-mx);dy+=(ys[i]-my)*(ys[i]-my);}return dx&&dy?(num/Math.sqrt(dx*dy)).toFixed(3):"—";}
+function smSc(v){return smUseLog?Math.log10(Math.max(v,0.01)):v;}
+
+function smGuBtns(){
+  var el=document.getElementById("smGuSel");if(!el)return;
+  el.innerHTML="";
+  SM_GROUPS[smRegion].forEach(function(key){
+    var btn=document.createElement("button");
+    btn.className="sm-gu-btn"+(key===smGu?" active":"");
+    btn.textContent=key.replace(/^(서울|부산|경기)-/,"");
+    btn.onclick=function(){smGu=key;smGuBtns();smMatrix();};
+    el.appendChild(btn);
+  });
+}
+
+function smMatrix(){
+  var data=(SM_RAW[smGu]||[]).filter(function(d){return d.prop>0&&d.basic>0;});
+  var grid=document.getElementById("smMatrixGrid");
+  var info=document.getElementById("smInfoBar");
+  if(!grid||!info)return;
+  info.textContent=smGu+" · 동 "+data.length+"개";
+  Object.values(smCharts).forEach(function(c){try{c.destroy();}catch(e){}});
+  smCharts={};
+  grid.innerHTML="";
+  var axes=["prop","metro","basic"];
+  var colors=["#534AB7","#0F6E56","#993C1D"];
+  for(var r=0;r<3;r++){
+    for(var c=0;c<3;c++){
+      var cell=document.createElement("div");
+      cell.className="sm-cell";
+      if(r===c){
+        cell.classList.add("sm-diag-cell");
+        var vals=data.map(function(d){return d[axes[r]];});
+        var mean=(vals.reduce(function(a,b){return a+b;},0)/vals.length).toFixed(2);
+        var diagIcons=['📊','🗳️','🏛️'];
+        var diagDescs=['광역의회 비례 득표율 분포','광역단체장 득표율 분포','기초단체장 득표율 분포'];
+        var minV=Math.min.apply(null,vals),maxV=Math.max.apply(null,vals),bins=8,bw=(maxV-minV)/bins||1;
+        var counts=new Array(bins).fill(0);
+        vals.forEach(function(v){var i=Math.min(Math.floor((v-minV)/bw),bins-1);counts[i]++;});
+        var lbs=Array.from({length:bins},function(_,i){return(minV+i*bw).toFixed(1);});
+        var modeIdx=counts.indexOf(Math.max.apply(null,counts));
+        var modeVal=(minV+modeIdx*bw+bw/2).toFixed(1);
+        cell.innerHTML=
+          '<div style="font-size:18px;margin-bottom:4px;">'+diagIcons[r]+'</div>'+
+          '<div class="sm-diag-title">'+SM_LABELS[axes[r]]+'</div>'+
+          '<div style="font-size:10px;color:var(--text3);font-weight:600;margin-top:2px;margin-bottom:2px;">'+diagDescs[r]+'</div>'+
+          '<div class="sm-diag-sub">평균 '+mean+'%</div>';
+        var wrap=document.createElement("div");wrap.style.cssText="position:relative;height:72px;width:100%;margin-top:6px";
+        var cvs=document.createElement("canvas");wrap.appendChild(cvs);cell.appendChild(wrap);
+        // x축 범위 표시
+        var rangeEl=document.createElement("div");
+        rangeEl.style.cssText="display:flex;justify-content:space-between;padding:0 2px;margin-top:3px;";
+        rangeEl.innerHTML='<span style="font-size:9px;font-weight:700;color:var(--text3);">'+minV.toFixed(1)+'%</span>'+
+          '<span style="font-size:9px;font-weight:600;color:var(--text3);">← 득표율 분포 →</span>'+
+          '<span style="font-size:9px;font-weight:700;color:var(--text3);">'+maxV.toFixed(1)+'%</span>';
+        cell.appendChild(rangeEl);
+        grid.appendChild(cell);
+        smCharts[r+""+c]=new Chart(cvs,{type:"bar",data:{labels:lbs,datasets:[{data:counts,backgroundColor:counts.map(function(_,i){return i===modeIdx?colors[r]:colors[r]+"77";}),borderColor:colors[r],borderWidth:1,borderRadius:3}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(ctx){return ctx.parsed.y+'개 동 ('+lbs[ctx.dataIndex]+'%~'+(parseFloat(lbs[ctx.dataIndex])+bw).toFixed(1)+'%)';}}}},scales:{x:{display:false},y:{display:false,beginAtZero:true}},animation:{duration:200}}});
+      } else {
+        var xKey=axes[c],yKey=axes[r];
+        var pts=data;
+        var xs=pts.map(function(d){return smSc(d[xKey]);});
+        var ys=pts.map(function(d){return smSc(d[yKey]);});
+        var rv=smPearson(xs,ys);
+        var rn2=parseFloat(rv);
+        var rCls=Math.abs(rn2)>=0.7?'r-strong':Math.abs(rn2)>=0.4?'r-mid':'r-weak';
+        var rDesc=Math.abs(rn2)>=0.7?'강한 연관':Math.abs(rn2)>=0.4?'중간 연관':'약한 연관';
+        var yShort=SM_LABELS[yKey].replace('(%)','').trim();
+        var xShort=SM_LABELS[xKey].replace('(%)','').trim();
+        cell.innerHTML=
+          '<div class="sm-cell-label">'+
+            '<span style="color:var(--text2);font-weight:800;">↑ '+yShort+'</span>'+
+            '<span style="color:var(--text3);font-weight:600;"> vs </span>'+
+            '<span style="color:var(--text2);font-weight:800;">'+xShort+' →</span>'+
+            '<br><span class="'+rCls+'">r = '+rv+'</span>'+
+            '<span style="font-size:10px;font-weight:600;color:var(--text3);margin-left:5px;">'+rDesc+'</span>'+
+          '</div>';
+        var wrap2=document.createElement("div");wrap2.style.cssText="position:relative;height:140px;width:100%";
+        var cvs2=document.createElement("canvas");wrap2.appendChild(cvs2);cell.appendChild(wrap2);grid.appendChild(cell);
+        var n2=xs.length,mx2=xs.reduce(function(a,b){return a+b;},0)/n2,my2=ys.reduce(function(a,b){return a+b;},0)/n2;
+        var num2=0,den2=0;
+        xs.forEach(function(x,i){num2+=(x-mx2)*(ys[i]-my2);den2+=(x-mx2)*(x-mx2);});
+        var slope=den2?num2/den2:0,intc=my2-slope*mx2;
+        var xmin=Math.min.apply(null,xs),xmax=Math.max.apply(null,xs),pad=(xmax-xmin)*0.05;
+        var rn=parseFloat(rv),lc=rn>0.7?"#0F6E56":rn>0.4?"#534AB7":"#993C1D";
+        var closureXKey=xKey,closureYKey=yKey,closurePts=pts;
+        smCharts[r+""+c]=new Chart(cvs2,{type:"scatter",data:{datasets:[
+          {label:"동",data:pts.map(function(d,i){return{x:xs[i],y:ys[i]};}),backgroundColor:colors[0]+"66",borderColor:colors[0],pointRadius:4,pointHoverRadius:6},
+          {label:"추세선",data:[{x:xmin-pad,y:slope*(xmin-pad)+intc},{x:xmax+pad,y:slope*(xmax+pad)+intc}],type:"line",borderColor:lc,borderWidth:1.5,pointRadius:0,fill:false}
+        ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(ctx){if(ctx.datasetIndex===1)return null;var d=closurePts[ctx.dataIndex];return d.dong+": "+d[closureXKey].toFixed(2)+"% / "+d[closureYKey].toFixed(2)+"%";}}}},scales:{x:{ticks:{font:{size:9},callback:function(v){return smUseLog?"10^"+v.toFixed(1):v.toFixed(1)+"%";}}},y:{ticks:{font:{size:9},callback:function(v){return smUseLog?"10^"+v.toFixed(1):v.toFixed(1)+"%";}}}},animation:{duration:200}}});
+      }
+    }
+  }
+}
+
+function smInit(){
+  smGuBtns();smMatrix();
+  document.querySelectorAll(".sm-region-btn").forEach(function(b){
+    b.addEventListener("click",function(){
+      smRegion=b.dataset.smregion;smGu=SM_GROUPS[smRegion][0];
+      document.querySelectorAll(".sm-region-btn").forEach(function(x){x.classList.toggle("active",x===b);});
+      smGuBtns();smMatrix();
+    });
+  });
+  document.getElementById("smLogToggle").addEventListener("click",function(){
+    smUseLog=!smUseLog;
+    this.textContent=smUseLog?"로그 스케일 ON":"로그 스케일 OFF";
+    this.classList.toggle("on",smUseLog);
+    smMatrix();
+  });
+  window._smInited=true;
+}
+
+// 산점도 행렬 초기화는 initCompareAccordions() 에서 처리
+</script>
+
+      </div>
+    </div>
+
+  </div>
+
   <!-- ── CANDIDATES ── -->
   <div id="tab-candidates" class="tab-content" role="tabpanel" aria-labelledby="nav-btn-candidates">
     <div class="cand-tab-header" style="display:none">
@@ -3403,6 +5128,9 @@
     <div class="cand-grid" id="cand-grid"></div>
   </div>
 </main>
+
+<!-- Cross-comparison scatter tooltip -->
+<div id="cross-scatter-tooltip" role="tooltip" aria-hidden="true"></div>
 
 <!-- Modal -->
 <div class="modal-backdrop" id="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
@@ -3457,7 +5185,8 @@
 window.candidates = window.candidates || [];
 </script>
 <script src="can.js" onerror="console.warn('can.js not found, using empty candidates')"></script>
-<script src="results.js?v=0610.01" onerror="console.warn('results.js not found, skipping results')" onload="window._resultsLoaded = true"></script>
+<script src="results.js?v=0611.01" onerror="console.warn('results.js not found, skipping results')" onload="window._resultsLoaded = true"></script>
+<script src="renderCompare.js" onerror="console.warn('renderCompare.js not found')"></script>
 <script>
 // ── DATA ──────────────────────────────────────────────
 // ── 투표 유형 헬퍼 ───────────────────────────────────────
@@ -3651,6 +5380,7 @@ const PAGE_META = {
   home: { title:'개혁 2026 리포트', desc:'제9회 전국동시지방선거 개혁신당의 역사적인 도전과 기록을 데이터로 분석합니다.' },
   proportional: { title:'비례대표 득표 성과', desc:'광역 및 기초의회 진출의 핵심인 정당 득표 현황과 전략 지역 분석 데이터입니다.' },
   candidates: { title:'후보자별 상세 결과', desc:'전국 각지에서 개혁의 가치를 걸고 뛴 후보자들의 최종 성적표와 지역별 표심 분석입니다.' },
+  compare: { title:'주요 후보 비교', desc:'광역단체장 주요 후보의 득표율을 지역·단위별로 비교하고, 광역비례 정당 득표율과 교차 분석합니다.' },
 };
 
 function switchTab(tab, pushState = true) {
@@ -3690,6 +5420,51 @@ function switchTab(tab, pushState = true) {
     if (typeof renderHomeStats === 'function') renderHomeStats();
     if (typeof renderPropRecordsTab === 'function') renderPropRecordsTab();
     setTimeout(runCountUps, 200);
+  }
+
+  // ── 주요후보비교 아코디언 바인딩 ──────────────────────────
+  function initCompareAccordions() {
+    document.querySelectorAll('.cmp-accordion .cmp-accordion-trigger').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var acc = btn.closest('.cmp-accordion');
+        var isOpen = acc.classList.contains('open');
+        acc.classList.toggle('open', !isOpen);
+        btn.setAttribute('aria-expanded', String(!isOpen));
+        if (!isOpen && acc.id === 'acc-candidates') {
+          if (typeof renderCompare === 'function') renderCompare();
+        }
+        if (!isOpen && acc.id === 'acc-b2b') {
+          if (window.B2BComparison) window.B2BComparison.init();
+        }
+        if (!isOpen && acc.id === 'acc-cross') {
+          if (window.CrossComparison) {
+            CrossComparison.invalidateCache();
+            CrossComparison.init();
+          }
+        }
+        if (!isOpen && acc.id === 'acc-scatter-matrix') {
+          setTimeout(function() {
+            if (window._smInited) {
+              smMatrix();
+            } else if (typeof Chart !== 'undefined') {
+              smInit();
+            } else {
+              var s = document.createElement('script');
+              s.src = 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js';
+              s.onload = function() { smInit(); };
+              document.head.appendChild(s);
+            }
+          }, 80);
+        }
+      });
+    });
+  }
+
+  if (tab === 'compare') {
+    initCompareAccordions();
+    // 산점도 범례 visibility 연동
+    const diagLegend = document.getElementById('cross-scatter-legend-diag');
+    if (diagLegend) diagLegend.style.display = 'none';
   }
   if (pushState) history.pushState({ tab }, '', `#${tab}`);
 }
@@ -6418,6 +8193,9 @@ function initEvents() {
     btn.addEventListener('click', () => switchTab(btn.dataset.tab));
   });
 
+  // 비교 탭 이벤트 (renderCompare.js)
+  if (typeof initCompareEvents === 'function') initCompareEvents();
+
   document.querySelectorAll('.subtab-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       propSubTab = btn.dataset.subtab;
@@ -7245,6 +9023,517 @@ document.getElementById('modal-backdrop').addEventListener('transitionend', func
     }
   });
 });
+
+// ══════════════════════════════════════════════════════════════════════
+// cross-comparison (인라인) — 광역단체장 득표율 × 광역비례 득표율 교차 비교
+// ══════════════════════════════════════════════════════════════════════
+;(function (global) {
+  'use strict';
+
+  var CROSS_CANDIDATES = [
+    { resultsId: 1,  regionKey: '서울', label: '서울',  candName: '김정철' },
+    { resultsId: 2,  regionKey: '부산', label: '부산',  candName: '정이한' },
+    { resultsId: 3,  regionKey: '대구', label: '대구',  candName: '이수찬' },
+    { resultsId: 7,  regionKey: '경기', label: '경기',  candName: '조응천' },
+  ];
+
+  var GYEONGGI_ABSENTEE_MAP = {
+    '성남시분당구_관외사전투표': '분당구_관외사전투표',
+    '동탄구_관외사전투표':       '화성동탄구_관외사전투표',
+  };
+
+  function normalizeNhName(name, regionKey) {
+    if (!name.includes('관외사전투표')) return name;
+    if (regionKey === '부산' || regionKey === '대구') {
+      return name.replace(/(구|군)_관외사전투표$/, '_관외사전투표');
+    }
+    if (regionKey === '경기') {
+      if (GYEONGGI_ABSENTEE_MAP[name]) return GYEONGGI_ABSENTEE_MAP[name];
+      return name.replace(/시([가-힣]+구_관외사전투표)$/, '$1')
+                 .replace(/시_관외사전투표$/, '_관외사전투표');
+    }
+    return name;
+  }
+
+  function findRegional(regionKey) {
+    var R = (global.REGIONAL && global.REGIONAL.length) ? global.REGIONAL : [];
+    return R.find(function (r) { return r.name === regionKey && r.type === '광역'; }) || null;
+  }
+
+  function findResult(resultsId) {
+    var RS = (global.RESULTS && global.RESULTS.length) ? global.RESULTS : [];
+    return RS.find(function (r) { return r.id === resultsId; }) || null;
+  }
+
+  function groupNhsByDistrict(neighborhoods) {
+    var groups = {};
+    var currentDistrict = null;
+    neighborhoods.forEach(function (nh) {
+      if (nh.name.includes('_관외사전투표')) {
+        currentDistrict = nh.name.replace('_관외사전투표', '');
+        if (!groups[currentDistrict]) groups[currentDistrict] = [];
+        groups[currentDistrict].push(nh);
+      } else if (currentDistrict) {
+        groups[currentDistrict].push(nh);
+      }
+    });
+    return groups;
+  }
+
+  function buildRegionData(meta) {
+    var result   = findResult(meta.resultsId);
+    var regional = findRegional(meta.regionKey);
+    if (!result || !regional) return null;
+
+    var 광역 = { cand: result.voteRate || 0, prop: regional.rate || 0 };
+
+    var candNhGroups = groupNhsByDistrict(result.neighborhoods || []);
+    var 시군구 = (regional.districts || []).map(function (d) {
+      var candGroup = candNhGroups[d.name] || [];
+      return { name: d.name, cand: calcDistrictRate(candGroup), prop: d.rate };
+    });
+
+    var propNhMap = {};
+    (regional.neighborhoods || []).forEach(function (nh) { propNhMap[nh.name] = nh.rate; });
+    var propNhGroups = groupNhsByDistrict(regional.neighborhoods || []);
+    var nhToDistrict = {};
+    Object.keys(propNhGroups).forEach(function (distName) {
+      propNhGroups[distName].forEach(function (nh) { nhToDistrict[nh.name] = distName; });
+    });
+
+    var 읍면동 = (result.neighborhoods || [])
+      .filter(function (nh) { return !nh.name.includes('_관외사전투표'); })
+      .map(function (nh) {
+        var norm    = normalizeNhName(nh.name, meta.regionKey);
+        var propRate = propNhMap[norm];
+        return {
+          name: nh.name,
+          district: nhToDistrict[norm] || null,
+          cand: nh.rate,
+          prop: (propRate !== undefined) ? propRate : null,
+        };
+      })
+      .filter(function (item) { return item.prop !== null && item.cand !== null; });
+
+    return { region: meta.label, candName: meta.candName, 광역: 광역, 시군구: 시군구, 읍면동: 읍면동 };
+  }
+
+  function calcDistrictRate(nhGroup) {
+    if (!nhGroup || nhGroup.length === 0) return null;
+    var validRates = nhGroup.map(function (nh) { return nh.rate; }).filter(function (r) { return r != null && r > 0; });
+    if (!validRates.length) return null;
+    return Math.round((validRates.reduce(function (a, b) { return a + b; }, 0) / validRates.length) * 100) / 100;
+  }
+
+  var _cache = null;
+  function getDataset() {
+    if (_cache) return _cache;
+    _cache = {};
+    CROSS_CANDIDATES.forEach(function (meta) {
+      var d = buildRegionData(meta);
+      if (d) _cache[meta.label] = d;
+    });
+    return _cache;
+  }
+  function invalidateCache() { _cache = null; }
+
+  var state = { activeRegion: '서울', activeLevel: '시군구', activeView: 'scatter' };
+
+  function renderBarChart(container, rows, maxRate) {
+    if (!container) return;
+    if (!rows || rows.length === 0) { container.innerHTML = '<div class="cross-empty">데이터가 없습니다.</div>'; return; }
+    if (!maxRate) maxRate = rows.reduce(function (mx, r) { return Math.max(mx, r.cand || 0, r.prop || 0); }, 0) * 1.1;
+    if (maxRate === 0) maxRate = 10;
+
+    var html = '<div class="cross-bar-list">';
+    rows.forEach(function (row) {
+      var candRate = row.cand != null ? row.cand : null;
+      var propRate = row.prop != null ? row.prop : null;
+      var candPct  = candRate != null ? Math.min((candRate / maxRate) * 100, 100) : 0;
+      var propPct  = propRate != null ? Math.min((propRate / maxRate) * 100, 100) : 0;
+      var candTxt  = candRate != null ? candRate.toFixed(2) + '%' : '—';
+      var propTxt  = propRate != null ? propRate.toFixed(2) + '%' : '—';
+      var diff     = (candRate != null && propRate != null) ? (propRate - candRate).toFixed(2) : null;
+      var diffSign = diff != null ? (parseFloat(diff) >= 0 ? '+' : '') + diff + '%p' : '';
+      var diffCls  = diff != null ? (parseFloat(diff) >= 0 ? 'above' : 'below') : '';
+      html += '<div class="cross-bar-row">';
+      html +=   '<div class="cross-bar-label" title="' + escH(row.name) + '">' + escH(row.name) + '</div>';
+      html +=   '<div class="cross-bar-pair">';
+      html +=     '<div class="cross-bar-track"><div class="cross-bar-fill-wrap"><div class="cross-bar-fill cand" style="width:' + candPct.toFixed(1) + '%"></div></div><span class="cross-bar-rate cand">' + candTxt + '</span></div>';
+      html +=     '<div class="cross-bar-track"><div class="cross-bar-fill-wrap"><div class="cross-bar-fill prop" style="width:' + propPct.toFixed(1) + '%"></div></div><span class="cross-bar-rate prop">' + propTxt + '</span></div>';
+      if (diffSign) html += '<div class="cross-bar-diff ' + diffCls + '">' + diffSign + '</div>';
+      html +=   '</div>';
+      html += '</div>';
+    });
+    html += '</div>';
+    container.innerHTML = html;
+  }
+
+  function renderScatter(svgContainer, tooltip, points) {
+    if (!svgContainer || typeof d3 === 'undefined') return;
+    svgContainer.innerHTML = '';
+    if (!points || points.length === 0) { svgContainer.innerHTML = '<div class="cross-empty">데이터가 없습니다.</div>'; return; }
+    var diagLegend = document.getElementById('cross-scatter-legend-diag');
+    if (diagLegend) diagLegend.style.display = 'flex';
+    var isDesktop = window.innerWidth >= 768;
+    var W = svgContainer.clientWidth || (isDesktop ? 560 : 320);
+    var margin = { top: 24, right: 20, bottom: 44, left: 48 };
+    var innerW = W - margin.left - margin.right;
+    var innerH = isDesktop ? 360 : 280;
+    var H = innerH + margin.top + margin.bottom;
+    var allCand = points.map(function (p) { return p.cand; });
+    var allProp = points.map(function (p) { return p.prop; });
+    var xMin = Math.max(0, d3.min(allCand) * 0.9);
+    var xMax = d3.max(allCand) * 1.08;
+    var yMin = Math.max(0, d3.min(allProp) * 0.9);
+    var yMax = d3.max(allProp) * 1.08;
+    var xScale = d3.scaleLinear().domain([xMin, xMax]).range([0, innerW]);
+    var yScale = d3.scaleLinear().domain([yMin, yMax]).range([innerH, 0]);
+    var svg = d3.select(svgContainer).append('svg').attr('width', W).attr('height', H).attr('class', 'cross-scatter-svg');
+    var g = svg.append('g').attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
+    g.append('g').attr('transform', 'translate(0,' + innerH + ')').call(d3.axisBottom(xScale).ticks(5).tickSize(-innerH).tickFormat('')).call(function(sel){ sel.selectAll('line').attr('stroke','var(--border)').attr('stroke-dasharray','3,3'); sel.select('.domain').remove(); });
+    g.append('g').call(d3.axisLeft(yScale).ticks(5).tickSize(-innerW).tickFormat('')).call(function(sel){ sel.selectAll('line').attr('stroke','var(--border)').attr('stroke-dasharray','3,3'); sel.select('.domain').remove(); });
+    var diagStart = Math.max(xMin, yMin), diagEnd = Math.min(xMax, yMax);
+    if (diagStart < diagEnd) g.append('line').attr('x1',xScale(diagStart)).attr('y1',yScale(diagStart)).attr('x2',xScale(diagEnd)).attr('y2',yScale(diagEnd)).attr('stroke','var(--border-strong)').attr('stroke-width',1).attr('stroke-dasharray','5,3').attr('opacity',0.6);
+    g.append('g').attr('transform','translate(0,'+innerH+')').call(d3.axisBottom(xScale).ticks(5).tickFormat(function(d){return d.toFixed(1)+'%';})).call(function(sel){sel.selectAll('text').attr('fill','var(--text3)').attr('font-size','10px');sel.selectAll('line').attr('stroke','var(--border)');sel.select('.domain').attr('stroke','var(--border)');});
+    g.append('g').call(d3.axisLeft(yScale).ticks(5).tickFormat(function(d){return d.toFixed(1)+'%';})).call(function(sel){sel.selectAll('text').attr('fill','var(--text3)').attr('font-size','10px');sel.selectAll('line').attr('stroke','var(--border)');sel.select('.domain').attr('stroke','var(--border)');});
+    g.append('text').attr('x',innerW/2).attr('y',innerH+38).attr('text-anchor','middle').attr('fill','var(--text2)').attr('font-size','11px').attr('font-weight','700').text('단체장 득표율 (%)');
+    g.append('text').attr('transform','rotate(-90)').attr('x',-innerH/2).attr('y',-38).attr('text-anchor','middle').attr('fill','var(--text2)').attr('font-size','11px').attr('font-weight','700').text('광역비례 득표율 (%)');
+    var pointGs = g.selectAll('.cross-dot').data(points).enter().append('g').attr('class','cross-dot').attr('transform',function(d){return 'translate('+xScale(d.cand)+','+yScale(d.prop)+')';});
+    pointGs.append('circle').attr('r',isDesktop?5:4).attr('fill',function(d){return d.prop>=d.cand?'var(--blue)':'var(--orange)';}).attr('opacity',0.75).attr('stroke','var(--surface)').attr('stroke-width',1);
+    pointGs
+      .on('mouseover touchstart', function(event, d) {
+        if (!tooltip) return;
+        tooltip.style.display = 'block';
+        tooltip.innerHTML = '<div class="tt-name">'+escH(d.name)+(d.district?' <span style="opacity:.6;font-size:11px">('+escH(d.district)+')</span>':'')+'</div><div class="tt-cand">단체장 '+(d.cand!=null?d.cand.toFixed(2)+'%':'—')+'</div><div class="tt-prop">비례 &nbsp;&nbsp;&nbsp;'+(d.prop!=null?d.prop.toFixed(2)+'%':'—')+'</div>';
+        d3.select(this).select('circle').attr('r',isDesktop?7:6).attr('opacity',1);
+      })
+      .on('mousemove', function(event) {
+        if (!tooltip) return;
+        var x = event.clientX||(event.touches&&event.touches[0].clientX);
+        var y = event.clientY||(event.touches&&event.touches[0].clientY);
+        if (x==null) return;
+        tooltip.style.left=(x+14)+'px'; tooltip.style.top=(y-36)+'px';
+      })
+      .on('mouseout touchend', function() {
+        if (tooltip) tooltip.style.display='none';
+        d3.select(this).select('circle').attr('r',isDesktop?5:4).attr('opacity',0.75);
+      });
+  }
+
+  function render() {
+    var ds = getDataset();
+    var reg = state.activeRegion, lv = state.activeLevel, vw = state.activeView;
+    var regionData = ds[reg];
+    if (!regionData) return;
+    var rows = lv === '광역' ? [{ name: reg+' 전체', cand: regionData.광역.cand, prop: regionData.광역.prop }]
+             : lv === '시군구' ? regionData.시군구.slice()
+             : regionData.읍면동.slice();
+
+    updateStatPills(regionData, rows, lv);
+
+    var barWrap     = document.getElementById('cross-bar-wrap');
+    var scatterWrap = document.getElementById('cross-scatter-wrap');
+    var diagLegend  = document.getElementById('cross-scatter-legend-diag');
+
+    if (barWrap) {
+      barWrap.classList.toggle('visible', vw === 'bar');
+      if (vw === 'bar') {
+        if (diagLegend) diagLegend.style.display = 'none';
+        var allRates = regionData.읍면동.reduce(function(acc,r){if(r.cand)acc.push(r.cand);if(r.prop)acc.push(r.prop);return acc;},[regionData.광역.cand,regionData.광역.prop]);
+        regionData.시군구.forEach(function(d){if(d.cand)allRates.push(d.cand);if(d.prop)allRates.push(d.prop);});
+        renderBarChart(barWrap, rows, (d3.max(allRates)||10)*1.12);
+      }
+    }
+    if (scatterWrap) {
+      scatterWrap.classList.toggle('visible', vw === 'scatter');
+      if (vw === 'scatter') {
+        renderScatter(document.getElementById('cross-scatter-svg-wrap'), document.getElementById('cross-scatter-tooltip'), rows);
+      }
+    }
+  }
+
+  function updateStatPills(regionData, rows, lv) {
+    var el = document.getElementById('cross-stat-pills');
+    if (!el) return;
+    var candRates = rows.map(function(r){return r.cand;}).filter(function(r){return r!=null;});
+    var propRates = rows.map(function(r){return r.prop;}).filter(function(r){return r!=null;});
+    var candAvg = candRates.length ? candRates.reduce(function(a,b){return a+b;},0)/candRates.length : null;
+    var propAvg = propRates.length ? propRates.reduce(function(a,b){return a+b;},0)/propRates.length : null;
+    var html = '';
+    if (candAvg!=null) html += '<span class="cross-stat-pill cand">단체장 평균 '+candAvg.toFixed(2)+'%</span>';
+    if (propAvg!=null) html += '<span class="cross-stat-pill prop">비례 평균 '+propAvg.toFixed(2)+'%</span>';
+    if (candAvg!=null && propAvg!=null) { var diff=propAvg-candAvg; html += '<span class="cross-stat-pill">차이 '+(diff>=0?'+':'')+diff.toFixed(2)+'%p</span>'; }
+    if (lv==='읍면동' && rows.length) html += '<span class="cross-stat-pill">'+rows.length+'개 읍면동</span>';
+    if (lv==='시군구' && rows.length) html += '<span class="cross-stat-pill">'+rows.length+'개 시군구</span>';
+    el.innerHTML = html;
+  }
+
+  var _eventsBound = false;
+  function bindEvents() {
+    if (_eventsBound) return;
+    _eventsBound = true;
+    document.querySelectorAll('.cross-region-tab').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.cross-region-tab').forEach(function(b){b.classList.remove('active');});
+        btn.classList.add('active');
+        state.activeRegion = btn.dataset.region;
+        render();
+      });
+    });
+    document.querySelectorAll('.cross-level-tab').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.cross-level-tab').forEach(function(b){b.classList.remove('active');});
+        btn.classList.add('active');
+        state.activeLevel = btn.dataset.level;
+        if (state.activeLevel === '광역' && state.activeView === 'scatter') { state.activeView = 'bar'; syncViewBtns(); }
+        updateScatterBtnVisibility();
+        render();
+      });
+    });
+    document.querySelectorAll('.cross-view-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var newView = btn.dataset.view;
+        document.querySelectorAll('.cross-view-btn').forEach(function(b){b.classList.remove('active');});
+        btn.classList.add('active');
+        state.activeView = newView;
+        render();
+      });
+    });
+    window.addEventListener('resize', debounce(function(){ if(state.activeView==='scatter') render(); }, 200));
+  }
+
+  function syncLevelTabs() { document.querySelectorAll('.cross-level-tab').forEach(function(b){b.classList.toggle('active',b.dataset.level===state.activeLevel);}); }
+  function syncViewBtns()  { document.querySelectorAll('.cross-view-btn').forEach(function(b){b.classList.toggle('active',b.dataset.view===state.activeView);}); }
+  function updateScatterBtnVisibility() {
+    var scatterBtn = document.querySelector('.cross-view-btn[data-view="scatter"]');
+    if (scatterBtn) scatterBtn.style.display = (state.activeLevel === '광역') ? 'none' : '';
+  }
+
+  function initCrossComparison() { invalidateCache(); bindEvents(); updateScatterBtnVisibility(); render(); }
+
+  function escH(str) { return String(str||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+  function debounce(fn,ms){ var t; return function(){ clearTimeout(t); var a=arguments,c=this; t=setTimeout(function(){fn.apply(c,a);},ms); }; }
+
+  global.CrossComparison = { init: initCrossComparison, invalidateCache: invalidateCache, getDataset: getDataset, state: state, render: render };
+})(window);
+</script>
+<script>
+;(function(global) {
+  'use strict';
+
+  var B2B_PAIRS = {
+    '서울-동작구': { label: '서울 × 동작구', regionalKey: '서울', basicKey: '서울 동작구' },
+    '경기-수원시': { label: '경기 × 수원시', regionalKey: '경기', basicKey: '경기 수원시' },
+    '경기-김포시': { label: '경기 × 김포시', regionalKey: '경기', basicKey: '경기 김포시' },
+    '경기-화성시': { label: '경기 × 화성시', regionalKey: '경기', basicKey: '경기 화성시' },
+    '대구-수성구': { label: '대구 × 수성구', regionalKey: '대구', basicKey: '대구 수성구' },
+  };
+
+  var b2bState = { activePair: '서울-동작구', activeView: 'scatter' };
+  var _b2bBound = false;
+
+  function findRegional(key) {
+    var R = (global.REGIONAL && global.REGIONAL.length) ? global.REGIONAL : [];
+    return R.find(function(r){ return r.name === key && r.type === '광역'; }) || null;
+  }
+  function findBasic(key) {
+    var B = (global.BASIC && global.BASIC.length) ? global.BASIC : [];
+    return B.find(function(b){ return b.name === key; }) || null;
+  }
+
+  function buildB2BRows(pairKey) {
+    var pair = B2B_PAIRS[pairKey];
+    if (!pair) return [];
+    var regional = findRegional(pair.regionalKey);
+    var basic    = findBasic(pair.basicKey);
+    if (!regional || !basic) return [];
+    var regNhMap = {};
+    (regional.neighborhoods || []).forEach(function(nh){
+      if (!nh.name.includes('_관외사전투표')) regNhMap[nh.name] = nh.rate;
+    });
+    var rows = [];
+    (basic.neighborhoods || []).forEach(function(nh){
+      if (nh.name.includes('_관외사전투표')) return;
+      var regRate = regNhMap.hasOwnProperty(nh.name) ? regNhMap[nh.name] : null;
+      if (regRate !== null && nh.rate != null) {
+        rows.push({ name: nh.name, regional: regRate, basic: nh.rate });
+      }
+    });
+    return rows;
+  }
+
+  function escH(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+  function renderB2BBar(container, rows) {
+    if (!container) return;
+    if (!rows || !rows.length) { container.innerHTML = '<div class="cross-empty">데이터가 없습니다.</div>'; return; }
+    var maxRate = rows.reduce(function(mx,r){ return Math.max(mx, r.regional||0, r.basic||0); }, 0) * 1.1 || 10;
+    var html = '<div class="cross-bar-list">';
+    rows.forEach(function(row){
+      var rPct = Math.min((row.regional / maxRate)*100, 100).toFixed(1);
+      var bPct = Math.min((row.basic    / maxRate)*100, 100).toFixed(1);
+      var diff = (row.basic - row.regional).toFixed(2);
+      var dSign = parseFloat(diff) >= 0 ? '+'+diff : diff;
+      var dCls  = parseFloat(diff) >= 0 ? 'above' : 'below';
+      html += '<div class="cross-bar-row">';
+      html +=   '<div class="cross-bar-label" title="'+escH(row.name)+'">'+escH(row.name)+'</div>';
+      html +=   '<div class="cross-bar-pair">';
+      html +=     '<div class="cross-bar-track"><div class="cross-bar-fill-wrap"><div class="cross-bar-fill" style="width:'+rPct+'%;background:var(--blue)"></div></div><span class="cross-bar-rate" style="color:var(--blue)">'+row.regional.toFixed(2)+'%</span></div>';
+      html +=     '<div class="cross-bar-track"><div class="cross-bar-fill-wrap"><div class="cross-bar-fill" style="width:'+bPct+'%;background:var(--emerald)"></div></div><span class="cross-bar-rate" style="color:var(--emerald)">'+row.basic.toFixed(2)+'%</span></div>';
+      html +=     '<div class="cross-bar-diff '+dCls+'">'+dSign+'%p</div>';
+      html +=   '</div>';
+      html += '</div>';
+    });
+    html += '</div>';
+    container.innerHTML = html;
+  }
+
+  function renderB2BScatter(svgWrap, tooltipEl, rows) {
+    if (!svgWrap || typeof d3 === 'undefined') return;
+    svgWrap.innerHTML = '';
+    if (!rows || !rows.length) { svgWrap.innerHTML = '<div class="cross-empty">데이터가 없습니다.</div>'; return; }
+    var isDesktop = window.innerWidth >= 768;
+    var W = svgWrap.clientWidth || (isDesktop ? 560 : 320);
+    var margin = { top: 24, right: 20, bottom: 44, left: 48 };
+    var innerW = W - margin.left - margin.right;
+    var innerH = isDesktop ? 360 : 280;
+    var H = innerH + margin.top + margin.bottom;
+    var allX = rows.map(function(p){ return p.regional; });
+    var allY = rows.map(function(p){ return p.basic; });
+    var xMin = Math.max(0, d3.min(allX)*0.9), xMax = d3.max(allX)*1.08;
+    var yMin = Math.max(0, d3.min(allY)*0.9), yMax = d3.max(allY)*1.08;
+    var xScale = d3.scaleLinear().domain([xMin, xMax]).range([0, innerW]);
+    var yScale = d3.scaleLinear().domain([yMin, yMax]).range([innerH, 0]);
+    var svg = d3.select(svgWrap).append('svg').attr('width', W).attr('height', H);
+    var g = svg.append('g').attr('transform', 'translate('+margin.left+','+margin.top+')');
+    g.append('g').attr('transform','translate(0,'+innerH+')').call(d3.axisBottom(xScale).ticks(5).tickSize(-innerH).tickFormat('')).call(function(s){s.selectAll('line').attr('stroke','var(--border)').attr('stroke-dasharray','3,3');s.select('.domain').remove();});
+    g.append('g').call(d3.axisLeft(yScale).ticks(5).tickSize(-innerW).tickFormat('')).call(function(s){s.selectAll('line').attr('stroke','var(--border)').attr('stroke-dasharray','3,3');s.select('.domain').remove();});
+    var dS = Math.max(xMin,yMin), dE = Math.min(xMax,yMax);
+    if (dS < dE) g.append('line').attr('x1',xScale(dS)).attr('y1',yScale(dS)).attr('x2',xScale(dE)).attr('y2',yScale(dE)).attr('stroke','var(--border-strong)').attr('stroke-width',1).attr('stroke-dasharray','5,3').attr('opacity',0.6);
+    g.append('g').attr('transform','translate(0,'+innerH+')').call(d3.axisBottom(xScale).ticks(5).tickFormat(function(d){return d.toFixed(1)+'%';})).call(function(s){s.selectAll('text').attr('fill','var(--text3)').attr('font-size','10px');s.selectAll('line').attr('stroke','var(--border)');s.select('.domain').attr('stroke','var(--border)');});
+    g.append('g').call(d3.axisLeft(yScale).ticks(5).tickFormat(function(d){return d.toFixed(1)+'%';})).call(function(s){s.selectAll('text').attr('fill','var(--text3)').attr('font-size','10px');s.selectAll('line').attr('stroke','var(--border)');s.select('.domain').attr('stroke','var(--border)');});
+    g.append('text').attr('x',innerW/2).attr('y',innerH+38).attr('text-anchor','middle').attr('fill','var(--text2)').attr('font-size','11px').attr('font-weight','700').text('광역비례 득표율 (%)');
+    g.append('text').attr('transform','rotate(-90)').attr('x',-innerH/2).attr('y',-38).attr('text-anchor','middle').attr('fill','var(--text2)').attr('font-size','11px').attr('font-weight','700').text('기초비례 득표율 (%)');
+    var pts = g.selectAll('.b2b-dot').data(rows).enter().append('g').attr('class','b2b-dot').attr('transform',function(d){return 'translate('+xScale(d.regional)+','+yScale(d.basic)+')';});
+    pts.append('circle').attr('r', isDesktop?5:4).attr('fill',function(d){return d.basic>=d.regional?'var(--emerald)':'var(--blue)';}).attr('opacity',0.75).attr('stroke','var(--surface)').attr('stroke-width',1);
+    pts.on('mouseover touchstart', function(event,d){
+      if (!tooltipEl) return;
+      tooltipEl.style.display='block';
+      tooltipEl.innerHTML = '<div class="tt-name">'+escH(d.name)+'</div><div class="tt-cand" style="color:var(--blue)">광역비례 '+d.regional.toFixed(2)+'%</div><div class="tt-prop" style="color:var(--emerald)">기초비례 '+d.basic.toFixed(2)+'%</div>';
+      d3.select(this).select('circle').attr('r',isDesktop?7:6).attr('opacity',1);
+    }).on('mousemove',function(event){
+      if (!tooltipEl) return;
+      var x=event.clientX||(event.touches&&event.touches[0].clientX);
+      var y=event.clientY||(event.touches&&event.touches[0].clientY);
+      if (x==null) return;
+      tooltipEl.style.left=(x+14)+'px'; tooltipEl.style.top=(y-36)+'px';
+    }).on('mouseout touchend',function(){
+      if (tooltipEl) tooltipEl.style.display='none';
+      d3.select(this).select('circle').attr('r',isDesktop?5:4).attr('opacity',0.75);
+    });
+  }
+
+  function updateB2BStatPills(rows) {
+    var el = document.getElementById('b2b-stat-pills');
+    if (!el) return;
+    var rAvg = rows.length ? rows.reduce(function(s,r){return s+r.regional;},0)/rows.length : null;
+    var bAvg = rows.length ? rows.reduce(function(s,r){return s+r.basic;},0)/rows.length : null;
+    var html = '';
+    if (rAvg!=null) html += '<span class="cross-stat-pill prop">광역비례 평균 '+rAvg.toFixed(2)+'%</span>';
+    if (bAvg!=null) html += '<span class="cross-stat-pill" style="background:#ecfdf5;color:#059669;border-color:rgba(5,150,105,.2)">기초비례 평균 '+bAvg.toFixed(2)+'%</span>';
+    if (rAvg!=null&&bAvg!=null){ var d=bAvg-rAvg; html+='<span class="cross-stat-pill">차이 '+(d>=0?'+':'')+d.toFixed(2)+'%p</span>'; }
+    if (rows.length) html += '<span class="cross-stat-pill">'+rows.length+'개 읍면동</span>';
+    el.innerHTML = html;
+  }
+
+  function renderB2B() {
+    var rows = buildB2BRows(b2bState.activePair);
+    updateB2BStatPills(rows);
+    var barWrap     = document.getElementById('b2b-bar-wrap');
+    var scatterWrap = document.getElementById('b2b-scatter-wrap');
+    if (barWrap) {
+      barWrap.classList.toggle('visible', b2bState.activeView === 'bar');
+      if (b2bState.activeView === 'bar') renderB2BBar(barWrap, rows);
+    }
+    if (scatterWrap) {
+      scatterWrap.classList.toggle('visible', b2bState.activeView === 'scatter');
+      if (b2bState.activeView === 'scatter') {
+        renderB2BScatter(document.getElementById('b2b-scatter-svg-wrap'), document.getElementById('cross-scatter-tooltip'), rows);
+      }
+    }
+  }
+
+  function initB2B() {
+    if (_b2bBound) { renderB2B(); return; }
+    _b2bBound = true;
+    document.querySelectorAll('.b2b-pair-tab').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        document.querySelectorAll('.b2b-pair-tab').forEach(function(b){b.classList.remove('active');});
+        btn.classList.add('active');
+        b2bState.activePair = btn.dataset.pair;
+        renderB2B();
+      });
+    });
+    document.querySelectorAll('.b2b-view-btn').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        document.querySelectorAll('.b2b-view-btn').forEach(function(b){b.classList.remove('active');});
+        btn.classList.add('active');
+        b2bState.activeView = btn.dataset.view;
+        renderB2B();
+      });
+    });
+    window.addEventListener('resize', function(){ if(b2bState.activeView==='scatter') renderB2B(); });
+    renderB2B();
+  }
+
+  global.B2BComparison = { init: initB2B };
+})(window);
+
+</script>
+
+<div id="cmp-tooltip"></div>
+<script>
+(function(){
+  var tip = document.getElementById('cmp-tooltip');
+  if (!tip) return;
+
+  function show(e, text) {
+    if (!text) return;
+    tip.textContent = text;
+    tip.classList.add('visible');
+    move(e);
+  }
+  function move(e) {
+    var x = e.clientX + 14;
+    var y = e.clientY - 10;
+    // 오른쪽 넘침 방지
+    if (x + tip.offsetWidth + 20 > window.innerWidth) x = e.clientX - tip.offsetWidth - 14;
+    tip.style.left = x + 'px';
+    tip.style.top  = y + 'px';
+  }
+  function hide() { tip.classList.remove('visible'); }
+
+  // 위임 방식 툴팁 — 시군구(data-tip), 읍면동(이름)
+  document.addEventListener('mouseover', function(e) {
+    var tipEl = e.target.closest('[data-tip]');
+    if (tipEl) {
+      show(e, tipEl.getAttribute('data-tip').replace(/&#10;/g, '\n'));
+      return;
+    }
+    hide();
+  });
+
+  document.addEventListener('mousemove', function(e) {
+    if (tip.classList.contains('visible')) move(e);
+  });
+
+  document.addEventListener('mouseout', function(e) {
+    var over = e.relatedTarget;
+    if (!over || (!over.closest('[data-tip]') && !over.closest('.cmp-dong-item-name'))) hide();
+  });
+
+})();
 </script>
 </body>
 </html>
