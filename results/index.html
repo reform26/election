@@ -61,6 +61,10 @@
     --radius-lg: 24px;
     --radius-xl: 32px;
     --nav-h: 72px;
+    /* 정렬/필터 등 UI 조작용 active 색 — 데이터 계열 색(주황=대선, 파랑=지선)과
+       겹치지 않도록 분리한 중립(짙은 텍스트 계열) 색. 데이터 색은 차트·범례·티어 배지 전용으로 유지 */
+    --ui-active: #2b2b28;
+    --ui-active-text: #ffffff;
   }
 
   .dark {
@@ -73,6 +77,8 @@
     --text2: #c2c0b6;
     --text3: #7a7a72;
     --orange-light: #2a1500;
+    --ui-active: #f0efe8;
+    --ui-active-text: #0a0a09;
   }
 
   html { scroll-behavior: smooth; }
@@ -3894,7 +3900,114 @@
     transition: background .15s, color .15s, border-color .15s;
   }
   .pvl-sort-btn:hover { background: var(--surface); color: var(--text); }
-  .pvl-sort-btn.active { background: var(--orange); border-color: var(--orange); color: #fff; }
+  /* active 색을 데이터 계열 색(주황=대선)과 분리한 중립색으로 — 차트 범례의 주황과
+     혼동되지 않도록. 정렬/필터 구분은 모양(캡슐형 vs 사각형)으로 유지 */
+  .pvl-sort-btn.active { background: var(--ui-active); border-color: var(--ui-active); color: var(--ui-active-text); }
+  /* 필터 버튼: 정렬 버튼(pvl-sort-btn, 캡슐형)과 형태로 구분 —
+     모서리를 덜 둥글린 사각형. active 색은 정렬과 동일한 중립색이되, 안쪽 링으로 한 번 더 구분 */
+  .pvl-filter-btn {
+    padding: 5px 11px;
+    font-size: 12px;
+    font-weight: 700;
+    font-family: inherit;
+    border: 1.5px solid var(--border-strong);
+    border-radius: 7px;
+    background: var(--surface2);
+    color: var(--text2);
+    cursor: pointer;
+    transition: background .15s, color .15s, border-color .15s, box-shadow .15s;
+  }
+  .pvl-filter-btn:hover { background: var(--surface); color: var(--text); }
+  .pvl-filter-btn.active {
+    background: var(--ui-active);
+    border-color: var(--ui-active);
+    color: var(--ui-active-text);
+    box-shadow: inset 0 0 0 1px var(--surface);
+  }
+  /* 동별 표 검색창 — 수백 개 동을 스크롤로 찾던 문제 보완 */
+  .pvl-dong-search-wrap { position: relative; display: inline-flex; align-items: center; margin-left: auto; }
+  .pvl-dong-search {
+    width: 180px;
+    max-width: 100%;
+    padding: 6px 28px 6px 12px;
+    font-size: 12px;
+    font-family: inherit;
+    font-weight: 500;
+    border: 1.5px solid var(--border-strong);
+    border-radius: 8px;
+    background: var(--surface2);
+    color: var(--text);
+    transition: border-color .15s, box-shadow .15s, background .15s;
+  }
+  .pvl-dong-search::placeholder { color: var(--text3); font-weight: 400; }
+  .pvl-dong-search:focus { outline: none; border-color: var(--ui-active); box-shadow: 0 0 0 3px rgba(43,43,40,0.12); background: var(--surface); }
+  .dark .pvl-dong-search:focus { box-shadow: 0 0 0 3px rgba(240,239,232,0.15); }
+  .pvl-dong-search-clear {
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--text3);
+    cursor: pointer;
+    font-size: 13px;
+    line-height: 1;
+    padding: 2px;
+  }
+  .pvl-dong-search-clear:hover { color: var(--text); }
+
+  /* 인사이트 텍스트 — 기본 접힘(2줄 정도) 상태로 차트까지 도달 거리를 줄이고,
+     "더보기" 클릭 시에만 전체(최대 7줄) 인사이트를 펼쳐서 보여줌 */
+  .pvl-insight-wrap {
+    position: relative;
+    margin-bottom: 16px;
+  }
+  .pvl-insight-text {
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--text2);
+    padding: 10px 14px;
+    background: var(--surface2);
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    max-height: 52px;
+    overflow: hidden;
+    position: relative;
+    transition: max-height .25s ease;
+  }
+  .pvl-insight-wrap.expanded .pvl-insight-text {
+    max-height: 600px;
+  }
+  /* 접힌 상태일 때 텍스트가 갑자기 잘리지 않고 배경색으로 자연스럽게 페이드아웃 */
+  .pvl-insight-wrap:not(.expanded) .pvl-insight-text::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 22px;
+    background: linear-gradient(to bottom, transparent, var(--surface2));
+    pointer-events: none;
+  }
+  .pvl-insight-toggle {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin: 6px auto 0;
+    padding: 4px 12px;
+    font-size: 11.5px;
+    font-weight: 700;
+    font-family: inherit;
+    color: var(--text2);
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background .15s, color .15s;
+  }
+  .pvl-insight-toggle:hover { background: var(--surface); color: var(--text); }
+  .pvl-insight-toggle svg { transition: transform .2s; }
+  .pvl-insight-wrap.expanded .pvl-insight-toggle svg { transform: rotate(180deg); }
+
   .pvl-pill {
     display: inline-flex;
     align-items: center;
@@ -3911,9 +4024,12 @@
   #pvl-table tbody tr { border-bottom: 1px solid var(--border); transition: background .12s; }
   #pvl-table tbody tr:hover { background: var(--surface2); }
   #pvl-table tbody td { padding: 8px 10px; vertical-align: middle; }
-  .pvl-delta-pos { color: #e11d48; font-weight: 700; }
+  /* 클래스명을 delta 값의 수학적 부호(+/-)가 아니라 실제 표시되는 의미(낙차/상승)에 맞춰
+     명명 — 기존 pvl-delta-pos는 delta>0(대선>지선, ▼ 하락)에, pvl-delta-neg는 delta<0(▲ 상승)에
+     쓰여 클래스명과 표시 방향이 반대로 읽혀 혼동을 줬음 */
+  .pvl-delta-drop { color: #e11d48; font-weight: 700; }
   .pvl-delta-zero { color: var(--text3); font-weight: 700; }
-  .pvl-delta-neg { color: var(--blue); font-weight: 700; }
+  .pvl-delta-rise { color: var(--blue); font-weight: 700; }
 
   /* 교차 판정 (핵심 텃밭 / 공략 지역) 카드 */
   .pvl-tier-grid {
@@ -3922,11 +4038,38 @@
     gap: 10px;
   }
   .pvl-tier-card {
+    position: relative;
     background: var(--surface2);
     border: 1px solid var(--border);
     border-left-width: 3px;
     border-radius: 12px;
     padding: 12px 14px;
+  }
+  /* 클릭 가능한 카드(data-tier 속성 보유)는 hover 시 떠오르는 느낌 + 우측 상단 화살표로
+     "클릭하면 필터링됨"을 마우스를 올리기 전에도 미리 신호 */
+  .pvl-tier-card[data-tier]::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 14px;
+    height: 14px;
+    opacity: 0;
+    transform: translate(-2px, 2px);
+    transition: opacity .15s, transform .15s;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239b9b94' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 17 17 7'/%3E%3Cpath d='M7 7h10v10'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;
+  }
+  .pvl-tier-card[data-tier]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.09);
+    border-color: var(--border-strong);
+  }
+  .pvl-tier-card[data-tier]:hover::after {
+    opacity: 1;
+    transform: translate(0, 0);
   }
   .pvl-tier-card-head {
     display: flex;
@@ -3974,16 +4117,22 @@
     white-space: nowrap;
   }
   .pvl-tier-badge.core       { background: rgba(255,102,0,0.14);  color: var(--orange-dark); }
-  .pvl-tier-badge.core-watch { background: rgba(217,119,6,0.14);  color: #b45309; }
+  .pvl-tier-badge.core-watch { background: rgba(202,138,4,0.16);  color: #92660a; }
   .pvl-tier-badge.attrition  { background: rgba(225,29,72,0.12);  color: #e11d48; }
   .pvl-tier-badge.emerging   { background: rgba(16,163,74,0.13);  color: var(--green); }
   .pvl-tier-badge.base       { background: var(--surface2);       color: var(--text3); }
   .dark .pvl-tier-badge.core { color: #ff8c33; }
-  .pvl-tier-card[data-tier]  { transition: box-shadow .15s, outline-color .15s; }
+  .dark .pvl-tier-badge.core-watch { color: #eab308; }
+  .pvl-tier-card[data-tier]  { transition: box-shadow .15s, outline-color .15s, transform .15s, border-color .15s; }
   .pvl-tier-card-active {
     outline: 2px solid var(--orange);
     outline-offset: 1px;
     box-shadow: 0 0 0 4px rgba(255,102,0,0.13);
+  }
+  .pvl-tier-card-active::after {
+    opacity: 1 !important;
+    transform: translate(0,0) !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FF6600' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") !important;
   }
   .pvl-tier-filter-pill {
     display: inline-flex;
@@ -4029,9 +4178,9 @@
   }
   .pvl-gu-btn:hover { background: var(--surface); color: var(--text2); }
   .pvl-gu-btn.active {
-    background: var(--orange);
-    color: #fff;
-    box-shadow: 0 1px 4px rgba(255,102,0,0.2);
+    background: var(--ui-active);
+    color: var(--ui-active-text);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.18);
   }
   #pvl-dong-table tbody tr { border-bottom: 1px solid var(--border); transition: background .12s; }
   #pvl-dong-table tbody tr:hover { background: var(--surface2); }
@@ -6260,17 +6409,29 @@ function smInit(){
         </span>
         <span class="cmp-accordion-label">
           <strong>21대 대선 vs 9회 지선 광역비례 득표율 비교</strong>
-          <span>서울특별시 구별 — 개혁신당 광역비례 득표율 변화 추이</span>
+          <span>서울 · 경기 구시군별 — 개혁신당 광역비례 득표율 변화 추이</span>
         </span>
         <svg class="cmp-accordion-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
       </button>
       <div class="cmp-accordion-body" id="acc-pres-vs-local-body" style="padding-top:20px;">
 
+        <!-- 지역 탭: 서울 / 경기 -->
+        <div id="pvl-region-tabs" style="display:flex;gap:4px;margin-bottom:20px;padding:4px;background:var(--surface2);border-radius:12px;border:1px solid var(--border);">
+          <button class="pvl-region-tab active" data-pvlregion="서울" style="flex:1;padding:7px 10px;border:none;border-radius:9px;font-size:13px;font-weight:700;font-family:inherit;cursor:pointer;transition:all .15s;background:var(--surface);color:var(--text);box-shadow:0 1px 4px rgba(0,0,0,0.07);">서울 광역비례</button>
+          <button class="pvl-region-tab" data-pvlregion="경기" style="flex:1;padding:7px 10px;border:none;border-radius:9px;font-size:13px;font-weight:700;font-family:inherit;cursor:pointer;transition:all .15s;background:transparent;color:var(--text2);">경기 광역비례</button>
+        </div>
+
         <!-- 요약 pills -->
         <div id="pvl-summary-pills" style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px;"></div>
 
-        <!-- 인사이트 텍스트 -->
-        <div id="pvl-insight-text" style="font-size:13px;line-height:1.7;color:var(--text2);padding:10px 14px;background:var(--surface2);border-radius:10px;border:1px solid var(--border);margin-bottom:16px;"></div>
+        <!-- 인사이트 텍스트 — 기본은 2줄만 보이고 "더보기"로 펼침 (차트까지 도달 거리 단축) -->
+        <div id="pvl-insight-wrap" class="pvl-insight-wrap">
+          <div id="pvl-insight-text" class="pvl-insight-text"></div>
+          <button id="pvl-insight-toggle" class="pvl-insight-toggle" type="button" style="display:none;">
+            <span class="pvl-insight-toggle-label">인사이트 더보기</span>
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+        </div>
 
         <!-- 교차 판정: 대선·지선 둘 다 상위권 + 유지율 → 핵심 텃밭 / 이반 위험 / 신흥 강세 -->
         <div style="margin-bottom:18px;">
@@ -6360,7 +6521,7 @@ function smInit(){
             <table id="pvl-table" style="width:100%;border-collapse:collapse;font-size:13px;">
               <thead>
                 <tr style="border-bottom:2px solid var(--border-strong);">
-                  <th style="text-align:left;padding:8px 10px;font-size:12px;color:var(--text2);font-weight:700;">구</th>
+                  <th id="pvl-th-district" style="text-align:left;padding:8px 10px;font-size:12px;color:var(--text2);font-weight:700;">구</th>
                   <th style="text-align:right;padding:8px 10px;font-size:12px;color:var(--orange);font-weight:700;">대선 %</th>
                   <th style="text-align:right;padding:8px 10px;font-size:12px;color:var(--blue);font-weight:700;">지선 %</th>
                   <th style="text-align:right;padding:8px 10px;font-size:12px;color:#e11d48;font-weight:700;">낙차 Δ</th>
@@ -6383,14 +6544,20 @@ function smInit(){
           </div>
           <div class="pvl-gu-sel" id="pvl-gu-sel"></div>
 
-          <!-- 읍면동(전체 서울) 기준 인사이트 -->
-          <div id="pvl-dong-insight-text" style="font-size:13px;line-height:1.7;color:var(--text2);padding:10px 14px;background:var(--surface2);border-radius:10px;border:1px solid var(--border);margin-bottom:14px;"></div>
+          <!-- 읍면동(전체 서울) 기준 인사이트 — 동일하게 기본 접힘 + 더보기 -->
+          <div id="pvl-dong-insight-wrap" class="pvl-insight-wrap">
+            <div id="pvl-dong-insight-text" class="pvl-insight-text"></div>
+            <button id="pvl-dong-insight-toggle" class="pvl-insight-toggle" type="button" style="display:none;">
+              <span class="pvl-insight-toggle-label">인사이트 더보기</span>
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+          </div>
 
           <!-- 교차 판정: 대선·지선 둘 다 상위권 + 유지율 → 핵심 텃밭 / 이반 위험 / 신흥 강세 (동 단위, 서울 전체) -->
           <div style="margin-bottom:18px;">
             <div style="font-size:12px;font-weight:700;color:var(--text2);margin-bottom:8px;display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
-              <span>🎯</span><span>교차 판정 — 대선·지선 득표율 + 유지율 기준 동 분류 (서울 전체)</span>
-              <span style="font-weight:500;color:var(--text3);font-size:11px;">카드를 클릭하면 서울 전체에서 해당 유형 동만 표에서 필터링됩니다</span>
+              <span>🎯</span><span id="pvl-dong-cross-tier-label">교차 판정 — 대선·지선 득표율 + 유지율 기준 동 분류</span>
+              <span style="font-weight:500;color:var(--text3);font-size:11px;" id="pvl-dong-cross-tier-sublabel">카드를 클릭하면 해당 유형 동만 표에서 필터링됩니다</span>
             </div>
             <div id="pvl-dong-cross-tier"></div>
           </div>
@@ -6401,16 +6568,16 @@ function smInit(){
           <!-- 투표 유형 필터 -->
           <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;flex-wrap:wrap;">
             <span style="font-size:12px;font-weight:700;color:var(--text2);">투표 유형</span>
-            <div style="display:flex;gap:3px;padding:3px;background:var(--surface2);border-radius:10px;border:1px solid var(--border);" id="pvl-dong-vote-type-btns">
-              <button class="pvl-sort-btn active" data-vtype="all" style="padding:4px 10px;border:none;border-radius:7px;font-size:11px;font-weight:700;font-family:inherit;cursor:pointer;background:var(--surface);color:var(--text);box-shadow:0 1px 3px rgba(0,0,0,0.07);">전체 합계</button>
-              <button class="pvl-sort-btn" data-vtype="polling" style="padding:4px 10px;border:none;border-radius:7px;font-size:11px;font-weight:700;font-family:inherit;cursor:pointer;background:transparent;color:var(--text2);">관내 당일</button>
-              <button class="pvl-sort-btn" data-vtype="early" style="padding:4px 10px;border:none;border-radius:7px;font-size:11px;font-weight:700;font-family:inherit;cursor:pointer;background:transparent;color:var(--text2);">관내 사전</button>
-              <button class="pvl-sort-btn" data-vtype="absentee" style="padding:4px 10px;border:none;border-radius:7px;font-size:11px;font-weight:700;font-family:inherit;cursor:pointer;background:transparent;color:var(--text2);">관외 사전</button>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;" id="pvl-dong-vote-type-btns">
+              <button class="pvl-filter-btn active" data-vtype="all">전체 합계</button>
+              <button class="pvl-filter-btn" data-vtype="polling">관내 당일</button>
+              <button class="pvl-filter-btn" data-vtype="early">관내 사전</button>
+              <button class="pvl-filter-btn" data-vtype="absentee">관외 사전</button>
             </div>
             <span id="pvl-dong-vtype-note" style="font-size:11px;color:var(--text3);">※ 유형 선택 시 해당 투표 방식의 득표율 기준으로 낙차를 계산합니다</span>
           </div>
 
-          <!-- 동별 표 정렬 -->
+          <!-- 동별 표 정렬 + 검색 -->
           <div id="pvl-dong-sort-wrap" style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:14px;">
             <span style="font-size:12px;font-weight:700;color:var(--text2);">정렬</span>
             <div style="display:flex;gap:4px;flex-wrap:wrap;" id="pvl-dong-sort-btns">
@@ -6420,6 +6587,10 @@ function smInit(){
               <button class="pvl-sort-btn" data-dsort="diff-desc">낙차↓</button>
               <button class="pvl-sort-btn" data-dsort="diff-asc">낙차↑</button>
               <button class="pvl-sort-btn" data-dsort="keep-desc">유지율↓</button>
+            </div>
+            <div class="pvl-dong-search-wrap">
+              <input class="pvl-dong-search" id="pvl-dong-search" type="search" placeholder="동 이름 검색…" autocomplete="off" />
+              <button class="pvl-dong-search-clear" id="pvl-dong-search-clear" aria-label="검색어 지우기" style="display:none;">✕</button>
             </div>
           </div>
 
@@ -6446,11 +6617,13 @@ function smInit(){
 
           <!-- 히트맵 뷰 -->
           <div id="pvl-dong-heatmap-view" style="display:none;">
-            <div id="pvl-dong-heatmap-legend" style="display:flex;align-items:center;gap:6px;margin-bottom:10px;font-size:11px;color:var(--text2);flex-wrap:wrap;">
-              <span>낙차 적음</span>
-              <div id="pvl-heatmap-gradient" style="flex:0 0 auto;height:8px;width:120px;border-radius:4px;background:linear-gradient(to right,#dbeafe,#e11d48);"></div>
-              <span>낙차 큼</span>
-              <span style="margin-left:8px;color:var(--text3);">— 셀 색상: 낙차 크기 · 상단 테두리 색: 유형(핵심 텃밭🟧/텃밭🟡/이반 위험🔴/신흥 강세🟢)</span>
+            <div id="pvl-dong-heatmap-legend" style="margin-bottom:10px;">
+              <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:var(--text2);flex-wrap:wrap;">
+                <span>낙차 적음</span>
+                <div id="pvl-heatmap-gradient" style="flex:0 0 auto;height:8px;width:120px;border-radius:4px;background:linear-gradient(to right,#dbeafe,#e11d48);"></div>
+                <span>낙차 큼</span>
+              </div>
+              <div style="margin-top:5px;font-size:11px;color:var(--text3);line-height:1.6;">셀 색상: 낙차 크기 · 상단 테두리 색: 유형(핵심 텃밭🟧/텃밭🟡/이반 위험🔴/신흥 강세🟢)</div>
             </div>
             <div id="pvl-dong-heatmap" style="display:grid;gap:5px;grid-template-columns:repeat(auto-fill,minmax(100px,1fr));"></div>
           </div>
@@ -6462,20 +6635,20 @@ function smInit(){
           <!-- 단위 토글 + 투표 유형 필터 -->
           <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;flex-wrap:wrap;">
             <span style="font-size:12px;font-weight:700;color:var(--text2);">단위</span>
-            <div style="display:flex;gap:4px;" id="pvl-scatter-unit-btns">
-              <button class="pvl-sort-btn active" data-unit="gu">구별</button>
-              <button class="pvl-sort-btn" data-unit="dong">동별</button>
+            <div style="display:flex;gap:6px;" id="pvl-scatter-unit-btns">
+              <button class="pvl-filter-btn active" data-unit="gu">구별</button>
+              <button class="pvl-filter-btn" data-unit="dong">동별</button>
             </div>
             <button class="scatter-log-toggle" id="pvl-log-toggle" style="margin-left:auto;" title="로그 스케일 ON/OFF — 득표율 분포가 촘촘할 때 점 간격을 넓혀줍니다">로그 스케일 OFF</button>
           </div>
           <!-- 투표 유형 필터 (산점도) -->
           <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;flex-wrap:wrap;">
             <span style="font-size:12px;font-weight:700;color:var(--text2);">투표 유형</span>
-            <div style="display:flex;gap:3px;padding:3px;background:var(--surface2);border-radius:10px;border:1px solid var(--border);" id="pvl-scatter-vote-type-btns">
-              <button class="pvl-sort-btn active" data-svtype="all" style="padding:4px 10px;border:none;border-radius:7px;font-size:11px;font-weight:700;font-family:inherit;cursor:pointer;background:var(--surface);color:var(--text);box-shadow:0 1px 3px rgba(0,0,0,0.07);">전체 합계</button>
-              <button class="pvl-sort-btn" data-svtype="polling" style="padding:4px 10px;border:none;border-radius:7px;font-size:11px;font-weight:700;font-family:inherit;cursor:pointer;background:transparent;color:var(--text2);">관내 당일</button>
-              <button class="pvl-sort-btn" data-svtype="early" style="padding:4px 10px;border:none;border-radius:7px;font-size:11px;font-weight:700;font-family:inherit;cursor:pointer;background:transparent;color:var(--text2);">관내 사전</button>
-              <button class="pvl-sort-btn" data-svtype="absentee" style="padding:4px 10px;border:none;border-radius:7px;font-size:11px;font-weight:700;font-family:inherit;cursor:pointer;background:transparent;color:var(--text2);">관외 사전</button>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;" id="pvl-scatter-vote-type-btns">
+              <button class="pvl-filter-btn active" data-svtype="all">전체 합계</button>
+              <button class="pvl-filter-btn" data-svtype="polling">관내 당일</button>
+              <button class="pvl-filter-btn" data-svtype="early">관내 사전</button>
+              <button class="pvl-filter-btn" data-svtype="absentee">관외 사전</button>
             </div>
             <span id="pvl-scatter-vtype-note" style="font-size:11px;color:var(--text3);">※ 관외 사전은 구 단위(_관외사전투표) 데이터만 사용</span>
           </div>
@@ -6492,6 +6665,18 @@ function smInit(){
 
     <script>
     (function() {
+      // ── 지역 탭 (서울 / 경기) ─────────────────────────────────────
+      document.querySelectorAll('.pvl-region-tab').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var region = btn.dataset.pvlregion;
+          if (typeof renderPresVsLocal === 'function') {
+            // _pvlInited 초기화 — 지역 변경 시 재렌더
+            window._pvlForceRender = true;
+            renderPresVsLocal(region);
+          }
+        });
+      });
+
       // ── 외부 탭 (구별차트 / 동별비교 / 산점도) ──────────────────
       var tabs = document.querySelectorAll('.pvl-inner-tab');
       tabs.forEach(function(tab) {
@@ -6640,6 +6825,7 @@ window.candidates = window.candidates || [];
 <script src="can.js" onerror="console.warn('can.js not found, using empty candidates')"></script>
 <script src="results.js?v=0611.01" onerror="console.warn('results.js not found, skipping results')" onload="window._resultsLoaded = true"></script>
 <script src="gaehyeoksindang_seoul_gwangyeok.js" onerror="console.warn('gaehyeoksindang_seoul_gwangyeok.js not found')"></script>
+<script src="gaehyeoksindang_gyeonggi_gwangyeok.js" onerror="console.warn('gaehyeoksindang_gyeonggi_gwangyeok.js not found')"></script>
 <script src="renderCompare.js?v=0611.01" onerror="console.warn('renderCompare.js not found')"></script>
 <!-- ── fw4comparison.js: results.js 이후 로드 (REGIONAL/BASIC/RESULTS 의존) ── -->
 <script src="fw4comparison.js"></script>
@@ -6881,26 +7067,114 @@ function switchTab(tab, pushState = true) {
   // ── 대선 vs 지선 광역비례 구별 비교 ──────────────────────────
   (function() {
     var _pvlInited = false;
+    var _pvlRegion = '서울'; // 현재 선택된 지역
 
-    window.renderPresVsLocal = function() {
-      if (_pvlInited) return;
+    window.renderPresVsLocal = function(forceRegion) {
+      if (forceRegion) _pvlRegion = forceRegion;
+      if (_pvlInited && !forceRegion) return;
       _pvlInited = true;
 
-      // 데이터 준비: GAEHYEOK_SEOUL (대선) vs REGIONAL[0] (지선 서울)
-      var presData = (window.GAEHYEOK_SEOUL && window.GAEHYEOK_SEOUL.districts) ? window.GAEHYEOK_SEOUL.districts : [];
-      var localSeoul = null;
+      // 지역 전환 시 DOM 컨테이너 초기화 (이전 렌더 결과 제거)
+      if (forceRegion) {
+        ['pvl-summary-pills','pvl-insight-text','pvl-cross-tier','pvl-tbody',
+         'pvl-chart','pvl-slope-chart','pvl-div-chart','pvl-scatter-svg-wrap',
+         'pvl-dong-insight-text','pvl-dong-cross-tier','pvl-dong-tbody','pvl-dong-heatmap',
+         'pvl-gu-sel','pvl-dong-summary','pvl-tier-filter-pill','pvl-dong-tier-filter-pill',
+         'pvl-scatter-gu-filter'].forEach(function(id) {
+          var el = document.getElementById(id);
+          if (el) el.innerHTML = '';
+        });
+        // 외부 서브모듈 재렌더 플래그 초기화
+        if (window.PvlSlope) window.PvlSlope._inited = false;
+        if (window.PvlDiv)   window.PvlDiv._inited   = false;
+        if (window.PvlScatter) window.PvlScatter._inited = false;
+      }
+
+      // 지역 탭 UI 동기화
+      document.querySelectorAll('.pvl-region-tab').forEach(function(btn) {
+        var isActive = btn.dataset.pvlregion === _pvlRegion;
+        btn.classList.toggle('active', isActive);
+        btn.style.background  = isActive ? 'var(--surface)' : 'transparent';
+        btn.style.color       = isActive ? 'var(--text)'    : 'var(--text2)';
+        btn.style.boxShadow   = isActive ? '0 1px 4px rgba(0,0,0,0.07)' : 'none';
+      });
+
+      // 데이터 준비: 지역별 대선 데이터(GAEHYEOK_*) vs REGIONAL(지선)
+      var presSource = _pvlRegion === '경기'
+        ? (window.GAEHYEOK_GYEONGGI || null)
+        : (window.GAEHYEOK_SEOUL || null);
+      var presData = presSource ? presSource.districts : [];
+      var localRegion = null;
       if (window.REGIONAL) {
         for (var i = 0; i < window.REGIONAL.length; i++) {
-          if (window.REGIONAL[i].name === '서울') { localSeoul = window.REGIONAL[i]; break; }
+          if (window.REGIONAL[i].name === _pvlRegion) { localRegion = window.REGIONAL[i]; break; }
         }
       }
-      var localData = localSeoul ? localSeoul.districts : [];
+      var localSeoul = localRegion; // 기존 변수명 호환
+      var localData = localRegion ? localRegion.districts : [];
+
+      // 구/시군 레이블 (서울=구, 경기=시군구)
+      var districtLabel = _pvlRegion === '경기' ? '시군구' : '구';
+
+      // 구/시군구 레이블 동적 업데이트
+      var thDistrict = document.getElementById('pvl-th-district');
+      if (thDistrict) thDistrict.textContent = districtLabel;
+
+      // 동별 비교 탭의 "전체" 버튼 레이블 동적 업데이트 (나중에 renderGuSel에서 처리됨)
+      // allBtn label도 아래 renderGuSel에서 동적으로 설정
+
+      // 동별 교차 판정 레이블 업데이트
+      var dongTierLabel = document.getElementById('pvl-dong-cross-tier-label');
+      var dongTierSubLabel = document.getElementById('pvl-dong-cross-tier-sublabel');
+      if (dongTierLabel) dongTierLabel.textContent = '교차 판정 — 대선·지선 득표율 + 유지율 기준 동 분류 (' + _pvlRegion + ' 전체)';
+      if (dongTierSubLabel) dongTierSubLabel.textContent = '카드를 클릭하면 ' + _pvlRegion + ' 전체에서 해당 유형 동만 표에서 필터링됩니다';
 
       // 구별 join
       var localMap = {};
       localData.forEach(function(d) { localMap[d.name] = d; });
 
-      var rows = presData.map(function(d) {
+      // ── 화성시 특수 처리 ① 구별 rows: 지선 4구를 합산해 '화성시' 키로 localMap에 추가 ──
+      // 지선 경기 districts에는 화성시만세구/효행구/병점구/동탄구 4개만 있고 '화성시' 없음.
+      // 대선 합산 결과('화성시')와 join되도록 가중평균 합산 행을 localMap에 추가한다.
+      if (_pvlRegion === '경기') {
+        var _hwLocalSubKeys = ['화성시만세구','화성시효행구','화성시병점구','화성시동탄구'];
+        var _hwLocalSubs = _hwLocalSubKeys.map(function(k){ return localMap[k]; }).filter(Boolean);
+        if (_hwLocalSubs.length > 0) {
+          var _hwLTotalVotes = _hwLocalSubs.reduce(function(s,d){ return s + (d.votes || 0); }, 0);
+          var _hwLMergedRate = _hwLTotalVotes > 0
+            ? _hwLocalSubs.reduce(function(s,d){ return s + d.rate * (d.votes || 0); }, 0) / _hwLTotalVotes
+            : _hwLocalSubs.reduce(function(s,d){ return s + d.rate; }, 0) / _hwLocalSubs.length;
+          localMap['화성시'] = { name: '화성시', rate: +_hwLMergedRate.toFixed(2), votes: _hwLTotalVotes };
+        }
+      }
+
+      // ── 화성시 특수 처리 ② 대선: '화성시갑' + '화성시을' → '화성시' 합산 ──
+      // 대선 데이터는 갑(선거구)/을(선거구) 분리, 지선은 화성시 전체 단일 행이므로
+      // 두 선거구를 투표수 가중평균으로 합산해 '화성시' 한 행으로 만든다.
+      var _presDataForRows = presData;
+      if (_pvlRegion === '경기') {
+        var _hwGap = null, _hwEul = null;
+        var _presDataMerged = [];
+        presData.forEach(function(d) {
+          if (d.name === '화성시갑') { _hwGap = d; }
+          else if (d.name === '화성시을') { _hwEul = d; }
+          else { _presDataMerged.push(d); }
+        });
+        if (_hwGap && _hwEul) {
+          var _hwTotalVotes = (_hwGap.votes || 0) + (_hwEul.votes || 0);
+          var _hwMergedRate = _hwTotalVotes > 0
+            ? ((_hwGap.rate * (_hwGap.votes || 0) + _hwEul.rate * (_hwEul.votes || 0)) / _hwTotalVotes)
+            : ((_hwGap.rate + _hwEul.rate) / 2);
+          _presDataMerged.push({ name: '화성시', rate: +_hwMergedRate.toFixed(2), votes: _hwTotalVotes });
+        } else if (_hwGap) {
+          _presDataMerged.push({ name: '화성시', rate: _hwGap.rate, votes: _hwGap.votes });
+        } else if (_hwEul) {
+          _presDataMerged.push({ name: '화성시', rate: _hwEul.rate, votes: _hwEul.votes });
+        }
+        _presDataForRows = _presDataMerged;
+      }
+
+      var rows = _presDataForRows.map(function(d) {
         var l = localMap[d.name];
         return {
           name: d.name,
@@ -6910,16 +7184,16 @@ function switchTab(tab, pushState = true) {
         };
       }).filter(function(r) { return r.local !== null; });
 
-      var presTotal  = window.GAEHYEOK_SEOUL ? window.GAEHYEOK_SEOUL.rate : null;
-      var localTotal = localSeoul ? localSeoul.rate : null;
+      var presTotal  = presSource ? presSource.rate : null;
+      var localTotal = localRegion ? localRegion.rate : null;
 
       // 요약 pills
       var pillWrap = document.getElementById('pvl-summary-pills');
       var avgDelta = null;
       if (pillWrap) {
         var pills = [];
-        if (presTotal !== null)  pills.push('<span class="pvl-pill">21대 대선 서울 전체 <strong style="color:var(--orange);margin-left:4px;">' + presTotal.toFixed(2) + '%</strong></span>');
-        if (localTotal !== null) pills.push('<span class="pvl-pill">9회 지선 서울 전체 <strong style="color:var(--blue);margin-left:4px;">' + localTotal.toFixed(2) + '%</strong></span>');
+        if (presTotal !== null)  pills.push('<span class="pvl-pill">21대 대선 '+_pvlRegion+' 전체 <strong style="color:var(--orange);margin-left:4px;">' + presTotal.toFixed(2) + '%</strong></span>');
+        if (localTotal !== null) pills.push('<span class="pvl-pill">9회 지선 '+_pvlRegion+' 전체 <strong style="color:var(--blue);margin-left:4px;">' + localTotal.toFixed(2) + '%</strong></span>');
         if (presTotal !== null && localTotal !== null) {
           var td = (presTotal - localTotal).toFixed(2);
           pills.push('<span class="pvl-pill">낙차 <strong style="color:#e11d48;margin-left:4px;">▼ ' + td + '%p</strong></span>');
@@ -6930,9 +7204,10 @@ function switchTab(tab, pushState = true) {
       // 인사이트 텍스트
       (function() {
         var el = document.getElementById('pvl-insight-text');
-        if (!el || !rows.length) return;
+        var toggleBtnEarly = document.getElementById('pvl-insight-toggle');
+        if (!el || !rows.length) { if (toggleBtnEarly) toggleBtnEarly.style.display = 'none'; return; }
         var withDelta = rows.filter(function(r){ return r.delta !== null; });
-        if (!withDelta.length) return;
+        if (!withDelta.length) { if (toggleBtnEarly) toggleBtnEarly.style.display = 'none'; return; }
         avgDelta = withDelta.reduce(function(s,r){ return s + r.delta; }, 0) / withDelta.length;
 
         // 유지율(지선÷대선×100) — 대선 득표 중 지선까지 이어진 비율. %p 낙차와 달리
@@ -7018,9 +7293,33 @@ function switchTab(tab, pushState = true) {
           if (deltaRatio > 1.15) lines.push(top1.name + '의 낙차는 2위 ' + top2.name + '보다 <strong style="color:#e11d48;">' + deltaRatio.toFixed(1) + '배</strong> 더 큽니다.');
         }
 
-        el.innerHTML = lines.map(function(l){
-          return '<div style="margin-bottom:4px;">' + l + '</div>';
+        el.innerHTML = lines.map(function(l, i){
+          // 첫 두 줄(평균 낙차·유지율, 상관계수)은 전체 요약으로 보통 굵기보다 살짝 키워 강조하고,
+          // 나머지는 부가 콜아웃으로 보고 작은 색 마커(▸)를 달아 한 단계 낮은 위계로 표시합니다.
+          if (i < 2) return '<div style="margin-bottom:6px;font-size:13.5px;">' + l + '</div>';
+          return '<div style="margin-bottom:4px;padding-left:14px;position:relative;font-size:12.5px;color:var(--text2);">'
+            + '<span style="position:absolute;left:0;color:var(--orange);">▸</span>' + l + '</div>';
         }).join('');
+
+        // 인사이트 "더보기" — 내용이 접힌 높이(52px)보다 길 때만 토글 버튼을 보여주고,
+        // 지역 탭 전환 등으로 재렌더링될 때마다 기본 접힘 상태로 리셋합니다.
+        (function() {
+          var wrap = document.getElementById('pvl-insight-wrap');
+          var toggleBtn = document.getElementById('pvl-insight-toggle');
+          if (!wrap || !toggleBtn) return;
+          wrap.classList.remove('expanded');
+          toggleBtn.querySelector('.pvl-insight-toggle-label').textContent = '인사이트 더보기';
+          // scrollHeight는 max-height 제한과 무관하게 실제 콘텐츠 높이를 반환하므로
+          // 접힌 상태 기준 높이(52px)를 넘는지로 "더보기" 필요 여부를 판단합니다.
+          var needsToggle = el.scrollHeight > 56;
+          toggleBtn.style.display = needsToggle ? 'flex' : 'none';
+          if (needsToggle) {
+            toggleBtn.onclick = function() {
+              var isExpanded = wrap.classList.toggle('expanded');
+              toggleBtn.querySelector('.pvl-insight-toggle-label').textContent = isExpanded ? '접기' : '인사이트 더보기';
+            };
+          }
+        })();
 
         // ── 교차 판정 카드 렌더 ──────────────────────────────────
         (function() {
@@ -7036,7 +7335,7 @@ function switchTab(tab, pushState = true) {
             var list = tierGroups[tierKey];
             if (!list.length) return '';
             return '<div class="pvl-tier-card" data-tier="' + tierKey + '" style="border-left-color:'
-              + (tierKey==='core' ? 'var(--orange)' : tierKey==='core-watch' ? '#d97706' : tierKey==='attrition' ? '#e11d48' : 'var(--green)')
+              + (tierKey==='core' ? 'var(--orange)' : tierKey==='core-watch' ? '#ca8a04' : tierKey==='attrition' ? '#e11d48' : 'var(--green)')
               + ';">'
               + '<div class="pvl-tier-card-head"><span>' + icon + '</span><strong class="pvl-tier-badge ' + tierKey + '">' + title + '</strong><span class="pvl-tier-count">' + list.length + '개 구</span></div>'
               + '<div class="pvl-tier-card-desc">' + descText + '</div>'
@@ -7236,8 +7535,8 @@ function switchTab(tab, pushState = true) {
         tbody.innerHTML = sorted.map(function(r) {
           var dStr = '—';
           if (r.delta !== null) {
-            if (r.delta > 0) dStr = '<span class="pvl-delta-pos">▼ ' + r.delta.toFixed(2) + '%p</span>';
-            else if (r.delta < 0) dStr = '<span class="pvl-delta-neg">▲ ' + Math.abs(r.delta).toFixed(2) + '%p</span>';
+            if (r.delta > 0) dStr = '<span class="pvl-delta-drop">▼ ' + r.delta.toFixed(2) + '%p</span>';
+            else if (r.delta < 0) dStr = '<span class="pvl-delta-rise">▲ ' + Math.abs(r.delta).toFixed(2) + '%p</span>';
             else dStr = '<span class="pvl-delta-zero">±0.00%p</span>';
           }
           var tierStr = r.tier ? '<span class="pvl-tier-badge ' + r.tier + '">' + r.tierLabel + '</span>' : '—';
@@ -7446,7 +7745,7 @@ function switchTab(tab, pushState = true) {
       }
 
       window.PvlDiv = { render: renderDivergingBar };
-      var presNeighborhoods = (window.GAEHYEOK_SEOUL && window.GAEHYEOK_SEOUL.neighborhoods) ? window.GAEHYEOK_SEOUL.neighborhoods : [];
+      var presNeighborhoods = presSource ? (presSource.neighborhoods || []) : [];
       var localNeighborhoods = localSeoul ? (localSeoul.neighborhoods || []) : [];
 
       // ── 투표 유형 필터 상태 ──────────────────────────────────────────
@@ -7485,24 +7784,146 @@ function switchTab(tab, pushState = true) {
       var localAbsenteeMap = buildAbsenteeMap(localNeighborhoods);
 
       // '○○구_관외사전투표' 마커를 기준으로 동 목록을 구별로 묶는다
+      // normalizeDistrictName: 경기 대선(수원시장안구)↔지선(수원장안구) 이름 불일치 정규화
+      function normalizeDistrictName(name) {
+        // '수원시장안구' → '수원장안구', '성남시수정구' → '성남수정구' 등
+        return name.replace(/^(.{2,4})시([가-힣]+[구군])$/, '$1$2');
+      }
+
+      // groupByDistrict: { groups: { 원본이름 → [동...] }, order: [원본이름...], normToOrig: { 정규화이름 → 원본이름 } }
       function groupByDistrict(neighborhoods) {
         var groups = {};
         var order = [];
+        var normToOrig = {};
         var current = null;
         neighborhoods.forEach(function(n) {
           var m = n.name.match(/^(.+?)_관외사전투표$/);
           if (m) {
-            current = m[1];
+            current = m[1]; // 원본 이름 유지
             if (!groups[current]) { groups[current] = []; order.push(current); }
+            // 정규화 키 → 원본 이름 양방향 등록
+            // ex) '수원장안구' → '수원장안구', '수원시장안구' → '수원장안구' 모두 역매핑
+            normToOrig[normalizeDistrictName(current)] = current;
+            normToOrig[current] = current; // 원본 키도 직접 등록
             return;
           }
           if (current) { groups[current].push(n); }
         });
-        return { groups: groups, order: order };
+        return { groups: groups, order: order, normToOrig: normToOrig };
       }
 
       var presGrouped = groupByDistrict(presNeighborhoods);
       var localGrouped = groupByDistrict(localNeighborhoods);
+
+      // ── 화성시 특수 처리: 대선 '화성시갑'+'화성시을' 동을 지선 4개 구로 재매핑 ──
+      // 대선 neighborhoods는 갑/을 두 선거구로 분리되어 있고,
+      // 지선 localGrouped 키는 '화성만세구'/'화성효행구'/'화성병점구'/'화성동탄구' (시 없음).
+      // 동 이름 기준으로 어느 지선 구에 속하는지 직접 매핑한다.
+      if (_pvlRegion === '경기') {
+        // 지선 4구 이름 목록 (localGrouped.groups의 실제 키 — "화성만세구" 형태, 시 없음)
+        var _hwLocalDistricts = ['화성만세구','화성효행구','화성병점구','화성동탄구'];
+        var _hwLocalExists = _hwLocalDistricts.every(function(k){ return localGrouped.groups[k]; });
+        if (_hwLocalExists && (presGrouped.groups['화성시갑'] || presGrouped.groups['화성시을'])) {
+          // 전체 대선 화성 동을 단일 배열로 합침 (갑+을)
+          var _hwPresAllDongs = (presGrouped.groups['화성시갑'] || []).concat(presGrouped.groups['화성시을'] || []);
+          var _hwPresMap = {}; // 동이름 → 대선 entry
+          _hwPresAllDongs.forEach(function(d){ _hwPresMap[d.name] = d; });
+
+          // presGrouped에서 화성시갑/을 제거 후 4개 지선 구 키로 재편성
+          delete presGrouped.groups['화성시갑'];
+          delete presGrouped.groups['화성시을'];
+          var _gapIdx = presGrouped.order.indexOf('화성시갑');
+          if (_gapIdx >= 0) presGrouped.order.splice(_gapIdx, 1);
+          var _eulIdx = presGrouped.order.indexOf('화성시을');
+          if (_eulIdx >= 0) presGrouped.order.splice(_eulIdx, 1);
+
+          _hwLocalDistricts.forEach(function(localDistKey) {
+            var lDongs = localGrouped.groups[localDistKey] || [];
+            var matchedPresDongs = lDongs.map(function(l){
+              return _hwPresMap[l.name] || null;
+            }).filter(Boolean);
+            // presGrouped에도 같은 키('화성만세구' 등)로 등록
+            presGrouped.groups[localDistKey] = matchedPresDongs;
+            presGrouped.order.push(localDistKey);
+            presGrouped.normToOrig[localDistKey] = localDistKey; // 정규화 불필요 — 동일 키 사용
+          });
+        }
+      }
+
+      // ── 동 명칭 변경 / 분동 시점 차이 리매핑 (대선 vs 지선 데이터 수집 시점 사이에
+      //    행정동 이름이 바뀌거나 쪼개진 경우. 구 자체는 동일하므로 동 이름만 맞춰준다) ──
+      if (_pvlRegion === '경기') {
+        // 1:1 명칭 변경 — 대선 쪽 동 이름을 지선 쪽 이름으로 그대로 바꿔치기
+        //  · 안양 박달1동→박달동, 박달2동→호현동 (2025.7.1 행정동 명칭 변경)
+        //  · 용인처인구 양지면→양지읍 (2026.1.2 읍 승격)
+        var _renameMap = {
+          '안양시만안구': [ ['박달1동', '박달동'], ['박달2동', '호현동'] ],
+          '용인시처인구': [ ['양지면', '양지읍'] ]
+        };
+        Object.keys(_renameMap).forEach(function(gu) {
+          var dongs = presGrouped.groups[gu];
+          if (!dongs) return;
+          _renameMap[gu].forEach(function(pair) {
+            var oldName = pair[0], newName = pair[1];
+            var entry = dongs.filter(function(d){ return d.name === oldName; })[0];
+            if (entry) entry.name = newName;
+          });
+        });
+
+        // 1:N 분동 — 대선 쪽 동 1개를 지선 쪽 여러 동으로 복제
+        //  (동일 rate/votes를 분동된 모든 신규 동에 그대로 적용 — 분동 이전 집계라
+        //   세부 동별 차이를 알 수 없어 근사치로 처리됨)
+        //  · 용인처인구 유림동(대선) → 유림1동·유림2동 (2025.7.14 분동)
+        var _splitMap = {
+          '용인시처인구': [ ['유림동', ['유림1동', '유림2동']] ]
+        };
+        Object.keys(_splitMap).forEach(function(gu) {
+          var dongs = presGrouped.groups[gu];
+          if (!dongs) return;
+          _splitMap[gu].forEach(function(pair) {
+            var oldName = pair[0], newNames = pair[1];
+            var idx = -1;
+            for (var i = 0; i < dongs.length; i++) { if (dongs[i].name === oldName) { idx = i; break; } }
+            if (idx === -1) return;
+            var orig = dongs[idx];
+            var replacements = newNames.map(function(nn) {
+              return { name: nn, rate: orig.rate, votes: orig.votes };
+            });
+            dongs.splice.apply(dongs, [idx, 1].concat(replacements));
+          });
+        });
+
+        // ── 행정구역 ≠ 국회의원 선거구 경계 차이로 동이 다른 구에 귀속된 케이스 ──
+        // 지선 neighborhoods는 선거구 경계를 따라 구별로 묶여 있어, 대선(행정구역 기준)과
+        // 같은 동이 서로 다른 구에 들어있는 경우가 있다. 지선 쪽 구 분류를 기준으로
+        // 대선 쪽에서 해당 동을 찾아 이전(move)한다.
+        //  · 수원장안구 율천동 → 수원권선구로 이동
+        //  · 수원권선구 세류1동 → 수원팔달구로 이동
+        //  · 부천원미구 소사동·역곡1동·역곡2동 → 부천소사구로 이동
+        //  · 고양일산동구 식사동 → 고양덕양구로 이동
+        //  · 고양일산서구 일산2동 → 고양일산동구로 이동
+        //  · 용인수지구 죽전1·2·3동, 상현2동 → 용인기흥구로 이동
+        var _moveMap = [
+          { from: '수원시장안구',   to: '수원시권선구',   dongs: ['율천동'] },
+          { from: '수원시권선구',   to: '수원시팔달구',   dongs: ['세류1동'] },
+          { from: '부천시원미구',   to: '부천시소사구',   dongs: ['소사동', '역곡1동', '역곡2동'] },
+          { from: '고양시일산동구', to: '고양시덕양구',   dongs: ['식사동'] },
+          { from: '고양시일산서구', to: '고양시일산동구', dongs: ['일산2동'] },
+          { from: '용인시수지구',   to: '용인시기흥구',   dongs: ['죽전1동', '죽전2동', '죽전3동', '상현2동'] }
+        ];
+        _moveMap.forEach(function(rule) {
+          var fromDongs = presGrouped.groups[rule.from];
+          var toDongs = presGrouped.groups[rule.to];
+          if (!fromDongs || !toDongs) return;
+          rule.dongs.forEach(function(name) {
+            var idx = -1;
+            for (var i = 0; i < fromDongs.length; i++) { if (fromDongs[i].name === name) { idx = i; break; } }
+            if (idx === -1) return;
+            var entry = fromDongs.splice(idx, 1)[0];
+            toDongs.push(entry);
+          });
+        });
+      }
 
       // ── 읍면동(서울 전체) 단위 분석 ──────────────────────────────
       // 동별 투표수(관내사전 역산 polling + early) — 표본 규모 판단용. 작은 동은 %가 표 하나로 크게 흔들릴 수 있음
@@ -7517,16 +7938,19 @@ function switchTab(tab, pushState = true) {
       // 구별과 동일한 방식으로 모든 구의 동을 대선·지선 이름 매칭해 서울 전체 한 배열로 합침
       // 각 행에 votes 원본도 보존해 투표유형 필터 시 재계산할 수 있도록 함
       var allDongRows = [];
-      presGrouped.order.forEach(function(gu) {
-        var pDongs = presGrouped.groups[gu] || [];
-        var lDongs = localGrouped.groups[gu] || [];
+      presGrouped.order.forEach(function(presGu) {
+        // 정규화된 이름으로 지선 구 이름을 역매핑
+        var normKey = normalizeDistrictName(presGu);
+        var localGu = localGrouped.normToOrig[normKey] || presGu; // 정규화 매핑 없으면 원본 그대로 시도
+        var pDongs = presGrouped.groups[presGu] || [];
+        var lDongs = localGrouped.groups[localGu] || [];
         var lMap = {};
         lDongs.forEach(function(d) { lMap[d.name] = d; });
         pDongs.forEach(function(d) {
           var l = lMap[d.name];
           if (!l) return;
           allDongRows.push({
-            gu: gu,
+            gu: presGu, // 구 버튼(guList)과 일치하도록 대선 원본 이름 사용
             name: d.name,
             pres: d.rate,
             local: l.rate,
@@ -7570,6 +7994,7 @@ function switchTab(tab, pushState = true) {
       var ALL_GU = '__ALL__';
       var currentDongTierFilter = null;
       var currentDongSort = 'name';
+      var _dongSearchQuery = ''; // 동별 표 검색어 (수백 행 스크롤 탐색 보완)
       var DONG_TIER_FILTER_LABELS = { core: '핵심 텃밭', 'core-watch': '텃밭(유지율 주의)', attrition: '이반 위험', emerging: '신흥 강세·공략 성공' };
 
       function clearDongTierCardActiveStates() {
@@ -7594,7 +8019,8 @@ function switchTab(tab, pushState = true) {
       // 서울 전체 동 기준 인사이트 텍스트 (구 선택과 무관하게 1회만 계산해 표시)
       (function() {
         var el = document.getElementById('pvl-dong-insight-text');
-        if (!el || !allDongRows.length) return;
+        var toggleBtnEarly = document.getElementById('pvl-dong-insight-toggle');
+        if (!el || !allDongRows.length) { if (toggleBtnEarly) toggleBtnEarly.style.display = 'none'; return; }
 
         var n = allDongRows.length;
         var dongAvgDelta = allDongRows.reduce(function(s, r) { return s + r.delta; }, 0) / n;
@@ -7628,7 +8054,7 @@ function switchTab(tab, pushState = true) {
 
         var lines = [];
 
-        lines.push('서울 전체 ' + n + '개 동(읍면동) 기준 평균 낙차는 <strong style="color:#e11d48;">▼ ' + dongAvgDelta.toFixed(2) + '%p</strong>, 평균 유지율은 <strong>' + dongAvgKeep.toFixed(1) + '%</strong>로 구 단위 평균과 큰 틀에서 비슷하지만, 동 단위로 쪼개 보면 변화의 폭이 훨씬 큰 곳들이 드러납니다.');
+        lines.push(''+ _pvlRegion +' 전체 ' + n + '개 동(읍면동) 기준 평균 낙차는 <strong style="color:#e11d48;">▼ ' + dongAvgDelta.toFixed(2) + '%p</strong>, 평균 유지율은 <strong>' + dongAvgKeep.toFixed(1) + '%</strong>로 구 단위 평균과 큰 틀에서 비슷하지만, 동 단위로 쪼개 보면 변화의 폭이 훨씬 큰 곳들이 드러납니다.');
 
         lines.push('동 단위 대선·지선 득표율 상관계수는 <strong>r = ' + corrR.toFixed(2) + '</strong>(' + corrLabel + ' 양의 상관)입니다.');
 
@@ -7638,13 +8064,37 @@ function switchTab(tab, pushState = true) {
 
         if (keepBottom.length) lines.push('반대로 대선 때와 <strong style="color:#e11d48;">가장 달라진</strong> 동은 <strong>' + keepBottom.map(function(r) { return fmt(r) + ' ' + r.keepPct.toFixed(1) + '%'; }).join(', ') + '</strong>로, 대선 득표의 4분의 1 안팎만 지선까지 이어졌습니다.');
 
-        if (shiftUp && shiftDown) lines.push('동 단위로 보면 구 평균에서는 보이지 않던 큰 순위 이동도 있습니다 — <strong>' + fmt(shiftUp) + '</strong>은 서울 전체 ' + n + '개 동 중 대선 ' + shiftUp.presRank + '위 → 지선 ' + shiftUp.localRank + '위(' + shiftUp.rankShift + '단계 상승)로 가장 많이 올랐고, <strong>' + fmt(shiftDown) + '</strong>는 ' + shiftDown.presRank + '위 → ' + shiftDown.localRank + '위(' + Math.abs(shiftDown.rankShift) + '단계 하락)로 가장 많이 떨어졌습니다.');
+        if (shiftUp && shiftDown) lines.push('동 단위로 보면 구 평균에서는 보이지 않던 큰 순위 이동도 있습니다 — <strong>' + fmt(shiftUp) + '</strong>은 '+ _pvlRegion +' 전체 ' + n + '개 동 중 대선 ' + shiftUp.presRank + '위 → 지선 ' + shiftUp.localRank + '위(' + shiftUp.rankShift + '단계 상승)로 가장 많이 올랐고, <strong>' + fmt(shiftDown) + '</strong>는 ' + shiftDown.presRank + '위 → ' + shiftDown.localRank + '위(' + Math.abs(shiftDown.rankShift) + '단계 하락)로 가장 많이 떨어졌습니다.');
 
         lines.push('<span style="color:var(--text3);font-size:11.5px;">※ 유지율·순위변동 비교는 표본이 작은 동의 통계적 잡음을 줄이기 위해 지선 투표수 ' + MIN_VOTES + '표 이상인 동만 사용했습니다. 아래에서 구를 선택하면 해당 구 안의 동별 비교를 볼 수 있습니다.</span>');
 
-        el.innerHTML = lines.map(function(l) {
-          return '<div style="margin-bottom:4px;">' + l + '</div>';
+        el.innerHTML = lines.map(function(l, i) {
+          // 첫 두 줄(평균 낙차·유지율, 상관계수)은 전체 요약으로 살짝 키워 강조.
+          // 마지막 줄은 이미 자체 스타일(안내문)이 있으므로 그대로 두고,
+          // 그 사이(콜아웃 3~4줄)에는 작은 색 마커(▸)를 달아 한 단계 낮은 위계로 표시합니다.
+          if (i < 2) return '<div style="margin-bottom:6px;font-size:13.5px;">' + l + '</div>';
+          if (i === lines.length - 1) return '<div style="margin-top:6px;">' + l + '</div>';
+          return '<div style="margin-bottom:4px;padding-left:14px;position:relative;font-size:12.5px;color:var(--text2);">'
+            + '<span style="position:absolute;left:0;color:var(--orange);">▸</span>' + l + '</div>';
         }).join('');
+
+        // 인사이트 "더보기" — 구별 인사이트와 동일한 패턴 (이 블록은 1회만 렌더링되므로
+        // 페이지 진입 시 항상 접힌 상태로 시작)
+        (function() {
+          var wrap = document.getElementById('pvl-dong-insight-wrap');
+          var toggleBtn = document.getElementById('pvl-dong-insight-toggle');
+          if (!wrap || !toggleBtn) return;
+          wrap.classList.remove('expanded');
+          toggleBtn.querySelector('.pvl-insight-toggle-label').textContent = '인사이트 더보기';
+          var needsToggle = el.scrollHeight > 56;
+          toggleBtn.style.display = needsToggle ? 'flex' : 'none';
+          if (needsToggle) {
+            toggleBtn.onclick = function() {
+              var isExpanded = wrap.classList.toggle('expanded');
+              toggleBtn.querySelector('.pvl-insight-toggle-label').textContent = isExpanded ? '접기' : '인사이트 더보기';
+            };
+          }
+        })();
 
         // ── 교차 판정: 대선·지선 동시 상위권 + 유지율 → 핵심 텃밭 / 이반 위험 / 신흥 강세 (동 단위, 서울 전체) ──
         // 구 단위와 동일한 판정 기준: 서울 전체 동 중 상위 1/3을 '상위권'으로 보고,
@@ -7690,7 +8140,7 @@ function switchTab(tab, pushState = true) {
             var shown = list.slice(0, CHIP_CAP);
             var extra = list.length - shown.length;
             return '<div class="pvl-tier-card" data-tier="' + tierKey + '" style="border-left-color:'
-              + (tierKey === 'core' ? 'var(--orange)' : tierKey === 'core-watch' ? '#d97706' : tierKey === 'attrition' ? '#e11d48' : 'var(--green)')
+              + (tierKey === 'core' ? 'var(--orange)' : tierKey === 'core-watch' ? '#ca8a04' : tierKey === 'attrition' ? '#e11d48' : 'var(--green)')
               + ';">'
               + '<div class="pvl-tier-card-head"><span>' + icon + '</span><strong class="pvl-tier-badge ' + tierKey + '">' + title + '</strong><span class="pvl-tier-count">' + list.length + '개 동</span></div>'
               + '<div class="pvl-tier-card-desc">' + descText + '</div>'
@@ -7701,7 +8151,7 @@ function switchTab(tab, pushState = true) {
           }
 
           var html = '<div class="pvl-tier-grid">'
-            + dongCard('core', '핵심 텃밭', '🟧', '대선·지선 모두 서울 전체 상위 ' + dongTopN + '개 동 안에 들고 유지율도 평균(' + dongAvgKeep.toFixed(0) + '%) 이상 — 가장 안정적인 지지 기반')
+            + dongCard('core', '핵심 텃밭', '🟧', '대선·지선 모두 '+ _pvlRegion +' 전체 상위 ' + dongTopN + '개 동 안에 들고 유지율도 평균(' + dongAvgKeep.toFixed(0) + '%) 이상 — 가장 안정적인 지지 기반')
             + dongCard('core-watch', '텃밭(유지율 주의)', '🟡', '대선·지선 모두 상위권이지만 유지율은 평균 이하 — 절대 순위는 높아도 이반 신호가 있는 동')
             + dongCard('attrition', '이반 위험', '🔴', '대선 때는 상위권이었지만 지선에서 상위 ' + dongTopN + '개 동 밖으로 — 조직·기반 재정비가 필요한 동')
             + dongCard('emerging', '신흥 강세·공략 성공', '🟢', '대선 때는 상위권이 아니었지만 지선에서 상위 ' + dongTopN + '개 동 안으로 진입 — 향후 공략 우선순위로 참고할 동')
@@ -7717,7 +8167,7 @@ function switchTab(tab, pushState = true) {
           // 카드 클릭 → 서울 전체 모드로 전환 + 해당 유형만 동별 표 필터링 (다시 클릭하면 해제)
           tierElDong.querySelectorAll('.pvl-tier-card[data-tier]').forEach(function(cardEl) {
             cardEl.style.cursor = 'pointer';
-            cardEl.title = '클릭하면 서울 전체에서 이 유형 동만 표에서 필터링합니다 (다시 클릭하면 해제)';
+            cardEl.title = '클릭하면 '+ _pvlRegion +' 전체에서 이 유형 동만 표에서 필터링합니다 (다시 클릭하면 해제)';
             cardEl.addEventListener('click', function() {
               var key = cardEl.getAttribute('data-tier');
               if (currentDongTierFilter === key) {
@@ -7736,8 +8186,13 @@ function switchTab(tab, pushState = true) {
         })();
       })();
 
-      // 구 목록: rows(대선·지선 둘 다 있는 구)에 등장한 순서 그대로 사용
-      var guList = rows.map(function(r) { return r.name; });
+      // 구 목록: allDongRows의 고유 gu 값 순서대로 (화성시 경우 4개 구로 분리됨)
+      // rows(구별)는 화성시 합산 1행이지만, 동별 뷰는 4구 각각을 버튼으로 표시
+      var _guListSeen = {};
+      var guList = [];
+      allDongRows.forEach(function(r) {
+        if (!_guListSeen[r.gu]) { _guListSeen[r.gu] = true; guList.push(r.gu); }
+      });
       var currentGu = guList[0] || null;
 
       function renderGuBtns() {
@@ -7748,7 +8203,7 @@ function switchTab(tab, pushState = true) {
         var allBtn = document.createElement('button');
         allBtn.className = 'pvl-gu-btn' + (currentGu === ALL_GU ? ' active' : '');
         allBtn.textContent = '🗺 전체';
-        allBtn.title = '구 구분 없이 서울 전체 동을 한 번에 정렬해서 봅니다';
+        allBtn.title = '구 구분 없이 '+ _pvlRegion +' 전체 동을 한 번에 정렬해서 봅니다';
         allBtn.onclick = function() {
           currentGu = ALL_GU;
           renderGuBtns();
@@ -7803,12 +8258,14 @@ function switchTab(tab, pushState = true) {
           });
         } else {
           var presDongs = (presGrouped.groups[currentGu] || []);
-          var localDongs = (localGrouped.groups[currentGu] || []);
+          // localGrouped는 정규화된 이름이 키일 수 있으므로 역매핑으로 조회
+          var localGuKey = localGrouped.normToOrig[normalizeDistrictName(currentGu)] || currentGu;
+          var localDongs = (localGrouped.groups[localGuKey] || []);
 
           // absentee 모드: 동별 데이터 없음 → 구 전체 관외사전투표 1건만 표시
           if (vtype === 'absentee') {
             var pAbs = presAbsenteeMap[currentGu];
-            var lAbs = localAbsenteeMap[currentGu];
+            var lAbs = localAbsenteeMap[localGuKey] || localAbsenteeMap[currentGu];
             dongRows = [];
             if (pAbs && lAbs) {
               var pR = getNeighborhoodRate(pAbs, 'absentee');
@@ -7863,6 +8320,17 @@ function switchTab(tab, pushState = true) {
           dongRows = dongRows.filter(function(r) { return r.tier === currentDongTierFilter; });
         }
 
+        // 검색 필터 (동 이름 — 수백 행을 스크롤해야 하는 문제 보완)
+        if (_dongSearchQuery) {
+          var q = _dongSearchQuery.trim().toLowerCase();
+          if (q) {
+            dongRows = dongRows.filter(function(r) {
+              return (r.name && r.name.toLowerCase().indexOf(q) !== -1)
+                || (r.gu && r.gu.toLowerCase().indexOf(q) !== -1);
+            });
+          }
+        }
+
         // 정렬
         dongRows = sortDongRows(dongRows, currentDongSort);
 
@@ -7871,7 +8339,7 @@ function switchTab(tab, pushState = true) {
         if (summaryEl) {
           var pills = [];
           if (isAll) {
-            pills.push('<span class="pvl-pill">서울 전체 동 ' + dongRows.length + '개' + (currentDongTierFilter ? ' (유형 필터 적용)' : '') + '</span>');
+            pills.push('<span class="pvl-pill">'+ _pvlRegion +' 전체 동 ' + dongRows.length + '개' + (currentDongTierFilter ? ' (유형 필터 적용)' : '') + '</span>');
           } else {
             pills.push('<span class="pvl-pill">' + currentGu + ' 동 ' + dongRows.length + '개</span>');
             var guRow = rows.filter(function(r) { return r.name === currentGu; })[0];
@@ -7897,8 +8365,8 @@ function switchTab(tab, pushState = true) {
           var localStr = r.local !== null ? r.local.toFixed(2) + '%' : '—';
           var dStr = '—';
           if (r.delta !== null) {
-            if (r.delta > 0) dStr = '<span class="pvl-delta-pos">▼ ' + r.delta.toFixed(2) + '%p</span>';
-            else if (r.delta < 0) dStr = '<span class="pvl-delta-neg">▲ ' + Math.abs(r.delta).toFixed(2) + '%p</span>';
+            if (r.delta > 0) dStr = '<span class="pvl-delta-drop">▼ ' + r.delta.toFixed(2) + '%p</span>';
+            else if (r.delta < 0) dStr = '<span class="pvl-delta-rise">▲ ' + Math.abs(r.delta).toFixed(2) + '%p</span>';
             else dStr = '<span class="pvl-delta-zero">0.00%p</span>';
           }
           var tierStr = r.tier ? '<span class="pvl-tier-badge ' + r.tier + '">' + r.tierLabel + '</span>' : '—';
@@ -7930,7 +8398,7 @@ function switchTab(tab, pushState = true) {
       // 유형(교차 판정) → 강조 색상 매핑 — 카드 테두리 색과 동일한 팔레트
       function tierAccentColor(tier) {
         if (tier === 'core')       return 'var(--orange)';
-        if (tier === 'core-watch') return '#d97706';
+        if (tier === 'core-watch') return '#ca8a04';
         if (tier === 'attrition')  return '#e11d48';
         if (tier === 'emerging')   return 'var(--green)';
         if (tier === 'base')       return 'var(--border-strong)';
@@ -8022,6 +8490,25 @@ function switchTab(tab, pushState = true) {
         });
       });
 
+      // 동별 표 검색 바인딩 (수백 행 스크롤 탐색 보완 — 입력할 때마다 표를 즉시 필터링)
+      var dongSearchInput = document.getElementById('pvl-dong-search');
+      var dongSearchClear = document.getElementById('pvl-dong-search-clear');
+      if (dongSearchInput) {
+        dongSearchInput.addEventListener('input', function() {
+          _dongSearchQuery = dongSearchInput.value;
+          if (dongSearchClear) dongSearchClear.style.display = _dongSearchQuery ? '' : 'none';
+          renderDongTable();
+        });
+      }
+      if (dongSearchClear) {
+        dongSearchClear.addEventListener('click', function() {
+          _dongSearchQuery = '';
+          if (dongSearchInput) dongSearchInput.value = '';
+          dongSearchClear.style.display = 'none';
+          renderDongTable();
+        });
+      }
+
       // ── 산점도 ──────────────────────────────────────────
       var _scatterUnit = 'gu'; // 'gu' | 'dong'
       var pvlUseLog = false;
@@ -8038,6 +8525,13 @@ function switchTab(tab, pushState = true) {
       var _guColorMap = {}; // gu → color
       guList.forEach(function(gu, i) { _guColorMap[gu] = GU_COLORS[i % GU_COLORS.length]; });
 
+      // 대선 구 이름(예: '수원시장안구') → 지선 측 실제 키(예: '수원장안구')로 정규화 매핑
+      // (경기 지역은 대선 districts/neighborhoods가 '시' 포함 이름을 쓰고, 지선은 '시' 없는 이름을
+      //  쓰는 구가 많아 — 수원/성남/안양/부천/안산/고양/용인 등 — 그대로 키 매칭하면 누락된다)
+      function resolveLocalGu(presGuName) {
+        return localGrouped.normToOrig[normalizeDistrictName(presGuName)] || presGuName;
+      }
+
       function buildScatterData(unit) {
         var vtype = _scatterVoteType;
         if (unit === 'gu') {
@@ -8047,7 +8541,7 @@ function switchTab(tab, pushState = true) {
           if (vtype === 'absentee') {
             return rows.map(function(r) {
               var pAbs = presAbsenteeMap[r.name];
-              var lAbs = localAbsenteeMap[r.name];
+              var lAbs = localAbsenteeMap[resolveLocalGu(r.name)];
               if (!pAbs || !lAbs) return null;
               var pR = getNeighborhoodRate(pAbs, 'absentee');
               var lR = getNeighborhoodRate(lAbs, 'absentee');
@@ -8059,7 +8553,7 @@ function switchTab(tab, pushState = true) {
           // 동별 count 합산으로 계산
           return rows.map(function(r) {
             var pDongs = presGrouped.groups[r.name] || [];
-            var lDongs = localGrouped.groups[r.name] || [];
+            var lDongs = localGrouped.groups[resolveLocalGu(r.name)] || [];
             var lMap = {}; lDongs.forEach(function(d) { lMap[d.name] = d; });
             var sumPres = 0, sumPresCnt = 0, sumLocal = 0, sumLocalCnt = 0;
             pDongs.forEach(function(d) {
@@ -8088,7 +8582,7 @@ function switchTab(tab, pushState = true) {
           // 관외사전은 구 단위 1건씩만
           targetGus.forEach(function(gu) {
             var pAbs = presAbsenteeMap[gu];
-            var lAbs = localAbsenteeMap[gu];
+            var lAbs = localAbsenteeMap[resolveLocalGu(gu)];
             if (!pAbs || !lAbs) return;
             var pR = getNeighborhoodRate(pAbs, 'absentee');
             var lR = getNeighborhoodRate(lAbs, 'absentee');
@@ -8100,7 +8594,7 @@ function switchTab(tab, pushState = true) {
 
         targetGus.forEach(function(gu) {
           var pDongs = presGrouped.groups[gu] || [];
-          var lDongs = localGrouped.groups[gu] || [];
+          var lDongs = localGrouped.groups[resolveLocalGu(gu)] || [];
           var lMap = {};
           lDongs.forEach(function(d) { lMap[d.name] = d; });
           pDongs.forEach(function(d) {
@@ -8130,13 +8624,13 @@ function switchTab(tab, pushState = true) {
         el.style.display = 'flex';
         // 전체 버튼
         var allBtn = document.createElement('button');
-        allBtn.className = 'pvl-sort-btn' + (_scatterFilterGu === null ? ' active' : '');
+        allBtn.className = 'pvl-filter-btn' + (_scatterFilterGu === null ? ' active' : '');
         allBtn.textContent = '전체';
         allBtn.onclick = function() { _scatterFilterGu = null; renderScatter(unit); };
         el.appendChild(allBtn);
         guList.forEach(function(gu) {
           var btn = document.createElement('button');
-          btn.className = 'pvl-sort-btn' + (_scatterFilterGu === gu ? ' active' : '');
+          btn.className = 'pvl-filter-btn' + (_scatterFilterGu === gu ? ' active' : '');
           btn.style.borderLeft = '3px solid ' + (_guColorMap[gu] || 'var(--border)');
           btn.textContent = gu;
           btn.onclick = function() { _scatterFilterGu = (_scatterFilterGu === gu ? null : gu); renderScatter(unit); };
@@ -8166,7 +8660,7 @@ function switchTab(tab, pushState = true) {
           ? function(v) { return Math.log10(Math.max(v, 0.01)); }
           : function(v) { return v; };
 
-        // 로그 OFF: X(21대 대선) 0~20%, Y(9회 지선) 0~10% 고정 범위
+        // 로그 OFF: X=대선, Y=지선 각각 데이터 max 기준 자동 상한 (서울/경기 모두 대응)
         // 로그 ON: 기존처럼 데이터 범위에 맞춘 동일 도메인(대각선 비교용)
         var xDomainRaw, yDomainRaw, xDomTr, yDomTr;
         if (pvlUseLog) {
@@ -8177,8 +8671,13 @@ function switchTab(tab, pushState = true) {
           xDomTr = [domMin, domMax];
           yDomTr = [domMin, domMax];
         } else {
-          xDomainRaw = [0, 20];
-          yDomainRaw = [0, 10];
+          // X: 대선 max, Y: 지선 max 각각 계산 후 올림 처리
+          var xDataMax = d3.max(data, function(d){ return d.pres; }) || 20;
+          var yDataMax = d3.max(data, function(d){ return d.local; }) || 10;
+          var xCeil = Math.ceil(xDataMax / 5) * 5;  // 5% 단위 올림
+          var yCeil = Math.ceil(yDataMax / 5) * 5;
+          xDomainRaw = [0, Math.max(xCeil, 5)];
+          yDomainRaw = [0, Math.max(yCeil, 5)];
           xDomTr = xDomainRaw;
           yDomTr = yDomainRaw;
         }
@@ -8195,7 +8694,7 @@ function switchTab(tab, pushState = true) {
           .style('overflow', 'visible');
         var g = svg.append('g').attr('transform', 'translate(' + mL + ',' + mT + ')');
 
-        // 고정 범위(X 0~20%, Y 0~10%)를 벗어나는 점/선이 차트 밖으로 새지 않도록 클리핑
+        // 범위를 벗어나는 점/선이 차트 밖으로 새지 않도록 클리핑
         var clipId = 'pvl-scatter-clip-' + unit;
         svg.append('defs').append('clipPath').attr('id', clipId)
           .append('rect').attr('x', 0).attr('y', 0).attr('width', iW).attr('height', iH);
@@ -8374,9 +8873,9 @@ function switchTab(tab, pushState = true) {
       }
 
       // 단위 토글 버튼 바인딩
-      document.querySelectorAll('#pvl-scatter-unit-btns .pvl-sort-btn').forEach(function(btn) {
+      document.querySelectorAll('#pvl-scatter-unit-btns .pvl-filter-btn').forEach(function(btn) {
         btn.addEventListener('click', function() {
-          document.querySelectorAll('#pvl-scatter-unit-btns .pvl-sort-btn').forEach(function(b) { b.classList.remove('active'); });
+          document.querySelectorAll('#pvl-scatter-unit-btns .pvl-filter-btn').forEach(function(b) { b.classList.remove('active'); });
           btn.classList.add('active');
           _scatterUnit = btn.dataset.unit;
           renderScatter(_scatterUnit);
@@ -8395,18 +8894,12 @@ function switchTab(tab, pushState = true) {
       }
 
       // ── 산점도 투표유형 필터 버튼 바인딩 ──
-      document.querySelectorAll('#pvl-scatter-vote-type-btns .pvl-sort-btn').forEach(function(btn) {
+      document.querySelectorAll('#pvl-scatter-vote-type-btns .pvl-filter-btn').forEach(function(btn) {
         btn.addEventListener('click', function() {
-          document.querySelectorAll('#pvl-scatter-vote-type-btns .pvl-sort-btn').forEach(function(b) {
+          document.querySelectorAll('#pvl-scatter-vote-type-btns .pvl-filter-btn').forEach(function(b) {
             b.classList.remove('active');
-            b.style.background = 'transparent';
-            b.style.color = 'var(--text2)';
-            b.style.boxShadow = 'none';
           });
           btn.classList.add('active');
-          btn.style.background = 'var(--surface)';
-          btn.style.color = 'var(--text)';
-          btn.style.boxShadow = '0 1px 3px rgba(0,0,0,0.07)';
           _scatterVoteType = btn.dataset.svtype;
           var noteEl = document.getElementById('pvl-scatter-vtype-note');
           if (noteEl) {
@@ -8421,18 +8914,12 @@ function switchTab(tab, pushState = true) {
       });
 
       // ── 동별 비교 투표유형 필터 버튼 바인딩 ──
-      document.querySelectorAll('#pvl-dong-vote-type-btns .pvl-sort-btn').forEach(function(btn) {
+      document.querySelectorAll('#pvl-dong-vote-type-btns .pvl-filter-btn').forEach(function(btn) {
         btn.addEventListener('click', function() {
-          document.querySelectorAll('#pvl-dong-vote-type-btns .pvl-sort-btn').forEach(function(b) {
+          document.querySelectorAll('#pvl-dong-vote-type-btns .pvl-filter-btn').forEach(function(b) {
             b.classList.remove('active');
-            b.style.background = 'transparent';
-            b.style.color = 'var(--text2)';
-            b.style.boxShadow = 'none';
           });
           btn.classList.add('active');
-          btn.style.background = 'var(--surface)';
-          btn.style.color = 'var(--text)';
-          btn.style.boxShadow = '0 1px 3px rgba(0,0,0,0.07)';
           _dongVoteType = btn.dataset.vtype;
           // 관외사전 선택시 헤더 열 업데이트
           var thPres = document.querySelector('#pvl-dong-table thead th:nth-child(3)');
