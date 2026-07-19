@@ -4925,6 +4925,898 @@
     color: #fff;
   }
 
+  /* ── COST TAB (선거비용) ── */
+  .cost-intro-box {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 14px 16px;
+    margin-bottom: 20px;
+  }
+
+  .cost-intro-title {
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 5px;
+  }
+
+  .cost-intro-text {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.7;
+    color: var(--text2);
+  }
+
+  .cost-intro-text strong {
+    color: var(--text);
+    font-weight: 700;
+  }
+
+  .cost-section-title {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    color: var(--text2);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .cost-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  @media (min-width: 640px) {
+    .cost-summary-grid { grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  }
+
+  .cost-summary-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 18px;
+    transition: background 0.3s;
+  }
+
+  .cost-summary-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text3);
+    letter-spacing: 0.01em;
+    margin-bottom: 8px;
+  }
+
+  .cost-summary-value {
+    font-size: clamp(18px, 3.2vw, 24px);
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    color: var(--text);
+    line-height: 1.15;
+  }
+
+  .cost-summary-unit {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text3);
+    margin-left: 2px;
+  }
+
+  .cost-summary-sub {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text3);
+    margin-top: 6px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .cost-wl-card {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 18px 20px;
+    margin-bottom: 24px;
+    transition: background 0.3s;
+  }
+
+  .cost-wl-title {
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+
+  .cost-wl-sub {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text3);
+    margin-bottom: 14px;
+  }
+
+  .cost-wl-rows {
+    display: grid;
+    gap: 10px;
+  }
+
+  .cost-wl-row {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .cost-wl-label {
+    font-size: 11.5px;
+    font-weight: 700;
+    color: var(--text3);
+  }
+
+  .cost-wl-figure {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  .cost-wl-figure .tag {
+    font-size: 10px;
+    font-weight: 700;
+    margin-right: 5px;
+    padding: 1px 6px;
+    border-radius: 6px;
+  }
+
+  .cost-wl-figure.winner { color: var(--orange); }
+  .cost-wl-figure.winner .tag { background: var(--orange-light); color: var(--orange-dark); }
+  .cost-wl-figure.loser { color: var(--text2); }
+  .cost-wl-figure.loser .tag { background: var(--surface2); color: var(--text3); }
+
+  /* ── 하이라이트 랭킹 + 사용률 분포 히스토그램 ── */
+  .cost-insight-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  @media (min-width: 900px) {
+    .cost-insight-grid { grid-template-columns: 1.1fr 0.9fr; align-items: start; }
+  }
+
+  .cost-insight-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 18px 20px;
+  }
+
+  .cost-insight-title {
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 2px;
+  }
+
+  .cost-insight-sub {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text3);
+    margin-bottom: 14px;
+  }
+
+  .cost-rank-block + .cost-rank-block {
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+  }
+
+  .cost-rank-block-title {
+    font-size: 11.5px;
+    font-weight: 800;
+    color: var(--text2);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .cost-rank-list {
+    display: grid;
+    gap: 8px;
+  }
+
+  .cost-rank-item {
+    display: grid;
+    grid-template-columns: 20px 1fr auto;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .cost-rank-num {
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--text3);
+    text-align: center;
+  }
+
+  .cost-rank-name-wrap {
+    min-width: 0;
+  }
+
+  .cost-rank-name {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .cost-rank-region {
+    font-size: 10.5px;
+    font-weight: 600;
+    color: var(--text3);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .cost-rank-value {
+    font-size: 12.5px;
+    font-weight: 800;
+    color: var(--orange-dark);
+    white-space: nowrap;
+    text-align: right;
+  }
+
+  .cost-rank-value.bad {
+    color: #dc2626;
+  }
+
+  .cost-rank-value.good {
+    color: var(--emerald);
+  }
+
+  .cost-rank-empty {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text3);
+    padding: 6px 0;
+  }
+
+  /* 히스토그램 */
+  .cost-hist-bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    height: 130px;
+    margin-top: 4px;
+  }
+
+  .cost-hist-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    justify-content: flex-end;
+    gap: 6px;
+  }
+
+  .cost-hist-count {
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--text2);
+  }
+
+  .cost-hist-bar {
+    width: 100%;
+    max-width: 34px;
+    border-radius: 5px 5px 2px 2px;
+    background: var(--orange);
+    transition: height 0.5s ease;
+    min-height: 3px;
+  }
+
+  .cost-hist-bar.over { background: #dc2626; }
+
+  .cost-hist-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--text3);
+    text-align: center;
+    line-height: 1.3;
+  }
+
+  .cost-sort-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+  }
+
+  .cost-sort-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text3);
+    flex-shrink: 0;
+  }
+
+  .cost-sort-select {
+    flex: 1;
+    max-width: 240px;
+    padding: 10px 14px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  @media (max-width: 480px) {
+    .cost-sort-wrap {
+      align-items: stretch;
+    }
+    .cost-sort-label {
+      width: 100%;
+    }
+    .cost-sort-select {
+      flex: 1 1 100%;
+      max-width: none;
+      order: 1;
+    }
+    .cost-view-toggle {
+      margin-left: 0;
+      width: 100%;
+      order: 2;
+    }
+    .cost-view-toggle .cost-view-btn {
+      flex: 1;
+      text-align: center;
+    }
+  }
+
+  .cost-view-toggle {
+    display: flex;
+    gap: 4px;
+    margin-left: auto;
+    background: var(--surface2);
+    border-radius: var(--radius-md);
+    padding: 3px;
+    flex-shrink: 0;
+  }
+
+  .cost-view-btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text3);
+    padding: 7px 12px;
+    border-radius: calc(var(--radius-md) - 3px);
+    transition: background 0.2s, color 0.2s;
+    white-space: nowrap;
+  }
+
+  .cost-view-btn.active {
+    background: var(--ui-active);
+    color: var(--ui-active-text);
+  }
+
+  .cost-table-wrap {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    /* 표 폭을 본문(main) 최대폭 제약 밖으로 늘려서 셀 줄바꿈 없이 표시 */
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(100vw - 24px, 1760px);
+  }
+
+  @media (min-width: 768px) {
+    .cost-table-wrap { width: min(100vw - 56px, 1760px); }
+  }
+
+  .cost-table-scroll {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .cost-table {
+    width: 100%;
+    table-layout: auto;
+    border-collapse: collapse;
+    font-size: clamp(10px, 1.05vw, 13px);
+    white-space: nowrap;
+  }
+
+  .cost-table-th {
+    background: var(--surface2);
+    color: var(--text2);
+    font-size: clamp(9.5px, 0.95vw, 11.5px);
+    font-weight: 800;
+    text-align: right;
+    padding: 10px 12px;
+    cursor: pointer;
+    user-select: none;
+    border-bottom: 1px solid var(--border-strong);
+    transition: color 0.15s, background 0.15s;
+    line-height: 1.3;
+    white-space: nowrap;
+  }
+
+  .cost-table-th:hover { color: var(--text); }
+  .cost-table-th.active { color: var(--blue); background: rgba(37,99,235,0.08); }
+
+  .cost-table-th:first-child,
+  .cost-table-td:first-child {
+    text-align: left;
+    width: 1%;
+    white-space: nowrap;
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    box-shadow: 1px 0 0 var(--border-strong);
+  }
+
+  .cost-table-th:first-child { z-index: 2; }
+
+
+  .cost-table-td:first-child { background: var(--surface); }
+  .cost-table-row:nth-child(even) .cost-table-td:first-child { background: var(--surface2); }
+  .cost-table-row.winner .cost-table-td:first-child { background: var(--orange-light); }
+
+  .cost-table-td {
+    padding: 10px 12px;
+    text-align: right;
+    border-bottom: 1px solid var(--border);
+    color: var(--text2);
+    white-space: nowrap;
+  }
+
+  .cost-table-td.num { font-variant-numeric: tabular-nums; font-weight: 700; color: var(--text); }
+  .cost-table-td.sorted { background: rgba(37,99,235,0.08); color: var(--blue); }
+
+  .cost-table-row:nth-child(even) .cost-table-td { background: var(--surface2); }
+  .cost-table-row.winner .cost-table-td { background: var(--orange-light); }
+  .cost-table-row:hover .cost-table-td { filter: brightness(0.97); }
+
+  .cost-table-name {
+    font-size: clamp(11px, 1.15vw, 13.5px);
+    font-weight: 800;
+    color: var(--text);
+    white-space: nowrap;
+  }
+
+  .cost-table-region {
+    font-size: clamp(9px, 0.9vw, 10.5px);
+    font-weight: 600;
+    color: var(--text3);
+    margin-top: 1px;
+    white-space: nowrap;
+  }
+
+  .cost-table-winner-dot { color: var(--orange); font-size: 10px; }
+
+  .cost-table-th-inner {
+    justify-content: flex-end;
+  }
+
+  .cost-table-th .cost-info-icon {
+    background: var(--surface);
+    border-color: var(--border-strong);
+  }
+
+  .cost-table-th.active .cost-info-icon {
+    background: var(--surface);
+    color: var(--orange-dark);
+    border-color: rgba(255,102,0,0.3);
+  }
+
+  @media (max-width: 480px) {
+    .cost-table-th,
+    .cost-table-td {
+      padding: 8px 8px;
+    }
+  }
+
+  .cost-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  @media (min-width: 768px) {
+    .cost-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  }
+
+  .cost-scatter-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 18px;
+  }
+
+  .cost-scatter-note {
+    margin-bottom: 14px;
+    padding: 14px 16px;
+    background: var(--surface2);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    font-size: 12px;
+    line-height: 1.75;
+    color: var(--text2);
+  }
+
+  .cost-scatter-note-title {
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 4px;
+    font-size: 13px;
+  }
+
+  .cost-scatter-legend {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 8px;
+  }
+
+  .cost-scatter-legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11.5px;
+    font-weight: 700;
+    color: var(--text3);
+  }
+
+  .cost-scatter-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .cost-scatter-dot.winner { background: var(--orange); }
+  .cost-scatter-dot.loser  { background: var(--blue); }
+
+
+  .cost-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 18px 20px;
+    transition: border-color 0.2s, box-shadow 0.2s, background 0.3s;
+  }
+
+  .cost-card:hover {
+    border-color: rgba(255,102,0,0.35);
+    box-shadow: 0 8px 32px rgba(255,102,0,0.10);
+  }
+
+  .cost-card.winner {
+    border-color: var(--orange);
+  }
+
+  .cost-card-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+
+  .cost-card-type {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--orange);
+    margin-bottom: 3px;
+  }
+
+  .cost-card-name {
+    font-size: 17px;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .cost-card-region {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text3);
+    margin-top: 2px;
+  }
+
+  .cost-card-badges {
+    flex-shrink: 0;
+  }
+
+  .cost-usage-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+
+  .cost-usage-row.has-over {
+    margin-bottom: 6px;
+  }
+
+  .cost-usage-over-row {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 14px;
+  }
+
+  .cost-usage-over-tag {
+    font-size: 10.5px;
+    font-weight: 800;
+    color: #fff;
+    background: #dc2626;
+    padding: 2px 7px;
+    border-radius: 6px;
+    letter-spacing: -0.01em;
+  }
+
+  .cost-usage-track {
+    flex: 1;
+    height: 8px;
+    border-radius: 4px;
+    background: var(--surface2);
+    overflow: hidden;
+  }
+
+  .cost-usage-fill {
+    height: 100%;
+    border-radius: 4px;
+    background: var(--orange);
+    transition: width 0.6s ease;
+  }
+
+  .cost-usage-fill.over {
+    background: repeating-linear-gradient(
+      135deg,
+      #dc2626,
+      #dc2626 5px,
+      #b91c1c 5px,
+      #b91c1c 10px
+    );
+  }
+
+  .cost-usage-pct.over { color: #dc2626; }
+
+  .cost-usage-pct {
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--text);
+    flex-shrink: 0;
+    min-width: 52px;
+    text-align: right;
+  }
+
+  .cost-headline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px 14px;
+    background: var(--surface2);
+    border-radius: var(--radius-md);
+    padding: 12px 16px;
+    margin-bottom: 16px;
+  }
+
+  .cost-headline-main {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+
+  .cost-headline-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text3);
+  }
+
+  .cost-headline-value {
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    color: var(--orange-dark);
+  }
+
+  .cost-headline-rank {
+    font-size: 11.5px;
+    font-weight: 700;
+    color: var(--text3);
+  }
+
+  .cost-group {
+    margin-bottom: 14px;
+  }
+
+  .cost-group:last-child {
+    margin-bottom: 0;
+  }
+
+  .cost-group-title {
+    font-size: 10px;
+    font-weight: 800;
+    color: var(--text3);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding-bottom: 6px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .cost-group.reimb .cost-group-title {
+    color: var(--orange-dark);
+    border-bottom-color: rgba(255,102,0,0.25);
+  }
+
+  .cost-group-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 14px;
+  }
+
+  .cost-metric {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .cost-metric-label {
+    font-size: 10.5px;
+    font-weight: 700;
+    color: var(--text3);
+  }
+
+  .cost-metric-value {
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--text);
+    letter-spacing: -0.01em;
+  }
+
+  .cost-group.reimb .cost-metric-value {
+    color: var(--orange-dark);
+  }
+
+  .cost-group.derived .cost-metric-value {
+    color: var(--text2);
+    font-weight: 700;
+  }
+
+  /* ── 선거비용 지표 ⓘ 툴팁 (hover / tap) ── */
+  .cost-info-wrap {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    position: relative;
+  }
+
+  .cost-info-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: var(--surface2);
+    color: var(--text3);
+    font-size: 9px;
+    font-weight: 800;
+    line-height: 1;
+    border: 1px solid var(--border);
+    cursor: pointer;
+    padding: 0;
+    flex-shrink: 0;
+    font-family: inherit;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .cost-headline-main .cost-info-icon {
+    width: 14px;
+    height: 14px;
+    background: rgba(255,102,0,0.12);
+    color: var(--orange-dark);
+    border-color: rgba(255,102,0,0.3);
+  }
+
+  .cost-info-icon:hover,
+  .cost-info-icon.open {
+    background: var(--orange);
+    color: #fff;
+    border-color: var(--orange);
+  }
+
+  .cost-info-tooltip {
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 7px);
+    transform: translateX(-50%) translateY(4px);
+    width: max-content;
+    min-width: 150px;
+    max-width: 220px;
+    background: var(--text);
+    color: var(--bg);
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.45;
+    padding: 8px 10px;
+    border-radius: 8px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity .15s ease, transform .15s ease;
+    z-index: 60;
+    text-align: left;
+    white-space: normal;
+  }
+
+  .cost-info-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-top-color: var(--text);
+  }
+
+  .cost-info-icon:hover .cost-info-tooltip,
+  .cost-info-icon.open .cost-info-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+    pointer-events: auto;
+  }
+
+  @media (hover: none) {
+    .cost-info-icon:hover .cost-info-tooltip { opacity: 0; visibility: hidden; }
+  }
+
+  /* 표 헤더의 ⓘ는 표 맨 위에 붙어 있어 위로 뜨는 툴팁이
+     .cost-table-wrap(overflow:hidden)에 가려지므로 아래쪽으로 표시 */
+  .cost-table-th .cost-info-tooltip {
+    bottom: auto;
+    top: calc(100% + 7px);
+    transform: translateX(-50%) translateY(-4px);
+  }
+
+  .cost-table-th .cost-info-tooltip::after {
+    top: auto;
+    bottom: 100%;
+    border-top-color: transparent;
+    border-bottom-color: var(--text);
+  }
+
+  .cost-table-th .cost-info-icon:hover .cost-info-tooltip,
+  .cost-table-th .cost-info-icon.open .cost-info-tooltip {
+    transform: translateX(-50%) translateY(0);
+  }
+
 </style>
 </head>
 <body>
@@ -4965,6 +5857,11 @@
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
       <span class="label-mobile">후보</span>
       <span class="label-desktop">후보자별 결과</span>
+    </button>
+    <button class="nav-btn" id="nav-btn-cost" data-tab="cost" role="tab" aria-selected="false" aria-controls="tab-cost">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+      <span class="label-mobile">비용</span>
+      <span class="label-desktop">선거비용</span>
     </button>
     <button class="nav-btn" id="nav-btn-compare" data-tab="compare" role="tab" aria-selected="false" aria-controls="tab-compare">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
@@ -6765,6 +7662,83 @@ function smInit(){
     <div class="filter-bar" id="filter-bar"></div>
     <div class="cand-grid" id="cand-grid"></div>
   </div>
+
+  <!-- ── COST (선거비용) ── -->
+  <div id="tab-cost" class="tab-content" role="tabpanel" aria-labelledby="nav-btn-cost">
+    <div class="cost-intro-box">
+      <div class="cost-intro-title">💡 선거비용 제한액이란?</div>
+      <div class="cost-intro-text">
+        공직선거법에 따라 후보자별로 쓸 수 있는 선거비용의 법정 상한액이에요. 지역구 크기·인구수에 따라 후보마다 금액이 다르고,
+        상한액을 넘겨 지출하면 당선무효 등 불이익을 받을 수 있어요. 아래 <strong>사용률</strong>은 이 상한액 대비 실제 지출 비율,
+        <strong>효율성 지수</strong>는 쓴 비용 대비 얻은 표(득표율 ÷ 사용률)를 나타내는 값이에요.
+      </div>
+    </div>
+
+    <div class="cost-section-title">📊 선거비용 전체 요약</div>
+    <div class="cost-summary-grid" id="cost-summary-grid"></div>
+    <div id="cost-wl-compare"></div>
+
+    <div class="cost-insight-grid">
+      <div id="cost-top5"></div>
+      <div id="cost-histogram"></div>
+    </div>
+
+    <!-- 검색창 -->
+    <div class="search-wrap">
+      <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input class="search-input" id="cost-search" type="search" placeholder="이름 또는 지역으로 검색…" autocomplete="off" />
+      <button class="search-clear" id="cost-search-clear" aria-label="검색어 지우기">✕</button>
+    </div>
+    <div class="search-result-count" id="cost-search-result-count" style="display:none"></div>
+
+    <div class="sido-filter-bar" id="cost-sido-filter-bar"></div>
+    <div class="filter-bar" id="cost-filter-bar"></div>
+
+    <div class="cost-sort-wrap">
+      <span class="cost-sort-label">정렬</span>
+      <select class="cost-sort-select" id="cost-sort-select" aria-label="선거비용 정렬 기준">
+        <optgroup label="기본">
+          <option value="default">득표율 높은순</option>
+        </optgroup>
+        <optgroup label="사용률">
+          <option value="usage-desc">사용률 높은순</option>
+          <option value="usage-asc">사용률 낮은순</option>
+        </optgroup>
+        <optgroup label="비용 효율">
+          <option value="cost-per-vote-asc">1표당 비용 낮은순</option>
+          <option value="cost-per-vote-desc">1표당 비용 높은순</option>
+          <option value="efficiency-desc">효율성 지수 높은순</option>
+          <option value="productivity-desc">1억원당 득표수 높은순</option>
+        </optgroup>
+        <optgroup label="지출액">
+          <option value="spent-desc">지출액 많은순</option>
+          <option value="spent-asc">지출액 적은순</option>
+        </optgroup>
+      </select>
+      <div class="cost-view-toggle" id="cost-view-toggle" role="tablist" aria-label="선거비용 보기 방식">
+        <button class="cost-view-btn active" data-cost-view="card" role="tab" aria-selected="true">🗂 카드형</button>
+        <button class="cost-view-btn" data-cost-view="table" role="tab" aria-selected="false">📊 비교표</button>
+        <button class="cost-view-btn" data-cost-view="scatter" role="tab" aria-selected="false">📈 산점도</button>
+      </div>
+    </div>
+
+    <div class="cost-grid" id="cost-grid"></div>
+    <div class="cost-table-wrap" id="cost-table-wrap" style="display:none"></div>
+    <div class="cost-scatter-card" id="cost-scatter-wrap" style="display:none">
+      <div class="cost-scatter-note">
+        <div class="cost-scatter-note-title">📈 산점도 읽는 법</div>
+        가로축은 <strong>제한액 사용률</strong>, 세로축은 <strong>득표율</strong>입니다. 점선은 현재 목록의 평균값 기준선이에요.
+        <strong style="color:var(--emerald)">왼쪽 위(적게 쓰고 많이 득표)</strong>에 가까울수록 예산 대비 효율이 좋고,
+        <strong style="color:#dc2626">오른쪽 아래(많이 쓰고 적게 득표)</strong>에 가까울수록 비효율적이라는 뜻이에요.
+      </div>
+      <div class="cost-scatter-legend">
+        <span class="cost-scatter-legend-item"><span class="cost-scatter-dot winner"></span>당선</span>
+        <span class="cost-scatter-legend-item"><span class="cost-scatter-dot loser"></span>낙선</span>
+      </div>
+      <div id="cost-scatter-svg-wrap"></div>
+    </div>
+    <div id="cost-scatter-tooltip" style="position:fixed;display:none;background:var(--surface);border:1px solid var(--border-strong);border-radius:10px;padding:10px 13px;font-size:12px;line-height:1.65;z-index:300;pointer-events:none;box-shadow:0 4px 20px rgba(0,0,0,0.12);max-width:210px;"></div>
+  </div>
 </main>
 
 <!-- Cross-comparison scatter tooltip -->
@@ -6823,7 +7797,7 @@ function smInit(){
 window.candidates = window.candidates || [];
 </script>
 <script src="can.js" onerror="console.warn('can.js not found, using empty candidates')"></script>
-<script src="results.js?v=0611.01" onerror="console.warn('results.js not found, skipping results')" onload="window._resultsLoaded = true"></script>
+<script src="results.js?v=0611.02" onerror="console.warn('results.js not found, skipping results')" onload="window._resultsLoaded = true"></script>
 <script src="gaehyeoksindang_seoul_gwangyeok.js" onerror="console.warn('gaehyeoksindang_seoul_gwangyeok.js not found')"></script>
 <script src="gaehyeoksindang_gyeonggi_gwangyeok.js" onerror="console.warn('gaehyeoksindang_gyeonggi_gwangyeok.js not found')"></script>
 <script src="renderCompare.js?v=0611.01" onerror="console.warn('renderCompare.js not found')"></script>
@@ -6991,6 +7965,12 @@ let filterType       = '전체';
 let filterSido       = '전체';   // 시도별 필터
 let sortOrder        = 'default';
 let searchQuery      = '';
+let costFilterType   = '전체';
+let costFilterSido   = '전체';
+let costSortOrder    = 'default';
+let costSearchQuery  = '';
+let costViewMode     = 'card';   // 'card' | 'table' | 'scatter'
+let costTableSort    = { key: 'rate', dir: 'desc' };
 let isDark           = false;
 let modalItem        = null;
 let isProportionalModal = false;
@@ -7022,6 +8002,7 @@ const PAGE_META = {
   home: { title:'개혁 2026 리포트', desc:'제9회 전국동시지방선거 개혁신당의 역사적인 도전과 기록을 데이터로 분석합니다.' },
   proportional: { title:'비례대표 득표 성과', desc:'광역 및 기초의회 진출의 핵심인 정당 득표 현황과 전략 지역 분석 데이터입니다.' },
   candidates: { title:'후보자별 상세 결과', desc:'전국 각지에서 개혁의 가치를 걸고 뛴 후보자들의 최종 성적표와 지역별 표심 분석입니다.' },
+  cost: { title:'선거비용 분석', desc:'후보자별 선거비용 제한액·지출액과 득표 성과를 견주어 비용 효율성을 살펴봅니다.' },
   compare: { title:'주요 후보 비교', desc:'광역단체장 주요 후보의 득표율을 지역·단위별로 비교하고, 광역비례 정당 득표율과 교차 분석합니다.' },
 };
 
@@ -7057,6 +8038,22 @@ function switchTab(tab, pushState = true) {
     if (cnt) cnt.style.display = 'none';
     renderCandidates();
     setTimeout(() => runCountUpsIn(document.getElementById('tab-candidates')), 100);
+  }
+  if (tab === 'cost') {
+    costFilterType   = '전체';
+    costFilterSido   = '전체';
+    costSortOrder    = 'default';
+    costSearchQuery  = '';
+    const cinp = document.getElementById('cost-search');
+    if (cinp) cinp.value = '';
+    const cclr = document.getElementById('cost-search-clear');
+    if (cclr) cclr.classList.remove('visible');
+    const ccnt = document.getElementById('cost-search-result-count');
+    if (ccnt) ccnt.style.display = 'none';
+    const csel = document.getElementById('cost-sort-select');
+    if (csel) csel.value = 'default';
+    renderCostTab();
+    setTimeout(() => runCountUpsIn(document.getElementById('tab-cost')), 100);
   }
   if (tab === 'home') {
     if (typeof renderHomeStats === 'function') renderHomeStats();
@@ -10746,6 +11743,680 @@ function buildCandCardHTML(c) {
     </div>`;
 }
 
+// ── COST (선거비용) ─────────────────────────────────────
+// 라벨 옆에 붙는 ⓘ 공식/설명 툴팁 (hover: 데스크톱, tap: 모바일)
+function costInfoIcon(text) {
+  return `<button type="button" class="cost-info-icon" aria-label="설명 보기" onclick="event.stopPropagation(); this.classList.toggle('open');">ⓘ<span class="cost-info-tooltip">${escapeHTML(text)}</span></button>`;
+}
+
+function formatWon(n) {
+  if (n == null || !isFinite(n)) return '-';
+  return Math.round(n).toLocaleString() + '원';
+}
+
+function computeCostMetrics(c) {
+  const limit = c.costLimit, spent = c.costSpent, votes = c.totalVotes, rate = c.voteRate;
+  const usageRate     = (limit > 0) ? (spent / limit) * 100 : null;      // 제한액 사용률(%)
+  const costPerVote   = (votes > 0) ? spent / votes : null;              // 1표당 비용(원/표)
+  const votesPerEok   = (spent > 0) ? votes / (spent / 1e8) : null;      // 1억원당 득표수(표/억원)
+  const efficiency    = (usageRate > 0) ? (rate / usageRate) * 100 : null;  // 예산 효율성 지수((득표율÷사용률)×100)
+
+  // 순부담액 — 선거비용 보전(전액/반액)을 제외하고 후보가 실제로 부담한 금액
+  const reimb        = getReimb(rate, c.result);
+  const reimbRatio    = reimb ? (reimb.label === '전액 보전' ? 1 : 0.5) : 0;
+  const reimbAmount   = spent * reimbRatio;
+  const netCost       = spent - reimbAmount;
+  const netCostPerVote = (votes > 0) ? netCost / votes : null;           // 순부담 1표당 비용(원/표)
+
+  return { limit, spent, votes, rate, usageRate, costPerVote, votesPerEok, efficiency, reimbRatio, reimbAmount, netCost, netCostPerVote };
+}
+
+// ── 유형(직급)별 예산 효율성 상대 순위·백분위 ─────────────────────
+function computeCostTypeRanks() {
+  const all = getCostCandidates();
+  const groups = {};
+  all.forEach(c => {
+    const eff = computeCostMetrics(c).efficiency;
+    if (eff == null) return;
+    (groups[c.type] = groups[c.type] || []).push({ id: c.id, eff });
+  });
+  const rankMap = new Map();
+  Object.values(groups).forEach(arr => {
+    const sorted = [...arr].sort((a, b) => b.eff - a.eff);
+    const total = sorted.length;
+    sorted.forEach((x, i) => {
+      rankMap.set(x.id, { rank: i + 1, total, percentile: ((i + 1) / total) * 100 });
+    });
+  });
+  return rankMap;
+}
+
+let costTypeRankMap = new Map();
+
+function getCostCandidates() {
+  return CANDIDATES.filter(c => c.costLimit != null && c.costSpent != null);
+}
+
+function buildCostCardHTML(c) {
+  const m = computeCostMetrics(c);
+  const isWinner = c.result === '당선';
+  const reimb    = getReimb(c.voteRate, c.result);
+  const rankInfo = costTypeRankMap.get(c.id);
+
+  const winnerBadge = isWinner ? `<span class="badge-winner">✓ 당선 확정</span>` : '';
+  const reimbBadge  = reimb ? `<span class="badge-reimb badge-${escapeHTML(reimb.cls)}">${escapeHTML(reimb.label)}</span>` : '';
+
+  const usagePct   = m.usageRate != null ? m.usageRate : 0;
+  const usageWidth = Math.min(usagePct, 100).toFixed(1);
+  const isOver      = usagePct > 100;
+  const overClass   = isOver ? 'over' : '';
+  const overTagHTML = isOver ? `<span class="cost-usage-over-tag">${(usagePct - 100).toFixed(1)}%p 초과</span>` : '';
+
+  const rankText = rankInfo
+    ? `${escapeHTML(c.type)} 내 ${rankInfo.rank}위 / ${rankInfo.total}명 · 상위 ${rankInfo.percentile.toFixed(0)}%`
+    : `${escapeHTML(c.type)} 내 순위 데이터 없음`;
+
+  const isHalfReimb = !!(reimb && reimb.label === '반액 보전');
+  const reimbGroupHTML = isHalfReimb ? `
+      <div class="cost-group reimb">
+        <div class="cost-group-title">보전 반영 · 실질 부담</div>
+        <div class="cost-group-grid">
+          <div class="cost-metric">
+            <span class="cost-info-wrap">
+              <span class="cost-metric-label">순부담액</span>
+              ${costInfoIcon('실제 지출액에서 선거비용 보전금(반액)을 뺀 금액. 반액 보전 후보에게만 표시됩니다.')}
+            </span>
+            <span class="cost-metric-value">${formatWon(m.netCost)}</span>
+          </div>
+          <div class="cost-metric">
+            <span class="cost-info-wrap">
+              <span class="cost-metric-label">순부담 1표당 비용</span>
+              ${costInfoIcon('순부담액 ÷ 득표수. 반액 보전 후보에게만 표시됩니다.')}
+            </span>
+            <span class="cost-metric-value">${formatWon(m.netCostPerVote)}</span>
+          </div>
+        </div>
+      </div>` : '';
+
+  return `
+    <div class="cost-card ${isWinner ? 'winner' : ''}" data-cand-id="${escapeHTML(String(c.id))}">
+      <div class="cost-card-head">
+        <div>
+          <div class="cost-card-type">${escapeHTML(c.type)}</div>
+          <div class="cost-card-name">${escapeHTML(c.name)}</div>
+          <div class="cost-card-region">${escapeHTML(c.region)}</div>
+        </div>
+        <div class="cost-card-badges">${winnerBadge}${reimbBadge}</div>
+      </div>
+      <div class="cost-usage-row ${isOver ? 'has-over' : ''}">
+        <div class="cost-usage-track"><div class="cost-usage-fill ${overClass}" style="width:${usageWidth}%"></div></div>
+        <span class="cost-usage-pct ${overClass}">${m.usageRate != null ? m.usageRate.toFixed(1) : '-'}%</span>
+      </div>
+      ${overTagHTML ? `<div class="cost-usage-over-row">${overTagHTML}</div>` : ''}
+
+      <div class="cost-headline">
+        <div class="cost-headline-main">
+          <span class="cost-info-wrap">
+            <span class="cost-headline-label">1표당 비용</span>
+            ${costInfoIcon('지출액 ÷ 득표수. 이 후보가 한 표를 얻는 데 실제로 쓴 금액입니다.')}
+          </span>
+          <span class="cost-headline-value">${formatWon(m.costPerVote)}</span>
+        </div>
+        <div class="cost-headline-rank">${rankText}</div>
+      </div>
+
+      <div class="cost-group">
+        <div class="cost-group-title">지출 개요</div>
+        <div class="cost-group-grid">
+          <div class="cost-metric">
+            <span class="cost-metric-label">선거비용 제한액</span>
+            <span class="cost-metric-value">${formatWon(m.limit)}</span>
+          </div>
+          <div class="cost-metric">
+            <span class="cost-metric-label">실제 지출액</span>
+            <span class="cost-metric-value">${formatWon(m.spent)}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cost-group">
+        <div class="cost-group-title">득표 성과</div>
+        <div class="cost-group-grid">
+          <div class="cost-metric">
+            <span class="cost-metric-label">득표수</span>
+            <span class="cost-metric-value">${m.votes.toLocaleString()}표</span>
+          </div>
+          <div class="cost-metric">
+            <span class="cost-metric-label">득표율</span>
+            <span class="cost-metric-value">${m.rate.toFixed(2)}%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cost-group derived">
+        <div class="cost-group-title">효율 지표</div>
+        <div class="cost-group-grid">
+          <div class="cost-metric">
+            <span class="cost-info-wrap">
+              <span class="cost-metric-label">효율성 지수</span>
+              ${costInfoIcon('득표율 ÷ 제한액 사용률 × 100. 예산을 쓴 만큼 표를 얻었는지 보여주는 지수로, 100보다 높을수록 지출 대비 득표 효율이 좋습니다.')}
+            </span>
+            <span class="cost-metric-value">${m.efficiency != null ? m.efficiency.toFixed(2) : '-'}</span>
+          </div>
+          <div class="cost-metric">
+            <span class="cost-info-wrap">
+              <span class="cost-metric-label">1억원당 득표수</span>
+              ${costInfoIcon('득표수 ÷ (지출액 ÷ 1억원). 1억원을 쓸 때마다 얻은 표 수로, 값이 클수록 비용 효율이 좋습니다.')}
+            </span>
+            <span class="cost-metric-value">${m.votesPerEok != null ? Math.round(m.votesPerEok).toLocaleString() + '표' : '-'}</span>
+          </div>
+        </div>
+      </div>
+      ${reimbGroupHTML}
+    </div>`;
+}
+
+// ── 비교표(테이블) 뷰 ────────────────────────────────────────
+const COST_TABLE_COLUMNS = [
+  { key: 'name',          label: '후보',          numeric: false },
+  { key: 'type',          label: '유형',          numeric: false },
+  { key: 'limit',         label: '제한액',        numeric: true, fmt: v => formatWon(v) },
+  { key: 'spent',         label: '지출액',        numeric: true, fmt: v => formatWon(v) },
+  { key: 'usageRate',     label: '사용률',        numeric: true, fmt: v => v != null ? v.toFixed(1) + '%' : '-', tip: '지출액 ÷ 제한액 × 100' },
+  { key: 'rate',          label: '득표율',        numeric: true, fmt: v => v.toFixed(2) + '%' },
+  { key: 'votes',         label: '득표수',        numeric: true, fmt: v => v.toLocaleString() + '표' },
+  { key: 'costPerVote',   label: '1표당 비용',    numeric: true, fmt: v => formatWon(v), tip: '지출액 ÷ 득표수' },
+  { key: 'netCost',       label: '순부담액',      numeric: true, fmt: (v, c) => { const r = getReimb(c.voteRate, c.result); return (r && r.label === '반액 보전') ? formatWon(v) : '-'; }, tip: '지출액 − 선거비용 보전금(반액 보전 후보만 표기)' },
+  { key: 'netCostPerVote',label: '순부담 1표당 비용', numeric: true, fmt: (v, c) => { const r = getReimb(c.voteRate, c.result); return (r && r.label === '반액 보전') ? formatWon(v) : '-'; }, tip: '순부담액 ÷ 득표수 (반액 보전 후보만 표기)' },
+  { key: 'efficiency',    label: '효율성 지수',   numeric: true, fmt: v => v != null ? v.toFixed(2) : '-', tip: '득표율 ÷ 사용률 × 100' },
+  { key: 'rank',          label: '유형 내 순위',  numeric: true, fmt: (v, c) => { const r = costTypeRankMap.get(c.id); return r ? r.rank + '/' + r.total + '위' : '-'; } },
+];
+
+function getCostTableValue(c, key) {
+  const m = computeCostMetrics(c);
+  switch (key) {
+    case 'name':  return c.name;
+    case 'type':  return c.type;
+    case 'rank':  { const r = costTypeRankMap.get(c.id); return r ? r.rank : null; }
+    default:      return m[key] != null ? m[key] : (c[key] != null ? c[key] : null);
+  }
+}
+
+function buildCostTableHTML(list) {
+  const hasHalfReimb = list.some(c => {
+    const r = getReimb(c.voteRate, c.result);
+    return r && r.label === '반액 보전';
+  });
+  const columns = COST_TABLE_COLUMNS.filter(col => {
+    if ((col.key === 'netCost' || col.key === 'netCostPerVote') && !hasHalfReimb) return false;
+    return true;
+  });
+
+  const headCells = columns.map(col => {
+    const active = col.key === costTableSort.key;
+    const arrow  = active ? (costTableSort.dir === 'desc' ? ' ▼' : ' ▲') : '';
+    const iconHTML = col.tip ? costInfoIcon(col.tip) : '';
+    return `<th class="cost-table-th ${active ? 'active' : ''}" data-sort-key="${escapeHTML(col.key)}">
+      <span class="cost-table-th-inner cost-info-wrap">${escapeHTML(col.label)}${arrow}${iconHTML}</span>
+    </th>`;
+  }).join('');
+
+  const bodyRows = list.map(c => {
+    const cells = columns.map(col => {
+      const val = getCostTableValue(c, col.key);
+      const sortedCls = col.key === costTableSort.key ? 'sorted' : '';
+      if (col.key === 'name') {
+        return `<td class="cost-table-td ${sortedCls}">
+          <div class="cost-table-name">${escapeHTML(c.name)}${c.result === '당선' ? ' <span class="cost-table-winner-dot" title="당선">●</span>' : ''}</div>
+          <div class="cost-table-region">${escapeHTML(c.region)}</div>
+        </td>`;
+      }
+      if (!col.numeric) {
+        return `<td class="cost-table-td ${sortedCls}">${escapeHTML(String(val ?? '-'))}</td>`;
+      }
+      const display = col.fmt ? col.fmt(val, c) : (val != null ? val : '-');
+      return `<td class="cost-table-td num ${sortedCls}">${display}</td>`;
+    }).join('');
+    return `<tr class="cost-table-row ${c.result === '당선' ? 'winner' : ''}">${cells}</tr>`;
+  }).join('');
+
+  return `
+    <div class="cost-table-scroll">
+      <table class="cost-table">
+        <thead><tr>${headCells}</tr></thead>
+        <tbody>${bodyRows}</tbody>
+      </table>
+    </div>`;
+}
+
+function sortCostList(list, key, dir) {
+  const factor = dir === 'asc' ? 1 : -1;
+  return [...list].sort((a, b) => {
+    let av = getCostTableValue(a, key), bv = getCostTableValue(b, key);
+    if (typeof av === 'string' || typeof bv === 'string') {
+      av = av ?? ''; bv = bv ?? '';
+      return factor * String(av).localeCompare(String(bv), 'ko');
+    }
+    const aNull = av == null, bNull = bv == null;
+    if (aNull && bNull) return 0;
+    if (aNull) return 1;
+    if (bNull) return -1;
+    return factor * (av - bv);
+  });
+}
+
+// ── 산점도 뷰 (사용률 vs 득표율) ────────────────────────────
+function renderCostScatter(list) {
+  const svgWrap = document.getElementById('cost-scatter-svg-wrap');
+  const tip     = document.getElementById('cost-scatter-tooltip');
+  if (!svgWrap || typeof d3 === 'undefined') return;
+  svgWrap.innerHTML = '';
+
+  const rows = list.map(c => {
+    const m = computeCostMetrics(c);
+    return {
+      id: c.id, name: c.name, region: c.region, type: c.type,
+      isWinner: c.result === '당선',
+      usageRate: m.usageRate, rate: m.rate, efficiency: m.efficiency
+    };
+  }).filter(d => d.usageRate != null && isFinite(d.usageRate));
+
+  if (!rows.length) { svgWrap.innerHTML = '<div class="cross-empty">데이터가 없습니다.</div>'; return; }
+
+  const isDesktop = window.innerWidth >= 768;
+  const W  = svgWrap.clientWidth || (isDesktop ? 640 : 320);
+  const mg = { top: 20, right: 20, bottom: 44, left: 52 };
+  const iW = W - mg.left - mg.right;
+  const iH = isDesktop ? 380 : 300;
+  const H  = iH + mg.top + mg.bottom;
+
+  const xMax = Math.max(100, d3.max(rows, d => d.usageRate)) * 1.06;
+  const yMax = Math.max(1, d3.max(rows, d => d.rate)) * 1.08;
+  const xScale = d3.scaleLinear().domain([0, xMax]).range([0, iW]);
+  const yScale = d3.scaleLinear().domain([0, yMax]).range([iH, 0]);
+
+  const svg = d3.select(svgWrap).append('svg').attr('width', W).attr('height', H);
+  const g   = svg.append('g').attr('transform', `translate(${mg.left},${mg.top})`);
+
+  // 격자선
+  g.append('g').attr('transform', `translate(0,${iH})`)
+    .call(d3.axisBottom(xScale).ticks(5).tickSize(-iH).tickFormat(''))
+    .call(s => { s.selectAll('line').attr('stroke', 'var(--border)').attr('stroke-dasharray', '3,3'); s.select('.domain').remove(); });
+  g.append('g')
+    .call(d3.axisLeft(yScale).ticks(5).tickSize(-iW).tickFormat(''))
+    .call(s => { s.selectAll('line').attr('stroke', 'var(--border)').attr('stroke-dasharray', '3,3'); s.select('.domain').remove(); });
+
+  // 축
+  g.append('g').attr('transform', `translate(0,${iH})`)
+    .call(d3.axisBottom(xScale).ticks(5).tickFormat(d => d.toFixed(0) + '%'))
+    .call(s => { s.selectAll('text').attr('fill', 'var(--text3)').attr('font-size', '11px'); s.select('.domain').attr('stroke', 'var(--border)'); });
+  g.append('g')
+    .call(d3.axisLeft(yScale).ticks(5).tickFormat(d => d.toFixed(0) + '%'))
+    .call(s => { s.selectAll('text').attr('fill', 'var(--text3)').attr('font-size', '11px'); s.select('.domain').attr('stroke', 'var(--border)'); });
+
+  // 축 레이블
+  g.append('text').attr('x', iW / 2).attr('y', iH + 36).attr('text-anchor', 'middle')
+    .attr('fill', 'var(--text2)').attr('font-size', '12px').attr('font-weight', 700).text('제한액 사용률 (%)');
+  g.append('text').attr('transform', 'rotate(-90)').attr('x', -iH / 2).attr('y', -(mg.left - 12))
+    .attr('text-anchor', 'middle').attr('fill', 'var(--text2)').attr('font-size', '12px').attr('font-weight', 700).text('득표율 (%)');
+
+  // 평균 기준선
+  const avgX = d3.mean(rows, d => d.usageRate);
+  const avgY = d3.mean(rows, d => d.rate);
+  if (avgX != null) {
+    g.append('line').attr('x1', xScale(avgX)).attr('x2', xScale(avgX)).attr('y1', 0).attr('y2', iH)
+      .attr('stroke', 'var(--text3)').attr('stroke-width', 1).attr('stroke-dasharray', '4,3').attr('opacity', 0.6);
+  }
+  if (avgY != null) {
+    g.append('line').attr('x1', 0).attr('x2', iW).attr('y1', yScale(avgY)).attr('y2', yScale(avgY))
+      .attr('stroke', 'var(--text3)').attr('stroke-width', 1).attr('stroke-dasharray', '4,3').attr('opacity', 0.6);
+  }
+
+  // 사분면 라벨 (평균 기준 좌상단=고효율, 우하단=저효율)
+  if (avgX != null && avgY != null) {
+    g.append('text').attr('x', 6).attr('y', 14).attr('fill', 'var(--emerald)').attr('font-size', '10.5px').attr('font-weight', 800).attr('opacity', 0.85).text('적게 쓰고 많이 득표');
+    g.append('text').attr('x', iW - 6).attr('y', iH - 6).attr('text-anchor', 'end').attr('fill', '#dc2626').attr('font-size', '10.5px').attr('font-weight', 800).attr('opacity', 0.85).text('많이 쓰고 적게 득표');
+  }
+
+  // 점
+  g.selectAll('.cost-scatter-pt').data(rows).enter().append('circle')
+    .attr('class', 'cost-scatter-pt')
+    .attr('cx', d => xScale(Math.min(d.usageRate, xMax)))
+    .attr('cy', d => yScale(Math.min(d.rate, yMax)))
+    .attr('r', isDesktop ? 5 : 4.5)
+    .attr('fill', d => d.isWinner ? 'var(--orange)' : 'var(--blue)')
+    .attr('opacity', 0.78)
+    .attr('stroke', 'var(--surface)')
+    .attr('stroke-width', 1)
+    .style('cursor', 'pointer')
+    .on('mouseover touchstart', function(event, d) {
+      if (!tip) return;
+      tip.style.display = 'block';
+      tip.innerHTML =
+        `<div style="font-weight:700;margin-bottom:3px;">${d.name} <span style="font-weight:500;color:var(--text3);">(${d.region})</span></div>` +
+        `<div style="color:var(--text2);">${d.isWinner ? '✓ 당선' : '낙선'} · ${d.type}</div>` +
+        `<div style="margin-top:4px;color:${d.isWinner ? 'var(--orange)' : 'var(--blue)'};">사용률 ${d.usageRate.toFixed(1)}%</div>` +
+        `<div style="color:${d.isWinner ? 'var(--orange)' : 'var(--blue)'};">득표율 ${d.rate.toFixed(2)}%</div>` +
+        `<div style="color:var(--text3);margin-top:2px;">효율성 지수 ${d.efficiency != null ? d.efficiency.toFixed(2) : '-'}</div>`;
+      d3.select(this).attr('r', isDesktop ? 7 : 6).attr('opacity', 1);
+      const touch = event.touches && event.touches[0];
+      if (touch) {
+        const tw = tip.offsetWidth || 180;
+        const posX = (touch.clientX + tw + 20 > window.innerWidth) ? touch.clientX - tw - 14 : touch.clientX + 14;
+        tip.style.left = posX + 'px';
+        tip.style.top  = (touch.clientY - 36) + 'px';
+      }
+    })
+    .on('mousemove', function(event) {
+      if (!tip) return;
+      const x = event.clientX, y = event.clientY;
+      if (x == null) return;
+      const tw = tip.offsetWidth || 180;
+      const posX = (x + tw + 20 > window.innerWidth) ? x - tw - 14 : x + 14;
+      const posY = (y - 36 < 0) ? y + 14 : y - 36;
+      tip.style.left = posX + 'px';
+      tip.style.top  = posY + 'px';
+    })
+    .on('mouseout touchend', function() {
+      if (tip) tip.style.display = 'none';
+      d3.select(this).attr('r', isDesktop ? 5 : 4.5).attr('opacity', 0.78);
+    });
+}
+
+function renderCostSummary(list) {
+  const wrap = document.getElementById('cost-summary-grid');
+  if (!wrap) return;
+  if (!list.length) { wrap.innerHTML = ''; return; }
+
+  const totalSpent  = list.reduce((s, c) => s + c.costSpent, 0);
+  const totalLimit  = list.reduce((s, c) => s + c.costLimit, 0);
+  const totalVotes  = list.reduce((s, c) => s + c.totalVotes, 0);
+  const avgUsage    = list.reduce((s, c) => s + (c.costSpent / c.costLimit) * 100, 0) / list.length;
+  const overallCostPerVote = totalVotes > 0 ? totalSpent / totalVotes : null;
+
+  let topEff = null;
+  list.forEach(c => {
+    const m = computeCostMetrics(c);
+    if (m.efficiency != null && (topEff == null || m.efficiency > topEff.eff)) {
+      topEff = { name: c.name, region: c.region, eff: m.efficiency };
+    }
+  });
+
+  wrap.innerHTML = `
+    <div class="cost-summary-card">
+      <div class="cost-summary-label">선거비용 총 지출액</div>
+      <div class="cost-summary-value">${(totalSpent / 1e8).toFixed(1)}<span class="cost-summary-unit">억원</span></div>
+      <div class="cost-summary-sub">제한액 총액 ${(totalLimit / 1e8).toFixed(0)}억원</div>
+    </div>
+    <div class="cost-summary-card">
+      <div class="cost-summary-label">평균 제한액 사용률</div>
+      <div class="cost-summary-value">${avgUsage.toFixed(1)}<span class="cost-summary-unit">%</span></div>
+      <div class="cost-summary-sub">후보 ${list.length}명 평균</div>
+    </div>
+    <div class="cost-summary-card">
+      <div class="cost-summary-label">전체 1표당 평균 비용</div>
+      <div class="cost-summary-value">${overallCostPerVote != null ? Math.round(overallCostPerVote).toLocaleString() : '-'}<span class="cost-summary-unit">원</span></div>
+      <div class="cost-summary-sub">총 득표수 ${totalVotes.toLocaleString()}표 기준</div>
+    </div>
+    <div class="cost-summary-card">
+      <div class="cost-summary-label cost-info-wrap">
+        최고 효율성 후보
+        ${costInfoIcon('득표율 ÷ 제한액 사용률 × 100으로 계산한 효율성 지수가 가장 높은 후보입니다.')}
+      </div>
+      <div class="cost-summary-value">${topEff ? topEff.eff.toFixed(2) : '-'}</div>
+      <div class="cost-summary-sub">${topEff ? escapeHTML(topEff.name) + ' · ' + escapeHTML(topEff.region) : '-'}</div>
+    </div>`;
+}
+
+function renderCostWinnerLoserCompare(list) {
+  const wrap = document.getElementById('cost-wl-compare');
+  if (!wrap) return;
+
+  const winners = list.filter(c => c.result === '당선');
+  const losers  = list.filter(c => c.result !== '당선');
+
+  if (!winners.length || !losers.length) { wrap.innerHTML = ''; return; }
+
+  function avg(arr, fn) {
+    const vals = arr.map(fn).filter(v => v != null && isFinite(v));
+    return vals.length ? vals.reduce((a, b) => a + b, 0) / vals.length : null;
+  }
+
+  const avgSpentW = avg(winners, c => c.costSpent);
+  const avgSpentL = avg(losers,  c => c.costSpent);
+  const avgUsageW = avg(winners, c => computeCostMetrics(c).usageRate);
+  const avgUsageL = avg(losers,  c => computeCostMetrics(c).usageRate);
+  const avgCpvW   = avg(winners, c => computeCostMetrics(c).costPerVote);
+  const avgCpvL   = avg(losers,  c => computeCostMetrics(c).costPerVote);
+  const avgEffW   = avg(winners, c => computeCostMetrics(c).efficiency);
+  const avgEffL   = avg(losers,  c => computeCostMetrics(c).efficiency);
+
+  function row(label, wVal, lVal, fmt, tip) {
+    const labelHTML = tip
+      ? `<span class="cost-wl-label cost-info-wrap">${escapeHTML(label)}${costInfoIcon(tip)}</span>`
+      : `<span class="cost-wl-label">${escapeHTML(label)}</span>`;
+    return `
+      <div class="cost-wl-row">
+        ${labelHTML}
+        <span class="cost-wl-figure winner"><span class="tag">당선 ${winners.length}명</span>${fmt(wVal)}</span>
+        <span class="cost-wl-figure loser"><span class="tag">낙선 ${losers.length}명</span>${fmt(lVal)}</span>
+      </div>`;
+  }
+
+  wrap.innerHTML = `
+    <div class="cost-wl-card">
+      <div class="cost-wl-title">⚖️ 당선자 vs 낙선자 평균 비교</div>
+      <div class="cost-wl-sub">현재 필터(${costFilterType === '전체' ? '전체 유형' : escapeHTML(costFilterType)}${costFilterSido === '전체' ? '' : ' · ' + escapeHTML(costFilterSido)}) 기준</div>
+      <div class="cost-wl-rows">
+        ${row('평균 지출액', avgSpentW, avgSpentL, v => formatWon(v))}
+        ${row('평균 사용률', avgUsageW, avgUsageL, v => v != null ? v.toFixed(1) + '%' : '-', '지출액 ÷ 제한액 × 100. 선거비용 제한액 대비 실제 지출한 비율입니다.')}
+        ${row('평균 1표당 비용', avgCpvW, avgCpvL, v => formatWon(v), '지출액 ÷ 득표수. 한 표를 얻는 데 쓴 평균 금액입니다.')}
+        ${row('평균 효율성 지수', avgEffW, avgEffL, v => v != null ? v.toFixed(2) : '-', '득표율 ÷ 제한액 사용률 × 100. 값이 높을수록 예산 대비 득표 효율이 좋습니다.')}
+      </div>
+    </div>`;
+}
+
+function renderCostTop5(list) {
+  const wrap = document.getElementById('cost-top5');
+  if (!wrap) return;
+  if (!list.length) { wrap.innerHTML = ''; return; }
+
+  const withMetrics = list.map(c => ({ c, m: computeCostMetrics(c) }));
+
+  const cheapWinners = withMetrics
+    .filter(x => x.c.result === '당선' && x.m.costPerVote != null && isFinite(x.m.costPerVote))
+    .sort((a, b) => a.m.costPerVote - b.m.costPerVote)
+    .slice(0, 5);
+
+  const efficientSpenders = withMetrics
+    .filter(x => x.m.efficiency != null && isFinite(x.m.efficiency))
+    .sort((a, b) => b.m.efficiency - a.m.efficiency)
+    .slice(0, 5);
+
+  function listHTML(items, valueFn, badClass, showResult) {
+    if (!items.length) return `<div class="cost-rank-empty">해당하는 후보가 없습니다.</div>`;
+    return `<div class="cost-rank-list">${items.map((x, i) => `
+      <div class="cost-rank-item">
+        <span class="cost-rank-num">${i + 1}</span>
+        <span class="cost-rank-name-wrap">
+          <div class="cost-rank-name">${escapeHTML(x.c.name)}</div>
+          <div class="cost-rank-region">${escapeHTML(x.c.type)} · ${escapeHTML(x.c.region)}${showResult ? ' · ' + (x.c.result === '당선' ? '✓ 당선' : '낙선') : ''}</div>
+        </span>
+        <span class="cost-rank-value ${badClass ? badClass : ''}">${valueFn(x)}</span>
+      </div>`).join('')}</div>`;
+  }
+
+  wrap.innerHTML = `
+    <div class="cost-insight-card">
+      <div class="cost-insight-title">🏆 하이라이트 랭킹</div>
+      <div class="cost-insight-sub">현재 필터(${costFilterType === '전체' ? '전체 유형' : escapeHTML(costFilterType)}${costFilterSido === '전체' ? '' : ' · ' + escapeHTML(costFilterSido)}) 기준 TOP 5</div>
+      <div class="cost-rank-block">
+        <div class="cost-rank-block-title">💰 최소 비용으로 당선된 후보</div>
+        ${listHTML(cheapWinners, x => formatWon(x.m.costPerVote) + '/표')}
+      </div>
+      <div class="cost-rank-block">
+        <div class="cost-rank-block-title">🎯 효율적으로 예산을 쓴 후보</div>
+        ${listHTML(efficientSpenders, x => (x.m.efficiency != null ? x.m.efficiency.toFixed(2) : '-'), 'good', true)}
+      </div>
+    </div>`;
+}
+
+function renderCostHistogram(list) {
+  const wrap = document.getElementById('cost-histogram');
+  if (!wrap) return;
+  if (!list.length) { wrap.innerHTML = ''; return; }
+
+  const buckets = [
+    { label: '0~25%',    min: 0,   max: 25,       over: false },
+    { label: '25~50%',   min: 25,  max: 50,       over: false },
+    { label: '50~75%',   min: 50,  max: 75,       over: false },
+    { label: '75~100%',  min: 75,  max: 100,      over: false },
+    { label: '100%↑',    min: 100, max: Infinity, over: true  },
+  ];
+
+  list.forEach(c => {
+    const usageRate = computeCostMetrics(c).usageRate;
+    if (usageRate == null || !isFinite(usageRate)) return;
+    const b = buckets.find(b => usageRate >= b.min && usageRate < b.max) || buckets[buckets.length - 1];
+    b.count = (b.count || 0) + 1;
+  });
+
+  const maxCount = Math.max(1, ...buckets.map(b => b.count || 0));
+
+  wrap.innerHTML = `
+    <div class="cost-insight-card">
+      <div class="cost-insight-title">📶 제한액 사용률 분포</div>
+      <div class="cost-insight-sub">후보 ${list.length}명이 상한액을 얼마나 채워 썼는지</div>
+      <div class="cost-hist-bars">
+        ${buckets.map(b => {
+          const count = b.count || 0;
+          const h = Math.max(3, Math.round((count / maxCount) * 100));
+          return `
+          <div class="cost-hist-col">
+            <span class="cost-hist-count">${count}</span>
+            <div class="cost-hist-bar ${b.over ? 'over' : ''}" style="height:${h}px"></div>
+            <span class="cost-hist-label">${b.label}</span>
+          </div>`;
+        }).join('')}
+      </div>
+    </div>`;
+}
+
+function renderCostTab() {
+  const base = getCostCandidates();
+  costTypeRankMap = computeCostTypeRanks();
+
+  const sidoSetC = new Set();
+  const SIDO_ORDER_C = ['서울','부산','대구','인천','광주','대전','울산','세종','경기','강원','충북','충남','전북','전남','경북','경남','제주'];
+  base.forEach(c => {
+    const sido = (c._raw && c._raw.region) ? c._raw.region.trim().split(/\s+/)[0] : c.region.trim().split(/\s+/)[0];
+    if (sido && SIDO_ORDER_C.includes(sido)) sidoSetC.add(sido);
+  });
+  const sidoListC = ['전체', ...SIDO_ORDER_C.filter(s => sidoSetC.has(s))];
+
+  const sidoBarC = document.getElementById('cost-sido-filter-bar');
+  if (sidoBarC) {
+    sidoBarC.innerHTML = sidoListC.map(s => `
+      <button class="sido-filter-btn ${s === costFilterSido ? 'active' : ''}" data-cost-sido="${escapeHTML(s)}">${escapeHTML(s)}</button>
+    `).join('');
+  }
+
+  const filterBarC = document.getElementById('cost-filter-bar');
+  if (filterBarC) {
+    filterBarC.innerHTML = FILTER_CATS.map(cat => `
+      <button class="filter-btn ${cat === costFilterType ? 'active' : ''}" data-cost-cat="${escapeHTML(cat)}">
+        ${escapeHTML(cat)}
+      </button>`
+    ).join('');
+  }
+
+  let list = costFilterType === '전체' ? [...base] : base.filter(c => c.type === costFilterType);
+
+  if (costFilterSido !== '전체') {
+    list = list.filter(c => {
+      const sido = (c._raw && c._raw.region) ? c._raw.region.trim().split(/\s+/)[0] : c.region.trim().split(/\s+/)[0];
+      return sido === costFilterSido;
+    });
+  }
+
+  if (costSearchQuery.trim()) {
+    const q = costSearchQuery.trim().toLowerCase();
+    list = list.filter(c => c.name.toLowerCase().includes(q) || c.region.toLowerCase().includes(q));
+  }
+
+  renderCostSummary(list);
+  renderCostWinnerLoserCompare(list);
+  renderCostTop5(list);
+  renderCostHistogram(list);
+
+  const metricsCache = new Map();
+  list.forEach(c => metricsCache.set(c.id, computeCostMetrics(c)));
+
+  switch (costSortOrder) {
+    case 'usage-desc':          list.sort((a,b) => (metricsCache.get(b.id).usageRate ?? -Infinity) - (metricsCache.get(a.id).usageRate ?? -Infinity)); break;
+    case 'usage-asc':           list.sort((a,b) => (metricsCache.get(a.id).usageRate ?? Infinity) - (metricsCache.get(b.id).usageRate ?? Infinity)); break;
+    case 'cost-per-vote-asc':   list.sort((a,b) => (metricsCache.get(a.id).costPerVote ?? Infinity) - (metricsCache.get(b.id).costPerVote ?? Infinity)); break;
+    case 'cost-per-vote-desc':  list.sort((a,b) => (metricsCache.get(b.id).costPerVote ?? -Infinity) - (metricsCache.get(a.id).costPerVote ?? -Infinity)); break;
+    case 'efficiency-desc':     list.sort((a,b) => (metricsCache.get(b.id).efficiency ?? -Infinity) - (metricsCache.get(a.id).efficiency ?? -Infinity)); break;
+    case 'productivity-desc':   list.sort((a,b) => (metricsCache.get(b.id).votesPerEok ?? -Infinity) - (metricsCache.get(a.id).votesPerEok ?? -Infinity)); break;
+    case 'spent-desc':          list.sort((a,b) => b.costSpent - a.costSpent); break;
+    case 'spent-asc':           list.sort((a,b) => a.costSpent - b.costSpent); break;
+    default:                    list.sort((a,b) => b.voteRate - a.voteRate);
+  }
+
+  const cntC = document.getElementById('cost-search-result-count');
+  if (cntC) {
+    if (costSearchQuery.trim()) {
+      cntC.style.display = 'block';
+      cntC.innerHTML = `<em>${escapeHTML(costSearchQuery)}</em> 검색 결과 ${list.length}명`;
+    } else {
+      cntC.style.display = 'none';
+    }
+  }
+
+  document.querySelectorAll('#cost-sido-filter-bar .sido-filter-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.costSido === costFilterSido);
+  });
+  document.querySelectorAll('#cost-filter-bar .filter-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.costCat === costFilterType);
+  });
+  document.querySelectorAll('#cost-view-toggle .cost-view-btn').forEach(b => {
+    const active = b.dataset.costView === costViewMode;
+    b.classList.toggle('active', active);
+    b.setAttribute('aria-selected', active ? 'true' : 'false');
+  });
+
+  const grid        = document.getElementById('cost-grid');
+  const tableWrap    = document.getElementById('cost-table-wrap');
+  const scatterWrap  = document.getElementById('cost-scatter-wrap');
+  if (!grid || !tableWrap) return;
+
+  grid.style.display        = costViewMode === 'card'    ? '' : 'none';
+  tableWrap.style.display   = costViewMode === 'table'   ? '' : 'none';
+  if (scatterWrap) scatterWrap.style.display = costViewMode === 'scatter' ? '' : 'none';
+
+  if (!list.length) {
+    const emptyHTML = `
+      <div class="empty-state">
+        <div class="empty-state-icon">🔍</div>
+        <div class="empty-state-text">${costSearchQuery.trim() ? '검색 결과가 없습니다' : '해당 유형의 선거비용 데이터가 없습니다'}</div>
+      </div>`;
+    grid.innerHTML = emptyHTML;
+    tableWrap.innerHTML = emptyHTML;
+    if (scatterWrap) document.getElementById('cost-scatter-svg-wrap').innerHTML = emptyHTML;
+    return;
+  }
+
+  if (costViewMode === 'table') {
+    const sortedForTable = sortCostList(list, costTableSort.key, costTableSort.dir);
+    tableWrap.innerHTML = buildCostTableHTML(sortedForTable);
+  } else if (costViewMode === 'scatter') {
+    renderCostScatter(list);
+  } else {
+    grid.innerHTML = list.map(buildCostCardHTML).join('');
+  }
+}
+
 // ── CANDIDATES ─────────────────────────────────────────
 const FILTER_CATS = ['전체', '재보궐선거', '광역단체장', '기초단체장', '광역의회의원', '기초의회의원'];
 
@@ -11941,6 +13612,104 @@ function initEvents() {
       cards[nextIdx].focus();
     }
   });
+
+  // ── COST 탭 이벤트 ─────────────────────────────────────
+  const costFilterBarEl = document.getElementById('cost-filter-bar');
+  if (costFilterBarEl) {
+    costFilterBarEl.addEventListener('click', e => {
+      const btn = e.target.closest('.filter-btn');
+      if (!btn) return;
+      costFilterType = btn.dataset.costCat;
+      renderCostTab();
+      setTimeout(() => runCountUpsIn(document.getElementById('tab-cost')), 50);
+    });
+  }
+
+  const costSidoBarEl = document.getElementById('cost-sido-filter-bar');
+  if (costSidoBarEl) {
+    costSidoBarEl.addEventListener('click', e => {
+      const btn = e.target.closest('.sido-filter-btn');
+      if (!btn) return;
+      costFilterSido = btn.dataset.costSido;
+      renderCostTab();
+      setTimeout(() => runCountUpsIn(document.getElementById('tab-cost')), 50);
+    });
+  }
+
+  const costSortSelectEl = document.getElementById('cost-sort-select');
+  if (costSortSelectEl) {
+    costSortSelectEl.addEventListener('change', e => {
+      costSortOrder = e.target.value;
+      renderCostTab();
+      setTimeout(() => runCountUpsIn(document.getElementById('tab-cost')), 50);
+    });
+  }
+
+  // 선거비용 ⓘ 툴팁: 다른 곳을 탭/클릭하면 닫기
+  document.addEventListener('click', e => {
+    if (e.target.closest('.cost-info-icon')) return;
+    document.querySelectorAll('.cost-info-icon.open').forEach(el => el.classList.remove('open'));
+  });
+
+  const costViewToggleEl = document.getElementById('cost-view-toggle');
+  if (costViewToggleEl) {
+    costViewToggleEl.addEventListener('click', e => {
+      const btn = e.target.closest('.cost-view-btn');
+      if (!btn) return;
+      costViewMode = btn.dataset.costView;
+      renderCostTab();
+      if (costViewMode === 'card') setTimeout(() => runCountUpsIn(document.getElementById('tab-cost')), 50);
+    });
+  }
+
+  let _costScatterResizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(_costScatterResizeTimer);
+    _costScatterResizeTimer = setTimeout(() => {
+      if (costViewMode === 'scatter') renderCostTab();
+    }, 200);
+  });
+
+  const costTableWrapEl = document.getElementById('cost-table-wrap');
+  if (costTableWrapEl) {
+    costTableWrapEl.addEventListener('click', e => {
+      const th = e.target.closest('.cost-table-th');
+      if (!th) return;
+      const key = th.dataset.sortKey;
+      if (costTableSort.key === key) {
+        costTableSort.dir = costTableSort.dir === 'desc' ? 'asc' : 'desc';
+      } else {
+        costTableSort = { key, dir: 'desc' };
+      }
+      renderCostTab();
+    });
+  }
+
+  const costSearchInput = document.getElementById('cost-search');
+  const costSearchClear = document.getElementById('cost-search-clear');
+  if (costSearchInput && costSearchClear) {
+    let _costSearchDebounceTimer = null;
+    costSearchInput.addEventListener('input', e => {
+      costSearchQuery = e.target.value;
+      costSearchClear.classList.toggle('visible', costSearchQuery.length > 0);
+      clearTimeout(_costSearchDebounceTimer);
+      _costSearchDebounceTimer = setTimeout(() => {
+        renderCostTab();
+        runCountUpsIn(document.getElementById('tab-cost'));
+      }, 220);
+    });
+
+    costSearchClear.addEventListener('click', () => {
+      costSearchInput.value = '';
+      costSearchQuery = '';
+      costSearchClear.classList.remove('visible');
+      const ccnt = document.getElementById('cost-search-result-count');
+      if (ccnt) ccnt.style.display = 'none';
+      renderCostTab();
+      runCountUpsIn(document.getElementById('tab-cost'));
+      costSearchInput.focus();
+    });
+  }
 
   document.querySelectorAll('[data-goto]').forEach(el => {
     const handler = () => {

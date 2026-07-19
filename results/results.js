@@ -20,7 +20,7 @@
 
 var RESULTS = [
   // [  1] 광역단체장  | 김정철 | 서울특별시장
-  { id: 1, voteRate: 0.82, totalVotes: 43321, result: '후보', quota: 1, districts: [], neighborhoods: [{
+  { id: 1, costLimit: 3726760884, costSpent: 206400097, voteRate: 0.82, totalVotes: 43321, result: '후보', quota: 1, districts: [], neighborhoods: [{
     "name": "종로구_관외사전투표",
     "rate": 1.02,
     "votes": {
@@ -1764,7 +1764,7 @@ var RESULTS = [
 ] },
 
   // [  2] 광역단체장  | 정이한 | 부산광역시장
-  { id: 2, voteRate: 1.56, totalVotes: 27418, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"중구_관외사전투표","rate":1.75,"votes":{"absentee":{"rate":1.75,"count":43}}},
+  { id: 2, costLimit: 1608351220, costSpent: 347947700, voteRate: 1.56, totalVotes: 27418, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"중구_관외사전투표","rate":1.75,"votes":{"absentee":{"rate":1.75,"count":43}}},
 {"name":"중앙동","rate":2.09,"votes":{"early":{"rate":1.34,"count":5},"polling":{"rate":2.39,"count":22}}},
 {"name":"동광동","rate":1.75,"votes":{"early":{"rate":0.85,"count":3},"polling":{"rate":2.23,"count":15}}},
 {"name":"대청동","rate":1.35,"votes":{"early":{"rate":0.74,"count":6},"polling":{"rate":1.61,"count":30}}},
@@ -1989,7 +1989,7 @@ var RESULTS = [
 ] },
 
   // [  3] 광역단체장  | 이수찬 | 대구광역시장
-  { id: 3, voteRate: 1.02, totalVotes: 13324, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"중구_관외사전투표","rate":1.58,"votes":{"absentee":{"rate":1.58,"count":86}}},
+  { id: 3, costLimit: 1282705388, costSpent: 98790374, voteRate: 1.02, totalVotes: 13324, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"중구_관외사전투표","rate":1.58,"votes":{"absentee":{"rate":1.58,"count":86}}},
 {"name":"동인동","rate":1.29,"votes":{"early":{"rate":1.42,"count":15},"polling":{"rate":1.26,"count":52}}},
 {"name":"삼덕동","rate":1.63,"votes":{"early":{"rate":1.58,"count":13},"polling":{"rate":1.65,"count":40}}},
 {"name":"성내1동","rate":1.63,"votes":{"early":{"rate":1.33,"count":7},"polling":{"rate":1.72,"count":29}}},
@@ -2151,7 +2151,7 @@ var RESULTS = [
 ] },
 
   // [  4] 광역단체장  | 이기붕 | 인천광역시장
-  { id: 4, voteRate: 1.09, totalVotes: 16788, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"영종구_관외사전투표","rate":1.47,"votes":{"absentee":{"rate":1.47,"count":101}}},
+  { id: 4, costLimit: 1522036256, costSpent: 64860550, voteRate: 1.09, totalVotes: 16788, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"영종구_관외사전투표","rate":1.47,"votes":{"absentee":{"rate":1.47,"count":101}}},
 {"name":"영종동","rate":1.16,"votes":{"early":{"rate":0.94,"count":26},"polling":{"rate":1.23,"count":113}}},
 {"name":"영종1동","rate":0.94,"votes":{"early":{"rate":0.85,"count":38},"polling":{"rate":0.98,"count":99}}},
 {"name":"영종2동","rate":0.85,"votes":{"early":{"rate":0.97,"count":28},"polling":{"rate":0.81,"count":63}}},
@@ -2323,7 +2323,7 @@ var RESULTS = [
 ] },
 
   // [  5] 광역단체장  | 강희린 | 대전광역시장
-  { id: 5, voteRate: 2.35, totalVotes: 17370, result: '후보', quota: 1, districts: [], neighborhoods: [{ "name": "동구_관외사전투표", "rate": 2.66, "votes": { "absentee": { "rate": 2.66, "count": 343 } } },
+  { id: 5, costLimit: 733604960, costSpent: 39244600, voteRate: 2.35, totalVotes: 17370, result: '후보', quota: 1, districts: [], neighborhoods: [{ "name": "동구_관외사전투표", "rate": 2.66, "votes": { "absentee": { "rate": 2.66, "count": 343 } } },
 { "name": "중앙동", "rate": 1.50, "votes": { "polling": { "rate": 1.42, "count": 14 }, "early": { "rate": 1.63, "count": 10 } } },
 { "name": "신인동", "rate": 1.53, "votes": { "polling": { "rate": 1.53, "count": 79 }, "early": { "rate": 1.53, "count": 19 } } },
 { "name": "효동", "rate": 1.91, "votes": { "polling": { "rate": 2.05, "count": 177 }, "early": { "rate": 1.61, "count": 66 } } },
@@ -2413,7 +2413,7 @@ var RESULTS = [
 ] },
 
   // [  6] 광역단체장  | 하헌휘 | 세종특별자치시장
-  { id: 6, voteRate: 2.94, totalVotes: 5641, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 5.36,
+  { id: 6, costLimit: 389563532, costSpent: 31510547, voteRate: 2.94, totalVotes: 5641, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 5.36,
   votes: { absentee: { rate: 5.36, count: 1031 } }
 },
 
@@ -2586,7 +2586,7 @@ var RESULTS = [
 }] },
 
   // [  7] 광역단체장  | 조응천 | 경기도지사
-  { id: 7, voteRate: 4.32, totalVotes: 295232, result: '후보', quota: 1, districts: [], neighborhoods: [
+  { id: 7, costLimit: 4945813600, costSpent: 256443430, voteRate: 4.32, totalVotes: 295232, result: '후보', quota: 1, districts: [], neighborhoods: [
 {"name":"수원시장안구_관외사전투표","rate":5.12,"votes":{"absentee":{"rate":5.12,"count":623}}},
 {"name":"파장동","rate":4.53,"votes":{"early":{"rate":3.44,"count":107},"polling":{"rate":4.93,"count":423}}},
 {"name":"정자1동","rate":4.49,"votes":{"early":{"rate":3.81,"count":174},"polling":{"rate":4.76,"count":552}}},
@@ -3239,7 +3239,7 @@ var RESULTS = [
 ] },
 
   // [  8] 기초단체장  | 이용우 | 서울 강동구청장
-  { id: 8, voteRate: 1.80, totalVotes: 5099, result: '후보', quota: 1, districts: [], neighborhoods: [  {
+  { id: 8, costLimit: 254240616, costSpent: 28127451, voteRate: 1.80, totalVotes: 5099, result: '후보', quota: 1, districts: [], neighborhoods: [  {
     name: '관외사전투표',
     rate: 2.43,
     votes: {
@@ -3401,7 +3401,7 @@ var RESULTS = [
   }] },
 
   // [  9] 기초단체장  | 정희윤 | 경기 수원시장
-  { id: 9, voteRate: 3.01, totalVotes: 18025, result: '후보', quota: 1, districts: [], neighborhoods: [  {
+  { id: 9, costLimit: 464638436, costSpent: 17933805, voteRate: 3.01, totalVotes: 18025, result: '후보', quota: 1, districts: [], neighborhoods: [  {
     name: "장안구_관외사전투표",
     rate: 3.61,
     votes: {
@@ -3784,7 +3784,7 @@ var RESULTS = [
 ] },
 
   // [ 10] 기초단체장  | 송창훈 | 경기 용인시장
-  { id: 10, voteRate: 1.45, totalVotes: 8267, result: '후보', quota: 1, districts: [], neighborhoods: [  {
+  { id: 10, costLimit: 429365456, costSpent: 30981175, voteRate: 1.45, totalVotes: 8267, result: '후보', quota: 1, districts: [], neighborhoods: [  {
     name: '처인구_관외사전투표',
     rate: 1.75,
     votes: {
@@ -4120,7 +4120,7 @@ var RESULTS = [
 ] },
 
   // [ 11] 기초단체장  | 신현철 | 경기 고양시장
-  { id: 11, voteRate: 1.92, totalVotes: 10382, result: '후보', quota: 1, districts: [], neighborhoods: [  {
+  { id: 11, costLimit: 434316076, costSpent: 13538049, voteRate: 1.92, totalVotes: 10382, result: '후보', quota: 1, districts: [], neighborhoods: [  {
     name: '덕양구_관외사전투표',
     rate: 2.29,
     votes: {
@@ -4462,7 +4462,7 @@ var RESULTS = [
 ] },
 
   // [ 12] 기초단체장  | 전성균 | 경기 화성시장
-  { id: 12, voteRate: 7.19, totalVotes: 32602, result: '후보', quota: 1, districts: [], neighborhoods: [  {
+  { id: 12, costLimit: 387786576, costSpent: 55949850, voteRate: 7.19, totalVotes: 32602, result: '후보', quota: 1, districts: [], neighborhoods: [  {
     name: '만세구_관외사전투표',
     rate: 4.90,
     votes: {
@@ -4715,7 +4715,7 @@ var RESULTS = [
 ] },
 
   // [ 13] 기초단체장  | 송진영 | 경기 오산시장
-  { id: 13, voteRate: 2.32, totalVotes: 2694, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 3.30,
+  { id: 13, costLimit: 173826892, costSpent: 94244197, voteRate: 2.32, totalVotes: 2694, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 3.30,
   votes: { absentee: { rate: 3.30, count: 384 } }
 },
 
@@ -4776,7 +4776,7 @@ var RESULTS = [
 }] },
 
   // [ 14] 기초단체장  | 고금란 | 경기 과천시장
-  { id: 14, voteRate: 2.27, totalVotes: 1068, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 2.75,
+  { id: 14, costLimit: 134636768, costSpent: 63778665, voteRate: 2.27, totalVotes: 1068, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 2.75,
   votes: { absentee: { rate: 2.75, count: 140 } }
 },
 
@@ -4830,7 +4830,7 @@ var RESULTS = [
 }] },
 
   // [ 15] 기초단체장  | 이혜숙 | 서울 관악구청장
-  { id: 15, voteRate: 5.04, totalVotes: 13089, result: '후보', quota: 1, districts: [], neighborhoods: [{
+  { id: 15, costLimit: 254620864, costSpent: 33132170, voteRate: 5.04, totalVotes: 13089, result: '후보', quota: 1, districts: [], neighborhoods: [{
     name: '관외사전투표',
     rate: 5.43,
     votes: {
@@ -5008,7 +5008,7 @@ var RESULTS = [
   }] },
 
   // [ 16] 기초단체장  | 길기영 | 서울 중구청장
-  { id: 16, voteRate: 3.18, totalVotes: 2207, result: '후보', quota: 1, districts: [], neighborhoods: [  {
+  { id: 16, costLimit: 161157760, costSpent: 97555532, voteRate: 3.18, totalVotes: 2207, result: '후보', quota: 1, districts: [], neighborhoods: [  {
     name: '관외사전투표',
     rate: 2.97,
     votes: {
@@ -5138,7 +5138,7 @@ var RESULTS = [
   }] },
 
   // [ 17] 기초단체장  | 김형우 | 강원 삼척시장
-  { id: 17, voteRate: 4.42, totalVotes: 1628, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 6.55,
+  { id: 17, costLimit: 141587388, costSpent: 86837837, voteRate: 4.42, totalVotes: 1628, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 6.55,
   votes: { absentee: { rate: 6.55, count: 219 } }
 },
 
@@ -5227,7 +5227,7 @@ var RESULTS = [
 }] },
 
   // [ 18] 기초단체장  | 김홍수 | 강원 동해시장
-  { id: 18, voteRate: 3.48, totalVotes: 1618, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 3.85,
+  { id: 18, costLimit: 143207140, costSpent: 138458930, voteRate: 3.48, totalVotes: 1618, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 3.85,
   votes: { absentee: { rate: 3.85, count: 154 } }
 },
 
@@ -5302,7 +5302,7 @@ var RESULTS = [
 }] },
 
   // [ 19] 기초단체장  | 유관곤 | 충남 서산시장
-  { id: 19, voteRate: 2.87, totalVotes: 2521, result: '후보', quota: 1, districts: [], neighborhoods: [
+  { id: 19, costLimit: 173157760, costSpent: 126459076, voteRate: 2.87, totalVotes: 2521, result: '후보', quota: 1, districts: [], neighborhoods: [
   {
     name: "관외사전투표",
     rate: 2.85,
@@ -5448,7 +5448,7 @@ var RESULTS = [
 ] },
 
   // [ 20] 광역의원   | 서운교 | 대구광역시 수성구 제3선거구
-  { id: 20, voteRate: 8.09, totalVotes: 4.42, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 8.53,
+  { id: 20, costLimit: 58289440, costSpent: 6311161, voteRate: 8.09, totalVotes: 4031, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 8.53,
   votes: { absentee: { rate: 8.53, count: 392 } }
 },
 { name: '고산1동', rate: 8.25,
@@ -5471,7 +5471,7 @@ var RESULTS = [
 },] },
 
   // [ 21] 광역의원   | 강인수 | 서울특별시 강남구 제1선거구
-  { id: 21, voteRate: 9.68, totalVotes: 4183, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 14.91,
+  { id: 21, costLimit: 58289440, costSpent: 3238620, voteRate: 9.68, totalVotes: 4183, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 14.91,
   votes: { absentee: { rate: 14.91, count: 638 } }
 },
 { name: '신사동', rate: 8.45,
@@ -5500,7 +5500,7 @@ var RESULTS = [
 },] },
 
   // [ 22] 광역의원   | 주이삭 | 서울특별시 서대문구 제1선거구
-  { id: 22, voteRate: 13.88, totalVotes: 5577, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 10.32,
+  { id: 22, costLimit: 57289440, costSpent: 36244959, voteRate: 13.88, totalVotes: 5577, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 10.32,
   votes: { absentee: { rate: 10.32, count: 596 } }
 },
 { name: '충현동', rate: 17.34,
@@ -5529,7 +5529,7 @@ var RESULTS = [
 }] },
 
   // [ 23] 광역의원   | 문모은 | 서울특별시 강북구 제4선거구
-  { id: 23, voteRate: 2.60, totalVotes: 900, result: '후보', quota: 1, districts: [], neighborhoods: [  {
+  { id: 23, costLimit: 56289440, costSpent: 6780990, voteRate: 2.60, totalVotes: 900, result: '후보', quota: 1, districts: [], neighborhoods: [  {
     name: '관외사전투표',
     rate: 3.06,
     votes: {
@@ -5565,7 +5565,7 @@ var RESULTS = [
   }] },
 
   // [ 24] 광역의원   | 강득형 | 서울특별시 강남구 제4선거구
-  { id: 24, voteRate: 2.78, totalVotes: 1759, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 4.16,
+  { id: 24, costLimit: 61289440, costSpent: 1450000, voteRate: 2.78, totalVotes: 1759, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 4.16,
   votes: { absentee: { rate: 4.16, count: 276 } }
 },
 { name: '개포3동', rate: 3.10,
@@ -5600,7 +5600,7 @@ var RESULTS = [
 },] },
 
   // [ 25] 광역의원   | 박상혁 | 서울특별시 서초구 제1선거구
-  { id: 25, voteRate: 7.63, totalVotes: 4436, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 7.09,
+  { id: 25, costLimit: 61289440, costSpent: 50227846, voteRate: 7.63, totalVotes: 4436, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 7.09,
   votes: { absentee: { rate: 7.09, count: 394 } }
 },
 { name: '잠원동', rate: 8.47,
@@ -5629,7 +5629,7 @@ var RESULTS = [
 },] },
 
   // [ 26] 광역의원   | 이종태 | 서울특별시 강동구 제2선거구
-  { id: 26, voteRate: 4.30, totalVotes: 1940, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 4.89,
+  { id: 26, costLimit: 58289440, costSpent: 31436500, voteRate: 4.30, totalVotes: 1940, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 4.89,
   votes: { absentee: { rate: 4.89, count: 210 } }
 },
 { name: '상일제1동', rate: 4.20,
@@ -5652,7 +5652,7 @@ var RESULTS = [
 },] },
 
   // [ 27] 광역의원   | 류근윤 | 충청북도 청주시 제13선거구
-  { id: 27, voteRate: 4.50, totalVotes: 719, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 4.32,
+  { id: 27, costLimit: 52289440, costSpent: 42852670, voteRate: 4.50, totalVotes: 719, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 4.32,
   votes: { absentee: { rate: 4.32, count: 66 } }
 },
 { name: '우암동', rate: 6.32,
@@ -5675,7 +5675,7 @@ var RESULTS = [
 },] },
 
   // [ 28] 광역의원   | 김순주 | 세종특별자치시 4선거구
-  { id: 28, voteRate: 14.07, totalVotes: 1908, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 12.31,
+  { id: 28, costLimit: 52289440, costSpent: 14061820, voteRate: 14.07, totalVotes: 1908, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 12.31,
   votes: { absentee: { rate: 12.31, count: 245 } }
 },
 { name: '연기면', rate: 3.80,
@@ -5698,7 +5698,7 @@ var RESULTS = [
 },] },
 
   // [ 29] 광역의원   | 이건우 | 제주특별자치도 노형 을선거구
-  { id: 29, voteRate: 11.57, totalVotes: 1524, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 12.28,
+  { id: 29, costLimit: 52289440, costSpent: 22023280, voteRate: 11.57, totalVotes: 1524, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 12.28,
   votes: { absentee: { rate: 12.28, count: 265 } }
 },
 { name: '노형동', rate: 11.39,
@@ -5709,7 +5709,7 @@ var RESULTS = [
 },] },
 
   // [ 30] 광역의원   | 양해두 | 제주특별자치도 외도·이호·도두선거구
-  { id: 30, voteRate: 27.51, totalVotes: 3559, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 20.71,
+  { id: 30, costLimit: 52289440, costSpent: 41625890, voteRate: 27.51, totalVotes: 3559, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 20.71,
   votes: { absentee: { rate: 20.71, count: 298 } }
 },
 { name: '외도동', rate: 30.98,
@@ -5732,7 +5732,7 @@ var RESULTS = [
 },] },
 
   // [ 31] 기초의원   | 채송준 | 서울 강남구 다선거구
-  { id: 31, voteRate: 4.03, totalVotes: 1662, result: '후보', quota: 1, districts: [], neighborhoods: [{
+  { id: 31, costLimit: 52496024, costSpent: 19952080, voteRate: 4.03, totalVotes: 1662, result: '후보', quota: 1, districts: [], neighborhoods: [{
     name: '관외사전투표',
     rate: 4.49,
     votes: {
@@ -5765,7 +5765,7 @@ var RESULTS = [
   }] },
 
   // [ 32] 기초의원   | 이규민 | 서울 강남구 마선거구
-  { id: 32, voteRate: 3.13, totalVotes: 916, result: '후보', quota: 1, districts: [], neighborhoods: [  {
+  { id: 32, costLimit: 48496024, costSpent: 1113602, voteRate: 3.13, totalVotes: 916, result: '후보', quota: 1, districts: [], neighborhoods: [  {
     name: '관외사전투표',
     rate: 5.22,
     votes: {
@@ -5798,7 +5798,7 @@ var RESULTS = [
   }] },
 
   // [ 33] 기초의원   | 구성도 | 서울 강남구 라선거구
-  { id: 33, voteRate: 4.13, totalVotes: 2001, result: '후보', quota: 1, districts: [], neighborhoods: [ {
+  { id: 33, costLimit: 52496024, costSpent: 9252125, voteRate: 4.13, totalVotes: 2001, result: '후보', quota: 1, districts: [], neighborhoods: [ {
     name: '관외사전투표',
     rate: 4.57,
     votes: {
@@ -5831,7 +5831,7 @@ var RESULTS = [
   }] },
 
   // [ 34] 기초의원   | 김동현 | 서울 강남구 자선거구
-  { id: 34, voteRate: 5.24, totalVotes: 2233, result: '후보', quota: 1, districts: [], neighborhoods: [{
+  { id: 34, costLimit: 51496024, costSpent: 23327822, voteRate: 5.24, totalVotes: 2233, result: '후보', quota: 1, districts: [], neighborhoods: [{
     name: '관외사전투표',
     rate: 5.58,
     votes: {
@@ -5864,7 +5864,7 @@ var RESULTS = [
   }] },
 
   // [ 35] 기초의원   | 김정훈 | 서울 동대문구 바선거구
-  { id: 35, voteRate: 2.71, totalVotes: 1420, result: '후보', quota: 1, districts: [], neighborhoods: [ {
+  { id: 35, costLimit: 53496024, costSpent: 5771780, voteRate: 2.71, totalVotes: 1420, result: '후보', quota: 1, districts: [], neighborhoods: [ {
     name: '관외사전투표',
     rate: 3.09,
     votes: {
@@ -5897,7 +5897,7 @@ var RESULTS = [
   }] },
 
   // [ 36] 기초의원   | 이호엽 | 서울 성북구 가선거구
-  { id: 36, voteRate: 3.93, totalVotes: 2276, result: '후보', quota: 1, districts: [], neighborhoods: [      {
+  { id: 36, costLimit: 54496024, costSpent: 6039270, voteRate: 3.93, totalVotes: 2276, result: '후보', quota: 1, districts: [], neighborhoods: [      {
     name: '관외사전투표',
     rate: 3.03,
     votes: {
@@ -5961,7 +5961,7 @@ var RESULTS = [
 ] },
 
   // [ 37] 기초의원   | 김성우 | 서울 서대문구 가선거구
-  { id: 37, voteRate: 6.67, totalVotes: 2654, result: '후보', quota: 1, districts: [], neighborhoods: [{
+  { id: 37, costLimit: 50496024, costSpent: 20673030, voteRate: 6.67, totalVotes: 2654, result: '후보', quota: 1, districts: [], neighborhoods: [{
     name: '관외사전투표',
     rate: 6.17,
     votes: {
@@ -6002,101 +6002,101 @@ var RESULTS = [
   }] },
 
   // [ 38] 기초의원   | 오상균 | 서울 성동구 다선거구
-  { id: 38, voteRate: 2.83, totalVotes: 878, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":4.12,"votes":{"absentee":{"rate":4.12,"count":171}}},
+  { id: 38, costLimit: 48496024, costSpent: 7647300, voteRate: 2.83, totalVotes: 878, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":4.12,"votes":{"absentee":{"rate":4.12,"count":171}}},
 {"name":"마장동","rate":2.22,"votes":{"early":{"rate":1.79,"count":52},"polling":{"rate":2.38,"count":193}}},
 {"name":"사근동","rate":4.79,"votes":{"early":{"rate":3.98,"count":55},"polling":{"rate":5.08,"count":196}}},
 {"name":"송정동","rate":1.75,"votes":{"early":{"rate":1.58,"count":22},"polling":{"rate":1.83,"count":55}}},
 {"name":"용답동","rate":2.12,"votes":{"early":{"rate":2.31,"count":48},"polling":{"rate":2.02,"count":83}}},] },
 
   // [ 39] 기초의원   | 최성진 | 서울 구로구 바선거구
-  { id: 39, voteRate: 5.00, totalVotes: 1293, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":5.27,"votes":{"absentee":{"rate":5.27,"count":196}}},
+  { id: 39, costLimit: 48496024, costSpent: 4349240, voteRate: 5.00, totalVotes: 1293, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":5.27,"votes":{"absentee":{"rate":5.27,"count":196}}},
 {"name":"구로제3동","rate":5.8,"votes":{"early":{"rate":5.52,"count":202},"polling":{"rate":5.93,"count":427}}},
 {"name":"구로제4동","rate":4.2,"votes":{"early":{"rate":2.59,"count":54},"polling":{"rate":4.78,"count":274}}},
 {"name":"가리봉동","rate":4,"votes":{"early":{"rate":3.01,"count":35},"polling":{"rate":4.51,"count":102}}}] },
 
   // [ 40] 기초의원   | 고길주 | 서울 영등포구 사선거구
-  { id: 40, voteRate: 2.30, totalVotes: 808, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":3.55,"votes":{"absentee":{"rate":3.55,"count":145}}},
+  { id: 40, costLimit: 50496024, costSpent: 2232920, voteRate: 2.30, totalVotes: 808, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":3.55,"votes":{"absentee":{"rate":3.55,"count":145}}},
 {"name":"신길제6동","rate":2.66,"votes":{"early":{"rate":2.09,"count":61},"polling":{"rate":2.94,"count":178}}},
 {"name":"대림제1동","rate":1.69,"votes":{"early":{"rate":1.46,"count":35},"polling":{"rate":1.82,"count":75}}},
 {"name":"대림제2동","rate":2.16,"votes":{"early":{"rate":1.78,"count":32},"polling":{"rate":2.34,"count":88}}},
 {"name":"대림제3동","rate":1.94,"votes":{"early":{"rate":1.95,"count":51},"polling":{"rate":1.94,"count":142}}},] },
 
   // [ 41] 기초의원   | 박성진 | 서울 노원구 마선거구
-  { id: 41, voteRate: 4.49, totalVotes: 1645, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":5.36,"votes":{"absentee":{"rate":5.36,"count":219}}},
+  { id: 41, costLimit: 50496024, costSpent: 12698246, voteRate: 4.49, totalVotes: 1645, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":5.36,"votes":{"absentee":{"rate":5.36,"count":219}}},
 {"name":"상계2동","rate":4.66,"votes":{"early":{"rate":4.34,"count":145},"polling":{"rate":4.84,"count":288}}},
 {"name":"상계3·4동","rate":4.14,"votes":{"early":{"rate":3.01,"count":81},"polling":{"rate":4.46,"count":426}}},
 {"name":"상계5동","rate":4.44,"votes":{"early":{"rate":3.42,"count":115},"polling":{"rate":4.89,"count":369}}}] },
 
   // [ 42] 기초의원   | 최제일 | 서울 광진구 나선거구
-  { id: 42, voteRate: 3.93, totalVotes: 1896, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":4.21,"votes":{"absentee":{"rate":4.21,"count":226}}},
+  { id: 42, costLimit: 52496024, costSpent: 9079442, voteRate: 3.93, totalVotes: 1896, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":4.21,"votes":{"absentee":{"rate":4.21,"count":226}}},
 {"name":"능동","rate":2.77,"votes":{"early":{"rate":2.74,"count":49},"polling":{"rate":2.78,"count":105}}},
 {"name":"구의제2동","rate":3.12,"votes":{"early":{"rate":2.58,"count":93},"polling":{"rate":3.34,"count":289}}},
 {"name":"광장동","rate":5.34,"votes":{"early":{"rate":4.65,"count":199},"polling":{"rate":5.59,"count":668}}},
 {"name":"군자동","rate":2.98,"votes":{"early":{"rate":2.52,"count":65},"polling":{"rate":3.18,"count":192}}}] },
 
   // [ 43] 기초의원   | 김주연 | 서울 광진구 다선거구
-  { id: 43, voteRate: 2.95, totalVotes: 1615, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":3.84,"votes":{"absentee":{"rate":3.84,"count":222}}},
+  { id: 43, costLimit: 53496024, costSpent: 3032140, voteRate: 2.95, totalVotes: 1615, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":3.84,"votes":{"absentee":{"rate":3.84,"count":222}}},
 {"name":"구의제1동","rate":3.48,"votes":{"early":{"rate":2.81,"count":108},"polling":{"rate":3.83,"count":283}}},
 {"name":"구의제3동","rate":2.77,"votes":{"early":{"rate":3.05,"count":144},"polling":{"rate":2.64,"count":266}}},
 {"name":"자양제1동","rate":2.63,"votes":{"early":{"rate":2.19,"count":95},"polling":{"rate":2.93,"count":193}}},
 {"name":"자양제2동","rate":2.51,"votes":{"early":{"rate":2.18,"count":64},"polling":{"rate":2.61,"count":233}}}] },
 
   // [ 44] 기초의원   | 이진현 | 서울 광진구 라선거구
-  { id: 44, voteRate: 4.21, totalVotes: 1586, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":5.06,"votes":{"absentee":{"rate":5.06,"count":193}}},
+  { id: 44, costLimit: 50496024, costSpent: 2796438, voteRate: 4.21, totalVotes: 1586, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":5.06,"votes":{"absentee":{"rate":5.06,"count":193}}},
 {"name":"자양제3동","rate":3.89,"votes":{"early":{"rate":3.29,"count":154},"polling":{"rate":4.19,"count":390}}},
 {"name":"자양제4동","rate":3.24,"votes":{"early":{"rate":3.25,"count":112},"polling":{"rate":3.23,"count":218}}},
 {"name":"화양동","rate":5.39,"votes":{"early":{"rate":5.5,"count":145},"polling":{"rate":5.35,"count":374}}}] },
 
   // [ 45] 기초의원   | 박범근 | 서울 관악구 라선거구
-  { id: 45, voteRate: 3.57, totalVotes: 1329, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":4.52,"votes":{"absentee":{"rate":4.52,"count":180}}},
+  { id: 45, costLimit: 50496024, costSpent: 4903580, voteRate: 3.57, totalVotes: 1329, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":4.52,"votes":{"absentee":{"rate":4.52,"count":180}}},
 {"name":"신사동","rate":3.42,"votes":{"early":{"rate":3.52,"count":135},"polling":{"rate":3.37,"count":215}}},
 {"name":"조원동","rate":4.17,"votes":{"early":{"rate":3.47,"count":109},"polling":{"rate":4.53,"count":280}}},
 {"name":"미성동","rate":3,"votes":{"early":{"rate":2.78,"count":113},"polling":{"rate":3.09,"count":294}}}] },
 
   // [ 46] 기초의원   | 민영진 | 서울 관악구 마선거구
-  { id: 46, voteRate: 12.11, totalVotes: 2496, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":7.86,"votes":{"absentee":{"rate":7.86,"count":196}}},
+  { id: 46, costLimit: 47496024, costSpent: 43696600, voteRate: 12.11, totalVotes: 2496, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":7.86,"votes":{"absentee":{"rate":7.86,"count":196}}},
 {"name":"난곡동","rate":13.06,"votes":{"early":{"rate":12.92,"count":444},"polling":{"rate":13.13,"count":973}}},
 {"name":"난향동","rate":12.18,"votes":{"early":{"rate":10.48,"count":265},"polling":{"rate":13.09,"count":616}}}] },
 
   // [ 47] 기초의원   | 구자민 | 서울 관악구 나선거구
-  { id: 47, voteRate: 6.40, totalVotes: 3153, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":6.8,"votes":{"absentee":{"rate":6.8,"count":375}}},
+  { id: 47, costLimit: 52496024, costSpent: 48817410, voteRate: 6.40, totalVotes: 3153, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":6.8,"votes":{"absentee":{"rate":6.8,"count":375}}},
 {"name":"행운동","rate":5.59,"votes":{"early":{"rate":4.73,"count":171},"polling":{"rate":5.91,"count":579}}},
 {"name":"낙성대동","rate":8.63,"votes":{"early":{"rate":7.21,"count":167},"polling":{"rate":9.2,"count":530}}},
 {"name":"인헌동","rate":6.57,"votes":{"early":{"rate":5.1,"count":275},"polling":{"rate":7.53,"count":613}}},
 {"name":"남현동","rate":5.08,"votes":{"early":{"rate":3.94,"count":116},"polling":{"rate":5.67,"count":325}}}] },
 
   // [ 48] 기초의원   | 구가환 | 서울 관악구 다선거구
-  { id: 48, voteRate: 4.89, totalVotes: 2551, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":5.34,"votes":{"absentee":{"rate":5.34,"count":348}}},
+  { id: 48, costLimit: 47496024, costSpent: 43696600, voteRate: 4.89, totalVotes: 2551, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":5.34,"votes":{"absentee":{"rate":5.34,"count":348}}},
 {"name":"성현동","rate":4.46,"votes":{"early":{"rate":4.1,"count":153},"polling":{"rate":4.59,"count":495}}},
 {"name":"중앙동","rate":5.3,"votes":{"early":{"rate":4.82,"count":132},"polling":{"rate":5.59,"count":248}}},
 {"name":"청림동","rate":5.18,"votes":{"early":{"rate":4.79,"count":112},"polling":{"rate":5.35,"count":284}}},
 {"name":"청룡동","rate":4.8,"votes":{"early":{"rate":3.18,"count":134},"polling":{"rate":5.37,"count":642}}}] },
 
   // [ 49] 기초의원   | 원동철 | 서울 관악구 사선거구
-  { id: 49, voteRate: 3.90, totalVotes: 935, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":4.81,"votes":{"absentee":{"rate":4.81,"count":136}}},
+  { id: 49, costLimit: 47496024, costSpent: 1817140, voteRate: 3.90, totalVotes: 935, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":4.81,"votes":{"absentee":{"rate":4.81,"count":136}}},
 {"name":"삼성동","rate":1.9,"votes":{"early":{"rate":1.99,"count":68},"polling":{"rate":1.86,"count":128}}},
 {"name":"대학동","rate":5.57,"votes":{"early":{"rate":5.24,"count":197},"polling":{"rate":5.75,"count":403}}}] },
 
   // [ 50] 기초의원   | 장성혁 | 서울 송파구 가선거구
-  { id: 50, voteRate: 5.02, totalVotes: 2297, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":6.33,"votes":{"absentee":{"rate":6.33,"count":235}}},
+  { id: 50, costLimit: 51496024, costSpent: 2889900, voteRate: 5.02, totalVotes: 2297, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":6.33,"votes":{"absentee":{"rate":6.33,"count":235}}},
 {"name":"풍납1동","rate":4.03,"votes":{"early":{"rate":3.25,"count":76},"polling":{"rate":4.57,"count":153}}},
 {"name":"풍납2동","rate":4.19,"votes":{"early":{"rate":3.97,"count":165},"polling":{"rate":4.32,"count":317}}},
 {"name":"잠실4동","rate":5.68,"votes":{"early":{"rate":5.98,"count":238},"polling":{"rate":5.58,"count":680}}},
 {"name":"잠실6동","rate":5,"votes":{"early":{"rate":5.66,"count":160},"polling":{"rate":4.67,"count":268}}}] },
 
   // [ 51] 기초의원   | 김영민 | 서울 강동구 사선거구
-  { id: 51, voteRate: 4.72, totalVotes: 2772, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":5.76,"votes":{"absentee":{"rate":5.76,"count":373}}},
+  { id: 51, costLimit: 54496024, costSpent: 9998584, voteRate: 4.72, totalVotes: 2772, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":5.76,"votes":{"absentee":{"rate":5.76,"count":373}}},
 {"name":"길동","rate":3.71,"votes":{"early":{"rate":3.46,"count":203},"polling":{"rate":3.8,"count":601}}},
 {"name":"둔촌제1동","rate":5.43,"votes":{"early":{"rate":5.71,"count":301},"polling":{"rate":5.31,"count":668}}},
 {"name":"둔촌제2동","rate":4.95,"votes":{"early":{"rate":4.17,"count":146},"polling":{"rate":5.26,"count":476}}}] },
 
   // [ 52] 기초의원   | 조연우 | 부산 기장군 다선거구
-  { id: 52, voteRate: 1.36, totalVotes: 531, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":2.56,"votes":{"absentee":{"rate":2.56,"count":99}}},
+  { id: 52, costLimit: 52496024, costSpent: 6682500, voteRate: 1.36, totalVotes: 531, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":2.56,"votes":{"absentee":{"rate":2.56,"count":99}}},
 {"name":"장안읍","rate":1.24,"votes":{"early":{"rate":1.69,"count":17},"polling":{"rate":1.09,"count":33}}},
 {"name":"정관읍","rate":1.24,"votes":{"early":{"rate":1.05,"count":76},"polling":{"rate":1.29,"count":305}}}] },
 
   // [ 53] 기초의원   | 박종길 | 대구 달서구 다선거구
-  { id: 53, voteRate: 6.38, totalVotes: 2125, result: '후보', quota: 1, districts: [], neighborhoods: [{
+  { id: 53, costLimit: 49496024, costSpent: 29706896, voteRate: 6.38, totalVotes: 2125, result: '후보', quota: 1, districts: [], neighborhoods: [{
     name: '관외사전투표',
     rate: 7.01,
     votes: {
@@ -6129,7 +6129,7 @@ var RESULTS = [
   }] },
 
   // [ 54] 기초의원   | 우영훈 | 대구 달성군 가선거구
-  { id: 54, voteRate: 3.61, totalVotes: 1094, result: '후보', quota: 1, districts: [], neighborhoods: [  {
+  { id: 54, costLimit: 48496024, costSpent: 33329612, voteRate: 3.61, totalVotes: 1094, result: '후보', quota: 1, districts: [], neighborhoods: [  {
     name: '관외사전투표',
     rate: 4.86,
     votes: {
@@ -6154,7 +6154,7 @@ var RESULTS = [
   }] },
 
   // [ 55] 기초의원   | 우성원 | 대구 달성군 다선거구
-  { id: 55, voteRate: 13.59, totalVotes: 4521, result: '후보', quota: 1, districts: [], neighborhoods: [{
+  { id: 55, costLimit: 50496024, costSpent: 48531154, voteRate: 13.59, totalVotes: 4521, result: '후보', quota: 1, districts: [], neighborhoods: [{
     name: '관외사전투표',
     rate: 9.25,
     votes: {
@@ -6187,7 +6187,7 @@ var RESULTS = [
   }] },
 
   // [ 56] 기초의원   | 박철현 | 대구 동구 다선거구
-  { id: 56, voteRate: 4.11, totalVotes: 1457, result: '후보', quota: 1, districts: [], neighborhoods: [{
+  { id: 56, costLimit: 49496024, costSpent: 4766480, voteRate: 4.11, totalVotes: 1457, result: '후보', quota: 1, districts: [], neighborhoods: [{
     name: '관외사전투표',
     rate: 4.84,
     votes: {
@@ -6236,7 +6236,7 @@ var RESULTS = [
   }] },
 
   // [ 57] 기초의원   | 오태훈 | 대구 수성구 라선거구
-  { id: 57, voteRate: 9.55, totalVotes: 4655, result: '후보', quota: 1, districts: [], neighborhoods: [  {
+  { id: 57, costLimit: 52496024, costSpent: 5493722, voteRate: 9.55, totalVotes: 4655, result: '후보', quota: 1, districts: [], neighborhoods: [  {
     name: '관외사전투표',
     rate: 9.29,
     votes: {
@@ -6269,7 +6269,7 @@ var RESULTS = [
   }] },
 
   // [ 58] 기초의원   | 최윤석 | 대구 수성구 마선거구
-  { id: 58, voteRate: 4.19, totalVotes: 1824, result: '후보', quota: 1, districts: [], neighborhoods: [{
+  { id: 58, costLimit: 51496024, costSpent: 27789340, voteRate: 4.19, totalVotes: 1824, result: '후보', quota: 1, districts: [], neighborhoods: [{
     name: '관외사전투표',
     rate: 5.78,
     votes: {
@@ -6326,7 +6326,7 @@ var RESULTS = [
   }] },
 
   // [ 59] 기초의원   | 성진영 | 대구 중구 가선거구
-  { id: 59, voteRate: 4.07, totalVotes: 908, result: '후보', quota: 1, districts: [], neighborhoods: [{
+  { id: 59, costLimit: 47496024, costSpent: 2668450, voteRate: 4.07, totalVotes: 908, result: '후보', quota: 1, districts: [], neighborhoods: [{
     name: '관외사전투표',
     rate: 4.55,
     votes: {
@@ -6383,11 +6383,11 @@ var RESULTS = [
   }] },
 
   // [ 60] 기초의원   | 강신학 | 인천 연수구 마선거구
-  { id: 60, voteRate: 3.82, totalVotes: 986, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":4.62,"votes":{"absentee":{"rate":4.62,"count":152}}},
+  { id: 60, costLimit: 48496024, costSpent: 1579013, voteRate: 3.82, totalVotes: 986, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":4.62,"votes":{"absentee":{"rate":4.62,"count":152}}},
 {"name":"송도4동","rate":3.72,"votes":{"early":{"rate":3.61,"count":179},"polling":{"rate":3.75,"count":655}}}] },
 
   // [ 61] 기초의원   | 이종호 | 인천 제물포구 가선거구
-  { id: 61, voteRate: 10.55, totalVotes: 2163, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":7.32,"votes":{"absentee":{"rate":7.32,"count":132}}},
+  { id: 61, costLimit: 47496024, costSpent: 38609963, voteRate: 10.55, totalVotes: 2163, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":7.32,"votes":{"absentee":{"rate":7.32,"count":132}}},
 {"name":"신포동","rate":9.39,"votes":{"early":{"rate":9.62,"count":79},"polling":{"rate":9.26,"count":133}}},
 {"name":"연안동","rate":7.56,"votes":{"early":{"rate":7.68,"count":78},"polling":{"rate":7.47,"count":96}}},
 {"name":"신흥동","rate":11.42,"votes":{"early":{"rate":9.91,"count":160},"polling":{"rate":12,"count":502}}},
@@ -6397,12 +6397,12 @@ var RESULTS = [
 {"name":"개항동","rate":8.7,"votes":{"early":{"rate":8.78,"count":69},"polling":{"rate":8.67,"count":171}}}] },
 
   // [ 62] 기초의원   | 이성실 | 인천 연수구 라선거구
-  { id: 62, voteRate: 6.77, totalVotes: 2936, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":7.6,"votes":{"absentee":{"rate":7.6,"count":346}}},
+  { id: 62, costLimit: 52496024, costSpent: 2328020, voteRate: 6.77, totalVotes: 2936, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":7.6,"votes":{"absentee":{"rate":7.6,"count":346}}},
 {"name":"송도1동","rate":5.99,"votes":{"early":{"rate":5.83,"count":262},"polling":{"rate":6.05,"count":766}}},
 {"name":"송도3동","rate":7.2,"votes":{"early":{"rate":6.73,"count":388},"polling":{"rate":7.38,"count":1167}}}] },
 
   // [ 63] 기초의원   | 강민제 | 인천 남동구 가선거구
-  { id: 63, voteRate: 1.87, totalVotes: 1157, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":2.29,"votes":{"absentee":{"rate":2.29,"count":175}}},
+  { id: 63, costLimit: 57496024, costSpent: 4068560, voteRate: 1.87, totalVotes: 1157, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":2.29,"votes":{"absentee":{"rate":2.29,"count":175}}},
 {"name":"구월1동","rate":1.72,"votes":{"early":{"rate":1.14,"count":53},"polling":{"rate":2.01,"count":184}}},
 {"name":"구월3동","rate":2.36,"votes":{"early":{"rate":1.56,"count":34},"polling":{"rate":2.6,"count":186}}},
 {"name":"구월4동","rate":1,"votes":{"early":{"rate":0.88,"count":13},"polling":{"rate":1.05,"count":36}}},
@@ -6411,7 +6411,7 @@ var RESULTS = [
 {"name":"남촌도림동","rate":1.55,"votes":{"early":{"rate":1.58,"count":30},"polling":{"rate":1.54,"count":91}}}] },
 
   // [ 64] 기초의원   | 하용준 | 대전 동구 나선거구
-  { id: 64, voteRate: 2.37, totalVotes: 772, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":3.13,"votes":{"absentee":{"rate":3.13,"count":97}}},
+  { id: 64, costLimit: 50496024, costSpent: 1375491, voteRate: 2.37, totalVotes: 772, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":3.13,"votes":{"absentee":{"rate":3.13,"count":97}}},
 {"name":"판암1동","rate":2.16,"votes":{"early":{"rate":1.83,"count":35},"polling":{"rate":2.34,"count":83}}},
 {"name":"판암2동","rate":1.83,"votes":{"early":{"rate":1.55,"count":24},"polling":{"rate":2.02,"count":46}}},
 {"name":"용운동","rate":2.34,"votes":{"early":{"rate":1.86,"count":49},"polling":{"rate":2.54,"count":159}}},
@@ -6420,7 +6420,7 @@ var RESULTS = [
 {"name":"대청동","rate":1.43,"votes":{"early":{"rate":2.12,"count":5},"polling":{"rate":1.21,"count":9}}}] },
 
   // [ 65] 기초의원   | 박현겸 | 대전 동구 가선거구
-  { id: 65, voteRate: 4.04, totalVotes: 1826, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":4.68,"votes":{"absentee":{"rate":4.68,"count":289}}},
+  { id: 65, costLimit: 52496024, costSpent: 3531500, voteRate: 4.04, totalVotes: 1826, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":4.68,"votes":{"absentee":{"rate":4.68,"count":289}}},
 {"name":"중앙동","rate":2.25,"votes":{"early":{"rate":3.6,"count":21},"polling":{"rate":1.4,"count":13}}},
 {"name":"신인동","rate":4.38,"votes":{"early":{"rate":4.53,"count":54},"polling":{"rate":4.34,"count":214}}},
 {"name":"효동","rate":4.58,"votes":{"early":{"rate":4.85,"count":192},"polling":{"rate":4.45,"count":367}}},
@@ -6429,7 +6429,7 @@ var RESULTS = [
 {"name":"산내동","rate":3.54,"votes":{"early":{"rate":3.24,"count":91},"polling":{"rate":3.67,"count":225}}}] },
 
   // [ 66] 기초의원   | 조동운 | 대전 서구 다선거구
-  { id: 66, voteRate: 2.77, totalVotes: 1436, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":4.34,"votes":{"absentee":{"rate":4.34,"count":226}}},
+  { id: 66, costLimit: 54496024, costSpent: 5175870, voteRate: 2.77, totalVotes: 1436, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":4.34,"votes":{"absentee":{"rate":4.34,"count":226}}},
 {"name":"가수원동","rate":2.15,"votes":{"early":{"rate":2.37,"count":48},"polling":{"rate":1.99,"count":57}}},
 {"name":"도안동","rate":2.79,"votes":{"early":{"rate":2.68,"count":82},"polling":{"rate":2.82,"count":300}}},
 {"name":"관저1동","rate":3.49,"votes":{"early":{"rate":3.35,"count":88},"polling":{"rate":3.58,"count":146}}},
@@ -6437,14 +6437,14 @@ var RESULTS = [
 {"name":"기성동","rate":1.86,"votes":{"early":{"rate":1.87,"count":13},"polling":{"rate":1.85,"count":18}}},] },
 
   // [ 67] 기초의원   | 김영욱 | 대전 서구 가선거구
-  { id: 67, voteRate: 2.42, totalVotes: 843, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":4.15,"votes":{"absentee":{"rate":4.15,"count":147}}},
+  { id: 67, costLimit: 50496024, costSpent: 1850863, voteRate: 2.42, totalVotes: 843, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":4.15,"votes":{"absentee":{"rate":4.15,"count":147}}},
 {"name":"복수동","rate":2.44,"votes":{"early":{"rate":2.37,"count":69},"polling":{"rate":2.48,"count":142}}},
 {"name":"도마1동","rate":2.37,"votes":{"early":{"rate":2.59,"count":58},"polling":{"rate":2.28,"count":124}}},
 {"name":"도마2동","rate":2.27,"votes":{"early":{"rate":2.41,"count":43},"polling":{"rate":2.23,"count":138}}},
 {"name":"정림동","rate":1.73,"votes":{"early":{"rate":1.61,"count":39},"polling":{"rate":1.8,"count":81}}},] },
 
   // [ 68] 기초의원   | 윤서진 | 대전 유성구 나선거구
-  { id: 68, voteRate: 9.18, totalVotes: 3979, result: '후보', quota: 1, districts: [], neighborhoods: [  {
+  { id: 68, costLimit: 52496024, costSpent: 16211930, voteRate: 9.18, totalVotes: 3979, result: '후보', quota: 1, districts: [], neighborhoods: [  {
     name: '관외사전투표',
     rate: 9.74,
     votes: {
@@ -6477,7 +6477,7 @@ var RESULTS = [
   }] },
 
   // [ 69] 기초의원   | 박진우 | 광주 동구 가선거구
-  { id: 69, voteRate: 3.55, totalVotes: 852, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 3.76, votes: { absentee: { rate: 3.76, count: 148 } } },
+  { id: 69, costLimit: 48496024, costSpent: 2706500, voteRate: 3.55, totalVotes: 852, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 3.76, votes: { absentee: { rate: 3.76, count: 148 } } },
 { name: '충장동', rate: 4.81, votes: { early: { rate: 2.81, count: 24 }, polling: { rate: 6.48, count: 66 } } },
 { name: '동명동', rate: 5.23, votes: { early: { rate: 2.60, count: 17 }, polling: { rate: 8.09, count: 49 } } },
 { name: '계림1동', rate: 3.47, votes: { early: { rate: 2.01, count: 30 }, polling: { rate: 4.39, count: 104 } } },
@@ -6486,25 +6486,25 @@ var RESULTS = [
 { name: '산수2동', rate: 2.96, votes: { early: { rate: 1.92, count: 34 }, polling: { rate: 3.74, count: 87 } } },] },
 
   // [ 70] 기초의원   | 이재형 | 경기 수원시 자선거구
-  { id: 70, voteRate: 6.02, totalVotes: 2308, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":7.38,"votes":{"absentee":{"rate":7.38,"count":385}}},
+  { id: 70, costLimit: 51496024, costSpent: 27716640, voteRate: 6.02, totalVotes: 2308, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":7.38,"votes":{"absentee":{"rate":7.38,"count":385}}},
 {"name":"원천동","rate":6.79,"votes":{"early":{"rate":5.35,"count":181},"polling":{"rate":7.12,"count":1031}}},
 {"name":"영통1동","rate":4.64,"votes":{"early":{"rate":4.04,"count":179},"polling":{"rate":4.88,"count":526}}}] },
 
   // [ 71] 기초의원   | 황승빈 | 경기 수원시 파선거구
-  { id: 71, voteRate: 5.96, totalVotes: 3681, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":7.12,"votes":{"absentee":{"rate":7.12,"count":421}}},
+  { id: 71, costLimit: 56496024, costSpent: 8468910, voteRate: 5.96, totalVotes: 3681, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":7.12,"votes":{"absentee":{"rate":7.12,"count":421}}},
 {"name":"영통2동","rate":6.9,"votes":{"early":{"rate":7.26,"count":309},"polling":{"rate":6.71,"count":556}}},
 {"name":"영통3동","rate":5.42,"votes":{"early":{"rate":5.59,"count":202},"polling":{"rate":5.36,"count":568}}},
 {"name":"망포1동","rate":5.54,"votes":{"early":{"rate":5.65,"count":187},"polling":{"rate":5.5,"count":498}}},
 {"name":"망포2동","rate":5.63,"votes":{"early":{"rate":4.92,"count":248},"polling":{"rate":5.94,"count":679}}},] },
 
   // [ 72] 기초의원   | 노만래 | 경기 수원시 다선거구
-  { id: 72, voteRate: 2.69, totalVotes: 1512, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":3.74,"votes":{"absentee":{"rate":3.74,"count":232}}},
+  { id: 72, costLimit: 54496024, costSpent: 7351600, voteRate: 2.69, totalVotes: 1512, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":3.74,"votes":{"absentee":{"rate":3.74,"count":232}}},
 {"name":"정자1동","rate":2.45,"votes":{"early":{"rate":2.07,"count":91},"polling":{"rate":2.6,"count":290}}},
 {"name":"정자2동","rate":2.32,"votes":{"early":{"rate":2.3,"count":68},"polling":{"rate":2.33,"count":290}}},
 {"name":"정자3동","rate":2.86,"votes":{"early":{"rate":2.66,"count":143},"polling":{"rate":2.94,"count":398}}}] },
 
   // [ 73] 기초의원   | 민경록 | 경기 수원시 바선거구
-  { id: 73, voteRate: 6.67, totalVotes: 3494, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":7.31,"votes":{"absentee":{"rate":7.31,"count":396}}},
+  { id: 73, costLimit: 54496024, costSpent: 47693573, voteRate: 6.67, totalVotes: 3494, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":7.31,"votes":{"absentee":{"rate":7.31,"count":396}}},
 {"name":"매교동","rate":5.56,"votes":{"early":{"rate":4.91,"count":97},"polling":{"rate":5.73,"count":419}}},
 {"name":"매산동","rate":4.52,"votes":{"early":{"rate":4.46,"count":50},"polling":{"rate":4.55,"count":135}}},
 {"name":"고등동","rate":6.76,"votes":{"early":{"rate":6.15,"count":198},"polling":{"rate":7.13,"count":380}}},
@@ -6513,7 +6513,7 @@ var RESULTS = [
 {"name":"세류1동","rate":5.03,"votes":{"early":{"rate":4.63,"count":72},"polling":{"rate":5.23,"count":157}}}] },
 
   // [ 74] 기초의원   | 김동광 | 경기 수원시 사선거구
-  { id: 74, voteRate: 4.36, totalVotes: 1978, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":5.61,"votes":{"absentee":{"rate":5.61,"count":312}}},
+  { id: 74, costLimit: 53496024, costSpent: 17212841, voteRate: 4.36, totalVotes: 1978, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":5.61,"votes":{"absentee":{"rate":5.61,"count":312}}},
 {"name":"행궁동","rate":3.16,"votes":{"early":{"rate":2.55,"count":26},"polling":{"rate":3.41,"count":85}}},
 {"name":"지동","rate":2.77,"votes":{"early":{"rate":2.81,"count":45},"polling":{"rate":2.75,"count":90}}},
 {"name":"우만1동","rate":3.51,"votes":{"early":{"rate":3.38,"count":67},"polling":{"rate":3.55,"count":193}}},
@@ -6521,7 +6521,7 @@ var RESULTS = [
 {"name":"인계동","rate":4.64,"votes":{"early":{"rate":4.33,"count":149},"polling":{"rate":4.72,"count":607}}}] },
 
   // [ 75] 기초의원   | 우태주 | 경기 용인시 카선거구
-  { id: 75, voteRate: 3.15, totalVotes: 2311, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":3.95,"votes":{"absentee":{"rate":3.95,"count":290}}},
+  { id: 75, costLimit: 58496024, costSpent: 31789707, voteRate: 3.15, totalVotes: 2311, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":3.95,"votes":{"absentee":{"rate":3.95,"count":290}}},
 {"name":"보정동","rate":3.15,"votes":{"early":{"rate":2.77,"count":159},"polling":{"rate":3.34,"count":394}}},
 {"name":"죽전1동","rate":2.98,"votes":{"early":{"rate":2.79,"count":144},"polling":{"rate":3.08,"count":294}}},
 {"name":"죽전2동","rate":3.44,"votes":{"early":{"rate":3.17,"count":50},"polling":{"rate":3.51,"count":207}}},
@@ -6529,20 +6529,20 @@ var RESULTS = [
 {"name":"상현2동","rate":2.85,"votes":{"early":{"rate":2.62,"count":125},"polling":{"rate":2.96,"count":313}}}] },
 
   // [ 76] 기초의원   | 이승도 | 경기 용인시 사선거구
-  { id: 76, voteRate: 2.44, totalVotes: 1258, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":3.49,"votes":{"absentee":{"rate":3.49,"count":171}}},
+  { id: 76, costLimit: 53496024, costSpent: 0, voteRate: 2.44, totalVotes: 1258, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":3.49,"votes":{"absentee":{"rate":3.49,"count":171}}},
 {"name":"상현1동","rate":2.17,"votes":{"early":{"rate":1.77,"count":43},"polling":{"rate":2.31,"count":156}}},
 {"name":"상현3동","rate":2.91,"votes":{"early":{"rate":2.82,"count":110},"polling":{"rate":2.95,"count":257}}},
 {"name":"성복동","rate":2.1,"votes":{"early":{"rate":1.97,"count":104},"polling":{"rate":2.13,"count":415}}}] },
 
   // [ 77] 기초의원   | 정민재 | 경기 고양시 아선거구
-  { id: 77, voteRate: 2.95, totalVotes: 1505, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":3.75,"votes":{"absentee":{"rate":3.75,"count":305}}},
+  { id: 77, costLimit: 54496024, costSpent: 8273050, voteRate: 2.95, totalVotes: 1505, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":3.75,"votes":{"absentee":{"rate":3.75,"count":305}}},
 {"name":"정발산동","rate":2.56,"votes":{"early":{"rate":2.34,"count":58},"polling":{"rate":2.64,"count":175}}},
 {"name":"풍산동","rate":2.48,"votes":{"early":{"rate":1.72,"count":70},"polling":{"rate":2.73,"count":350}}},
 {"name":"장항1동","rate":3.31,"votes":{"early":{"rate":2.71,"count":26},"polling":{"rate":3.39,"count":219}}},
 {"name":"장항2동","rate":3.2,"votes":{"early":{"rate":2.88,"count":70},"polling":{"rate":3.32,"count":225}}},] },
 
   // [ 78] 기초의원   | 김성욱 | 경기 화성시 다선거구
-  { id: 78, voteRate: 9.88, totalVotes: 6055, result: '후보', quota: 1, districts: [], neighborhoods: [{
+  { id: 78, costLimit: 57496024, costSpent: 19409860, voteRate: 9.88, totalVotes: 6055, result: '후보', quota: 1, districts: [], neighborhoods: [{
     name: '관외사전투표',
     rate: 11.20,
     votes: {
@@ -6578,7 +6578,7 @@ var RESULTS = [
   }] },
 
   // [ 79] 기초의원   | 김기현 | 경기 화성시 라선거구
-  { id: 79, voteRate: 12.83, totalVotes: 7880, result: '당선', quota: 1, districts: [], neighborhoods: [  {
+  { id: 79, costLimit: 57496024, costSpent: 13201813, voteRate: 12.83, totalVotes: 7880, result: '당선', quota: 1, districts: [], neighborhoods: [  {
     name: '관외사전투표',
     rate: 11.34,
     votes: {
@@ -6614,7 +6614,7 @@ var RESULTS = [
   }] },
 
   // [ 80] 기초의원   | 이우주 | 경기 화성시 마선거구
-  { id: 80, voteRate: 17.10, totalVotes: 8838, result: '후보', quota: 1, districts: [], neighborhoods: [ {
+  { id: 80, costLimit: 55496024, costSpent: 11861720, voteRate: 17.10, totalVotes: 8838, result: '후보', quota: 1, districts: [], neighborhoods: [ {
     name: '관외사전투표',
     rate: 13.93,
     votes: {
@@ -6641,7 +6641,7 @@ var RESULTS = [
   }] },
 
   // [ 81] 기초의원   | 이세원 | 경기 화성시 아선거구
-  { id: 81, voteRate: 6.82, totalVotes: 2447, result: '후보', quota: 1, districts: [], neighborhoods: [  {
+  { id: 81, costLimit: 51496024, costSpent: 2756000, voteRate: 6.82, totalVotes: 2447, result: '후보', quota: 1, districts: [], neighborhoods: [  {
     name: '관외사전투표',
     rate: 8.15,
     votes: {
@@ -6668,7 +6668,7 @@ var RESULTS = [
   }] },
 
   // [ 82] 기초의원   | 오태석 | 경기 화성시 바선거구
-  { id: 82, voteRate: 4.01, totalVotes: 2180, result: '후보', quota: 1, districts: [], neighborhoods: [ {
+  { id: 82, costLimit: 56496024, costSpent: 18035283, voteRate: 4.01, totalVotes: 2180, result: '후보', quota: 1, districts: [], neighborhoods: [ {
     name: '관외사전투표',
     rate: 4.65,
     votes: {
@@ -6695,7 +6695,7 @@ var RESULTS = [
   }] },
 
   // [ 83] 기초의원   | 홍승우 | 경기 성남시 차선거구
-  { id: 83, voteRate: 3.32, totalVotes: 1772, result: '후보', quota: 1, districts: [], neighborhoods: [  {
+  { id: 83, costLimit: 53496024, costSpent: 2947000, voteRate: 3.32, totalVotes: 1772, result: '후보', quota: 1, districts: [], neighborhoods: [  {
     name: '분당동',
     rate: 3.10,
     votes: {
@@ -6737,14 +6737,14 @@ var RESULTS = [
   }] },
 
   // [ 84] 기초의원   | 오정대 | 경기 성남시 바선거구
-  { id: 84, voteRate: 2.94, totalVotes: 1003, result: '후보', quota: 1, districts: [], neighborhoods: [ {"name":"관외사전투표","rate":4.65,"votes":{"absentee":{"rate":4.65,"count":141}}},
+  { id: 84, costLimit: 49496024, costSpent: 2828310, voteRate: 2.94, totalVotes: 1003, result: '후보', quota: 1, districts: [], neighborhoods: [ {"name":"관외사전투표","rate":4.65,"votes":{"absentee":{"rate":4.65,"count":141}}},
 {"name":"이매1동","rate":2.86,"votes":{"early":{"rate":2.89,"count":77},"polling":{"rate":2.86,"count":284}}},
 {"name":"이매2동","rate":2.39,"votes":{"early":{"rate":2.39,"count":50},"polling":{"rate":2.39,"count":115}}},
 {"name":"삼평동","rate":2.91,"votes":{"early":{"rate":2.55,"count":80},"polling":{"rate":3.05,"count":253}}},
 ] },
 
   // [ 85] 기초의원   | 김병진 | 경기 성남시 마선거구
-  { id: 85, voteRate: 3.48, totalVotes: 1585, result: '후보', quota: 1, districts: [], neighborhoods: [ {
+  { id: 85, costLimit: 52496024, costSpent: 8592347, voteRate: 3.48, totalVotes: 1585, result: '후보', quota: 1, districts: [], neighborhoods: [ {
     name: '관외사전투표',
     rate: 4.60,
     votes: {
@@ -6793,14 +6793,14 @@ var RESULTS = [
   }] },
 
   // [ 86] 기초의원   | 정유경 | 경기 부천시 사선거구
-  { id: 86, voteRate: 3.66, totalVotes: 1763, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":4.55,"votes":{"absentee":{"rate":4.55,"count":209}}},
+  { id: 86, costLimit: 53496024, costSpent: 24220060, voteRate: 3.66, totalVotes: 1763, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":4.55,"votes":{"absentee":{"rate":4.55,"count":209}}},
 {"name":"범박동","rate":3.82,"votes":{"early":{"rate":3.62,"count":153},"polling":{"rate":3.93,"count":318}}},
 {"name":"옥길동","rate":3.67,"votes":{"early":{"rate":3.4,"count":139},"polling":{"rate":3.79,"count":358}}},
 {"name":"괴안동","rate":3.43,"votes":{"early":{"rate":3.68,"count":101},"polling":{"rate":3.28,"count":156}}},
 {"name":"역곡3동","rate":3.24,"votes":{"early":{"rate":2.23,"count":75},"polling":{"rate":3.75,"count":250}}}] },
 
   // [ 87] 기초의원   | 김태수 | 경기 부천시 마선거구
-  { id: 87, voteRate: 6.66, totalVotes: 4218, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":5.97,"votes":{"absentee":{"rate":5.97,"count":391}}},
+  { id: 87, costLimit: 56496024, costSpent: 4337002, voteRate: 6.66, totalVotes: 4218, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":5.97,"votes":{"absentee":{"rate":5.97,"count":391}}},
 {"name":"약대동","rate":6.73,"votes":{"early":{"rate":6.17,"count":165},"polling":{"rate":7.03,"count":342}}},
 {"name":"중1동","rate":6.63,"votes":{"early":{"rate":5.09,"count":239},"polling":{"rate":7.23,"count":874}}},
 {"name":"중2동","rate":5.76,"votes":{"early":{"rate":4.56,"count":71},"polling":{"rate":5.96,"count":560}}},
@@ -6808,12 +6808,12 @@ var RESULTS = [
 {"name":"중4동","rate":7.76,"votes":{"early":{"rate":6.78,"count":302},"polling":{"rate":8.59,"count":448}}}] },
 
   // [ 88] 기초의원   | 박윤옥 | 경기 남양주시 가선거구
-  { id: 88, voteRate: 4.03, totalVotes: 2062, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":4.57,"votes":{"absentee":{"rate":4.57,"count":232}}},
+  { id: 88, costLimit: 55496024, costSpent: 39420926, voteRate: 4.03, totalVotes: 2062, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":4.57,"votes":{"absentee":{"rate":4.57,"count":232}}},
 {"name":"화도읍","rate":3.57,"votes":{"early":{"rate":3.76,"count":364},"polling":{"rate":3.51,"count":1115}}},
 {"name":"수동면","rate":7.49,"votes":{"early":{"rate":8.57,"count":174},"polling":{"rate":6.6,"count":162}}}] },
 
   // [ 89] 기초의원   | 최종열 | 경기 남양주시 사선거구
-  { id: 89, voteRate: 2.39, totalVotes: 1517, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":3.31,"votes":{"absentee":{"rate":3.31,"count":184}}},
+  { id: 89, costLimit: 56496024, costSpent: 10220160, voteRate: 2.39, totalVotes: 1517, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":3.31,"votes":{"absentee":{"rate":3.31,"count":184}}},
 {"name":"와부읍","rate":3.25,"votes":{"early":{"rate":3.15,"count":214},"polling":{"rate":3.28,"count":700}}},
 {"name":"진건읍","rate":1.2,"votes":{"early":{"rate":1.3,"count":33},"polling":{"rate":1.16,"count":70}}},
 {"name":"퇴계원읍","rate":1.62,"votes":{"early":{"rate":1.3,"count":47},"polling":{"rate":1.76,"count":148}}},
@@ -6821,23 +6821,23 @@ var RESULTS = [
 {"name":"금곡동","rate":1.18,"votes":{"early":{"rate":0.76,"count":15},"polling":{"rate":1.33,"count":72}}},] },
 
   // [ 90] 기초의원   | 김용인 | 경기 남양주시 다선거구
-  { id: 90, voteRate: 2.41, totalVotes: 998, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":3.53,"votes":{"absentee":{"rate":3.53,"count":160}}},
+  { id: 90, costLimit: 53496024, costSpent: 3475740, voteRate: 2.41, totalVotes: 998, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":3.53,"votes":{"absentee":{"rate":3.53,"count":160}}},
 {"name":"진접읍","rate":2.27,"votes":{"early":{"rate":2.16,"count":189},"polling":{"rate":2.3,"count":641}}}] },
 
   // [ 91] 기초의원   | 최진형 | 경기 안산시 가선거구
-  { id: 91, voteRate: 3.23, totalVotes: 1786, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":4.18,"votes":{"absentee":{"rate":4.18,"count":194}}},
+  { id: 91, costLimit: 55496024, costSpent: 7989642, voteRate: 3.23, totalVotes: 1786, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":4.18,"votes":{"absentee":{"rate":4.18,"count":194}}},
 {"name":"사동","rate":3.49,"votes":{"early":{"rate":3.84,"count":138},"polling":{"rate":3.35,"count":294}}},
 {"name":"사이동","rate":2.81,"votes":{"early":{"rate":2.52,"count":85},"polling":{"rate":2.91,"count":270}}},
 {"name":"해양동","rate":3.32,"votes":{"early":{"rate":3.02,"count":116},"polling":{"rate":3.41,"count":461}}},
 {"name":"본오3동","rate":2.7,"votes":{"early":{"rate":3,"count":79},"polling":{"rate":2.55,"count":140}}},] },
 
   // [ 92] 기초의원   | 이재범 | 경기 평택시 라선거구
-  { id: 92, voteRate: 4.15, totalVotes: 1596, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":4.01,"votes":{"absentee":{"rate":4.01,"count":187}}},
+  { id: 92, costLimit: 53496024, costSpent: 3005180, voteRate: 4.15, totalVotes: 1596, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":4.01,"votes":{"absentee":{"rate":4.01,"count":187}}},
 {"name":"비전1동","rate":3.59,"votes":{"early":{"rate":3.41,"count":151},"polling":{"rate":3.65,"count":527}}},
 {"name":"동삭동","rate":4.89,"votes":{"early":{"rate":4.27,"count":138},"polling":{"rate":5.06,"count":589}}}] },
 
   // [ 93] 기초의원   | 신찬호 | 경기 안양시 사선거구
-  { id: 93, voteRate: 4.21, totalVotes: 1767, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":5.75,"votes":{"absentee":{"rate":5.75,"count":210}}},
+  { id: 93, costLimit: 51496024, costSpent: 4055920, voteRate: 4.21, totalVotes: 1767, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":5.75,"votes":{"absentee":{"rate":5.75,"count":210}}},
 {"name":"평촌동","rate":3.95,"votes":{"early":{"rate":4.24,"count":120},"polling":{"rate":3.78,"count":189}}},
 {"name":"평안동","rate":3.69,"votes":{"early":{"rate":2.98,"count":103},"polling":{"rate":4.03,"count":295}}},
 {"name":"귀인동","rate":3.96,"votes":{"early":{"rate":3.47,"count":72},"polling":{"rate":4.15,"count":216}}},
@@ -6845,28 +6845,28 @@ var RESULTS = [
 {"name":"갈산동","rate":3.39,"votes":{"early":{"rate":2.98,"count":46},"polling":{"rate":3.57,"count":123}}}] },
 
   // [ 94] 기초의원   | 이천은 | 경기 안양시 바선거구
-  { id: 94, voteRate: 5.04, totalVotes: 2295, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":5.64,"votes":{"absentee":{"rate":5.64,"count":289}}},
+  { id: 94, costLimit: 52496024, costSpent: 12228450, voteRate: 5.04, totalVotes: 2295, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":5.64,"votes":{"absentee":{"rate":5.64,"count":289}}},
 {"name":"달안동","rate":5.62,"votes":{"early":{"rate":6.42,"count":104},"polling":{"rate":5.23,"count":173}}},
 {"name":"관양동","rate":4.08,"votes":{"early":{"rate":3.73,"count":140},"polling":{"rate":4.2,"count":462}}},
 {"name":"인덕원동","rate":4.42,"votes":{"early":{"rate":3.76,"count":90},"polling":{"rate":4.68,"count":280}}},
 {"name":"부림동","rate":6.17,"votes":{"early":{"rate":5.01,"count":189},"polling":{"rate":6.69,"count":564}}}] },
 
   // [ 95] 기초의원   | 박원길 | 경기 안양시 아선거구
-  { id: 95, voteRate: 3.99, totalVotes: 1926, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":5.39,"votes":{"absentee":{"rate":5.39,"count":272}}},
+  { id: 95, costLimit: 52496024, costSpent: 8514320, voteRate: 3.99, totalVotes: 1926, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":5.39,"votes":{"absentee":{"rate":5.39,"count":272}}},
 {"name":"호계1동","rate":4.56,"votes":{"early":{"rate":4.3,"count":146},"polling":{"rate":4.66,"count":439}}},
 {"name":"호계2동","rate":3.64,"votes":{"early":{"rate":3.33,"count":114},"polling":{"rate":3.76,"count":352}}},
 {"name":"호계3동","rate":3.06,"votes":{"early":{"rate":2.44,"count":94},"polling":{"rate":3.38,"count":250}}},
 {"name":"신촌동","rate":4.06,"votes":{"early":{"rate":4.36,"count":94},"polling":{"rate":3.89,"count":158}}}] },
 
   // [ 96] 기초의원   | 김주우 | 경기 시흥시 나선거구
-  { id: 96, voteRate: 3.96, totalVotes: 1698, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":4.16,"votes":{"absentee":{"rate":4.16,"count":169}}},
+  { id: 96, costLimit: 53496024, costSpent: 7282810, voteRate: 3.96, totalVotes: 1698, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":4.16,"votes":{"absentee":{"rate":4.16,"count":169}}},
 {"name":"대야동","rate":3.84,"votes":{"early":{"rate":3.13,"count":141},"polling":{"rate":4.08,"count":521}}},
 {"name":"매화동","rate":2.45,"votes":{"early":{"rate":1.89,"count":31},"polling":{"rate":2.78,"count":76}}},
 {"name":"목감동","rate":4.53,"votes":{"early":{"rate":4.01,"count":206},"polling":{"rate":4.77,"count":533}}},
 {"name":"과림동","rate":1.78,"votes":{"early":{"rate":1.03,"count":3},"polling":{"rate":2.22,"count":11}}}] },
 
   // [ 97] 기초의원   | 이봉관 | 경기 시흥시 마선거구
-  { id: 97, voteRate: 3.42, totalVotes: 1643, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":4.59,"votes":{"absentee":{"rate":4.59,"count":172}}},
+  { id: 97, costLimit: 56496024, costSpent: 44860210, voteRate: 3.42, totalVotes: 1643, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":4.59,"votes":{"absentee":{"rate":4.59,"count":172}}},
 {"name":"정왕3동","rate":2.84,"votes":{"early":{"rate":2.63,"count":69},"polling":{"rate":2.95,"count":151}}},
 {"name":"정왕4동","rate":3.41,"votes":{"early":{"rate":3.06,"count":90},"polling":{"rate":3.61,"count":186}}},
 {"name":"거북섬동","rate":3.68,"votes":{"early":{"rate":2.1,"count":26},"polling":{"rate":4.62,"count":96}}},
@@ -6874,7 +6874,7 @@ var RESULTS = [
 {"name":"배곧2동","rate":3.58,"votes":{"early":{"rate":3.1,"count":89},"polling":{"rate":3.73,"count":330}}}] },
 
   // [ 98] 기초의원   | 양준모 | 경기 파주시 마선거구
-  { id: 98, voteRate: 2.83, totalVotes: 1690, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":4.56,"votes":{"absentee":{"rate":4.56,"count":226}}},
+  { id: 98, costLimit: 57496024, costSpent: 4167200, voteRate: 2.83, totalVotes: 1690, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":4.56,"votes":{"absentee":{"rate":4.56,"count":226}}},
 {"name":"조리읍","rate":2.52,"votes":{"early":{"rate":2.47,"count":73},"polling":{"rate":2.54,"count":216}}},
 {"name":"파주읍","rate":2.38,"votes":{"early":{"rate":2.34,"count":31},"polling":{"rate":2.4,"count":89}}},
 {"name":"광탄면","rate":2.16,"votes":{"early":{"rate":2.09,"count":27},"polling":{"rate":2.19,"count":63}}},
@@ -6884,7 +6884,7 @@ var RESULTS = [
 {"name":"금촌3동","rate":2.5,"votes":{"early":{"rate":2.12,"count":65},"polling":{"rate":2.69,"count":170}}}] },
 
   // [ 99] 기초의원   | 심명보 | 경기 김포시 다선거구
-  { id: 99, voteRate: 1.71, totalVotes: 963, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":2.6,"votes":{"absentee":{"rate":2.6,"count":132}}},
+  { id: 99, costLimit: 57496024, costSpent: 4674400, voteRate: 1.71, totalVotes: 963, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":2.6,"votes":{"absentee":{"rate":2.6,"count":132}}},
 {"name":"통진읍","rate":1.59,"votes":{"early":{"rate":1.69,"count":67},"polling":{"rate":1.55,"count":141}}},
 {"name":"양촌읍","rate":1.49,"votes":{"early":{"rate":1.39,"count":49},"polling":{"rate":1.53,"count":129}}},
 {"name":"대곶면","rate":1.49,"votes":{"early":{"rate":2.06,"count":20},"polling":{"rate":1.28,"count":34}}},
@@ -6893,37 +6893,37 @@ var RESULTS = [
 {"name":"구래동","rate":1.49,"votes":{"early":{"rate":1.41,"count":64},"polling":{"rate":1.51,"count":178}}}] },
 
   // [100] 기초의원   | 장준휘 | 경기 의정부시 라선거구
-  { id: 100, voteRate: 4.52, totalVotes: 2816, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":5.47,"votes":{"absentee":{"rate":5.47,"count":301}}},
+  { id: 100, costLimit: 57496024, costSpent: 7565222, voteRate: 4.52, totalVotes: 2816, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":5.47,"votes":{"absentee":{"rate":5.47,"count":301}}},
 {"name":"송산1동","rate":4.19,"votes":{"early":{"rate":4.19,"count":143},"polling":{"rate":4.19,"count":385}}},
 {"name":"송산2동","rate":3.8,"votes":{"early":{"rate":3.52,"count":171},"polling":{"rate":3.96,"count":352}}},
 {"name":"송산3동","rate":4.25,"votes":{"early":{"rate":3.62,"count":203},"polling":{"rate":4.54,"count":560}}},
 {"name":"고산동","rate":5.64,"votes":{"early":{"rate":4.61,"count":160},"polling":{"rate":6.05,"count":532}}}] },
 
   // [101] 기초의원   | 박현호 | 경기 의왕시 가선거구
-  { id: 101, voteRate: 4.61, totalVotes: 1987, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":6.61,"votes":{"absentee":{"rate":6.61,"count":276}}},
+  { id: 101, costLimit: 51496024, costSpent: 7047922, voteRate: 4.61, totalVotes: 1987, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":6.61,"votes":{"absentee":{"rate":6.61,"count":276}}},
 {"name":"고천동","rate":6.24,"votes":{"early":{"rate":6.22,"count":192},"polling":{"rate":6.25,"count":374}}},
 {"name":"부곡동","rate":4.5,"votes":{"early":{"rate":4.06,"count":186},"polling":{"rate":4.72,"count":440}}},
 {"name":"오전동","rate":3.25,"votes":{"early":{"rate":2.88,"count":100},"polling":{"rate":3.36,"count":414}}}] },
 
   // [102] 기초의원   | 양성혁 | 경기 의왕시 나선거구
-  { id: 102, voteRate: 4.87, totalVotes: 2297, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":6.3,"votes":{"absentee":{"rate":6.3,"count":317}}},
+  { id: 102, costLimit: 51496024, costSpent: 6057041, voteRate: 4.87, totalVotes: 2297, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":6.3,"votes":{"absentee":{"rate":6.3,"count":317}}},
 {"name":"내손1동","rate":4.41,"votes":{"early":{"rate":3.83,"count":96},"polling":{"rate":4.61,"count":325}}},
 {"name":"내손2동","rate":5.74,"votes":{"early":{"rate":5.18,"count":215},"polling":{"rate":5.98,"count":577}}},
 {"name":"청계동","rate":4.09,"votes":{"early":{"rate":3.51,"count":145},"polling":{"rate":4.25,"count":616}}}] },
 
   // [103] 기초의원   | 전상현 | 강원 원주시 나선거구
-  { id: 103, voteRate: 2.96, totalVotes: 561, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 3.25, votes: { absentee: { rate: 3.25, count: 85 } } },
+  { id: 103, costLimit: 47496024, costSpent: 6975776, voteRate: 2.96, totalVotes: 561, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 3.25, votes: { absentee: { rate: 3.25, count: 85 } } },
 { name: '호저면', rate: 1.98, votes: { early: { rate: 1.11, count: 5 }, polling: { rate: 2.32, count: 27 } } },
 { name: '지정면', rate: 2.86, votes: { early: { rate: 2.55, count: 116 }, polling: { rate: 3.31, count: 275 } } },
 { name: '우산동', rate: 2.90, votes: { early: { rate: 2.88, count: 9 }, polling: { rate: 2.91, count: 44 } } },] },
 
   // [104] 기초의원   | 최태영 | 강원 춘천시 라선거구
-  { id: 104, voteRate: 2.26, totalVotes: 515, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 3.37, votes: { absentee: { rate: 3.37, count: 135 } } },
+  { id: 104, costLimit: 47496024, costSpent: 2489311, voteRate: 2.26, totalVotes: 515, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 3.37, votes: { absentee: { rate: 3.37, count: 135 } } },
 { name: '효자2동', rate: 3.60, votes: { early: { rate: 3.61, count: 39 }, polling: { rate: 3.55, count: 130 } } },
 { name: '석사동', rate: 1.48, votes: { early: { rate: 1.35, count: 42 }, polling: { rate: 1.51, count: 165 } } },] },
 
   // [105] 기초의원   | 이강민 | 충남 천안시 라선거구
-  { id: 105, voteRate: 3.24, totalVotes: 708, result: '후보', quota: 1, districts: [], neighborhoods: [ 
+  { id: 105, costLimit: 50496024, costSpent: 1832490, voteRate: 3.24, totalVotes: 708, result: '후보', quota: 1, districts: [], neighborhoods: [ 
 { name: '관외사전투표', rate: 3.32,
   votes: { absentee: { rate: 3.32, count: 131 } }
 },
@@ -6941,7 +6941,7 @@ var RESULTS = [
 }] },
 
   // [106] 기초의원   | 이해성 | 충남 천안시 바선거구
-  { id: 106, voteRate: 2.42, totalVotes: 786, result: '후보', quota: 1, districts: [], neighborhoods: [  {
+  { id: 106, costLimit: 51496024, costSpent: 1642772, voteRate: 2.42, totalVotes: 786, result: '후보', quota: 1, districts: [], neighborhoods: [  {
     name: '관외사전투표',
     rate: 3.48,
     votes: {
@@ -6966,7 +6966,7 @@ var RESULTS = [
   }] },
 
   // [107] 기초의원   | 손승범 | 충남 천안시 다선거구
-  { id: 107, voteRate: 3.55, totalVotes: 887, result: '후보', quota: 1, districts: [], neighborhoods: [ {
+  { id: 107, costLimit: 50496024, costSpent: 11007532, voteRate: 3.55, totalVotes: 887, result: '후보', quota: 1, districts: [], neighborhoods: [ {
     name: '관외사전투표',
     rate: 4.31,
     votes: {
@@ -7007,7 +7007,7 @@ var RESULTS = [
   }] },
 
   // [108] 기초의원   | 고재윤 | 충남 당진시 라선거구
-  { id: 108, voteRate: 4.59, totalVotes: 1466, result: '후보', quota: 1, districts: [], neighborhoods: [  {
+  { id: 108, costLimit: 50496024, costSpent: 11291700, voteRate: 4.59, totalVotes: 1466, result: '후보', quota: 1, districts: [], neighborhoods: [  {
     name: '관외사전투표',
     rate: 5.32,
     votes: {
@@ -7048,12 +7048,12 @@ var RESULTS = [
   }] },
 
   // [109] 기초의원   | 김관호 | 충남 아산시 라선거구
-  { id: 109, voteRate: 2.42, totalVotes: 758, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":4.08,"votes":{"absentee":{"rate":4.08,"count":182}}},
+  { id: 109, costLimit: 50496024, costSpent: 690960, voteRate: 2.42, totalVotes: 758, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":4.08,"votes":{"absentee":{"rate":4.08,"count":182}}},
 {"name":"배방읍","rate":2.4,"votes":{"early":{"rate":1.39,"count":13},"polling":{"rate":2.51,"count":224}}},
 {"name":"탕정면","rate":1.99,"votes":{"early":{"rate":1.86,"count":69},"polling":{"rate":2.03,"count":268}}}] },
 
   // [110] 기초단체장  | 조순자 | 경북 구미시장
-  { id: 110, voteRate: 2.14, totalVotes: 3868, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 2.78,
+  { id: 110, costLimit: 251761608, costSpent: 54333084, voteRate: 2.14, totalVotes: 3868, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 2.78,
   votes: { absentee: { rate: 2.78, count: 565 } }
 },
 
@@ -7233,7 +7233,7 @@ var RESULTS = [
 }] },
 
   // [111] 기초의원   | 류태하 | 경북 구미시 자선거구
-  { id: 111, voteRate: 4.68, totalVotes: 1016, result: '후보', quota: 1, districts: [], neighborhoods: [{
+  { id: 111, costLimit: 49496024, costSpent: 25723542, voteRate: 4.68, totalVotes: 1016, result: '후보', quota: 1, districts: [], neighborhoods: [{
     name: '관외사전투표',
     rate: 5.99,
     votes: {
@@ -7258,7 +7258,7 @@ var RESULTS = [
   }] },
 
   // [112] 기초의원   | 김성조 | 경북 포항시 바선거구
-  { id: 112, voteRate: 16.37, totalVotes: 2604, result: '후보', quota: 1, districts: [], neighborhoods: [  {
+  { id: 112, costLimit: 46496024, costSpent: 43687180, voteRate: 16.37, totalVotes: 2604, result: '후보', quota: 1, districts: [], neighborhoods: [  {
     name: '관외사전투표',
     rate: 16.69,
     votes: {
@@ -7275,7 +7275,7 @@ var RESULTS = [
   }] },
 
   // [113] 기초의원   | 정진호 | 경북 울진군 나선거구
-  { id: 113, voteRate: 9.37, totalVotes: 752, result: '후보', quota: 1, districts: [], neighborhoods: [{
+  { id: 113, costLimit: 44496024, costSpent: 3365894, voteRate: 9.37, totalVotes: 752, result: '후보', quota: 1, districts: [], neighborhoods: [{
     name: '관외사전투표',
     rate: 10.69,
     votes: {
@@ -7300,7 +7300,7 @@ var RESULTS = [
   }] },
 
   // [114] 기초의원   | 황은재 | 충북 청주시 차선거구
-  { id: 114, voteRate: 3.05, totalVotes: 951, result: '후보', quota: 1, districts: [], neighborhoods: [ {
+  { id: 114, costLimit: 50496024, costSpent: 2543284, voteRate: 3.05, totalVotes: 951, result: '후보', quota: 1, districts: [], neighborhoods: [ {
     name: '관외사전투표',
     rate: 5.99,
     votes: {
@@ -7325,24 +7325,24 @@ var RESULTS = [
   }] },
 
   // [115] 기초의원   | 김성준 | 서울 강동구 마선거구
-  { id: 115, voteRate: 3.67, totalVotes: 707, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":3.93,"votes":{"absentee":{"rate":3.93,"count":112}}},
+  { id: 115, costLimit: 46496024, costSpent: 4973800, voteRate: 3.67, totalVotes: 707, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":3.93,"votes":{"absentee":{"rate":3.93,"count":112}}},
 {"name":"천호제2동","rate":3.64,"votes":{"early":{"rate":3.31,"count":149},"polling":{"rate":3.76,"count":445}}},] },
 
   // [116] 기초의원   | 정민우 | 서울 강동구 바선거구
-  { id: 116, voteRate: 4.30, totalVotes: 1539, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":4.64,"votes":{"absentee":{"rate":4.64,"count":165}}},
+  { id: 116, costLimit: 49496024, costSpent: 1772053, voteRate: 4.30, totalVotes: 1539, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":4.64,"votes":{"absentee":{"rate":4.64,"count":165}}},
 {"name":"성내제1동","rate":4.62,"votes":{"early":{"rate":4.11,"count":134},"polling":{"rate":4.89,"count":309}}},
 {"name":"성내제2동","rate":4.24,"votes":{"early":{"rate":4.18,"count":163},"polling":{"rate":4.27,"count":329}}},
 {"name":"성내제3동","rate":3.95,"votes":{"early":{"rate":3.53,"count":141},"polling":{"rate":4.19,"count":291}}}] },
 
   // [117] 기초의원   | 김민식 | 인천 서해구 다선거구
-  { id: 117, voteRate: 6.00, totalVotes: 2690, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":4.89,"votes":{"absentee":{"rate":4.89,"count":225}}},
+  { id: 117, costLimit: 53496024, costSpent: 4344082, voteRate: 6.00, totalVotes: 2690, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":4.89,"votes":{"absentee":{"rate":4.89,"count":225}}},
 {"name":"가정1동","rate":7.56,"votes":{"early":{"rate":6.88,"count":299},"polling":{"rate":7.79,"count":1008}}},
 {"name":"가정2동","rate":6.47,"votes":{"early":{"rate":5.86,"count":142},"polling":{"rate":6.75,"count":345}}},
 {"name":"가정3동","rate":3.1,"votes":{"early":{"rate":2.94,"count":37},"polling":{"rate":3.18,"count":77}}},
 {"name":"신현원창동","rate":4.77,"votes":{"early":{"rate":3.04,"count":74},"polling":{"rate":5.23,"count":481}}}] },
 
   // [118] 기초의원   | 양현성 | 서울 강남구 나선거구
-  { id: 118, voteRate: 3.68, totalVotes: 995, result: '후보', quota: 1, districts: [], neighborhoods: [
+  { id: 118, costLimit: 48496024, costSpent: 3014100, voteRate: 3.68, totalVotes: 995, result: '후보', quota: 1, districts: [], neighborhoods: [
   {
     name: '거소투표',
     rate: 2.86,
@@ -7376,7 +7376,7 @@ var RESULTS = [
 ] },
 
   // [119] 기초의원   | 조현조 | 부산 금정구 가선거구
-  { id: 119, voteRate: 6.13, totalVotes: 1561, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":4.59,"votes":{"absentee":{"rate":4.59,"count":82}}},
+  { id: 119, costLimit: 47496024, costSpent: 12482400, voteRate: 6.13, totalVotes: 1561, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":4.59,"votes":{"absentee":{"rate":4.59,"count":82}}},
 {"name":"서제1동","rate":8.78,"votes":{"early":{"rate":6.43,"count":42},"polling":{"rate":9.9,"count":135}}},
 {"name":"서제2동","rate":5.1,"votes":{"early":{"rate":5.22,"count":61},"polling":{"rate":5.05,"count":136}}},
 {"name":"서제3동","rate":6.77,"votes":{"early":{"rate":6.15,"count":105},"polling":{"rate":7.1,"count":223}}},
@@ -7385,19 +7385,19 @@ var RESULTS = [
 {"name":"부곡제4동","rate":5.63,"votes":{"early":{"rate":5.95,"count":127},"polling":{"rate":5.45,"count":198}}}] },
 
   // [120] 기초의원   | 권민찬 | 부산 금정구 다선거구
-  { id: 120, voteRate: 4.04, totalVotes: 822, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":4.43,"votes":{"absentee":{"rate":4.43,"count":105}}},
+  { id: 120, costLimit: 46496024, costSpent: 2668800, voteRate: 4.04, totalVotes: 822, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":4.43,"votes":{"absentee":{"rate":4.43,"count":105}}},
 {"name":"장전제1동","rate":4.96,"votes":{"early":{"rate":5.45,"count":122},"polling":{"rate":4.77,"count":281}}},
 {"name":"구서제1동","rate":3.19,"votes":{"early":{"rate":3.48,"count":114},"polling":{"rate":3.03,"count":182}}},
 {"name":"금성동","rate":3.08,"votes":{"early":{"rate":4.46,"count":7},"polling":{"rate":2.42,"count":8}}}] },
 
   // [121] 기초의원   | 신유림 | 부산 부산진구 가선거구
-  { id: 121, voteRate: 2.75, totalVotes: 859, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":4.71,"votes":{"absentee":{"rate":4.71,"count":142}}},
+  { id: 121, costLimit: 49496024, costSpent: 6465800, voteRate: 2.75, totalVotes: 859, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":4.71,"votes":{"absentee":{"rate":4.71,"count":142}}},
 {"name":"부전제1동","rate":3.36,"votes":{"early":{"rate":2.71,"count":39},"polling":{"rate":3.61,"count":140}}},
 {"name":"연지동","rate":2.31,"votes":{"early":{"rate":2.57,"count":81},"polling":{"rate":2.22,"count":202}}},
 {"name":"초읍동","rate":2.39,"votes":{"early":{"rate":2.15,"count":63},"polling":{"rate":2.48,"count":189}}}] },
 
   // [122] 기초의원   | 서명교 | 대구 수성구 가선거구
-  { id: 122, voteRate: 9.61, totalVotes: 3615, result: '후보', quota: 1, districts: [], neighborhoods: [{
+  { id: 122, costLimit: 50496024, costSpent: 13852388, voteRate: 9.61, totalVotes: 3615, result: '후보', quota: 1, districts: [], neighborhoods: [{
     name: '관외사전투표',
     rate: 9.34,
     votes: {
@@ -7438,22 +7438,22 @@ var RESULTS = [
   }] },
 
   // [123] 기초의원   | 이민수 | 서울 동작구 가선거구
-  { id: 123, voteRate: 5.31, totalVotes: 1230, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":5.41,"votes":{"absentee":{"rate":5.41,"count":217}}},
+  { id: 123, costLimit: 47496024, costSpent: 10750164, voteRate: 5.31, totalVotes: 1230, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":5.41,"votes":{"absentee":{"rate":5.41,"count":217}}},
 {"name":"노량진제1동","rate":5.26,"votes":{"early":{"rate":4.82,"count":124},"polling":{"rate":5.36,"count":663}}},
 {"name":"노량진제2동","rate":5.44,"votes":{"early":{"rate":5.75,"count":108},"polling":{"rate":5.18,"count":118}}}] },
 
   // [124] 기초의원   | 김효숙 | 서울 동작구 나선거구
-  { id: 124, voteRate: 8.49, totalVotes: 2664, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":6.74,"votes":{"absentee":{"rate":6.74,"count":354}}},
+  { id: 124, costLimit: 48496024, costSpent: 45655500, voteRate: 8.49, totalVotes: 2664, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":6.74,"votes":{"absentee":{"rate":6.74,"count":354}}},
 {"name":"상도제2동","rate":8.96,"votes":{"early":{"rate":7.29,"count":289},"polling":{"rate":9.69,"count":883}}},
 {"name":"상도제4동","rate":8.75,"votes":{"early":{"rate":8.06,"count":365},"polling":{"rate":9.13,"count":770}}}] },
 
   // [125] 기초의원   | 민경희 | 서울 동작구 다선거구
-  { id: 125, voteRate: 8.32, totalVotes: 2684, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":7.88,"votes":{"absentee":{"rate":7.88,"count":376}}},
+  { id: 125, costLimit: 49496024, costSpent: 36477391, voteRate: 8.32, totalVotes: 2684, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":7.88,"votes":{"absentee":{"rate":7.88,"count":376}}},
 {"name":"상도제3동","rate":8.65,"votes":{"early":{"rate":8.14,"count":399},"polling":{"rate":8.99,"count":663}}},
 {"name":"대방동","rate":8.18,"votes":{"early":{"rate":8.32,"count":340},"polling":{"rate":8.13,"count":899}}}] },
 
   // [126] 기초의원   | 민경준 | 서울 중랑구 다선거구
-  { id: 126, voteRate: 2.51, totalVotes: 1.174, result: '후보', quota: 1, districts: [], neighborhoods: [  {
+  { id: 126, costLimit: 52496024, costSpent: 4843587, voteRate: 2.51, totalVotes: 1174, result: '후보', quota: 1, districts: [], neighborhoods: [  {
     name: '관외사전투표',
     rate: 3.25,
     votes: {
@@ -7494,19 +7494,19 @@ var RESULTS = [
   }] },
 
   // [127] 기초의원   | 이영자 | 인천 연수구 가선거구
-  { id: 127, voteRate: 2.73, totalVotes: 815, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":3.17,"votes":{"absentee":{"rate":3.17,"count":86}}},
+  { id: 127, costLimit: 49496024, costSpent: 5563000, voteRate: 2.73, totalVotes: 815, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":3.17,"votes":{"absentee":{"rate":3.17,"count":86}}},
 {"name":"옥련2동","rate":2.73,"votes":{"early":{"rate":2.61,"count":86},"polling":{"rate":2.79,"count":177}}},
 {"name":"연수1동","rate":2.99,"votes":{"early":{"rate":2.68,"count":64},"polling":{"rate":3.14,"count":153}}},
 {"name":"청학동","rate":2.44,"votes":{"early":{"rate":2.08,"count":61},"polling":{"rate":2.59,"count":186}}},] },
 
   // [128] 기초의원   | 변재민 | 인천 연수구 다선거구
-  { id: 128, voteRate: 2.97, totalVotes: 952, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":4.05,"votes":{"absentee":{"rate":4.05,"count":156}}},
+  { id: 128, costLimit: 49496024, costSpent: 2953700, voteRate: 2.97, totalVotes: 952, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":4.05,"votes":{"absentee":{"rate":4.05,"count":156}}},
 {"name":"옥련1동","rate":2.57,"votes":{"early":{"rate":2.94,"count":54},"polling":{"rate":2.45,"count":135}}},
 {"name":"동춘1동","rate":2.98,"votes":{"early":{"rate":2.88,"count":104},"polling":{"rate":3.02,"count":257}}},
 {"name":"동춘2동","rate":2.84,"votes":{"early":{"rate":2.5,"count":76},"polling":{"rate":3.02,"count":168}}}] },
 
   // [129] 기초의원   | 정민기 | 서울 중랑구 바선거구
-  { id: 129, voteRate: 3.05, totalVotes: 719, result: '후보', quota: 1, districts: [], neighborhoods: [{
+  { id: 129, costLimit: 47496024, costSpent: 2064500, voteRate: 3.05, totalVotes: 719, result: '후보', quota: 1, districts: [], neighborhoods: [{
     name: '관외사전투표',
     rate: 3.47,
     votes: {
@@ -7531,18 +7531,18 @@ var RESULTS = [
   }] },
 
   // [130] 기초의원   | 한민희 | 충남 계룡시 나선거구
-  { id: 130, voteRate: 4.38, totalVotes: 393, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":3.62,"votes":{"absentee":{"rate":3.62,"count":37}}},
+  { id: 130, costLimit: 44496024, costSpent: 21345549, voteRate: 4.38, totalVotes: 393, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":3.62,"votes":{"absentee":{"rate":3.62,"count":37}}},
 {"name":"엄사면","rate":4.5,"votes":{"early":{"rate":4.52,"count":116},"polling":{"rate":4.49,"count":239}}}] },
 
   // [131] 기초의원   | 김희성 | 경남 김해시 다선거구
-  { id: 131, voteRate: 4.51, totalVotes: 1352, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":5.24,"votes":{"absentee":{"rate":5.24,"count":168}}},
+  { id: 131, costLimit: 49496024, costSpent: 39765816, voteRate: 4.51, totalVotes: 1352, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":5.24,"votes":{"absentee":{"rate":5.24,"count":168}}},
 {"name":"동상동","rate":4.34,"votes":{"early":{"rate":4.69,"count":60},"polling":{"rate":4.16,"count":103}}},
 {"name":"회현동","rate":3.41,"votes":{"early":{"rate":2.77,"count":41},"polling":{"rate":3.77,"count":98}}},
 {"name":"부원동","rate":3.96,"votes":{"early":{"rate":4.7,"count":74},"polling":{"rate":3.51,"count":88}}},
 {"name":"활천동","rate":4.88,"votes":{"early":{"rate":4.23,"count":167},"polling":{"rate":5.12,"count":550}}}] },
 
   // [132] 기초단체장  | 강명상 | 경남 창원시장
-  { id: 132, voteRate: 2.55, totalVotes: 13858, result: '후보', quota: 1, districts: [], neighborhoods: [  {
+  { id: 132, costLimit: 453622532, costSpent: 334118404, voteRate: 2.55, totalVotes: 13858, result: '후보', quota: 1, districts: [], neighborhoods: [  {
     name: "의창구_관외사전투표",
     rate: 3.26,
     votes: {
@@ -8028,7 +8028,7 @@ var RESULTS = [
 ] },
 
   // [133] 기초단체장  | 이창원 | 충남 논산시장
-  { id: 133, voteRate: 1.47, totalVotes: 870, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 5.80,
+  { id: 133, costLimit: 158157760, costSpent: 74474013, voteRate: 1.47, totalVotes: 870, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 5.80,
   votes: { absentee: { rate: 5.80, count: 139 } }
 },
 
@@ -8138,18 +8138,18 @@ var RESULTS = [
 }] },
 
   // [134] 기초의원   | 고귀한 | 부산 연제구 가선거구
-  { id: 134, voteRate: 1.27, totalVotes: 479, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":1.74,"votes":{"absentee":{"rate":1.74,"count":73}}},
+  { id: 134, costLimit: 50496024, costSpent: 4755300, voteRate: 1.27, totalVotes: 479, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":1.74,"votes":{"absentee":{"rate":1.74,"count":73}}},
 {"name":"거제제1동","rate":1.2,"votes":{"early":{"rate":1.49,"count":39},"polling":{"rate":1.13,"count":119}}},
 {"name":"거제제2동","rate":1.36,"votes":{"early":{"rate":1.3,"count":35},"polling":{"rate":1.38,"count":117}}},
 {"name":"거제제3동","rate":1.01,"votes":{"early":{"rate":1,"count":15},"polling":{"rate":1.01,"count":33}}},
 {"name":"거제제4동","rate":1.09,"votes":{"early":{"rate":0.98,"count":13},"polling":{"rate":1.14,"count":34}}}] },
 
   // [135] 기초의원   | 문현진 | 경남 김해시 사선거구
-  { id: 135, voteRate: 2.00, totalVotes: 666, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":2.56,"votes":{"absentee":{"rate":2.56,"count":88}}},
+  { id: 135, costLimit: 50496024, costSpent: 9396840, voteRate: 2.00, totalVotes: 666, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":2.56,"votes":{"absentee":{"rate":2.56,"count":88}}},
 {"name":"내외동","rate":1.94,"votes":{"early":{"rate":1.86,"count":160},"polling":{"rate":1.98,"count":418}}}] },
 
   // [136] 광역의원   | 양시훈 | 경기 화성시 제5선거구
-  { id: 136, voteRate: 16.71, totalVotes: 8668, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 14.21,
+  { id: 136, costLimit: 61289440, costSpent: 10457450, voteRate: 16.71, totalVotes: 8668, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 14.21,
   votes: { absentee: { rate: 14.21, count: 822 } }
 },
 { name: '동탄7동', rate: 15.07,
@@ -8166,7 +8166,7 @@ var RESULTS = [
 },] },
 
   // [137] 광역의원   | 한범수 | 서울 영등포구 제2선거구
-  { id: 137, voteRate: 4.31, totalVotes: 3216, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 5.06,
+  { id: 137, costLimit: 63289440, costSpent: 3927000, voteRate: 4.31, totalVotes: 3216, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 5.06,
   votes: { absentee: { rate: 5.06, count: 579 } }
 },
 { name: '영등포동', rate: 4.82,
@@ -8201,12 +8201,12 @@ var RESULTS = [
 },] },
 
   // [138] 기초의원   | 오다겸 | 부산 사하구 마선거구
-  { id: 138, voteRate: 8.39, totalVotes: 2491, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":7.59,"votes":{"absentee":{"rate":7.59,"count":175}}},
+  { id: 138, costLimit: 49496024, costSpent: 23082698, voteRate: 8.39, totalVotes: 2491, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":7.59,"votes":{"absentee":{"rate":7.59,"count":175}}},
 {"name":"다대제1동","rate":8.02,"votes":{"early":{"rate":7.77,"count":271},"polling":{"rate":8.1,"count":964}}},
 {"name":"다대제2동","rate":9.02,"votes":{"early":{"rate":8.18,"count":264},"polling":{"rate":9.34,"count":808}}}] },
 
   // [139] 기초단체장  | 최봉환 | 부산 금정구청장
-  { id: 139, voteRate: 2.16, totalVotes: 2490, result: '후보', quota: 1, districts: [], neighborhoods: [
+  { id: 139, costLimit: 184538008, costSpent: 99663130, voteRate: 2.16, totalVotes: 2490, result: '후보', quota: 1, districts: [], neighborhoods: [
   {
     name: "관외사전투표",
     rate: 2.57,
@@ -8361,13 +8361,13 @@ var RESULTS = [
 ] },
 
   // [140] 기초의원   | 김신재 | 부산 해운대구 다선거구
-  { id: 140, voteRate: 3.33, totalVotes: 897, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":3.19,"votes":{"absentee":{"rate":3.19,"count":87}}},
+  { id: 140, costLimit: 48496024, costSpent: 4657400, voteRate: 3.33, totalVotes: 897, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":3.19,"votes":{"absentee":{"rate":3.19,"count":87}}},
 {"name":"중제2동","rate":2.12,"votes":{"early":{"rate":2.24,"count":40},"polling":{"rate":2.08,"count":95}}},
 {"name":"좌제2동","rate":4.03,"votes":{"early":{"rate":4.12,"count":152},"polling":{"rate":4,"count":400}}},
 {"name":"송정동","rate":2.99,"votes":{"early":{"rate":2.86,"count":32},"polling":{"rate":3.04,"count":90}}}] },
 
   // [141] 기초단체장  | 박일하 | 서울 동작구청장
-  { id: 141, voteRate: 19.39, totalVotes: 41918, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 14.68,
+  { id: 141, costLimit: 217480120, costSpent: 161842859, voteRate: 19.39, totalVotes: 41918, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 14.68,
   votes: { absentee: { rate: 14.68, count: 4591 } }
 },
 { name: '노량진제1동', rate: 24.67,
@@ -8462,27 +8462,27 @@ var RESULTS = [
 },] },
 
   // [142] 기초의원   | 안병두 | 서울 서초구 다선거구
-  { id: 142, voteRate: 4.03, totalVotes: 1887, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":4.63,"votes":{"absentee":{"rate":4.63,"count":238}}},
+  { id: 142, costLimit: 52496024, costSpent: 8842600, voteRate: 4.03, totalVotes: 1887, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":4.63,"votes":{"absentee":{"rate":4.63,"count":238}}},
 {"name":"서초1동","rate":3.73,"votes":{"early":{"rate":4.16,"count":108},"polling":{"rate":3.58,"count":250}}},
 {"name":"서초3동","rate":3.82,"votes":{"early":{"rate":4.08,"count":135},"polling":{"rate":3.75,"count":441}}},
 {"name":"방배2동","rate":3.97,"votes":{"early":{"rate":3.5,"count":85},"polling":{"rate":4.14,"count":277}}},
 {"name":"방배3동","rate":4.46,"votes":{"early":{"rate":5.05,"count":107},"polling":{"rate":4.24,"count":241}}}] },
 
   // [143] 기초의원   | 이형준 | 서울 서초구 마선거구
-  { id: 143, voteRate: 4.73, totalVotes: 2047, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":5.62,"votes":{"absentee":{"rate":5.62,"count":282}}},
+  { id: 143, costLimit: 51496024, costSpent: 8660000, voteRate: 4.73, totalVotes: 2047, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":5.62,"votes":{"absentee":{"rate":5.62,"count":282}}},
 {"name":"양재1동","rate":4.12,"votes":{"early":{"rate":3.08,"count":108},"polling":{"rate":4.35,"count":682}}},
 {"name":"양재2동","rate":6.01,"votes":{"early":{"rate":5,"count":182},"polling":{"rate":6.55,"count":449}}},
 {"name":"내곡동","rate":4.01,"votes":{"early":{"rate":3.91,"count":101},"polling":{"rate":4.06,"count":238}}}] },
 
   // [144] 기초의원   | 오세철 | 서울 서초구 가선거구
-  { id: 144, voteRate: 5.57, totalVotes: 3193, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":6.45,"votes":{"absentee":{"rate":6.45,"count":351}}},
+  { id: 144, costLimit: 54496024, costSpent: 47389301, voteRate: 5.57, totalVotes: 3193, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":6.45,"votes":{"absentee":{"rate":6.45,"count":351}}},
 {"name":"잠원동","rate":6.59,"votes":{"early":{"rate":7.1,"count":252},"polling":{"rate":6.45,"count":868}}},
 {"name":"반포1동","rate":4.86,"votes":{"early":{"rate":5.88,"count":191},"polling":{"rate":4.56,"count":514}}},
 {"name":"반포3동","rate":5.62,"votes":{"early":{"rate":5.78,"count":173},"polling":{"rate":5.57,"count":494}}},
 {"name":"반포4동","rate":4.19,"votes":{"early":{"rate":3.95,"count":69},"polling":{"rate":4.25,"count":280}}}] },
 
   // [145] 기초단체장  | 이성진 | 충남 천안시장
-  { id: 145, voteRate: 2.62, totalVotes: 7821, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '서북구_관외사전투표', rate: 3.54,
+  { id: 145, costLimit: 317522104, costSpent: 10529950, voteRate: 2.62, totalVotes: 7821, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '서북구_관외사전투표', rate: 3.54,
   votes: { absentee: { rate: 3.54, count: 665 } }
 },
 
@@ -8708,7 +8708,7 @@ var RESULTS = [
 ] },
 
   // [146] 재보궐선거  | 이은창 | 충남 공주·부여·청양
-  { id: 146, voteRate: 2.28, totalVotes: 2613, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"공주시_관외사전투표","rate":2.99,"votes":{"absentee":{"rate":2.99,"count":209}}},
+  { id: 146, costLimit: 342935828, costSpent: 74283000, voteRate: 2.28, totalVotes: 2613, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"공주시_관외사전투표","rate":2.99,"votes":{"absentee":{"rate":2.99,"count":209}}},
 {"name":"유구읍","rate":2.17,"votes":{"early":{"rate":2.34,"count":30},"polling":{"rate":2.09,"count":57}}},
 {"name":"이인면","rate":1.66,"votes":{"early":{"rate":1.91,"count":10},"polling":{"rate":1.55,"count":17}}},
 {"name":"탄천면","rate":1.24,"votes":{"early":{"rate":0.86,"count":4},"polling":{"rate":1.43,"count":13}}},
@@ -8756,7 +8756,7 @@ var RESULTS = [
 ] },
 
   // [147] 재보궐선거  | 김성열 | 경기 하남 갑
-  { id: 147, voteRate: 2.18, totalVotes: 1948, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":2.82,"votes":{"absentee":{"rate":2.82,"count":298}}},
+  { id: 147, costLimit: 191207140, costSpent: 56237113, voteRate: 2.18, totalVotes: 1948, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":2.82,"votes":{"absentee":{"rate":2.82,"count":298}}},
 {"name":"천현동","rate":1.59,"votes":{"early":{"rate":1.93,"count":15},"polling":{"rate":1.43,"count":25}}},
 {"name":"신장1동","rate":1.8,"votes":{"early":{"rate":1.79,"count":36},"polling":{"rate":1.82,"count":36}}},
 {"name":"신장2동","rate":1.87,"votes":{"early":{"rate":1.7,"count":100},"polling":{"rate":1.93,"count":306}}},
@@ -8769,7 +8769,7 @@ var RESULTS = [
 {"name":"초이동","rate":1.1,"votes":{"early":{"rate":1.96,"count":8},"polling":{"rate":0.7,"count":6}}}] },
 
   // [148] 재보궐선거  | 문인수 | 경기 안산 갑
-  { id: 148, voteRate: 5.40, totalVotes: 4968, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":5.68,"votes":{"absentee":{"rate":5.68,"count":477}}},
+  { id: 148, costLimit: 185636768, costSpent: 90323372, voteRate: 5.40, totalVotes: 4968, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":5.68,"votes":{"absentee":{"rate":5.68,"count":477}}},
 {"name":"사동","rate":5.41,"votes":{"early":{"rate":5.88,"count":206},"polling":{"rate":5.23,"count":475}}},
 {"name":"사이동","rate":5.63,"votes":{"early":{"rate":5.35,"count":184},"polling":{"rate":5.73,"count":548}}},
 {"name":"해양동","rate":6.49,"votes":{"early":{"rate":5.62,"count":212},"polling":{"rate":6.73,"count":940}}},
@@ -8779,7 +8779,7 @@ var RESULTS = [
 {"name":"반월동","rate":4.27,"votes":{"early":{"rate":3.45,"count":98},"polling":{"rate":4.65,"count":287}}}] },
 
   // [149] 기초의원   | 조성한 | 대전 유성구 가선거구
-  { id: 149, voteRate: 3.24, totalVotes: 1616, result: '후보', quota: 1, districts: [], neighborhoods: [  {
+  { id: 149, costLimit: 53496024, costSpent: 5245103, voteRate: 3.24, totalVotes: 1616, result: '후보', quota: 1, districts: [], neighborhoods: [  {
     name: '관외사전투표',
     rate: 4.01,
     votes: {
@@ -8820,7 +8820,7 @@ var RESULTS = [
   }] },
 
   // [150] 광역의원   | 장경석 | 인천 옹진군선거구
-  { id: 150, voteRate: 9.16, totalVotes: 1126, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 6.35,
+  { id: 150, costLimit: 51289440, costSpent: 14703300, voteRate: 9.16, totalVotes: 1126, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 6.35,
   votes: { absentee: { rate: 6.35, count: 126 } }
 },
 { name: '북도면', rate: 7.58,
@@ -8867,7 +8867,7 @@ var RESULTS = [
 },] },
 
   // [151] 기초단체장  | 김윤재 | 서울 용산구청장
-  { id: 151, voteRate: 1.69, totalVotes: 1923, result: '후보', quota: 1, districts: [], neighborhoods: [    {
+  { id: 151, costLimit: 181374884, costSpent: 22426000, voteRate: 1.69, totalVotes: 1923, result: '후보', quota: 1, districts: [], neighborhoods: [    {
     name: '관외사전투표',
     rate: 2.47,
     votes: {
@@ -9005,7 +9005,7 @@ var RESULTS = [
   }] },
 
   // [152] 기초단체장  | 정찬옥 | 서울 성동구청장
-  { id: 152, voteRate: 2.21, totalVotes: 3571, result: '후보', quota: 1, districts: [], neighborhoods: [  {
+  { id: 152, costLimit: 199538008, costSpent: 58538619, voteRate: 2.21, totalVotes: 3571, result: '후보', quota: 1, districts: [], neighborhoods: [  {
     name: '관외사전투표',
     rate: 2.71,
     votes: {
@@ -9151,7 +9151,7 @@ var RESULTS = [
   }] },
 
   // [153] 기초의원   | 이민희 | 광주 광산구 가선거구
-  { id: 153, voteRate: 3.04, totalVotes: 1038, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 3.74, votes: { absentee: { rate: 3.74, count: 176 } } },
+  { id: 153, costLimit: 51496024, costSpent: 3554000, voteRate: 3.04, totalVotes: 1038, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 3.74, votes: { absentee: { rate: 3.74, count: 176 } } },
 { name: '송정1동', rate: 2.57, votes: { early: { rate: 1.95, count: 33 }, polling: { rate: 3.01, count: 70 } } },
 { name: '송정2동', rate: 2.71, votes: { early: { rate: 2.69, count: 29 }, polling: { rate: 2.72, count: 36 } } },
 { name: '도산동', rate: 2.95, votes: { early: { rate: 2.02, count: 58 }, polling: { rate: 3.82, count: 120 } } },
@@ -9162,14 +9162,14 @@ var RESULTS = [
 { name: '본량동', rate: 0.91, votes: { early: { rate: 1.30, count: 5 }, polling: { rate: 0.52, count: 2 } } },] },
 
   // [154] 기초의원   | 손득호 | 강원특별자치도 동해시 가선거구
-  { id: 154, voteRate: 6.12, totalVotes: 1270, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 4.79, votes: { absentee: { rate: 4.79, count: 90 } } },
+  { id: 154, costLimit: 47496024, costSpent: 5390000, voteRate: 6.12, totalVotes: 1270, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 4.79, votes: { absentee: { rate: 4.79, count: 90 } } },
 { name: '송정동', rate: 3.11, votes: { early: { rate: 3.14, count: 18 }, polling: { rate: 3.10, count: 32 } } },
 { name: '북삼동', rate: 6.22, votes: { early: { rate: 5.83, count: 237 }, polling: { rate: 6.57, count: 366 } } },
 { name: '북평동', rate: 5.18, votes: { early: { rate: 4.95, count: 116 }, polling: { rate: 5.67, count: 199 } } },
 { name: '삼화동', rate: 13.80, votes: { early: { rate: 12.48, count: 74 }, polling: { rate: 14.76, count: 120 } } },] },
 
   // [155] 기초의원   | 이인숙 | 충북 청주시 하선거구
-  { id: 155, voteRate: 3.57, totalVotes: 786, result: '후보', quota: 1, districts: [], neighborhoods: [  {
+  { id: 155, costLimit: 47496024, costSpent: 23378050, voteRate: 3.57, totalVotes: 786, result: '후보', quota: 1, districts: [], neighborhoods: [  {
     name: '관외사전투표',
     rate: 4.05,
     votes: {
@@ -9186,7 +9186,7 @@ var RESULTS = [
   }] },
 
   // [156] 기초의원   | 이완복 | 충북 청주시 마선거구
-  { id: 156, voteRate: 4.23, totalVotes: 1309, result: '후보', quota: 1, districts: [], neighborhoods: [  {
+  { id: 156, costLimit: 49496024, costSpent: 41371200, voteRate: 4.23, totalVotes: 1309, result: '후보', quota: 1, districts: [], neighborhoods: [  {
     name: '관외사전투표',
     rate: 4.67,
     votes: {
@@ -9235,20 +9235,20 @@ var RESULTS = [
   }] },
 
   // [157] 기초의원   | 서태모 | 충남 서산시 마선거구
-  { id: 157, voteRate: 4.13, totalVotes: 584, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":2.63,"votes":{"absentee":{"rate":2.63,"count":37}}},
+  { id: 157, costLimit: 45496024, costSpent: 32055500, voteRate: 4.13, totalVotes: 584, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":2.63,"votes":{"absentee":{"rate":2.63,"count":37}}},
 {"name":"음암면","rate":1.31,"votes":{"early":{"rate":1.4,"count":15},"polling":{"rate":1.29,"count":39}}},
 {"name":"운산면","rate":1.49,"votes":{"early":{"rate":1.22,"count":11},"polling":{"rate":1.64,"count":28}}},
 {"name":"해미면","rate":4.22,"votes":{"early":{"rate":3.69,"count":54},"polling":{"rate":4.58,"count":100}}},
 {"name":"고북면","rate":12.93,"votes":{"early":{"rate":13.18,"count":77},"polling":{"rate":12.84,"count":219}}}] },
 
   // [158] 기초의원   | 손영훈 | 충남 계룡시 가선거구
-  { id: 158, voteRate: 2.31, totalVotes: 344, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":3.15,"votes":{"absentee":{"rate":3.15,"count":50}}},
+  { id: 158, costLimit: 46496024, costSpent: 10357380, voteRate: 2.31, totalVotes: 344, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":3.15,"votes":{"absentee":{"rate":3.15,"count":50}}},
 {"name":"두마면","rate":1.8,"votes":{"early":{"rate":1.26,"count":25},"polling":{"rate":2.06,"count":88}}},
 {"name":"신도안면","rate":3.82,"votes":{"early":{"rate":3.28,"count":41},"polling":{"rate":4.28,"count":63}}},
 {"name":"금암동","rate":1.76,"votes":{"early":{"rate":1.88,"count":33},"polling":{"rate":1.67,"count":41}}},] },
 
   // [159] 기초의원   | 최재혁 | 서울 서대문구 마선거구
-  { id: 159, voteRate: 1.88, totalVotes: 980, result: '후보', quota: 1, districts: [], neighborhoods: [  {
+  { id: 159, costLimit: 52496024, costSpent: 6994350, voteRate: 1.88, totalVotes: 980, result: '후보', quota: 1, districts: [], neighborhoods: [  {
     name: '관외사전투표',
     rate: 3.03,
     votes: {
@@ -9289,12 +9289,12 @@ var RESULTS = [
   }] },
 
   // [160] 기초의원   | 김범일 | 서울 양천구 가선거구
-  { id: 160, voteRate: 4.52, totalVotes: 1216, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":5,"votes":{"absentee":{"rate":5,"count":165}}},
+  { id: 160, costLimit: 48496024, costSpent: 1815200, voteRate: 4.52, totalVotes: 1216, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":5,"votes":{"absentee":{"rate":5,"count":165}}},
 {"name":"목2동","rate":5.23,"votes":{"early":{"rate":4.4,"count":195},"polling":{"rate":5.63,"count":527}}},
 {"name":"목3동","rate":3.38,"votes":{"early":{"rate":3.1,"count":100},"polling":{"rate":3.52,"count":229}}}] },
 
   // [161] 기초단체장  | 방인섭 | 울산 남구청장
-  { id: 161, voteRate: 4.96, totalVotes: 8077, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 5.72,
+  { id: 161, costLimit: 200289996, costSpent: 170153797, voteRate: 4.96, totalVotes: 8077, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 5.72,
   votes: { absentee: { rate: 5.72, count: 974 } }
 },
 
@@ -9397,7 +9397,7 @@ var RESULTS = [
 }] },
 
   // [162] 기초단체장  | 조중연 | 충남 서천군수
-  { id: 162, voteRate: 2.02, totalVotes: 584, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 2.54,
+  { id: 162, costLimit: 140777512, costSpent: 21821400, voteRate: 2.02, totalVotes: 584, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 2.54,
   votes: { absentee: { rate: 2.54, count: 70 } }
 },
 
@@ -9493,7 +9493,7 @@ var RESULTS = [
 }] },
 
   // [163] 광역의원   | 김장호 | 울산광역시 남구 제4선거구
-  { id: 163, voteRate: 6.50, totalVotes: 1804, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 5.24,
+  { id: 163, costLimit: 55289440, costSpent: 43539977, voteRate: 6.50, totalVotes: 1804, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 5.24,
   votes: { absentee: { rate: 5.24, count: 138 } }
 },
 { name: '삼산동', rate: 6.76,
@@ -9510,7 +9510,7 @@ var RESULTS = [
 },] },
 
   // [164] 광역의원   | 최신성 | 울산광역시 남구 제5선거구
-  { id: 164, voteRate: 9.43, totalVotes: 2138, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 9.30,
+  { id: 164, costLimit: 53289440, costSpent: 48789992, voteRate: 9.43, totalVotes: 2138, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 9.30,
   votes: { absentee: { rate: 9.30, count: 231 } }
 },
 { name: '달동', rate: 9.07,
@@ -9527,7 +9527,7 @@ var RESULTS = [
 },] },
 
   // [165] 광역의원   | 김소라 | 울산광역시 남구 제6선거구
-  { id: 165, voteRate: 4.83, totalVotes: 1149, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 5.20,
+  { id: 165, costLimit: 54289440, costSpent: 35880326, voteRate: 4.83, totalVotes: 1149, result: '후보', quota: 1, districts: [], neighborhoods: [{ name: '관외사전투표', rate: 5.20,
   votes: { absentee: { rate: 5.20, count: 116 } }
 },
 { name: '대현동', rate: 5.19,
@@ -9544,22 +9544,22 @@ var RESULTS = [
 },] },
 
   // [166] 기초의원   | 정일경 | 울산 남구 마선거구
-  { id: 166, voteRate: 3.66, totalVotes: 824, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":3.98,"votes":{"absentee":{"rate":3.98,"count":99}}},
+  { id: 166, costLimit: 47496024, costSpent: 28849313, voteRate: 3.66, totalVotes: 824, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":3.98,"votes":{"absentee":{"rate":3.98,"count":99}}},
 {"name":"달동","rate":3.58,"votes":{"early":{"rate":4.1,"count":97},"polling":{"rate":3.45,"count":322}}},
 {"name":"수암동","rate":3.69,"votes":{"early":{"rate":3.85,"count":97},"polling":{"rate":3.61,"count":208}}}] },
 
   // [167] 기초의원   | 김근우 | 울산 남구 바선거구
-  { id: 167, voteRate: 2.97, totalVotes: 693, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":3.56,"votes":{"absentee":{"rate":3.56,"count":86}}},
+  { id: 167, costLimit: 47496024, costSpent: 26324913, voteRate: 2.97, totalVotes: 693, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":3.56,"votes":{"absentee":{"rate":3.56,"count":86}}},
 {"name":"대현동","rate":3.03,"votes":{"early":{"rate":3.04,"count":134},"polling":{"rate":3.02,"count":319}}},
 {"name":"선암동","rate":2.62,"votes":{"early":{"rate":2.13,"count":20},"polling":{"rate":2.71,"count":133}}}] },
 
   // [168] 기초의원   | 박소영 | 울산 남구 나선거구
-  { id: 168, voteRate: 3.41, totalVotes: 867, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":4.32,"votes":{"absentee":{"rate":4.32,"count":125}}},
+  { id: 168, costLimit: 47496024, costSpent: 20733274, voteRate: 3.41, totalVotes: 867, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":4.32,"votes":{"absentee":{"rate":4.32,"count":125}}},
 {"name":"신정4동","rate":3.96,"votes":{"early":{"rate":3.85,"count":108},"polling":{"rate":4.01,"count":268}}},
 {"name":"옥동","rate":2.79,"votes":{"early":{"rate":2.13,"count":71},"polling":{"rate":3.02,"count":291}}}] },
 
   // [169] 재보궐선거  | 김동칠 | 울산 남구 갑
-  { id: 169, voteRate: 2.51, totalVotes: 2289, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":3.73,"votes":{"absentee":{"rate":3.73,"count":338}}},
+  { id: 169, costLimit: 182826892, costSpent: 46571534, voteRate: 2.51, totalVotes: 2289, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":3.73,"votes":{"absentee":{"rate":3.73,"count":338}}},
 {"name":"신정1동","rate":2.15,"votes":{"early":{"rate":2.23,"count":60},"polling":{"rate":2.12,"count":142}}},
 {"name":"신정2동","rate":2.23,"votes":{"early":{"rate":2.27,"count":55},"polling":{"rate":2.23,"count":205}}},
 {"name":"신정3동","rate":2.45,"votes":{"early":{"rate":2.37,"count":51},"polling":{"rate":2.48,"count":133}}},
@@ -9570,7 +9570,7 @@ var RESULTS = [
 {"name":"옥동","rate":2.2,"votes":{"early":{"rate":1.73,"count":57},"polling":{"rate":2.36,"count":229}}}] },
 
   // [170] 재보궐선거  | 정승연 | 인천 연수 갑
-  { id: 170, voteRate: 9.66, totalVotes: 9677, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":8.44,"votes":{"absentee":{"rate":8.44,"count":836}}},
+  { id: 170, costLimit: 194207140, costSpent: 89909968, voteRate: 9.66, totalVotes: 9677, result: '후보', quota: 1, districts: [], neighborhoods: [{"name":"관외사전투표","rate":8.44,"votes":{"absentee":{"rate":8.44,"count":836}}},
 {"name":"옥련1동","rate":8.78,"votes":{"early":{"rate":7.47,"count":138},"polling":{"rate":9.23,"count":502}}},
 {"name":"옥련2동","rate":8.32,"votes":{"early":{"rate":7.48,"count":246},"polling":{"rate":8.75,"count":558}}},
 {"name":"선학동","rate":9.12,"votes":{"early":{"rate":7.34,"count":191},"polling":{"rate":9.91,"count":578}}},
@@ -21038,6 +21038,8 @@ function applyResults() {
     c.voteRate    = r.voteRate    ?? c.voteRate;
     c.totalVotes  = r.totalVotes  ?? c.totalVotes;
     c.quota       = r.quota       ?? 1;
+    c.costLimit   = r.costLimit   ?? c.costLimit;
+    c.costSpent   = r.costSpent   ?? c.costSpent;
     if (r.districts      && r.districts.length)      c.districts      = r.districts;
     if (r.neighborhoods  && r.neighborhoods.length)  c.neighborhoods  = r.neighborhoods;
   });
