@@ -4953,6 +4953,26 @@
     font-weight: 700;
   }
 
+  .cost-source-note {
+    margin-top: 24px;
+    padding: 12px 16px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    background: var(--surface2);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.6;
+    color: var(--text2);
+    text-align: center;
+  }
+
+  .cost-source-note a {
+    color: var(--brand, #2563eb);
+    font-weight: 700;
+    text-decoration: underline;
+    word-break: break-all;
+  }
+
   .cost-section-title {
     font-size: 13px;
     font-weight: 800;
@@ -7671,6 +7691,8 @@ function smInit(){
         공직선거법에 따라 후보자별로 쓸 수 있는 선거비용의 법정 상한액이에요. 지역구 크기·인구수에 따라 후보마다 금액이 다르고,
         상한액을 넘겨 지출하면 당선무효 등 불이익을 받을 수 있어요. 아래 <strong>사용률</strong>은 이 상한액 대비 실제 지출 비율,
         <strong>효율성 지수</strong>는 쓴 비용 대비 얻은 표(득표율 ÷ 사용률)를 나타내는 값이에요.
+        <br /><br />
+        ※ 여기에는 <strong>선거 외 비용</strong>은 포함되어 있지 않으며, 실제 지출한 선거비용과 상이한 점이 있을 수 있습니다.
       </div>
     </div>
 
@@ -7738,6 +7760,11 @@ function smInit(){
       <div id="cost-scatter-svg-wrap"></div>
     </div>
     <div id="cost-scatter-tooltip" style="position:fixed;display:none;background:var(--surface);border:1px solid var(--border-strong);border-radius:10px;padding:10px 13px;font-size:12px;line-height:1.65;z-index:300;pointer-events:none;box-shadow:0 4px 20px rgba(0,0,0,0.12);max-width:210px;"></div>
+
+    <div class="cost-source-note">
+      모든 자료는 중앙선거관리위원회 선거통계시스템에서 자세한 내용을 확인할 수 있습니다.<br />
+      <a href="https://info.nec.go.kr/main/showDocument.xhtml?electionId=0020260603&topMenuId=CE&secondMenuId=CELA02" target="_blank" rel="noopener noreferrer">여기서 확인하기</a>
+    </div>
   </div>
 </main>
 
